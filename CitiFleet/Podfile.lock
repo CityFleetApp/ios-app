@@ -1,0 +1,16 @@
+PODS:
+  - Alamofire (3.2.0)
+  - GoogleMaps (1.12.1)
+  - MBProgressHUD (0.9.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.2)
+  - GoogleMaps (~> 1.12)
+  - MBProgressHUD (~> 0.9)
+
+SPEC CHECKSUMS:
+  Alamofire: 4da478599fccddff361205c8929333d7fe18dceb
+  GoogleMaps: d4e7526e96e78faf7131ea95f13dd5411cc2916d
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+
+COCOAPODS: 0.39.0
