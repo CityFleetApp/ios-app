@@ -18,6 +18,7 @@ class MainLoginVC: UIViewController {
         navigationController?.navigationBar.hidden = true
         signUpBtn.setShadow()
         loginBtn.setShadow()
+        navigationController?.navigationBar.barStyle = .Black
     }
     
     @IBAction func createAccount(sender: AnyObject) {

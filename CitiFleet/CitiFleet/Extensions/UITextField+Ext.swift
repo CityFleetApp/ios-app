@@ -17,14 +17,16 @@ extension UITextField {
         
         self.attributedPlaceholder = NSAttributedString(string: text, attributes:attributes)
     }
+    
+    
 }
 
 extension UITextField {
     func setStandardplaceHolder(placeHolderText: String) {
-        self.setPlaceholder(Fonts.Login.PlaceHolder, color: UIColor(hex: 0xa8a9a9, alpha: 1), text: placeHolderText)
+        self.setPlaceholder(Fonts.Login.SignUpPlaceHolder, color: UIColor(hex: 0xa8a9a9, alpha: 1), text: placeHolderText)
     }
     
     func setErrorPlaceholder(placeHolderText: String) {
-        self.setPlaceholder(Fonts.Login.PlaceHolder, color: UIColor(hex: 0xe71d36, alpha: 0.7), text: placeHolderText)
+        self.setPlaceholder(Fonts.Login.SignUpPlaceHolder, color: UIColor(hex: 0xe71d36, alpha: 0.7), text: placeHolderText)
     }
 }
