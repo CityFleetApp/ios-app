@@ -8,11 +8,22 @@
 
 import UIKit
 
+func printFonts() {
+    for name in UIFont.familyNames() {
+        print(name)
+        if let nameString = name as? String
+        {
+            print(UIFont.fontNamesForFamilyName(nameString))
+        }
+    }
+}
+
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.

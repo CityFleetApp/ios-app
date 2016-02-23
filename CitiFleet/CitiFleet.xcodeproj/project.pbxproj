@@ -13,6 +13,22 @@
 		4316BB851C7B046A007A9ECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB841C7B046A007A9ECB /* Assets.xcassets */; };
 		4316BB881C7B046A007A9ECB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB861C7B046A007A9ECB /* LaunchScreen.storyboard */; };
 		4316BB911C7B0885007A9ECB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB901C7B0885007A9ECB /* Login.storyboard */; };
+		4316BB9D1C7B23ED007A9ECB /* MainLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316BB9C1C7B23ED007A9ECB /* MainLoginVC.swift */; };
+		4316BB9F1C7B446F007A9ECB /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316BB9E1C7B446F007A9ECB /* SignUpVC.swift */; };
+		4316BBA21C7B5EEC007A9ECB /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316BBA11C7B5EEC007A9ECB /* UITextField+Ext.swift */; };
+		4316BBA41C7B6154007A9ECB /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316BBA31C7B6154007A9ECB /* UIColor+HEX.swift */; };
+		4316BBA71C7B61EE007A9ECB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316BBA61C7B61EE007A9ECB /* Colors.swift */; };
+		4316BBA91C7B61F5007A9ECB /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316BBA81C7B61F5007A9ECB /* Fonts.swift */; };
+		4316BBAA1C7B6A27007A9ECB /* materialdesignicons-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB9A1C7B1A28007A9ECB /* materialdesignicons-webfont.ttf */; };
+		4316BBAB1C7B6A27007A9ECB /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB931C7B1A22007A9ECB /* Montserrat-Black.otf */; };
+		4316BBAC1C7B6A27007A9ECB /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB941C7B1A22007A9ECB /* Montserrat-Bold.otf */; };
+		4316BBAD1C7B6A27007A9ECB /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB951C7B1A22007A9ECB /* Montserrat-ExtraBold.otf */; };
+		4316BBAE1C7B6A27007A9ECB /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB961C7B1A22007A9ECB /* Montserrat-Light.otf */; };
+		4316BBAF1C7B6A27007A9ECB /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB971C7B1A22007A9ECB /* Montserrat-Regular.otf */; };
+		4316BBB01C7B6A27007A9ECB /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB981C7B1A22007A9ECB /* Montserrat-SemiBold.otf */; };
+		4316BBB11C7B6A27007A9ECB /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB991C7B1A22007A9ECB /* Montserrat-UltraLight.otf */; };
+		4316BBB41C7B73C6007A9ECB /* ConfirmPasswordRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316BBB31C7B73C6007A9ECB /* ConfirmPasswordRule.swift */; };
+		434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434EDAE71C7C4EF800934029 /* UITableView+Ext.swift */; };
 		8F7B09119E0D4A8BE702AA9A /* Pods_CitiFleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +51,14 @@
 		4316BB981C7B1A22007A9ECB /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 		4316BB991C7B1A22007A9ECB /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
 		4316BB9A1C7B1A28007A9ECB /* materialdesignicons-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "materialdesignicons-webfont.ttf"; sourceTree = "<group>"; };
+		4316BB9C1C7B23ED007A9ECB /* MainLoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainLoginVC.swift; path = Login/MainLoginVC.swift; sourceTree = "<group>"; };
+		4316BB9E1C7B446F007A9ECB /* SignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpVC.swift; path = Login/SignUpVC.swift; sourceTree = "<group>"; };
+		4316BBA11C7B5EEC007A9ECB /* UITextField+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITextField+Ext.swift"; path = "Extensions/UITextField+Ext.swift"; sourceTree = "<group>"; };
+		4316BBA31C7B6154007A9ECB /* UIColor+HEX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+HEX.swift"; path = "Extensions/UIColor+HEX.swift"; sourceTree = "<group>"; };
+		4316BBA61C7B61EE007A9ECB /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Constants/Colors.swift; sourceTree = "<group>"; };
+		4316BBA81C7B61F5007A9ECB /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		4316BBB31C7B73C6007A9ECB /* ConfirmPasswordRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfirmPasswordRule.swift; path = Utils/ConfirmPasswordRule.swift; sourceTree = "<group>"; };
+		434EDAE71C7C4EF800934029 /* UITableView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+Ext.swift"; path = "Extensions/UITableView+Ext.swift"; sourceTree = "<group>"; };
 		43B6C55349F831C910C33501 /* Pods-CitiFleet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitiFleet.release.xcconfig"; path = "Pods/Target Support Files/Pods-CitiFleet/Pods-CitiFleet.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +97,10 @@
 			children = (
 				4316BB7D1C7B046A007A9ECB /* AppDelegate.swift */,
 				4316BB7F1C7B046A007A9ECB /* ViewController.swift */,
+				4316BBB21C7B7399007A9ECB /* Utils */,
+				4316BBA51C7B61D7007A9ECB /* Constants */,
+				4316BBA01C7B5EBE007A9ECB /* Extensions */,
+				4316BB9B1C7B23C6007A9ECB /* Login */,
 				4316BB8F1C7B086C007A9ECB /* Storyboards */,
 				4316BB841C7B046A007A9ECB /* Assets.xcassets */,
 				4316BB861C7B046A007A9ECB /* LaunchScreen.storyboard */,
@@ -104,6 +132,42 @@
 				4316BB991C7B1A22007A9ECB /* Montserrat-UltraLight.otf */,
 			);
 			name = Font;
+			sourceTree = "<group>";
+		};
+		4316BB9B1C7B23C6007A9ECB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4316BB9C1C7B23ED007A9ECB /* MainLoginVC.swift */,
+				4316BB9E1C7B446F007A9ECB /* SignUpVC.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		4316BBA01C7B5EBE007A9ECB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4316BBA11C7B5EEC007A9ECB /* UITextField+Ext.swift */,
+				4316BBA31C7B6154007A9ECB /* UIColor+HEX.swift */,
+				434EDAE71C7C4EF800934029 /* UITableView+Ext.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		4316BBA51C7B61D7007A9ECB /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				4316BBA61C7B61EE007A9ECB /* Colors.swift */,
+				4316BBA81C7B61F5007A9ECB /* Fonts.swift */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		4316BBB21C7B7399007A9ECB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4316BBB31C7B73C6007A9ECB /* ConfirmPasswordRule.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		A1BF0D86F407C96A1C73890B /* Pods */ = {
@@ -184,6 +248,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4316BBAA1C7B6A27007A9ECB /* materialdesignicons-webfont.ttf in Resources */,
+				4316BBAB1C7B6A27007A9ECB /* Montserrat-Black.otf in Resources */,
+				4316BBAC1C7B6A27007A9ECB /* Montserrat-Bold.otf in Resources */,
+				4316BBAD1C7B6A27007A9ECB /* Montserrat-ExtraBold.otf in Resources */,
+				4316BBAE1C7B6A27007A9ECB /* Montserrat-Light.otf in Resources */,
+				4316BBAF1C7B6A27007A9ECB /* Montserrat-Regular.otf in Resources */,
+				4316BBB01C7B6A27007A9ECB /* Montserrat-SemiBold.otf in Resources */,
+				4316BBB11C7B6A27007A9ECB /* Montserrat-UltraLight.otf in Resources */,
 				4316BB911C7B0885007A9ECB /* Login.storyboard in Resources */,
 				4316BB881C7B046A007A9ECB /* LaunchScreen.storyboard in Resources */,
 				4316BB851C7B046A007A9ECB /* Assets.xcassets in Resources */,
@@ -246,6 +318,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4316BBA91C7B61F5007A9ECB /* Fonts.swift in Sources */,
+				4316BBB41C7B73C6007A9ECB /* ConfirmPasswordRule.swift in Sources */,
+				4316BBA21C7B5EEC007A9ECB /* UITextField+Ext.swift in Sources */,
+				4316BBA41C7B6154007A9ECB /* UIColor+HEX.swift in Sources */,
+				4316BB9F1C7B446F007A9ECB /* SignUpVC.swift in Sources */,
+				4316BBA71C7B61EE007A9ECB /* Colors.swift in Sources */,
+				4316BB9D1C7B23ED007A9ECB /* MainLoginVC.swift in Sources */,
+				434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */,
 				4316BB801C7B046A007A9ECB /* ViewController.swift in Sources */,
 				4316BB7E1C7B046A007A9ECB /* AppDelegate.swift in Sources */,
 			);
