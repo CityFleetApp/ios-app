@@ -18,6 +18,8 @@ class SignUpVC: UITableViewController {
     @IBOutlet var password: UITextField!
     @IBOutlet var confirmPassword: UITextField!
     
+    @IBOutlet var signUpBtn: UIButton!
+    
     let validator = Validator()
     private let placeholderText = ["Enter your full name",
         "Enter your username",
@@ -50,6 +52,7 @@ class SignUpVC: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.hidden = false
+        signUpBtn.setShadow()
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -72,10 +75,6 @@ class SignUpVC: UITableViewController {
 }
 
 extension SignUpVC: UITextFieldDelegate {
-    func textFieldDidBeginEditing(textField: UITextField) {
-        
-    }
-    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if let index = textFields?.indexOf(textField) {
             selectNextField(index)

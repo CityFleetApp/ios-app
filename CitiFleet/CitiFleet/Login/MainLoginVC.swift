@@ -9,9 +9,15 @@
 import UIKit
 
 class MainLoginVC: UIViewController {
+    
+    @IBOutlet var signUpBtn: UIButton!
+    @IBOutlet var loginBtn: UIButton!
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.hidden = true
+        signUpBtn.setShadow()
+        loginBtn.setShadow()
     }
     
     @IBAction func createAccount(sender: AnyObject) {

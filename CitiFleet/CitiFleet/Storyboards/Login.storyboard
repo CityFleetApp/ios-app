@@ -44,6 +44,11 @@
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="19"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="CREATE AN ACCOUNT"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="createAccount:" destination="mTb-tE-vlF" eventType="touchUpInside" id="g1b-f5-yEL"/>
                                     <segue destination="WY3-mK-tJa" kind="push" id="Lxg-Ya-Guf"/>
@@ -58,8 +63,14 @@
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="19"/>
                                 <color key="tintColor" red="0.70196078431372544" green="0.56862745098039214" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="LOG IN"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="logIn:" destination="mTb-tE-vlF" eventType="touchUpInside" id="F3g-rn-AQV"/>
+                                    <segue destination="bu6-N9-BrG" kind="push" id="3cp-pb-dbI"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="lrs-nR-qn9">
@@ -123,6 +134,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="upA-P5-clV"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="loginBtn" destination="lwk-S9-NHj" id="bK2-N2-K1Y"/>
+                        <outlet property="signUpBtn" destination="GE8-Dt-7MZ" id="bbl-bE-1l8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLU-AT-WNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -490,6 +505,11 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="signUp:" destination="WY3-mK-tJa" eventType="touchUpInside" id="hfq-9u-ggp"/>
                                                     </connections>
@@ -526,12 +546,33 @@
                         <outlet property="hackLicense" destination="sbj-yW-lmp" id="o0F-Zy-BcL"/>
                         <outlet property="password" destination="6DB-vm-mvJ" id="9Li-gg-dXf"/>
                         <outlet property="phone" destination="P3a-HU-NJK" id="Hrv-j1-lz5"/>
+                        <outlet property="signUpBtn" destination="j9m-5r-sbl" id="Wkn-BI-JjU"/>
                         <outlet property="userName" destination="aiK-3B-BcM" id="o67-FK-FHO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0B-bq-Arb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2280" y="447"/>
+            <point key="canvasLocation" x="2321" y="-139"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="L1X-zv-uaJ">
+            <objects>
+                <viewController id="bu6-N9-BrG" customClass="LoginVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PIF-Rc-1fm"/>
+                        <viewControllerLayoutGuide type="bottom" id="QHL-ZS-h4d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0G4-0M-LB5">
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gia-C3-7kp"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2KL-Ab-wWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2321" y="1036"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yY6-41-DuB">
