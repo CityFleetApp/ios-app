@@ -19,6 +19,9 @@ struct URL {
 }
 
 struct Params {
+    struct Response {
+        static let serverError = "Server Error"
+    }
     struct Header {
         static let contentType = "Content-Type"
         static let authentication = "Authentication: Token"

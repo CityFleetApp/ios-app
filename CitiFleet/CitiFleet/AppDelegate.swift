@@ -28,9 +28,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     class func sharedDelegate() -> AppDelegate {
         return UIApplication.sharedApplication().delegate as! AppDelegate
     }
+    
+    func test() {
+        User.signUp("testUser2", password: "Pass1234", confirmPassword: "Pass1234", fullName: "Test User", phone: "+12342334234", hackLicense: "aoeuaoeu aoeuaoeu", email: "ma12il@mail.com") { (user, error) -> () in
+            debugPrint(error?.serverMessage(), user?.token)
+        }
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics.self])
+        test()
         return true
     }
 

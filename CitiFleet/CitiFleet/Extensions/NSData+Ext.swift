@@ -16,3 +16,9 @@ extension NSData {
         return nil
     }
 }
+
+extension NSError {
+    func serverMessage() -> String? {
+        return self.userInfo[Params.Response.serverError] as? String
+    }
+}

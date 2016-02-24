@@ -12,12 +12,19 @@ import Swift
 import SwiftyJSON
 
 class RequestManager: NSObject {
-    class func url(apiUrl:String) -> String {
+    private class func url(apiUrl:String) -> String {
         return URL.BaseUrl + apiUrl
     }
     
-    class func header() -> [String:String] {
+    private class func header() -> [String:String] {
         return [Params.Header.contentType: Params.Header.json]
+    }
+    
+    private class func errorWithInfo(error: NSError, data: NSData) -> NSError {
+        let errorText = String(data: data, encoding: NSUTF8StringEncoding)
+        var userInfo = error.userInfo
+        userInfo[Params.Response.serverError] = errorText
+        return NSError(domain: error.domain, code: error.code, userInfo: userInfo)
     }
     
     class func login(username: String, password: String, completion:(([String: AnyObject]?, NSError?) -> ())) {
@@ -29,13 +36,40 @@ class RequestManager: NSObject {
         Alamofire.request(.POST, url(URL.Login.Login), headers: header(), parameters: params, encoding: .JSON)
             .validate(statusCode: 200..<300)
             .responseJSON { response in
-                if (response.result.error == nil) {
-                    let json = JSON(data: response.data!)
-                    let dict = json.dictionaryObject! as [String: AnyObject]
-                    //                completion(dict, response.result.error)
-                    debugPrint("HTTP Response Body: \(dict)")
-                } else {
-                    debugPrint("HTTP Request failed: \(response.result.error.debugDescription)")
+                switch response.result {
+                case .Success(let respJSON):
+                    let dict = respJSON as? [String: AnyObject]
+                    completion(dict, nil)
+                    break
+                case .Failure(let error):
+                    completion(nil, error)
+                    break
+                }
+        }
+    }
+    
+    class func signUp(username:String, email:String, password:String, confirmPassword:String, fullName:String, hackLicense:String, phone:String, completion:(([String: AnyObject]?, NSError?) -> ())) {
+        let params = [
+            Params.Login.username: username,
+            Params.Login.email: email,
+            Params.Login.passwordConfirm: confirmPassword,
+            Params.Login.password: password,
+            Params.Login.phone: phone,
+            Params.Login.hackLicense: hackLicense,
+            Params.Login.fullName: fullName
+        ]
+        
+        Alamofire.request(.POST, url(URL.Login.SignUp), headers: header(), parameters: params, encoding: .JSON)
+            .validate(statusCode: 200..<300)
+            .responseJSON { response in
+                switch response.result {
+                case .Success(let respJSON):
+                    let dict = respJSON as? [String: AnyObject]
+                    completion(dict, nil)
+                    break
+                case .Failure(let error):
+                    completion(nil, errorWithInfo(error, data: response.data!))
+                    break
                 }
         }
     }
