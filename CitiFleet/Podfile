@@ -8,5 +8,9 @@ pod 'Alamofire', '~> 3.2'
 pod 'MBProgressHUD', '~> 0.9'
 pod 'GoogleMaps', '~> 1.12'
 pod 'SwiftValidator', '~> 3.0'
+pod 'SwiftyJSON', '~> 2.3'
+
+pod 'Fabric'
+pod 'Crashlytics'
 end
 

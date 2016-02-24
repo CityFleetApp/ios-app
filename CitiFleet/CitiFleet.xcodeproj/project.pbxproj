@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430B4F3B1C7DBAB800EE884A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4F3A1C7DBAB800EE884A /* User.swift */; };
+		430B4F3D1C7DBCB700EE884A /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4F3C1C7DBCB700EE884A /* RequestManager.swift */; };
+		430B4F431C7DC73D00EE884A /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4F421C7DC73D00EE884A /* URL.swift */; };
+		430B4F451C7DE33700EE884A /* NSData+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4F441C7DE33700EE884A /* NSData+Ext.swift */; };
 		4316BB7E1C7B046A007A9ECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316BB7D1C7B046A007A9ECB /* AppDelegate.swift */; };
 		4316BB801C7B046A007A9ECB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316BB7F1C7B046A007A9ECB /* ViewController.swift */; };
 		4316BB831C7B046A007A9ECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB811C7B046A007A9ECB /* Main.storyboard */; };
@@ -38,6 +42,10 @@
 /* Begin PBXFileReference section */
 		0BF2396D09E48EEAC22514F5 /* Pods-CitiFleet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitiFleet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CitiFleet/Pods-CitiFleet.debug.xcconfig"; sourceTree = "<group>"; };
 		2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CitiFleet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		430B4F3A1C7DBAB800EE884A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
+		430B4F3C1C7DBCB700EE884A /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestManager.swift; path = Utils/RequestTool/RequestManager.swift; sourceTree = "<group>"; };
+		430B4F421C7DC73D00EE884A /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URL.swift; path = Constants/URL.swift; sourceTree = "<group>"; };
+		430B4F441C7DE33700EE884A /* NSData+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSData+Ext.swift"; path = "Extensions/NSData+Ext.swift"; sourceTree = "<group>"; };
 		4316BB7A1C7B046A007A9ECB /* CitiFleet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CitiFleet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4316BB7D1C7B046A007A9ECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4316BB7F1C7B046A007A9ECB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +88,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		430B4F381C7DBA8600EE884A /* Request Util */ = {
+			isa = PBXGroup;
+			children = (
+				430B4F3C1C7DBCB700EE884A /* RequestManager.swift */,
+			);
+			name = "Request Util";
+			sourceTree = "<group>";
+		};
+		430B4F391C7DBA9200EE884A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				430B4F3A1C7DBAB800EE884A /* User.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		4316BB711C7B046A007A9ECB = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +127,7 @@
 			children = (
 				4316BB7D1C7B046A007A9ECB /* AppDelegate.swift */,
 				4316BB7F1C7B046A007A9ECB /* ViewController.swift */,
+				430B4F391C7DBA9200EE884A /* Models */,
 				43D2D0B31C7C9A3500A41D4F /* Viewes */,
 				4316BBB21C7B7399007A9ECB /* Utils */,
 				4316BBA51C7B61D7007A9ECB /* Constants */,
@@ -158,6 +183,7 @@
 				4316BBA31C7B6154007A9ECB /* UIColor+HEX.swift */,
 				434EDAE71C7C4EF800934029 /* UITableView+Ext.swift */,
 				43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */,
+				430B4F441C7DE33700EE884A /* NSData+Ext.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -167,6 +193,7 @@
 			children = (
 				4316BBA61C7B61EE007A9ECB /* Colors.swift */,
 				4316BBA81C7B61F5007A9ECB /* Fonts.swift */,
+				430B4F421C7DC73D00EE884A /* URL.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -174,6 +201,7 @@
 		4316BBB21C7B7399007A9ECB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				430B4F381C7DBA8600EE884A /* Request Util */,
 				4316BBB31C7B73C6007A9ECB /* ConfirmPasswordRule.swift */,
 			);
 			name = Utils;
@@ -225,6 +253,7 @@
 				4316BB781C7B046A007A9ECB /* Resources */,
 				4D22CFB30E2F982F3A66C902 /* Embed Pods Frameworks */,
 				43A71AA485C08CF8BB9021F3 /* Copy Pods Resources */,
+				430B4F371C7DA9ED00EE884A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -291,6 +320,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		430B4F371C7DA9ED00EE884A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" d217b8a3de781c177191dbe6fa3d42c3275cc7c6 51b4aa132e5e8743fc7e77d512bef6eae023c86d4051e73eb44e94973c8e40a7ф";
+		};
 		43A71AA485C08CF8BB9021F3 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -343,14 +385,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				430B4F3D1C7DBCB700EE884A /* RequestManager.swift in Sources */,
 				43D2D0B21C7C97D600A41D4F /* LoginVC.swift in Sources */,
 				4316BBA91C7B61F5007A9ECB /* Fonts.swift in Sources */,
 				4316BBB41C7B73C6007A9ECB /* ConfirmPasswordRule.swift in Sources */,
 				4316BBA21C7B5EEC007A9ECB /* UITextField+Ext.swift in Sources */,
 				4316BBA41C7B6154007A9ECB /* UIColor+HEX.swift in Sources */,
 				4316BB9F1C7B446F007A9ECB /* SignUpVC.swift in Sources */,
+				430B4F431C7DC73D00EE884A /* URL.swift in Sources */,
+				430B4F3B1C7DBAB800EE884A /* User.swift in Sources */,
 				4316BBA71C7B61EE007A9ECB /* Colors.swift in Sources */,
 				4316BB9D1C7B23ED007A9ECB /* MainLoginVC.swift in Sources */,
+				430B4F451C7DE33700EE884A /* NSData+Ext.swift in Sources */,
 				434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */,
 				43D2D0B81C7C9B2D00A41D4F /* UIView+Ext.swift in Sources */,
 				43D2D0B61C7C9ABE00A41D4F /* LoginTextField.swift in Sources */,

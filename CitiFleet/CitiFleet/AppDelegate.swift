@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
 
 func printFonts() {
     for name in UIFont.familyNames() {
         print(name)
-        if let nameString = name as? String
-        {
+        if let nameString = name as? String {
             print(UIFont.fontNamesForFamilyName(nameString))
         }
     }
@@ -26,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        Fabric.with([Crashlytics.self])
         return true
     }
 

@@ -65,7 +65,15 @@ class SignUpVC: UITableViewController {
                 error.0.text = ""
                 error.0.setErrorPlaceholder(error.1.errorMessage)
             }
+            
+            if errors.count == 0 {
+                self.signUpRequest()
+            }
         }
+    }
+    
+    func signUpRequest() {
+        
     }
     
     @IBAction func back(sender: AnyObject) {
