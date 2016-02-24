@@ -11,6 +11,7 @@
 		430B4F3D1C7DBCB700EE884A /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4F3C1C7DBCB700EE884A /* RequestManager.swift */; };
 		430B4F431C7DC73D00EE884A /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4F421C7DC73D00EE884A /* URL.swift */; };
 		430B4F451C7DE33700EE884A /* NSData+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4F441C7DE33700EE884A /* NSData+Ext.swift */; };
+		430B4F481C7DEAF000EE884A /* LoaderViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4F471C7DEAF000EE884A /* LoaderViewManager.swift */; };
 		4316BB7E1C7B046A007A9ECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316BB7D1C7B046A007A9ECB /* AppDelegate.swift */; };
 		4316BB801C7B046A007A9ECB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316BB7F1C7B046A007A9ECB /* ViewController.swift */; };
 		4316BB831C7B046A007A9ECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB811C7B046A007A9ECB /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		430B4F3C1C7DBCB700EE884A /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestManager.swift; path = Utils/RequestTool/RequestManager.swift; sourceTree = "<group>"; };
 		430B4F421C7DC73D00EE884A /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URL.swift; path = Constants/URL.swift; sourceTree = "<group>"; };
 		430B4F441C7DE33700EE884A /* NSData+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSData+Ext.swift"; path = "Extensions/NSData+Ext.swift"; sourceTree = "<group>"; };
+		430B4F471C7DEAF000EE884A /* LoaderViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderViewManager.swift; sourceTree = "<group>"; };
 		4316BB7A1C7B046A007A9ECB /* CitiFleet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CitiFleet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4316BB7D1C7B046A007A9ECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4316BB7F1C7B046A007A9ECB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 				430B4F3A1C7DBAB800EE884A /* User.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		430B4F461C7DEA8500EE884A /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				430B4F471C7DEAF000EE884A /* LoaderViewManager.swift */,
+			);
+			name = Loader;
 			sourceTree = "<group>";
 		};
 		4316BB711C7B046A007A9ECB = {
@@ -201,6 +211,7 @@
 		4316BBB21C7B7399007A9ECB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				430B4F461C7DEA8500EE884A /* Loader */,
 				430B4F381C7DBA8600EE884A /* Request Util */,
 				4316BBB31C7B73C6007A9ECB /* ConfirmPasswordRule.swift */,
 			);
@@ -402,6 +413,7 @@
 				43D2D0B61C7C9ABE00A41D4F /* LoginTextField.swift in Sources */,
 				4316BB801C7B046A007A9ECB /* ViewController.swift in Sources */,
 				4316BB7E1C7B046A007A9ECB /* AppDelegate.swift in Sources */,
+				430B4F481C7DEAF000EE884A /* LoaderViewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

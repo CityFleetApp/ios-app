@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftValidator
 
 class LoginVC: UIViewController {
     private var logo2MailStartHeight: CGFloat?
@@ -16,11 +17,16 @@ class LoginVC: UIViewController {
     @IBOutlet var button2BottomLayout: NSLayoutConstraint!
     
     @IBOutlet var mailTextField: LoginTextField!
-    @IBOutlet var pallwordTextField: LoginTextField!
+    @IBOutlet var passwordTextField: LoginTextField!
+    
+    private let validator = Validator()
+    private let placeholderText = [""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerKeyboardEvents()
+        validator.registerField(mailTextField, rules: [RequiredRule()])
+        validator.registerField(passwordTextField, rules: [RequiredRule()])
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -38,6 +44,25 @@ class LoginVC: UIViewController {
     
     func registerNotification(selectorName:String, notification:String) {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector(selectorName), name: notification, object: nil)
+    }
+    
+    @IBAction func logIn(sender: AnyObject) {
+        validator.validate { (errors) -> Void in
+            for error in errors {
+                error.0.text = ""
+                error.0.setErrorPlaceholder(error.1.errorMessage)
+            }
+            
+            if errors.count == 0 {
+                
+            }
+        }
+    }
+    
+    func loginRequest() {
+        User.login(mailTextField.text!, password: passwordTextField.text!) { (user, error) -> () in
+            
+        }
     }
 }
 

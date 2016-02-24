@@ -9,11 +9,11 @@
 import Foundation
 
 struct URL {
-    static let Sandbox = "http://104.236.223.160/"
+    static let Sandbox = "http://104.236.223.160:8000/"
     static let Production = ""
     static let BaseUrl = Sandbox
     struct Login {
-        static let Login = ""
+        static let Login = "users/login/"
         static let SignUp = "users/signup/"
     }
 }
@@ -32,5 +32,6 @@ struct Params {
         static let fullName = "full_name"
         static let hackLicense = "hack_license"
         static let passwordConfirm = "password_confirm"
+        static let token = "token"
     }
 }

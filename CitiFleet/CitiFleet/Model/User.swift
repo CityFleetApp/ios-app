@@ -15,12 +15,14 @@ class User: NSObject {
     var hackLicense: String?
     var phone: String?
     var email: String?
+    var token: String?
     
     private static var currUser: User?
     class func currentUser() -> User? {
         return User.currUser
     }
     
+    //MARK: - LogIn / SignUp
     class func signUp(user:User, completion:(User, NSError)) {
         User.signUp(user.userName!, password: user.password!, fullName: user.fullName!, phone: user.phone!, hackLicense: user.hackLicense!, email: user.email!, completion: completion)
     }
@@ -29,11 +31,21 @@ class User: NSObject {
         
     }
     
-    class func login(username: String, password: String, completion:((User, NSError) -> ())) {
-        
+    class func login(username: String, password: String, completion:((User?, NSError?) -> ())) {
+        RequestManager.login(username, password: password) { (userData, error) -> () in
+            let user = User()
+            user.token = userData![Params.Login.token] as? String
+//            user.password = password
+//            user.email = userData![Params.Login.email] as? String
+//            user.userName = userData![Params.Login.username] as? String
+//            user.fullName = userData![Params.Login.fullName] as? String
+//            user.hackLicense = userData![Params.Login.hackLicense] as? String
+//            user.phone = userData![Params.Login.phone] as? String
+            
+        }
     }
     
     class func logout(completion:(Bool, NSError)?) {
-        
+        currUser = nil
     }
 }

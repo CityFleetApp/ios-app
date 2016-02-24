@@ -586,6 +586,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="createAccount:" destination="mTb-tE-vlF" eventType="touchUpInside" id="A0b-Tp-shF"/>
+                                    <action selector="logIn:" destination="bu6-N9-BrG" eventType="touchUpInside" id="bKy-xM-bZS"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="C8W-UJ-Xe3">
@@ -653,8 +654,8 @@
                     <connections>
                         <outlet property="button2BottomLayout" destination="Ob2-n5-1Ir" id="Jjd-i0-YeM"/>
                         <outlet property="logo2TopTextFieldLayout" destination="fRq-k0-GRE" id="erM-so-zI9"/>
-                        <outlet property="mailTextField" destination="BWY-R4-Nbv" id="7br-IZ-CTQ"/>
-                        <outlet property="pallwordTextField" destination="kio-6h-WNr" id="cuY-Mt-dsT"/>
+                        <outlet property="mailTextField" destination="BWY-R4-Nbv" id="4Bo-ZJ-gsC"/>
+                        <outlet property="passwordTextField" destination="kio-6h-WNr" id="Z15-Ls-9iK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2KL-Ab-wWn" userLabel="First Responder" sceneMemberID="firstResponder"/>

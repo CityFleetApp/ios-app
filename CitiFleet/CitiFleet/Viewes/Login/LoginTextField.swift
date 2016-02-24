@@ -11,6 +11,7 @@ import UIKit
 @IBDesignable class LoginTextField: UITextField {
     private let leftViewFrame = CGRect(x: 0, y: 0, width: 60, height: 0)
     private let attributes = [NSFontAttributeName: Fonts.Login.LoginPlaceholder, NSForegroundColorAttributeName: Color.Login.PlaceHolderForeground]
+    private let errorAttributes = [NSFontAttributeName: Fonts.Login.LoginPlaceholder, NSForegroundColorAttributeName: Color.Login.ErrorPlaceholderForeground]
     
     @IBInspectable var image: UIImage? {
         get {
@@ -39,6 +40,10 @@ import UIKit
         set {
             attributedPlaceholder = NSAttributedString(string: newValue, attributes: attributes)
         }
+    }
+    
+    override func setErrorPlaceholder(placeHolderText: String) {
+        attributedPlaceholder = NSAttributedString(string: placeHolderText, attributes: errorAttributes)
     }
     
     override func drawRect(rect: CGRect) {
