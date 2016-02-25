@@ -16,8 +16,8 @@ class MainLoginVC: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.hidden = true
-        signUpBtn.setShadow()
-        loginBtn.setShadow()
+        signUpBtn.setDefaultShadow()
+        loginBtn.setDefaultShadow()
         navigationController?.navigationBar.barStyle = .Black
     }
     

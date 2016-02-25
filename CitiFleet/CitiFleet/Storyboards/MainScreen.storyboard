@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4tr-YF-9SX">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Montserrat-Light.otf">
+            <string>Montserrat-Light</string>
+            <string>Montserrat-Light</string>
+            <string>Montserrat-Light</string>
+            <string>Montserrat-Light</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Main ScreenVC-->
+        <scene sceneID="oFy-Nf-fYT">
+            <objects>
+                <viewController id="4tr-YF-9SX" customClass="MainScreenVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Sf3-FL-yrX"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Ta-yl-vfH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wFr-2r-qAO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44F-Ff-BxB">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z44-gC-7yl">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="10"/>
+                                        <state key="normal" title="Dashboard" image="dashboard-ic">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aov-pF-egP">
+                                        <rect key="frame" x="150" y="0.0" width="150" height="50"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="10"/>
+                                        <state key="normal" title="Marketplace" image="marketplace-ic">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rss-hf-RRp">
+                                        <rect key="frame" x="300" y="0.0" width="150" height="50"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="10"/>
+                                        <state key="normal" title="Notification" image="notification-ic">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrW-VX-asl">
+                                        <rect key="frame" x="450" y="0.0" width="150" height="50"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="10"/>
+                                        <state key="normal" title="Report" image="report-ic">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0039215686274509803" green="0.086274509803921567" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Z44-gC-7yl" firstAttribute="top" secondItem="44F-Ff-BxB" secondAttribute="top" id="1qi-be-5wz"/>
+                                    <constraint firstItem="aov-pF-egP" firstAttribute="leading" secondItem="Z44-gC-7yl" secondAttribute="trailing" id="BPU-Ss-QZG"/>
+                                    <constraint firstAttribute="bottom" secondItem="rss-hf-RRp" secondAttribute="bottom" id="G5y-7A-kfX"/>
+                                    <constraint firstItem="GrW-VX-asl" firstAttribute="leading" secondItem="rss-hf-RRp" secondAttribute="trailing" id="GWg-23-MMl"/>
+                                    <constraint firstAttribute="trailing" secondItem="GrW-VX-asl" secondAttribute="trailing" id="IuO-Od-X25"/>
+                                    <constraint firstItem="rss-hf-RRp" firstAttribute="width" secondItem="Z44-gC-7yl" secondAttribute="width" id="J5d-0B-eF4"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z44-gC-7yl" secondAttribute="bottom" id="QBx-5U-E45"/>
+                                    <constraint firstItem="rss-hf-RRp" firstAttribute="top" secondItem="44F-Ff-BxB" secondAttribute="top" id="SA3-em-CKL"/>
+                                    <constraint firstAttribute="bottom" secondItem="GrW-VX-asl" secondAttribute="bottom" id="T68-Ek-aNt"/>
+                                    <constraint firstItem="aov-pF-egP" firstAttribute="top" secondItem="44F-Ff-BxB" secondAttribute="top" id="TTo-Nf-CII"/>
+                                    <constraint firstAttribute="bottom" secondItem="aov-pF-egP" secondAttribute="bottom" id="Uyn-Kd-mwb"/>
+                                    <constraint firstAttribute="height" constant="50" id="Wlp-lF-RIb"/>
+                                    <constraint firstItem="GrW-VX-asl" firstAttribute="width" secondItem="Z44-gC-7yl" secondAttribute="width" id="XIg-hh-ahD"/>
+                                    <constraint firstItem="Z44-gC-7yl" firstAttribute="leading" secondItem="44F-Ff-BxB" secondAttribute="leading" id="fyn-5l-5EZ"/>
+                                    <constraint firstItem="GrW-VX-asl" firstAttribute="top" secondItem="44F-Ff-BxB" secondAttribute="top" id="hNj-gw-ltS"/>
+                                    <constraint firstItem="rss-hf-RRp" firstAttribute="leading" secondItem="aov-pF-egP" secondAttribute="trailing" id="k6u-FD-F62"/>
+                                    <constraint firstItem="aov-pF-egP" firstAttribute="width" secondItem="Z44-gC-7yl" secondAttribute="width" id="tFS-14-Gxf"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hm4-0h-pyU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="22"/>
+                                <color key="backgroundColor" red="0.0039215686269999999" green="0.086274509799999996" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="XIh-u8-jqr"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zdu-2A-pf9">
+                                <rect key="frame" x="11" y="34" width="32" height="32"/>
+                                <color key="backgroundColor" red="0.0039215686269999999" green="0.086274509799999996" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="UEb-pg-VU5"/>
+                                    <constraint firstAttribute="width" secondItem="Zdu-2A-pf9" secondAttribute="height" multiplier="1:1" id="V7X-86-Ode"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="burger"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="2" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQS-bB-tps">
+                                <rect key="frame" x="545" y="489" width="44" height="44"/>
+                                <color key="backgroundColor" red="0.90588235294117647" green="0.11372549019607843" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JQS-bB-tps" secondAttribute="height" multiplier="1:1" id="EMI-pX-um9"/>
+                                    <constraint firstAttribute="width" constant="44" id="QDh-aO-Rfo"/>
+                                </constraints>
+                                <state key="normal" image="Add_friends">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hm4-0h-pyU" firstAttribute="leading" secondItem="wFr-2r-qAO" secondAttribute="leading" id="6hW-o9-44s"/>
+                            <constraint firstItem="9Ta-yl-vfH" firstAttribute="top" secondItem="44F-Ff-BxB" secondAttribute="bottom" id="7YT-N3-aaH"/>
+                            <constraint firstItem="Zdu-2A-pf9" firstAttribute="top" secondItem="Hm4-0h-pyU" secondAttribute="bottom" constant="12" id="9Ap-85-IWb"/>
+                            <constraint firstAttribute="trailing" secondItem="44F-Ff-BxB" secondAttribute="trailing" id="DYG-p1-4WQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Hm4-0h-pyU" secondAttribute="trailing" id="EXQ-yZ-q1n"/>
+                            <constraint firstItem="Zdu-2A-pf9" firstAttribute="leading" secondItem="wFr-2r-qAO" secondAttribute="leading" constant="11" id="GXv-ju-s6n"/>
+                            <constraint firstItem="Hm4-0h-pyU" firstAttribute="top" secondItem="wFr-2r-qAO" secondAttribute="top" id="McK-gh-BAq"/>
+                            <constraint firstItem="44F-Ff-BxB" firstAttribute="top" secondItem="JQS-bB-tps" secondAttribute="bottom" constant="17" id="gAo-bj-pJ6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JQS-bB-tps" secondAttribute="trailing" constant="11" id="lm0-tX-ZwX"/>
+                            <constraint firstAttribute="trailing" secondItem="JQS-bB-tps" secondAttribute="trailing" constant="11" id="pXw-np-kP5"/>
+                            <constraint firstItem="44F-Ff-BxB" firstAttribute="leading" secondItem="wFr-2r-qAO" secondAttribute="leading" id="r1K-x7-9bo"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="lm0-tX-ZwX"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="addFriendsBtn" destination="JQS-bB-tps" id="DOT-sV-eoN"/>
+                        <outlet property="burgerBtn" destination="Zdu-2A-pf9" id="SqR-6Y-pLj"/>
+                        <outlet property="dashboardBtn" destination="Z44-gC-7yl" id="GnS-iQ-z2j"/>
+                        <outlet property="marketPlaceBtn" destination="aov-pF-egP" id="FRx-xz-hTh"/>
+                        <outlet property="notificationsBtn" destination="rss-hf-RRp" id="Sop-MP-HpO"/>
+                        <outlet property="reportBtn" destination="GrW-VX-asl" id="u62-Dr-6HV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dds-b5-NtH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="794" y="339"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Add_friends" width="25" height="13"/>
+        <image name="burger" width="18" height="13"/>
+        <image name="dashboard-ic" width="15" height="15"/>
+        <image name="marketplace-ic" width="17" height="14"/>
+        <image name="notification-ic" width="15" height="17"/>
+        <image name="report-ic" width="19" height="16"/>
+    </resources>
+</document>

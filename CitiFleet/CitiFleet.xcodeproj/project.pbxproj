@@ -33,7 +33,12 @@
 		4316BBB01C7B6A27007A9ECB /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB981C7B1A22007A9ECB /* Montserrat-SemiBold.otf */; };
 		4316BBB11C7B6A27007A9ECB /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB991C7B1A22007A9ECB /* Montserrat-UltraLight.otf */; };
 		4316BBB41C7B73C6007A9ECB /* ConfirmPasswordRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316BBB31C7B73C6007A9ECB /* ConfirmPasswordRule.swift */; };
+		4334D8121C7F215200557AE4 /* Dash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4334D8111C7F215200557AE4 /* Dash.storyboard */; };
 		434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434EDAE71C7C4EF800934029 /* UITableView+Ext.swift */; };
+		43B6D8531C7EFB61000D6844 /* MainScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B6D8521C7EFB61000D6844 /* MainScreenVC.swift */; };
+		43B6D8551C7EFC74000D6844 /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43B6D8541C7EFC74000D6844 /* MainScreen.storyboard */; };
+		43B6D8571C7F0379000D6844 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B6D8561C7F0379000D6844 /* UIButton+Ext.swift */; };
+		43B6D8591C7F055C000D6844 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B6D8581C7F055C000D6844 /* Global.swift */; };
 		43D2D0B21C7C97D600A41D4F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B11C7C97D600A41D4F /* LoginVC.swift */; };
 		43D2D0B61C7C9ABE00A41D4F /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B51C7C9ABE00A41D4F /* LoginTextField.swift */; };
 		43D2D0B81C7C9B2D00A41D4F /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */; };
@@ -71,8 +76,13 @@
 		4316BBA61C7B61EE007A9ECB /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Constants/Colors.swift; sourceTree = "<group>"; };
 		4316BBA81C7B61F5007A9ECB /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		4316BBB31C7B73C6007A9ECB /* ConfirmPasswordRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfirmPasswordRule.swift; path = Utils/ConfirmPasswordRule.swift; sourceTree = "<group>"; };
+		4334D8111C7F215200557AE4 /* Dash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dash.storyboard; path = Storyboards/Dash.storyboard; sourceTree = "<group>"; };
 		434EDAE71C7C4EF800934029 /* UITableView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+Ext.swift"; path = "Extensions/UITableView+Ext.swift"; sourceTree = "<group>"; };
 		43B6C55349F831C910C33501 /* Pods-CitiFleet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitiFleet.release.xcconfig"; path = "Pods/Target Support Files/Pods-CitiFleet/Pods-CitiFleet.release.xcconfig"; sourceTree = "<group>"; };
+		43B6D8521C7EFB61000D6844 /* MainScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainScreenVC.swift; path = ViewController/MainScreen/MainScreenVC.swift; sourceTree = "<group>"; };
+		43B6D8541C7EFC74000D6844 /* MainScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainScreen.storyboard; path = Storyboards/MainScreen.storyboard; sourceTree = "<group>"; };
+		43B6D8561C7F0379000D6844 /* UIButton+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Ext.swift"; path = "Extensions/UIButton+Ext.swift"; sourceTree = "<group>"; };
+		43B6D8581C7F055C000D6844 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Constants/Global.swift; sourceTree = "<group>"; };
 		43D2D0B11C7C97D600A41D4F /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = Login/LoginVC.swift; sourceTree = "<group>"; };
 		43D2D0B51C7C9ABE00A41D4F /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTextField.swift; path = Viewes/Login/LoginTextField.swift; sourceTree = "<group>"; };
 		43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Ext.swift"; path = "Extensions/UIView+Ext.swift"; sourceTree = "<group>"; };
@@ -142,7 +152,7 @@
 				4316BBB21C7B7399007A9ECB /* Utils */,
 				4316BBA51C7B61D7007A9ECB /* Constants */,
 				4316BBA01C7B5EBE007A9ECB /* Extensions */,
-				4316BB9B1C7B23C6007A9ECB /* Login */,
+				43B6D8501C7EF8A2000D6844 /* View Controllerrs */,
 				4316BB8F1C7B086C007A9ECB /* Storyboards */,
 				4316BB841C7B046A007A9ECB /* Assets.xcassets */,
 				4316BB861C7B046A007A9ECB /* LaunchScreen.storyboard */,
@@ -157,6 +167,8 @@
 			children = (
 				4316BB811C7B046A007A9ECB /* Main.storyboard */,
 				4316BB901C7B0885007A9ECB /* Login.storyboard */,
+				43B6D8541C7EFC74000D6844 /* MainScreen.storyboard */,
+				4334D8111C7F215200557AE4 /* Dash.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -194,6 +206,7 @@
 				434EDAE71C7C4EF800934029 /* UITableView+Ext.swift */,
 				43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */,
 				430B4F441C7DE33700EE884A /* NSData+Ext.swift */,
+				43B6D8561C7F0379000D6844 /* UIButton+Ext.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -204,6 +217,7 @@
 				4316BBA61C7B61EE007A9ECB /* Colors.swift */,
 				4316BBA81C7B61F5007A9ECB /* Fonts.swift */,
 				430B4F421C7DC73D00EE884A /* URL.swift */,
+				43B6D8581C7F055C000D6844 /* Global.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -216,6 +230,23 @@
 				4316BBB31C7B73C6007A9ECB /* ConfirmPasswordRule.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		43B6D8501C7EF8A2000D6844 /* View Controllerrs */ = {
+			isa = PBXGroup;
+			children = (
+				43B6D8511C7EF8B5000D6844 /* Main Screen */,
+				4316BB9B1C7B23C6007A9ECB /* Login */,
+			);
+			name = "View Controllerrs";
+			sourceTree = "<group>";
+		};
+		43B6D8511C7EF8B5000D6844 /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				43B6D8521C7EFB61000D6844 /* MainScreenVC.swift */,
+			);
+			name = "Main Screen";
 			sourceTree = "<group>";
 		};
 		43D2D0B31C7C9A3500A41D4F /* Viewes */ = {
@@ -313,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4334D8121C7F215200557AE4 /* Dash.storyboard in Resources */,
 				4316BBAA1C7B6A27007A9ECB /* materialdesignicons-webfont.ttf in Resources */,
 				4316BBAB1C7B6A27007A9ECB /* Montserrat-Black.otf in Resources */,
 				4316BBAC1C7B6A27007A9ECB /* Montserrat-Bold.otf in Resources */,
@@ -325,6 +357,7 @@
 				4316BB881C7B046A007A9ECB /* LaunchScreen.storyboard in Resources */,
 				4316BB851C7B046A007A9ECB /* Assets.xcassets in Resources */,
 				4316BB831C7B046A007A9ECB /* Main.storyboard in Resources */,
+				43B6D8551C7EFC74000D6844 /* MainScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				430B4F3D1C7DBCB700EE884A /* RequestManager.swift in Sources */,
+				43B6D8531C7EFB61000D6844 /* MainScreenVC.swift in Sources */,
 				43D2D0B21C7C97D600A41D4F /* LoginVC.swift in Sources */,
 				4316BBA91C7B61F5007A9ECB /* Fonts.swift in Sources */,
 				4316BBB41C7B73C6007A9ECB /* ConfirmPasswordRule.swift in Sources */,
@@ -410,10 +444,12 @@
 				430B4F451C7DE33700EE884A /* NSData+Ext.swift in Sources */,
 				434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */,
 				43D2D0B81C7C9B2D00A41D4F /* UIView+Ext.swift in Sources */,
+				43B6D8571C7F0379000D6844 /* UIButton+Ext.swift in Sources */,
 				43D2D0B61C7C9ABE00A41D4F /* LoginTextField.swift in Sources */,
 				4316BB801C7B046A007A9ECB /* ViewController.swift in Sources */,
 				4316BB7E1C7B046A007A9ECB /* AppDelegate.swift in Sources */,
 				430B4F481C7DEAF000EE884A /* LoaderViewManager.swift in Sources */,
+				43B6D8591C7F055C000D6844 /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
