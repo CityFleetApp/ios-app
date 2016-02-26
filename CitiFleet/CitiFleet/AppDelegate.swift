@@ -29,6 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UIApplication.sharedApplication().delegate as! AppDelegate
     }
     
+    func rootViewController() -> UIViewController {
+        return (self.window?.rootViewController)!
+    }
+    
     func test() {
         User.signUp("testUser2", password: "Pass1234", confirmPassword: "Pass1234", fullName: "Test User", phone: "+12342334234", hackLicense: "aoeuaoeu aoeuaoeu", email: "ma12il@mail.com") { (user, error) -> () in
             debugPrint(error?.serverMessage(), user?.token)
