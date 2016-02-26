@@ -9,7 +9,16 @@
 import UIKit
 
 struct Sizes {
+    struct Image {
+        static let avatarSize: CGFloat = 393
+    }
     struct Button {
         static let ImageTitleSpacing: CGFloat = 6.0
+    }
+}
+
+struct Constant {
+    struct Image {
+        static let imageBlurRadius: CGFloat = 7
     }
 }

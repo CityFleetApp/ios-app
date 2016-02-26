@@ -61,13 +61,14 @@ func RBResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
 }
 
 class UIImageManager: NSObject {
+    static let GaussianBlur = "CIGaussianBlur"
     func blur(scrImage:UIImage) -> UIImage {
-        let gaussianBlurFilter = CIFilter(name: "CIGaussianBlur")
+        let gaussianBlurFilter = CIFilter(name: UIImageManager.GaussianBlur)
         gaussianBlurFilter?.setDefaults()
         
         let inputImage = CIImage(image: scrImage)
         gaussianBlurFilter?.setValue(inputImage, forKey: kCIInputImageKey)
-        gaussianBlurFilter?.setValue(7, forKey: kCIInputRadiusKey)
+        gaussianBlurFilter?.setValue(Constant.Image.imageBlurRadius, forKey: kCIInputRadiusKey)
         
         let outputImage = gaussianBlurFilter?.outputImage
         let context = CIContext(options: nil)

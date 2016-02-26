@@ -20,7 +20,8 @@ class DashVC: UITableViewController {
         }
         set {
             if var image = newValue {
-                image = RBSquareImageTo(image, size: CGSize(width: 393, height: 393)) //RBSquareImage(image) //UIImageManager().cropAndScale(image)
+                let imageSide = Sizes.Image.avatarSize
+                image = RBSquareImageTo(image, size: CGSize(width: imageSide, height: imageSide))
                 avatar.image = image
                 backgroundAvatar.image = UIImageManager().blur(image)
             }
@@ -33,8 +34,6 @@ class DashVC: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-//        let image = UIImage(named: "test_avatar.png")
-//        avatarImage = image
         cameraButton.setDefaultShadow()
     }
     
@@ -46,11 +45,13 @@ class DashVC: UITableViewController {
         alert.addAction(fabric.cancelAction())
         self.presentViewController(alert, animated: true, completion: nil)
     }
-    
-    
 }
 
 extension DashVC {
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.setZeroSeparator(cell)
+    }
+    
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(tableView.bounds), height: 22))
         view.backgroundColor = UIColor.blackColor()

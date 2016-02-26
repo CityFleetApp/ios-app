@@ -48,6 +48,7 @@
 		43D2D0B61C7C9ABE00A41D4F /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B51C7C9ABE00A41D4F /* LoginTextField.swift */; };
 		43D2D0B81C7C9B2D00A41D4F /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */; };
 		43DC05851C8053FB00AB670A /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05841C8053FB00AB670A /* Titles.swift */; };
+		43DC05871C8098FD00AB670A /* DashMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05861C8098FD00AB670A /* DashMenuCell.swift */; };
 		8F7B09119E0D4A8BE702AA9A /* Pods_CitiFleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		43D2D0B51C7C9ABE00A41D4F /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTextField.swift; path = Viewes/Login/LoginTextField.swift; sourceTree = "<group>"; };
 		43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Ext.swift"; path = "Extensions/UIView+Ext.swift"; sourceTree = "<group>"; };
 		43DC05841C8053FB00AB670A /* Titles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Titles.swift; path = Constants/Titles.swift; sourceTree = "<group>"; };
+		43DC05861C8098FD00AB670A /* DashMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashMenuCell.swift; path = Viewes/Dash/DashMenuCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				4334D8141C7F496F00557AE4 /* DashVC.swift */,
+				43DC05861C8098FD00AB670A /* DashMenuCell.swift */,
 			);
 			name = Dash;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 			files = (
 				430B4F3D1C7DBCB700EE884A /* RequestManager.swift in Sources */,
 				43B6D8531C7EFB61000D6844 /* MainScreenVC.swift in Sources */,
+				43DC05871C8098FD00AB670A /* DashMenuCell.swift in Sources */,
 				43D2D0B21C7C97D600A41D4F /* LoginVC.swift in Sources */,
 				4316BBA91C7B61F5007A9ECB /* Fonts.swift in Sources */,
 				4334D8151C7F496F00557AE4 /* DashVC.swift in Sources */,
