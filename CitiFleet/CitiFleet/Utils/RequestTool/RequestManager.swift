@@ -19,7 +19,7 @@ class RequestManager: NSObject {
     private class func header() -> [String:String] {
         return [Params.Header.contentType: Params.Header.json]
     }
-    
+
     private class func errorWithInfo(error: NSError, data: NSData) -> NSError {
         let json = JSON(data: data)
         var errorText: String?
