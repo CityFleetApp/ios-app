@@ -10,6 +10,10 @@ import UIKit
 import SwiftValidator
 
 class LoginVC: UIViewController {
+    typealias Placeholder = StringConstants.Login.Placeholder
+    typealias ErrorMessage = ErrorString.SignUp
+    typealias LoginFont = Fonts.Login
+    
     private var logo2MailStartHeight: CGFloat?
     private var button2BottomStartHeight: CGFloat?
     
@@ -20,7 +24,15 @@ class LoginVC: UIViewController {
     @IBOutlet var passwordTextField: LoginTextField!
     
     private let validator = Validator()
-    private let placeholderText = [""]
+    private let placeholderText = [
+        Placeholder.Email,
+        Placeholder.Password
+    ]
+    
+    class func viewControllerFromStoryboard() -> LoginVC {
+        let storyboard = UIStoryboard(name: Storyboard.LoginStoryboard, bundle: NSBundle.mainBundle())
+        return storyboard.instantiateViewControllerWithIdentifier(ViewControllerID.Login) as! LoginVC
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +59,9 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func logIn(sender: AnyObject) {
+        mailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        
         validator.validate { (errors) -> Void in
             for error in errors {
                 error.0.text = ""
@@ -54,15 +69,39 @@ class LoginVC: UIViewController {
             }
             
             if errors.count == 0 {
-                
+                self.loginRequest()
             }
         }
     }
     
     func loginRequest() {
-        User.login(mailTextField.text!, password: passwordTextField.text!) { (user, error) -> () in
-            
+        let mail = mailTextField.text
+        
+        User.login(mail!, password: passwordTextField.text!) { (user, error) -> () in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                if let _ = user {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                } else {
+                    RequestErrorHandler(error: error!, title: Titles.error).handle()
+                }                
+            })
         }
+    }
+}
+
+//MARK: - Text Field Delegate
+extension LoginVC: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == mailTextField {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            passwordTextField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        textField.setPlaceholder(LoginFont.LoginPlaceholder, color: Color.Login.PlaceHolderForeground, text: placeholderText[textField.tag])
     }
 }
 
@@ -77,7 +116,11 @@ extension LoginVC {
     }
     
     func keyboardWillHide(userInfo:NSNotification?) {
-        updateConstraints(userInfo)
+        button2BottomLayout.constant = button2BottomStartHeight!
+        logo2TopTextFieldLayout.constant = logo2MailStartHeight!
+        UIView.animateWithDuration(0.5) {
+            self.view.layoutSubviews()
+        }
     }
     
     func updateConstraints(userInfo:NSNotification?) {

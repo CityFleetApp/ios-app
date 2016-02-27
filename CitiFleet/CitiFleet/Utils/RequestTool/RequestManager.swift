@@ -21,7 +21,11 @@ class RequestManager: NSObject {
     }
     
     private class func errorWithInfo(error: NSError, data: NSData) -> NSError {
-        let errorText = String(data: data, encoding: NSUTF8StringEncoding)
+        let json = JSON(data: data)
+        var errorText: String?
+        if let errJson = json.dictionary?.first {
+            errorText = errJson.1.array?.first?.string
+        }
         var userInfo = error.userInfo
         userInfo[Params.Response.serverError] = errorText
         return NSError(domain: error.domain, code: error.code, userInfo: userInfo)
@@ -42,7 +46,7 @@ class RequestManager: NSObject {
                     completion(dict, nil)
                     break
                 case .Failure(let error):
-                    completion(nil, error)
+                    completion(nil, errorWithInfo(error, data: response.data!))
                     break
                 }
         }

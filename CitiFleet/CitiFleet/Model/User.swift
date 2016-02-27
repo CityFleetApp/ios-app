@@ -48,6 +48,10 @@ class User: NSObject {
     
     class func login(username: String, password: String, completion:((User?, NSError?) -> ())) {
         RequestManager.login(username, password: password) { (userData, error) -> () in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
             let user = User()
             user.token = userData![Params.Login.token] as? String
             user.password = password
@@ -57,7 +61,7 @@ class User: NSObject {
 //            user.hackLicense = userData![Params.Login.hackLicense] as? String
 //            user.phone = userData![Params.Login.phone] as? String
             currUser = user 
-            completion(user, error)
+            completion(user, nil)
         }
     }
     

@@ -9,12 +9,12 @@
 import Foundation
 
 struct URL {
-    static let Sandbox = "http://104.236.223.160:8000/"
+    static let Sandbox = "http://citifleet.steelkiwi.com/api/"
     static let Production = ""
     static let BaseUrl = Sandbox
     struct Login {
-        static let Login = "users/login/"
-        static let SignUp = "users/signup/"
+        static let Login = "userslogin/"
+        static let SignUp = "userssignup/"
     }
 }
 

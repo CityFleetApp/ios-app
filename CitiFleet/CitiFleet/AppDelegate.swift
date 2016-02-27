@@ -30,19 +30,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func rootViewController() -> UIViewController {
-        return (self.window?.rootViewController)!
+        let rootViewController = (self.window?.rootViewController)!
+        return topViewController(rootViewController)
     }
     
-    func test() {
-        User.signUp("testUser2", password: "Pass1234", confirmPassword: "Pass1234", fullName: "Test User", phone: "+12342334234", hackLicense: "aoeuaoeu aoeuaoeu", email: "ma12il@mail.com") { (user, error) -> () in
-            debugPrint(error?.serverMessage(), user?.token)
+    func topViewController(viewController: UIViewController) -> UIViewController {
+        if let presentedVC = viewController.presentedViewController {
+            return topViewController(presentedVC)
         }
+        return viewController
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics.self])
         application.statusBarStyle = .LightContent
-        test()
+        
         return true
     }
 
@@ -61,7 +63,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        if User.currentUser() == nil {
+            let storyboard = UIStoryboard(name: Storyboard.LoginStoryboard, bundle: NSBundle.mainBundle())
+            let loginNavController = storyboard.instantiateViewControllerWithIdentifier(ViewControllerID.Login)
+            rootViewController().presentViewController(loginNavController, animated: true, completion: nil)
+        }
     }
 
     func applicationWillTerminate(application: UIApplication) {

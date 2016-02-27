@@ -27,4 +27,3 @@ extension UITextField {
         self.setPlaceholder(Fonts.Login.SignUpPlaceHolder, color: UIColor(hex: 0xe71d36, alpha: 0.7), text: placeHolderText)
     }
 }
-

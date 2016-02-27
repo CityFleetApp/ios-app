@@ -21,6 +21,8 @@
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -504,7 +506,7 @@
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                     <state key="normal" title="SIGN UP">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -595,10 +597,10 @@
                                     <constraint firstAttribute="width" secondItem="C8W-UJ-Xe3" secondAttribute="height" multiplier="31:23" id="keg-65-6go"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kio-6h-WNr" customClass="LoginTextField" customModule="CitiFleet" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kio-6h-WNr" customClass="LoginTextField" customModule="CitiFleet" customModuleProvider="target">
                                 <rect key="frame" x="22" y="477" width="370" height="49"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16.700000762939453"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.700000762939453"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -607,11 +609,14 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="login_pass-ic"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="attributedPlaceholderText" value="Enter Password"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="bu6-N9-BrG" id="M7E-kc-xBO"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWY-R4-Nbv" customClass="LoginTextField" customModule="CitiFleet" customModuleProvider="target">
                                 <rect key="frame" x="22" y="418" width="370" height="49"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="DiwanMishafi" family="Mishafi" pointSize="16.700000762939453"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.700000762939453"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -623,6 +628,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="attributedPlaceholderText" value="Enter Email"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="bu6-N9-BrG" id="Mrz-Iy-3Gl"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -665,7 +673,7 @@
         <!--Navigation Controller-->
         <scene sceneID="yY6-41-DuB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uBX-XG-HIT" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNC" automaticallyAdjustsScrollViewInsets="NO" id="uBX-XG-HIT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" translucent="NO" id="nmb-Bx-wze">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -684,7 +692,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgG-2x-Kgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="899" y="447"/>
+            <point key="canvasLocation" x="1054" y="447"/>
         </scene>
     </scenes>
     <resources>

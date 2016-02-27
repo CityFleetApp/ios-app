@@ -49,6 +49,9 @@
 		43D2D0B81C7C9B2D00A41D4F /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */; };
 		43DC05851C8053FB00AB670A /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05841C8053FB00AB670A /* Titles.swift */; };
 		43DC05871C8098FD00AB670A /* DashMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05861C8098FD00AB670A /* DashMenuCell.swift */; };
+		43DC05891C80AEBB00AB670A /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05881C80AEBB00AB670A /* Strings.swift */; };
+		43DC058B1C80BD6A00AB670A /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC058A1C80BD6A00AB670A /* Storyboard.swift */; };
+		43DC058E1C80C26200AB670A /* RequestErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC058D1C80C26200AB670A /* RequestErrorHandler.swift */; };
 		8F7B09119E0D4A8BE702AA9A /* Pods_CitiFleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +103,9 @@
 		43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Ext.swift"; path = "Extensions/UIView+Ext.swift"; sourceTree = "<group>"; };
 		43DC05841C8053FB00AB670A /* Titles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Titles.swift; path = Constants/Titles.swift; sourceTree = "<group>"; };
 		43DC05861C8098FD00AB670A /* DashMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashMenuCell.swift; path = Viewes/Dash/DashMenuCell.swift; sourceTree = "<group>"; };
+		43DC05881C80AEBB00AB670A /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Constants/Strings.swift; sourceTree = "<group>"; };
+		43DC058A1C80BD6A00AB670A /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Storyboard.swift; path = Constants/Storyboard.swift; sourceTree = "<group>"; };
+		43DC058D1C80C26200AB670A /* RequestErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestErrorHandler.swift; path = Utils/ErrorHandler/RequestErrorHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +243,8 @@
 				430B4F421C7DC73D00EE884A /* URL.swift */,
 				43B6D8581C7F055C000D6844 /* Global.swift */,
 				43DC05841C8053FB00AB670A /* Titles.swift */,
+				43DC05881C80AEBB00AB670A /* Strings.swift */,
+				43DC058A1C80BD6A00AB670A /* Storyboard.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -244,6 +252,7 @@
 		4316BBB21C7B7399007A9ECB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				43DC058C1C80C20F00AB670A /* Error Handler */,
 				430B4F461C7DEA8500EE884A /* Loader */,
 				430B4F381C7DBA8600EE884A /* Request Util */,
 				4316BBB31C7B73C6007A9ECB /* ConfirmPasswordRule.swift */,
@@ -292,6 +301,14 @@
 				43D2D0B51C7C9ABE00A41D4F /* LoginTextField.swift */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		43DC058C1C80C20F00AB670A /* Error Handler */ = {
+			isa = PBXGroup;
+			children = (
+				43DC058D1C80C26200AB670A /* RequestErrorHandler.swift */,
+			);
+			name = "Error Handler";
 			sourceTree = "<group>";
 		};
 		A1BF0D86F407C96A1C73890B /* Pods */ = {
@@ -468,6 +485,7 @@
 				4316BBA91C7B61F5007A9ECB /* Fonts.swift in Sources */,
 				4334D8151C7F496F00557AE4 /* DashVC.swift in Sources */,
 				4316BBB41C7B73C6007A9ECB /* ConfirmPasswordRule.swift in Sources */,
+				43DC058B1C80BD6A00AB670A /* Storyboard.swift in Sources */,
 				4316BBA21C7B5EEC007A9ECB /* UITextField+Ext.swift in Sources */,
 				4316BBA41C7B6154007A9ECB /* UIColor+HEX.swift in Sources */,
 				4334D81F1C7F783F00557AE4 /* UIImageBlure.swift in Sources */,
@@ -477,10 +495,12 @@
 				43DC05851C8053FB00AB670A /* Titles.swift in Sources */,
 				4316BBA71C7B61EE007A9ECB /* Colors.swift in Sources */,
 				4316BB9D1C7B23ED007A9ECB /* MainLoginVC.swift in Sources */,
+				43DC058E1C80C26200AB670A /* RequestErrorHandler.swift in Sources */,
 				430B4F451C7DE33700EE884A /* NSData+Ext.swift in Sources */,
 				434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */,
 				43D2D0B81C7C9B2D00A41D4F /* UIView+Ext.swift in Sources */,
 				43B6D8571C7F0379000D6844 /* UIButton+Ext.swift in Sources */,
+				43DC05891C80AEBB00AB670A /* Strings.swift in Sources */,
 				43D2D0B61C7C9ABE00A41D4F /* LoginTextField.swift in Sources */,
 				4316BB801C7B046A007A9ECB /* ViewController.swift in Sources */,
 				4316BB7E1C7B046A007A9ECB /* AppDelegate.swift in Sources */,

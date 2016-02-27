@@ -9,7 +9,11 @@
 import UIKit
 import SwiftValidator
 
+
 class SignUpVC: UITableViewController {
+    typealias Placeholder = StringConstants.SignUp.Placeholder
+    typealias ErrorMessage = ErrorString.SignUp
+    
     @IBOutlet var fullName: UITextField!
     @IBOutlet var userName: UITextField!
     @IBOutlet var phone: UITextField!
@@ -21,13 +25,15 @@ class SignUpVC: UITableViewController {
     @IBOutlet var signUpBtn: UIButton!
     
     let validator = Validator()
-    private let placeholderText = ["Enter your full name",
-        "Enter your username",
-        "Enter your phone",
-        "Enter your hack license",
-        "Enter your email",
-        "Enter your password",
-        "Enter your confirm password"]
+    private let placeholderText = [
+        Placeholder.FullName,
+        Placeholder.Username,
+        Placeholder.Phone,
+        Placeholder.HackLicense,
+        Placeholder.Email,
+        Placeholder.Password,
+        Placeholder.ConfirmPassword
+    ]
     
     private var textFields: [UITextField]?
     
@@ -42,7 +48,7 @@ class SignUpVC: UITableViewController {
     func setValidations() {
         validator.registerField(fullName, rules: [RequiredRule(), FullNameRule()])
         validator.registerField(userName, rules: [RequiredRule()])
-        validator.registerField(phone, rules: [RequiredRule(), PhoneNumberRule(regex: "^\\d{11}$", message: "Enter a valid 11 digit phone number")])
+        validator.registerField(phone, rules: [RequiredRule(), PhoneNumberRule(regex: "^\\d{11}$", message: ErrorMessage.NotValidEmail)])
         validator.registerField(hackLicense, rules: [RequiredRule()])
         validator.registerField(email, rules: [RequiredRule(), EmailRule()])
         validator.registerField(password, rules: [RequiredRule(), PasswordRule()])
