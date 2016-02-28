@@ -19,7 +19,7 @@ extension UITextField {
 }
 
 extension UITextField {
-    func setStandardplaceHolder(placeHolderText: String) {
+    func setStandardSignUpPlaceHolder(placeHolderText: String) {
         self.setPlaceholder(Fonts.Login.SignUpPlaceHolder, color: UIColor(hex: 0xa8a9a9, alpha: 1), text: placeHolderText)
     }
     

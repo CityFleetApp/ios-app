@@ -76,8 +76,9 @@ class LoginVC: UIViewController {
     
     func loginRequest() {
         let mail = mailTextField.text
+        let password = passwordTextField.text!
         
-        User.login(mail!, password: passwordTextField.text!) { (user, error) -> () in
+        User.login(mail!, password: password) { (user, error) -> () in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 if let _ = user {
                     self.dismissViewControllerAnimated(true, completion: nil)

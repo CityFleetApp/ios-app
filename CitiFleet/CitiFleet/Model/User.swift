@@ -21,7 +21,6 @@ struct UserKeys {
 class User: NSObject, NSCoding {
     var userName: String?
     var fullName: String?
-    var password: String?
     var hackLicense: String?
     var phone: String?
     var email: String?
@@ -40,7 +39,7 @@ class User: NSObject, NSCoding {
         hackLicense = aDecoder.decodeObjectForKey(UserKeys.HackLicense) as? String
         phone = aDecoder.decodeObjectForKey(UserKeys.Phone) as? String
         email = aDecoder.decodeObjectForKey(UserKeys.Email) as? String
-        token = aDecoder.decodeObjectForKey(UserKeys.Token) as? String
+        token = aDecoder.decodeObjectForKey (UserKeys.Token) as? String
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
@@ -67,8 +66,8 @@ class User: NSObject, NSCoding {
     }
     
     //MARK: - LogIn / SignUp
-    class func signUp(user:User, confirmPassword:String, completion:((User?, NSError?) -> ())) {
-        User.signUp(user.userName!, password: user.password!, confirmPassword:confirmPassword, fullName: user.fullName!, phone: user.phone!, hackLicense: user.hackLicense!, email: user.email!, completion: completion)
+    class func signUp(user:User, password: String, confirmPassword:String, completion:((User?, NSError?) -> ())) {
+        User.signUp(user.userName!, password: password, confirmPassword:confirmPassword, fullName: user.fullName!, phone: user.phone!, hackLicense: user.hackLicense!, email: user.email!, completion: completion)
     }
     
     class func signUp(username: String, password: String, confirmPassword: String, fullName: String, phone: String, hackLicense: String, email: String, completion:((User?, NSError?) -> ())) {
@@ -80,7 +79,6 @@ class User: NSObject, NSCoding {
                 user.token = response![Params.Login.token] as? String
                 user.userName = username
                 user.fullName = fullName
-                user.password = password
                 user.hackLicense = hackLicense
                 user.phone = phone
                 user.email = email
@@ -98,7 +96,6 @@ class User: NSObject, NSCoding {
             }
             let user = User()
             user.token = userData![Params.Login.token] as? String
-            user.password = password
 //            user.email = userData![Params.Login.email] as? String
 //            user.userName = userData![Params.Login.username] as? String
 //            user.fullName = userData![Params.Login.fullName] as? String

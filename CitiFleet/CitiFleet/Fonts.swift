@@ -25,5 +25,6 @@ struct Fonts {
         static let NavigationTitle = UIFont(name: FontNames.Montserrat.Regular, size: 19)!
         static let SignUpPlaceHolder = UIFont(name: FontNames.Montserrat.Light, size: 14)!
         static let LoginPlaceholder = UIFont(name: FontNames.Montserrat.Light, size: 16.7)!
+        static let SignUpTextField = UIFont(name: FontNames.Montserrat.Regular, size: 16.56)!
     }
 }

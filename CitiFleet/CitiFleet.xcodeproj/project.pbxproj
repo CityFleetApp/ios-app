@@ -52,6 +52,7 @@
 		43DC05891C80AEBB00AB670A /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05881C80AEBB00AB670A /* Strings.swift */; };
 		43DC058B1C80BD6A00AB670A /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC058A1C80BD6A00AB670A /* Storyboard.swift */; };
 		43DC058E1C80C26200AB670A /* RequestErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC058D1C80C26200AB670A /* RequestErrorHandler.swift */; };
+		43DC05901C83336C00AB670A /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC058F1C83336C00AB670A /* PhoneTextField.swift */; };
 		8F7B09119E0D4A8BE702AA9A /* Pods_CitiFleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		43DC05881C80AEBB00AB670A /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Constants/Strings.swift; sourceTree = "<group>"; };
 		43DC058A1C80BD6A00AB670A /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Storyboard.swift; path = Constants/Storyboard.swift; sourceTree = "<group>"; };
 		43DC058D1C80C26200AB670A /* RequestErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestErrorHandler.swift; path = Utils/ErrorHandler/RequestErrorHandler.swift; sourceTree = "<group>"; };
+		43DC058F1C83336C00AB670A /* PhoneTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhoneTextField.swift; path = Viewes/Login/PhoneTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				43D2D0B51C7C9ABE00A41D4F /* LoginTextField.swift */,
+				43DC058F1C83336C00AB670A /* PhoneTextField.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				4316BB801C7B046A007A9ECB /* ViewController.swift in Sources */,
 				4316BB7E1C7B046A007A9ECB /* AppDelegate.swift in Sources */,
 				430B4F481C7DEAF000EE884A /* LoaderViewManager.swift in Sources */,
+				43DC05901C83336C00AB670A /* PhoneTextField.swift in Sources */,
 				43B6D8591C7F055C000D6844 /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
