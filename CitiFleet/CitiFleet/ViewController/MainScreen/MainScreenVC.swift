@@ -42,4 +42,11 @@ class MainScreenVC: UIViewController {
             button.tintColor = color
         }
     }
+    
+    @IBAction func openDash(sender: AnyObject) {
+        let storyboard = UIStoryboard(name: Storyboard.DashStoryboard, bundle: NSBundle.mainBundle())
+        let viewController = storyboard.instantiateViewControllerWithIdentifier(ViewControllerID.Dash)
+        presentViewController(viewController, animated: true, completion: nil)
+    }
+    
 }

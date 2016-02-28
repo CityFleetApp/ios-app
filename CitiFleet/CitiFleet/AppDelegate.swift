@@ -66,11 +66,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if rootViewController().restorationIdentifier == ViewControllerID.Login {
             return
         }
-//        if User.currentUser() == nil {
+        if User.currentUser() == nil {
             let storyboard = UIStoryboard(name: Storyboard.LoginStoryboard, bundle: NSBundle.mainBundle())
             let loginNavController = storyboard.instantiateViewControllerWithIdentifier(ViewControllerID.Login)
             rootViewController().presentViewController(loginNavController, animated: true, completion: nil)
-//        }
+        }
     }
 
     func applicationWillTerminate(application: UIApplication) {

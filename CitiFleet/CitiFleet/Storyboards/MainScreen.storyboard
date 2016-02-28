@@ -114,6 +114,9 @@
                                         <size key="value" width="2" height="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="openDash:" destination="4tr-YF-9SX" eventType="touchUpInside" id="CnR-yC-GZJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQS-bB-tps">
                                 <rect key="frame" x="545" y="489" width="44" height="44"/>

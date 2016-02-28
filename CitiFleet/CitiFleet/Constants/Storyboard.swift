@@ -10,8 +10,10 @@ import Foundation
 
 struct Storyboard {
     static let LoginStoryboard = "Login"
+    static let DashStoryboard = "Dash"
 }
 
 struct ViewControllerID {
     static let Login = "LoginNC"
+    static let Dash = "DashContainerVC"
 }
