@@ -14,16 +14,19 @@ class DashMenuCell: UITableViewCell {
     internal var titleColor = UIColor(hex: Color.Dash.CellTitleText, alpha: 1)
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesBegan(touches, withEvent: event)
         backgroundColor = selectedColor
         title.textColor = UIColor.whiteColor()
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesEnded(touches, withEvent: event)
         backgroundColor = UIColor.whiteColor()
         title.textColor = titleColor
     }
     
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+        super.touchesCancelled(touches, withEvent: event)
         backgroundColor = UIColor.whiteColor()
         title.textColor = titleColor
     }

@@ -53,6 +53,7 @@
 		43DC058B1C80BD6A00AB670A /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC058A1C80BD6A00AB670A /* Storyboard.swift */; };
 		43DC058E1C80C26200AB670A /* RequestErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC058D1C80C26200AB670A /* RequestErrorHandler.swift */; };
 		43DC05901C83336C00AB670A /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC058F1C83336C00AB670A /* PhoneTextField.swift */; };
+		43DC05B01C83BB7700AB670A /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05AF1C83BB7700AB670A /* Keys.swift */; };
 		8F7B09119E0D4A8BE702AA9A /* Pods_CitiFleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,8 @@
 		43DC058A1C80BD6A00AB670A /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Storyboard.swift; path = Constants/Storyboard.swift; sourceTree = "<group>"; };
 		43DC058D1C80C26200AB670A /* RequestErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestErrorHandler.swift; path = Utils/ErrorHandler/RequestErrorHandler.swift; sourceTree = "<group>"; };
 		43DC058F1C83336C00AB670A /* PhoneTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhoneTextField.swift; path = Viewes/Login/PhoneTextField.swift; sourceTree = "<group>"; };
+		43DC05AF1C83BB7700AB670A /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keys.swift; path = Constants/Keys.swift; sourceTree = "<group>"; };
+		43DC05B11C83BDA600AB670A /* CitiFleet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CitiFleet-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,7 @@
 				4316BB861C7B046A007A9ECB /* LaunchScreen.storyboard */,
 				4316BB891C7B046A007A9ECB /* Info.plist */,
 				4316BB921C7B1A11007A9ECB /* Font */,
+				43DC05B11C83BDA600AB670A /* CitiFleet-Bridging-Header.h */,
 			);
 			path = CitiFleet;
 			sourceTree = "<group>";
@@ -247,6 +251,7 @@
 				43DC05841C8053FB00AB670A /* Titles.swift */,
 				43DC05881C80AEBB00AB670A /* Strings.swift */,
 				43DC058A1C80BD6A00AB670A /* Storyboard.swift */,
+				43DC05AF1C83BB7700AB670A /* Keys.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -500,6 +505,7 @@
 				4316BB9D1C7B23ED007A9ECB /* MainLoginVC.swift in Sources */,
 				43DC058E1C80C26200AB670A /* RequestErrorHandler.swift in Sources */,
 				430B4F451C7DE33700EE884A /* NSData+Ext.swift in Sources */,
+				43DC05B01C83BB7700AB670A /* Keys.swift in Sources */,
 				434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */,
 				43D2D0B81C7C9B2D00A41D4F /* UIView+Ext.swift in Sources */,
 				43B6D8571C7F0379000D6844 /* UIButton+Ext.swift in Sources */,
@@ -621,11 +627,14 @@
 			baseConfigurationReference = 0BF2396D09E48EEAC22514F5 /* Pods-CitiFleet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CitiFleet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SKD.CitiFleet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CitiFleet/CitiFleet-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -634,11 +643,13 @@
 			baseConfigurationReference = 43B6C55349F831C910C33501 /* Pods-CitiFleet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = CitiFleet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SKD.CitiFleet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CitiFleet/CitiFleet-Bridging-Header.h";
 			};
 			name = Release;
 		};

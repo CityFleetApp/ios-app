@@ -108,7 +108,8 @@ class User: NSObject, NSCoding {
         }
     }
     
-    class func logout(completion:(Bool, NSError)?) {
+    class func logout() {
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(UserKeys.User)
         currUser = nil
     }
 }

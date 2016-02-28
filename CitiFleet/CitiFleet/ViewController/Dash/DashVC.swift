@@ -47,7 +47,34 @@ class DashVC: UITableViewController {
     }
 }
 
+//MARK: - Menu events
 extension DashVC {
+    func home() {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func logOut() {
+        dismissViewControllerAnimated(true) {
+            User.logout()
+            AppDelegate.sharedDelegate().showLoginViewController()
+        }
+    }
+}
+
+extension DashVC {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.row {
+        case 0:
+            home()
+            break
+        case 9:
+            logOut()
+            break
+        default:
+            break
+        }
+    }
+    
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         tableView.setZeroSeparator(cell)
     }
