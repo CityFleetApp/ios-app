@@ -63,6 +63,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
+        if rootViewController().restorationIdentifier == ViewControllerID.Login {
+            return
+        }
 //        if User.currentUser() == nil {
             let storyboard = UIStoryboard(name: Storyboard.LoginStoryboard, bundle: NSBundle.mainBundle())
             let loginNavController = storyboard.instantiateViewControllerWithIdentifier(ViewControllerID.Login)

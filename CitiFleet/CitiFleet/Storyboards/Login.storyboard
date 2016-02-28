@@ -687,7 +687,7 @@
         <!--Navigation Controller-->
         <scene sceneID="yY6-41-DuB">
             <objects>
-                <navigationController storyboardIdentifier="LoginNC" automaticallyAdjustsScrollViewInsets="NO" id="uBX-XG-HIT" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="LoginNC" storyboardIdentifier="LoginNC" automaticallyAdjustsScrollViewInsets="NO" id="uBX-XG-HIT" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" translucent="NO" id="nmb-Bx-wze">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
