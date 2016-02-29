@@ -16,6 +16,7 @@ struct URL {
         static let Login = "userslogin/"
         static let SignUp = "userssignup/"
     }
+    static let Reports = "reports/"
 }
 
 struct Params {
@@ -24,8 +25,9 @@ struct Params {
     }
     struct Header {
         static let contentType = "Content-Type"
-        static let authentication = "Authentication: Token"
+        static let authentication = "Authentication"
         static let json = "application/json"
+        static let token = "token "
     }
     struct Login {
         static let username = "username"
@@ -37,4 +39,10 @@ struct Params {
         static let passwordConfirm = "password_confirm"
         static let token = "token"
     }
+    struct Report {
+        static let reportType = "report_type"
+        static let latitude = "lat"
+        static let longitude = "lng"
+    }
+    
 }

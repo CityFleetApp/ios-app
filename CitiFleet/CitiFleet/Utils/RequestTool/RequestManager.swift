@@ -10,17 +10,58 @@ import Foundation
 import Alamofire
 import Swift
 import SwiftyJSON
+import ReachabilitySwift
 
 class RequestManager: NSObject {
-    private class func url(apiUrl:String) -> String {
+    private static var reachability: Reachability?
+    private static var isReachable: Bool?
+    private static let shared = RequestManager()
+    class func sharedInstance() -> RequestManager {
+        return RequestManager.shared
+    }
+    
+    override init() {
+        super.init()
+        createReachability()
+    }
+    
+    func url(apiUrl:String) -> String {
         return URL.BaseUrl + apiUrl
     }
     
-    private class func header() -> [String:String] {
-        return [Params.Header.contentType: Params.Header.json]
+    func header() -> [String:String] {
+        var header = [
+            Params.Header.contentType: Params.Header.json
+        ]
+        
+        if let token = User.currentUser()?.token {
+            header[Params.Header.authentication] = Params.Header.token + token
+        }
+        
+        return header
+    }
+    
+    func shouldStartRequest() -> Bool {
+        if RequestManager.isReachable != true {
+            let alert = UIAlertController(title: Titles.ConnectionFailed, message: ErrorString.ConnectionFailed, preferredStyle: .Alert)
+            let cancelAction = UIAlertAction(title: Titles.cancel, style: .Cancel, handler: nil)
+            alert.addAction(cancelAction)
+            AppDelegate.sharedDelegate().rootViewController().presentViewController(alert, animated: true, completion: nil)
+            return false
+        }
+        
+        LoaderViewManager.showLoader()
+        return true
+    }
+    
+    func endRequest(error: NSError?, responseData: NSData?) {
+        LoaderViewManager.hideLoader()
+        if error == nil {
+            return
+        }
     }
 
-    private class func errorWithInfo(error: NSError, data: NSData) -> NSError {
+    func errorWithInfo(error: NSError, data: NSData) -> NSError {
         let json = JSON(data: data)
         var errorText: String?
         if let errJson = json.dictionary?.first {
@@ -31,50 +72,32 @@ class RequestManager: NSObject {
         return NSError(domain: error.domain, code: error.code, userInfo: userInfo)
     }
     
-    class func login(username: String, password: String, completion:(([String: AnyObject]?, NSError?) -> ())) {
-        let params = [
-            Params.Login.username: username,
-            Params.Login.password: password
-        ]
+}
+
+//MARK: - Reachability
+extension RequestManager {
+    private func createReachability() {
+        do {
+            RequestManager.reachability = try Reachability.reachabilityForInternetConnection()
+        } catch {
+            return
+        }
         
-        Alamofire.request(.POST, url(URL.Login.Login), headers: header(), parameters: params, encoding: .JSON)
-            .validate(statusCode: 200..<300)
-            .responseJSON { response in
-                switch response.result {
-                case .Success(let respJSON):
-                    let dict = respJSON as? [String: AnyObject]
-                    completion(dict, nil)
-                    break
-                case .Failure(let error):
-                    completion(nil, errorWithInfo(error, data: response.data!))
-                    break
-                }
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("reachabilityChanged:"), name: ReachabilityChangedNotification, object: RequestManager.reachability)
+        do {
+            try RequestManager.reachability?.startNotifier()
+        } catch {
+            return
         }
     }
     
-    class func signUp(username:String, email:String, password:String, confirmPassword:String, fullName:String, hackLicense:String, phone:String, completion:(([String: AnyObject]?, NSError?) -> ())) {
-        let params = [
-            Params.Login.username: username,
-            Params.Login.email: email,
-            Params.Login.passwordConfirm: confirmPassword,
-            Params.Login.password: password,
-            Params.Login.phone: phone,
-            Params.Login.hackLicense: hackLicense,
-            Params.Login.fullName: fullName
-        ]
+    private func reachabilityChanged(note: NSNotification) {
+        let reachability = note.object as! Reachability
         
-        Alamofire.request(.POST, url(URL.Login.SignUp), headers: header(), parameters: params, encoding: .JSON)
-            .validate(statusCode: 200..<300)
-            .responseJSON { response in
-                switch response.result {
-                case .Success(let respJSON):
-                    let dict = respJSON as? [String: AnyObject]
-                    completion(dict, nil)
-                    break
-                case .Failure(let error):
-                    completion(nil, errorWithInfo(error, data: response.data!))
-                    break
-                }
+        if reachability.isReachable() {
+            RequestManager.isReachable = true
+        } else {
+            RequestManager.isReachable = false
         }
     }
 }

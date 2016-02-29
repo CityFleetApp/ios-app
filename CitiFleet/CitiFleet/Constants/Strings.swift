@@ -30,6 +30,7 @@ struct StringConstants {
 
 struct ErrorString {
     static let DefaultMessage = "Something went wrong"
+    static let ConnectionFailed = "Please, check your internet settings"
     struct SignUp {
         static let NotValidPhone = "Enter a valid 11 digit phone number"
         

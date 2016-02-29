@@ -71,7 +71,7 @@ class User: NSObject, NSCoding {
     }
     
     class func signUp(username: String, password: String, confirmPassword: String, fullName: String, phone: String, hackLicense: String, email: String, completion:((User?, NSError?) -> ())) {
-        RequestManager.signUp(username, email: email, password: password, confirmPassword: confirmPassword, fullName: fullName, hackLicense: hackLicense, phone: phone) { (response, error) -> () in
+        RequestManager.sharedInstance().signUp(username, email: email, password: password, confirmPassword: confirmPassword, fullName: fullName, hackLicense: hackLicense, phone: phone) { (response, error) -> () in
             if let error = error {
                 completion(nil, error)
             } else {
@@ -89,7 +89,7 @@ class User: NSObject, NSCoding {
     }
     
     class func login(username: String, password: String, completion:((User?, NSError?) -> ())) {
-        RequestManager.login(username, password: password) { (userData, error) -> () in
+        RequestManager.sharedInstance().login(username, password: password) { (userData, error) -> () in
             if let error = error {
                 completion(nil, error)
                 return
