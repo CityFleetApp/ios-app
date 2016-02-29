@@ -167,7 +167,7 @@
                         <sections>
                             <tableViewSection id="FdQ-3H-lEq">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="Ygl-vq-bCv" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="Ygl-vq-bCv" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="235" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ygl-vq-bCv" id="YJO-9d-hX4">
@@ -206,7 +206,7 @@
                                             <outlet property="title" destination="dNL-gp-3nY" id="4iB-0O-ZOE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="46o-Rg-PSA" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="46o-Rg-PSA" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="301" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="46o-Rg-PSA" id="H54-3e-sy7">
@@ -245,7 +245,7 @@
                                             <outlet property="title" destination="WBZ-J5-MY7" id="M8M-pj-SUB"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="IZt-IN-e29" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="IZt-IN-e29" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="367" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IZt-IN-e29" id="vCG-Dg-xsG">
@@ -284,7 +284,7 @@
                                             <outlet property="title" destination="7JH-gz-Q2b" id="Usv-V1-Zcb"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="HbU-JE-EGw" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="HbU-JE-EGw" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="433" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HbU-JE-EGw" id="Pn8-10-ZX7">
@@ -323,7 +323,7 @@
                                             <outlet property="title" destination="V5K-vW-vNg" id="qBQ-ep-9Au"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="Fk2-SE-aQw" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="Fk2-SE-aQw" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="499" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fk2-SE-aQw" id="mpY-Ua-AuP">
@@ -362,7 +362,7 @@
                                             <outlet property="title" destination="A8j-Q9-e3O" id="OyE-Bb-MBI"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="D5x-0e-gHV" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="D5x-0e-gHV" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="565" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D5x-0e-gHV" id="wT4-Ol-wUk">
@@ -401,7 +401,7 @@
                                             <outlet property="title" destination="Mly-3y-1iH" id="TPJ-pY-vY5"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="zvw-EQ-s0o" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="zvw-EQ-s0o" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="631" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zvw-EQ-s0o" id="Fa9-3a-FXg">
@@ -440,7 +440,7 @@
                                             <outlet property="title" destination="VRi-4f-L6F" id="OjP-wz-HQ9"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="b6l-2j-y4f" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="b6l-2j-y4f" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="697" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b6l-2j-y4f" id="bXD-Sj-4ba">
@@ -479,7 +479,7 @@
                                             <outlet property="title" destination="8YH-RG-Sax" id="wfo-WG-D2u"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="ZoD-XX-rXG" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="ZoD-XX-rXG" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="763" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZoD-XX-rXG" id="5Yk-hJ-ySw">
@@ -518,7 +518,7 @@
                                             <outlet property="title" destination="58D-zy-cxA" id="U4d-Up-3DL"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="ZER-II-NiA" customClass="DashLogOutCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="ZER-II-NiA" customClass="DashLogOutCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="829" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZER-II-NiA" id="iLf-ve-7jn">

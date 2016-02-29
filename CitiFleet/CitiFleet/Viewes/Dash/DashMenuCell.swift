@@ -30,7 +30,6 @@ class DashMenuCell: UITableViewCell {
         backgroundColor = UIColor.whiteColor()
         title.textColor = titleColor
     }
-    
 }
 
 class DashLogOutCell: DashMenuCell {
