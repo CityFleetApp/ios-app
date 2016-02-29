@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ur-hN-J7f">
-                                <rect key="frame" x="0.0" y="20" width="600" height="530"/>
+                                <rect key="frame" x="0.0" y="22" width="600" height="528"/>
                                 <connections>
                                     <segue destination="HS0-Fm-CrT" kind="embed" id="pru-bU-m8X"/>
                                 </connections>
@@ -163,7 +163,7 @@
                             <constraint firstAttribute="trailing" secondItem="Hm4-0h-pyU" secondAttribute="trailing" id="EXQ-yZ-q1n"/>
                             <constraint firstItem="Zdu-2A-pf9" firstAttribute="leading" secondItem="wFr-2r-qAO" secondAttribute="leading" constant="11" id="GXv-ju-s6n"/>
                             <constraint firstItem="Hm4-0h-pyU" firstAttribute="top" secondItem="wFr-2r-qAO" secondAttribute="top" id="McK-gh-BAq"/>
-                            <constraint firstItem="3ur-hN-J7f" firstAttribute="top" secondItem="Sf3-FL-yrX" secondAttribute="bottom" id="QGU-sd-jHh"/>
+                            <constraint firstItem="3ur-hN-J7f" firstAttribute="top" secondItem="Sf3-FL-yrX" secondAttribute="bottom" constant="2" id="QGU-sd-jHh"/>
                             <constraint firstItem="3ur-hN-J7f" firstAttribute="leading" secondItem="wFr-2r-qAO" secondAttribute="leading" id="R79-9F-NXF"/>
                             <constraint firstItem="44F-Ff-BxB" firstAttribute="top" secondItem="3ur-hN-J7f" secondAttribute="bottom" id="ThO-kf-l8p"/>
                             <constraint firstItem="44F-Ff-BxB" firstAttribute="top" secondItem="JQS-bB-tps" secondAttribute="bottom" constant="17" id="gAo-bj-pJ6"/>
@@ -191,15 +191,132 @@
             </objects>
             <point key="canvasLocation" x="794" y="339"/>
         </scene>
-        <!--View Controller-->
+        <!--MapVC-->
         <scene sceneID="7ce-Pg-MtH">
             <objects>
-                <viewController id="HS0-Fm-CrT" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tWe-OD-uW8" customClass="GMSMapView">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="530"/>
+                <viewController id="HS0-Fm-CrT" customClass="MapVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tWe-OD-uW8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Oa-Uf-ER0" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="528"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amt-vJ-pbw">
+                                <rect key="frame" x="11" y="467" width="44" height="44"/>
+                                <color key="backgroundColor" red="0.0039215686274509803" green="0.086274509803921567" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="5YH-aZ-rKd"/>
+                                    <constraint firstAttribute="width" secondItem="amt-vJ-pbw" secondAttribute="height" multiplier="1:1" id="ozP-r5-xfW"/>
+                                </constraints>
+                                <state key="normal" image="direction">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37F-fo-ncr">
+                                <rect key="frame" x="557" y="12" width="32" height="32"/>
+                                <color key="backgroundColor" red="0.0039215686269999999" green="0.086274509799999996" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="37F-fo-ncr" secondAttribute="height" multiplier="1:1" id="Ga1-R2-GcU"/>
+                                    <constraint firstAttribute="width" constant="32" id="ig5-pv-CZ9"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="search"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="2" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="openDash:" destination="4tr-YF-9SX" eventType="touchUpInside" id="Ybt-l5-hi0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWK-Hq-PJo">
+                                <rect key="frame" x="557" y="56" width="32" height="32"/>
+                                <color key="backgroundColor" red="0.0039215686269999999" green="0.086274509799999996" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KWK-Hq-PJo" secondAttribute="height" multiplier="1:1" id="ZlT-I5-1vt"/>
+                                    <constraint firstAttribute="width" constant="32" id="jxR-MY-vAL"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="center_map"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="2" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="openDash:" destination="4tr-YF-9SX" eventType="touchUpInside" id="YBQ-be-zan"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4Oa-Uf-ER0" secondAttribute="trailing" id="04c-AV-R7v"/>
+                            <constraint firstItem="amt-vJ-pbw" firstAttribute="width" secondItem="amt-vJ-pbw" secondAttribute="height" multiplier="1:1" id="4sF-3W-D93"/>
+                            <constraint firstItem="KWK-Hq-PJo" firstAttribute="width" secondItem="KWK-Hq-PJo" secondAttribute="height" multiplier="1:1" id="Bmf-Ko-T3s"/>
+                            <constraint firstItem="amt-vJ-pbw" firstAttribute="leading" secondItem="tWe-OD-uW8" secondAttribute="leading" constant="11" id="CDF-UK-Yk8"/>
+                            <constraint firstAttribute="trailing" secondItem="37F-fo-ncr" secondAttribute="trailing" constant="11" id="OCc-lP-i6H"/>
+                            <constraint firstItem="37F-fo-ncr" firstAttribute="top" secondItem="tWe-OD-uW8" secondAttribute="top" constant="12" id="Rsc-Dz-XQ3"/>
+                            <constraint firstAttribute="bottom" secondItem="4Oa-Uf-ER0" secondAttribute="bottom" id="fXB-93-mTM"/>
+                            <constraint firstItem="37F-fo-ncr" firstAttribute="width" secondItem="37F-fo-ncr" secondAttribute="height" multiplier="1:1" id="gCb-RW-3N9"/>
+                            <constraint firstItem="4Oa-Uf-ER0" firstAttribute="top" secondItem="tWe-OD-uW8" secondAttribute="top" id="l6w-Nt-tXg"/>
+                            <constraint firstItem="4Oa-Uf-ER0" firstAttribute="leading" secondItem="tWe-OD-uW8" secondAttribute="leading" id="lz8-yD-dJI"/>
+                            <constraint firstItem="KWK-Hq-PJo" firstAttribute="centerX" secondItem="37F-fo-ncr" secondAttribute="centerX" id="mMr-wn-EVH"/>
+                            <constraint firstItem="KWK-Hq-PJo" firstAttribute="top" secondItem="37F-fo-ncr" secondAttribute="bottom" constant="12" id="vfU-Vw-XFR"/>
+                            <constraint firstAttribute="bottom" secondItem="amt-vJ-pbw" secondAttribute="bottom" constant="17" id="xBa-xh-PgJ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="centerMeBtn" destination="KWK-Hq-PJo" id="12c-oG-wYK"/>
+                        <outlet property="directionBtn" destination="amt-vJ-pbw" id="0xa-tq-N8Z"/>
+                        <outlet property="searchBtn" destination="37F-fo-ncr" id="5u0-JT-4kd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIS-Lh-Ive" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -209,9 +326,12 @@
     <resources>
         <image name="Add_friends" width="25" height="13"/>
         <image name="burger" width="18" height="13"/>
+        <image name="center_map" width="22" height="23"/>
         <image name="dashboard-ic" width="15" height="15"/>
+        <image name="direction" width="21" height="20"/>
         <image name="marketplace-ic" width="17" height="14"/>
         <image name="notification-ic" width="15" height="17"/>
         <image name="report-ic" width="19" height="16"/>
+        <image name="search" width="18" height="18"/>
     </resources>
 </document>
