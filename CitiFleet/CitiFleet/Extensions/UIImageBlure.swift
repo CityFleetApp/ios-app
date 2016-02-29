@@ -68,6 +68,7 @@ class UIImageManager: NSObject {
         
         let inputImage = CIImage(image: scrImage)
         gaussianBlurFilter?.setValue(inputImage, forKey: kCIInputImageKey)
+
         gaussianBlurFilter?.setValue(Constant.Image.imageBlurRadius, forKey: kCIInputRadiusKey)
         
         let outputImage = gaussianBlurFilter?.outputImage

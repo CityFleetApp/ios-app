@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ReportsView" customModule="CitiFleet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o7Z-O1-08V">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9uQ-F2-2Z7">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUL-H6-uz8">
+                            <rect key="frame" x="165" y="132" width="270" height="337"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIG-N3-gez">
+                                    <rect key="frame" x="0.0" y="42" width="270" height="295"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsQ-lN-kuE">
+                                            <rect key="frame" x="13" y="13" width="122" height="90"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.329999923706055"/>
+                                            <state key="normal" title="POLICE" image="police-ic">
+                                                <color key="titleColor" red="0.29803921568627451" green="0.3529411764705882" blue="0.46274509803921571" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHa-zl-9Vx">
+                                            <rect key="frame" x="13" y="103" width="122" height="89"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.329999923706055"/>
+                                            <state key="normal" title="ACCIDENT" image="accident-ic">
+                                                <color key="titleColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mV0-8i-b5W">
+                                            <rect key="frame" x="135" y="103" width="122" height="89"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.329999923706055"/>
+                                            <state key="normal" title="TRAFIC JAM" image="trafic---ic">
+                                                <color key="titleColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojg-C9-hBw">
+                                            <rect key="frame" x="13" y="192" width="122" height="90"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.329999923706055"/>
+                                            <state key="normal" title="HAZARD" image="hazard-ic">
+                                                <color key="titleColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyV-EM-IFr">
+                                            <rect key="frame" x="135" y="192" width="122" height="90"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.329999923706055"/>
+                                            <state key="normal" title="ROAD CLOSURE" image="road-closure-ic">
+                                                <color key="titleColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmq-rB-hpQ">
+                                            <rect key="frame" x="135" y="13" width="122" height="90"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.329999923706055"/>
+                                            <state key="normal" title="TLC" image="tlc-ic">
+                                                <color key="titleColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="mV0-8i-b5W" firstAttribute="top" secondItem="Tmq-rB-hpQ" secondAttribute="bottom" id="1ja-3a-1cs"/>
+                                        <constraint firstItem="BHa-zl-9Vx" firstAttribute="centerX" secondItem="gsQ-lN-kuE" secondAttribute="centerX" id="3Ue-zX-UGi"/>
+                                        <constraint firstItem="ojg-C9-hBw" firstAttribute="width" secondItem="gsQ-lN-kuE" secondAttribute="width" id="6C0-1R-6A4"/>
+                                        <constraint firstItem="Tmq-rB-hpQ" firstAttribute="width" secondItem="gsQ-lN-kuE" secondAttribute="width" id="CgN-zZ-PbI"/>
+                                        <constraint firstItem="mV0-8i-b5W" firstAttribute="centerX" secondItem="Tmq-rB-hpQ" secondAttribute="centerX" id="DbO-kT-BcF"/>
+                                        <constraint firstItem="BHa-zl-9Vx" firstAttribute="width" secondItem="gsQ-lN-kuE" secondAttribute="width" id="JB2-YA-UZ2"/>
+                                        <constraint firstItem="ojg-C9-hBw" firstAttribute="top" secondItem="BHa-zl-9Vx" secondAttribute="bottom" id="PGF-ZX-uA8"/>
+                                        <constraint firstItem="BHa-zl-9Vx" firstAttribute="height" secondItem="gsQ-lN-kuE" secondAttribute="height" id="UBb-hR-4PY"/>
+                                        <constraint firstItem="OyV-EM-IFr" firstAttribute="width" secondItem="gsQ-lN-kuE" secondAttribute="width" id="XMM-o9-L10"/>
+                                        <constraint firstItem="Tmq-rB-hpQ" firstAttribute="height" secondItem="gsQ-lN-kuE" secondAttribute="height" id="YKf-Hk-xq0"/>
+                                        <constraint firstItem="gsQ-lN-kuE" firstAttribute="top" secondItem="FIG-N3-gez" secondAttribute="top" constant="13" id="Z69-0T-92A"/>
+                                        <constraint firstItem="BHa-zl-9Vx" firstAttribute="top" secondItem="gsQ-lN-kuE" secondAttribute="bottom" id="aJV-9d-tL1"/>
+                                        <constraint firstAttribute="bottom" secondItem="OyV-EM-IFr" secondAttribute="bottom" constant="13" id="azn-a4-X8g"/>
+                                        <constraint firstItem="Tmq-rB-hpQ" firstAttribute="leading" secondItem="gsQ-lN-kuE" secondAttribute="trailing" id="blO-ZU-FyQ"/>
+                                        <constraint firstItem="gsQ-lN-kuE" firstAttribute="leading" secondItem="FIG-N3-gez" secondAttribute="leading" constant="13" id="c97-Di-BAs"/>
+                                        <constraint firstItem="mV0-8i-b5W" firstAttribute="height" secondItem="gsQ-lN-kuE" secondAttribute="height" id="cS6-Hr-Lek"/>
+                                        <constraint firstItem="OyV-EM-IFr" firstAttribute="top" secondItem="mV0-8i-b5W" secondAttribute="bottom" id="ckw-SB-lLW"/>
+                                        <constraint firstAttribute="trailing" secondItem="OyV-EM-IFr" secondAttribute="trailing" constant="13" id="dak-tD-Ieh"/>
+                                        <constraint firstItem="OyV-EM-IFr" firstAttribute="centerX" secondItem="Tmq-rB-hpQ" secondAttribute="centerX" id="f57-Fn-Euw"/>
+                                        <constraint firstItem="OyV-EM-IFr" firstAttribute="height" secondItem="gsQ-lN-kuE" secondAttribute="height" id="frz-hw-3Fa"/>
+                                        <constraint firstItem="ojg-C9-hBw" firstAttribute="height" secondItem="gsQ-lN-kuE" secondAttribute="height" id="ga6-6S-zEI"/>
+                                        <constraint firstItem="OyV-EM-IFr" firstAttribute="centerY" secondItem="ojg-C9-hBw" secondAttribute="centerY" id="hct-eZ-i1h"/>
+                                        <constraint firstItem="ojg-C9-hBw" firstAttribute="centerX" secondItem="gsQ-lN-kuE" secondAttribute="centerX" id="j3O-tC-cNW"/>
+                                        <constraint firstItem="mV0-8i-b5W" firstAttribute="width" secondItem="gsQ-lN-kuE" secondAttribute="width" id="uPl-ap-bRt"/>
+                                    </constraints>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l1m-pH-f58">
+                                    <rect key="frame" x="228" y="0.0" width="42" height="42"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="l1m-pH-f58" secondAttribute="height" multiplier="1:1" id="HTe-k7-J3k"/>
+                                    </constraints>
+                                    <state key="normal" image="Close-report-ic"/>
+                                    <connections>
+                                        <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="Xel-27-W4x"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DtQ-mB-THD">
+                                    <rect key="frame" x="20" y="0.0" width="208" height="42"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.090196078430000007" green="0.15686274510000001" blue="0.20784313730000001" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="FIG-N3-gez" firstAttribute="leading" secondItem="XUL-H6-uz8" secondAttribute="leading" id="D6v-G4-63M"/>
+                                <constraint firstAttribute="height" constant="337" id="FYc-Ka-oIY"/>
+                                <constraint firstItem="l1m-pH-f58" firstAttribute="leading" secondItem="DtQ-mB-THD" secondAttribute="trailing" id="IJR-rB-JJb"/>
+                                <constraint firstItem="FIG-N3-gez" firstAttribute="top" secondItem="DtQ-mB-THD" secondAttribute="bottom" id="JN9-Q4-utj"/>
+                                <constraint firstAttribute="bottom" secondItem="FIG-N3-gez" secondAttribute="bottom" id="LaG-5M-Ng1"/>
+                                <constraint firstAttribute="trailing" secondItem="FIG-N3-gez" secondAttribute="trailing" id="M6m-1N-2BO"/>
+                                <constraint firstAttribute="width" constant="270" id="ScF-sl-Jga"/>
+                                <constraint firstAttribute="trailing" secondItem="l1m-pH-f58" secondAttribute="trailing" id="TTw-0f-dMp"/>
+                                <constraint firstItem="FIG-N3-gez" firstAttribute="top" secondItem="XUL-H6-uz8" secondAttribute="top" constant="42" id="Xzh-mg-36R"/>
+                                <constraint firstItem="DtQ-mB-THD" firstAttribute="leading" secondItem="XUL-H6-uz8" secondAttribute="leading" constant="20" id="cbL-Eg-U65"/>
+                                <constraint firstItem="DtQ-mB-THD" firstAttribute="top" secondItem="XUL-H6-uz8" secondAttribute="top" id="isJ-cV-Xrf"/>
+                                <constraint firstItem="l1m-pH-f58" firstAttribute="top" secondItem="XUL-H6-uz8" secondAttribute="top" id="uyb-Zd-KP0"/>
+                                <constraint firstItem="FIG-N3-gez" firstAttribute="top" secondItem="l1m-pH-f58" secondAttribute="bottom" id="zWA-W7-vlS"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.34999999999999998" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="XUL-H6-uz8" firstAttribute="centerY" secondItem="9uQ-F2-2Z7" secondAttribute="centerY" id="SK1-wW-0YH"/>
+                        <constraint firstItem="XUL-H6-uz8" firstAttribute="centerX" secondItem="9uQ-F2-2Z7" secondAttribute="centerX" id="mkU-i3-tUG"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="9uQ-F2-2Z7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Cre-uz-JXS"/>
+                <constraint firstItem="o7Z-O1-08V" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Exx-a8-KOD"/>
+                <constraint firstAttribute="trailing" secondItem="9uQ-F2-2Z7" secondAttribute="trailing" id="InL-kk-bJm"/>
+                <constraint firstItem="9uQ-F2-2Z7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RW9-v8-BD1"/>
+                <constraint firstAttribute="bottom" secondItem="o7Z-O1-08V" secondAttribute="bottom" id="SQG-CI-1WH"/>
+                <constraint firstAttribute="bottom" secondItem="9uQ-F2-2Z7" secondAttribute="bottom" id="b9D-lc-ODB"/>
+                <constraint firstAttribute="trailing" secondItem="o7Z-O1-08V" secondAttribute="trailing" id="k5l-u9-shn"/>
+                <constraint firstItem="o7Z-O1-08V" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="t8j-tA-tLc"/>
+            </constraints>
+            <connections>
+                <outlet property="accountBtn" destination="BHa-zl-9Vx" id="ZKG-fS-nvG"/>
+                <outlet property="bgImage" destination="o7Z-O1-08V" id="tCA-8E-ozi"/>
+                <outlet property="bgView" destination="9uQ-F2-2Z7" id="JyM-lC-Apa"/>
+                <outlet property="hazardBtn" destination="ojg-C9-hBw" id="i5k-6w-wDX"/>
+                <outlet property="policeBtn" destination="gsQ-lN-kuE" id="Onm-2X-I0s"/>
+                <outlet property="reportMenu" destination="XUL-H6-uz8" id="0sQ-6l-khK"/>
+                <outlet property="roadClosureBtn" destination="OyV-EM-IFr" id="T8P-vW-rib"/>
+                <outlet property="tlcBtn" destination="Tmq-rB-hpQ" id="4zi-an-thG"/>
+                <outlet property="traficBtn" destination="mV0-8i-b5W" id="y5A-wt-Xvf"/>
+            </connections>
+            <point key="canvasLocation" x="358" y="441"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Close-report-ic" width="10" height="10"/>
+        <image name="accident-ic" width="49" height="44"/>
+        <image name="hazard-ic" width="53" height="44"/>
+        <image name="police-ic" width="37" height="44"/>
+        <image name="road-closure-ic" width="44" height="44"/>
+        <image name="tlc-ic" width="37" height="44"/>
+        <image name="trafic---ic" width="47" height="44"/>
+    </resources>
+</document>

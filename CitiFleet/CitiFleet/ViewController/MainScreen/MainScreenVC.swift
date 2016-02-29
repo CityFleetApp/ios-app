@@ -42,11 +42,17 @@ class MainScreenVC: UIViewController {
             button.tintColor = color
         }
     }
-    
+}
+
+//MARK: - Actions
+extension MainScreenVC {
     @IBAction func openDash(sender: AnyObject) {
         let storyboard = UIStoryboard(name: Storyboard.DashStoryboard, bundle: NSBundle.mainBundle())
         let viewController = storyboard.instantiateViewControllerWithIdentifier(ViewControllerID.Dash)
         presentViewController(viewController, animated: true, completion: nil)
     }
     
+    @IBAction func showReportsMenu(sender: AnyObject) {
+        ReportsView.reportFromNib().show(onViewController: self)
+    }
 }

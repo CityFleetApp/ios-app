@@ -13,6 +13,10 @@ struct Storyboard {
     static let DashStoryboard = "Dash"
 }
 
+struct XIB {
+    static let ReportXIB = "ReportsView"
+}
+
 struct ViewControllerID {
     static let Login = "LoginNC"
     static let Dash = "DashContainerVC"

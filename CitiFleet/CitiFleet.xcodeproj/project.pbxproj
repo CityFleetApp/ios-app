@@ -55,6 +55,8 @@
 		43DC05901C83336C00AB670A /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC058F1C83336C00AB670A /* PhoneTextField.swift */; };
 		43DC05B01C83BB7700AB670A /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05AF1C83BB7700AB670A /* Keys.swift */; };
 		43DC05B61C83C4C100AB670A /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05B51C83C4C100AB670A /* MapVC.swift */; };
+		43DC05B91C842BDD00AB670A /* ReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05B81C842BDD00AB670A /* ReportsView.swift */; };
+		43DC05BC1C8439CF00AB670A /* ReportsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43DC05BB1C8439CF00AB670A /* ReportsView.xib */; };
 		8F7B09119E0D4A8BE702AA9A /* Pods_CitiFleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +115,8 @@
 		43DC05AF1C83BB7700AB670A /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keys.swift; path = Constants/Keys.swift; sourceTree = "<group>"; };
 		43DC05B11C83BDA600AB670A /* CitiFleet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CitiFleet-Bridging-Header.h"; sourceTree = "<group>"; };
 		43DC05B51C83C4C100AB670A /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapVC.swift; path = ViewController/MainScreen/MapVC.swift; sourceTree = "<group>"; };
+		43DC05B81C842BDD00AB670A /* ReportsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportsView.swift; path = Viewes/Reports/ReportsView.swift; sourceTree = "<group>"; };
+		43DC05BB1C8439CF00AB670A /* ReportsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReportsView.xib; path = ViewController/XIB/ReportsView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,11 +181,11 @@
 				4334D8161C7F4B4700557AE4 /* test_avatar.png */,
 				4316BB7D1C7B046A007A9ECB /* AppDelegate.swift */,
 				4316BB7F1C7B046A007A9ECB /* ViewController.swift */,
-				430B4F391C7DBA9200EE884A /* Models */,
-				43D2D0B31C7C9A3500A41D4F /* Viewes */,
-				4316BBB21C7B7399007A9ECB /* Utils */,
 				4316BBA51C7B61D7007A9ECB /* Constants */,
 				4316BBA01C7B5EBE007A9ECB /* Extensions */,
+				4316BBB21C7B7399007A9ECB /* Utils */,
+				430B4F391C7DBA9200EE884A /* Models */,
+				43D2D0B31C7C9A3500A41D4F /* Viewes */,
 				43B6D8501C7EF8A2000D6844 /* View Controllerrs */,
 				4316BB8F1C7B086C007A9ECB /* Storyboards */,
 				4316BB841C7B046A007A9ECB /* Assets.xcassets */,
@@ -196,6 +200,7 @@
 		4316BB8F1C7B086C007A9ECB /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				43DC05BA1C842BE600AB670A /* XIB */,
 				4316BB811C7B046A007A9ECB /* Main.storyboard */,
 				4316BB901C7B0885007A9ECB /* Login.storyboard */,
 				43B6D8541C7EFC74000D6844 /* MainScreen.storyboard */,
@@ -300,6 +305,7 @@
 		43D2D0B31C7C9A3500A41D4F /* Viewes */ = {
 			isa = PBXGroup;
 			children = (
+				43DC05B71C842ACE00AB670A /* Reports */,
 				43D2D0B41C7C9A3D00A41D4F /* Login */,
 			);
 			name = Viewes;
@@ -320,6 +326,22 @@
 				43DC058D1C80C26200AB670A /* RequestErrorHandler.swift */,
 			);
 			name = "Error Handler";
+			sourceTree = "<group>";
+		};
+		43DC05B71C842ACE00AB670A /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				43DC05B81C842BDD00AB670A /* ReportsView.swift */,
+			);
+			name = Reports;
+			sourceTree = "<group>";
+		};
+		43DC05BA1C842BE600AB670A /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				43DC05BB1C8439CF00AB670A /* ReportsView.xib */,
+			);
+			name = XIB;
 			sourceTree = "<group>";
 		};
 		A1BF0D86F407C96A1C73890B /* Pods */ = {
@@ -407,6 +429,7 @@
 				4316BBAA1C7B6A27007A9ECB /* materialdesignicons-webfont.ttf in Resources */,
 				4316BBAB1C7B6A27007A9ECB /* Montserrat-Black.otf in Resources */,
 				4316BBAC1C7B6A27007A9ECB /* Montserrat-Bold.otf in Resources */,
+				43DC05BC1C8439CF00AB670A /* ReportsView.xib in Resources */,
 				4316BBAD1C7B6A27007A9ECB /* Montserrat-ExtraBold.otf in Resources */,
 				4316BBAE1C7B6A27007A9ECB /* Montserrat-Light.otf in Resources */,
 				4316BBAF1C7B6A27007A9ECB /* Montserrat-Regular.otf in Resources */,
@@ -511,6 +534,7 @@
 				430B4F451C7DE33700EE884A /* NSData+Ext.swift in Sources */,
 				43DC05B01C83BB7700AB670A /* Keys.swift in Sources */,
 				434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */,
+				43DC05B91C842BDD00AB670A /* ReportsView.swift in Sources */,
 				43D2D0B81C7C9B2D00A41D4F /* UIView+Ext.swift in Sources */,
 				43B6D8571C7F0379000D6844 /* UIButton+Ext.swift in Sources */,
 				43DC05891C80AEBB00AB670A /* Strings.swift in Sources */,

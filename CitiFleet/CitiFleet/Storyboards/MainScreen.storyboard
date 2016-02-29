@@ -63,6 +63,9 @@
                                         <state key="normal" title="Report" image="report-ic">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="showReportsMenu:" destination="4tr-YF-9SX" eventType="touchUpInside" id="QFT-4e-g61"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0039215686274509803" green="0.086274509803921567" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
@@ -195,6 +198,10 @@
         <scene sceneID="7ce-Pg-MtH">
             <objects>
                 <viewController id="HS0-Fm-CrT" customClass="MapVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z75-Zp-aP0"/>
+                        <viewControllerLayoutGuide type="bottom" id="EGd-Jj-50u"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tWe-OD-uW8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
