@@ -26,6 +26,11 @@ class MainScreenVC: UIViewController {
         updateButtonsColor(dashboardBtn)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.hidden = true
+    }
+    
     private func setCenterImage() {
         let buttons = [dashboardBtn, marketPlaceBtn, notificationsBtn, reportBtn]
         for button in buttons {

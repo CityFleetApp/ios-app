@@ -61,6 +61,9 @@
 		43DC05C01C847DAE00AB670A /* RequestManager+Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05BF1C847DAE00AB670A /* RequestManager+Login.swift */; };
 		43DC05C21C849B7C00AB670A /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05C11C849B7C00AB670A /* Report.swift */; };
 		43DC05C51C849C7E00AB670A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05C41C849C7E00AB670A /* LocationManager.swift */; };
+		43DC05C71C859C1900AB670A /* AddFriends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43DC05C61C859C1900AB670A /* AddFriends.storyboard */; };
+		43DC05C91C85AEAF00AB670A /* AddFriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05C81C85AEAF00AB670A /* AddFriendsVC.swift */; };
+		43DC05CC1C85B04F00AB670A /* AddFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05CB1C85B04F00AB670A /* AddFriendsCell.swift */; };
 		8F7B09119E0D4A8BE702AA9A /* Pods_CitiFleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +128,9 @@
 		43DC05BF1C847DAE00AB670A /* RequestManager+Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RequestManager+Login.swift"; path = "Utils/RequestTool/RequestManager+Login.swift"; sourceTree = "<group>"; };
 		43DC05C11C849B7C00AB670A /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Report.swift; path = Model/Report.swift; sourceTree = "<group>"; };
 		43DC05C41C849C7E00AB670A /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Utils/LocationManager/LocationManager.swift; sourceTree = "<group>"; };
+		43DC05C61C859C1900AB670A /* AddFriends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AddFriends.storyboard; path = Storyboards/AddFriends.storyboard; sourceTree = "<group>"; };
+		43DC05C81C85AEAF00AB670A /* AddFriendsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddFriendsVC.swift; path = ViewController/MainScreen/AddFriendsVC.swift; sourceTree = "<group>"; };
+		43DC05CB1C85B04F00AB670A /* AddFriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddFriendsCell.swift; path = Viewes/MainScreen/AddFriendsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +222,7 @@
 				4316BB901C7B0885007A9ECB /* Login.storyboard */,
 				43B6D8541C7EFC74000D6844 /* MainScreen.storyboard */,
 				4334D8111C7F215200557AE4 /* Dash.storyboard */,
+				43DC05C61C859C1900AB670A /* AddFriends.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -310,6 +317,7 @@
 			children = (
 				43B6D8521C7EFB61000D6844 /* MainScreenVC.swift */,
 				43DC05B51C83C4C100AB670A /* MapVC.swift */,
+				43DC05C81C85AEAF00AB670A /* AddFriendsVC.swift */,
 			);
 			name = "Main Screen";
 			sourceTree = "<group>";
@@ -317,6 +325,7 @@
 		43D2D0B31C7C9A3500A41D4F /* Viewes */ = {
 			isa = PBXGroup;
 			children = (
+				43DC05CA1C85AFE800AB670A /* Main Screen */,
 				43DC05B71C842ACE00AB670A /* Reports */,
 				43D2D0B41C7C9A3D00A41D4F /* Login */,
 			);
@@ -362,6 +371,14 @@
 				43DC05C41C849C7E00AB670A /* LocationManager.swift */,
 			);
 			name = "Location Manager";
+			sourceTree = "<group>";
+		};
+		43DC05CA1C85AFE800AB670A /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				43DC05CB1C85B04F00AB670A /* AddFriendsCell.swift */,
+			);
+			name = "Main Screen";
 			sourceTree = "<group>";
 		};
 		A1BF0D86F407C96A1C73890B /* Pods */ = {
@@ -452,6 +469,7 @@
 				43DC05BC1C8439CF00AB670A /* ReportsView.xib in Resources */,
 				4316BBAD1C7B6A27007A9ECB /* Montserrat-ExtraBold.otf in Resources */,
 				4316BBAE1C7B6A27007A9ECB /* Montserrat-Light.otf in Resources */,
+				43DC05C71C859C1900AB670A /* AddFriends.storyboard in Resources */,
 				4316BBAF1C7B6A27007A9ECB /* Montserrat-Regular.otf in Resources */,
 				4316BBB01C7B6A27007A9ECB /* Montserrat-SemiBold.otf in Resources */,
 				4316BBB11C7B6A27007A9ECB /* Montserrat-UltraLight.otf in Resources */,
@@ -543,6 +561,7 @@
 				43DC05C51C849C7E00AB670A /* LocationManager.swift in Sources */,
 				43DC058B1C80BD6A00AB670A /* Storyboard.swift in Sources */,
 				4316BBA21C7B5EEC007A9ECB /* UITextField+Ext.swift in Sources */,
+				43DC05CC1C85B04F00AB670A /* AddFriendsCell.swift in Sources */,
 				43DC05B61C83C4C100AB670A /* MapVC.swift in Sources */,
 				4316BBA41C7B6154007A9ECB /* UIColor+HEX.swift in Sources */,
 				4334D81F1C7F783F00557AE4 /* UIImageBlure.swift in Sources */,
@@ -556,6 +575,7 @@
 				43DC058E1C80C26200AB670A /* RequestErrorHandler.swift in Sources */,
 				430B4F451C7DE33700EE884A /* NSData+Ext.swift in Sources */,
 				43DC05B01C83BB7700AB670A /* Keys.swift in Sources */,
+				43DC05C91C85AEAF00AB670A /* AddFriendsVC.swift in Sources */,
 				434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */,
 				43DC05B91C842BDD00AB670A /* ReportsView.swift in Sources */,
 				43D2D0B81C7C9B2D00A41D4F /* UIView+Ext.swift in Sources */,
