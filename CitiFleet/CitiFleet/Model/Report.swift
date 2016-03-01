@@ -9,24 +9,24 @@
 import UIKit
 
 class Report: NSObject {
-    var latitude: CGFloat = 0.0
-    var longitude: CGFloat = 0.0
+    var latitude: CLLocationDegrees = 0.0
+    var longitude: CLLocationDegrees = 0.0
     var type: ReportType = .Police
     
-    init(lat: CGFloat, lon: CGFloat, type: ReportType) {
+    init(lat: CLLocationDegrees, lon: CLLocationDegrees, type: ReportType) {
         self.latitude = lat
         self.longitude = lon
         self.type = type
         super.init()
     }
     
-    func post(complation: ((error: NSError) -> ())) {
+    func post(complation: ((error: NSError?) -> ())) {
         RequestManager.sharedInstance().postReport(latitude, long: longitude, type: type) { (response, error) -> () in
             if let error = error {
                 complation(error: error)
                 return
             }
-            
+            complation(error: nil)
         }
     }
 }

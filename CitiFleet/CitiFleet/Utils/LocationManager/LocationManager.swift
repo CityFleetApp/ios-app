@@ -11,7 +11,11 @@ import UIKit
 class LocationManager: NSObject, CLLocationManagerDelegate {
     private static let shared = LocationManager()
     private let locationManager = CLLocationManager()
-    var currentCoordinates: CLLocationCoordinate2D?
+    var currentCoordinates: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
+    
+    class func sharedInstance() -> LocationManager {
+        return LocationManager.shared
+    }
     
     override init() {
         super.init()

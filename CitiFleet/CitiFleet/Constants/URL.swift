@@ -25,7 +25,7 @@ struct Params {
     }
     struct Header {
         static let contentType = "Content-Type"
-        static let authentication = "Authentication"
+        static let authentication = "Authorization"
         static let json = "application/json"
         static let token = "token "
     }

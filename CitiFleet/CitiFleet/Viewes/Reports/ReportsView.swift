@@ -37,6 +37,12 @@ class ReportsView: UIView {
         viewController.view.addSubview(self)
     }
     
+    func hide() {
+        animationDisappearing { () -> () in
+            self.removeFromSuperview()
+        }
+    }
+    
     func centerButtons() {
         let buttons = [
             policeBtn,
@@ -67,6 +73,20 @@ extension ReportsView {
     @IBAction func close(sender: AnyObject) {
         animationDisappearing {
             self.removeFromSuperview()
+        }
+    }
+    
+    @IBAction func postReport(sender: AnyObject) {
+        let currentPosition = LocationManager.sharedInstance().currentCoordinates
+        let report = Report(lat: 40.715421, lon: -73.825984, type: ReportType(rawValue: 1)!)
+        report.post { (error) -> () in
+            if let error = error {
+                RequestErrorHandler(error: error, title: Titles.error).handle()
+                return
+            }
+            dispatch_async(dispatch_get_main_queue(), {
+                self.hide()
+            })
         }
     }
 }

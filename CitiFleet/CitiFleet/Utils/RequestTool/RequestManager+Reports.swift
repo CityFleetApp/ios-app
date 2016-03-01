@@ -26,13 +26,14 @@ enum ReportType: Int {
 }
 
 extension RequestManager {
-    func postReport(lat: CGFloat, long: CGFloat, type: ReportType, completion:(([String: AnyObject]?, NSError?) -> ())) {
+    func postReport(lat: CLLocationDegrees, long: CLLocationDegrees, type: ReportType, completion:(([String: AnyObject]?, NSError?) -> ())) {
         if !shouldStartRequest() {
+            completion(nil, nil)
             return
         }
         
         let params = [
-            Params.Report.reportType: String(type),
+            Params.Report.reportType: String(type.rawValue),
             Params.Report.latitude: String(lat),
             Params.Report.longitude: String(long)
         ]

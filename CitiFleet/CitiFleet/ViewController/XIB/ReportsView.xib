@@ -35,47 +35,65 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIG-N3-gez">
                                     <rect key="frame" x="0.0" y="42" width="270" height="295"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsQ-lN-kuE">
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsQ-lN-kuE">
                                             <rect key="frame" x="13" y="13" width="122" height="90"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.329999923706055"/>
                                             <state key="normal" title="POLICE" image="police-ic">
                                                 <color key="titleColor" red="0.29803921568627451" green="0.3529411764705882" blue="0.46274509803921571" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="postReport:" destination="iN0-l3-epB" eventType="touchUpInside" id="HrH-U3-PfY"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHa-zl-9Vx">
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BHa-zl-9Vx">
                                             <rect key="frame" x="13" y="103" width="122" height="89"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.329999923706055"/>
                                             <state key="normal" title="ACCIDENT" image="accident-ic">
                                                 <color key="titleColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="postReport:" destination="iN0-l3-epB" eventType="touchUpInside" id="gT5-5U-qR5"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mV0-8i-b5W">
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mV0-8i-b5W">
                                             <rect key="frame" x="135" y="103" width="122" height="89"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.329999923706055"/>
                                             <state key="normal" title="TRAFIC JAM" image="trafic---ic">
                                                 <color key="titleColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="postReport:" destination="iN0-l3-epB" eventType="touchUpInside" id="ddL-O3-Bii"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojg-C9-hBw">
+                                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojg-C9-hBw">
                                             <rect key="frame" x="13" y="192" width="122" height="90"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.329999923706055"/>
                                             <state key="normal" title="HAZARD" image="hazard-ic">
                                                 <color key="titleColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="postReport:" destination="iN0-l3-epB" eventType="touchUpInside" id="SjQ-1w-dPy"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyV-EM-IFr">
+                                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OyV-EM-IFr">
                                             <rect key="frame" x="135" y="192" width="122" height="90"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.329999923706055"/>
                                             <state key="normal" title="ROAD CLOSURE" image="road-closure-ic">
                                                 <color key="titleColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="postReport:" destination="iN0-l3-epB" eventType="touchUpInside" id="RYD-4N-ML0"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmq-rB-hpQ">
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmq-rB-hpQ">
                                             <rect key="frame" x="135" y="13" width="122" height="90"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.329999923706055"/>
                                             <state key="normal" title="TLC" image="tlc-ic">
                                                 <color key="titleColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="postReport:" destination="iN0-l3-epB" eventType="touchUpInside" id="VrH-xk-4As"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

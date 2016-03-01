@@ -14,7 +14,7 @@ import ReachabilitySwift
 
 class RequestManager: NSObject {
     private static var reachability: Reachability?
-    private static var isReachable: Bool?
+    private static var isReachable = true
     private static let shared = RequestManager()
     class func sharedInstance() -> RequestManager {
         return RequestManager.shared
@@ -71,7 +71,6 @@ class RequestManager: NSObject {
         userInfo[Params.Response.serverError] = errorText
         return NSError(domain: error.domain, code: error.code, userInfo: userInfo)
     }
-    
 }
 
 //MARK: - Reachability
@@ -83,7 +82,7 @@ extension RequestManager {
             return
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("reachabilityChanged:"), name: ReachabilityChangedNotification, object: RequestManager.reachability)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityChanged:", name: ReachabilityChangedNotification, object: RequestManager.reachability)
         do {
             try RequestManager.reachability?.startNotifier()
         } catch {
@@ -91,7 +90,7 @@ extension RequestManager {
         }
     }
     
-    private func reachabilityChanged(note: NSNotification) {
+    func reachabilityChanged(note: NSNotification) {
         let reachability = note.object as! Reachability
         
         if reachability.isReachable() {
