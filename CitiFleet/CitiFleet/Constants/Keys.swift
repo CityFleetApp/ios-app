@@ -9,5 +9,5 @@
 import Foundation
 
 struct Keys {
-    static let GoogleMaps = "AIzaSyAgtMCQW2EZSPTTWraEh8-xUGwIMl2vUcA"
+    static let GoogleMaps = "AIzaSyDz48RYxfjSqKwEUmjCiLDi2Bn7vU5pLvg"
 }

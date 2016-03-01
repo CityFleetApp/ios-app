@@ -14,6 +14,9 @@ pod 'ReachabilitySwift', '~> 2.3'
 pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 
+pod 'TwitterKit'
+pod 'TwitterCore'
+
 pod 'Fabric'
 pod 'Crashlytics'
 end
