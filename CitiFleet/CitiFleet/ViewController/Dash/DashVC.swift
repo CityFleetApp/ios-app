@@ -13,6 +13,7 @@ class DashVC: UITableViewController {
     @IBOutlet var avatar: UIImageView!
     @IBOutlet var backgroundAvatar: UIImageView!
     @IBOutlet var cameraButton: UIButton!
+    @IBOutlet var nameLabel: UILabel!
     
     var avatarImage: UIImage? {
         get {
@@ -35,6 +36,7 @@ class DashVC: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.setDefaultShadow()
+        nameLabel.text = User.currentUser()?.fullName
     }
     
     @IBAction func cameraPressed(sender: AnyObject) {

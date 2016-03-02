@@ -27,30 +27,11 @@ enum ReportType: Int {
 
 extension RequestManager {
     func postReport(lat: CLLocationDegrees, long: CLLocationDegrees, type: ReportType, completion:(([String: AnyObject]?, NSError?) -> ())) {
-        if !shouldStartRequest() {
-            completion(nil, nil)
-            return
-        }
-        
         let params = [
             Params.Report.reportType: String(type.rawValue),
             Params.Report.latitude: String(lat),
             Params.Report.longitude: String(long)
         ]
-        
-        Alamofire.request(.POST, url(URL.Reports), headers: header(), parameters: params, encoding: .JSON)
-            .validate(statusCode: 200..<300)
-            .responseJSON { response in
-                self.endRequest(nil, responseData: nil)
-                switch response.result {
-                case .Success(let respJSON):
-                    let dict = respJSON as? [String: AnyObject]
-                    completion(dict, nil)
-                    break
-                case .Failure(let error):
-                    completion(nil, self.errorWithInfo(error, data: response.data!))
-                    break
-                }
-        }
+        post(URL.Reports, parameters: params, completion: completion)
     }
 }

@@ -27,13 +27,8 @@ extension AddFriendsVC {
     }
     
     func importContactsAddressBook() {
-        AddressBookManager().getAllPhones { (contacts, error) -> () in
-            if let error = error {
-                print(error)
-            } else {
-                print(contacts)
-            }
-        }
+        SocialManager.sharedInstance.importContacts()
+        
     }
     
     func socialLogin(index: Int) {

@@ -96,11 +96,11 @@ class User: NSObject, NSCoding {
             }
             let user = User()
             user.token = userData![Params.Login.token] as? String
-//            user.email = userData![Params.Login.email] as? String
-//            user.userName = userData![Params.Login.username] as? String
-//            user.fullName = userData![Params.Login.fullName] as? String
-//            user.hackLicense = userData![Params.Login.hackLicense] as? String
-//            user.phone = userData![Params.Login.phone] as? String
+            user.email = userData![Params.Login.email] as? String
+            user.userName = userData![Params.Login.username] as? String
+            user.fullName = userData![Params.Login.fullName] as? String
+            user.hackLicense = userData![Params.Login.hackLicense] as? String
+            user.phone = userData![Params.Login.phone] as? String
             currUser = user
             let data = NSKeyedArchiver.archivedDataWithRootObject(user)
             NSUserDefaults.standardUserDefaults().setObject(data, forKey: UserKeys.User)

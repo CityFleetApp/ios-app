@@ -99,7 +99,7 @@ class SignUpVC: UITableViewController {
                 if let _ = user {
                     self.dismissViewControllerAnimated(true, completion: nil)
                 } else {
-                    RequestErrorHandler(error: error!, title: Titles.error).handle()
+//                    RequestErrorHandler(error: error!, title: Titles.error).handle()
                 }
             })
         }

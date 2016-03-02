@@ -16,6 +16,12 @@ struct URL {
         static let Login = "userslogin/"
         static let SignUp = "userssignup/"
     }
+    struct Social {
+        static let Phones = "usersadd-contacts-friends/"
+        static let Twitter = "usersadd-twitter-friends/"
+        static let Facebook = "usersadd-facebook-friends/"
+        static let Instagram = "usersadd-instagram-friends/"
+    }
     static let Reports = "reports/"
 }
 
@@ -44,5 +50,9 @@ struct Params {
         static let latitude = "lat"
         static let longitude = "lng"
     }
-    
+    struct Social {
+        static let phones = "contacts"
+        static let token = "token"
+        static let tokenSecret = "token_secret"
+    }
 }

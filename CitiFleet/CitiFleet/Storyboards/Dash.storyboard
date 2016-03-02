@@ -74,7 +74,7 @@
         <scene sceneID="FZK-IZ-OxH">
             <objects>
                 <tableViewController id="krU-Xn-cdw" customClass="DashVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="GWR-Ij-DEn">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="GWR-Ij-DEn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="578"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,10 +83,10 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="235"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="JLq-h2-wug">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JLq-h2-wug">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="235"/>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uncle Huy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAU-XY-u1J">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unnamed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAU-XY-u1J">
                                     <rect key="frame" x="16" y="187" width="568" height="27"/>
                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="22"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -95,8 +95,9 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsr-Lm-IhJ">
                                     <rect key="frame" x="227" y="28" width="147" height="147"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_avatar.png" translatesAutoresizingMaskIntoConstraints="NO" id="4He-Dy-pJ3">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4He-Dy-pJ3">
                                             <rect key="frame" x="8" y="8" width="131" height="131"/>
+                                            <color key="backgroundColor" red="0.1960784314" green="0.75294117650000003" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="131" id="CF6-iC-1sQ"/>
                                                 <constraint firstAttribute="width" secondItem="4He-Dy-pJ3" secondAttribute="height" multiplier="1:1" id="O58-Yj-hBe"/>
@@ -570,6 +571,7 @@
                         <outlet property="avatar" destination="4He-Dy-pJ3" id="OB3-98-4Gm"/>
                         <outlet property="backgroundAvatar" destination="JLq-h2-wug" id="WBD-8L-FnD"/>
                         <outlet property="cameraButton" destination="TB5-4Z-qWr" id="7RV-Id-zpa"/>
+                        <outlet property="nameLabel" destination="QAU-XY-u1J" id="f8k-20-NWx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLF-rY-zjR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -589,6 +591,5 @@
         <image name="postings-ic" width="13" height="13"/>
         <image name="profile-ic" width="22" height="22"/>
         <image name="sign-out-ic" width="22" height="22"/>
-        <image name="test_avatar.png" width="595" height="530"/>
     </resources>
 </document>
