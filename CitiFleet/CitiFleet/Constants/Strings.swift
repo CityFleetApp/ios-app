@@ -33,6 +33,8 @@ struct ErrorString {
     static let ConnectionFailed = "Please, check your internet settings"
     struct SignUp {
         static let NotValidPhone = "Enter a valid 11 digit phone number"
-        
+    }
+    struct Social {
+        static let localContactsAccessDenied = "Unable to get contacts. Please open system settings and give access to contfacs for CitiFleet"
     }
 }

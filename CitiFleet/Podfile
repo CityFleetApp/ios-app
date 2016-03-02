@@ -17,6 +17,8 @@ pod 'FBSDKLoginKit', '~> 4.10'
 pod 'TwitterKit', '~> 1.15'
 pod 'TwitterCore', '~> 1.15'
 
+pod "SwiftAddressBook"
+
 pod 'Fabric'
 pod 'Crashlytics'
 end

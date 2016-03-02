@@ -20,7 +20,7 @@ extension SocialManager {
     func loginTwitter() {
         Twitter.sharedInstance().logInWithCompletion { session, error in
             if (session != nil) {
-                print("signed in as \(session!.authTokenSecret)");
+                print("Sectet: \(session!.authTokenSecret) token: \(session!.authToken)");
             } else {
                 print("error: \(error!.localizedDescription)");
             }
@@ -41,24 +41,15 @@ extension SocialManager {
 extension SocialManager {
     private typealias InstagramKeys = Keys.Instagram
     func loginInstagram() {
-        let url = "https://api.instagram.com/oauth/authorize/?client_id=" + InstagramKeys.ClientID + "&redirect_uri=" + InstagramKeys.RedirectURI + "&response_type=code"
+        let url = "https://api.instagram.com/oauth/authorize/?client_id=" + InstagramKeys.ClientID + "&redirect_uri=" + InstagramKeys.RedirectURI + "&response_type=token"
         
         UIApplication.sharedApplication().openURL(NSURL(string: url)!)
     }
     
     func loginRequest(srcUrl: NSURL) {
-        let query = srcUrl.query
-        var authToken: String?
-        
-        for param in (query?.componentsSeparatedByString("&"))! {
-            let parts = param.componentsSeparatedByString("=")
-            if parts.first == "code" {
-                authToken = parts.last
-            }
-        }
-        
-        if let auth = authToken {
-            print("Token: \(auth)")
-        }
+        let query = String(srcUrl)
+        let parts = query.componentsSeparatedByString("=")
+        let authToken = parts[1]
+        print("Token: \(authToken)")
     }
 }
