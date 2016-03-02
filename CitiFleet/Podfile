@@ -17,9 +17,6 @@ pod 'FBSDKLoginKit', '~> 4.10'
 pod 'TwitterKit', '~> 1.15'
 pod 'TwitterCore', '~> 1.15'
 
-pod 'InstagramKit', '~> 3.7'
-pod 'InstagramKit/UICKeyChainStore', '~> 2.1'
-
 pod 'Fabric'
 pod 'Crashlytics'
 end
