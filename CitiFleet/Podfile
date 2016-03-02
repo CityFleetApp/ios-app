@@ -11,11 +11,14 @@ pod 'SwiftValidator', '~> 3.0'
 pod 'SwiftyJSON', '~> 2.3'
 pod 'ReachabilitySwift', '~> 2.3'
 
-pod 'FBSDKCoreKit'
-pod 'FBSDKLoginKit'
+pod 'FBSDKCoreKit', '~> 4.10'
+pod 'FBSDKLoginKit', '~> 4.10'
 
-pod 'TwitterKit'
-pod 'TwitterCore'
+pod 'TwitterKit', '~> 1.15'
+pod 'TwitterCore', '~> 1.15'
+
+pod 'InstagramKit', '~> 3.7'
+pod 'InstagramKit/UICKeyChainStore', '~> 2.1'
 
 pod 'Fabric'
 pod 'Crashlytics'

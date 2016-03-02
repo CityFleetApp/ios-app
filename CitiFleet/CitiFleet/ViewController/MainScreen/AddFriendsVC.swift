@@ -36,10 +36,10 @@ extension AddFriendsVC {
             SocialManager.sharedInstance.loginFacebook(self)
             break
         case 1:
-            SocialManager.sharedInstance.loginTwitter()
+            SocialManager.sharedInstance.loginInstagram()
             break
         case 2:
-            SocialManager.sharedInstance.loginInstagram()
+            SocialManager.sharedInstance.loginTwitter()
             break
         default:
             break

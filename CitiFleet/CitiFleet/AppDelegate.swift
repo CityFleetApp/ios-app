@@ -46,6 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        if url.scheme.lowercaseString == Keys.Instagram.Scheme.lowercaseString {
+            SocialManager.sharedInstance.loginRequest(url)
+            return true
+        }
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
 
