@@ -71,6 +71,27 @@ class RequestManager: NSObject {
         userInfo[Params.Response.serverError] = errorText
         return NSError(domain: error.domain, code: error.code, userInfo: userInfo)
     }
+    
+    func sendRequest(method: Alamofire.Method, baseURL: String, parameters: [String:AnyObject], completion:(([String: AnyObject]?, NSError?) -> ())) {
+        if !shouldStartRequest() {
+            return
+        }
+        
+        Alamofire.request(method, url(baseURL), headers: header(), parameters: parameters, encoding: .JSON)
+            .validate(statusCode: 200..<300)
+            .responseJSON { response in
+                self.endRequest(nil, responseData: nil)
+                switch response.result {
+                case .Success(let respJSON):
+                    let dict = respJSON as? [String: AnyObject]
+                    completion(dict, nil)
+                    break
+                case .Failure(let error):
+                    completion(nil, self.errorWithInfo(error, data: response.data!))
+                    break
+                }
+        }
+    }
 }
 
 //MARK: - Reachability
