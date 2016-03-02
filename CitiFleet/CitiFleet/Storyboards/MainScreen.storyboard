@@ -347,7 +347,11 @@
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYS-7Z-vHr">
                                     <rect key="frame" x="31" y="40" width="352" height="186"/>
-                                    <string key="text">Add friend to simplify connecting and meeting up!see other's ETA when heading to the same direction , and appear on the map when driving nearby</string>
+                                    <string key="text">Add friend to simplify 
+connecting and meeting up!
+see other's ETA when heading 
+to the same direction ,
+ and appear on the map when driving nearby</string>
                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="19.870000839233398"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>

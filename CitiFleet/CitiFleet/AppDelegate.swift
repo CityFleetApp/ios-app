@@ -11,7 +11,6 @@ import Fabric
 import Crashlytics
 import FBSDKCoreKit
 import FBSDKLoginKit
-import Fabric
 import TwitterKit
 
 @UIApplicationMain
@@ -40,8 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         application.statusBarStyle = .LightContent
         GMSServices.provideAPIKey(Keys.GoogleMaps)
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         Fabric.with([Crashlytics.self, Twitter.self])
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
     }
