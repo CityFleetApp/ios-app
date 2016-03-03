@@ -18,7 +18,7 @@ class PhoneTextField: UITextField {
         leftView.font = Fonts.Login.SignUpTextField
         leftView.text = "+1"
         leftView.textAlignment = .Center
-        leftViewMode = .Always
+        leftViewMode = .Never
         self.leftView = leftView
     }
 }

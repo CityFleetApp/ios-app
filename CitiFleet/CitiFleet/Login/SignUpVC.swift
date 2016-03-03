@@ -56,7 +56,7 @@ class SignUpVC: UITableViewController {
     func setValidations() {
         validator.registerField(fullName, rules: [RequiredRule(), FullNameRule()])
         validator.registerField(userName, rules: [RequiredRule()])
-        validator.registerField(phone, rules: [RequiredRule(), PhoneNumberRule(regex: "^\\d{10}$", message: ErrorMessage.NotValidPhone)])
+        validator.registerField(phone, rules: [RequiredRule(), PhoneNumberRule()]) //PhoneNumberRule(regex: "^\\d{10}$", message: ErrorMessage.NotValidPhone)])
         validator.registerField(hackLicense, rules: [RequiredRule()])
         validator.registerField(email, rules: [RequiredRule(), EmailRule()])
         validator.registerField(password, rules: [RequiredRule(), PasswordRule()])
@@ -92,7 +92,7 @@ class SignUpVC: UITableViewController {
         tmpUser.userName = userName.text
         tmpUser.fullName = fullName.text
         tmpUser.hackLicense = hackLicense.text
-        tmpUser.phone = "+1" + phone.text!
+        tmpUser.phone = phone.text //"+1" + phone.text!
         
         User.signUp(tmpUser, password: password.text!, confirmPassword: confirmPassword.text!) { (user, error) -> () in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
