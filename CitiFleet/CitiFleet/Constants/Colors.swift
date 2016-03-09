@@ -9,6 +9,10 @@
 import UIKit
 
 struct Color {
+    struct NavigationBar {
+        static let tintColor = 0xffffff
+        static let barTint = 0x192c3b
+    }
     struct Global {
         static let LightGreen = UIColor(hex: 0x2ec4b6, alpha: 1)
     }

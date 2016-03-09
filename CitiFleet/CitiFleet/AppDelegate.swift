@@ -55,6 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         showLoginViewController()
+        UINavigationBar.appearance().tintColor = UIColor(hex: Color.NavigationBar.tintColor, alpha: 1)
+        UINavigationBar.appearance().barTintColor = UIColor(hex: Color.NavigationBar.barTint, alpha: 1)
+        UINavigationBar.appearance().titleTextAttributes = [ NSFontAttributeName: Fonts.Login.NavigationTitle,  NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
     
     func showLoginViewController() {

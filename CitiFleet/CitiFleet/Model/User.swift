@@ -8,17 +8,17 @@
 
 import Foundation
 
-struct UserKeys {
-    static let User = "User"
-    static let UserName = "UserName"
-    static let FullName = "FullName"
-    static let HackLicense = "HackLicense"
-    static let Phone = "Phone"
-    static let Email = "Email"
-    static let Token = "Token"
-}
-
 class User: NSObject, NSCoding {
+    private struct UserKeys {
+        static let User = "User"
+        static let UserName = "UserName"
+        static let FullName = "FullName"
+        static let HackLicense = "HackLicense"
+        static let Phone = "Phone"
+        static let Email = "Email"
+        static let Token = "Token"
+    }
+    
     var userName: String?
     var fullName: String?
     var hackLicense: String?

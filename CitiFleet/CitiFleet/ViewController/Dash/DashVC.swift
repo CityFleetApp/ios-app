@@ -37,6 +37,7 @@ class DashVC: UITableViewController {
         super.viewWillAppear(animated)
         cameraButton.setDefaultShadow()
         nameLabel.text = User.currentUser()?.fullName
+        navigationController?.navigationBar.hidden = true
     }
     
     @IBAction func cameraPressed(sender: AnyObject) {
@@ -69,7 +70,7 @@ extension DashVC {
         case 0:
             home()
             break
-        case 9:
+        case 10:
             logOut()
             break
         default:
