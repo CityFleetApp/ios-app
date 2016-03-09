@@ -11,6 +11,8 @@ import Alamofire
 import Swift
 import SwiftyJSON
 import ReachabilitySwift
+import AFNetworking
+import MBProgressHUD
 
 class RequestManager: NSObject {
     private static var reachability: Reachability?
@@ -96,6 +98,41 @@ class RequestManager: NSObject {
                     break
                 }
         }
+    }
+}
+
+//MARK: - Upload Photo
+extension RequestManager {
+    func uploadPhoto(data: NSData) {
+        let view = AppDelegate.sharedDelegate().rootViewController().view
+        let name = String(NSDate().timeIntervalSince1970)
+        
+//        let request = AFHTTPRequestSerializer().multipartFormRequestWithMethod("PUT", URLString: url(URL.UploadAvatar), parameters: nil, constructingBodyWithBlock: { (formData) -> Void in
+//            formData.appendPartWithFileData(data, name: "image", fileName: "image.png", mimeType: MIME.Image.png)
+//            }, error: nil)
+//        
+//        request.setValue(Params.Header.token + (User.currentUser()?.token)!, forHTTPHeaderField: Params.Header.authentication)
+        let request = ImageUploader().createRequest(data)
+        
+        let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+        hud.mode = .AnnularDeterminate
+        hud.labelText = "Loading..."
+        
+        let manager = AFURLSessionManager(sessionConfiguration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        let uploadTask = manager.uploadTaskWithStreamedRequest(request,
+            progress: { (progress) -> Void in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    hud.progress = Float(progress.completedUnitCount) / Float(progress.totalUnitCount)
+                })
+            },
+            completionHandler: { (response, responseObject, error) -> Void in
+                print("Error: \(error)")
+                print("Resporse: \(response)")
+                print("Response Object: \(responseObject)")
+                hud.hide(true)
+        })
+        
+        uploadTask.resume()
     }
 }
 

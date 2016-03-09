@@ -8,21 +8,28 @@
 
 import Foundation
 
+struct MIME {
+    struct Image {
+        static let png = "image/png"
+    }
+}
+
 struct URL {
     static let Sandbox = "http://citifleet.steelkiwi.com/api/"
     static let Production = ""
     static let BaseUrl = Sandbox
     struct Login {
-        static let Login = "userslogin/"
-        static let SignUp = "userssignup/"
+        static let Login = "users/login/"
+        static let SignUp = "users/signup/"
     }
     struct Social {
-        static let Phones = "usersadd-contacts-friends/"
-        static let Twitter = "usersadd-twitter-friends/"
-        static let Facebook = "usersadd-facebook-friends/"
-        static let Instagram = "usersadd-instagram-friends/"
+        static let Phones = "users/add-contacts-friends/"
+        static let Twitter = "users/add-twitter-friends/"
+        static let Facebook = "users/add-facebook-friends/"
+        static let Instagram = "users/add-instagram-friends/"
     }
     static let Reports = "reports/"
+    static let UploadAvatar = "users/upload-avatar/"
 }
 
 struct Params {

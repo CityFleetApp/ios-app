@@ -92,7 +92,9 @@ extension DashVC {
 extension DashVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         avatarImage = image
-        picker.dismissViewControllerAnimated(true, completion: nil)
+        picker.dismissViewControllerAnimated(true) {
+            User.currentUser()?.uploadPhoto(self.avatarImage!)
+        }
     }
 }
 

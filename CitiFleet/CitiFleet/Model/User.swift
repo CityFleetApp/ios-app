@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AFNetworking
 
 class User: NSObject, NSCoding {
     private struct UserKeys {
@@ -111,5 +112,11 @@ class User: NSObject, NSCoding {
     class func logout() {
         NSUserDefaults.standardUserDefaults().removeObjectForKey(UserKeys.User)
         currUser = nil
+    }
+    
+    func uploadPhoto(image: UIImage) {
+        if let data = UIImagePNGRepresentation(image) {
+            RequestManager.sharedInstance().uploadPhoto(data)
+        }
     }
 }
