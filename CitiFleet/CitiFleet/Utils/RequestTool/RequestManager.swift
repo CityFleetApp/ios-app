@@ -13,6 +13,7 @@ import SwiftyJSON
 import ReachabilitySwift
 import AFNetworking
 import MBProgressHUD
+import Haneke
 
 class RequestManager: NSObject {
     private static var reachability: Reachability?
@@ -105,13 +106,6 @@ class RequestManager: NSObject {
 extension RequestManager {
     func uploadPhoto(data: NSData) {
         let view = AppDelegate.sharedDelegate().rootViewController().view
-        let name = String(NSDate().timeIntervalSince1970)
-        
-//        let request = AFHTTPRequestSerializer().multipartFormRequestWithMethod("PUT", URLString: url(URL.UploadAvatar), parameters: nil, constructingBodyWithBlock: { (formData) -> Void in
-//            formData.appendPartWithFileData(data, name: "image", fileName: "image.png", mimeType: MIME.Image.png)
-//            }, error: nil)
-//        
-//        request.setValue(Params.Header.token + (User.currentUser()?.token)!, forHTTPHeaderField: Params.Header.authentication)
         let request = ImageUploader().createRequest(data)
         
         let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
@@ -130,9 +124,26 @@ extension RequestManager {
                 print("Resporse: \(response)")
                 print("Response Object: \(responseObject)")
                 hud.hide(true)
+                if let error = error {
+                    return
+                }
+                if let avatarURL = responseObject?.valueForKey(Response.UploadAvatar.avatar) as? String {
+                    self.saveAvatar(avatarURL)
+                }
         })
         
         uploadTask.resume()
+    }
+    
+    private func saveAvatar(avatarUrlStr: String) {
+        let URL = NSURL(string: avatarUrlStr)
+        User.currentUser()?.avatarURL = URL
+        User.currentUser()?.saveUser()
+        
+        let cache = Shared.imageCache
+        if let URL = URL {
+            cache.fetch(URL: URL)
+        }
     }
 }
 

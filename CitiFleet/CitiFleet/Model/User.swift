@@ -18,6 +18,7 @@ class User: NSObject, NSCoding {
         static let Phone = "Phone"
         static let Email = "Email"
         static let Token = "Token"
+        static let AvatarURL = "AvatarURL"
     }
     
     var userName: String?
@@ -26,6 +27,7 @@ class User: NSObject, NSCoding {
     var phone: String?
     var email: String?
     var token: String?
+    var avatarURL: NSURL?
     
     private static var currUser: User?
     
@@ -41,6 +43,9 @@ class User: NSObject, NSCoding {
         phone = aDecoder.decodeObjectForKey(UserKeys.Phone) as? String
         email = aDecoder.decodeObjectForKey(UserKeys.Email) as? String
         token = aDecoder.decodeObjectForKey (UserKeys.Token) as? String
+        if let urlString = aDecoder.decodeObjectForKey(UserKeys.AvatarURL) as? String {
+            avatarURL = NSURL(string: urlString)
+        }
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
@@ -50,11 +55,19 @@ class User: NSObject, NSCoding {
             UserKeys.HackLicense: hackLicense,
             UserKeys.Phone: phone,
             UserKeys.Email: email,
-            UserKeys.Token: token
+            UserKeys.Token: token,
+            UserKeys.AvatarURL: avatarURL?.absoluteString
         ]
         
         for field in objects {
             aCoder.encodeObject(field.1, forKey: field.0)
+        }
+    }
+    
+    func saveUser() {
+        if self == User.currUser {
+            let data = NSKeyedArchiver.archivedDataWithRootObject(self)
+            NSUserDefaults.standardUserDefaults().setObject(data, forKey: UserKeys.User)
         }
     }
     
@@ -84,6 +97,7 @@ class User: NSObject, NSCoding {
                 user.phone = phone
                 user.email = email
                 currUser = user
+                currUser?.saveUser()
                 completion(user, nil)
             }
         }
@@ -102,9 +116,13 @@ class User: NSObject, NSCoding {
             user.fullName = userData![Params.Login.fullName] as? String
             user.hackLicense = userData![Params.Login.hackLicense] as? String
             user.phone = userData![Params.Login.phone] as? String
+            
+            if let urlString = userData![Params.Login.avatarUrl] as? String {
+                user.avatarURL = NSURL(string: urlString)
+            }
+            
             currUser = user
-            let data = NSKeyedArchiver.archivedDataWithRootObject(user)
-            NSUserDefaults.standardUserDefaults().setObject(data, forKey: UserKeys.User)
+            currUser?.saveUser()
             completion(user, nil)
         }
     }

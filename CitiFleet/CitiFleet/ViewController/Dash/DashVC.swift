@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreImage
+import Haneke
 
 class DashVC: UITableViewController {
     @IBOutlet var avatar: UIImageView!
@@ -20,9 +21,7 @@ class DashVC: UITableViewController {
             return avatar.image
         }
         set {
-            if var image = newValue {
-                let imageSide = Sizes.Image.avatarSize
-                image = RBSquareImageTo(image, size: CGSize(width: imageSide, height: imageSide))
+            if let image = newValue {
                 avatar.image = image
                 backgroundAvatar.image = UIImageManager().blur(image)
             }
@@ -31,6 +30,7 @@ class DashVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        preloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -38,6 +38,16 @@ class DashVC: UITableViewController {
         cameraButton.setDefaultShadow()
         nameLabel.text = User.currentUser()?.fullName
         navigationController?.navigationBar.hidden = true
+    }
+    
+    func preloadData() {
+        let cache = Shared.imageCache
+        let URL = User.currentUser()?.avatarURL
+        cache.fetch(URL: URL!).onSuccess { image in
+            dispatch_async(dispatch_get_main_queue()) {
+                self.avatarImage = image
+            }
+        }
     }
     
     @IBAction func cameraPressed(sender: AnyObject) {
@@ -91,9 +101,11 @@ extension DashVC {
 
 extension DashVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        avatarImage = image
+        let imageSide = Sizes.Image.avatarSize
+        let scaledImage = RBSquareImageTo(image, size: CGSize(width: imageSide, height: imageSide))
+        avatarImage = scaledImage
         picker.dismissViewControllerAnimated(true) {
-            User.currentUser()?.uploadPhoto(self.avatarImage!)
+            User.currentUser()?.uploadPhoto(scaledImage)
         }
     }
 }

@@ -51,6 +51,7 @@ struct Params {
         static let hackLicense = "hack_license"
         static let passwordConfirm = "password_confirm"
         static let token = "token"
+        static let avatarUrl = "avatar_url"
     }
     struct Report {
         static let reportType = "report_type"
@@ -61,5 +62,11 @@ struct Params {
         static let phones = "contacts"
         static let token = "token"
         static let tokenSecret = "token_secret"
+    }
+}
+
+struct Response {
+    struct UploadAvatar {
+        static let avatar = "avatar"
     }
 }
