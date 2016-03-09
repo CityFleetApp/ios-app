@@ -12,6 +12,7 @@ import Crashlytics
 import FBSDKCoreKit
 import FBSDKLoginKit
 import TwitterKit
+import Alamofire
 
 @UIApplicationMain
 

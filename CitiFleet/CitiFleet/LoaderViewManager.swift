@@ -11,16 +11,16 @@ import MBProgressHUD
 
 class LoaderViewManager: NSObject {
     class func showLoader() {
-        let view = AppDelegate.sharedDelegate().window?.rootViewController?.view
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-            MBProgressHUD.showHUDAddedTo(view, animated: true)
-        }
+//        let view = AppDelegate.sharedDelegate().window?.rootViewController?.view
+//        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+//            MBProgressHUD.showHUDAddedTo(view, animated: true)
+//        }
     }
     
     class func hideLoader() {
-        let view = AppDelegate.sharedDelegate().window?.rootViewController?.view
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-            MBProgressHUD.hideHUDForView(view, animated: true)
-        }
+//        let view = AppDelegate.sharedDelegate().window?.rootViewController?.view
+//        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+//            MBProgressHUD.hideHUDForView(view, animated: true)
+//        }
     }
 }
