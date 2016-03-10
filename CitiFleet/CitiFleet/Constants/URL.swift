@@ -21,6 +21,7 @@ struct URL {
     struct Login {
         static let Login = "users/login/"
         static let SignUp = "users/signup/"
+        static let ResetPassword = "users/change-password/"
     }
     struct Social {
         static let Phones = "users/add-contacts-friends/"
@@ -52,6 +53,11 @@ struct Params {
         static let passwordConfirm = "password_confirm"
         static let token = "token"
         static let avatarUrl = "avatar_url"
+    }
+    struct ResetPassword {
+        static let currentPassword = "old_password"
+        static let newPassword = "password"
+        static let newConfirmPassword = "password_confirm"
     }
     struct Report {
         static let reportType = "report_type"

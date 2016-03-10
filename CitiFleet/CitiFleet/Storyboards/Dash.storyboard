@@ -20,6 +20,7 @@
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -208,11 +209,11 @@
                                             <outlet property="title" destination="dNL-gp-3nY" id="4iB-0O-ZOE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="66" id="46o-Rg-PSA" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="46o-Rg-PSA" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="301" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="46o-Rg-PSA" id="H54-3e-sy7">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-ic" translatesAutoresizingMaskIntoConstraints="NO" id="qdj-LE-T1s">
@@ -228,7 +229,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PROFILE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBZ-J5-MY7">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROFILE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBZ-J5-MY7">
                                                     <rect key="frame" x="66" y="23" width="518" height="20"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                     <color key="textColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -403,11 +404,11 @@
                                             <outlet property="title" destination="Mly-3y-1iH" id="TPJ-pY-vY5"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="zvw-EQ-s0o" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="66" id="zvw-EQ-s0o" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="631" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zvw-EQ-s0o" id="Fa9-3a-FXg">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="benefits-ic" translatesAutoresizingMaskIntoConstraints="NO" id="6dM-Yk-NiF">
@@ -423,7 +424,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BENEFITS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRi-4f-L6F">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="BENEFITS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRi-4f-L6F">
                                                     <rect key="frame" x="66" y="23" width="518" height="20"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                     <color key="textColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -440,6 +441,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="title" destination="VRi-4f-L6F" id="OjP-wz-HQ9"/>
+                                            <segue destination="jud-Dt-Wg1" kind="push" id="UME-qJ-SgD"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="b6l-2j-y4f" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
@@ -621,6 +623,101 @@
             </objects>
             <point key="canvasLocation" x="1936" y="504"/>
         </scene>
+        <!--BenefitsVC-->
+        <scene sceneID="5tx-uy-7Xi">
+            <objects>
+                <viewController id="jud-Dt-Wg1" customClass="BenefitsVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZSQ-r8-1N7"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bqd-5y-faM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ezW-lH-HHe">
+                        <rect key="frame" x="0.0" y="44" width="600" height="956"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pFq-ye-9Ps">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="956"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.95686274509803915" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewLayout key="collectionViewLayout" id="F4U-Wk-O81" customClass="BenefitsLayout" customModule="CitiFleet" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BenefitsCollectionViewCell" id="f7s-cb-acv" customClass="BenefitsCollectionViewCell" customModule="CitiFleet" customModuleProvider="target">
+                                        <rect key="frame" x="109" y="0.0" width="382" height="280"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="280"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PXd-en-LA6">
+                                                    <rect key="frame" x="0.0" y="225" width="382" height="55"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Benefit Benefit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Pf-0c-VG5">
+                                                            <rect key="frame" x="16" y="16" width="316" height="23"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18.770000457763672"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="show_benefit_barcode" translatesAutoresizingMaskIntoConstraints="NO" id="UU1-19-PgC">
+                                                            <rect key="frame" x="348" y="19" width="18" height="18"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="UU1-19-PgC" secondAttribute="height" multiplier="1:1" id="LiQ-74-Cc6"/>
+                                                                <constraint firstAttribute="width" constant="18" id="WUB-Hb-sAz"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.0039215686274509803" green="0.086274509803921567" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="9Pf-0c-VG5" firstAttribute="leading" secondItem="PXd-en-LA6" secondAttribute="leading" constant="8" id="8Oa-p5-Kf3"/>
+                                                        <constraint firstAttribute="trailing" secondItem="UU1-19-PgC" secondAttribute="trailing" constant="16" id="8VI-eI-iCu"/>
+                                                        <constraint firstItem="UU1-19-PgC" firstAttribute="centerY" secondItem="9Pf-0c-VG5" secondAttribute="centerY" id="BPa-SB-qsT"/>
+                                                        <constraint firstItem="9Pf-0c-VG5" firstAttribute="centerY" secondItem="PXd-en-LA6" secondAttribute="centerY" id="OqN-4X-gDW"/>
+                                                        <constraint firstItem="UU1-19-PgC" firstAttribute="leading" secondItem="9Pf-0c-VG5" secondAttribute="trailing" constant="16" id="USA-1d-eem"/>
+                                                        <constraint firstItem="9Pf-0c-VG5" firstAttribute="leading" secondItem="PXd-en-LA6" secondAttribute="leading" constant="16" id="gXe-OL-iEP"/>
+                                                        <constraint firstAttribute="height" constant="55" id="n9y-9i-ke8"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="8Oa-p5-Kf3"/>
+                                                        </mask>
+                                                    </variation>
+                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pif-FZ-QE0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="225"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="pif-FZ-QE0" firstAttribute="leading" secondItem="f7s-cb-acv" secondAttribute="leading" id="3YG-eW-cAK"/>
+                                            <constraint firstAttribute="trailing" secondItem="pif-FZ-QE0" secondAttribute="trailing" id="7Iu-uo-e8x"/>
+                                            <constraint firstItem="PXd-en-LA6" firstAttribute="top" secondItem="pif-FZ-QE0" secondAttribute="bottom" id="a1x-Xu-oeV"/>
+                                            <constraint firstItem="PXd-en-LA6" firstAttribute="leading" secondItem="f7s-cb-acv" secondAttribute="leading" id="d36-A6-cbm"/>
+                                            <constraint firstAttribute="trailing" secondItem="PXd-en-LA6" secondAttribute="trailing" id="dK2-nT-Wed"/>
+                                            <constraint firstAttribute="bottom" secondItem="PXd-en-LA6" secondAttribute="bottom" id="hvs-To-a3h"/>
+                                            <constraint firstItem="pif-FZ-QE0" firstAttribute="top" secondItem="f7s-cb-acv" secondAttribute="top" id="jVj-LJ-4p6"/>
+                                        </constraints>
+                                        <size key="customSize" width="382" height="280"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="jud-Dt-Wg1" id="c8p-AH-Eb6"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bqd-5y-faM" firstAttribute="top" secondItem="pFq-ye-9Ps" secondAttribute="bottom" id="PvW-hX-51P"/>
+                            <constraint firstItem="pFq-ye-9Ps" firstAttribute="top" secondItem="ZSQ-r8-1N7" secondAttribute="bottom" id="aqA-QJ-Hfy"/>
+                            <constraint firstAttribute="trailing" secondItem="pFq-ye-9Ps" secondAttribute="trailing" id="fmM-1h-pxf"/>
+                            <constraint firstItem="pFq-ye-9Ps" firstAttribute="leading" secondItem="ezW-lH-HHe" secondAttribute="leading" id="rLW-I9-Oqe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sSy-J1-s7L"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HXQ-Su-79R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2687" y="601"/>
+        </scene>
         <!--SettingsVC-->
         <scene sceneID="4kr-8e-lWB">
             <objects>
@@ -629,7 +726,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tOr-7w-7MD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2383" y="407"/>
+            <point key="canvasLocation" x="2437" y="18"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oZg-q8-y43">
@@ -666,6 +763,7 @@
         <image name="postings-ic" width="13" height="13"/>
         <image name="profile-ic" width="22" height="22"/>
         <image name="settings-ic" width="23" height="23"/>
+        <image name="show_benefit_barcode" width="18" height="18"/>
         <image name="sign-out-ic" width="22" height="22"/>
     </resources>
 </document>

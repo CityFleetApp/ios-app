@@ -26,6 +26,13 @@ struct StringConstants {
             static let Password = "Enter Password"
         }
     }
+    struct ChangePassword {
+        struct Placeholder {
+            static let oldPass = "Enter your current password"
+            static let newPass = "Enter your new password"
+            static let newConfirmPass = "Enter your confirm password"
+        }
+    }
 }
 
 struct ErrorString {

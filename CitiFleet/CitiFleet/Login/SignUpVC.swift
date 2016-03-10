@@ -9,11 +9,10 @@
 import UIKit
 import SwiftValidator
 
-
 class SignUpVC: UITableViewController {
-    typealias Placeholder = StringConstants.SignUp.Placeholder
-    typealias ErrorMessage = ErrorString.SignUp
-    typealias RequestParams = Params.Login
+    private typealias Placeholder = StringConstants.SignUp.Placeholder
+    private typealias ErrorMessage = ErrorString.SignUp
+    private typealias RequestParams = Params.Login
     
     @IBOutlet var fullName: UITextField!
     @IBOutlet var userName: UITextField!
@@ -98,8 +97,6 @@ class SignUpVC: UITableViewController {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 if let _ = user {
                     self.dismissViewControllerAnimated(true, completion: nil)
-                } else {
-//                    RequestErrorHandler(error: error!, title: Titles.error).handle()
                 }
             })
         }

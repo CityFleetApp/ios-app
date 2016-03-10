@@ -25,8 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func rootViewController() -> UIViewController {
-        let rootViewController = (self.window?.rootViewController)!
-        return topViewController(rootViewController)
+        var rootViewController = topViewController((self.window?.rootViewController)!)
+        if let navigationController = rootViewController.navigationController {
+            rootViewController = navigationController.topViewController!
+        }
+        return rootViewController
     }
     
     func topViewController(viewController: UIViewController) -> UIViewController {

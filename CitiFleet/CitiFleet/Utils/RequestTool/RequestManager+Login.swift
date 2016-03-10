@@ -37,4 +37,14 @@ extension RequestManager {
         ]
         post(URL.Login.Login, parameters: params, completion: completion)
     }
+    
+    func resetPassword(currPassword: String, newPassword: String, newConfirmPassword: String, completion: (([String: AnyObject]?, NSError?) -> ())) {
+        let params = [
+            Params.ResetPassword.currentPassword: currPassword,
+            Params.ResetPassword.newPassword: newPassword,
+            Params.ResetPassword.newConfirmPassword: newConfirmPassword
+        ]
+        
+        post(URL.Login.ResetPassword, parameters: params, completion: completion)
+    }
 }

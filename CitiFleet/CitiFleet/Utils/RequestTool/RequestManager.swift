@@ -64,8 +64,11 @@ class RequestManager: NSObject {
         }
     }
 
-    func errorWithInfo(error: NSError, data: NSData) -> NSError {
-        let json = JSON(data: data)
+    func errorWithInfo(error: NSError, data: NSData?) -> NSError {
+        if data == nil {
+            return error
+        }
+        let json = JSON(data: data!)
         var errorText: String?
         if let errJson = json.dictionary?.first {
             errorText = errJson.1.array?.first?.string
@@ -82,16 +85,15 @@ class RequestManager: NSObject {
         
         Alamofire.request(.POST, url(baseURL), headers: header(), parameters: parameters, encoding: .JSON)
             .validate(statusCode: 200..<300)
-            .responseJSON { response in
+            .responseData{ response in
                 self.endRequest(nil, responseData: nil)
                 switch response.result {
-                case .Success(let respJSON):
-                    let dict = respJSON as? [String: AnyObject]
-                    
-                    completion(dict, nil)
+                case .Success(let data):
+                    let json = JSON(data: data)
+                    completion(json.dictionaryObject, nil)
                     break
                 case .Failure(let error):
-                    let handledError = self.errorWithInfo(error, data: response.data!)
+                    let handledError = self.errorWithInfo(error, data: response.data)
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         RequestErrorHandler(error: handledError, title: Titles.error).handle()
                     })
@@ -124,7 +126,7 @@ extension RequestManager {
                 print("Resporse: \(response)")
                 print("Response Object: \(responseObject)")
                 hud.hide(true)
-                if let error = error {
+                if let _ = error {
                     return
                 }
                 if let avatarURL = responseObject?.valueForKey(Response.UploadAvatar.avatar) as? String {
