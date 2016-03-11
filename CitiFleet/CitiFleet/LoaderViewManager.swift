@@ -14,13 +14,15 @@ class LoaderViewManager: NSObject {
     class func showLoader() {
         let view = AppDelegate.sharedDelegate().rootViewController().view
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            if let existingHud = hud {
+                existingHud.hide(false)
+            }
             hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
         }
     }
     
     class func hideLoader() {
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
-//            MBProgressHUD.hideHUDForView(view, animated: true)
             hud?.hide(true)
         }
     }

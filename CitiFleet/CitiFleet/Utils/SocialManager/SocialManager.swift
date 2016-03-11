@@ -18,11 +18,13 @@ class SocialManager: NSObject {
 //MARK: - Twitter
 extension SocialManager {
     func loginTwitter() {
+        LoaderViewManager.showLoader()
         Twitter.sharedInstance().logInWithCompletion { session, error in
             if (session != nil) {
                 print("Sectet: \(session!.authTokenSecret) token: \(session!.authToken)");
                 self.makeTwitterRequest(session!.authToken, tokenSecret: session!.authTokenSecret)
             } else {
+                LoaderViewManager.hideLoader()
                 print("error: \(error!.localizedDescription)");
             }
         }
@@ -30,7 +32,7 @@ extension SocialManager {
     
     private func makeTwitterRequest(token: String, tokenSecret: String) {
         RequestManager.sharedInstance().postTwitterToken(token, tokenSecret: tokenSecret) { (_, _) -> () in
-            
+            LoaderViewManager.showDoneLoader(1, completion: nil)
         }
     }
 }
@@ -38,8 +40,10 @@ extension SocialManager {
 //MARK: - FaceBook
 extension SocialManager {
     func loginFacebook(fromViewController: UIViewController) {
+        LoaderViewManager.showLoader()
         FBSDKLoginManager().logInWithPublishPermissions([], fromViewController: fromViewController) { (result, error) -> Void in
             if result.isCancelled {
+                LoaderViewManager.hideLoader()
                 return
             }
             self.makeFBRequest(result.token.tokenString)
@@ -47,8 +51,10 @@ extension SocialManager {
     }
     
     private func makeFBRequest(token: String) {
-        RequestManager.sharedInstance().postFacebookToken(token) { (_, _) -> () in
-            LoaderViewManager.showDoneLoader(1, completion: nil)
+        RequestManager.sharedInstance().postFacebookToken(token) { (_, error) -> () in
+            if error == nil {
+                LoaderViewManager.showDoneLoader(1, completion: nil)
+            }
         }
     }
 }
@@ -57,6 +63,7 @@ extension SocialManager {
 extension SocialManager {
     private typealias InstagramKeys = Keys.Instagram
     func loginInstagram() {
+        LoaderViewManager.showLoader()
         let url = "https://api.instagram.com/oauth/authorize/?client_id=" + InstagramKeys.ClientID + "&redirect_uri=" + InstagramKeys.RedirectURI + "&response_type=token"
         
         UIApplication.sharedApplication().openURL(NSURL(string: url)!)
@@ -70,16 +77,20 @@ extension SocialManager {
     }
     
     private func makeInstagramRequest(token: String) {
-        RequestManager.sharedInstance().postInstagramToken(token) { (_, _) -> () in
-            LoaderViewManager.showDoneLoader(1, completion: nil)
+        RequestManager.sharedInstance().postInstagramToken(token) { (_, error) -> () in
+            if error == nil {
+                LoaderViewManager.showDoneLoader(1, completion: nil)
+            }
         }
     }
 }
 
 extension SocialManager {
     func importContacts() {
+        LoaderViewManager.showLoader()
         AddressBookManager().getAllPhones { (contacts, error) -> () in
             if let error = error {
+                LoaderViewManager.hideLoader()
                 print(error)
             } else {
                 self.makeContactsRequest(contacts!)
@@ -88,8 +99,10 @@ extension SocialManager {
     }
     
     private func makeContactsRequest(contacts: [String]) {
-        RequestManager.sharedInstance().postPhoneNumbers(contacts) { (_, _) -> () in
-            LoaderViewManager.showDoneLoader(1, completion: nil)
+        RequestManager.sharedInstance().postPhoneNumbers(contacts) { (_, error) -> () in
+            if error == nil {
+                LoaderViewManager.showDoneLoader(1, completion: nil)
+            }
         }
     }
 }
