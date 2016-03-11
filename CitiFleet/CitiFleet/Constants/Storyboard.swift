@@ -15,6 +15,7 @@ struct Storyboard {
 
 struct XIB {
     static let ReportXIB = "ReportsView"
+    static let BarcodeXIB = "BarcodeView"
 }
 
 struct ViewControllerID {

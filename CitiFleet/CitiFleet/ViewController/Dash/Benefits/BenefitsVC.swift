@@ -32,12 +32,9 @@ class BenefitsVC: UIViewController {
 
 extension BenefitsVC: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let benefit = benefits![indexPath.item]
-        let image = UIImageManager().generateBarcodeFromString(benefit.barcode)
-        let imageView = UIImageView(image: image)
-        imageView.backgroundColor = UIColor.clearColor()
-        view.addSubview(imageView)
-        
+        let benefitsView = BarcodeView.barcodeFromNib()
+        benefitsView.benefit = benefits![indexPath.item]
+        benefitsView.show(view)
     }
 }
 
