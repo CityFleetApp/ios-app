@@ -13,6 +13,7 @@ pod 'SwiftyJSON', '~> 2.3'
 pod 'ReachabilitySwift', '~> 2.3'
 pod 'HanekeSwift', '~> 0.10'
 pod 'RSBarcodes_Swift', '~> 0.1'
+pod 'Cosmos', '~> 1.2'
 
 pod 'FBSDKCoreKit', '~> 4.10'
 pod 'FBSDKLoginKit', '~> 4.10'
@@ -20,7 +21,7 @@ pod 'FBSDKLoginKit', '~> 4.10'
 pod 'TwitterKit', '~> 1.15'
 pod 'TwitterCore', '~> 1.15'
 
-pod "SwiftAddressBook"
+pod 'SwiftAddressBook', '~> 0.6'
 
 pod 'Fabric'
 pod 'Crashlytics'
