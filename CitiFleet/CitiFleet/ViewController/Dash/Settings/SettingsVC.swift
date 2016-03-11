@@ -34,6 +34,11 @@ class SettingsVC: UITableViewController {
     }
 }
 
+// MARK: - TableView Delegate
+extension SettingsVC {
+    
+}
+
 // MARK: - Actions
 extension SettingsVC {
     @IBAction func changeBrightness(sender: UISlider) {

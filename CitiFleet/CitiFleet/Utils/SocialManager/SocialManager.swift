@@ -39,14 +39,16 @@ extension SocialManager {
 extension SocialManager {
     func loginFacebook(fromViewController: UIViewController) {
         FBSDKLoginManager().logInWithPublishPermissions([], fromViewController: fromViewController) { (result, error) -> Void in
-            print("FB token \(result.token.tokenString)")
+            if result.isCancelled {
+                return
+            }
             self.makeFBRequest(result.token.tokenString)
         }
     }
     
     private func makeFBRequest(token: String) {
         RequestManager.sharedInstance().postFacebookToken(token) { (_, _) -> () in
-            
+            LoaderViewManager.showDoneLoader(1, completion: nil)
         }
     }
 }
@@ -69,7 +71,7 @@ extension SocialManager {
     
     private func makeInstagramRequest(token: String) {
         RequestManager.sharedInstance().postInstagramToken(token) { (_, _) -> () in
-            
+            LoaderViewManager.showDoneLoader(1, completion: nil)
         }
     }
 }
@@ -87,7 +89,7 @@ extension SocialManager {
     
     private func makeContactsRequest(contacts: [String]) {
         RequestManager.sharedInstance().postPhoneNumbers(contacts) { (_, _) -> () in
-            
+            LoaderViewManager.showDoneLoader(1, completion: nil)
         }
     }
 }

@@ -25,7 +25,7 @@ class LoaderViewManager: NSObject {
         }
     }
     
-    class func showDoneLoader(seconds: Int, completion:(()->())) {
+    class func showDoneLoader(seconds: Int, completion:(()->())?) {
         let view = AppDelegate.sharedDelegate().rootViewController().view
         let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
         hud.customView = UIImageView(image: UIImage(named: Resources.Checkmark))
@@ -38,7 +38,9 @@ class LoaderViewManager: NSObject {
             sleep(UInt32(seconds))
             dispatch_async(dispatch_get_main_queue()) {
                 hud.hide(true)
-                completion()
+                if let complation = completion {
+                    complation()
+                }
             }
         }
     }
