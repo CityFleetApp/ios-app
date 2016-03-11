@@ -89,4 +89,8 @@ class Settings: NSObject, NSCoding {
             aCoder.encodeObject(field.1, forKey: field.0 as! String)
         }
     }
+    
+    func applySettings() {
+        UIScreen.mainScreen().brightness = self.brightness
+    }
 }

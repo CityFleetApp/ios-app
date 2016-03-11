@@ -36,7 +36,15 @@ class SettingsVC: UITableViewController {
 
 // MARK: - TableView Delegate
 extension SettingsVC {
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.row {
+        case 4:
+            self.dismissViewControllerAnimated(true, completion: nil)
+            break
+        default:
+            break
+        }
+    }
 }
 
 // MARK: - Actions

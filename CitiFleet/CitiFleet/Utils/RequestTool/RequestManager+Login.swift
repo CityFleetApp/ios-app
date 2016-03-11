@@ -19,7 +19,7 @@ import ReachabilitySwift
 extension RequestManager {
     func login(username: String, password: String, completion:(([String: AnyObject]?, NSError?) -> ())) {
         let params = [
-            Params.Login.username: username,
+            Params.Login.username: username.lowercaseString,
             Params.Login.password: password
         ]
         post(URL.Login.Login, parameters: params) { (json, error) in
@@ -30,14 +30,14 @@ extension RequestManager {
     func signUp(username:String, email:String, password:String, confirmPassword:String, fullName:String, hackLicense:String, phone:String, completion:(([String: AnyObject]?, NSError?) -> ())) {
         let params = [
             Params.Login.username: username,
-            Params.Login.email: email,
+            Params.Login.email: email.lowercaseString,
             Params.Login.passwordConfirm: confirmPassword,
             Params.Login.password: password,
             Params.Login.phone: phone,
             Params.Login.hackLicense: hackLicense,
             Params.Login.fullName: fullName
         ]
-        post(URL.Login.Login, parameters: params) { (json, error) in
+        post(URL.Login.SignUp, parameters: params) { (json, error) in
             completion(json?.dictionaryObject, error)
         }
     }
