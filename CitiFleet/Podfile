@@ -12,6 +12,7 @@ pod 'SwiftValidator', '~> 3.0'
 pod 'SwiftyJSON', '~> 2.3'
 pod 'ReachabilitySwift', '~> 2.3'
 pod 'HanekeSwift', '~> 0.10'
+pod 'RSBarcodes_Swift', '~> 0.1'
 
 pod 'FBSDKCoreKit', '~> 4.10'
 pod 'FBSDKLoginKit', '~> 4.10'

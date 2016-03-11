@@ -47,10 +47,3 @@ extension AddFriendsVC {
         }
     }
 }
-
-//MARK: - Actions
-extension AddFriendsVC {
-    @IBAction func back(sender: AnyObject) {
-        navigationController?.popViewControllerAnimated(true)
-    }
-}

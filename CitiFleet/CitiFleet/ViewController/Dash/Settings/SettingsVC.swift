@@ -41,10 +41,6 @@ extension SettingsVC {
         Settings.sharedSettings.saveSettings()
     }
     
-    @IBAction func back(sender: AnyObject) {
-        navigationController?.popViewControllerAnimated(true)
-    }
-    
     @IBAction func changedVisibleStatus(sender: UISwitch) {
         Settings.sharedSettings.visible = sender.on
         Settings.sharedSettings.saveSettings()

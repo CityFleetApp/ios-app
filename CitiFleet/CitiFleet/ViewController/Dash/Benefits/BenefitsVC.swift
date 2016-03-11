@@ -30,6 +30,17 @@ class BenefitsVC: UIViewController {
     }
 }
 
+extension BenefitsVC: UICollectionViewDelegate {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let benefit = benefits![indexPath.item]
+        let image = UIImageManager().generateBarcodeFromString(benefit.barcode)
+        let imageView = UIImageView(image: image)
+        imageView.backgroundColor = UIColor.clearColor()
+        view.addSubview(imageView)
+        
+    }
+}
+
 extension BenefitsVC: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return benefits != nil ? (benefits?.count)! : 0
@@ -53,4 +64,10 @@ class BenefitsCollectionViewCell: UICollectionViewCell {
     @IBOutlet var title: UILabel!
     @IBOutlet var thumbnail: UIImageView!
     var barcode: String?
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        contentView.cornerRadius = 5
+        contentView.clipsToBounds = true
+    }
 }

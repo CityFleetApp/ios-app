@@ -479,7 +479,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="fxs-Az-5Lu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="tlF-fC-7fb">
                                 <cells>
@@ -679,7 +679,14 @@
                             <outlet property="delegate" destination="2QL-I7-fgx" id="r6a-3J-otH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Change Password" id="aLc-NQ-wYu"/>
+                    <navigationItem key="navigationItem" title="Change Password" id="aLc-NQ-wYu">
+                        <barButtonItem key="leftBarButtonItem" image="back-ic" id="ZZl-E0-79L">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="2QL-I7-fgx" id="LHd-PT-beX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="confirmNewPassTF" destination="Tv3-Qb-ZMj" id="aOt-Sh-IVm"/>
                         <outlet property="currentPasswordTF" destination="qw4-da-K22" id="dsB-Eq-spm"/>

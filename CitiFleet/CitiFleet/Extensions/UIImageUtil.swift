@@ -62,6 +62,9 @@ func RBResizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
 
 class UIImageManager: NSObject {
     static let GaussianBlur = "CIGaussianBlur"
+    static let BarcodeFilter = "CICode128BarcodeGenerator"
+    static let FakeColorFilter = "CIFalseColor"
+    
     func blur(scrImage:UIImage) -> UIImage {
         let gaussianBlurFilter = CIFilter(name: UIImageManager.GaussianBlur)
         gaussianBlurFilter?.setDefaults()
@@ -77,5 +80,33 @@ class UIImageManager: NSObject {
         
         let image = UIImage(CGImage: cgimg)
         return image
+    }
+    
+    func generateBarcodeFromString(string: String) -> UIImage? {
+        let data = string.dataUsingEncoding(NSASCIIStringEncoding)
+        
+        if let filter = CIFilter(name: UIImageManager.BarcodeFilter) {
+            filter.setValue(data, forKey: "inputMessage")
+            let transform = CGAffineTransformMakeScale(2, 4)
+            
+            if let output = filter.outputImage?.imageByApplyingTransform(transform) {
+                return applyFakeColorFilter(output)
+            }
+        }
+        
+        return nil
+    }
+    
+    private func applyFakeColorFilter(inputImage: CIImage) -> UIImage? {
+        if let filter = CIFilter(name: UIImageManager.FakeColorFilter) {
+            filter.setValue(inputImage, forKey: "inputImage")
+            filter.setValue(CIColor(color: UIColor.blackColor()), forKey: "inputColor0")
+            filter.setValue(CIColor(color: UIColor.clearColor()), forKey: "inputColor1")
+            
+            if let output = filter.outputImage {
+                return UIImage(CIImage: output)
+            }
+        }
+        return nil
     }
 }

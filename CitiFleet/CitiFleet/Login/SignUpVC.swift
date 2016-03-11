@@ -102,9 +102,9 @@ class SignUpVC: UITableViewController {
         }
     }
     
-    @IBAction func back(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
-    }
+//    @IBAction func back(sender: AnyObject) {
+//        self.navigationController?.popViewControllerAnimated(true)
+//    }
     
 }
 
