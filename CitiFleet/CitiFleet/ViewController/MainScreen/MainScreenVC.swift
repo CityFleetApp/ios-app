@@ -39,7 +39,7 @@ class MainScreenVC: UIViewController {
         }
     }
     
-    private func updateButtonsColor(selectedButton: UIButton) {
+    @IBAction func updateButtonsColor(selectedButton: UIButton) {
         let buttons = [dashboardBtn, marketPlaceBtn, notificationsBtn, reportBtn]
         for button in buttons {
             let color = button == selectedButton ? UIColor.whiteColor() : UIColor(white: 1, alpha: 0.4)

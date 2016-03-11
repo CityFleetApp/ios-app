@@ -49,6 +49,10 @@
                                         <state key="normal" title="Dashboard" image="dashboard-ic">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="openDash:" destination="4tr-YF-9SX" eventType="touchUpInside" id="JsL-GC-bQ9"/>
+                                            <action selector="updateButtonsColor:" destination="4tr-YF-9SX" eventType="touchUpInside" id="jyr-9j-Srj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aov-pF-egP">
                                         <rect key="frame" x="150" y="0.0" width="150" height="50"/>
@@ -56,6 +60,9 @@
                                         <state key="normal" title="Marketplace" image="marketplace-ic">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="updateButtonsColor:" destination="4tr-YF-9SX" eventType="touchUpInside" id="r2k-dr-kVa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rss-hf-RRp">
                                         <rect key="frame" x="300" y="0.0" width="150" height="50"/>
@@ -63,6 +70,9 @@
                                         <state key="normal" title="Notification" image="notification-ic">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="updateButtonsColor:" destination="4tr-YF-9SX" eventType="touchUpInside" id="AoO-dP-6OI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrW-VX-asl">
                                         <rect key="frame" x="450" y="0.0" width="150" height="50"/>
@@ -72,6 +82,7 @@
                                         </state>
                                         <connections>
                                             <action selector="showReportsMenu:" destination="4tr-YF-9SX" eventType="touchUpInside" id="QFT-4e-g61"/>
+                                            <action selector="updateButtonsColor:" destination="4tr-YF-9SX" eventType="touchUpInside" id="ewl-Ah-TDR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -391,7 +402,7 @@ to the same direction ,
                                                         <constraint firstAttribute="width" secondItem="C4D-Tn-93p" secondAttribute="height" multiplier="49:71" id="dip-wj-HZG"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Find friends from contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvH-Sw-AzB">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find friends from contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvH-Sw-AzB">
                                                     <rect key="frame" x="72" y="24" width="292" height="23"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18.770000457763672"/>
                                                     <color key="textColor" red="0.1803921568627451" green="0.76862745098039209" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
@@ -438,7 +449,7 @@ to the same direction ,
                                                         <constraint firstAttribute="width" secondItem="POb-eq-JrF" secondAttribute="height" multiplier="49:71" id="EdV-vT-1qN"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Facebook Friend " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wtu-z0-HbC">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook Friend " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wtu-z0-HbC">
                                                     <rect key="frame" x="72" y="24" width="292" height="23"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18.770000457763672"/>
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -481,7 +492,7 @@ to the same direction ,
                                                         <constraint firstAttribute="width" secondItem="dl8-gc-w8x" secondAttribute="height" multiplier="49:71" id="W2W-Ws-vAR"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Instagram Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUv-fT-ZbM">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUv-fT-ZbM">
                                                     <rect key="frame" x="72" y="24" width="292" height="23"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18.770000457763672"/>
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -524,7 +535,7 @@ to the same direction ,
                                                         <constraint firstAttribute="width" secondItem="qUE-hl-d7P" secondAttribute="height" multiplier="49:71" id="MI4-aR-KEA"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Twitter Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zb-Sb-sE2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zb-Sb-sE2">
                                                     <rect key="frame" x="72" y="24" width="292" height="23"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18.770000457763672"/>
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
