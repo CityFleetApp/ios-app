@@ -89,10 +89,11 @@ extension SocialManager {
     func importContacts() {
         LoaderViewManager.showLoader()
         AddressBookManager().getAllPhones { (contacts, error) -> () in
-            if let error = error {
+            if error != nil || contacts == nil {
                 LoaderViewManager.hideLoader()
                 print(error)
             } else {
+                
                 self.makeContactsRequest(contacts!)
             }
         }

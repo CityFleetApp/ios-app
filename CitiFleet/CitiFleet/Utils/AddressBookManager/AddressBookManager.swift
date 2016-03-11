@@ -12,6 +12,7 @@ import SwiftAddressBook
 class AddressBookManager: NSObject {
     func getAllPhones(completion:(([String]?, NSError?)->())) {
         SwiftAddressBook.requestAccessWithCompletion({ (success, error) -> Void in
+            
             if success {
                 self.getPhoneNumbers(completion)
             } else {

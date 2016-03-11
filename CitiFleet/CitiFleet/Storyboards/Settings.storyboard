@@ -503,7 +503,7 @@
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="NewPassword" placeholder="Enter your current password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qw4-da-K22">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your current password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qw4-da-K22">
                                                     <rect key="frame" x="17" y="41" width="559" height="20"/>
                                                     <color key="textColor" red="0.090196078430000007" green="0.15686274510000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
@@ -555,7 +555,7 @@
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="QwerQwer" placeholder="Enter your new password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OI9-qD-8rY">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your new password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OI9-qD-8rY">
                                                     <rect key="frame" x="17" y="41" width="559" height="20"/>
                                                     <color key="textColor" red="0.090196078430000007" green="0.15686274510000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
@@ -603,7 +603,7 @@
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="QwerQwer" placeholder="Enter your confirm password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tv3-Qb-ZMj">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your confirm password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tv3-Qb-ZMj">
                                                     <rect key="frame" x="17" y="41" width="559" height="20"/>
                                                     <color key="textColor" red="0.090196078430000007" green="0.15686274510000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>

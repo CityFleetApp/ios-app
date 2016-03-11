@@ -41,9 +41,16 @@ class DashVC: UITableViewController {
     }
     
     func preloadData() {
-        let cache = Shared.imageCache
         let URL = User.currentUser()?.avatarURL
-        cache.fetch(URL: URL!).onSuccess { image in
+        if let url = URL {
+            setExistingAvatar(url)
+        }
+        
+    }
+    
+    private func setExistingAvatar(url: NSURL) {
+        let cache = Shared.imageCache
+        cache.fetch(URL: url).onSuccess { image in
             dispatch_async(dispatch_get_main_queue()) {
                 self.avatarImage = image
             }
