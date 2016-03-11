@@ -22,7 +22,9 @@ extension RequestManager {
             Params.Login.username: username,
             Params.Login.password: password
         ]
-        post(URL.Login.Login, parameters: params, completion: completion)
+        post(URL.Login.Login, parameters: params) { (json, error) in
+            completion(json?.dictionaryObject, error)
+        }
     }
     
     func signUp(username:String, email:String, password:String, confirmPassword:String, fullName:String, hackLicense:String, phone:String, completion:(([String: AnyObject]?, NSError?) -> ())) {
@@ -35,7 +37,9 @@ extension RequestManager {
             Params.Login.hackLicense: hackLicense,
             Params.Login.fullName: fullName
         ]
-        post(URL.Login.Login, parameters: params, completion: completion)
+        post(URL.Login.Login, parameters: params) { (json, error) in
+            completion(json?.dictionaryObject, error)
+        }
     }
     
     func resetPassword(currPassword: String, newPassword: String, newConfirmPassword: String, completion: (([String: AnyObject]?, NSError?) -> ())) {
@@ -45,6 +49,8 @@ extension RequestManager {
             Params.ResetPassword.newConfirmPassword: newConfirmPassword
         ]
         
-        post(URL.Login.ResetPassword, parameters: params, completion: completion)
+        post(URL.Login.ResetPassword, parameters: params) { (json, error) in
+            completion(json?.dictionaryObject, error)
+        }
     }
 }

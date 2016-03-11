@@ -77,20 +77,24 @@ class RequestManager: NSObject {
         userInfo[Params.Response.serverError] = errorText
         return NSError(domain: error.domain, code: error.code, userInfo: userInfo)
     }
-    
-    func post(baseURL: String, parameters: [String:AnyObject], completion:(([String: AnyObject]?, NSError?) -> ())) {
+}
+
+//MARK: - Simple Request
+extension RequestManager {
+    func makeRequest(method: Alamofire.Method, baseURL: String, parameters: [String:AnyObject]?, completion:((SwiftyJSON.JSON?, NSError?) -> ())) {
+        
         if !shouldStartRequest() {
             return
         }
         
-        Alamofire.request(.POST, url(baseURL), headers: header(), parameters: parameters, encoding: .JSON)
+        Alamofire.request(method, url(baseURL), headers: header(), parameters: parameters, encoding: .JSON)
             .validate(statusCode: 200..<300)
             .responseData{ response in
                 self.endRequest(nil, responseData: nil)
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data: data)
-                    completion(json.dictionaryObject, nil)
+                    completion(json, nil)
                     break
                 case .Failure(let error):
                     let handledError = self.errorWithInfo(error, data: response.data)
@@ -101,6 +105,14 @@ class RequestManager: NSObject {
                     break
                 }
         }
+    }
+    
+    func post(baseURL: String, parameters: [String:AnyObject]?, completion:((SwiftyJSON.JSON?, NSError?) -> ())) {
+        makeRequest(.POST, baseURL: baseURL, parameters: parameters, completion: completion)
+    }
+    
+    func get(baseURL: String, parameters: [String:AnyObject]?, completion:((SwiftyJSON.JSON?, NSError?) -> ())) {
+        makeRequest(.GET, baseURL: baseURL, parameters: parameters, completion: completion)
     }
 }
 

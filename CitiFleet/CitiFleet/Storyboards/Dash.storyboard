@@ -680,9 +680,9 @@
                                                         </mask>
                                                     </variation>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pif-FZ-QE0">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pif-FZ-QE0">
                                                     <rect key="frame" x="0.0" y="0.0" width="382" height="225"/>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -697,6 +697,10 @@
                                             <constraint firstItem="pif-FZ-QE0" firstAttribute="top" secondItem="f7s-cb-acv" secondAttribute="top" id="jVj-LJ-4p6"/>
                                         </constraints>
                                         <size key="customSize" width="382" height="280"/>
+                                        <connections>
+                                            <outlet property="thumbnail" destination="pif-FZ-QE0" id="0YQ-eZ-LGy"/>
+                                            <outlet property="title" destination="9Pf-0c-VG5" id="4Vy-Fz-tfa"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -713,6 +717,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sSy-J1-s7L"/>
+                    <connections>
+                        <outlet property="benefitCollectionView" destination="pFq-ye-9Ps" id="ych-Uf-UPd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXQ-Su-79R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

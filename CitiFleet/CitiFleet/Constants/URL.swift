@@ -31,6 +31,7 @@ struct URL {
     }
     static let Reports = "reports/"
     static let UploadAvatar = "users/upload-avatar/"
+    static let BenefitsList = "benefits/"
 }
 
 struct Params {
@@ -74,5 +75,10 @@ struct Params {
 struct Response {
     struct UploadAvatar {
         static let avatar = "avatar"
+    }
+    struct Benefits {
+        static let ImageURL = "image_thumbnail"
+        static let Barcode = "barcode"
+        static let Title = "name"
     }
 }

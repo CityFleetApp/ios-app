@@ -21,3 +21,7 @@ struct ViewControllerID {
     static let Login = "LoginNC"
     static let Dash = "DashContainerVC"
 }
+
+struct CellID {
+    static let BenefitCellID = "BenefitsCollectionViewCell"
+}
