@@ -16,7 +16,7 @@
         <!--Legal Aid-->
         <scene sceneID="8Ty-2H-ORA">
             <objects>
-                <tableViewController storyboardIdentifier="LegalAid" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ovj-gv-MRS" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LegalAid" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ovj-gv-MRS" customClass="LegalAidVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0zc-p0-ZPS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                         <sections>
                             <tableViewSection id="6Lm-pt-oaz">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="XPY-6E-h4n" customClass="DashLogOutCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="XPY-6E-h4n" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XPY-6E-h4n" id="LZo-fV-9hM">
@@ -33,19 +33,26 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="la-lawyer" translatesAutoresizingMaskIntoConstraints="NO" id="aNN-LI-jzE">
-                                                    <rect key="frame" x="16" y="26" width="26" height="20"/>
+                                                    <rect key="frame" x="16" y="19" width="33" height="33"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="26" id="6oq-om-DDp"/>
+                                                        <constraint firstAttribute="width" constant="33" id="DcA-EZ-W9h"/>
+                                                        <constraint firstAttribute="height" constant="33" id="Gah-HV-jee"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="6oq-om-DDp"/>
+                                                        </mask>
+                                                    </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DMV Lawyers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63r-fJ-Ss2">
-                                                    <rect key="frame" x="58" y="24" width="492" height="23"/>
+                                                    <rect key="frame" x="65" y="24" width="485" height="23"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18.799999237060547"/>
                                                     <color key="textColor" red="0.29803921568627451" green="0.3529411764705882" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -72,7 +79,7 @@
                                             <outlet property="title" destination="63r-fJ-Ss2" id="ibr-Tf-P0H"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="eG9-Vh-ATw" customClass="DashLogOutCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="eG9-Vh-ATw" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="71" width="600" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eG9-Vh-ATw" id="h5G-MA-u1y">
@@ -80,19 +87,26 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="la-lawyer" translatesAutoresizingMaskIntoConstraints="NO" id="KuT-FY-2n2">
-                                                    <rect key="frame" x="16" y="26" width="26" height="20"/>
+                                                    <rect key="frame" x="16" y="19" width="33" height="33"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="26" id="CLz-j9-eos"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="CCg-uR-98t"/>
+                                                        <constraint firstAttribute="width" constant="33" id="CLz-j9-eos"/>
+                                                        <constraint firstAttribute="height" constant="33" id="bGh-Qh-XUo"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="CCg-uR-98t"/>
+                                                        </mask>
+                                                    </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TLC Lawyers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyb-g8-o2D">
-                                                    <rect key="frame" x="58" y="24" width="492" height="23"/>
+                                                    <rect key="frame" x="65" y="24" width="485" height="23"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18.799999237060547"/>
                                                     <color key="textColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -119,7 +133,7 @@
                                             <outlet property="title" destination="gyb-g8-o2D" id="EvF-Kh-Xtl"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="Wfg-jN-fB7" customClass="DashLogOutCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="Wfg-jN-fB7" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="142" width="600" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wfg-jN-fB7" id="Jgw-sX-OJt">
@@ -127,19 +141,26 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="la-accountants" translatesAutoresizingMaskIntoConstraints="NO" id="B09-bX-0Yc">
-                                                    <rect key="frame" x="16" y="24" width="26" height="23"/>
+                                                    <rect key="frame" x="16" y="19" width="33" height="33"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="26" id="F5s-jC-zla"/>
+                                                        <constraint firstAttribute="width" constant="33" id="F5s-jC-zla"/>
+                                                        <constraint firstAttribute="height" constant="33" id="Hvw-nf-c9S"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="cZf-cL-fD6"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="cZf-cL-fD6"/>
+                                                        </mask>
+                                                    </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accountants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqX-za-aLd">
-                                                    <rect key="frame" x="58" y="24" width="492" height="23"/>
+                                                    <rect key="frame" x="65" y="24" width="485" height="23"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18.799999237060547"/>
                                                     <color key="textColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -166,7 +187,7 @@
                                             <outlet property="title" destination="iqX-za-aLd" id="GRK-TB-7fw"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="pvi-P3-4NQ" customClass="DashLogOutCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="pvi-P3-4NQ" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="213" width="600" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pvi-P3-4NQ" id="AFU-9x-TnI">
@@ -174,19 +195,26 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="la-insurance-frokers" translatesAutoresizingMaskIntoConstraints="NO" id="QuZ-4O-Tgz">
-                                                    <rect key="frame" x="16" y="25" width="26" height="21"/>
+                                                    <rect key="frame" x="16" y="19" width="33" height="33"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="26" id="WOK-5b-pHg"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="FN6-Qx-e7v"/>
+                                                        <constraint firstAttribute="width" constant="33" id="WOK-5b-pHg"/>
+                                                        <constraint firstAttribute="height" constant="33" id="lhu-Lc-QPG"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="FN6-Qx-e7v"/>
+                                                        </mask>
+                                                    </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insurance Brokers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwx-fG-Pky">
-                                                    <rect key="frame" x="58" y="24" width="492" height="23"/>
+                                                    <rect key="frame" x="65" y="24" width="485" height="23"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18.799999237060547"/>
                                                     <color key="textColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>

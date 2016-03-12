@@ -59,6 +59,8 @@
 		43CFA7631C93915F00DC89C9 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CFA7621C93915F00DC89C9 /* ProfileVC.swift */; };
 		43CFA7651C939E7C00DC89C9 /* NSAttributedString+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CFA7641C939E7C00DC89C9 /* NSAttributedString+Ext.swift */; };
 		43CFA7671C93AF5C00DC89C9 /* LegalAid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CFA7661C93AF5C00DC89C9 /* LegalAid.storyboard */; };
+		43CFA76A1C93B61C00DC89C9 /* LegalAidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CFA7691C93B61C00DC89C9 /* LegalAidVC.swift */; };
+		43CFA76C1C93B81100DC89C9 /* LegalAid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43CFA76B1C93B81100DC89C9 /* LegalAid.xib */; };
 		43D2D0B21C7C97D600A41D4F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B11C7C97D600A41D4F /* LoginVC.swift */; };
 		43D2D0B61C7C9ABE00A41D4F /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B51C7C9ABE00A41D4F /* LoginTextField.swift */; };
 		43D2D0B81C7C9B2D00A41D4F /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */; };
@@ -140,6 +142,8 @@
 		43CFA7621C93915F00DC89C9 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = ViewController/Dash/Profile/ProfileVC.swift; sourceTree = "<group>"; };
 		43CFA7641C939E7C00DC89C9 /* NSAttributedString+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Ext.swift"; path = "Extensions/NSAttributedString+Ext.swift"; sourceTree = "<group>"; };
 		43CFA7661C93AF5C00DC89C9 /* LegalAid.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LegalAid.storyboard; path = Storyboards/LegalAid.storyboard; sourceTree = "<group>"; };
+		43CFA7691C93B61C00DC89C9 /* LegalAidVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidVC.swift; path = ViewController/Dash/LegalAid/LegalAidVC.swift; sourceTree = "<group>"; };
+		43CFA76B1C93B81100DC89C9 /* LegalAid.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LegalAid.xib; path = Viewes/LegalAid/LegalAid.xib; sourceTree = "<group>"; };
 		43D2D0B11C7C97D600A41D4F /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = Login/LoginVC.swift; sourceTree = "<group>"; };
 		43D2D0B51C7C9ABE00A41D4F /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTextField.swift; path = Viewes/Login/LoginTextField.swift; sourceTree = "<group>"; };
 		43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Ext.swift"; path = "Extensions/UIView+Ext.swift"; sourceTree = "<group>"; };
@@ -330,6 +334,7 @@
 		4334D8131C7F494E00557AE4 /* Dash */ = {
 			isa = PBXGroup;
 			children = (
+				43CFA7681C93B5F600DC89C9 /* LegalAid */,
 				43CFA7611C938F8400DC89C9 /* Profile */,
 				43A4266C1C91AB2A0044B6A6 /* Benefits */,
 				43A4265D1C90353E0044B6A6 /* Settings */,
@@ -420,6 +425,22 @@
 			name = Profile;
 			sourceTree = "<group>";
 		};
+		43CFA7681C93B5F600DC89C9 /* LegalAid */ = {
+			isa = PBXGroup;
+			children = (
+				43CFA7691C93B61C00DC89C9 /* LegalAidVC.swift */,
+			);
+			name = LegalAid;
+			sourceTree = "<group>";
+		};
+		43CFA76D1C93B81700DC89C9 /* LegolAid */ = {
+			isa = PBXGroup;
+			children = (
+				43CFA76B1C93B81100DC89C9 /* LegalAid.xib */,
+			);
+			name = LegolAid;
+			sourceTree = "<group>";
+		};
 		43D2D0B31C7C9A3500A41D4F /* Viewes */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,6 +449,7 @@
 				43DC05CA1C85AFE800AB670A /* Main Screen */,
 				43DC05B71C842ACE00AB670A /* Reports */,
 				43D2D0B41C7C9A3D00A41D4F /* Login */,
+				43CFA76D1C93B81700DC89C9 /* LegolAid */,
 			);
 			name = Viewes;
 			sourceTree = "<group>";
@@ -580,6 +602,7 @@
 				4316BBAD1C7B6A27007A9ECB /* Montserrat-ExtraBold.otf in Resources */,
 				4316BBAE1C7B6A27007A9ECB /* Montserrat-Light.otf in Resources */,
 				4316BBAF1C7B6A27007A9ECB /* Montserrat-Regular.otf in Resources */,
+				43CFA76C1C93B81100DC89C9 /* LegalAid.xib in Resources */,
 				4316BBB01C7B6A27007A9ECB /* Montserrat-SemiBold.otf in Resources */,
 				4316BBB11C7B6A27007A9ECB /* Montserrat-UltraLight.otf in Resources */,
 				4316BB911C7B0885007A9ECB /* Login.storyboard in Resources */,
@@ -669,6 +692,7 @@
 				4316BBA91C7B61F5007A9ECB /* Fonts.swift in Sources */,
 				4334D8151C7F496F00557AE4 /* DashVC.swift in Sources */,
 				43CFA7631C93915F00DC89C9 /* ProfileVC.swift in Sources */,
+				43CFA76A1C93B61C00DC89C9 /* LegalAidVC.swift in Sources */,
 				4316BBB41C7B73C6007A9ECB /* ConfirmPasswordRule.swift in Sources */,
 				43CFA7651C939E7C00DC89C9 /* NSAttributedString+Ext.swift in Sources */,
 				43DC05C01C847DAE00AB670A /* RequestManager+Login.swift in Sources */,
