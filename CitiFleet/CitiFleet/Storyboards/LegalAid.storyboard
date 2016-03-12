@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Legal Aid-->
+        <scene sceneID="8Ty-2H-ORA">
+            <objects>
+                <tableViewController storyboardIdentifier="LegalAid" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ovj-gv-MRS" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0zc-p0-ZPS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.94901960784313721" green="0.95686274509803915" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection id="6Lm-pt-oaz">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="XPY-6E-h4n" customClass="DashLogOutCell" customModule="CitiFleet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XPY-6E-h4n" id="LZo-fV-9hM">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="la-lawyer" translatesAutoresizingMaskIntoConstraints="NO" id="aNN-LI-jzE">
+                                                    <rect key="frame" x="16" y="26" width="26" height="20"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="26" id="6oq-om-DDp"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DMV Lawyers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63r-fJ-Ss2">
+                                                    <rect key="frame" x="58" y="24" width="492" height="23"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18.799999237060547"/>
+                                                    <color key="textColor" red="0.29803921568627451" green="0.3529411764705882" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next-screen-set-ic" translatesAutoresizingMaskIntoConstraints="NO" id="hMy-Xr-NMu">
+                                                    <rect key="frame" x="566" y="27" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="18" id="Fig-ya-2TV"/>
+                                                        <constraint firstAttribute="height" constant="18" id="ejQ-tB-Ilq"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hMy-Xr-NMu" firstAttribute="centerY" secondItem="63r-fJ-Ss2" secondAttribute="centerY" id="1lr-tF-e5K"/>
+                                                <constraint firstItem="63r-fJ-Ss2" firstAttribute="centerY" secondItem="aNN-LI-jzE" secondAttribute="centerY" id="AoD-qH-MvC"/>
+                                                <constraint firstItem="aNN-LI-jzE" firstAttribute="leading" secondItem="LZo-fV-9hM" secondAttribute="leading" constant="16" id="DoH-1K-gL7"/>
+                                                <constraint firstItem="hMy-Xr-NMu" firstAttribute="leading" secondItem="63r-fJ-Ss2" secondAttribute="trailing" constant="16" id="Qlr-DV-vha"/>
+                                                <constraint firstItem="aNN-LI-jzE" firstAttribute="centerY" secondItem="LZo-fV-9hM" secondAttribute="centerY" id="WX2-Hv-WFm"/>
+                                                <constraint firstAttribute="trailing" secondItem="hMy-Xr-NMu" secondAttribute="trailing" constant="16" id="lFA-PB-Ndv"/>
+                                                <constraint firstItem="63r-fJ-Ss2" firstAttribute="leading" secondItem="aNN-LI-jzE" secondAttribute="trailing" constant="16" id="zo1-Ia-daj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="63r-fJ-Ss2" id="ibr-Tf-P0H"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="eG9-Vh-ATw" customClass="DashLogOutCell" customModule="CitiFleet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="71" width="600" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eG9-Vh-ATw" id="h5G-MA-u1y">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="la-lawyer" translatesAutoresizingMaskIntoConstraints="NO" id="KuT-FY-2n2">
+                                                    <rect key="frame" x="16" y="26" width="26" height="20"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="26" id="CLz-j9-eos"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TLC Lawyers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyb-g8-o2D">
+                                                    <rect key="frame" x="58" y="24" width="492" height="23"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18.799999237060547"/>
+                                                    <color key="textColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next-screen-set-ic" translatesAutoresizingMaskIntoConstraints="NO" id="IG0-s7-kbt">
+                                                    <rect key="frame" x="566" y="27" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="XXd-P3-yzq"/>
+                                                        <constraint firstAttribute="width" constant="18" id="gec-wR-5m2"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gyb-g8-o2D" firstAttribute="centerY" secondItem="KuT-FY-2n2" secondAttribute="centerY" id="2cu-eP-PHg"/>
+                                                <constraint firstItem="KuT-FY-2n2" firstAttribute="centerY" secondItem="h5G-MA-u1y" secondAttribute="centerY" id="9zP-eT-LHS"/>
+                                                <constraint firstItem="IG0-s7-kbt" firstAttribute="centerY" secondItem="gyb-g8-o2D" secondAttribute="centerY" id="IyA-yN-ubH"/>
+                                                <constraint firstItem="KuT-FY-2n2" firstAttribute="leading" secondItem="h5G-MA-u1y" secondAttribute="leading" constant="16" id="ckn-ka-YP6"/>
+                                                <constraint firstItem="IG0-s7-kbt" firstAttribute="leading" secondItem="gyb-g8-o2D" secondAttribute="trailing" constant="16" id="mwq-gR-rqw"/>
+                                                <constraint firstItem="gyb-g8-o2D" firstAttribute="leading" secondItem="KuT-FY-2n2" secondAttribute="trailing" constant="16" id="xCE-8P-a9B"/>
+                                                <constraint firstAttribute="trailing" secondItem="IG0-s7-kbt" secondAttribute="trailing" constant="16" id="zfP-SO-zoH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="gyb-g8-o2D" id="EvF-Kh-Xtl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="Wfg-jN-fB7" customClass="DashLogOutCell" customModule="CitiFleet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="142" width="600" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wfg-jN-fB7" id="Jgw-sX-OJt">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="la-accountants" translatesAutoresizingMaskIntoConstraints="NO" id="B09-bX-0Yc">
+                                                    <rect key="frame" x="16" y="24" width="26" height="23"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="26" id="F5s-jC-zla"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accountants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqX-za-aLd">
+                                                    <rect key="frame" x="58" y="24" width="492" height="23"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18.799999237060547"/>
+                                                    <color key="textColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next-screen-set-ic" translatesAutoresizingMaskIntoConstraints="NO" id="DAb-8g-f4H">
+                                                    <rect key="frame" x="566" y="27" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="Uuq-M8-Our"/>
+                                                        <constraint firstAttribute="width" constant="18" id="dSU-Jq-9yC"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="B09-bX-0Yc" firstAttribute="leading" secondItem="Jgw-sX-OJt" secondAttribute="leading" constant="16" id="ICZ-re-hh8"/>
+                                                <constraint firstItem="DAb-8g-f4H" firstAttribute="centerY" secondItem="iqX-za-aLd" secondAttribute="centerY" id="N21-zj-w27"/>
+                                                <constraint firstItem="B09-bX-0Yc" firstAttribute="centerY" secondItem="Jgw-sX-OJt" secondAttribute="centerY" id="a0C-vD-ikn"/>
+                                                <constraint firstAttribute="trailing" secondItem="DAb-8g-f4H" secondAttribute="trailing" constant="16" id="cGQ-im-wLK"/>
+                                                <constraint firstItem="iqX-za-aLd" firstAttribute="leading" secondItem="B09-bX-0Yc" secondAttribute="trailing" constant="16" id="fDK-rJ-hUb"/>
+                                                <constraint firstItem="iqX-za-aLd" firstAttribute="centerY" secondItem="B09-bX-0Yc" secondAttribute="centerY" id="mIM-FG-86b"/>
+                                                <constraint firstItem="DAb-8g-f4H" firstAttribute="leading" secondItem="iqX-za-aLd" secondAttribute="trailing" constant="16" id="tfp-XW-sKe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="iqX-za-aLd" id="GRK-TB-7fw"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="pvi-P3-4NQ" customClass="DashLogOutCell" customModule="CitiFleet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="213" width="600" height="71"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pvi-P3-4NQ" id="AFU-9x-TnI">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="la-insurance-frokers" translatesAutoresizingMaskIntoConstraints="NO" id="QuZ-4O-Tgz">
+                                                    <rect key="frame" x="16" y="25" width="26" height="21"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="26" id="WOK-5b-pHg"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insurance Brokers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwx-fG-Pky">
+                                                    <rect key="frame" x="58" y="24" width="492" height="23"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18.799999237060547"/>
+                                                    <color key="textColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next-screen-set-ic" translatesAutoresizingMaskIntoConstraints="NO" id="zOv-Tz-oq0">
+                                                    <rect key="frame" x="566" y="27" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="18" id="2Lf-Qx-igx"/>
+                                                        <constraint firstAttribute="height" constant="18" id="Xtn-I9-Q5O"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zOv-Tz-oq0" firstAttribute="leading" secondItem="kwx-fG-Pky" secondAttribute="trailing" constant="16" id="EUE-To-qx1"/>
+                                                <constraint firstItem="kwx-fG-Pky" firstAttribute="centerY" secondItem="QuZ-4O-Tgz" secondAttribute="centerY" id="MYK-fb-yRo"/>
+                                                <constraint firstItem="zOv-Tz-oq0" firstAttribute="centerY" secondItem="kwx-fG-Pky" secondAttribute="centerY" id="V3C-zf-Pt4"/>
+                                                <constraint firstAttribute="trailing" secondItem="zOv-Tz-oq0" secondAttribute="trailing" constant="16" id="ctb-hi-War"/>
+                                                <constraint firstItem="kwx-fG-Pky" firstAttribute="leading" secondItem="QuZ-4O-Tgz" secondAttribute="trailing" constant="16" id="nkb-d2-FoJ"/>
+                                                <constraint firstItem="QuZ-4O-Tgz" firstAttribute="centerY" secondItem="AFU-9x-TnI" secondAttribute="centerY" id="vEn-uq-e8b"/>
+                                                <constraint firstItem="QuZ-4O-Tgz" firstAttribute="leading" secondItem="AFU-9x-TnI" secondAttribute="leading" constant="16" id="ybr-xJ-QEF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="kwx-fG-Pky" id="zjv-8p-M0Z"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="ovj-gv-MRS" id="KQJ-oJ-eSd"/>
+                            <outlet property="delegate" destination="ovj-gv-MRS" id="8iQ-5f-gd1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Legal Aid" id="bpJ-fj-kYI">
+                        <barButtonItem key="leftBarButtonItem" image="back-ic" id="hnP-KA-g70">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="ovj-gv-MRS" id="aCT-aY-uj6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SJX-BZ-zMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1961" y="1810"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back-ic" width="8" height="13"/>
+        <image name="la-accountants" width="20" height="23"/>
+        <image name="la-insurance-frokers" width="26" height="21"/>
+        <image name="la-lawyer" width="24" height="20"/>
+        <image name="next-screen-set-ic" width="18" height="18"/>
+    </resources>
+</document>
