@@ -73,6 +73,17 @@ struct Params {
 }
 
 struct Response {
+    struct UserInfo {
+        static let Bio = "bio"
+        static let Drives = "drives"
+        static let Username = "username"
+        static let Email = "email"
+        static let Phone = "phone"
+        static let FullName = "full_name"
+        static let HackLicense = "hack_license"
+        static let Token = "token"
+        static let AvatarUrl = "avatar_url"
+    }
     struct UploadAvatar {
         static let avatar = "avatar"
     }

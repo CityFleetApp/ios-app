@@ -28,6 +28,8 @@ class User: NSObject, NSCoding {
     var email: String?
     var token: String?
     var avatarURL: NSURL?
+    var bio: String?
+    var drives: String?
     
     private static var currUser: User?
     
@@ -110,14 +112,16 @@ class User: NSObject, NSCoding {
                 return
             }
             let user = User()
-            user.token = userData![Params.Login.token] as? String
-            user.email = userData![Params.Login.email] as? String
-            user.userName = userData![Params.Login.username] as? String
-            user.fullName = userData![Params.Login.fullName] as? String
-            user.hackLicense = userData![Params.Login.hackLicense] as? String
-            user.phone = userData![Params.Login.phone] as? String
+            user.token = userData![Response.UserInfo.Token] as? String
+            user.email = userData![Response.UserInfo.Email] as? String
+            user.userName = userData![Response.UserInfo.Username] as? String
+            user.fullName = userData![Response.UserInfo.FullName] as? String
+            user.hackLicense = userData![Response.UserInfo.HackLicense] as? String
+            user.phone = userData![Response.UserInfo.Phone] as? String
+            user.bio = userData![Response.UserInfo.Bio] as? String
+            user.drives = userData![Response.UserInfo.Drives] as? String
             
-            if let urlString = userData![Params.Login.avatarUrl] as? String {
+            if let urlString = userData![Response.UserInfo.AvatarUrl] as? String {
                 user.avatarURL = NSURL(string: urlString)
             }
             

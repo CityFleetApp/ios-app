@@ -40,6 +40,13 @@ class DashVC: UITableViewController {
         navigationController?.navigationBar.hidden = true
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == SegueID.Dash2Profile {
+            let profileVC = segue.destinationViewController as! ProfileVC
+            profileVC.user = User.currentUser()
+        }
+    }
+    
     func preloadData() {
         let URL = User.currentUser()?.avatarURL
         if let url = URL {

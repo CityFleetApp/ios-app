@@ -26,3 +26,7 @@ struct ViewControllerID {
 struct CellID {
     static let BenefitCellID = "BenefitsCollectionViewCell"
 }
+
+struct SegueID {
+    static let Dash2Profile = "Dash2Profile"
+}

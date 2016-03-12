@@ -56,6 +56,8 @@
 		43B6D8551C7EFC74000D6844 /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43B6D8541C7EFC74000D6844 /* MainScreen.storyboard */; };
 		43B6D8571C7F0379000D6844 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B6D8561C7F0379000D6844 /* UIButton+Ext.swift */; };
 		43B6D8591C7F055C000D6844 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B6D8581C7F055C000D6844 /* Global.swift */; };
+		43CFA7631C93915F00DC89C9 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CFA7621C93915F00DC89C9 /* ProfileVC.swift */; };
+		43CFA7651C939E7C00DC89C9 /* NSAttributedString+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CFA7641C939E7C00DC89C9 /* NSAttributedString+Ext.swift */; };
 		43D2D0B21C7C97D600A41D4F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B11C7C97D600A41D4F /* LoginVC.swift */; };
 		43D2D0B61C7C9ABE00A41D4F /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B51C7C9ABE00A41D4F /* LoginTextField.swift */; };
 		43D2D0B81C7C9B2D00A41D4F /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */; };
@@ -134,6 +136,8 @@
 		43B6D8541C7EFC74000D6844 /* MainScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainScreen.storyboard; path = Storyboards/MainScreen.storyboard; sourceTree = "<group>"; };
 		43B6D8561C7F0379000D6844 /* UIButton+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Ext.swift"; path = "Extensions/UIButton+Ext.swift"; sourceTree = "<group>"; };
 		43B6D8581C7F055C000D6844 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Constants/Global.swift; sourceTree = "<group>"; };
+		43CFA7621C93915F00DC89C9 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = ViewController/Dash/Profile/ProfileVC.swift; sourceTree = "<group>"; };
+		43CFA7641C939E7C00DC89C9 /* NSAttributedString+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Ext.swift"; path = "Extensions/NSAttributedString+Ext.swift"; sourceTree = "<group>"; };
 		43D2D0B11C7C97D600A41D4F /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = Login/LoginVC.swift; sourceTree = "<group>"; };
 		43D2D0B51C7C9ABE00A41D4F /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTextField.swift; path = Viewes/Login/LoginTextField.swift; sourceTree = "<group>"; };
 		43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Ext.swift"; path = "Extensions/UIView+Ext.swift"; sourceTree = "<group>"; };
@@ -283,6 +287,7 @@
 				430B4F441C7DE33700EE884A /* NSData+Ext.swift */,
 				43B6D8561C7F0379000D6844 /* UIButton+Ext.swift */,
 				436D6B1E1C92E37600A0240E /* UIViewController+Ext.swift */,
+				43CFA7641C939E7C00DC89C9 /* NSAttributedString+Ext.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 		4334D8131C7F494E00557AE4 /* Dash */ = {
 			isa = PBXGroup;
 			children = (
+				43CFA7611C938F8400DC89C9 /* Profile */,
 				43A4266C1C91AB2A0044B6A6 /* Benefits */,
 				43A4265D1C90353E0044B6A6 /* Settings */,
 				4334D8141C7F496F00557AE4 /* DashVC.swift */,
@@ -401,6 +407,14 @@
 				43DC05C81C85AEAF00AB670A /* AddFriendsVC.swift */,
 			);
 			name = "Main Screen";
+			sourceTree = "<group>";
+		};
+		43CFA7611C938F8400DC89C9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				43CFA7621C93915F00DC89C9 /* ProfileVC.swift */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		43D2D0B31C7C9A3500A41D4F /* Viewes */ = {
@@ -650,7 +664,9 @@
 				43A426631C9040150044B6A6 /* Settings.swift in Sources */,
 				4316BBA91C7B61F5007A9ECB /* Fonts.swift in Sources */,
 				4334D8151C7F496F00557AE4 /* DashVC.swift in Sources */,
+				43CFA7631C93915F00DC89C9 /* ProfileVC.swift in Sources */,
 				4316BBB41C7B73C6007A9ECB /* ConfirmPasswordRule.swift in Sources */,
+				43CFA7651C939E7C00DC89C9 /* NSAttributedString+Ext.swift in Sources */,
 				43DC05C01C847DAE00AB670A /* RequestManager+Login.swift in Sources */,
 				43DC05C51C849C7E00AB670A /* LocationManager.swift in Sources */,
 				43A4266E1C91ABAD0044B6A6 /* BenefitsVC.swift in Sources */,

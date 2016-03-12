@@ -258,7 +258,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="title" destination="WBZ-J5-MY7" id="M8M-pj-SUB"/>
-                                            <segue destination="4gK-hr-vVc" kind="push" id="J8T-Zn-BlH"/>
+                                            <segue destination="4gK-hr-vVc" kind="push" identifier="Dash2Profile" id="J8T-Zn-BlH"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="IZt-IN-e29" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
@@ -797,7 +797,7 @@
         <!--Profile-->
         <scene sceneID="IWi-BO-2ER">
             <objects>
-                <tableViewController id="4gK-hr-vVc" sceneMemberID="viewController">
+                <tableViewController id="4gK-hr-vVc" customClass="ProfileVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3vu-9b-f7n">
                         <rect key="frame" x="0.0" y="44" width="600" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -808,7 +808,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xmy-jY-Rvm">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="286"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="261"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unnamed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bl-kI-VKa">
                                     <rect key="frame" x="16" y="187" width="568" height="27"/>
@@ -898,7 +898,7 @@
                                 <constraint firstAttribute="trailing" secondItem="Xmy-jY-Rvm" secondAttribute="trailing" id="ij4-gf-TJe"/>
                                 <constraint firstItem="u9A-RR-jxn" firstAttribute="centerX" secondItem="cOZ-kM-wog" secondAttribute="centerX" id="iyq-8b-aDf"/>
                                 <constraint firstItem="5bl-kI-VKa" firstAttribute="top" secondItem="u9A-RR-jxn" secondAttribute="bottom" constant="12" id="nN8-YM-aBZ"/>
-                                <constraint firstAttribute="bottom" secondItem="Xmy-jY-Rvm" secondAttribute="bottom" constant="-25" id="zBo-qn-qMJ"/>
+                                <constraint firstAttribute="bottom" secondItem="Xmy-jY-Rvm" secondAttribute="bottom" id="zBo-qn-qMJ"/>
                             </constraints>
                         </view>
                         <sections>
@@ -936,7 +936,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a2s-fD-62F">
-                                                    <rect key="frame" x="14" y="43" width="566" height="88"/>
+                                                    <rect key="frame" x="14" y="43" width="572" height="88"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <attributedString key="attributedText">
                                                         <fragment>
@@ -960,7 +960,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="a2s-fD-62F" secondAttribute="bottom" id="g1Y-rr-DaP"/>
                                                 <constraint firstItem="D52-mX-rmJ" firstAttribute="top" secondItem="Ioh-0G-XFW" secondAttribute="top" constant="16" id="r1C-53-uM7"/>
                                                 <constraint firstItem="a2s-fD-62F" firstAttribute="leading" secondItem="Ioh-0G-XFW" secondAttribute="leading" constant="14" id="s6U-Az-fLw"/>
-                                                <constraint firstAttribute="trailing" secondItem="a2s-fD-62F" secondAttribute="trailing" constant="20" id="u2w-sS-AsS"/>
+                                                <constraint firstAttribute="trailing" secondItem="a2s-fD-62F" secondAttribute="trailing" constant="14" id="u2w-sS-AsS"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1132,7 +1132,24 @@
                             <outlet property="delegate" destination="4gK-hr-vVc" id="9sA-ql-L8d"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Profile" id="fX4-DY-pxm"/>
+                    <navigationItem key="navigationItem" title="Profile" id="fX4-DY-pxm">
+                        <barButtonItem key="leftBarButtonItem" image="back-ic" id="nlV-9i-wgN">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="4gK-hr-vVc" id="5rt-3b-bpD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="avatar" destination="bYX-cL-qHL" id="fX0-CM-tb8"/>
+                        <outlet property="backgroundAvatar" destination="Xmy-jY-Rvm" id="MTJ-yR-7F2"/>
+                        <outlet property="bioTextView" destination="a2s-fD-62F" id="sZX-hA-nrD"/>
+                        <outlet property="documents" destination="H3O-Qt-Sgj" id="XYi-8T-uwd"/>
+                        <outlet property="drives" destination="BPz-w3-1Wn" id="VK6-Vv-yJk"/>
+                        <outlet property="jobsCompleted" destination="Huk-MJ-49F" id="S7w-10-JYa"/>
+                        <outlet property="nameLabel" destination="5bl-kI-VKa" id="pyg-nw-4KO"/>
+                        <outlet property="raitingView" destination="Mdp-7Q-KQO" id="k2f-IT-gaL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4GX-FK-J5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
