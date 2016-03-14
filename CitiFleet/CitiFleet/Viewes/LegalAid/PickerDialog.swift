@@ -13,6 +13,7 @@ class PickerDialog: UIView {
     @IBOutlet var picker: UIPickerView!
     @IBOutlet var bluredBackground: UIImageView!
     @IBOutlet var selectBtn: UIButton!
+    @IBOutlet var buttonContainerView: UIView!
     
     var components: [String]?
     var complation: ((index: Int?, title: String?, closed: Bool) -> ())?
@@ -25,14 +26,14 @@ class PickerDialog: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupBluredBackground()
-        selectBtn.addBorders(0.5, positions: [.Top, .Bottom], color: UIColor.grayColor())
+        buttonContainerView.addBorders(0.5, positions: [.Top, .Bottom], color: UIColor.grayColor())
         if components != nil {
             picker.selectRow(0, inComponent: 0, animated: false)
         }
     }
     
     private func setupBluredBackground() {
-        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
+        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .ExtraLight)) as UIVisualEffectView
         visualEffectView.frame = bluredBackground.bounds
         bluredBackground.addSubview(visualEffectView)
     }
