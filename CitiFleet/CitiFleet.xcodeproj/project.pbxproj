@@ -91,6 +91,8 @@
 		43DC05C91C85AEAF00AB670A /* AddFriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05C81C85AEAF00AB670A /* AddFriendsVC.swift */; };
 		43DC05CC1C85B04F00AB670A /* AddFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05CB1C85B04F00AB670A /* AddFriendsCell.swift */; };
 		43DC05CF1C85DBC500AB670A /* SocialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05CE1C85DBC500AB670A /* SocialManager.swift */; };
+		43F834051C96CAB400DE7E50 /* PickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834041C96CAB400DE7E50 /* PickerDialog.swift */; };
+		43F834071C96CB6700DE7E50 /* PickerDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43F834061C96CB6700DE7E50 /* PickerDialog.xib */; };
 		8F7B09119E0D4A8BE702AA9A /* Pods_CitiFleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */; };
 /* End PBXBuildFile section */
 
@@ -185,6 +187,8 @@
 		43DC05C81C85AEAF00AB670A /* AddFriendsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddFriendsVC.swift; path = ViewController/MainScreen/AddFriendsVC.swift; sourceTree = "<group>"; };
 		43DC05CB1C85B04F00AB670A /* AddFriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddFriendsCell.swift; path = Viewes/MainScreen/AddFriendsCell.swift; sourceTree = "<group>"; };
 		43DC05CE1C85DBC500AB670A /* SocialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocialManager.swift; path = Utils/SocialManager/SocialManager.swift; sourceTree = "<group>"; };
+		43F834041C96CAB400DE7E50 /* PickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerDialog.swift; path = Viewes/LegalAid/PickerDialog.swift; sourceTree = "<group>"; };
+		43F834061C96CB6700DE7E50 /* PickerDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PickerDialog.xib; path = Storyboards/XIB/PickerDialog.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,6 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				43CFA76B1C93B81100DC89C9 /* LegalAid.xib */,
+				43F834061C96CB6700DE7E50 /* PickerDialog.xib */,
 			);
 			name = LegolAid;
 			sourceTree = "<group>";
@@ -496,7 +501,7 @@
 			isa = PBXGroup;
 			children = (
 				43AD51581C95D20B002261DB /* Avatar Header View */,
-				43D900EF1C945814004A315C /* Highlitable label */,
+				43F834031C96CA6A00DE7E50 /* Legal Aid */,
 				436D6B211C9317F700A0240E /* Barcode View */,
 				43A4266F1C91B6B90044B6A6 /* Benefits Layout */,
 				43DC05CA1C85AFE800AB670A /* Main Screen */,
@@ -580,6 +585,15 @@
 				43DC05CE1C85DBC500AB670A /* SocialManager.swift */,
 			);
 			name = "Social Manager";
+			sourceTree = "<group>";
+		};
+		43F834031C96CA6A00DE7E50 /* Legal Aid */ = {
+			isa = PBXGroup;
+			children = (
+				43D900EF1C945814004A315C /* Highlitable label */,
+				43F834041C96CAB400DE7E50 /* PickerDialog.swift */,
+			);
+			name = "Legal Aid";
 			sourceTree = "<group>";
 		};
 		A1BF0D86F407C96A1C73890B /* Pods */ = {
@@ -685,6 +699,7 @@
 				4316BB851C7B046A007A9ECB /* Assets.xcassets in Resources */,
 				43A426611C90359E0044B6A6 /* Settings.storyboard in Resources */,
 				43B6D8551C7EFC74000D6844 /* MainScreen.storyboard in Resources */,
+				43F834071C96CB6700DE7E50 /* PickerDialog.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,6 +832,7 @@
 				43A426711C91B71A0044B6A6 /* BenefitsLayout.swift in Sources */,
 				43DC05BE1C847C7200AB670A /* RequestManager+Reports.swift in Sources */,
 				43B6D8591C7F055C000D6844 /* Global.swift in Sources */,
+				43F834051C96CAB400DE7E50 /* PickerDialog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

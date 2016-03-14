@@ -17,6 +17,7 @@ struct XIB {
     static let ReportXIB = "ReportsView"
     static let BarcodeXIB = "BarcodeView"
     static let LegalAidXIB = "LegalAid"
+    static let PickerDialog = "PickerDialog"
     struct AvatarHeaderView {
         static let Avatar = "AvatarHeaderView"
         static let Camera = "AvatarCameraView"

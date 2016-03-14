@@ -27,4 +27,7 @@ struct Fonts {
         static let LoginPlaceholder = UIFont(name: FontNames.Montserrat.Light, size: 16.7)!
         static let SignUpTextField = UIFont(name: FontNames.Montserrat.Regular, size: 16.56)!
     }
+    struct PickerDialog {
+        static let PicerRowFort = UIFont(name: FontNames.Montserrat.Regular, size: 19)!
+    }
 }
