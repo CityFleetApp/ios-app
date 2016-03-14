@@ -28,7 +28,6 @@
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
-            <string>Montserrat-Regular</string>
         </mutableArray>
         <mutableArray key="Montserrat-SemiBold.otf">
             <string>Montserrat-SemiBold</string>
@@ -724,108 +723,15 @@
         <scene sceneID="IWi-BO-2ER">
             <objects>
                 <tableViewController id="4gK-hr-vVc" customClass="ProfileVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3vu-9b-f7n">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3vu-9b-f7n">
                         <rect key="frame" x="0.0" y="44" width="600" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="22" maxX="0.0" maxY="0.0"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="cOZ-kM-wog">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="cOZ-kM-wog" customClass="AvatarRatingView" customModule="CitiFleet" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="261"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xmy-jY-Rvm">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="261"/>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unnamed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bl-kI-VKa">
-                                    <rect key="frame" x="16" y="187" width="568" height="27"/>
-                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="22"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9A-RR-jxn">
-                                    <rect key="frame" x="227" y="28" width="147" height="147"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bYX-cL-qHL">
-                                            <rect key="frame" x="8" y="8" width="131" height="131"/>
-                                            <color key="backgroundColor" red="0.1960784314" green="0.75294117650000003" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="131" id="3uP-Lv-wof"/>
-                                                <constraint firstAttribute="width" secondItem="bYX-cL-qHL" secondAttribute="height" multiplier="1:1" id="hCg-jt-ZZf"/>
-                                                <constraint firstAttribute="width" constant="131" id="t3S-6D-YHm"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                    <real key="value" value="65.5"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="3uP-Lv-wof"/>
-                                                    <exclude reference="hCg-jt-ZZf"/>
-                                                    <exclude reference="t3S-6D-YHm"/>
-                                                </mask>
-                                            </variation>
-                                        </imageView>
-                                    </subviews>
-                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="147" id="SXB-0N-Eh8"/>
-                                        <constraint firstAttribute="width" secondItem="u9A-RR-jxn" secondAttribute="height" multiplier="1:1" id="gqc-e7-f33"/>
-                                        <constraint firstItem="bYX-cL-qHL" firstAttribute="leading" secondItem="u9A-RR-jxn" secondAttribute="leading" constant="8" id="r50-PT-eAZ"/>
-                                        <constraint firstItem="bYX-cL-qHL" firstAttribute="top" secondItem="u9A-RR-jxn" secondAttribute="top" constant="8" id="sVl-kz-qej"/>
-                                        <constraint firstItem="bYX-cL-qHL" firstAttribute="centerY" secondItem="u9A-RR-jxn" secondAttribute="centerY" id="xLy-rc-NFO"/>
-                                        <constraint firstItem="bYX-cL-qHL" firstAttribute="centerX" secondItem="u9A-RR-jxn" secondAttribute="centerX" id="xS4-d1-bzd"/>
-                                    </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="73.5"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mdp-7Q-KQO" customClass="CosmosView" customModule="Cosmos">
-                                    <rect key="frame" x="217" y="222" width="167" height="19"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="19" id="kIj-fR-nmJ"/>
-                                        <constraint firstAttribute="width" constant="167" id="mzI-Ys-fWY"/>
-                                    </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="text" value="(3.95)"/>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
-                                            <color key="value" red="0.98431372549019602" green="0.69803921568627447" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
-                                            <color key="value" red="0.98431372549019602" green="0.69803921568627447" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
-                                            <color key="value" red="0.98431372549019602" green="0.69803921568627447" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                            <color key="value" red="0.98431372549019602" green="0.69803921568627447" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="emptyBorderWidth">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
-                                            <real key="value" value="3.9500000000000002"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </view>
-                            </subviews>
                             <color key="backgroundColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstItem="u9A-RR-jxn" firstAttribute="top" secondItem="cOZ-kM-wog" secondAttribute="top" constant="28" id="1CT-6W-lLI"/>
-                                <constraint firstItem="Xmy-jY-Rvm" firstAttribute="leading" secondItem="cOZ-kM-wog" secondAttribute="leading" id="Big-YA-cEw"/>
-                                <constraint firstItem="Xmy-jY-Rvm" firstAttribute="top" secondItem="cOZ-kM-wog" secondAttribute="top" id="JEW-cl-EnV"/>
-                                <constraint firstItem="5bl-kI-VKa" firstAttribute="leading" secondItem="cOZ-kM-wog" secondAttribute="leading" constant="16" id="MmR-Zf-lnf"/>
-                                <constraint firstItem="Mdp-7Q-KQO" firstAttribute="centerX" secondItem="cOZ-kM-wog" secondAttribute="centerX" id="eSZ-u6-XaT"/>
-                                <constraint firstItem="Mdp-7Q-KQO" firstAttribute="top" secondItem="5bl-kI-VKa" secondAttribute="bottom" constant="8" id="esU-Zb-LFb"/>
-                                <constraint firstItem="5bl-kI-VKa" firstAttribute="centerX" secondItem="cOZ-kM-wog" secondAttribute="centerX" id="hDD-rP-kM9"/>
-                                <constraint firstAttribute="trailing" secondItem="Xmy-jY-Rvm" secondAttribute="trailing" id="ij4-gf-TJe"/>
-                                <constraint firstItem="u9A-RR-jxn" firstAttribute="centerX" secondItem="cOZ-kM-wog" secondAttribute="centerX" id="iyq-8b-aDf"/>
-                                <constraint firstItem="5bl-kI-VKa" firstAttribute="top" secondItem="u9A-RR-jxn" secondAttribute="bottom" constant="12" id="nN8-YM-aBZ"/>
-                                <constraint firstAttribute="bottom" secondItem="Xmy-jY-Rvm" secondAttribute="bottom" id="zBo-qn-qMJ"/>
-                            </constraints>
                         </view>
                         <sections>
                             <tableViewSection id="r4P-GQ-k3Y">
@@ -1067,14 +973,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="avatar" destination="bYX-cL-qHL" id="fX0-CM-tb8"/>
-                        <outlet property="backgroundAvatar" destination="Xmy-jY-Rvm" id="MTJ-yR-7F2"/>
                         <outlet property="bioTextView" destination="a2s-fD-62F" id="sZX-hA-nrD"/>
                         <outlet property="documents" destination="H3O-Qt-Sgj" id="XYi-8T-uwd"/>
                         <outlet property="drives" destination="BPz-w3-1Wn" id="VK6-Vv-yJk"/>
+                        <outlet property="headerView" destination="cOZ-kM-wog" id="wQl-pk-WA1"/>
                         <outlet property="jobsCompleted" destination="Huk-MJ-49F" id="S7w-10-JYa"/>
-                        <outlet property="nameLabel" destination="5bl-kI-VKa" id="pyg-nw-4KO"/>
-                        <outlet property="raitingView" destination="Mdp-7Q-KQO" id="k2f-IT-gaL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4GX-FK-J5u" userLabel="First Responder" sceneMemberID="firstResponder"/>

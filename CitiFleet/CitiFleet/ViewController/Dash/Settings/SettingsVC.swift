@@ -13,9 +13,13 @@ class SettingsVC: UITableViewController {
     @IBOutlet var visible: UISwitch!
     @IBOutlet var notifications: UISwitch!
     @IBOutlet var chatPrivacy: UISwitch!
+    @IBOutlet var headerView: UIView!
+    
+    private var tableHeaderHeight: CGFloat = 69
+    private var headerViewSetuper: UITableViewHeaderSetuper?
     
     override func viewDidLoad() {
-        
+        headerViewSetuper = UITableViewHeaderSetuper(tableView: tableView, headerHeight: tableHeaderHeight)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -23,6 +27,10 @@ class SettingsVC: UITableViewController {
         navigationController?.navigationBar.hidden = false
         navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: Fonts.Login.NavigationTitle,  NSForegroundColorAttributeName: UIColor.whiteColor()]
         applySettings()
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        headerViewSetuper?.updateHeaderView()
     }
     
     func applySettings() {

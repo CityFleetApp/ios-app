@@ -30,7 +30,7 @@
         <scene sceneID="Ijm-hY-Rdi">
             <objects>
                 <tableViewController restorationIdentifier="SettingsVC" storyboardIdentifier="SettingsVC" id="yFE-TI-6Zu" customClass="SettingsVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="r8w-vO-MYh">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="r8w-vO-MYh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -38,32 +38,44 @@
                             <rect key="frame" x="0.0" y="64" width="600" height="69"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brightness-ic" translatesAutoresizingMaskIntoConstraints="NO" id="cEv-Gb-RU4">
-                                    <rect key="frame" x="17" y="10" width="18" height="18"/>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glr-sH-H0W">
-                                    <rect key="frame" x="44" y="11" width="48" height="16"/>
-                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.25"/>
-                                    <color key="textColor" red="0.1803921568627451" green="0.76862745098039209" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4TL-Aa-VI2">
-                                    <rect key="frame" x="15" y="30" width="570" height="31"/>
-                                    <color key="tintColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    <connections>
-                                        <action selector="changeBrightness:" destination="yFE-TI-6Zu" eventType="valueChanged" id="1o4-4d-YT6"/>
-                                    </connections>
-                                </slider>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uqL-bs-Kgl">
+                                    <rect key="frame" x="16" y="10" width="568" height="50"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brightness-ic" translatesAutoresizingMaskIntoConstraints="NO" id="cEv-Gb-RU4">
+                                            <rect key="frame" x="0.0" y="0.0" width="18" height="18"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glr-sH-H0W">
+                                            <rect key="frame" x="26" y="1" width="48" height="16"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.25"/>
+                                            <color key="textColor" red="0.1803921568627451" green="0.76862745098039209" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4TL-Aa-VI2">
+                                            <rect key="frame" x="-2" y="20" width="572" height="31"/>
+                                            <color key="tintColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="changeBrightness:" destination="yFE-TI-6Zu" eventType="valueChanged" id="1o4-4d-YT6"/>
+                                            </connections>
+                                        </slider>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="4TL-Aa-VI2" firstAttribute="top" secondItem="cEv-Gb-RU4" secondAttribute="bottom" constant="2" id="7TQ-PY-hmv"/>
+                                        <constraint firstAttribute="bottom" secondItem="4TL-Aa-VI2" secondAttribute="bottom" id="BMV-ub-M8y"/>
+                                        <constraint firstItem="cEv-Gb-RU4" firstAttribute="top" secondItem="uqL-bs-Kgl" secondAttribute="top" id="EzM-5k-ll9"/>
+                                        <constraint firstItem="4TL-Aa-VI2" firstAttribute="leading" secondItem="uqL-bs-Kgl" secondAttribute="leading" id="Sn3-PB-b38"/>
+                                        <constraint firstItem="glr-sH-H0W" firstAttribute="leading" secondItem="cEv-Gb-RU4" secondAttribute="trailing" constant="8" id="aFr-vf-5sg"/>
+                                        <constraint firstAttribute="trailing" secondItem="4TL-Aa-VI2" secondAttribute="trailing" id="qmt-Sr-wNb"/>
+                                        <constraint firstItem="cEv-Gb-RU4" firstAttribute="leading" secondItem="uqL-bs-Kgl" secondAttribute="leading" id="v2x-ge-adm"/>
+                                        <constraint firstItem="glr-sH-H0W" firstAttribute="centerY" secondItem="cEv-Gb-RU4" secondAttribute="centerY" id="yN4-dM-eY8"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" red="0.078431372549019607" green="0.12549019607843137" blue="0.17647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="4TL-Aa-VI2" firstAttribute="centerX" secondItem="A1D-kv-ox4" secondAttribute="centerX" id="8mq-a9-NW8"/>
-                                <constraint firstItem="glr-sH-H0W" firstAttribute="centerY" secondItem="cEv-Gb-RU4" secondAttribute="centerY" id="Zh0-Kw-I8p"/>
-                                <constraint firstItem="cEv-Gb-RU4" firstAttribute="leading" secondItem="A1D-kv-ox4" secondAttribute="leading" constant="17" id="dIU-5m-ppN"/>
-                                <constraint firstItem="4TL-Aa-VI2" firstAttribute="top" secondItem="cEv-Gb-RU4" secondAttribute="bottom" constant="2" id="lUr-Ss-eTM"/>
-                                <constraint firstItem="glr-sH-H0W" firstAttribute="leading" secondItem="cEv-Gb-RU4" secondAttribute="trailing" constant="9" id="vSu-uU-DbG"/>
-                                <constraint firstItem="4TL-Aa-VI2" firstAttribute="leading" secondItem="cEv-Gb-RU4" secondAttribute="leading" id="vl1-LA-ydb"/>
-                                <constraint firstItem="cEv-Gb-RU4" firstAttribute="top" secondItem="A1D-kv-ox4" secondAttribute="top" constant="10" id="yEQ-DI-CT4"/>
+                                <constraint firstItem="uqL-bs-Kgl" firstAttribute="leading" secondItem="A1D-kv-ox4" secondAttribute="leading" constant="16" id="Qyp-5N-Wec"/>
+                                <constraint firstItem="uqL-bs-Kgl" firstAttribute="centerY" secondItem="A1D-kv-ox4" secondAttribute="centerY" id="Ts9-3j-rUQ"/>
+                                <constraint firstAttribute="trailing" secondItem="uqL-bs-Kgl" secondAttribute="trailing" constant="16" id="Zm5-iR-bZY"/>
                             </constraints>
                         </view>
                         <sections>
@@ -464,6 +476,7 @@
                     <connections>
                         <outlet property="brightness" destination="4TL-Aa-VI2" id="hQP-8k-Nwm"/>
                         <outlet property="chatPrivacy" destination="frE-R1-0Bt" id="lQo-w0-T8c"/>
+                        <outlet property="headerView" destination="uqL-bs-Kgl" id="KzT-t6-XTe"/>
                         <outlet property="notifications" destination="81o-wv-unf" id="asG-6p-OCK"/>
                         <outlet property="visible" destination="U6G-ng-NTO" id="8Df-Lg-pgm"/>
                     </connections>

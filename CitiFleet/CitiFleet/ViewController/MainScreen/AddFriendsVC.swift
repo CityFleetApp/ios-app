@@ -9,6 +9,19 @@
 import UIKit
 
 class AddFriendsVC: UITableViewController {
+    @IBOutlet var headerView: UIView!
+    
+    private var tableHeaderHeight: CGFloat = 226
+    private var headerViewSetuper: UITableViewHeaderSetuper?
+    
+    override func viewDidLoad() {
+        headerViewSetuper = UITableViewHeaderSetuper(tableView: tableView, headerHeight: tableHeaderHeight)
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        headerViewSetuper?.updateHeaderView()
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.hidden = false

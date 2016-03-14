@@ -23,7 +23,7 @@ class UITableViewHeaderSetuper: NSObject {
     }
     
     func setupTableView() {
-        headerView = tableView.tableHeaderView as! AvatarCameraView
+        headerView = tableView.tableHeaderView! as UIView
         tableView.tableHeaderView = nil
         tableView.addSubview(headerView!)
         
