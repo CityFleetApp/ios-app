@@ -22,20 +22,31 @@ class HighlitableLabel: UILabel {
     }
     
     @IBInspectable var highlitedTextColor: UIColor {
-        return UIColor(hex: 0x4c5a76, alpha: 1)
+        return UIColor(hex: 0x4c5a76, alpha: 1) 
     }
     
-    @IBInspectable var placeholderText: String {
-        return ""
+    @IBInspectable var placeholderText: String? {
+        didSet {
+            updateText()
+        }
     }
     
     @IBInspectable var highlitedText: String? {
         didSet {
-            if highlitedText == nil || highlitedText?.characters.count == 0 {
-                setPlaceHolderText()
-            } else {
-                setHighlitedText()
-            }
+            updateText()
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        updateText()
+    }
+    
+    private func updateText() {
+        if highlitedText == nil || highlitedText?.characters.count == 0 {
+            setPlaceHolderText()
+        } else {
+            setHighlitedText()
         }
     }
     

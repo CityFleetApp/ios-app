@@ -312,7 +312,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Lawyer"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Select Location"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arr-odwn" translatesAutoresizingMaskIntoConstraints="NO" id="Jch-Sh-jmd">
@@ -400,17 +400,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="profile-ic" translatesAutoresizingMaskIntoConstraints="NO" id="Mje-wP-Opg">
-                                                    <rect key="frame" x="17" y="16" width="18" height="17"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-ic" translatesAutoresizingMaskIntoConstraints="NO" id="Mje-wP-Opg">
+                                                    <rect key="frame" x="17" y="16" width="22" height="22"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIQ-MS-dz3">
-                                                    <rect key="frame" x="38" y="15" width="50" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIQ-MS-dz3">
+                                                    <rect key="frame" x="47" y="17" width="50" height="20"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tr4-Bt-Q19" customClass="HighlitableLabel" customModule="CitiFleet" customModuleProvider="target">
-                                                    <rect key="frame" x="17" y="43" width="38" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tr4-Bt-Q19" customClass="HighlitableLabel" customModule="CitiFleet" customModuleProvider="target">
+                                                    <rect key="frame" x="17" y="45" width="38" height="18"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="14.350000381469727"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -441,11 +441,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lawyer-location" translatesAutoresizingMaskIntoConstraints="NO" id="7cG-gX-sel">
-                                                    <rect key="frame" x="17" y="16" width="18" height="17"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lawyer-years-exp" translatesAutoresizingMaskIntoConstraints="NO" id="7cG-gX-sel">
+                                                    <rect key="frame" x="17" y="16" width="18" height="18"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Td8-Ey-CMt">
-                                                    <rect key="frame" x="43" y="15" width="45" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Years of experience" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Td8-Ey-CMt">
+                                                    <rect key="frame" x="43" y="15" width="158" height="20"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -455,6 +455,9 @@
                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="14.350000381469727"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Enter Years of experience"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -482,11 +485,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lawyer-location" translatesAutoresizingMaskIntoConstraints="NO" id="Sya-Fc-B5J">
-                                                    <rect key="frame" x="17" y="16" width="18" height="17"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lawyer-rating" translatesAutoresizingMaskIntoConstraints="NO" id="Sya-Fc-B5J">
+                                                    <rect key="frame" x="17" y="16" width="18" height="18"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uw-lr-8A8">
-                                                    <rect key="frame" x="43" y="15" width="45" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uw-lr-8A8">
+                                                    <rect key="frame" x="43" y="15" width="55" height="20"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -569,7 +572,7 @@
                         <outlet property="actorImage" destination="cIj-jo-ChL" id="WLR-P2-yy2"/>
                         <outlet property="actorLabel" destination="vcF-s4-9Pa" id="rDP-JJ-cL3"/>
                         <outlet property="actorTitle" destination="xye-j5-Ebp" id="Mb6-Sk-yAI"/>
-                        <outlet property="locationLabel" destination="KKH-W5-dYd" id="61c-hJ-7nK"/>
+                        <outlet property="locationLabel" destination="KKH-W5-dYd" id="6vM-oF-nH8"/>
                         <outlet property="nameLabel" destination="Tr4-Bt-Q19" id="au3-QF-MZb"/>
                         <outlet property="yearsLabel" destination="n2n-xl-pXp" id="udt-zp-ges"/>
                     </connections>
@@ -604,6 +607,8 @@
         <image name="la-insurance-frokers" width="26" height="21"/>
         <image name="la-lawyer" width="24" height="20"/>
         <image name="lawyer-location" width="18" height="17"/>
+        <image name="lawyer-rating" width="18" height="18"/>
+        <image name="lawyer-years-exp" width="18" height="18"/>
         <image name="next-screen-set-ic" width="18" height="18"/>
         <image name="profile-ic" width="22" height="22"/>
     </resources>

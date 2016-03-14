@@ -502,7 +502,6 @@
 				43DC05CA1C85AFE800AB670A /* Main Screen */,
 				43DC05B71C842ACE00AB670A /* Reports */,
 				43D2D0B41C7C9A3D00A41D4F /* Login */,
-				43CFA76D1C93B81700DC89C9 /* LegolAid */,
 			);
 			name = Viewes;
 			sourceTree = "<group>";
@@ -551,6 +550,7 @@
 		43DC05BA1C842BE600AB670A /* XIB */ = {
 			isa = PBXGroup;
 			children = (
+				43CFA76D1C93B81700DC89C9 /* LegolAid */,
 				43AD515B1C95D261002261DB /* Avatar Header View */,
 				43DC05BB1C8439CF00AB670A /* ReportsView.xib */,
 				436D6B241C93184B00A0240E /* BarcodeView.xib */,

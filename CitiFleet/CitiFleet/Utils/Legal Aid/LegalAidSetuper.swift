@@ -20,12 +20,40 @@ class LegalAidSetuper: NSObject {
         var title: String
         var actorTitle: String
         var actorImage: String
+        var actorPlaceholder: String
+        var actorInfoTitle: String
+        var actorNamePlacehelder: String
     }
+    
     private struct LegalAidTitles {
-        static let DMVLawyer = ActorInfo(title: "DMV Lawyers", actorTitle: "Lawyer", actorImage: "la-lawyer")
-        static let TLCLawyer = ActorInfo(title: "TLC Lawyers", actorTitle: "Lawyer", actorImage: "la-lawyer")
-        static let Accountants = ActorInfo(title: "Accountants", actorTitle: "Accountant", actorImage: "la-lawyer")
-        static let InsuranceBrokers = ActorInfo(title: "Insurance Brokers", actorTitle: "Broker", actorImage: "la-insurance-frokers")
+        static let DMVLawyer = ActorInfo(title: "DMV Lawyers",
+            actorTitle: "Lawyer",
+            actorImage: "la-lawyer",
+            actorPlaceholder: "Select Lawyer",
+            actorInfoTitle: "LAWYER'S INFO",
+            actorNamePlacehelder: "Lawyer's Name"
+        )
+        static let TLCLawyer = ActorInfo(title: "TLC Lawyers",
+            actorTitle: "Lawyer",
+            actorImage: "la-lawyer",
+            actorPlaceholder: "Select Lawyer",
+            actorInfoTitle: "LAWYER'S INFO",
+            actorNamePlacehelder: "Lawyer's Name"
+        )
+        static let Accountants = ActorInfo(title: "Accountants",
+            actorTitle: "Accountant",
+            actorImage: "la-accountants",
+            actorPlaceholder: "Select Accountant",
+            actorInfoTitle: "ACCOUNTANT'S INFO",
+            actorNamePlacehelder: "Accountant's Name"
+        )
+        static let InsuranceBrokers = ActorInfo(title: "Insurance Brokers",
+            actorTitle: "Broker",
+            actorImage: "la-insurance-frokers",
+            actorPlaceholder: "Select Broker",
+            actorInfoTitle: "BROKER'S INFO",
+            actorNamePlacehelder: "Broker's Name"
+        )
     }
     
     var legalAidVC: LegalAidDetailVC
@@ -59,5 +87,8 @@ class LegalAidSetuper: NSObject {
         
         legalAidVC.actorImage.image = image
         legalAidVC.actorTitle.text = actorInfo.actorTitle
+        legalAidVC.headerTitle = actorInfo.actorInfoTitle
+        legalAidVC.actorLabel.placeholderText = actorInfo.actorPlaceholder
+        legalAidVC.nameLabel.placeholderText = actorInfo.actorNamePlacehelder
     }
 }
