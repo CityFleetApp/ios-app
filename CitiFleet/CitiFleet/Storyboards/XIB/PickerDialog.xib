@@ -20,21 +20,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxS-Uu-Hcz">
-                    <rect key="frame" x="50" y="100" width="500" height="400"/>
+                    <rect key="frame" x="50" y="150" width="500" height="300"/>
                     <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r15-5X-317">
+                            <rect key="frame" x="0.0" y="0.0" width="500" height="300"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </imageView>
                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3LM-ys-gVH">
-                            <rect key="frame" x="0.0" y="0.0" width="500" height="332"/>
+                            <rect key="frame" x="0.0" y="0.0" width="500" height="202"/>
                             <connections>
                                 <outlet property="dataSource" destination="iN0-l3-epB" id="cI4-Hp-7G6"/>
                                 <outlet property="delegate" destination="iN0-l3-epB" id="QYr-Yf-8At"/>
                             </connections>
                         </pickerView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mD9-Wm-EzV">
-                            <rect key="frame" x="0.0" y="362" width="500" height="30"/>
+                            <rect key="frame" x="0.0" y="247" width="500" height="45"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="r00-Dq-uBZ"/>
+                                <constraint firstAttribute="height" constant="45" id="r00-Dq-uBZ"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                             <state key="normal" title="Cancel">
                                 <color key="titleColor" red="0.29803921568627451" green="0.3529411764705882" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -43,12 +47,12 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8e-hA-9gf">
-                            <rect key="frame" x="0.0" y="332" width="500" height="30"/>
+                            <rect key="frame" x="0.0" y="202" width="500" height="45"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="zk4-Pw-rjL"/>
+                                <constraint firstAttribute="height" constant="45" id="zk4-Pw-rjL"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="15"/>
-                            <state key="normal" title="Select">
+                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                            <state key="normal" title="SELECT">
                                 <color key="titleColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -56,17 +60,22 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="r15-5X-317" secondAttribute="trailing" id="1di-Pr-fBg"/>
                         <constraint firstItem="mD9-Wm-EzV" firstAttribute="leading" secondItem="xxS-Uu-Hcz" secondAttribute="leading" id="3Rs-Ql-1gg"/>
                         <constraint firstItem="3LM-ys-gVH" firstAttribute="top" secondItem="xxS-Uu-Hcz" secondAttribute="top" id="3Zs-LE-Rsg"/>
                         <constraint firstAttribute="trailing" secondItem="V8e-hA-9gf" secondAttribute="trailing" id="8hp-dO-JtT"/>
+                        <constraint firstItem="r15-5X-317" firstAttribute="top" secondItem="xxS-Uu-Hcz" secondAttribute="top" id="BsE-0T-Mxb"/>
                         <constraint firstItem="3LM-ys-gVH" firstAttribute="leading" secondItem="xxS-Uu-Hcz" secondAttribute="leading" id="EIi-mT-EpG"/>
                         <constraint firstItem="V8e-hA-9gf" firstAttribute="top" secondItem="3LM-ys-gVH" secondAttribute="bottom" id="I2V-pE-xpE"/>
                         <constraint firstAttribute="bottom" secondItem="mD9-Wm-EzV" secondAttribute="bottom" constant="8" id="LSF-aO-Uki"/>
                         <constraint firstAttribute="trailing" secondItem="mD9-Wm-EzV" secondAttribute="trailing" id="OnM-Be-ogf"/>
                         <constraint firstItem="V8e-hA-9gf" firstAttribute="leading" secondItem="xxS-Uu-Hcz" secondAttribute="leading" id="TeJ-Tw-wOf"/>
+                        <constraint firstItem="r15-5X-317" firstAttribute="leading" secondItem="xxS-Uu-Hcz" secondAttribute="leading" id="WpC-hx-1yY"/>
+                        <constraint firstAttribute="bottom" secondItem="r15-5X-317" secondAttribute="bottom" id="aHa-xu-Odj"/>
                         <constraint firstItem="mD9-Wm-EzV" firstAttribute="top" secondItem="V8e-hA-9gf" secondAttribute="bottom" id="bpg-gH-VIO"/>
+                        <constraint firstAttribute="height" constant="300" id="fWH-KC-3A1"/>
                         <constraint firstAttribute="trailing" secondItem="3LM-ys-gVH" secondAttribute="trailing" id="rmA-8h-ck5"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
@@ -78,14 +87,15 @@
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="xxS-Uu-Hcz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="7Gw-Cu-JXz"/>
                 <constraint firstItem="xxS-Uu-Hcz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WNI-pr-Weg"/>
                 <constraint firstItem="xxS-Uu-Hcz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="aKa-6f-rGx"/>
                 <constraint firstItem="xxS-Uu-Hcz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="joa-NP-Klp"/>
             </constraints>
             <connections>
+                <outlet property="bluredBackground" destination="r15-5X-317" id="VW5-1E-qh8"/>
                 <outlet property="picker" destination="3LM-ys-gVH" id="lfH-gm-VAd"/>
                 <outlet property="pickerContainerView" destination="xxS-Uu-Hcz" id="b8D-Ej-Iam"/>
+                <outlet property="selectBtn" destination="V8e-hA-9gf" id="eNQ-ek-W9B"/>
             </connections>
             <point key="canvasLocation" x="665" y="516"/>
         </view>

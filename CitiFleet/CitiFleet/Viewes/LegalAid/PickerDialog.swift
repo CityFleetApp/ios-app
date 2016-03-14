@@ -11,7 +11,10 @@ import UIKit
 class PickerDialog: UIView {
     @IBOutlet var pickerContainerView: UIView!
     @IBOutlet var picker: UIPickerView!
-    var components: [String]!
+    @IBOutlet var bluredBackground: UIImageView!
+    @IBOutlet var selectBtn: UIButton!
+    
+    var components: [String]?
     var complation: ((index: Int?, title: String?, closed: Bool) -> ())?
     
     class func viewFromNib() -> PickerDialog {
@@ -21,10 +24,28 @@ class PickerDialog: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        picker.selectRow(0, inComponent: 0, animated: false)
+        setupBluredBackground()
+        selectBtn.addBorders(0.5, positions: [.Top, .Bottom], color: UIColor.grayColor())
+        if components != nil {
+            picker.selectRow(0, inComponent: 0, animated: false)
+        }
     }
     
+    private func setupBluredBackground() {
+        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light)) as UIVisualEffectView
+        visualEffectView.frame = bluredBackground.bounds
+        bluredBackground.addSubview(visualEffectView)
+    }
+}
+
+//MARK: Appearing
+extension PickerDialog {
     func showOnView(view: UIView) {
+        frame = view.bounds
+        alpha = 0
+        pickerContainerView.alpha = 0
+        view.addSubview(self)
+        picker.reloadAllComponents()
         animationAppearing()
     }
     
@@ -35,10 +56,7 @@ class PickerDialog: UIView {
             }
         }
     }
-}
-
-//MARK: Appearing
-extension PickerDialog {
+    
     private func animationAppearing() {
         animate(1.0, toRequestAlpha: 1.0, complation: nil)
     }
@@ -68,8 +86,8 @@ extension PickerDialog {
 
 extension PickerDialog {
     @IBAction func selectElement(sender: AnyObject?) {
-        let selectedRow = picker.selectedRowInComponent(0)
-        let selectedTitle = components[selectedRow]
+        let selectedRow: Int? = components != nil ? picker.selectedRowInComponent(0) : nil
+        let selectedTitle: String? = components != nil ? components![selectedRow!] : nil
         hide(selectedRow, selectedTitle: selectedTitle, closed: false)
     }
     
@@ -80,7 +98,7 @@ extension PickerDialog {
 
 extension PickerDialog: UIPickerViewDataSource {
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return components.count
+        return components != nil ? components!.count : 0
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -90,7 +108,10 @@ extension PickerDialog: UIPickerViewDataSource {
 
 extension PickerDialog: UIPickerViewDelegate {
     func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let title = components[row]
+        if components == nil {
+            return nil
+        }
+        let title = components![row]
         let attributedTitle = NSAttributedString(string: title, attributes: [
             NSFontAttributeName:Fonts.PickerDialog.PicerRowFort,
             NSForegroundColorAttributeName:Color.PickerDialog.RowTextColor])

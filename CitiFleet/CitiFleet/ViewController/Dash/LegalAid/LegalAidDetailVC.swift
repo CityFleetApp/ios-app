@@ -33,3 +33,11 @@ class LegalAidDetailVC: UITableViewController {
         }
     }
 }
+
+extension LegalAidDetailVC {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let pickerView = PickerDialog.viewFromNib()
+        pickerView.components = ["One", "Two", "Three", "Four"]
+        pickerView.showOnView((self.navigationController?.view)!)
+    }
+}
