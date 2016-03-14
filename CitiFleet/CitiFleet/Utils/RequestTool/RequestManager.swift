@@ -118,7 +118,7 @@ extension RequestManager {
 
 //MARK: - Upload Photo
 extension RequestManager {
-    func uploadPhoto(data: NSData) {
+    func uploadPhoto(data: NSData, completion: ((NSURL?, NSError?) -> ())) {
         let view = AppDelegate.sharedDelegate().rootViewController().view
         let request = ImageUploader().createRequest(data)
         
@@ -134,15 +134,29 @@ extension RequestManager {
                 })
             },
             completionHandler: { (response, responseObject, error) -> Void in
-                print("Error: \(error)")
-                print("Resporse: \(response)")
-                print("Response Object: \(responseObject)")
-                hud.hide(true)
-                if let _ = error {
+                if let error = error {
+                    let handledError = self.errorWithInfo(error, data: responseObject as? NSData)
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        hud.hide(true)
+                        RequestErrorHandler(error: handledError, title: Titles.error).handle()
+                        completion(nil, error)
+                    })
                     return
                 }
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    hud.customView = UIImageView(image: UIImage(named: Resources.Checkmark))
+                    hud.mode = .CustomView
+                    hud.labelText = "Done"
+                })
+                sleep(1)
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    hud.hide(true)
+                })
                 if let avatarURL = responseObject?.valueForKey(Response.UploadAvatar.avatar) as? String {
                     self.saveAvatar(avatarURL)
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        completion(NSURL(string: avatarURL), nil)
+                    })
                 }
         })
         

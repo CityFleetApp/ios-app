@@ -11,32 +11,17 @@ import CoreImage
 import Haneke
 
 class DashVC: UITableViewController {
-    @IBOutlet var avatar: UIImageView!
-    @IBOutlet var backgroundAvatar: UIImageView!
-    @IBOutlet var cameraButton: UIButton!
-    @IBOutlet var nameLabel: UILabel!
-    
-    var avatarImage: UIImage? {
-        get {
-            return avatar.image
-        }
-        set {
-            if let image = newValue {
-                avatar.image = image
-                backgroundAvatar.image = UIImageManager().blur(image)
-            }
-        }
-    }
-    
+    @IBOutlet var headerView: AvatarCameraView!
+    private var tableHeaderHeight: CGFloat = 235
+    private var headerViewSetuper: UITableViewHeaderSetuper?
     override func viewDidLoad() {
         super.viewDidLoad()
-        preloadData()
+        headerViewSetuper = UITableViewHeaderSetuper(tableView: tableView, headerHeight: tableHeaderHeight)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        cameraButton.setDefaultShadow()
-        nameLabel.text = User.currentUser()?.fullName
+        preloadData()
         navigationController?.navigationBar.hidden = true
     }
     
@@ -47,20 +32,15 @@ class DashVC: UITableViewController {
         }
     }
     
-    func preloadData() {
-        let URL = User.currentUser()?.avatarURL
-        if let url = URL {
-            setExistingAvatar(url)
-        }
-        
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        headerViewSetuper?.updateHeaderView()
     }
     
-    private func setExistingAvatar(url: NSURL) {
-        let cache = Shared.imageCache
-        cache.fetch(URL: url).onSuccess { image in
-            dispatch_async(dispatch_get_main_queue()) {
-                self.avatarImage = image
-            }
+    func preloadData() {
+        headerView.nameLabel.text = User.currentUser()?.fullName
+        headerView.cameraAction = cameraPressed
+        if let URL = User.currentUser()?.avatarURL {
+            headerView.avatarUrl = URL
         }
     }
     
@@ -117,10 +97,17 @@ extension DashVC: UIImagePickerControllerDelegate, UINavigationControllerDelegat
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         let imageSide = Sizes.Image.avatarSize
         let scaledImage = RBSquareImageTo(image, size: CGSize(width: imageSide, height: imageSide))
-        avatarImage = scaledImage
         picker.dismissViewControllerAnimated(true) {
-            User.currentUser()?.uploadPhoto(scaledImage)
+            User.currentUser()?.uploadPhoto(scaledImage, complation: self.handleUploadingProcess)
         }
+    }
+    
+    func handleUploadingProcess(URL: NSURL?, error: NSError?) {
+        if let _ = error {
+            return
+        }
+        
+        headerView.avatarUrl = URL
     }
 }
 
