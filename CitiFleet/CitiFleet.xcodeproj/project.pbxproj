@@ -516,7 +516,7 @@
 				43AD51581C95D20B002261DB /* Avatar Header View */,
 				43F834031C96CA6A00DE7E50 /* Legal Aid */,
 				436D6B211C9317F700A0240E /* Barcode View */,
-				43A4266F1C91B6B90044B6A6 /* Benefits Layout */,
+				43F5E2141C981D84000BBB91 /* Dash */,
 				43DC05CA1C85AFE800AB670A /* Main Screen */,
 				43DC05B71C842ACE00AB670A /* Reports */,
 				43D2D0B41C7C9A3D00A41D4F /* Login */,
@@ -599,6 +599,22 @@
 				43DC05CE1C85DBC500AB670A /* SocialManager.swift */,
 			);
 			name = "Social Manager";
+			sourceTree = "<group>";
+		};
+		43F5E2141C981D84000BBB91 /* Dash */ = {
+			isa = PBXGroup;
+			children = (
+				43F5E2151C981D8B000BBB91 /* Profile */,
+				43A4266F1C91B6B90044B6A6 /* Benefits Layout */,
+			);
+			name = Dash;
+			sourceTree = "<group>";
+		};
+		43F5E2151C981D8B000BBB91 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		43F834031C96CA6A00DE7E50 /* Legal Aid */ = {

@@ -65,7 +65,14 @@ class LegalAidDetailVC: UITableViewController {
     
     var actorList: [LegalAidActor]? {
         didSet {
+            if actorList == nil {
+                let alert = UIAlertController(title: "No " + title!, message: "There are no " + title! + " in this location", preferredStyle: .Alert)
+                let cancelAction = UIAlertAction(title: Titles.cancel, style: .Cancel, handler: nil)
+                alert.addAction(cancelAction)
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
             setEditableActorCell(actorList != nil)
+            selectedActor = nil
         }
     }
     

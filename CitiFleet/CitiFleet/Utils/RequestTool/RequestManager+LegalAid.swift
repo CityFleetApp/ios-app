@@ -20,7 +20,7 @@ extension RequestManager {
             Params.LegalAid.location: location.id
         ]
         
-        get(urlFromType(type), parameters: params) { (json, error) -> () in
+        get(urlFromType(type), parameters: nil) { (json, error) -> () in
             completion(json?.arrayObject, error)
         }
     }

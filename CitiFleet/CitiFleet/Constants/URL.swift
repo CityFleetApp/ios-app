@@ -106,5 +106,12 @@ struct Response {
     struct LegalAid {
         static let id = "id"
         static let name = "name"
+        struct Actor {
+            static let name = "name"
+            static let years = "years_of_experience"
+            static let rating = "rating"
+            static let phone = "phone"
+            static let address = "address"
+        }
     }
 }

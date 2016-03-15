@@ -26,7 +26,7 @@ struct LegalAidActorContact {
 }
 
 struct LegalAidActor {
-    var location: String!
+    var location: LegalAidLocation!
     var name: String!
     var rating: Double!
     var yearsExp: Int!

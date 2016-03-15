@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,12 +17,39 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="HWF-Ol-raV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="3xO-WY-9wG">
+                                <rect key="frame" x="161" y="197" width="279" height="207"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="HWF-Ol-raV" secondAttribute="trailing" id="0qb-zv-n9d"/>
+                            <constraint firstItem="3xO-WY-9wG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1rK-YG-aHB"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="HWF-Ol-raV" secondAttribute="bottom" id="246-x5-O4U"/>
+                            <constraint firstItem="HWF-Ol-raV" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="KWT-p9-X1b"/>
+                            <constraint firstItem="HWF-Ol-raV" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="Puk-v2-Yll"/>
+                            <constraint firstItem="HWF-Ol-raV" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="QNG-lu-Lpc"/>
+                            <constraint firstItem="3xO-WY-9wG" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fta-2W-zi5"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Puk-v2-Yll"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="414" height="736"/>
+        <image name="logo" width="279" height="207"/>
+    </resources>
 </document>
