@@ -93,6 +93,11 @@
 		43DC05CF1C85DBC500AB670A /* SocialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05CE1C85DBC500AB670A /* SocialManager.swift */; };
 		43F834051C96CAB400DE7E50 /* PickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834041C96CAB400DE7E50 /* PickerDialog.swift */; };
 		43F834071C96CB6700DE7E50 /* PickerDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43F834061C96CB6700DE7E50 /* PickerDialog.xib */; };
+		43F834091C97116B00DE7E50 /* LegalAidActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834081C97116B00DE7E50 /* LegalAidActor.swift */; };
+		43F8340B1C97133500DE7E50 /* LegalAidManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F8340A1C97133500DE7E50 /* LegalAidManager.swift */; };
+		43F8340D1C9719CF00DE7E50 /* RequestManager+LegalAid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F8340C1C9719CF00DE7E50 /* RequestManager+LegalAid.swift */; };
+		43F8340F1C97274400DE7E50 /* LegalAidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F8340E1C97274400DE7E50 /* LegalAidCell.swift */; };
+		43F834111C97A1C700DE7E50 /* LegalAidContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834101C97A1C700DE7E50 /* LegalAidContactsVC.swift */; };
 		8F7B09119E0D4A8BE702AA9A /* Pods_CitiFleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */; };
 /* End PBXBuildFile section */
 
@@ -189,6 +194,11 @@
 		43DC05CE1C85DBC500AB670A /* SocialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocialManager.swift; path = Utils/SocialManager/SocialManager.swift; sourceTree = "<group>"; };
 		43F834041C96CAB400DE7E50 /* PickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerDialog.swift; path = Viewes/LegalAid/PickerDialog.swift; sourceTree = "<group>"; };
 		43F834061C96CB6700DE7E50 /* PickerDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PickerDialog.xib; path = Storyboards/XIB/PickerDialog.xib; sourceTree = "<group>"; };
+		43F834081C97116B00DE7E50 /* LegalAidActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidActor.swift; path = Model/LegalAidActor.swift; sourceTree = "<group>"; };
+		43F8340A1C97133500DE7E50 /* LegalAidManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidManager.swift; path = "Utils/Legal Aid/LegalAidManager.swift"; sourceTree = "<group>"; };
+		43F8340C1C9719CF00DE7E50 /* RequestManager+LegalAid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RequestManager+LegalAid.swift"; path = "Utils/RequestTool/RequestManager+LegalAid.swift"; sourceTree = "<group>"; };
+		43F8340E1C97274400DE7E50 /* LegalAidCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidCell.swift; path = Viewes/LegalAid/LegalAidCell.swift; sourceTree = "<group>"; };
+		43F834101C97A1C700DE7E50 /* LegalAidContactsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidContactsVC.swift; path = ViewController/Dash/LegalAid/LegalAidContactsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				430B4F3C1C7DBCB700EE884A /* RequestManager.swift */,
+				43F8340C1C9719CF00DE7E50 /* RequestManager+LegalAid.swift */,
 				43DC05BD1C847C7200AB670A /* RequestManager+Reports.swift */,
 				43DC05BF1C847DAE00AB670A /* RequestManager+Login.swift */,
 				435611981C8763AA0050EDE7 /* RequestManager+SocialManager.swift */,
@@ -224,6 +235,7 @@
 				43DC05C11C849B7C00AB670A /* Report.swift */,
 				43A426621C9040150044B6A6 /* Settings.swift */,
 				436D6B171C92C2C200A0240E /* Benefit.swift */,
+				43F834081C97116B00DE7E50 /* LegalAidActor.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -484,6 +496,7 @@
 			children = (
 				43CFA7691C93B61C00DC89C9 /* LegalAidVC.swift */,
 				43D900F21C94657C004A315C /* LegalAidDetailVC.swift */,
+				43F834101C97A1C700DE7E50 /* LegalAidContactsVC.swift */,
 			);
 			name = LegalAid;
 			sourceTree = "<group>";
@@ -524,6 +537,7 @@
 			isa = PBXGroup;
 			children = (
 				43D900ED1C944F92004A315C /* LegalAidSetuper.swift */,
+				43F8340A1C97133500DE7E50 /* LegalAidManager.swift */,
 			);
 			name = "Legal Aid";
 			sourceTree = "<group>";
@@ -592,6 +606,7 @@
 			children = (
 				43D900EF1C945814004A315C /* Highlitable label */,
 				43F834041C96CAB400DE7E50 /* PickerDialog.swift */,
+				43F8340E1C97274400DE7E50 /* LegalAidCell.swift */,
 			);
 			name = "Legal Aid";
 			sourceTree = "<group>";
@@ -787,6 +802,7 @@
 				43DC05C01C847DAE00AB670A /* RequestManager+Login.swift in Sources */,
 				43DC05C51C849C7E00AB670A /* LocationManager.swift in Sources */,
 				43D900F11C945857004A315C /* HighlitableLabel.swift in Sources */,
+				43F8340F1C97274400DE7E50 /* LegalAidCell.swift in Sources */,
 				43A4266E1C91ABAD0044B6A6 /* BenefitsVC.swift in Sources */,
 				43DC058B1C80BD6A00AB670A /* Storyboard.swift in Sources */,
 				435611991C8763AA0050EDE7 /* RequestManager+SocialManager.swift in Sources */,
@@ -794,6 +810,7 @@
 				43DC05CC1C85B04F00AB670A /* AddFriendsCell.swift in Sources */,
 				43DC05CF1C85DBC500AB670A /* SocialManager.swift in Sources */,
 				43DC05B61C83C4C100AB670A /* MapVC.swift in Sources */,
+				43F834111C97A1C700DE7E50 /* LegalAidContactsVC.swift in Sources */,
 				4316BBA41C7B6154007A9ECB /* UIColor+HEX.swift in Sources */,
 				4334D81F1C7F783F00557AE4 /* UIImageUtil.swift in Sources */,
 				4316BB9F1C7B446F007A9ECB /* SignUpVC.swift in Sources */,
@@ -801,6 +818,7 @@
 				430B4F431C7DC73D00EE884A /* URL.swift in Sources */,
 				436D6B231C93181C00A0240E /* BarcodeView.swift in Sources */,
 				430B4F3B1C7DBAB800EE884A /* User.swift in Sources */,
+				43F8340B1C97133500DE7E50 /* LegalAidManager.swift in Sources */,
 				43DC05C21C849B7C00AB670A /* Report.swift in Sources */,
 				43DC05851C8053FB00AB670A /* Titles.swift in Sources */,
 				4316BBA71C7B61EE007A9ECB /* Colors.swift in Sources */,
@@ -829,10 +847,12 @@
 				430B4F481C7DEAF000EE884A /* LoaderViewManager.swift in Sources */,
 				43D900EE1C944F92004A315C /* LegalAidSetuper.swift in Sources */,
 				43DC05901C83336C00AB670A /* PhoneTextField.swift in Sources */,
+				43F834091C97116B00DE7E50 /* LegalAidActor.swift in Sources */,
 				43A426711C91B71A0044B6A6 /* BenefitsLayout.swift in Sources */,
 				43DC05BE1C847C7200AB670A /* RequestManager+Reports.swift in Sources */,
 				43B6D8591C7F055C000D6844 /* Global.swift in Sources */,
 				43F834051C96CAB400DE7E50 /* PickerDialog.swift in Sources */,
+				43F8340D1C9719CF00DE7E50 /* RequestManager+LegalAid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

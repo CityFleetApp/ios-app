@@ -11,8 +11,10 @@
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
+            <string>Montserrat-Light</string>
         </mutableArray>
         <mutableArray key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
@@ -290,7 +292,7 @@
                         <sections>
                             <tableViewSection id="Fou-AR-OuH">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="78" id="nmd-G5-0cX">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LADLocationCell" rowHeight="78" id="nmd-G5-0cX" customClass="LegalAidCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="99" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nmd-G5-0cX" id="KHX-4r-tkG">
@@ -299,6 +301,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lawyer-location" translatesAutoresizingMaskIntoConstraints="NO" id="xyr-vN-xTd">
                                                     <rect key="frame" x="17" y="16" width="18" height="17"/>
+                                                    <color key="tintColor" red="0.1803921568627451" green="0.76862745098039209" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXS-6a-Nrp">
                                                     <rect key="frame" x="43" y="15" width="71" height="20"/>
@@ -340,8 +343,13 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="icon" destination="xyr-vN-xTd" id="Ota-Zj-IR1"/>
+                                            <outlet property="placeHolder" destination="KKH-W5-dYd" id="zFP-Km-r2o"/>
+                                            <outlet property="title" destination="wXS-6a-Nrp" id="567-rR-SSa"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="78" id="IcS-ET-tuT">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LADActorCell" rowHeight="78" id="IcS-ET-tuT" customClass="LegalAidCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="177" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IcS-ET-tuT" id="kJE-uY-PAV">
@@ -388,12 +396,17 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="icon" destination="cIj-jo-ChL" id="cCL-hm-1mO"/>
+                                            <outlet property="placeHolder" destination="vcF-s4-9Pa" id="Ka4-Bd-p3E"/>
+                                            <outlet property="title" destination="xye-j5-Ebp" id="9CG-yz-PYz"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="gUd-D2-we0">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="78" id="h4C-Dx-5Ue">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LADActorNameCell" rowHeight="78" id="h4C-Dx-5Ue">
                                         <rect key="frame" x="0.0" y="291" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h4C-Dx-5Ue" id="Pjp-Uk-t3l">
@@ -434,7 +447,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="78" id="ZsI-39-0ze">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LADYearsExp" rowHeight="78" id="ZsI-39-0ze">
                                         <rect key="frame" x="0.0" y="369" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZsI-39-0ze" id="Zx5-80-7OL">
@@ -478,7 +491,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="78" id="5ld-ff-Ccy">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="5ld-ff-Ccy">
                                         <rect key="frame" x="0.0" y="447" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5ld-ff-Ccy" id="roU-qV-0h8">
@@ -488,7 +501,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lawyer-rating" translatesAutoresizingMaskIntoConstraints="NO" id="Sya-Fc-B5J">
                                                     <rect key="frame" x="17" y="16" width="18" height="18"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uw-lr-8A8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uw-lr-8A8">
                                                     <rect key="frame" x="43" y="15" width="55" height="20"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -542,6 +555,9 @@
                                                             <real key="value" value="5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <segue destination="EpX-CF-WtL" kind="push" id="7qL-pM-RCY"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -574,12 +590,87 @@
                         <outlet property="actorTitle" destination="xye-j5-Ebp" id="Mb6-Sk-yAI"/>
                         <outlet property="locationLabel" destination="KKH-W5-dYd" id="6vM-oF-nH8"/>
                         <outlet property="nameLabel" destination="Tr4-Bt-Q19" id="au3-QF-MZb"/>
+                        <outlet property="raitingView" destination="RQN-2Q-Dl3" id="cHA-Sw-Jz0"/>
                         <outlet property="yearsLabel" destination="n2n-xl-pXp" id="udt-zp-ges"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="74Y-Kn-aAQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3327" y="1804"/>
+        </scene>
+        <!--Legal Aid ContactsVC-->
+        <scene sceneID="PPK-68-bpO">
+            <objects>
+                <tableViewController id="EpX-CF-WtL" customClass="LegalAidContactsVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="UpI-Ij-BGk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="LegalAidContactCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="LegalAidContactCell" rowHeight="78" id="WHk-L3-tVD" customClass="LegalAidCell" customModule="CitiFleet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="114" width="600" height="78"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WHk-L3-tVD" id="WWd-wn-xR0">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email-ic" translatesAutoresizingMaskIntoConstraints="NO" id="Xmc-Ps-RoC">
+                                            <rect key="frame" x="17" y="11" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="TEC-Km-OsV"/>
+                                                <constraint firstAttribute="width" constant="24" id="b8I-m5-mB3"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qX8-bH-xJe">
+                                            <rect key="frame" x="52" y="13" width="46" height="20"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                            <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2C-Eg-cO1" customClass="HighlitableLabel" customModule="CitiFleet" customModuleProvider="target">
+                                            <rect key="frame" x="17" y="43" width="41" height="19"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="15.350000381469727"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Select Location"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qX8-bH-xJe" firstAttribute="centerY" secondItem="Xmc-Ps-RoC" secondAttribute="centerY" id="59T-jB-ZIO"/>
+                                        <constraint firstItem="g2C-Eg-cO1" firstAttribute="leading" secondItem="Xmc-Ps-RoC" secondAttribute="leading" id="GcE-Bl-ROu"/>
+                                        <constraint firstItem="qX8-bH-xJe" firstAttribute="top" secondItem="WWd-wn-xR0" secondAttribute="topMargin" constant="5" id="Wel-iH-ya9"/>
+                                        <constraint firstItem="qX8-bH-xJe" firstAttribute="leading" secondItem="Xmc-Ps-RoC" secondAttribute="trailing" constant="11" id="cUJ-Qt-pqr"/>
+                                        <constraint firstItem="Xmc-Ps-RoC" firstAttribute="leading" secondItem="WWd-wn-xR0" secondAttribute="leadingMargin" constant="9" id="l1r-5y-Whn"/>
+                                        <constraint firstItem="g2C-Eg-cO1" firstAttribute="top" secondItem="Xmc-Ps-RoC" secondAttribute="bottom" constant="8" id="mTy-zd-Aih"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="icon" destination="Xmc-Ps-RoC" id="RE2-C9-jC8"/>
+                                    <outlet property="placeHolder" destination="g2C-Eg-cO1" id="Z7z-1w-CIs"/>
+                                    <outlet property="title" destination="qX8-bH-xJe" id="E8i-a2-eBA"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EpX-CF-WtL" id="CNF-D5-Brv"/>
+                            <outlet property="delegate" destination="EpX-CF-WtL" id="H5H-1L-w8P"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="bVd-7d-LXf">
+                        <barButtonItem key="leftBarButtonItem" image="back-ic" id="2rF-Xe-JfG">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="EpX-CF-WtL" id="RPH-AB-OIm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BK0-Lq-Ifz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4050" y="1804"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ybu-ZO-qmo">
@@ -603,6 +694,7 @@
     <resources>
         <image name="arr-odwn" width="9" height="5"/>
         <image name="back-ic" width="8" height="13"/>
+        <image name="email-ic" width="19" height="14"/>
         <image name="la-accountants" width="20" height="23"/>
         <image name="la-insurance-frokers" width="26" height="21"/>
         <image name="la-lawyer" width="24" height="20"/>

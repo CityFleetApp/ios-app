@@ -85,10 +85,11 @@ class LegalAidSetuper: NSObject {
         legalAidVC.title = actorInfo.title
         let image = UIImage(named: actorInfo.actorImage)
         
-        legalAidVC.actorImage.image = image
+        legalAidVC.actorImage.image = image?.imageWithRenderingMode(.AlwaysTemplate)
         legalAidVC.actorTitle.text = actorInfo.actorTitle
         legalAidVC.headerTitle = actorInfo.actorInfoTitle
         legalAidVC.actorLabel.placeholderText = actorInfo.actorPlaceholder
         legalAidVC.nameLabel.placeholderText = actorInfo.actorNamePlacehelder
+        legalAidVC.legalAidManager = LegalAidManager(type: type)
     }
 }

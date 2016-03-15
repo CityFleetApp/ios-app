@@ -10,4 +10,9 @@ import Foundation
 
 struct Resources {
     static let Checkmark = "Checkmark"
+    struct LegalAid {
+        static let PhoneIcon = "phone-ic"
+        static let MailIcon = "email-ic"
+        static let AddressIcon = "lawyer-location"
+    }
 }

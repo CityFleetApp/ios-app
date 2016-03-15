@@ -32,6 +32,9 @@ struct ViewControllerID {
 
 struct CellID {
     static let BenefitCellID = "BenefitsCollectionViewCell"
+    struct LegalAidCells {
+        static let ContactCell = "LegalAidContactCell"
+    }
 }
 
 struct SegueID {

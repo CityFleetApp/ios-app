@@ -16,6 +16,9 @@ import MBProgressHUD
 import Haneke
 
 class RequestManager: NSObject {
+    typealias ArrayResponse = [AnyObject]?
+    typealias DictionaryResponse = [String: AnyObject]?
+    
     private static var reachability: Reachability?
     private static var isReachable = true
     private static let shared = RequestManager()

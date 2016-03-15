@@ -42,7 +42,7 @@ class HighlitableLabel: UILabel {
         updateText()
     }
     
-    private func updateText() {
+    func updateText() {
         if highlitedText == nil || highlitedText?.characters.count == 0 {
             setPlaceHolderText()
         } else {

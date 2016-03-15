@@ -17,4 +17,8 @@ struct Titles {
         static let openCamera = "Take a photo"
         static let openLibrary = "Photo Library"
     }
+    struct LegalAid {
+        static let noLocationsTitle = "No Locations"
+        static let noLocationsMsg = "There are no locations"
+    }
 }

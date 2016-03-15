@@ -29,6 +29,13 @@ struct URL {
         static let Facebook = "users/add-facebook-friends/"
         static let Instagram = "users/add-instagram-friends/"
     }
+    struct LegalAid {
+        static let DMVLawyer = "legalaid/dmv-lawyers/"
+        static let TLCLawyer = "legalaid/tlc-lawyers/"
+        static let Brockers = "legalaid/insurance/"
+        static let Accountants = "legalaid/accouting/"
+        static let Locations = "legalaid/locations/"
+    }
     static let Reports = "reports/"
     static let UploadAvatar = "users/upload-avatar/"
     static let BenefitsList = "benefits/"
@@ -70,6 +77,9 @@ struct Params {
         static let token = "token"
         static let tokenSecret = "token_secret"
     }
+    struct LegalAid {
+        static let location = "location"
+    }
 }
 
 struct Response {
@@ -91,5 +101,10 @@ struct Response {
         static let ImageURL = "image_thumbnail"
         static let Barcode = "barcode"
         static let Title = "name"
+    }
+    
+    struct LegalAid {
+        static let id = "id"
+        static let name = "name"
     }
 }
