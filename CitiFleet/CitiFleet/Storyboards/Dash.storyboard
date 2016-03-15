@@ -744,7 +744,7 @@
                                 <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                             </collectionViewFlowLayout>
                             <cells>
-                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0J6-Tq-a3g">
+                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VehiclePhotoCell" id="0J6-Tq-a3g" customClass="VehiclePhotoCell" customModule="CitiFleet" customModuleProvider="target">
                                     <rect key="frame" x="10" y="10" width="75" height="75"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -753,6 +753,7 @@
                                         <subviews>
                                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image_tumb" translatesAutoresizingMaskIntoConstraints="NO" id="hCe-63-0KZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                <gestureRecognizers/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -763,6 +764,9 @@
                                         <constraint firstAttribute="trailing" secondItem="hCe-63-0KZ" secondAttribute="trailing" id="QcP-ry-tBl"/>
                                         <constraint firstItem="hCe-63-0KZ" firstAttribute="leading" secondItem="0J6-Tq-a3g" secondAttribute="leading" id="n2b-13-7a9"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="photo" destination="hCe-63-0KZ" id="wqr-pc-rfE"/>
+                                    </connections>
                                 </collectionViewCell>
                             </cells>
                         </collectionView>
@@ -1014,6 +1018,11 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4GX-FK-J5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="v9P-jU-a2p">
+                    <connections>
+                        <action selector="prssImage:" destination="0J6-Tq-a3g" id="6bo-71-OmG"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2687" y="1703"/>
         </scene>

@@ -15,4 +15,7 @@ struct Resources {
         static let MailIcon = "email-ic"
         static let AddressIcon = "lawyer-location"
     }
+    struct Profile {
+        static let VehicleDefault = "default_image_tumb"
+    }
 }

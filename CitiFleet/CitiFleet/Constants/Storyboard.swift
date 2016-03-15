@@ -35,6 +35,9 @@ struct CellID {
     struct LegalAidCells {
         static let ContactCell = "LegalAidContactCell"
     }
+    struct Profile {
+        static let VehiclePhotoCell = "VehiclePhotoCell"
+    }
 }
 
 struct SegueID {

@@ -91,6 +91,8 @@
 		43DC05C91C85AEAF00AB670A /* AddFriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05C81C85AEAF00AB670A /* AddFriendsVC.swift */; };
 		43DC05CC1C85B04F00AB670A /* AddFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05CB1C85B04F00AB670A /* AddFriendsCell.swift */; };
 		43DC05CF1C85DBC500AB670A /* SocialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05CE1C85DBC500AB670A /* SocialManager.swift */; };
+		43F5E2171C981EB5000BBB91 /* VehiclePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2161C981EB5000BBB91 /* VehiclePhotoCell.swift */; };
+		43F5E21A1C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2191C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift */; };
 		43F834051C96CAB400DE7E50 /* PickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834041C96CAB400DE7E50 /* PickerDialog.swift */; };
 		43F834071C96CB6700DE7E50 /* PickerDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43F834061C96CB6700DE7E50 /* PickerDialog.xib */; };
 		43F834091C97116B00DE7E50 /* LegalAidActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834081C97116B00DE7E50 /* LegalAidActor.swift */; };
@@ -192,6 +194,8 @@
 		43DC05C81C85AEAF00AB670A /* AddFriendsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddFriendsVC.swift; path = ViewController/MainScreen/AddFriendsVC.swift; sourceTree = "<group>"; };
 		43DC05CB1C85B04F00AB670A /* AddFriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddFriendsCell.swift; path = Viewes/MainScreen/AddFriendsCell.swift; sourceTree = "<group>"; };
 		43DC05CE1C85DBC500AB670A /* SocialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocialManager.swift; path = Utils/SocialManager/SocialManager.swift; sourceTree = "<group>"; };
+		43F5E2161C981EB5000BBB91 /* VehiclePhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VehiclePhotoCell.swift; path = Viewes/Dash/Profile/VehiclePhotoCell.swift; sourceTree = "<group>"; };
+		43F5E2191C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VehicleCollectionViewDelegate.swift; path = Utils/Profile/VehicleCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		43F834041C96CAB400DE7E50 /* PickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerDialog.swift; path = Viewes/LegalAid/PickerDialog.swift; sourceTree = "<group>"; };
 		43F834061C96CB6700DE7E50 /* PickerDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PickerDialog.xib; path = Storyboards/XIB/PickerDialog.xib; sourceTree = "<group>"; };
 		43F834081C97116B00DE7E50 /* LegalAidActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidActor.swift; path = Model/LegalAidActor.swift; sourceTree = "<group>"; };
@@ -354,6 +358,7 @@
 		4316BBB21C7B7399007A9ECB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				43F5E2181C982AB9000BBB91 /* Profile */,
 				43D900EC1C944F61004A315C /* Legal Aid */,
 				435611951C8752F10050EDE7 /* Address Book Manager */,
 				43DC05CD1C85D7DE00AB670A /* Social Manager */,
@@ -613,6 +618,15 @@
 		43F5E2151C981D8B000BBB91 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				43F5E2161C981EB5000BBB91 /* VehiclePhotoCell.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		43F5E2181C982AB9000BBB91 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				43F5E2191C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -829,6 +843,7 @@
 				43F834111C97A1C700DE7E50 /* LegalAidContactsVC.swift in Sources */,
 				4316BBA41C7B6154007A9ECB /* UIColor+HEX.swift in Sources */,
 				4334D81F1C7F783F00557AE4 /* UIImageUtil.swift in Sources */,
+				43F5E2171C981EB5000BBB91 /* VehiclePhotoCell.swift in Sources */,
 				4316BB9F1C7B446F007A9ECB /* SignUpVC.swift in Sources */,
 				43A4265F1C9035660044B6A6 /* SettingsVC.swift in Sources */,
 				430B4F431C7DC73D00EE884A /* URL.swift in Sources */,
@@ -861,6 +876,7 @@
 				4316BB7E1C7B046A007A9ECB /* AppDelegate.swift in Sources */,
 				436D6B1A1C92C6FB00A0240E /* RequestManager+Benefit.swift in Sources */,
 				430B4F481C7DEAF000EE884A /* LoaderViewManager.swift in Sources */,
+				43F5E21A1C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift in Sources */,
 				43D900EE1C944F92004A315C /* LegalAidSetuper.swift in Sources */,
 				43DC05901C83336C00AB670A /* PhoneTextField.swift in Sources */,
 				43F834091C97116B00DE7E50 /* LegalAidActor.swift in Sources */,
