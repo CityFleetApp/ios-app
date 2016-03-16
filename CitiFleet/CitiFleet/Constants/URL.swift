@@ -36,8 +36,11 @@ struct URL {
         static let Accountants = "legalaid/accouting/"
         static let Locations = "legalaid/locations/"
     }
+    struct Profile {
+        static let vehiclPhoto = "users/photos/"
+        static let UploadAvatar = "users/upload-avatar/"
+    }
     static let Reports = "reports/"
-    static let UploadAvatar = "users/upload-avatar/"
     static let BenefitsList = "benefits/"
 }
 
@@ -102,7 +105,6 @@ struct Response {
         static let Barcode = "barcode"
         static let Title = "name"
     }
-    
     struct LegalAid {
         static let id = "id"
         static let name = "name"
@@ -113,5 +115,10 @@ struct Response {
             static let phone = "phone"
             static let address = "address"
         }
+    }
+    struct VehiclPhoto {
+        static let file = "file"
+        static let id = "id"
+        static let thumbnail  = "thumbnail"
     }
 }

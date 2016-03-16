@@ -17,16 +17,16 @@ class ImageUploader: NSObject {
     ///
     /// - returns:            The NSURLRequest that was created
     
-    func createRequest (data: NSData) -> NSURLRequest {
+    func createRequest (data: NSData, baseUrl: String, HTTPMethod: String, name: String) -> NSURLRequest {
         let boundary = generateBoundaryString()
         
-        let url = NSURL(string: RequestManager.sharedInstance().url(URL.UploadAvatar))!
+        let url = NSURL(string: RequestManager.sharedInstance().url(baseUrl))!
         let request = NSMutableURLRequest(URL: url)
-        request.HTTPMethod = "PUT"
+        request.HTTPMethod = HTTPMethod
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         request.setValue(Params.Header.token + (User.currentUser()?.token)!, forHTTPHeaderField: Params.Header.authentication)
         
-        request.HTTPBody = createBodyWithParameters(data, boundary: boundary)
+        request.HTTPBody = createBodyWithParameters(data, boundary: boundary, name: name)
         
         return request
     }
@@ -40,11 +40,11 @@ class ImageUploader: NSObject {
     ///
     /// - returns:                The NSData of the body of the request
     
-    func createBodyWithParameters(data: NSData, boundary: String) -> NSData {
+    func createBodyWithParameters(data: NSData, boundary: String, name: String) -> NSData {
         let body = NSMutableData()
         
         body.appendData("--\(boundary)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        body.appendData("Content-Disposition: form-data; name=\"avatar\"; filename=\"avatar.png\"\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+        body.appendData("Content-Disposition: form-data; name=\"\(name)\"; filename=\"avatar.png\"\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
         body.appendData("Content-Type: \(MIME.Image.png)\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
         body.appendData(data)
         body.appendData("\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)

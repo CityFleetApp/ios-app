@@ -758,6 +758,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
+                                    <gestureRecognizers/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="hCe-63-0KZ" secondAttribute="bottom" id="EHl-Wl-tEA"/>
                                         <constraint firstItem="hCe-63-0KZ" firstAttribute="top" secondItem="0J6-Tq-a3g" secondAttribute="top" id="QTi-CW-gnW"/>
@@ -1015,14 +1016,11 @@
                         <outlet property="drives" destination="BPz-w3-1Wn" id="VK6-Vv-yJk"/>
                         <outlet property="headerView" destination="cOZ-kM-wog" id="wQl-pk-WA1"/>
                         <outlet property="jobsCompleted" destination="Huk-MJ-49F" id="S7w-10-JYa"/>
+                        <outlet property="vehicleCollectionView" destination="7pK-8y-s6I" id="RVW-qH-jjn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4GX-FK-J5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="v9P-jU-a2p">
-                    <connections>
-                        <action selector="prssImage:" destination="0J6-Tq-a3g" id="6bo-71-OmG"/>
-                    </connections>
-                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="v9P-jU-a2p"/>
             </objects>
             <point key="canvasLocation" x="2687" y="1703"/>
         </scene>

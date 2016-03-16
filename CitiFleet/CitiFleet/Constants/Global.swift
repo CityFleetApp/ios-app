@@ -11,6 +11,7 @@ import UIKit
 struct Sizes {
     struct Image {
         static let avatarSize: CGFloat = 393
+        static let vehiclSize: CGFloat = 255
     }
     struct Button {
         static let ImageTitleSpacing: CGFloat = 6.0

@@ -121,13 +121,37 @@ extension RequestManager {
 
 //MARK: - Upload Photo
 extension RequestManager {
-    func uploadPhoto(data: NSData, completion: ((NSURL?, NSError?) -> ())) {
+    func uploadAvatar(data: NSData, completion: ((NSURL?, NSError?) -> ())) {
+        uploadPhoto(data, baseUrl: URL.Profile.UploadAvatar, HTTPMethod: "PUT", name: "avatar", completion: { (data, error) in
+            if let avatarURL = data?.valueForKey(Response.UploadAvatar.avatar) as? String {
+                self.saveAvatar(avatarURL)
+                completion(NSURL(string: avatarURL), nil)
+            }
+            completion(nil, error)
+        })
+    }
+    
+    func uploadVehicle(data: NSData, completion: ((AnyObject?, NSError?) -> ())) {
+        uploadPhoto(data, baseUrl: URL.Profile.vehiclPhoto, HTTPMethod: "POST", name: "file", completion: completion)
+    }
+    
+    func downloadVehicleImages(completion:(([AnyObject]?, NSError?) -> ())) {
+        get(URL.Profile.vehiclPhoto, parameters: nil) { (json, error) -> () in
+            if let json = json {
+                completion(json.arrayObject, error)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+    
+    private func uploadPhoto(data: NSData, baseUrl: String, HTTPMethod: String, name: String, completion: ((AnyObject?, NSError?) -> ())) {
         let view = AppDelegate.sharedDelegate().rootViewController().view
-        let request = ImageUploader().createRequest(data)
+        let request = ImageUploader().createRequest(data, baseUrl: baseUrl, HTTPMethod: HTTPMethod, name: name)
         
         let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
         hud.mode = .AnnularDeterminate
-        hud.labelText = "Loading..."
+        hud.labelText = "Uploading..."
         
         let manager = AFURLSessionManager(sessionConfiguration: NSURLSessionConfiguration.defaultSessionConfiguration())
         let uploadTask = manager.uploadTaskWithStreamedRequest(request,
@@ -138,6 +162,7 @@ extension RequestManager {
             },
             completionHandler: { (response, responseObject, error) -> Void in
                 if let error = error {
+                    print("Response: \(responseObject)")
                     let handledError = self.errorWithInfo(error, data: responseObject as? NSData)
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         hud.hide(true)
@@ -155,12 +180,7 @@ extension RequestManager {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     hud.hide(true)
                 })
-                if let avatarURL = responseObject?.valueForKey(Response.UploadAvatar.avatar) as? String {
-                    self.saveAvatar(avatarURL)
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        completion(NSURL(string: avatarURL), nil)
-                    })
-                }
+                completion(responseObject, error)
         })
         
         uploadTask.resume()

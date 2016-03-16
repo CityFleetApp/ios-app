@@ -46,7 +46,7 @@ class DashVC: UITableViewController {
     
     @IBAction func cameraPressed(sender: AnyObject) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-        let fabric = CameraFabric(dashVC: self)
+        let fabric = CameraFabric(imagePicerDelegate: self)
         alert.addAction(fabric.cameraAction())
         alert.addAction(fabric.libraryAction())
         alert.addAction(fabric.cancelAction())
@@ -112,9 +112,9 @@ extension DashVC: UIImagePickerControllerDelegate, UINavigationControllerDelegat
 }
 
 class CameraFabric: NSObject {
-    private var dashVC: DashVC
-    init(dashVC: DashVC) {
-        self.dashVC = dashVC
+    private var imagePicerDelegate: protocol<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+    init(imagePicerDelegate: protocol<UIImagePickerControllerDelegate, UINavigationControllerDelegate>) {
+        self.imagePicerDelegate = imagePicerDelegate
         super.init()
     }
     
@@ -136,10 +136,10 @@ class CameraFabric: NSObject {
     
     func showPicker(sourceType: UIImagePickerControllerSourceType) {
         let pickerController = UIImagePickerController()
-        pickerController.delegate = self.dashVC
+        pickerController.delegate = self.imagePicerDelegate
         pickerController.sourceType = sourceType
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
-            self.dashVC.presentViewController(pickerController, animated: true, completion: nil)
+            AppDelegate.sharedDelegate().rootViewController().presentViewController(pickerController, animated: true, completion: nil)
         }
     }
 }
