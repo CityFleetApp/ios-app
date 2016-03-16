@@ -94,6 +94,7 @@
 		43F5E2171C981EB5000BBB91 /* VehiclePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2161C981EB5000BBB91 /* VehiclePhotoCell.swift */; };
 		43F5E21A1C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2191C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift */; };
 		43F5E2221C9894AF000BBB91 /* GalleryPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2211C9894AF000BBB91 /* GalleryPhoto.swift */; };
+		43F5E2241C99A3DC000BBB91 /* GalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2231C99A3DC000BBB91 /* GalleryVC.swift */; };
 		43F834051C96CAB400DE7E50 /* PickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834041C96CAB400DE7E50 /* PickerDialog.swift */; };
 		43F834071C96CB6700DE7E50 /* PickerDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43F834061C96CB6700DE7E50 /* PickerDialog.xib */; };
 		43F834091C97116B00DE7E50 /* LegalAidActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834081C97116B00DE7E50 /* LegalAidActor.swift */; };
@@ -198,6 +199,7 @@
 		43F5E2161C981EB5000BBB91 /* VehiclePhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VehiclePhotoCell.swift; path = Viewes/Dash/Profile/VehiclePhotoCell.swift; sourceTree = "<group>"; };
 		43F5E2191C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VehicleCollectionViewDelegate.swift; path = Utils/Profile/VehicleCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		43F5E2211C9894AF000BBB91 /* GalleryPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryPhoto.swift; path = Model/GalleryPhoto.swift; sourceTree = "<group>"; };
+		43F5E2231C99A3DC000BBB91 /* GalleryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryVC.swift; path = ViewController/Dash/Profile/GalleryVC.swift; sourceTree = "<group>"; };
 		43F834041C96CAB400DE7E50 /* PickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerDialog.swift; path = Viewes/LegalAid/PickerDialog.swift; sourceTree = "<group>"; };
 		43F834061C96CB6700DE7E50 /* PickerDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PickerDialog.xib; path = Storyboards/XIB/PickerDialog.xib; sourceTree = "<group>"; };
 		43F834081C97116B00DE7E50 /* LegalAidActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidActor.swift; path = Model/LegalAidActor.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 			isa = PBXGroup;
 			children = (
 				43CFA7621C93915F00DC89C9 /* ProfileVC.swift */,
+				43F5E2231C99A3DC000BBB91 /* GalleryVC.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -845,6 +848,7 @@
 				43DC05B61C83C4C100AB670A /* MapVC.swift in Sources */,
 				43F834111C97A1C700DE7E50 /* LegalAidContactsVC.swift in Sources */,
 				4316BBA41C7B6154007A9ECB /* UIColor+HEX.swift in Sources */,
+				43F5E2241C99A3DC000BBB91 /* GalleryVC.swift in Sources */,
 				4334D81F1C7F783F00557AE4 /* UIImageUtil.swift in Sources */,
 				43F5E2171C981EB5000BBB91 /* VehiclePhotoCell.swift in Sources */,
 				4316BB9F1C7B446F007A9ECB /* SignUpVC.swift in Sources */,

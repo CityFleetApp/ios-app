@@ -751,7 +751,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
-                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image_tumb" translatesAutoresizingMaskIntoConstraints="NO" id="hCe-63-0KZ">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image_tumb" translatesAutoresizingMaskIntoConstraints="NO" id="hCe-63-0KZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                                 <gestureRecognizers/>
                                             </imageView>
@@ -1020,7 +1020,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4GX-FK-J5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="v9P-jU-a2p"/>
             </objects>
             <point key="canvasLocation" x="2687" y="1703"/>
         </scene>
