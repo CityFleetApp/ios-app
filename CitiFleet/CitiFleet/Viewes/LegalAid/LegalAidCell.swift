@@ -10,8 +10,13 @@ import UIKit
 
 class LegalAidCell: DashMenuCell {
     @IBOutlet var icon: UIImageView!
-    @IBOutlet var placeHolder: HighlitableLabel!
+    @IBOutlet var placeHolder: HighlitableLabel?
+    
     var inactiveColor = UIColor.lightGrayColor()
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -21,6 +26,7 @@ class LegalAidCell: DashMenuCell {
         super.awakeFromNib()
         icon.image = icon.image?.imageWithRenderingMode(.AlwaysTemplate)
         icon.tintColor = selectedColor
+        
         selectedColor = Color.Global.LightGreen
         titleColor = selectedColor
         setEditable(false)
@@ -31,30 +37,22 @@ class LegalAidCell: DashMenuCell {
         icon.tintColor = editable ? selectedColor : inactiveColor
         title.textColor = editable ? selectedColor : inactiveColor
         if editable {
-            placeHolder.updateText()
+            placeHolder?.updateText()
         } else {
-            placeHolder.text = nil
-            placeHolder.textColor = inactiveColor
+            placeHolder?.text = nil
+            placeHolder?.textColor = inactiveColor
         }
     }
-}
 
-extension LegalAidCell {
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
-        placeHolder.textColor = UIColor.whiteColor()
+    override func selectCell() {
+        super.selectCell()
+        placeHolder?.textColor = UIColor.whiteColor()
         icon.tintColor = UIColor.whiteColor()
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesEnded(touches, withEvent: event)
-        placeHolder.updateText()
-        icon.tintColor = selectedColor
-    }
-    
-    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
-        super.touchesCancelled(touches, withEvent: event)
-        placeHolder.updateText()
+    override func deselectCell() {
+        super.deselectCell()
+        placeHolder?.updateText()
         icon.tintColor = selectedColor
     }
 }

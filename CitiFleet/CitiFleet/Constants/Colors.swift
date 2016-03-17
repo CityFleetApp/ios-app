@@ -27,4 +27,7 @@ struct Color {
     struct PickerDialog {
         static let RowTextColor = UIColor(hex: 0x4c5a76, alpha: 1)
     }
+    struct Notifcations {
+        static let LabelGrayColor = 0x747474
+    }
 }

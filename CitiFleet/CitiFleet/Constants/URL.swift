@@ -40,6 +40,9 @@ struct URL {
         static let vehiclPhoto = "users/photos/"
         static let UploadAvatar = "users/upload-avatar/"
     }
+    struct Notifications {
+        static let notifications = "notifications/"
+    }
     static let Reports = "reports/"
     static let BenefitsList = "benefits/"
 }
@@ -120,5 +123,12 @@ struct Response {
         static let file = "file"
         static let id = "id"
         static let thumbnail  = "thumbnail"
+    }
+    struct Notifications {
+        static let id = "id"
+        static let title = "title"
+        static let message = "message"
+        static let date = "created"
+        static let unseen = "unseen"
     }
 }

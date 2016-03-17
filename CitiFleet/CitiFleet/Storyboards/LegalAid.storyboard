@@ -345,6 +345,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="icon" destination="xyr-vN-xTd" id="Ota-Zj-IR1"/>
+                                            <outlet property="nextScreenArrow" destination="Jch-Sh-jmd" id="8ql-2A-J26"/>
                                             <outlet property="placeHolder" destination="KKH-W5-dYd" id="zFP-Km-r2o"/>
                                             <outlet property="title" destination="wXS-6a-Nrp" id="567-rR-SSa"/>
                                         </connections>
@@ -398,6 +399,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="icon" destination="cIj-jo-ChL" id="cCL-hm-1mO"/>
+                                            <outlet property="nextScreenArrow" destination="efv-hi-MtT" id="V4R-pc-7tv"/>
                                             <outlet property="placeHolder" destination="vcF-s4-9Pa" id="Ka4-Bd-p3E"/>
                                             <outlet property="title" destination="xye-j5-Ebp" id="9CG-yz-PYz"/>
                                         </connections>
@@ -501,7 +503,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lawyer-rating" translatesAutoresizingMaskIntoConstraints="NO" id="Sya-Fc-B5J">
                                                     <rect key="frame" x="17" y="16" width="18" height="18"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uw-lr-8A8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uw-lr-8A8">
                                                     <rect key="frame" x="43" y="15" width="55" height="20"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>

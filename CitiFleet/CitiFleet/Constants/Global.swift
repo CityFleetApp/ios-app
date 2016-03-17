@@ -23,3 +23,9 @@ struct Constant {
         static let imageBlurRadius: CGFloat = 7
     }
 }
+
+struct DateFormat {
+    struct Notification {
+        static let dateFormat = "yyyy-MM-dd"
+    }
+}

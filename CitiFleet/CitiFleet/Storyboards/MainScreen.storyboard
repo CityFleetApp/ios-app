@@ -73,6 +73,7 @@
                                         </state>
                                         <connections>
                                             <action selector="updateButtonsColor:" destination="4tr-YF-9SX" eventType="touchUpInside" id="AoO-dP-6OI"/>
+                                            <segue destination="JFp-sJ-m3k" kind="push" id="e8J-2t-8v2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GrW-VX-asl">
@@ -206,6 +207,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dds-b5-NtH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1606" y="339"/>
+        </scene>
+        <!--NotificationsVC-->
+        <scene sceneID="DKm-Zw-vvb">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="NotificationsVC" storyboardName="Notification" referencedIdentifier="NotificationsVC" id="JFp-sJ-m3k" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="KPu-vo-wXk"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ywG-ZH-kh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1583.5" y="781"/>
         </scene>
         <!--MapVC-->
         <scene sceneID="7ce-Pg-MtH">

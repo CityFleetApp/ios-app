@@ -76,7 +76,7 @@ extension LegalAidContactsVC {
         let cell = tableView.dequeueReusableCellWithIdentifier(CellID.LegalAidCells.ContactCell) as! LegalAidCell
         cell.icon.image = imageWithType(contact.type)
         cell.title.text = contact.title
-        cell.placeHolder.highlitedText = contact.value
+        cell.placeHolder?.highlitedText = contact.value
         cell.setEditable(true)
         return cell
     }

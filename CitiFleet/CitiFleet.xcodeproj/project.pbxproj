@@ -97,6 +97,12 @@
 		43F5E2241C99A3DC000BBB91 /* GalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2231C99A3DC000BBB91 /* GalleryVC.swift */; };
 		43F5E2261C99ADE7000BBB91 /* RequestManager+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2251C99ADE7000BBB91 /* RequestManager+Profile.swift */; };
 		43F5E2281C99C557000BBB91 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2271C99C557000BBB91 /* UIImage+Ext.swift */; };
+		43F5E22B1C9AAEB8000BBB91 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F5E22A1C9AAEB8000BBB91 /* Notification.storyboard */; };
+		43F5E22E1C9AE6C7000BBB91 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E22D1C9AE6C7000BBB91 /* NotificationCell.swift */; };
+		43F5E2301C9AEB46000BBB91 /* NotificationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E22F1C9AEB46000BBB91 /* NotificationsVC.swift */; };
+		43F5E2321C9AEBD1000BBB91 /* RequestManager+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2311C9AEBD1000BBB91 /* RequestManager+Notifications.swift */; };
+		43F5E2341C9AEE0D000BBB91 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2331C9AEE0D000BBB91 /* NotificationManager.swift */; };
+		43F5E2361C9AEE8C000BBB91 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2351C9AEE8C000BBB91 /* Notification.swift */; };
 		43F834051C96CAB400DE7E50 /* PickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834041C96CAB400DE7E50 /* PickerDialog.swift */; };
 		43F834071C96CB6700DE7E50 /* PickerDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43F834061C96CB6700DE7E50 /* PickerDialog.xib */; };
 		43F834091C97116B00DE7E50 /* LegalAidActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834081C97116B00DE7E50 /* LegalAidActor.swift */; };
@@ -204,6 +210,12 @@
 		43F5E2231C99A3DC000BBB91 /* GalleryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryVC.swift; path = ViewController/Dash/Profile/GalleryVC.swift; sourceTree = "<group>"; };
 		43F5E2251C99ADE7000BBB91 /* RequestManager+Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RequestManager+Profile.swift"; path = "Utils/RequestTool/RequestManager+Profile.swift"; sourceTree = "<group>"; };
 		43F5E2271C99C557000BBB91 /* UIImage+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Ext.swift"; path = "Extensions/UIImage+Ext.swift"; sourceTree = "<group>"; };
+		43F5E22A1C9AAEB8000BBB91 /* Notification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Notification.storyboard; path = Storyboards/Notification.storyboard; sourceTree = "<group>"; };
+		43F5E22D1C9AE6C7000BBB91 /* NotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationCell.swift; path = Viewes/Notifications/NotificationCell.swift; sourceTree = "<group>"; };
+		43F5E22F1C9AEB46000BBB91 /* NotificationsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationsVC.swift; path = ViewController/MainScreen/Notifications/NotificationsVC.swift; sourceTree = "<group>"; };
+		43F5E2311C9AEBD1000BBB91 /* RequestManager+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestManager+Notifications.swift"; sourceTree = "<group>"; };
+		43F5E2331C9AEE0D000BBB91 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationManager.swift; path = Utils/Notifications/NotificationManager.swift; sourceTree = "<group>"; };
+		43F5E2351C9AEE8C000BBB91 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Notification.swift; path = Model/Notification.swift; sourceTree = "<group>"; };
 		43F834041C96CAB400DE7E50 /* PickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerDialog.swift; path = Viewes/LegalAid/PickerDialog.swift; sourceTree = "<group>"; };
 		43F834061C96CB6700DE7E50 /* PickerDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PickerDialog.xib; path = Storyboards/XIB/PickerDialog.xib; sourceTree = "<group>"; };
 		43F834081C97116B00DE7E50 /* LegalAidActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidActor.swift; path = Model/LegalAidActor.swift; sourceTree = "<group>"; };
@@ -230,7 +242,9 @@
 		430B4F381C7DBA8600EE884A /* Request Util */ = {
 			isa = PBXGroup;
 			children = (
+				43DC058C1C80C20F00AB670A /* Error Handler */,
 				430B4F3C1C7DBCB700EE884A /* RequestManager.swift */,
+				43F5E2311C9AEBD1000BBB91 /* RequestManager+Notifications.swift */,
 				43F5E2251C99ADE7000BBB91 /* RequestManager+Profile.swift */,
 				43F8340C1C9719CF00DE7E50 /* RequestManager+LegalAid.swift */,
 				43DC05BD1C847C7200AB670A /* RequestManager+Reports.swift */,
@@ -250,6 +264,8 @@
 				436D6B171C92C2C200A0240E /* Benefit.swift */,
 				43F834081C97116B00DE7E50 /* LegalAidActor.swift */,
 				43F5E2211C9894AF000BBB91 /* GalleryPhoto.swift */,
+				43F5E2331C9AEE0D000BBB91 /* NotificationManager.swift */,
+				43F5E2351C9AEE8C000BBB91 /* Notification.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -305,6 +321,7 @@
 				4334D8111C7F215200557AE4 /* Dash.storyboard */,
 				43A426601C90359E0044B6A6 /* Settings.storyboard */,
 				43CFA7661C93AF5C00DC89C9 /* LegalAid.storyboard */,
+				43F5E22A1C9AAEB8000BBB91 /* Notification.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -371,11 +388,8 @@
 			children = (
 				43F5E2181C982AB9000BBB91 /* Profile */,
 				43D900EC1C944F61004A315C /* Legal Aid */,
-				435611951C8752F10050EDE7 /* Address Book Manager */,
 				43DC05CD1C85D7DE00AB670A /* Social Manager */,
 				43DC05C31C849C2000AB670A /* Location Manager */,
-				43DC058C1C80C20F00AB670A /* Error Handler */,
-				430B4F461C7DEA8500EE884A /* Loader */,
 				430B4F381C7DBA8600EE884A /* Request Util */,
 				43AD51621C963B88002261DB /* UI Utils */,
 			);
@@ -471,6 +485,7 @@
 		43AD51621C963B88002261DB /* UI Utils */ = {
 			isa = PBXGroup;
 			children = (
+				430B4F461C7DEA8500EE884A /* Loader */,
 				4316BBB31C7B73C6007A9ECB /* ConfirmPasswordRule.swift */,
 				4334D81E1C7F783F00557AE4 /* UIImageUtil.swift */,
 				43A426661C90CA160044B6A6 /* ImageUploader.swift */,
@@ -482,6 +497,7 @@
 		43B6D8501C7EF8A2000D6844 /* View Controllerrs */ = {
 			isa = PBXGroup;
 			children = (
+				43F5E2291C9AAD59000BBB91 /* Notifications */,
 				4334D8131C7F494E00557AE4 /* Dash */,
 				43B6D8511C7EF8B5000D6844 /* Main Screen */,
 				4316BB9B1C7B23C6007A9ECB /* Login */,
@@ -530,6 +546,7 @@
 		43D2D0B31C7C9A3500A41D4F /* Viewes */ = {
 			isa = PBXGroup;
 			children = (
+				43F5E22C1C9AE64C000BBB91 /* Notifications */,
 				43AD51581C95D20B002261DB /* Avatar Header View */,
 				43F834031C96CA6A00DE7E50 /* Legal Aid */,
 				436D6B211C9317F700A0240E /* Barcode View */,
@@ -613,6 +630,7 @@
 		43DC05CD1C85D7DE00AB670A /* Social Manager */ = {
 			isa = PBXGroup;
 			children = (
+				435611951C8752F10050EDE7 /* Address Book Manager */,
 				43DC05CE1C85DBC500AB670A /* SocialManager.swift */,
 			);
 			name = "Social Manager";
@@ -641,6 +659,22 @@
 				43F5E2191C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift */,
 			);
 			name = Profile;
+			sourceTree = "<group>";
+		};
+		43F5E2291C9AAD59000BBB91 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				43F5E22F1C9AEB46000BBB91 /* NotificationsVC.swift */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
+		43F5E22C1C9AE64C000BBB91 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				43F5E22D1C9AE6C7000BBB91 /* NotificationCell.swift */,
+			);
+			name = Notifications;
 			sourceTree = "<group>";
 		};
 		43F834031C96CA6A00DE7E50 /* Legal Aid */ = {
@@ -754,6 +788,7 @@
 				436D6B251C93184B00A0240E /* BarcodeView.xib in Resources */,
 				4316BB881C7B046A007A9ECB /* LaunchScreen.storyboard in Resources */,
 				4316BB851C7B046A007A9ECB /* Assets.xcassets in Resources */,
+				43F5E22B1C9AAEB8000BBB91 /* Notification.storyboard in Resources */,
 				43A426611C90359E0044B6A6 /* Settings.storyboard in Resources */,
 				43B6D8551C7EFC74000D6844 /* MainScreen.storyboard in Resources */,
 				43F834071C96CB6700DE7E50 /* PickerDialog.xib in Resources */,
@@ -832,6 +867,7 @@
 				43A4266B1C916DC20044B6A6 /* ResetPasswordVC.swift in Sources */,
 				43B6D8531C7EFB61000D6844 /* MainScreenVC.swift in Sources */,
 				43DC05871C8098FD00AB670A /* DashMenuCell.swift in Sources */,
+				43F5E2341C9AEE0D000BBB91 /* NotificationManager.swift in Sources */,
 				43AD515A1C95D257002261DB /* AvatarHeaderView.swift in Sources */,
 				43F5E2281C99C557000BBB91 /* UIImage+Ext.swift in Sources */,
 				43D2D0B21C7C97D600A41D4F /* LoginVC.swift in Sources */,
@@ -847,6 +883,7 @@
 				43F5E2261C99ADE7000BBB91 /* RequestManager+Profile.swift in Sources */,
 				43D900F11C945857004A315C /* HighlitableLabel.swift in Sources */,
 				43F8340F1C97274400DE7E50 /* LegalAidCell.swift in Sources */,
+				43F5E2361C9AEE8C000BBB91 /* Notification.swift in Sources */,
 				43A4266E1C91ABAD0044B6A6 /* BenefitsVC.swift in Sources */,
 				43DC058B1C80BD6A00AB670A /* Storyboard.swift in Sources */,
 				435611991C8763AA0050EDE7 /* RequestManager+SocialManager.swift in Sources */,
@@ -858,10 +895,12 @@
 				4316BBA41C7B6154007A9ECB /* UIColor+HEX.swift in Sources */,
 				43F5E2241C99A3DC000BBB91 /* GalleryVC.swift in Sources */,
 				4334D81F1C7F783F00557AE4 /* UIImageUtil.swift in Sources */,
+				43F5E2321C9AEBD1000BBB91 /* RequestManager+Notifications.swift in Sources */,
 				43F5E2171C981EB5000BBB91 /* VehiclePhotoCell.swift in Sources */,
 				4316BB9F1C7B446F007A9ECB /* SignUpVC.swift in Sources */,
 				43F5E2221C9894AF000BBB91 /* GalleryPhoto.swift in Sources */,
 				43A4265F1C9035660044B6A6 /* SettingsVC.swift in Sources */,
+				43F5E22E1C9AE6C7000BBB91 /* NotificationCell.swift in Sources */,
 				430B4F431C7DC73D00EE884A /* URL.swift in Sources */,
 				436D6B231C93181C00A0240E /* BarcodeView.swift in Sources */,
 				430B4F3B1C7DBAB800EE884A /* User.swift in Sources */,
@@ -873,6 +912,7 @@
 				43AD515F1C95DFFF002261DB /* AvatarCameraView.swift in Sources */,
 				4316BB9D1C7B23ED007A9ECB /* MainLoginVC.swift in Sources */,
 				435611971C87532C0050EDE7 /* AddressBookManager.swift in Sources */,
+				43F5E2301C9AEB46000BBB91 /* NotificationsVC.swift in Sources */,
 				43DC058E1C80C26200AB670A /* RequestErrorHandler.swift in Sources */,
 				430B4F451C7DE33700EE884A /* NSData+Ext.swift in Sources */,
 				43AD51641C963D39002261DB /* UITableViewHeaderSetuper.swift in Sources */,
