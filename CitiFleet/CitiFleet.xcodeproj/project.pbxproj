@@ -95,6 +95,8 @@
 		43F5E21A1C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2191C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift */; };
 		43F5E2221C9894AF000BBB91 /* GalleryPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2211C9894AF000BBB91 /* GalleryPhoto.swift */; };
 		43F5E2241C99A3DC000BBB91 /* GalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2231C99A3DC000BBB91 /* GalleryVC.swift */; };
+		43F5E2261C99ADE7000BBB91 /* RequestManager+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2251C99ADE7000BBB91 /* RequestManager+Profile.swift */; };
+		43F5E2281C99C557000BBB91 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2271C99C557000BBB91 /* UIImage+Ext.swift */; };
 		43F834051C96CAB400DE7E50 /* PickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834041C96CAB400DE7E50 /* PickerDialog.swift */; };
 		43F834071C96CB6700DE7E50 /* PickerDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43F834061C96CB6700DE7E50 /* PickerDialog.xib */; };
 		43F834091C97116B00DE7E50 /* LegalAidActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834081C97116B00DE7E50 /* LegalAidActor.swift */; };
@@ -200,6 +202,8 @@
 		43F5E2191C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VehicleCollectionViewDelegate.swift; path = Utils/Profile/VehicleCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		43F5E2211C9894AF000BBB91 /* GalleryPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryPhoto.swift; path = Model/GalleryPhoto.swift; sourceTree = "<group>"; };
 		43F5E2231C99A3DC000BBB91 /* GalleryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryVC.swift; path = ViewController/Dash/Profile/GalleryVC.swift; sourceTree = "<group>"; };
+		43F5E2251C99ADE7000BBB91 /* RequestManager+Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RequestManager+Profile.swift"; path = "Utils/RequestTool/RequestManager+Profile.swift"; sourceTree = "<group>"; };
+		43F5E2271C99C557000BBB91 /* UIImage+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Ext.swift"; path = "Extensions/UIImage+Ext.swift"; sourceTree = "<group>"; };
 		43F834041C96CAB400DE7E50 /* PickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerDialog.swift; path = Viewes/LegalAid/PickerDialog.swift; sourceTree = "<group>"; };
 		43F834061C96CB6700DE7E50 /* PickerDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PickerDialog.xib; path = Storyboards/XIB/PickerDialog.xib; sourceTree = "<group>"; };
 		43F834081C97116B00DE7E50 /* LegalAidActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidActor.swift; path = Model/LegalAidActor.swift; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				430B4F3C1C7DBCB700EE884A /* RequestManager.swift */,
+				43F5E2251C99ADE7000BBB91 /* RequestManager+Profile.swift */,
 				43F8340C1C9719CF00DE7E50 /* RequestManager+LegalAid.swift */,
 				43DC05BD1C847C7200AB670A /* RequestManager+Reports.swift */,
 				43DC05BF1C847DAE00AB670A /* RequestManager+Login.swift */,
@@ -340,6 +345,7 @@
 				43B6D8561C7F0379000D6844 /* UIButton+Ext.swift */,
 				436D6B1E1C92E37600A0240E /* UIViewController+Ext.swift */,
 				43CFA7641C939E7C00DC89C9 /* NSAttributedString+Ext.swift */,
+				43F5E2271C99C557000BBB91 /* UIImage+Ext.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -827,6 +833,7 @@
 				43B6D8531C7EFB61000D6844 /* MainScreenVC.swift in Sources */,
 				43DC05871C8098FD00AB670A /* DashMenuCell.swift in Sources */,
 				43AD515A1C95D257002261DB /* AvatarHeaderView.swift in Sources */,
+				43F5E2281C99C557000BBB91 /* UIImage+Ext.swift in Sources */,
 				43D2D0B21C7C97D600A41D4F /* LoginVC.swift in Sources */,
 				43A426631C9040150044B6A6 /* Settings.swift in Sources */,
 				4316BBA91C7B61F5007A9ECB /* Fonts.swift in Sources */,
@@ -837,6 +844,7 @@
 				43CFA7651C939E7C00DC89C9 /* NSAttributedString+Ext.swift in Sources */,
 				43DC05C01C847DAE00AB670A /* RequestManager+Login.swift in Sources */,
 				43DC05C51C849C7E00AB670A /* LocationManager.swift in Sources */,
+				43F5E2261C99ADE7000BBB91 /* RequestManager+Profile.swift in Sources */,
 				43D900F11C945857004A315C /* HighlitableLabel.swift in Sources */,
 				43F8340F1C97274400DE7E50 /* LegalAidCell.swift in Sources */,
 				43A4266E1C91ABAD0044B6A6 /* BenefitsVC.swift in Sources */,

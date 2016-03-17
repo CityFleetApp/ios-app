@@ -17,5 +17,6 @@ struct Resources {
     }
     struct Profile {
         static let VehicleDefault = "default_image_tumb"
+        static let TrashIcon = "trash-ic"
     }
 }

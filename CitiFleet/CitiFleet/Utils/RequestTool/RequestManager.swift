@@ -93,6 +93,9 @@ extension RequestManager {
         Alamofire.request(method, url(baseURL), headers: header(), parameters: parameters, encoding: .JSON)
             .validate(statusCode: 200..<300)
             .responseData{ response in
+                let dataString = String(data: response.data!, encoding: NSUTF8StringEncoding)
+                print("Response data: \(dataString)")
+                
                 self.endRequest(nil, responseData: nil)
                 switch response.result {
                 case .Success(let data):
@@ -117,35 +120,15 @@ extension RequestManager {
     func get(baseURL: String, parameters: [String:AnyObject]?, completion:((SwiftyJSON.JSON?, NSError?) -> ())) {
         makeRequest(.GET, baseURL: baseURL, parameters: parameters, completion: completion)
     }
+    
+    func delete(baseURL: String, parameters: [String:AnyObject]?, completion:((SwiftyJSON.JSON?, NSError?) -> ())) {
+        makeRequest(.DELETE, baseURL: baseURL, parameters: parameters, completion: completion)
+    }
 }
 
 //MARK: - Upload Photo
 extension RequestManager {
-    func uploadAvatar(data: NSData, completion: ((NSURL?, NSError?) -> ())) {
-        uploadPhoto(data, baseUrl: URL.Profile.UploadAvatar, HTTPMethod: "PUT", name: "avatar", completion: { (data, error) in
-            if let avatarURL = data?.valueForKey(Response.UploadAvatar.avatar) as? String {
-                self.saveAvatar(avatarURL)
-                completion(NSURL(string: avatarURL), nil)
-            }
-            completion(nil, error)
-        })
-    }
-    
-    func uploadVehicle(data: NSData, completion: ((AnyObject?, NSError?) -> ())) {
-        uploadPhoto(data, baseUrl: URL.Profile.vehiclPhoto, HTTPMethod: "POST", name: "file", completion: completion)
-    }
-    
-    func downloadVehicleImages(completion:(([AnyObject]?, NSError?) -> ())) {
-        get(URL.Profile.vehiclPhoto, parameters: nil) { (json, error) -> () in
-            if let json = json {
-                completion(json.arrayObject, error)
-            } else {
-                completion(nil, error)
-            }
-        }
-    }
-    
-    private func uploadPhoto(data: NSData, baseUrl: String, HTTPMethod: String, name: String, completion: ((AnyObject?, NSError?) -> ())) {
+    func uploadPhoto(data: NSData, baseUrl: String, HTTPMethod: String, name: String, completion: ((AnyObject?, NSError?) -> ())) {
         let view = AppDelegate.sharedDelegate().rootViewController().view
         let request = ImageUploader().createRequest(data, baseUrl: baseUrl, HTTPMethod: HTTPMethod, name: name)
         
@@ -186,7 +169,7 @@ extension RequestManager {
         uploadTask.resume()
     }
     
-    private func saveAvatar(avatarUrlStr: String) {
+    func saveAvatar(avatarUrlStr: String) {
         let URL = NSURL(string: avatarUrlStr)
         User.currentUser()?.avatarURL = URL
         User.currentUser()?.saveUser()

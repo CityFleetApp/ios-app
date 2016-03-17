@@ -21,4 +21,8 @@ struct Titles {
         static let noLocationsTitle = "No Locations"
         static let noLocationsMsg = "There are no locations"
     }
+    struct Profile {
+        static let deletePhotoTitle = "Delete photo"
+        static let deletePhotoMsg = "Are you sure you want to delete this photo?"
+    }
 }
