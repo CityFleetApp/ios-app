@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotificationsVC: UIViewController {
+class NotificationsVC: UIViewController {    
     @IBOutlet var notificationTable: UITableView!
     var notifications: [Notification]?
     
@@ -16,8 +16,38 @@ class NotificationsVC: UIViewController {
         NotificationManager.sharedInstance.getList(updateNotifications)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.navigationBar.hidden = false
+    }
+    
     private func updateNotifications(notifications: [Notification]?, ennor: NSError?) {
         self.notifications = notifications
+        notificationTable.reloadData()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let viewController = segue.destinationViewController as! NotificationDetailVC
+        let index = notificationTable.indexPathForSelectedRow?.row
+        var notification = notifications![index!]
+        NotificationManager.sharedInstance.markAsRead(notification)
+        notification.unseen = false
+        let cell = notificationTable.cellForRowAtIndexPath(NSIndexPath(forRow: index!, inSection: 0)) as! NotificationCell
+        cell.notification = notification
+        
+        viewController.notification = notification
+    }
+    
+    @IBAction func setFilter(sender: UIButton) {
+        switch sender.tag {
+        case 1:
+            notifications = NotificationManager.sharedInstance.filter(.Unread)
+            break
+        case 2:
+            notifications = NotificationManager.sharedInstance.filter(.All)
+            break
+        default:
+            return
+        }
         notificationTable.reloadData()
     }
 }

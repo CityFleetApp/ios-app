@@ -8,10 +8,31 @@
 
 import Foundation
 
+enum NotificationFilterType {
+    case All
+    case Unread
+}
+
 class NotificationManager: NSObject {
     private static let _sharedInstance = NotificationManager()
     static var sharedInstance: NotificationManager {
         return _sharedInstance
+    }
+    
+    var notificationList: [Notification]?
+    
+    func filter(type: NotificationFilterType) -> [Notification] {
+        switch type {
+        case .All:
+            return notificationList!
+        case .Unread:
+            return notificationList!.filter { $0.unseen }
+        }
+    }
+    
+    func markAsRead(notification: Notification) {
+        let notificationID = notification.id
+        RequestManager.sharedInstance().markNotificationRead(notificationID) { (_, _) in }
     }
     
     func getList(completion: (([Notification]?, NSError?) -> ())) {
@@ -43,7 +64,7 @@ class NotificationManager: NSObject {
             
             notifications.append(Notification(id: id, title: title, message: message, date: date!, unseen: unseen))
         }
-        
+        notificationList = notifications
         completion(notifications, error)
     }
 }

@@ -42,6 +42,7 @@ struct URL {
     }
     struct Notifications {
         static let notifications = "notifications/"
+        static let markSeen = "/mark-seen/"
     }
     static let Reports = "reports/"
     static let BenefitsList = "benefits/"

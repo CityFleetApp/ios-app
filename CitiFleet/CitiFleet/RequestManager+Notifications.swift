@@ -15,6 +15,15 @@ extension RequestManager {
         })
     }
     
+    func markNotificationRead(notificotionId: Int, completion: ((DictionaryResponse, NSError?) -> ())) {
+        let url = URL.Notifications.notifications + String(notificotionId) + URL.Notifications.markSeen
+        post(url, parameters: nil) { (json, error) in
+            print("json: \(json)")
+            
+        }
+        
+    }
+    
     func getNotifcation(id: Int) {
         
     }

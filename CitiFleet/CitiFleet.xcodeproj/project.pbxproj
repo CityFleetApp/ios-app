@@ -103,6 +103,7 @@
 		43F5E2321C9AEBD1000BBB91 /* RequestManager+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2311C9AEBD1000BBB91 /* RequestManager+Notifications.swift */; };
 		43F5E2341C9AEE0D000BBB91 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2331C9AEE0D000BBB91 /* NotificationManager.swift */; };
 		43F5E2361C9AEE8C000BBB91 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2351C9AEE8C000BBB91 /* Notification.swift */; };
+		43F5E2381C9B1716000BBB91 /* NotificationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2371C9B1716000BBB91 /* NotificationDetailVC.swift */; };
 		43F834051C96CAB400DE7E50 /* PickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834041C96CAB400DE7E50 /* PickerDialog.swift */; };
 		43F834071C96CB6700DE7E50 /* PickerDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43F834061C96CB6700DE7E50 /* PickerDialog.xib */; };
 		43F834091C97116B00DE7E50 /* LegalAidActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834081C97116B00DE7E50 /* LegalAidActor.swift */; };
@@ -216,6 +217,7 @@
 		43F5E2311C9AEBD1000BBB91 /* RequestManager+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RequestManager+Notifications.swift"; sourceTree = "<group>"; };
 		43F5E2331C9AEE0D000BBB91 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationManager.swift; path = Utils/Notifications/NotificationManager.swift; sourceTree = "<group>"; };
 		43F5E2351C9AEE8C000BBB91 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Notification.swift; path = Model/Notification.swift; sourceTree = "<group>"; };
+		43F5E2371C9B1716000BBB91 /* NotificationDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationDetailVC.swift; path = ViewController/MainScreen/Notifications/NotificationDetailVC.swift; sourceTree = "<group>"; };
 		43F834041C96CAB400DE7E50 /* PickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerDialog.swift; path = Viewes/LegalAid/PickerDialog.swift; sourceTree = "<group>"; };
 		43F834061C96CB6700DE7E50 /* PickerDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PickerDialog.xib; path = Storyboards/XIB/PickerDialog.xib; sourceTree = "<group>"; };
 		43F834081C97116B00DE7E50 /* LegalAidActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidActor.swift; path = Model/LegalAidActor.swift; sourceTree = "<group>"; };
@@ -665,6 +667,7 @@
 			isa = PBXGroup;
 			children = (
 				43F5E22F1C9AEB46000BBB91 /* NotificationsVC.swift */,
+				43F5E2371C9B1716000BBB91 /* NotificationDetailVC.swift */,
 			);
 			name = Notifications;
 			sourceTree = "<group>";
@@ -900,6 +903,7 @@
 				4316BB9F1C7B446F007A9ECB /* SignUpVC.swift in Sources */,
 				43F5E2221C9894AF000BBB91 /* GalleryPhoto.swift in Sources */,
 				43A4265F1C9035660044B6A6 /* SettingsVC.swift in Sources */,
+				43F5E2381C9B1716000BBB91 /* NotificationDetailVC.swift in Sources */,
 				43F5E22E1C9AE6C7000BBB91 /* NotificationCell.swift in Sources */,
 				430B4F431C7DC73D00EE884A /* URL.swift in Sources */,
 				436D6B231C93181C00A0240E /* BarcodeView.swift in Sources */,

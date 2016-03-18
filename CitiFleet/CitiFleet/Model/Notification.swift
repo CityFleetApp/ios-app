@@ -22,4 +22,10 @@ struct Notification {
             return dateformatter.stringFromDate(date)
         }
     }
+    
+    var typeTitle: String {
+        get {
+            return "TLC Alert"
+        }
+    }
 }
