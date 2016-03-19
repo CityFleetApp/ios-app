@@ -31,6 +31,10 @@
 		4316BBB01C7B6A27007A9ECB /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB981C7B1A22007A9ECB /* Montserrat-SemiBold.otf */; };
 		4316BBB11C7B6A27007A9ECB /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB991C7B1A22007A9ECB /* Montserrat-UltraLight.otf */; };
 		4316BBB41C7B73C6007A9ECB /* ConfirmPasswordRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316BBB31C7B73C6007A9ECB /* ConfirmPasswordRule.swift */; };
+		433037161C9D5DED001EAE94 /* MySaleRentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433037151C9D5DED001EAE94 /* MySaleRentVC.swift */; };
+		433037191C9D5F88001EAE94 /* MyRentSaleVCBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433037181C9D5F88001EAE94 /* MyRentSaleVCBuilder.swift */; };
+		4330371B1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4330371A1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift */; };
+		4330371E1C9D629D001EAE94 /* MyRentSaeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4330371D1C9D629D001EAE94 /* MyRentSaeCell.swift */; };
 		4334D8121C7F215200557AE4 /* Dash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4334D8111C7F215200557AE4 /* Dash.storyboard */; };
 		4334D8151C7F496F00557AE4 /* DashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4334D8141C7F496F00557AE4 /* DashVC.swift */; };
 		4334D81B1C7F67B300557AE4 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4334D81A1C7F67B300557AE4 /* CoreImage.framework */; };
@@ -104,6 +108,7 @@
 		43F5E2341C9AEE0D000BBB91 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2331C9AEE0D000BBB91 /* NotificationManager.swift */; };
 		43F5E2361C9AEE8C000BBB91 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2351C9AEE8C000BBB91 /* Notification.swift */; };
 		43F5E2381C9B1716000BBB91 /* NotificationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2371C9B1716000BBB91 /* NotificationDetailVC.swift */; };
+		43F5E23C1C9C53AC000BBB91 /* Postings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43F5E23B1C9C53AC000BBB91 /* Postings.storyboard */; };
 		43F834051C96CAB400DE7E50 /* PickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834041C96CAB400DE7E50 /* PickerDialog.swift */; };
 		43F834071C96CB6700DE7E50 /* PickerDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43F834061C96CB6700DE7E50 /* PickerDialog.xib */; };
 		43F834091C97116B00DE7E50 /* LegalAidActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834081C97116B00DE7E50 /* LegalAidActor.swift */; };
@@ -143,6 +148,10 @@
 		4316BBA61C7B61EE007A9ECB /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Constants/Colors.swift; sourceTree = "<group>"; };
 		4316BBA81C7B61F5007A9ECB /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		4316BBB31C7B73C6007A9ECB /* ConfirmPasswordRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfirmPasswordRule.swift; path = Utils/ConfirmPasswordRule.swift; sourceTree = "<group>"; };
+		433037151C9D5DED001EAE94 /* MySaleRentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MySaleRentVC.swift; path = ViewController/Dash/Postings/MySaleRentVC.swift; sourceTree = "<group>"; };
+		433037181C9D5F88001EAE94 /* MyRentSaleVCBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyRentSaleVCBuilder.swift; path = Utils/Builders/MyRentSaleVCBuilder.swift; sourceTree = "<group>"; };
+		4330371A1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyRentSaleCellBuilder.swift; path = Utils/Builders/MyRentSaleCellBuilder.swift; sourceTree = "<group>"; };
+		4330371D1C9D629D001EAE94 /* MyRentSaeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyRentSaeCell.swift; path = Viewes/Postings/MyRentSaeCell.swift; sourceTree = "<group>"; };
 		4334D8111C7F215200557AE4 /* Dash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dash.storyboard; path = Storyboards/Dash.storyboard; sourceTree = "<group>"; };
 		4334D8141C7F496F00557AE4 /* DashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashVC.swift; path = ViewController/Dash/DashVC.swift; sourceTree = "<group>"; };
 		4334D81A1C7F67B300557AE4 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
@@ -218,6 +227,7 @@
 		43F5E2331C9AEE0D000BBB91 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationManager.swift; path = Utils/Notifications/NotificationManager.swift; sourceTree = "<group>"; };
 		43F5E2351C9AEE8C000BBB91 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Notification.swift; path = Model/Notification.swift; sourceTree = "<group>"; };
 		43F5E2371C9B1716000BBB91 /* NotificationDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationDetailVC.swift; path = ViewController/MainScreen/Notifications/NotificationDetailVC.swift; sourceTree = "<group>"; };
+		43F5E23B1C9C53AC000BBB91 /* Postings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Postings.storyboard; path = Storyboards/Dash/Postings.storyboard; sourceTree = "<group>"; };
 		43F834041C96CAB400DE7E50 /* PickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickerDialog.swift; path = Viewes/LegalAid/PickerDialog.swift; sourceTree = "<group>"; };
 		43F834061C96CB6700DE7E50 /* PickerDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PickerDialog.xib; path = Storyboards/XIB/PickerDialog.xib; sourceTree = "<group>"; };
 		43F834081C97116B00DE7E50 /* LegalAidActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidActor.swift; path = Model/LegalAidActor.swift; sourceTree = "<group>"; };
@@ -320,9 +330,7 @@
 				43DC05BA1C842BE600AB670A /* XIB */,
 				4316BB901C7B0885007A9ECB /* Login.storyboard */,
 				43B6D8541C7EFC74000D6844 /* MainScreen.storyboard */,
-				4334D8111C7F215200557AE4 /* Dash.storyboard */,
-				43A426601C90359E0044B6A6 /* Settings.storyboard */,
-				43CFA7661C93AF5C00DC89C9 /* LegalAid.storyboard */,
+				43F5E23A1C9C5382000BBB91 /* Dash */,
 				43F5E22A1C9AAEB8000BBB91 /* Notification.storyboard */,
 			);
 			name = Storyboards;
@@ -388,6 +396,7 @@
 		4316BBB21C7B7399007A9ECB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				433037171C9D5E9B001EAE94 /* Builders */,
 				43F5E2181C982AB9000BBB91 /* Profile */,
 				43D900EC1C944F61004A315C /* Legal Aid */,
 				43DC05CD1C85D7DE00AB670A /* Social Manager */,
@@ -398,9 +407,27 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		433037171C9D5E9B001EAE94 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				433037181C9D5F88001EAE94 /* MyRentSaleVCBuilder.swift */,
+				4330371A1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift */,
+			);
+			name = Builders;
+			sourceTree = "<group>";
+		};
+		4330371C1C9D6248001EAE94 /* Postings */ = {
+			isa = PBXGroup;
+			children = (
+				4330371D1C9D629D001EAE94 /* MyRentSaeCell.swift */,
+			);
+			name = Postings;
+			sourceTree = "<group>";
+		};
 		4334D8131C7F494E00557AE4 /* Dash */ = {
 			isa = PBXGroup;
 			children = (
+				43F5E2391C9C5369000BBB91 /* Postings */,
 				43CFA7681C93B5F600DC89C9 /* LegalAid */,
 				43CFA7611C938F8400DC89C9 /* Profile */,
 				43A4266C1C91AB2A0044B6A6 /* Benefits */,
@@ -548,6 +575,7 @@
 		43D2D0B31C7C9A3500A41D4F /* Viewes */ = {
 			isa = PBXGroup;
 			children = (
+				4330371C1C9D6248001EAE94 /* Postings */,
 				43F5E22C1C9AE64C000BBB91 /* Notifications */,
 				43AD51581C95D20B002261DB /* Avatar Header View */,
 				43F834031C96CA6A00DE7E50 /* Legal Aid */,
@@ -680,6 +708,25 @@
 			name = Notifications;
 			sourceTree = "<group>";
 		};
+		43F5E2391C9C5369000BBB91 /* Postings */ = {
+			isa = PBXGroup;
+			children = (
+				433037151C9D5DED001EAE94 /* MySaleRentVC.swift */,
+			);
+			name = Postings;
+			sourceTree = "<group>";
+		};
+		43F5E23A1C9C5382000BBB91 /* Dash */ = {
+			isa = PBXGroup;
+			children = (
+				4334D8111C7F215200557AE4 /* Dash.storyboard */,
+				43A426601C90359E0044B6A6 /* Settings.storyboard */,
+				43CFA7661C93AF5C00DC89C9 /* LegalAid.storyboard */,
+				43F5E23B1C9C53AC000BBB91 /* Postings.storyboard */,
+			);
+			name = Dash;
+			sourceTree = "<group>";
+		};
 		43F834031C96CA6A00DE7E50 /* Legal Aid */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,6 +820,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4334D8121C7F215200557AE4 /* Dash.storyboard in Resources */,
+				43F5E23C1C9C53AC000BBB91 /* Postings.storyboard in Resources */,
 				4316BBAA1C7B6A27007A9ECB /* materialdesignicons-webfont.ttf in Resources */,
 				4316BBAB1C7B6A27007A9ECB /* Montserrat-Black.otf in Resources */,
 				4316BBAC1C7B6A27007A9ECB /* Montserrat-Bold.otf in Resources */,
@@ -885,6 +933,7 @@
 				43DC05C51C849C7E00AB670A /* LocationManager.swift in Sources */,
 				43F5E2261C99ADE7000BBB91 /* RequestManager+Profile.swift in Sources */,
 				43D900F11C945857004A315C /* HighlitableLabel.swift in Sources */,
+				4330371B1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift in Sources */,
 				43F8340F1C97274400DE7E50 /* LegalAidCell.swift in Sources */,
 				43F5E2361C9AEE8C000BBB91 /* Notification.swift in Sources */,
 				43A4266E1C91ABAD0044B6A6 /* BenefitsVC.swift in Sources */,
@@ -892,6 +941,7 @@
 				435611991C8763AA0050EDE7 /* RequestManager+SocialManager.swift in Sources */,
 				4316BBA21C7B5EEC007A9ECB /* UITextField+Ext.swift in Sources */,
 				43DC05CC1C85B04F00AB670A /* AddFriendsCell.swift in Sources */,
+				433037161C9D5DED001EAE94 /* MySaleRentVC.swift in Sources */,
 				43DC05CF1C85DBC500AB670A /* SocialManager.swift in Sources */,
 				43DC05B61C83C4C100AB670A /* MapVC.swift in Sources */,
 				43F834111C97A1C700DE7E50 /* LegalAidContactsVC.swift in Sources */,
@@ -920,6 +970,7 @@
 				43DC058E1C80C26200AB670A /* RequestErrorHandler.swift in Sources */,
 				430B4F451C7DE33700EE884A /* NSData+Ext.swift in Sources */,
 				43AD51641C963D39002261DB /* UITableViewHeaderSetuper.swift in Sources */,
+				4330371E1C9D629D001EAE94 /* MyRentSaeCell.swift in Sources */,
 				43DC05B01C83BB7700AB670A /* Keys.swift in Sources */,
 				43DC05C91C85AEAF00AB670A /* AddFriendsVC.swift in Sources */,
 				434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */,
@@ -928,6 +979,7 @@
 				43D2D0B81C7C9B2D00A41D4F /* UIView+Ext.swift in Sources */,
 				43B6D8571C7F0379000D6844 /* UIButton+Ext.swift in Sources */,
 				43DC05891C80AEBB00AB670A /* Strings.swift in Sources */,
+				433037191C9D5F88001EAE94 /* MyRentSaleVCBuilder.swift in Sources */,
 				43D2D0B61C7C9ABE00A41D4F /* LoginTextField.swift in Sources */,
 				43D900F31C94657C004A315C /* LegalAidDetailVC.swift in Sources */,
 				43AD51661C9641C2002261DB /* AvatarRatingView.swift in Sources */,
