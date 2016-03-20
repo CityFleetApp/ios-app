@@ -34,10 +34,8 @@
 		431D2DC11C9EC70D00CBC4BA /* OptionsPostingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D2DC01C9EC70D00CBC4BA /* OptionsPostingVC.swift */; };
 		431D2DC31C9ECA8C00CBC4BA /* OptionPostingBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D2DC21C9ECA8C00CBC4BA /* OptionPostingBuild.swift */; };
 		431D2DC51C9ECE0B00CBC4BA /* Postings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D2DC41C9ECE0B00CBC4BA /* Postings.swift */; };
-		433037161C9D5DED001EAE94 /* MySaleRentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433037151C9D5DED001EAE94 /* MySaleRentVC.swift */; };
-		433037191C9D5F88001EAE94 /* MyRentSaleVCBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433037181C9D5F88001EAE94 /* MyRentSaleVCBuilder.swift */; };
 		4330371B1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4330371A1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift */; };
-		4330371E1C9D629D001EAE94 /* MyRentSaeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4330371D1C9D629D001EAE94 /* MyRentSaeCell.swift */; };
+		4330371E1C9D629D001EAE94 /* PostingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4330371D1C9D629D001EAE94 /* PostingCell.swift */; };
 		433037211C9D7DC3001EAE94 /* DialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433037201C9D7DC3001EAE94 /* DialogView.swift */; };
 		433037231C9D7DF1001EAE94 /* DialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433037221C9D7DF1001EAE94 /* DialogView.xib */; };
 		433037251C9D80E4001EAE94 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433037241C9D80E4001EAE94 /* UIImageEffects.swift */; };
@@ -157,10 +155,8 @@
 		431D2DC01C9EC70D00CBC4BA /* OptionsPostingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionsPostingVC.swift; path = ViewController/Dash/Postings/OptionsPostingVC.swift; sourceTree = "<group>"; };
 		431D2DC21C9ECA8C00CBC4BA /* OptionPostingBuild.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionPostingBuild.swift; path = Utils/Builders/OptionPostingBuild.swift; sourceTree = "<group>"; };
 		431D2DC41C9ECE0B00CBC4BA /* Postings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Postings.swift; path = Constants/Postings.swift; sourceTree = "<group>"; };
-		433037151C9D5DED001EAE94 /* MySaleRentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MySaleRentVC.swift; path = ViewController/Dash/Postings/MySaleRentVC.swift; sourceTree = "<group>"; };
-		433037181C9D5F88001EAE94 /* MyRentSaleVCBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyRentSaleVCBuilder.swift; path = Utils/Builders/MyRentSaleVCBuilder.swift; sourceTree = "<group>"; };
 		4330371A1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyRentSaleCellBuilder.swift; path = Utils/Builders/MyRentSaleCellBuilder.swift; sourceTree = "<group>"; };
-		4330371D1C9D629D001EAE94 /* MyRentSaeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyRentSaeCell.swift; path = Viewes/Postings/MyRentSaeCell.swift; sourceTree = "<group>"; };
+		4330371D1C9D629D001EAE94 /* PostingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostingCell.swift; path = Viewes/Postings/PostingCell.swift; sourceTree = "<group>"; };
 		433037201C9D7DC3001EAE94 /* DialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DialogView.swift; path = Viewes/DialogView/DialogView.swift; sourceTree = "<group>"; };
 		433037221C9D7DF1001EAE94 /* DialogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DialogView.xib; path = Viewes/DialogView/DialogView.xib; sourceTree = "<group>"; };
 		433037241C9D80E4001EAE94 /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
@@ -424,7 +420,6 @@
 		433037171C9D5E9B001EAE94 /* Builders */ = {
 			isa = PBXGroup;
 			children = (
-				433037181C9D5F88001EAE94 /* MyRentSaleVCBuilder.swift */,
 				4330371A1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift */,
 				431D2DC21C9ECA8C00CBC4BA /* OptionPostingBuild.swift */,
 			);
@@ -434,7 +429,7 @@
 		4330371C1C9D6248001EAE94 /* Postings */ = {
 			isa = PBXGroup;
 			children = (
-				4330371D1C9D629D001EAE94 /* MyRentSaeCell.swift */,
+				4330371D1C9D629D001EAE94 /* PostingCell.swift */,
 			);
 			name = Postings;
 			sourceTree = "<group>";
@@ -745,7 +740,6 @@
 		43F5E2391C9C5369000BBB91 /* Postings */ = {
 			isa = PBXGroup;
 			children = (
-				433037151C9D5DED001EAE94 /* MySaleRentVC.swift */,
 				431D2DC01C9EC70D00CBC4BA /* OptionsPostingVC.swift */,
 			);
 			name = Postings;
@@ -977,7 +971,6 @@
 				435611991C8763AA0050EDE7 /* RequestManager+SocialManager.swift in Sources */,
 				4316BBA21C7B5EEC007A9ECB /* UITextField+Ext.swift in Sources */,
 				43DC05CC1C85B04F00AB670A /* AddFriendsCell.swift in Sources */,
-				433037161C9D5DED001EAE94 /* MySaleRentVC.swift in Sources */,
 				43DC05CF1C85DBC500AB670A /* SocialManager.swift in Sources */,
 				43DC05B61C83C4C100AB670A /* MapVC.swift in Sources */,
 				43F834111C97A1C700DE7E50 /* LegalAidContactsVC.swift in Sources */,
@@ -1008,7 +1001,7 @@
 				43DC058E1C80C26200AB670A /* RequestErrorHandler.swift in Sources */,
 				430B4F451C7DE33700EE884A /* NSData+Ext.swift in Sources */,
 				43AD51641C963D39002261DB /* UITableViewHeaderSetuper.swift in Sources */,
-				4330371E1C9D629D001EAE94 /* MyRentSaeCell.swift in Sources */,
+				4330371E1C9D629D001EAE94 /* PostingCell.swift in Sources */,
 				43DC05B01C83BB7700AB670A /* Keys.swift in Sources */,
 				43DC05C91C85AEAF00AB670A /* AddFriendsVC.swift in Sources */,
 				434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */,
@@ -1018,7 +1011,6 @@
 				43B6D8571C7F0379000D6844 /* UIButton+Ext.swift in Sources */,
 				431D2DC11C9EC70D00CBC4BA /* OptionsPostingVC.swift in Sources */,
 				43DC05891C80AEBB00AB670A /* Strings.swift in Sources */,
-				433037191C9D5F88001EAE94 /* MyRentSaleVCBuilder.swift in Sources */,
 				43D2D0B61C7C9ABE00A41D4F /* LoginTextField.swift in Sources */,
 				43D900F31C94657C004A315C /* LegalAidDetailVC.swift in Sources */,
 				431D2DC31C9ECA8C00CBC4BA /* OptionPostingBuild.swift in Sources */,
