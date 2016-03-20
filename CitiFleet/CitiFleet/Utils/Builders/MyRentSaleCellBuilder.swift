@@ -57,4 +57,8 @@ class MyRentSaleCellBuilder: NSObject {
         "Slect Price",
         "Provide Description"
     ]
+    
+    private let Options = [
+        ["Option 1", "Option 2"]
+    ]
 }

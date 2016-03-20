@@ -9,6 +9,14 @@
 import Foundation
 
 extension UIImage {
+    static func imageWithView(view: UIView) -> UIImage {
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
+    }
+    
     func normalizedImage() -> UIImage {
         if (self.imageOrientation == UIImageOrientation.Up) {
             return self;

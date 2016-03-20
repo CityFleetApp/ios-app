@@ -31,6 +31,14 @@ extension MySaleRentVC {
 
 //MARK: TableView Delegate
 extension MySaleRentVC {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let dialog = DialogView.viewFromNib()
+        dialog.completion = { (obj, closed) in
+            
+        }
+        dialog.show()
+    }
+    
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return MySaleRentVC.CellHeight
     }

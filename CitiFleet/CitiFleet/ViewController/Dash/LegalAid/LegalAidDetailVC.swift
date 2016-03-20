@@ -152,17 +152,17 @@ extension LegalAidDetailVC {
         pickerView.components = self.locationsList!.map({ (location) -> String in
             return location.name
         })
-        pickerView.showOnView((self.navigationController?.view)!)
-        pickerView.complation = setSelectedLocation
+        pickerView.show()
+        pickerView.completion = setSelectedLocation
     }
     
-    private func setSelectedLocation(index: Int?, title: String?, closed: Bool) {
+    private func setSelectedLocation(index: AnyObject?, closed: Bool) {
         if closed {
             return
         }
         if let index = index {
-            locationLabel.highlitedText = title
-            selectedLocation = locationsList![index]
+            locationLabel.highlitedText = locationsList![index as! Int].name
+            selectedLocation = locationsList![index as! Int]
             legalAidManager?.getActors(selectedLocation!, completion: handleLoadActorsResponse)
         }
     }
@@ -177,17 +177,17 @@ extension LegalAidDetailVC {
         pickerView.components = self.actorList!.map({ (actor) -> String in
             return actor.name
         })
-        pickerView.showOnView((self.navigationController?.view)!)
-        pickerView.complation = setSelectedActor
+        pickerView.show()
+        pickerView.completion = setSelectedActor
     }
     
-    private func setSelectedActor(index: Int?, title: String?, closed: Bool) {
+    private func setSelectedActor(index: AnyObject?, closed: Bool) {
         if closed {
             return
         }
         if let index = index {
-            actorLabel.highlitedText = title
-            selectedActor = actorList![index]
+            actorLabel.highlitedText = actorList![index as! Int].name
+            selectedActor = actorList![index as! Int]
         }
     }
 }

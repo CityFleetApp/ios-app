@@ -31,10 +31,16 @@
 		4316BBB01C7B6A27007A9ECB /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB981C7B1A22007A9ECB /* Montserrat-SemiBold.otf */; };
 		4316BBB11C7B6A27007A9ECB /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB991C7B1A22007A9ECB /* Montserrat-UltraLight.otf */; };
 		4316BBB41C7B73C6007A9ECB /* ConfirmPasswordRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316BBB31C7B73C6007A9ECB /* ConfirmPasswordRule.swift */; };
+		431D2DC11C9EC70D00CBC4BA /* OptionsPostingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D2DC01C9EC70D00CBC4BA /* OptionsPostingVC.swift */; };
+		431D2DC31C9ECA8C00CBC4BA /* OptionPostingBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D2DC21C9ECA8C00CBC4BA /* OptionPostingBuild.swift */; };
+		431D2DC51C9ECE0B00CBC4BA /* Postings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D2DC41C9ECE0B00CBC4BA /* Postings.swift */; };
 		433037161C9D5DED001EAE94 /* MySaleRentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433037151C9D5DED001EAE94 /* MySaleRentVC.swift */; };
 		433037191C9D5F88001EAE94 /* MyRentSaleVCBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433037181C9D5F88001EAE94 /* MyRentSaleVCBuilder.swift */; };
 		4330371B1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4330371A1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift */; };
 		4330371E1C9D629D001EAE94 /* MyRentSaeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4330371D1C9D629D001EAE94 /* MyRentSaeCell.swift */; };
+		433037211C9D7DC3001EAE94 /* DialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433037201C9D7DC3001EAE94 /* DialogView.swift */; };
+		433037231C9D7DF1001EAE94 /* DialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 433037221C9D7DF1001EAE94 /* DialogView.xib */; };
+		433037251C9D80E4001EAE94 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433037241C9D80E4001EAE94 /* UIImageEffects.swift */; };
 		4334D8121C7F215200557AE4 /* Dash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4334D8111C7F215200557AE4 /* Dash.storyboard */; };
 		4334D8151C7F496F00557AE4 /* DashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4334D8141C7F496F00557AE4 /* DashVC.swift */; };
 		4334D81B1C7F67B300557AE4 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4334D81A1C7F67B300557AE4 /* CoreImage.framework */; };
@@ -148,10 +154,16 @@
 		4316BBA61C7B61EE007A9ECB /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Constants/Colors.swift; sourceTree = "<group>"; };
 		4316BBA81C7B61F5007A9ECB /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		4316BBB31C7B73C6007A9ECB /* ConfirmPasswordRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfirmPasswordRule.swift; path = Utils/ConfirmPasswordRule.swift; sourceTree = "<group>"; };
+		431D2DC01C9EC70D00CBC4BA /* OptionsPostingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionsPostingVC.swift; path = ViewController/Dash/Postings/OptionsPostingVC.swift; sourceTree = "<group>"; };
+		431D2DC21C9ECA8C00CBC4BA /* OptionPostingBuild.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionPostingBuild.swift; path = Utils/Builders/OptionPostingBuild.swift; sourceTree = "<group>"; };
+		431D2DC41C9ECE0B00CBC4BA /* Postings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Postings.swift; path = Constants/Postings.swift; sourceTree = "<group>"; };
 		433037151C9D5DED001EAE94 /* MySaleRentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MySaleRentVC.swift; path = ViewController/Dash/Postings/MySaleRentVC.swift; sourceTree = "<group>"; };
 		433037181C9D5F88001EAE94 /* MyRentSaleVCBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyRentSaleVCBuilder.swift; path = Utils/Builders/MyRentSaleVCBuilder.swift; sourceTree = "<group>"; };
 		4330371A1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyRentSaleCellBuilder.swift; path = Utils/Builders/MyRentSaleCellBuilder.swift; sourceTree = "<group>"; };
 		4330371D1C9D629D001EAE94 /* MyRentSaeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyRentSaeCell.swift; path = Viewes/Postings/MyRentSaeCell.swift; sourceTree = "<group>"; };
+		433037201C9D7DC3001EAE94 /* DialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DialogView.swift; path = Viewes/DialogView/DialogView.swift; sourceTree = "<group>"; };
+		433037221C9D7DF1001EAE94 /* DialogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DialogView.xib; path = Viewes/DialogView/DialogView.xib; sourceTree = "<group>"; };
+		433037241C9D80E4001EAE94 /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
 		4334D8111C7F215200557AE4 /* Dash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Dash.storyboard; path = Storyboards/Dash.storyboard; sourceTree = "<group>"; };
 		4334D8141C7F496F00557AE4 /* DashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashVC.swift; path = ViewController/Dash/DashVC.swift; sourceTree = "<group>"; };
 		4334D81A1C7F67B300557AE4 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
@@ -364,6 +376,8 @@
 		4316BBA01C7B5EBE007A9ECB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				433037241C9D80E4001EAE94 /* UIImageEffects.swift */,
+				43F5E2271C99C557000BBB91 /* UIImage+Ext.swift */,
 				4316BBA11C7B5EEC007A9ECB /* UITextField+Ext.swift */,
 				4316BBA31C7B6154007A9ECB /* UIColor+HEX.swift */,
 				434EDAE71C7C4EF800934029 /* UITableView+Ext.swift */,
@@ -372,7 +386,6 @@
 				43B6D8561C7F0379000D6844 /* UIButton+Ext.swift */,
 				436D6B1E1C92E37600A0240E /* UIViewController+Ext.swift */,
 				43CFA7641C939E7C00DC89C9 /* NSAttributedString+Ext.swift */,
-				43F5E2271C99C557000BBB91 /* UIImage+Ext.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -389,6 +402,7 @@
 				43DC058A1C80BD6A00AB670A /* Storyboard.swift */,
 				43DC05AF1C83BB7700AB670A /* Keys.swift */,
 				43A426681C916D480044B6A6 /* Resources.swift */,
+				431D2DC41C9ECE0B00CBC4BA /* Postings.swift */,
 			);
 			name = Constants;
 			sourceTree = "<group>";
@@ -412,6 +426,7 @@
 			children = (
 				433037181C9D5F88001EAE94 /* MyRentSaleVCBuilder.swift */,
 				4330371A1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift */,
+				431D2DC21C9ECA8C00CBC4BA /* OptionPostingBuild.swift */,
 			);
 			name = Builders;
 			sourceTree = "<group>";
@@ -422,6 +437,25 @@
 				4330371D1C9D629D001EAE94 /* MyRentSaeCell.swift */,
 			);
 			name = Postings;
+			sourceTree = "<group>";
+		};
+		4330371F1C9D7D89001EAE94 /* Dialog View */ = {
+			isa = PBXGroup;
+			children = (
+				433037261C9DA27D001EAE94 /* Picker */,
+				433037201C9D7DC3001EAE94 /* DialogView.swift */,
+				433037221C9D7DF1001EAE94 /* DialogView.xib */,
+			);
+			name = "Dialog View";
+			sourceTree = "<group>";
+		};
+		433037261C9DA27D001EAE94 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				43F834061C96CB6700DE7E50 /* PickerDialog.xib */,
+				43F834041C96CAB400DE7E50 /* PickerDialog.swift */,
+			);
+			name = Picker;
 			sourceTree = "<group>";
 		};
 		4334D8131C7F494E00557AE4 /* Dash */ = {
@@ -567,7 +601,6 @@
 			isa = PBXGroup;
 			children = (
 				43CFA76B1C93B81100DC89C9 /* LegalAid.xib */,
-				43F834061C96CB6700DE7E50 /* PickerDialog.xib */,
 			);
 			name = LegolAid;
 			sourceTree = "<group>";
@@ -575,6 +608,7 @@
 		43D2D0B31C7C9A3500A41D4F /* Viewes */ = {
 			isa = PBXGroup;
 			children = (
+				4330371F1C9D7D89001EAE94 /* Dialog View */,
 				4330371C1C9D6248001EAE94 /* Postings */,
 				43F5E22C1C9AE64C000BBB91 /* Notifications */,
 				43AD51581C95D20B002261DB /* Avatar Header View */,
@@ -712,6 +746,7 @@
 			isa = PBXGroup;
 			children = (
 				433037151C9D5DED001EAE94 /* MySaleRentVC.swift */,
+				431D2DC01C9EC70D00CBC4BA /* OptionsPostingVC.swift */,
 			);
 			name = Postings;
 			sourceTree = "<group>";
@@ -731,7 +766,6 @@
 			isa = PBXGroup;
 			children = (
 				43D900EF1C945814004A315C /* Highlitable label */,
-				43F834041C96CAB400DE7E50 /* PickerDialog.swift */,
 				43F8340E1C97274400DE7E50 /* LegalAidCell.swift */,
 			);
 			name = "Legal Aid";
@@ -825,6 +859,7 @@
 				4316BBAB1C7B6A27007A9ECB /* Montserrat-Black.otf in Resources */,
 				4316BBAC1C7B6A27007A9ECB /* Montserrat-Bold.otf in Resources */,
 				43DC05BC1C8439CF00AB670A /* ReportsView.xib in Resources */,
+				433037231C9D7DF1001EAE94 /* DialogView.xib in Resources */,
 				4316BBAD1C7B6A27007A9ECB /* Montserrat-ExtraBold.otf in Resources */,
 				4316BBAE1C7B6A27007A9ECB /* Montserrat-Light.otf in Resources */,
 				4316BBAF1C7B6A27007A9ECB /* Montserrat-Regular.otf in Resources */,
@@ -930,6 +965,7 @@
 				4316BBB41C7B73C6007A9ECB /* ConfirmPasswordRule.swift in Sources */,
 				43CFA7651C939E7C00DC89C9 /* NSAttributedString+Ext.swift in Sources */,
 				43DC05C01C847DAE00AB670A /* RequestManager+Login.swift in Sources */,
+				431D2DC51C9ECE0B00CBC4BA /* Postings.swift in Sources */,
 				43DC05C51C849C7E00AB670A /* LocationManager.swift in Sources */,
 				43F5E2261C99ADE7000BBB91 /* RequestManager+Profile.swift in Sources */,
 				43D900F11C945857004A315C /* HighlitableLabel.swift in Sources */,
@@ -948,6 +984,8 @@
 				4316BBA41C7B6154007A9ECB /* UIColor+HEX.swift in Sources */,
 				43F5E2241C99A3DC000BBB91 /* GalleryVC.swift in Sources */,
 				4334D81F1C7F783F00557AE4 /* UIImageUtil.swift in Sources */,
+				433037211C9D7DC3001EAE94 /* DialogView.swift in Sources */,
+				433037251C9D80E4001EAE94 /* UIImageEffects.swift in Sources */,
 				43F5E2321C9AEBD1000BBB91 /* RequestManager+Notifications.swift in Sources */,
 				43F5E2171C981EB5000BBB91 /* VehiclePhotoCell.swift in Sources */,
 				4316BB9F1C7B446F007A9ECB /* SignUpVC.swift in Sources */,
@@ -978,10 +1016,12 @@
 				43DC05B91C842BDD00AB670A /* ReportsView.swift in Sources */,
 				43D2D0B81C7C9B2D00A41D4F /* UIView+Ext.swift in Sources */,
 				43B6D8571C7F0379000D6844 /* UIButton+Ext.swift in Sources */,
+				431D2DC11C9EC70D00CBC4BA /* OptionsPostingVC.swift in Sources */,
 				43DC05891C80AEBB00AB670A /* Strings.swift in Sources */,
 				433037191C9D5F88001EAE94 /* MyRentSaleVCBuilder.swift in Sources */,
 				43D2D0B61C7C9ABE00A41D4F /* LoginTextField.swift in Sources */,
 				43D900F31C94657C004A315C /* LegalAidDetailVC.swift in Sources */,
+				431D2DC31C9ECA8C00CBC4BA /* OptionPostingBuild.swift in Sources */,
 				43AD51661C9641C2002261DB /* AvatarRatingView.swift in Sources */,
 				436D6B181C92C2C200A0240E /* Benefit.swift in Sources */,
 				436D6B1F1C92E37600A0240E /* UIViewController+Ext.swift in Sources */,

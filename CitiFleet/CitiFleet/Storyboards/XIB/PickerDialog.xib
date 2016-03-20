@@ -19,6 +19,9 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jkd-vt-iLv">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxS-Uu-Hcz">
                     <rect key="frame" x="0.0" y="300" width="600" height="300"/>
                     <subviews>
@@ -104,15 +107,22 @@
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="jkd-vt-iLv" secondAttribute="trailing" id="5fB-4M-krg"/>
                 <constraint firstItem="xxS-Uu-Hcz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WNI-pr-Weg"/>
+                <constraint firstItem="jkd-vt-iLv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="a5g-PX-Gi9"/>
                 <constraint firstItem="xxS-Uu-Hcz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aKa-6f-rGx"/>
+                <constraint firstAttribute="bottom" secondItem="jkd-vt-iLv" secondAttribute="bottom" id="pHc-X6-zst"/>
+                <constraint firstItem="jkd-vt-iLv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rri-kJ-MJW"/>
                 <constraint firstAttribute="bottom" secondItem="xxS-Uu-Hcz" secondAttribute="bottom" id="uih-71-7zL"/>
             </constraints>
             <connections>
-                <outlet property="bluredBackground" destination="r15-5X-317" id="VW5-1E-qh8"/>
+                <outlet property="bgImageView" destination="jkd-vt-iLv" id="Udb-wu-hSr"/>
                 <outlet property="buttonContainerView" destination="Y4v-xb-Uwr" id="XIH-g3-yEW"/>
+                <outlet property="containerBgImageView" destination="r15-5X-317" id="RXF-gt-LwK"/>
+                <outlet property="containerHeightConstraint" destination="fWH-KC-3A1" id="tDg-6q-6xq"/>
+                <outlet property="containerView" destination="xxS-Uu-Hcz" id="pra-dS-6ME"/>
+                <outlet property="containerViewBottomSpace" destination="uih-71-7zL" id="Tdi-Ah-N5G"/>
                 <outlet property="picker" destination="3LM-ys-gVH" id="lfH-gm-VAd"/>
-                <outlet property="pickerContainerView" destination="xxS-Uu-Hcz" id="b8D-Ej-Iam"/>
                 <outlet property="selectBtn" destination="V8e-hA-9gf" id="eNQ-ek-W9B"/>
             </connections>
             <point key="canvasLocation" x="460" y="450"/>
