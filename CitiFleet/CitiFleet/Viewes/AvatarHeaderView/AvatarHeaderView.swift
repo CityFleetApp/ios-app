@@ -54,7 +54,7 @@ class AvatarHeaderView: UIView, AvatarXIBName {
         set {
             if let image = newValue {
                 avatar.image = image
-                backgroundAvatar.image = UIImageManager().blur(image)
+                backgroundAvatar.image = UIImageManager().applyClearBlur(image)
             }
         }
     }

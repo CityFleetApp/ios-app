@@ -26,6 +26,7 @@ class OptionPostingBuild: NSObject {
         viewController.titles = CellTitles[index]
         viewController.placeholders = CellPlaceholders[index]
         viewController.numborOfRows = viewController.iconNames.count
+        viewController.cellHeight = CellHeights[index]
         
         return viewController
     }

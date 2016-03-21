@@ -21,10 +21,10 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Table View Controller-->
+        <!--Post-->
         <scene sceneID="LVW-DX-92y">
             <objects>
-                <tableViewController restorationIdentifier="PostingsStoryboard" storyboardIdentifier="PostingsStoryboard" id="2DH-gI-wfg" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="PostingsStoryboard" storyboardIdentifier="PostingsStoryboard" id="2DH-gI-wfg" customClass="PostingsVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0HO-ii-3bH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -257,7 +257,14 @@
                             <outlet property="delegate" destination="2DH-gI-wfg" id="tSR-ht-W8Q"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="iDY-7V-TON"/>
+                    <navigationItem key="navigationItem" title="Post" id="iDY-7V-TON">
+                        <barButtonItem key="leftBarButtonItem" image="back-ic" id="q2S-7e-iVA">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="2DH-gI-wfg" id="45j-0I-7cW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIM-cv-TDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -281,10 +288,10 @@
             </objects>
             <point key="canvasLocation" x="877" y="458"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Post-->
         <scene sceneID="Xq4-bp-amu">
             <objects>
-                <tableViewController id="dG5-ds-Ogw" sceneMemberID="viewController">
+                <tableViewController id="dG5-ds-Ogw" customClass="PostingsRentSaleVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="UwF-sp-vag">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -344,7 +351,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="title" destination="UBu-r5-p0G" id="w5r-FT-qTt"/>
-                                            <segue destination="wes-qS-Po1" kind="push" id="h2H-c0-aSC"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="lSb-Tc-kpG" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
@@ -399,7 +405,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="title" destination="HSE-4J-orY" id="4KS-Qx-zRN"/>
-                                            <segue destination="wes-qS-Po1" kind="push" id="D5Q-tW-whx"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -410,7 +415,14 @@
                             <outlet property="delegate" destination="dG5-ds-Ogw" id="k2Z-A5-MtI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="a5E-XL-xxx"/>
+                    <navigationItem key="navigationItem" title="Post" id="a5E-XL-xxx">
+                        <barButtonItem key="leftBarButtonItem" image="back-ic" id="i32-1A-1Et">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="dG5-ds-Ogw" id="InW-Ew-mx3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cm2-Oy-CpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -425,7 +437,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="85L-gQ-bOY">
-                            <rect key="frame" x="0.0" y="344" width="600" height="95"/>
+                            <rect key="frame" x="0.0" y="280" width="600" height="95"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G7P-1s-gW7">
@@ -464,7 +476,7 @@
                         </collectionView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostingCell" rowHeight="78" id="fXA-rQ-ZwI" customClass="PostingCell" customModule="CitiFleet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="78"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fXA-rQ-ZwI" id="EV9-4I-0WQ">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
@@ -522,7 +534,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LADLocationCell" rowHeight="174" id="NU0-qM-NHC" customClass="LegalAidCell" customModule="CitiFleet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="170" width="600" height="174"/>
+                                <rect key="frame" x="0.0" y="106" width="600" height="174"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NU0-qM-NHC" id="fUS-6e-KPb">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="173"/>
@@ -586,7 +598,14 @@
                             <outlet property="delegate" destination="wes-qS-Po1" id="Bj3-Je-pmO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4uu-48-bgp"/>
+                    <navigationItem key="navigationItem" id="4uu-48-bgp">
+                        <barButtonItem key="leftBarButtonItem" image="back-ic" id="51a-b6-u7M">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="wes-qS-Po1" id="SwK-nH-D2y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YvR-h2-Zeo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -595,6 +614,7 @@
     </scenes>
     <resources>
         <image name="arr-odwn" width="9" height="5"/>
+        <image name="back-ic" width="8" height="13"/>
         <image name="default_image_tumb" width="75" height="75"/>
         <image name="lawyer-location" width="18" height="17"/>
         <image name="next-screen-set-ic" width="18" height="18"/>
@@ -603,7 +623,4 @@
         <image name="post_prev_ic" width="20" height="22"/>
         <image name="post_rent_ic" width="24" height="20"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="h2H-c0-aSC"/>
-    </inferredMetricsTieBreakers>
 </document>

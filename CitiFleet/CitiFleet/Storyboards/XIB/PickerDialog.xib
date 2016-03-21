@@ -19,9 +19,17 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jkd-vt-iLv">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jkd-vt-iLv">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bww-qE-2yV">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="FAn-w6-etw" appends="YES" id="NXJ-Xa-g3r"/>
+                    </connections>
+                </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxS-Uu-Hcz">
                     <rect key="frame" x="0.0" y="300" width="600" height="300"/>
                     <subviews>
@@ -105,10 +113,14 @@
                     </variation>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="jkd-vt-iLv" secondAttribute="trailing" id="5fB-4M-krg"/>
+                <constraint firstItem="bww-qE-2yV" firstAttribute="top" secondItem="jkd-vt-iLv" secondAttribute="top" id="CC3-Es-BXc"/>
+                <constraint firstItem="bww-qE-2yV" firstAttribute="trailing" secondItem="jkd-vt-iLv" secondAttribute="trailing" id="PnE-KG-0aL"/>
                 <constraint firstItem="xxS-Uu-Hcz" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="WNI-pr-Weg"/>
+                <constraint firstItem="bww-qE-2yV" firstAttribute="leading" secondItem="jkd-vt-iLv" secondAttribute="leading" id="Wi5-Qt-99w"/>
+                <constraint firstItem="bww-qE-2yV" firstAttribute="bottom" secondItem="jkd-vt-iLv" secondAttribute="bottom" id="XnP-jX-T6y"/>
                 <constraint firstItem="jkd-vt-iLv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="a5g-PX-Gi9"/>
                 <constraint firstItem="xxS-Uu-Hcz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aKa-6f-rGx"/>
                 <constraint firstAttribute="bottom" secondItem="jkd-vt-iLv" secondAttribute="bottom" id="pHc-X6-zst"/>
@@ -127,5 +139,10 @@
             </connections>
             <point key="canvasLocation" x="460" y="450"/>
         </view>
+        <tapGestureRecognizer id="FAn-w6-etw">
+            <connections>
+                <action selector="tapView:" destination="iN0-l3-epB" id="4dA-l7-wIR"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

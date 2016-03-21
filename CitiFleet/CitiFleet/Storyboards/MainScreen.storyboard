@@ -262,6 +262,9 @@
                                         <size key="value" width="1" height="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="centerMe:" destination="HS0-Fm-CrT" eventType="touchUpInside" id="sFF-HD-hAK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37F-fo-ncr">
                                 <rect key="frame" x="557" y="12" width="32" height="32"/>
@@ -346,6 +349,7 @@
                     <connections>
                         <outlet property="centerMeBtn" destination="KWK-Hq-PJo" id="12c-oG-wYK"/>
                         <outlet property="directionBtn" destination="amt-vJ-pbw" id="0xa-tq-N8Z"/>
+                        <outlet property="mapView" destination="4Oa-Uf-ER0" id="ArA-5p-usD"/>
                         <outlet property="searchBtn" destination="37F-fo-ncr" id="5u0-JT-4kd"/>
                     </connections>
                 </viewController>

@@ -8,8 +8,6 @@
 
 import UIKit
 
-import UIKit
-
 func RBSquareImageTo(image: UIImage, size: CGSize) -> UIImage {
     return RBResizeImage(RBSquareImage(image), targetSize: size)
 }
@@ -64,6 +62,28 @@ class UIImageManager: NSObject {
     static let GaussianBlur = "CIGaussianBlur"
     static let BarcodeFilter = "CICode128BarcodeGenerator"
     static let FakeColorFilter = "CIFalseColor"
+    
+    func applyClearBlur(srcImage: UIImage) -> UIImage {
+        let contect = CIContext(options: nil)
+        
+        let inputImage = CIImage(image: srcImage)
+        let blurfilter = CIFilter(name: "CIGaussianBlur")
+        let blurRadius: CGFloat = 10.0
+        blurfilter!.setValue(inputImage, forKey: kCIInputImageKey)
+        blurfilter!.setValue(blurRadius, forKey: "inputRadius")
+        let resultImage = blurfilter!.outputImage //as CIImage
+        
+        var rect = inputImage?.extent
+        rect?.origin.x += blurRadius
+        rect?.origin.y += blurRadius
+        rect?.size.height -= blurRadius * 2
+        rect?.size.width -= blurRadius * 2
+        
+        let cgImage = contect.createCGImage(resultImage!, fromRect: rect!)
+        
+        let blurredImage = UIImage(CGImage: cgImage)
+        return blurredImage
+    }
     
     func blur(scrImage:UIImage) -> UIImage {
         let gaussianBlurFilter = CIFilter(name: UIImageManager.GaussianBlur)

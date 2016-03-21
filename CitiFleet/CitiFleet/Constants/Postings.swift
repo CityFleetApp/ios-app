@@ -50,6 +50,11 @@ let RentSalePlaceholders = [
     "Provide Description"
 ]
 
+let CellHeights: [CGFloat] = [
+    78, // Rent
+    78, // Sale
+]
+
 let PostingIcons = [
     // - Rent / Sale
     RentSaleIcons,

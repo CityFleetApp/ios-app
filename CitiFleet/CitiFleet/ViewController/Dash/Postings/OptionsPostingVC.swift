@@ -10,6 +10,7 @@ import UIKit
 
 class OptionsPostingVC: UITableViewController {
     private let CellID = "PostingCell"
+    var cellHeight: CGFloat!
     var numborOfRows: Int!
     var iconNames: [String]!
     var titles: [String]!
@@ -17,8 +18,16 @@ class OptionsPostingVC: UITableViewController {
 }
 
 extension OptionsPostingVC {
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return cellHeight
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numborOfRows
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.setZeroSeparator(cell)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

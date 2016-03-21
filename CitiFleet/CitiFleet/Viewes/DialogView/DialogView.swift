@@ -45,7 +45,7 @@ class DialogView: UIView {
         frame = superView.bounds
         superView.addSubview(self)
         
-        bgImageView.image = UIImage.imageWithView(superView).applyDarkEffect()
+        bgImageView.image = UIImageManager().applyClearBlur(UIImage.imageWithView(superView))
         setupBluredBackground()
         animateAppearing()
     }
