@@ -262,9 +262,6 @@
                                         <size key="value" width="1" height="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="centerMe:" destination="HS0-Fm-CrT" eventType="touchUpInside" id="sFF-HD-hAK"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37F-fo-ncr">
                                 <rect key="frame" x="557" y="12" width="32" height="32"/>
@@ -325,6 +322,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="centerMe:" destination="HS0-Fm-CrT" eventType="touchUpInside" id="kQ1-Nb-bBN"/>
                                     <action selector="openDash:" destination="4tr-YF-9SX" eventType="touchUpInside" id="YBQ-be-zan"/>
                                 </connections>
                             </button>

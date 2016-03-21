@@ -19,8 +19,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     var rectForSearch: GMSCoordinateBounds {
         get {
-            let northEast = CLLocationCoordinate2D(latitude: currentCoordinates.latitude + 1, longitude: currentCoordinates.longitude + 1)
-            let southWest = CLLocationCoordinate2D(latitude: currentCoordinates.latitude - 1, longitude: currentCoordinates.longitude - 1)
+            let northEast = CLLocationCoordinate2D(latitude: currentCoordinates.latitude + 0.3, longitude: currentCoordinates.longitude + 0.3)
+            let southWest = CLLocationCoordinate2D(latitude: currentCoordinates.latitude - 0.3, longitude: currentCoordinates.longitude - 0.3)
             
             return GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
         }

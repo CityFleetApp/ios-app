@@ -16,9 +16,23 @@ class MapVC: UIViewController {
     @IBOutlet var mapView: GMSMapView!
     
     let updatedLocationSel = "updatedLocation:"
+    var marker: GMSMarker? {
+        get {
+            return _marker
+        }
+        set {
+            if _marker == nil {
+                _marker = newValue
+                _marker?.map = mapView
+                return
+            }
+            _marker?.position = (newValue?.position)!
+            _marker?.title = newValue?.title
+        }
+    }
     
-    
-    private var shouldUpdateLocation = true
+    private var shouldCenterCurrentLocation = true
+    private var _marker: GMSMarker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,15 +50,10 @@ class MapVC: UIViewController {
     }
     
     func updatedLocation(locationNotif: NSNotification) {
-        if let location = locationNotif.userInfo!["location"] as? CLLocation {
-            let coordinate = location.coordinate
-            let camera = GMSCameraPosition.cameraWithLatitude(coordinate.latitude, longitude: coordinate.longitude, zoom: 16)
-            mapView.camera = camera
-            
-            GMSPlacesClient.sharedClient().autocompleteQuery("mcdonalds", bounds: LocationManager.sharedInstance().rectForSearch, filter: nil, callback: { (results, error) in
-                print("Search result: \(results)")
-            })
+        if !shouldCenterCurrentLocation {
+            return
         }
+        centerMe(nil)
     }
     
     @IBAction func search(sender: AnyObject) {
@@ -53,14 +62,17 @@ class MapVC: UIViewController {
         let filter = GMSAutocompleteFilter()
         filter.country = "UA"
         
-        autocompleteController.autocompleteBounds = LocationManager.sharedInstance().rectForSearch
+//        autocompleteController.autocompleteBounds = LocationManager.sharedInstance().rectForSearch
         autocompleteController.autocompleteFilter = filter
         autocompleteController.delegate = self
         self.presentViewController(autocompleteController, animated: true, completion: nil)
     }
     
-    @IBAction func centerMe(sender: AnyObject) {
-        
+    @IBAction func centerMe(sender: AnyObject?) {
+        shouldCenterCurrentLocation = true
+        let coordinate = LocationManager.sharedInstance().currentCoordinates
+        let camera = GMSCameraPosition.cameraWithLatitude(coordinate.latitude, longitude: coordinate.longitude, zoom: 16)
+        mapView.animateToCameraPosition(camera)
     }
 }
 
@@ -68,10 +80,15 @@ extension MapVC: GMSAutocompleteViewControllerDelegate {
     
     // Handle the user's selection.
     func viewController(viewController: GMSAutocompleteViewController, didAutocompleteWithPlace place: GMSPlace) {
-        print("Place name: ", place.name)
-        print("Place address: ", place.formattedAddress)
-        print("Place attributions: ", place.attributions)
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true) {
+            self.shouldCenterCurrentLocation = false
+            let position = place.coordinate
+            let marker = GMSMarker(position: position)
+            marker.title = place.name
+            self.marker = marker
+            
+            self.mapView.animateToLocation(position)
+        }
     }
     
     func viewController(viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: NSError) {
