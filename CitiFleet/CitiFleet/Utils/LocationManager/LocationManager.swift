@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import GoogleMaps
 
 class LocationManager: NSObject, CLLocationManagerDelegate {
     static let UpdateLocationNotification = "UpdateLocationNotification"
@@ -15,6 +16,15 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     private static let shared = LocationManager()
     private let locationManager = CLLocationManager()
+    
+    var rectForSearch: GMSCoordinateBounds {
+        get {
+            let northEast = CLLocationCoordinate2D(latitude: currentCoordinates.latitude + 1, longitude: currentCoordinates.longitude + 1)
+            let southWest = CLLocationCoordinate2D(latitude: currentCoordinates.latitude - 1, longitude: currentCoordinates.longitude - 1)
+            
+            return GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
+        }
+    }
     
     class func sharedInstance() -> LocationManager {
         return LocationManager.shared
@@ -26,7 +36,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     override init() {
         super.init()
-//        locationManager.requestAlwaysAuthorization()
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest

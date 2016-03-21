@@ -294,7 +294,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="openDash:" destination="4tr-YF-9SX" eventType="touchUpInside" id="Ybt-l5-hi0"/>
+                                    <action selector="search:" destination="HS0-Fm-CrT" eventType="touchUpInside" id="nP7-4A-nYM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWK-Hq-PJo">
@@ -355,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIS-Lh-Ive" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3148" y="339"/>
+            <point key="canvasLocation" x="2561" y="339"/>
         </scene>
         <!--Add Friends-->
         <scene sceneID="o4K-vH-kEV">
