@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430A59D91CA1928900FCD13D /* DOCManagementDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430A59D81CA1928900FCD13D /* DOCManagementDatePicker.swift */; };
+		430A59DB1CA192E000FCD13D /* DOCManagementDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 430A59DA1CA192E000FCD13D /* DOCManagementDatePicker.xib */; };
 		430B4F3B1C7DBAB800EE884A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4F3A1C7DBAB800EE884A /* User.swift */; };
 		430B4F3D1C7DBCB700EE884A /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4F3C1C7DBCB700EE884A /* RequestManager.swift */; };
 		430B4F431C7DC73D00EE884A /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4F421C7DC73D00EE884A /* URL.swift */; };
@@ -38,6 +40,10 @@
 		431D2DC91C9ED84400CBC4BA /* PostingsRentSaleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D2DC81C9ED84400CBC4BA /* PostingsRentSaleVC.swift */; };
 		431D2DCB1C9FE5FD00CBC4BA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431D2DCA1C9FE5FD00CBC4BA /* CoreLocation.framework */; };
 		431D2DCE1CA05D5000CBC4BA /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D2DCD1CA05D5000CBC4BA /* HelpVC.swift */; };
+		431D2DD21CA13EC200CBC4BA /* DocManagement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 431D2DD11CA13EC200CBC4BA /* DocManagement.storyboard */; };
+		431D2DD51CA14D8800CBC4BA /* DOCManagementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D2DD41CA14D8800CBC4BA /* DOCManagementVC.swift */; };
+		431D2DD71CA1521800CBC4BA /* DOCManagementCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D2DD61CA1521800CBC4BA /* DOCManagementCellBuilder.swift */; };
+		431D2DDA1CA152BD00CBC4BA /* DOCManagementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D2DD91CA152BD00CBC4BA /* DOCManagementCell.swift */; };
 		4330371B1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4330371A1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift */; };
 		4330371E1C9D629D001EAE94 /* PostingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4330371D1C9D629D001EAE94 /* PostingCell.swift */; };
 		433037211C9D7DC3001EAE94 /* DialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433037201C9D7DC3001EAE94 /* DialogView.swift */; };
@@ -130,6 +136,8 @@
 /* Begin PBXFileReference section */
 		0BF2396D09E48EEAC22514F5 /* Pods-CitiFleet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitiFleet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CitiFleet/Pods-CitiFleet.debug.xcconfig"; sourceTree = "<group>"; };
 		2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CitiFleet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		430A59D81CA1928900FCD13D /* DOCManagementDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DOCManagementDatePicker.swift; path = Viewes/Dash/DOCManagement/DOCManagementDatePicker.swift; sourceTree = "<group>"; };
+		430A59DA1CA192E000FCD13D /* DOCManagementDatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DOCManagementDatePicker.xib; path = Storyboards/XIB/DOCManagementDatePicker.xib; sourceTree = "<group>"; };
 		430B4F3A1C7DBAB800EE884A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
 		430B4F3C1C7DBCB700EE884A /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestManager.swift; path = Utils/RequestTool/RequestManager.swift; sourceTree = "<group>"; };
 		430B4F421C7DC73D00EE884A /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URL.swift; path = Constants/URL.swift; sourceTree = "<group>"; };
@@ -163,6 +171,10 @@
 		431D2DC81C9ED84400CBC4BA /* PostingsRentSaleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostingsRentSaleVC.swift; path = ViewController/Dash/Postings/PostingsRentSaleVC.swift; sourceTree = "<group>"; };
 		431D2DCA1C9FE5FD00CBC4BA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		431D2DCD1CA05D5000CBC4BA /* HelpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelpVC.swift; path = ViewController/Dash/Help/HelpVC.swift; sourceTree = "<group>"; };
+		431D2DD11CA13EC200CBC4BA /* DocManagement.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = DocManagement.storyboard; path = Storyboards/Dash/DocManagement.storyboard; sourceTree = "<group>"; };
+		431D2DD41CA14D8800CBC4BA /* DOCManagementVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DOCManagementVC.swift; path = ViewController/Dash/DOCManagement/DOCManagementVC.swift; sourceTree = "<group>"; };
+		431D2DD61CA1521800CBC4BA /* DOCManagementCellBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DOCManagementCellBuilder.swift; path = Utils/Builders/DOCManagementCellBuilder.swift; sourceTree = "<group>"; };
+		431D2DD91CA152BD00CBC4BA /* DOCManagementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DOCManagementCell.swift; path = Viewes/Dash/DOCManagement/DOCManagementCell.swift; sourceTree = "<group>"; };
 		4330371A1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyRentSaleCellBuilder.swift; path = Utils/Builders/MyRentSaleCellBuilder.swift; sourceTree = "<group>"; };
 		4330371D1C9D629D001EAE94 /* PostingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostingCell.swift; path = Viewes/Postings/PostingCell.swift; sourceTree = "<group>"; };
 		433037201C9D7DC3001EAE94 /* DialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DialogView.swift; path = Viewes/DialogView/DialogView.swift; sourceTree = "<group>"; };
@@ -434,11 +446,29 @@
 			name = HelpVC;
 			sourceTree = "<group>";
 		};
+		431D2DD31CA14D6100CBC4BA /* DOC Management */ = {
+			isa = PBXGroup;
+			children = (
+				431D2DD41CA14D8800CBC4BA /* DOCManagementVC.swift */,
+			);
+			name = "DOC Management";
+			sourceTree = "<group>";
+		};
+		431D2DD81CA1529D00CBC4BA /* DOC Management */ = {
+			isa = PBXGroup;
+			children = (
+				431D2DD91CA152BD00CBC4BA /* DOCManagementCell.swift */,
+				430A59D81CA1928900FCD13D /* DOCManagementDatePicker.swift */,
+			);
+			name = "DOC Management";
+			sourceTree = "<group>";
+		};
 		433037171C9D5E9B001EAE94 /* Builders */ = {
 			isa = PBXGroup;
 			children = (
 				4330371A1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift */,
 				431D2DC21C9ECA8C00CBC4BA /* OptionPostingBuild.swift */,
+				431D2DD61CA1521800CBC4BA /* DOCManagementCellBuilder.swift */,
 			);
 			name = Builders;
 			sourceTree = "<group>";
@@ -454,9 +484,8 @@
 		4330371F1C9D7D89001EAE94 /* Dialog View */ = {
 			isa = PBXGroup;
 			children = (
-				433037261C9DA27D001EAE94 /* Picker */,
+				43F834041C96CAB400DE7E50 /* PickerDialog.swift */,
 				433037201C9D7DC3001EAE94 /* DialogView.swift */,
-				433037221C9D7DF1001EAE94 /* DialogView.xib */,
 			);
 			name = "Dialog View";
 			sourceTree = "<group>";
@@ -464,8 +493,9 @@
 		433037261C9DA27D001EAE94 /* Picker */ = {
 			isa = PBXGroup;
 			children = (
+				430A59DA1CA192E000FCD13D /* DOCManagementDatePicker.xib */,
+				433037221C9D7DF1001EAE94 /* DialogView.xib */,
 				43F834061C96CB6700DE7E50 /* PickerDialog.xib */,
-				43F834041C96CAB400DE7E50 /* PickerDialog.swift */,
 			);
 			name = Picker;
 			sourceTree = "<group>";
@@ -473,6 +503,7 @@
 		4334D8131C7F494E00557AE4 /* Dash */ = {
 			isa = PBXGroup;
 			children = (
+				431D2DD31CA14D6100CBC4BA /* DOC Management */,
 				431D2DCC1CA05D0100CBC4BA /* HelpVC */,
 				43F5E2391C9C5369000BBB91 /* Postings */,
 				43CFA7681C93B5F600DC89C9 /* LegalAid */,
@@ -622,11 +653,8 @@
 			isa = PBXGroup;
 			children = (
 				4330371F1C9D7D89001EAE94 /* Dialog View */,
-				4330371C1C9D6248001EAE94 /* Postings */,
 				43F5E22C1C9AE64C000BBB91 /* Notifications */,
 				43AD51581C95D20B002261DB /* Avatar Header View */,
-				43F834031C96CA6A00DE7E50 /* Legal Aid */,
-				436D6B211C9317F700A0240E /* Barcode View */,
 				43F5E2141C981D84000BBB91 /* Dash */,
 				43DC05CA1C85AFE800AB670A /* Main Screen */,
 				43DC05B71C842ACE00AB670A /* Reports */,
@@ -680,6 +708,7 @@
 		43DC05BA1C842BE600AB670A /* XIB */ = {
 			isa = PBXGroup;
 			children = (
+				433037261C9DA27D001EAE94 /* Picker */,
 				43CFA76D1C93B81700DC89C9 /* LegolAid */,
 				43AD515B1C95D261002261DB /* Avatar Header View */,
 				43DC05BB1C8439CF00AB670A /* ReportsView.xib */,
@@ -716,6 +745,10 @@
 		43F5E2141C981D84000BBB91 /* Dash */ = {
 			isa = PBXGroup;
 			children = (
+				431D2DD81CA1529D00CBC4BA /* DOC Management */,
+				436D6B211C9317F700A0240E /* Barcode View */,
+				4330371C1C9D6248001EAE94 /* Postings */,
+				43F834031C96CA6A00DE7E50 /* Legal Aid */,
 				43F5E2151C981D8B000BBB91 /* Profile */,
 				43A4266F1C91B6B90044B6A6 /* Benefits Layout */,
 			);
@@ -772,6 +805,7 @@
 				43A426601C90359E0044B6A6 /* Settings.storyboard */,
 				43CFA7661C93AF5C00DC89C9 /* LegalAid.storyboard */,
 				43F5E23B1C9C53AC000BBB91 /* Postings.storyboard */,
+				431D2DD11CA13EC200CBC4BA /* DocManagement.storyboard */,
 			);
 			name = Dash;
 			sourceTree = "<group>";
@@ -868,6 +902,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431D2DD21CA13EC200CBC4BA /* DocManagement.storyboard in Resources */,
 				4334D8121C7F215200557AE4 /* Dash.storyboard in Resources */,
 				43F5E23C1C9C53AC000BBB91 /* Postings.storyboard in Resources */,
 				4316BBAA1C7B6A27007A9ECB /* materialdesignicons-webfont.ttf in Resources */,
@@ -880,6 +915,7 @@
 				4316BBAF1C7B6A27007A9ECB /* Montserrat-Regular.otf in Resources */,
 				43AD51611C95E0C4002261DB /* AvatarCameraView.xib in Resources */,
 				43CFA76C1C93B81100DC89C9 /* LegalAid.xib in Resources */,
+				430A59DB1CA192E000FCD13D /* DOCManagementDatePicker.xib in Resources */,
 				4316BBB01C7B6A27007A9ECB /* Montserrat-SemiBold.otf in Resources */,
 				4316BBB11C7B6A27007A9ECB /* Montserrat-UltraLight.otf in Resources */,
 				43AD515D1C95D2A1002261DB /* AvatarHeaderView.xib in Resources */,
@@ -973,6 +1009,8 @@
 				43AD515A1C95D257002261DB /* AvatarHeaderView.swift in Sources */,
 				43F5E2281C99C557000BBB91 /* UIImage+Ext.swift in Sources */,
 				43D2D0B21C7C97D600A41D4F /* LoginVC.swift in Sources */,
+				431D2DD71CA1521800CBC4BA /* DOCManagementCellBuilder.swift in Sources */,
+				430A59D91CA1928900FCD13D /* DOCManagementDatePicker.swift in Sources */,
 				43A426631C9040150044B6A6 /* Settings.swift in Sources */,
 				4316BBA91C7B61F5007A9ECB /* Fonts.swift in Sources */,
 				4334D8151C7F496F00557AE4 /* DashVC.swift in Sources */,
@@ -998,6 +1036,7 @@
 				43F834111C97A1C700DE7E50 /* LegalAidContactsVC.swift in Sources */,
 				4316BBA41C7B6154007A9ECB /* UIColor+HEX.swift in Sources */,
 				43F5E2241C99A3DC000BBB91 /* GalleryVC.swift in Sources */,
+				431D2DD51CA14D8800CBC4BA /* DOCManagementVC.swift in Sources */,
 				4334D81F1C7F783F00557AE4 /* UIImageUtil.swift in Sources */,
 				433037211C9D7DC3001EAE94 /* DialogView.swift in Sources */,
 				433037251C9D80E4001EAE94 /* UIImageEffects.swift in Sources */,
@@ -1027,6 +1066,7 @@
 				43AD51641C963D39002261DB /* UITableViewHeaderSetuper.swift in Sources */,
 				4330371E1C9D629D001EAE94 /* PostingCell.swift in Sources */,
 				43DC05B01C83BB7700AB670A /* Keys.swift in Sources */,
+				431D2DDA1CA152BD00CBC4BA /* DOCManagementCell.swift in Sources */,
 				43DC05C91C85AEAF00AB670A /* AddFriendsVC.swift in Sources */,
 				434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */,
 				43A426691C916D480044B6A6 /* Resources.swift in Sources */,

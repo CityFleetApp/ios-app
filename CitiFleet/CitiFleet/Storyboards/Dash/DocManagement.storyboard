@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Montserrat-Light.otf">
+            <string>Montserrat-Light</string>
+        </mutableArray>
+        <mutableArray key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--ManagementVC-->
+        <scene sceneID="DwD-eG-YeB">
+            <objects>
+                <tableViewController id="HLd-HW-dgJ" customClass="DOCManagementVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CRL-P3-v9f">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DOCManagementCellID" rowHeight="121" id="Ab4-Mw-p2S" customClass="DOCManagementCell" customModule="CitiFleet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="121"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ab4-Mw-p2S" id="OPg-FN-6z3">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Doc-management-template" translatesAutoresizingMaskIntoConstraints="NO" id="OJd-VZ-HnO">
+                                            <rect key="frame" x="22" y="22" width="76" height="76"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="OJd-VZ-HnO" secondAttribute="height" multiplier="1:1" id="TeO-sU-L5M"/>
+                                            </constraints>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WI8-B5-S4F">
+                                            <rect key="frame" x="122" y="19" width="462" height="82"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drives" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZJ-uc-xnX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
+                                                    <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exp Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DW-bj-bbv">
+                                                    <rect key="frame" x="0.0" y="28" width="65" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14.350000381469727"/>
+                                                    <color key="textColor" red="0.29803921568627451" green="0.3529411764705882" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Select Location"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press to select date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0z-8i-bzW" customClass="HighlitableLabel" customModule="CitiFleet" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="59" width="136" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="14.350000381469727"/>
+                                                    <color key="textColor" red="0.29803921568627451" green="0.3529411764705882" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Select Location"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxh-zy-b93">
+                                                    <rect key="frame" x="390" y="54" width="72" height="28"/>
+                                                    <color key="backgroundColor" red="0.90588235294117647" green="0.11372549019607843" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="72" id="DlT-WU-MuQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.25"/>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="Hxh-zy-b93" firstAttribute="top" secondItem="5DW-bj-bbv" secondAttribute="bottom" constant="8" id="1XK-xQ-9cf"/>
+                                                <constraint firstItem="o0z-8i-bzW" firstAttribute="leading" secondItem="CZJ-uc-xnX" secondAttribute="leading" id="4Mj-Ve-NRS"/>
+                                                <constraint firstItem="5DW-bj-bbv" firstAttribute="leading" secondItem="CZJ-uc-xnX" secondAttribute="leading" id="CTu-jb-5Hs"/>
+                                                <constraint firstItem="Hxh-zy-b93" firstAttribute="centerY" secondItem="o0z-8i-bzW" secondAttribute="centerY" id="NXa-3G-uo7"/>
+                                                <constraint firstItem="5DW-bj-bbv" firstAttribute="top" secondItem="CZJ-uc-xnX" secondAttribute="bottom" constant="8" id="bSN-wP-Fd6"/>
+                                                <constraint firstItem="CZJ-uc-xnX" firstAttribute="top" secondItem="WI8-B5-S4F" secondAttribute="top" id="eyz-e4-0kZ"/>
+                                                <constraint firstItem="CZJ-uc-xnX" firstAttribute="leading" secondItem="WI8-B5-S4F" secondAttribute="leading" id="qVe-Yk-od7"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hxh-zy-b93" secondAttribute="trailing" id="vft-2D-5xH"/>
+                                                <constraint firstAttribute="bottom" secondItem="Hxh-zy-b93" secondAttribute="bottom" id="vr3-E3-aSf"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="WI8-B5-S4F" secondAttribute="trailing" constant="16" id="6ye-Jr-vk9"/>
+                                        <constraint firstItem="OJd-VZ-HnO" firstAttribute="centerY" secondItem="OPg-FN-6z3" secondAttribute="centerY" id="Gvh-Zh-OBY"/>
+                                        <constraint firstItem="WI8-B5-S4F" firstAttribute="centerY" secondItem="OPg-FN-6z3" secondAttribute="centerY" id="bN5-Kt-2Fn"/>
+                                        <constraint firstItem="OJd-VZ-HnO" firstAttribute="top" secondItem="OPg-FN-6z3" secondAttribute="top" constant="22" id="kcc-vf-S3g"/>
+                                        <constraint firstItem="OJd-VZ-HnO" firstAttribute="leading" secondItem="OPg-FN-6z3" secondAttribute="leading" constant="22" id="ls3-qR-GhY"/>
+                                        <constraint firstItem="OJd-VZ-HnO" firstAttribute="centerY" secondItem="OPg-FN-6z3" secondAttribute="centerY" id="tWh-KW-quP"/>
+                                        <constraint firstItem="WI8-B5-S4F" firstAttribute="leading" secondItem="OJd-VZ-HnO" secondAttribute="trailing" constant="24" id="zu0-nR-QZg"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="docPhoto" destination="OJd-VZ-HnO" id="Aaq-W0-T3z"/>
+                                    <outlet property="title" destination="CZJ-uc-xnX" id="nf9-Ax-Rg2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="HLd-HW-dgJ" id="Jem-bw-6qg"/>
+                            <outlet property="delegate" destination="HLd-HW-dgJ" id="RZB-5L-I9h"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="35s-MR-9Pp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1188" y="412"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Doc-management-template" width="78" height="78"/>
+    </resources>
+</document>
