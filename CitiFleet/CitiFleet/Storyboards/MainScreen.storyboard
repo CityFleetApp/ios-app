@@ -262,6 +262,9 @@
                                         <size key="value" width="1" height="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="direction:" destination="HS0-Fm-CrT" eventType="touchUpInside" id="7Bk-8X-XK7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37F-fo-ncr">
                                 <rect key="frame" x="557" y="12" width="32" height="32"/>

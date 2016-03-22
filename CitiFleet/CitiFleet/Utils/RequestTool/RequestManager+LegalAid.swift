@@ -16,11 +16,8 @@ extension RequestManager {
     }
     
     func getActors(type: LegalAidType, location:LegalAidLocation, completion: (ArrayResponse, NSError?) -> () ) {
-        let params = [
-            Params.LegalAid.location: location.id
-        ]
-        
-        get(urlFromType(type), parameters: nil) { (json, error) -> () in
+        let urlStri = urlFromType(type) + "?" + Params.LegalAid.location + "=" + String(location.id)
+        get(urlStri, parameters: nil) { (json, error) -> () in
             completion(json?.arrayObject, error)
         }
     }

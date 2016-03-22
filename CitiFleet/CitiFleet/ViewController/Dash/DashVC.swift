@@ -74,6 +74,9 @@ extension DashVC {
         case 0:
             home()
             break
+        case 8:
+            navigationController?.pushViewController(HelpVC(), animated: true)
+            break
         case 10:
             logOut()
             break

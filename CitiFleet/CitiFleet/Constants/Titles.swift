@@ -25,4 +25,8 @@ struct Titles {
         static let deletePhotoTitle = "Delete photo"
         static let deletePhotoMsg = "Are you sure you want to delete this photo?"
     }
+    struct MainScreen {
+        static let noMarkersTitle = "Find something"
+        static let noMarkersMsg = "Use search to open direction"
+    }
 }

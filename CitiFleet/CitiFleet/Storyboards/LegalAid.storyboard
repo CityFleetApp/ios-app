@@ -28,7 +28,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Legal Aid-->
+        <!--Services-->
         <scene sceneID="8Ty-2H-ORA">
             <objects>
                 <tableViewController storyboardIdentifier="LegalAid" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ovj-gv-MRS" customClass="LegalAidVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
@@ -268,7 +268,7 @@
                             <outlet property="delegate" destination="ovj-gv-MRS" id="8iQ-5f-gd1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Legal Aid" id="bpJ-fj-kYI">
+                    <navigationItem key="navigationItem" title="Services" id="bpJ-fj-kYI">
                         <barButtonItem key="leftBarButtonItem" image="back-ic" id="hnP-KA-g70">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -509,7 +509,7 @@
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQN-2Q-Dl3" customClass="CosmosView" customModule="Cosmos">
+                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQN-2Q-Dl3" customClass="CosmosView" customModule="Cosmos">
                                                     <rect key="frame" x="17" y="43" width="567" height="34"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>

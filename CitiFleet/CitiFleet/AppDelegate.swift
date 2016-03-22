@@ -13,6 +13,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import TwitterKit
 import Alamofire
+import GoogleMaps
 
 @UIApplicationMain
 

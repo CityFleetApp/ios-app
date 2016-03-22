@@ -18,6 +18,19 @@ extension UITextField {
     }
 }
 
+extension UISearchBar {
+    func setTextColor(color: UIColor) {
+        for subView in subviews {
+            for secondLevelSubview in subView.subviews {
+                if secondLevelSubview.isKindOfClass(UITextField) {
+                    let searchBarTextField = secondLevelSubview as! UITextField
+                    searchBarTextField.textColor = color
+                }
+            }
+        }
+    }
+}
+
 extension UITextField {
     func setStandardSignUpPlaceHolder(placeHolderText: String) {
         self.setPlaceholder(Fonts.Login.SignUpPlaceHolder, color: UIColor(hex: 0xa8a9a9, alpha: 1), text: placeHolderText)

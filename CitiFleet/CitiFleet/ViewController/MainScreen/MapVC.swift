@@ -39,6 +39,7 @@ class MapVC: UIViewController {
         searchBtn.setDefaultShadow()
         centerMeBtn.setDefaultShadow()
         directionBtn.setDefaultShadow()
+        mapView.delegate = self
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector(updatedLocationSel), name: LocationManager.UpdateLocationNotification, object: nil)
     }
@@ -60,12 +61,29 @@ class MapVC: UIViewController {
         let autocompleteController = GMSAutocompleteViewController()
         
         let filter = GMSAutocompleteFilter()
-        filter.country = "UA"
+        filter.country = "US"
         
-//        autocompleteController.autocompleteBounds = LocationManager.sharedInstance().rectForSearch
+        autocompleteController.autocompleteBounds = LocationManager.sharedInstance().rectForSearch
         autocompleteController.autocompleteFilter = filter
         autocompleteController.delegate = self
-        self.presentViewController(autocompleteController, animated: true, completion: nil)
+        
+        self.presentViewController(autocompleteController, animated: true) {
+            let suearhBar = self.findSearchBar(autocompleteController.view)
+            suearhBar?.setTextColor(UIColor.whiteColor())
+        }
+    }
+    
+    func findSearchBar(view: UIView) -> UISearchBar? {
+        for subview in view.subviews {
+            if subview.isKindOfClass(UISearchBar) {
+                return subview as? UISearchBar
+            } else {
+                if let searchFromSubView = findSearchBar(subview) {
+                    return searchFromSubView
+                }
+            }
+        }
+        return nil
     }
     
     @IBAction func centerMe(sender: AnyObject?) {
@@ -73,6 +91,25 @@ class MapVC: UIViewController {
         let coordinate = LocationManager.sharedInstance().currentCoordinates
         let camera = GMSCameraPosition.cameraWithLatitude(coordinate.latitude, longitude: coordinate.longitude, zoom: 16)
         mapView.animateToCameraPosition(camera)
+    }
+    
+    @IBAction func direction(sender: AnyObject) {
+        if marker == nil {
+            let alert = UIAlertController(title: Titles.MainScreen.noMarkersTitle, message: Titles.MainScreen.noMarkersMsg, preferredStyle: .Alert)
+            let cancelAction = UIAlertAction(title: Titles.cancel, style: .Cancel, handler: nil)
+            alert.addAction(cancelAction)
+            presentViewController(alert, animated: true, completion: nil)
+            return
+        }
+        if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps://")!)) {
+            let currentLocation = LocationManager.sharedInstance().currentCoordinates
+            let url = "comgooglemaps://?saddr=\(currentLocation.latitude),\(currentLocation.longitude)&daddr=\(marker!.position.latitude),\(marker!.position.longitude)"
+            
+            UIApplication.sharedApplication().openURL(NSURL(string:
+                url)!)
+        } else {
+            print("Can't use comgooglemaps://");
+        }
     }
 }
 
@@ -110,4 +147,10 @@ extension MapVC: GMSAutocompleteViewControllerDelegate {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
     
+}
+
+extension MapVC: GMSMapViewDelegate {
+    func mapView(mapView: GMSMapView, willMove gesture: Bool) {
+        shouldCenterCurrentLocation = false
+    }
 }

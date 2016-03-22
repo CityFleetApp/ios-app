@@ -47,7 +47,10 @@ extension SettingsVC {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.row {
         case 4:
-            self.dismissViewControllerAnimated(true, completion: nil)
+            dismissViewControllerAnimated(true, completion: nil)
+            break
+        case 6:
+            navigationController?.pushViewController(HelpVC(), animated: true)
             break
         default:
             break
