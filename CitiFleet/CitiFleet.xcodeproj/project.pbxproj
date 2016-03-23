@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		430A59D91CA1928900FCD13D /* DOCManagementDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430A59D81CA1928900FCD13D /* DOCManagementDatePicker.swift */; };
 		430A59DB1CA192E000FCD13D /* DOCManagementDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 430A59DA1CA192E000FCD13D /* DOCManagementDatePicker.xib */; };
+		430A59DF1CA2A02B00FCD13D /* DOCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430A59DE1CA2A02B00FCD13D /* DOCManager.swift */; };
 		430B4F3B1C7DBAB800EE884A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4F3A1C7DBAB800EE884A /* User.swift */; };
 		430B4F3D1C7DBCB700EE884A /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4F3C1C7DBCB700EE884A /* RequestManager.swift */; };
 		430B4F431C7DC73D00EE884A /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B4F421C7DC73D00EE884A /* URL.swift */; };
@@ -138,6 +139,7 @@
 		2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CitiFleet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		430A59D81CA1928900FCD13D /* DOCManagementDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DOCManagementDatePicker.swift; path = Viewes/Dash/DOCManagement/DOCManagementDatePicker.swift; sourceTree = "<group>"; };
 		430A59DA1CA192E000FCD13D /* DOCManagementDatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DOCManagementDatePicker.xib; path = Storyboards/XIB/DOCManagementDatePicker.xib; sourceTree = "<group>"; };
+		430A59DE1CA2A02B00FCD13D /* DOCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DOCManager.swift; path = Utils/Dash/DOCManager/DOCManager.swift; sourceTree = "<group>"; };
 		430B4F3A1C7DBAB800EE884A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
 		430B4F3C1C7DBCB700EE884A /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestManager.swift; path = Utils/RequestTool/RequestManager.swift; sourceTree = "<group>"; };
 		430B4F421C7DC73D00EE884A /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URL.swift; path = Constants/URL.swift; sourceTree = "<group>"; };
@@ -280,6 +282,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		430A59DC1CA29FFF00FCD13D /* Dash */ = {
+			isa = PBXGroup;
+			children = (
+				430A59DD1CA2A00700FCD13D /* DOC Manager */,
+				43F5E2181C982AB9000BBB91 /* Profile */,
+				43D900EC1C944F61004A315C /* Legal Aid */,
+			);
+			name = Dash;
+			sourceTree = "<group>";
+		};
+		430A59DD1CA2A00700FCD13D /* DOC Manager */ = {
+			isa = PBXGroup;
+			children = (
+				430A59DE1CA2A02B00FCD13D /* DOCManager.swift */,
+			);
+			name = "DOC Manager";
+			sourceTree = "<group>";
+		};
 		430B4F381C7DBA8600EE884A /* Request Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,8 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				433037171C9D5E9B001EAE94 /* Builders */,
-				43F5E2181C982AB9000BBB91 /* Profile */,
-				43D900EC1C944F61004A315C /* Legal Aid */,
+				430A59DC1CA29FFF00FCD13D /* Dash */,
 				43DC05CD1C85D7DE00AB670A /* Social Manager */,
 				43DC05C31C849C2000AB670A /* Location Manager */,
 				430B4F381C7DBA8600EE884A /* Request Util */,
@@ -1012,6 +1031,7 @@
 				431D2DD71CA1521800CBC4BA /* DOCManagementCellBuilder.swift in Sources */,
 				430A59D91CA1928900FCD13D /* DOCManagementDatePicker.swift in Sources */,
 				43A426631C9040150044B6A6 /* Settings.swift in Sources */,
+				430A59DF1CA2A02B00FCD13D /* DOCManager.swift in Sources */,
 				4316BBA91C7B61F5007A9ECB /* Fonts.swift in Sources */,
 				4334D8151C7F496F00557AE4 /* DashVC.swift in Sources */,
 				43CFA7631C93915F00DC89C9 /* ProfileVC.swift in Sources */,

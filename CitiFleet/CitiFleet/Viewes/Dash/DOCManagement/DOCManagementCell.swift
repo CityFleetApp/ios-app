@@ -10,6 +10,14 @@ import UIKit
 
 class DOCManagementCell: DashMenuCell {
     @IBOutlet var docPhoto: UIImageView!
+    @IBOutlet var saveBtn: UIButton!
+    @IBOutlet var dateLabel: HighlitableLabel?
+    
+    private let expDateColor = UIColor(hex: 0x4C5A76, alpha: 1)
+    private let placeHolderColor = UIColor.lightGrayColor()
+    private let ExpDateTag = 100
+    private let getereSelector = "photoClicked:"
+    private var experationDate: NSDate?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -19,4 +27,66 @@ class DOCManagementCell: DashMenuCell {
         super.init(coder: aDecoder)
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        titleColor = selectedColor
+        saveBtn.setDefaultShadow()
+        setupPhotoGesture()
+    }
+    
+    private func setupPhotoGesture() {
+        let gesture = UITapGestureRecognizer(target: self, action: Selector(getereSelector))
+        docPhoto.addGestureRecognizer(gesture)
+    }
+    
+    func didSelect() {
+        let picker = DOCManagementDatePicker.viewFromNib()
+        picker.completion = completionDatePicking
+        picker.show()
+    }
+    
+    private func completionDatePicking(date: AnyObject?, closed: Bool) {
+        if closed {
+            return
+        }
+        if let date = date as? NSDate {
+            experationDate = date
+            let dateFormater = NSDateFormatter()
+            dateFormater.dateFormat = "yyyy-MM-dd"
+            dateLabel?.highlitedText = dateFormater.stringFromDate(date)
+        }
+    }
+    
+    override func selectCell() {
+        super.selectCell()
+        dateLabel?.textColor = UIColor.whiteColor()
+        (contentView.viewWithTag(ExpDateTag) as! UILabel).textColor = UIColor.whiteColor()
+    }
+    
+    override func deselectCell() {
+        super.deselectCell()
+        dateLabel?.highlitedText = nil 
+        (contentView.viewWithTag(ExpDateTag) as! UILabel).textColor = expDateColor
+    }
+}
+
+extension DOCManagementCell {
+    @IBAction func photoClicked(sender: UITapGestureRecognizer) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let fabric = CameraFabric(imagePicerDelegate: self)
+        alert.addAction(fabric.cameraAction())
+        alert.addAction(fabric.libraryAction())
+        alert.addAction(fabric.cancelAction())
+        AppDelegate.sharedDelegate().rootViewController().presentViewController(alert, animated: true, completion: nil)
+    }
+}
+
+extension DOCManagementCell: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        let scaledImage = image.normalizedImage()
+        picker.dismissViewControllerAnimated(true) {
+//            let data = UIImagePNGRepresentation(scaledImage)
+            self.docPhoto.image = scaledImage
+        }
+    }
 }

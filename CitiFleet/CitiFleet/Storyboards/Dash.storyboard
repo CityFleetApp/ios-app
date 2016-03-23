@@ -218,11 +218,11 @@
                                             <segue destination="hGn-nd-k2c" kind="push" id="OTS-ju-Cl5"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="HbU-JE-EGw" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="66" id="HbU-JE-EGw" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="433" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HbU-JE-EGw" id="Pn8-10-ZX7">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earnings-ic" translatesAutoresizingMaskIntoConstraints="NO" id="mEO-Vf-ftk">
@@ -238,7 +238,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EARNINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5K-vW-vNg">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="EARNINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5K-vW-vNg">
                                                     <rect key="frame" x="66" y="23" width="518" height="20"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                     <color key="textColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -255,6 +255,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="title" destination="V5K-vW-vNg" id="qBQ-ep-9Au"/>
+                                            <segue destination="J3A-jd-WbX" kind="push" id="TTj-UN-Yg3"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="Fk2-SE-aQw" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
@@ -562,6 +563,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2G6-OT-uuh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1908.5" y="1178"/>
+        </scene>
+        <!--DOCManagementVC-->
+        <scene sceneID="keT-CC-Iju">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="DOCManagementVC" storyboardName="DocManagement" referencedIdentifier="DOCManagementVC" id="J3A-jd-WbX" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="C3l-p5-iGO"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fdu-qF-Yea" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2068.5" y="1238"/>
         </scene>
         <!--Benefits-->
         <scene sceneID="5tx-uy-7Xi">

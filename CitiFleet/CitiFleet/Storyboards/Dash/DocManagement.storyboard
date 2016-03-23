@@ -19,20 +19,20 @@
         <!--ManagementVC-->
         <scene sceneID="DwD-eG-YeB">
             <objects>
-                <tableViewController id="HLd-HW-dgJ" customClass="DOCManagementVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="DOCManagementVC" storyboardIdentifier="DOCManagementVC" id="HLd-HW-dgJ" customClass="DOCManagementVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CRL-P3-v9f">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DOCManagementCellID" rowHeight="121" id="Ab4-Mw-p2S" customClass="DOCManagementCell" customModule="CitiFleet" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DOCManagementCellID" rowHeight="121" id="Ab4-Mw-p2S" customClass="DOCManagementCell" customModule="CitiFleet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="121"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ab4-Mw-p2S" id="OPg-FN-6z3">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Doc-management-template" translatesAutoresizingMaskIntoConstraints="NO" id="OJd-VZ-HnO">
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Doc-management-template" translatesAutoresizingMaskIntoConstraints="NO" id="OJd-VZ-HnO">
                                             <rect key="frame" x="22" y="22" width="76" height="76"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="OJd-VZ-HnO" secondAttribute="height" multiplier="1:1" id="TeO-sU-L5M"/>
@@ -47,7 +47,7 @@
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exp Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DW-bj-bbv">
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exp Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DW-bj-bbv">
                                                     <rect key="frame" x="0.0" y="28" width="65" height="18"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14.350000381469727"/>
                                                     <color key="textColor" red="0.29803921568627451" green="0.3529411764705882" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
@@ -72,7 +72,7 @@
                                                         <constraint firstAttribute="width" constant="72" id="DlT-WU-MuQ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.25"/>
-                                                    <state key="normal" title="Button">
+                                                    <state key="normal" title="Save">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
@@ -107,7 +107,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="dateLabel" destination="o0z-8i-bzW" id="LIp-jq-bIN"/>
                                     <outlet property="docPhoto" destination="OJd-VZ-HnO" id="Aaq-W0-T3z"/>
+                                    <outlet property="saveBtn" destination="Hxh-zy-b93" id="w4w-Lv-8Zz"/>
                                     <outlet property="title" destination="CZJ-uc-xnX" id="nf9-Ax-Rg2"/>
                                 </connections>
                             </tableViewCell>

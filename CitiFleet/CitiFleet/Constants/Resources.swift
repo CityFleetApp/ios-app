@@ -20,4 +20,7 @@ struct Resources {
         static let VehicleDefault = "default_image_tumb"
         static let TrashIcon = "trash-ic"
     }
+    struct DOCManagement {
+        static let TemplatePhoto = "Doc-management-template"
+    }
 }

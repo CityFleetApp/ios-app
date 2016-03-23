@@ -41,7 +41,7 @@ class DOCManagementCellBuilder: NSObject {
         super.init()
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> DOCManagementCell {
+    func build() -> DOCManagementCell {
         var cell = tableView.dequeueReusableCellWithIdentifier(DOCManagementCellID) as? DOCManagementCell
         if cell == nil {
             cell = DOCManagementCell(style: .Default, reuseIdentifier: DOCManagementCellID)
