@@ -11,6 +11,15 @@ import UIKit
 class DOCManagementVC: UITableViewController {
     var DOCManagementCellID: String = "DOCManagementCellID"
     var CellHeight: CGFloat = 121
+    var docManager = DOCManager()
+    
+    override func viewDidLoad() {
+        docManager.loadDocuments { (docs, error) -> () in
+            if error == nil {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     override func viewWillAppear(animated: Bool) {
         navigationController?.navigationBar.hidden = false
@@ -23,7 +32,7 @@ extension DOCManagementVC {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return DOCManagementCellBuilder(tableView: tableView, indexPath: indexPath).build()
+        return DOCManagementCellBuilder(tableView: tableView, indexPath: indexPath, docManager: docManager).build()
     }
 }
 

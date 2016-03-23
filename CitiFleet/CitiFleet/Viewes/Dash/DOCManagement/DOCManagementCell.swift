@@ -14,14 +14,35 @@ class DOCManagementCell: DashMenuCell {
     @IBOutlet var dateLabel: HighlitableLabel?
     
     var saveDocument: ((Document) -> ())!
+    var selectedPhoto: ((UIImage) -> ())!
+    var selectedDate: ((NSDate) -> ())!
+    var newDoc: Bool!
+    
     var docType: Document.CellType!
-    var photo: UIImage?
-    var expDate: NSDate?
+    
+    var availableForSave: Bool {
+        get {
+            return expDate != nil && photo != nil
+        }
+    }
+    
+    var photo: UIImage? {
+        didSet {
+//            saveBtn.enabled = availableForSave
+        }
+    }
+    
+    var expDate: NSDate? {
+        didSet {
+//            saveBtn.enabled = availableForSave
+        }
+    }
     
     private let expDateColor = UIColor(hex: 0x4C5A76, alpha: 1)
     private let placeHolderColor = UIColor.lightGrayColor()
     private let ExpDateTag = 100
     private let getereSelector = "photoClicked:"
+    private let longPressGestureSelector = "longPhotoClicked:"
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -42,15 +63,11 @@ class DOCManagementCell: DashMenuCell {
         print("Destroyed cell")
     }
     
-    var availableForSave: Bool {
-        get {
-            return expDate != nil && photo != nil
-        }
-    }
-    
     private func setupPhotoGesture() {
         let gesture = UITapGestureRecognizer(target: self, action: Selector(getereSelector))
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: Selector(longPressGestureSelector))
         docPhoto.addGestureRecognizer(gesture)
+        docPhoto.addGestureRecognizer(longPressGesture)
     }
     
     func didSelect() {
@@ -68,6 +85,7 @@ class DOCManagementCell: DashMenuCell {
             let dateFormater = NSDateFormatter()
             dateFormater.dateFormat = "yyyy-MM-dd"
             dateLabel?.highlitedText = dateFormater.stringFromDate(date)
+            selectedDate(date)
         }
     }
     
@@ -79,7 +97,7 @@ class DOCManagementCell: DashMenuCell {
     
     override func deselectCell() {
         super.deselectCell()
-        dateLabel?.highlitedText = nil 
+        dateLabel?.highlitedText = dateLabel?.highlitedText
         (contentView.viewWithTag(ExpDateTag) as! UILabel).textColor = expDateColor
     }
 }
@@ -94,8 +112,15 @@ extension DOCManagementCell {
         AppDelegate.sharedDelegate().rootViewController().presentViewController(alert, animated: true, completion: nil)
     }
     
+    @IBAction func longPhotoClicked(sender: UILongPressGestureRecognizer) {
+        
+    }
+    
     @IBAction func saveDocument(sender: UIButton) {
-        let doc = Document(type: docType, expiryDate: expDate, plateNumber: nil, photo: photo!)
+//        if !availableForSave {
+//            return
+//        }
+        let doc = Document(type: docType, uploaded: !newDoc, expiryDate: expDate, plateNumber: nil, photo: photo!, photoURL: nil)
         saveDocument(doc)
     }
 }
@@ -106,6 +131,7 @@ extension DOCManagementCell: UIImagePickerControllerDelegate, UINavigationContro
         picker.dismissViewControllerAnimated(true) {
             self.photo = scaledImage
             self.docPhoto.image = scaledImage
+            self.selectedPhoto(scaledImage)
         }
     }
 }

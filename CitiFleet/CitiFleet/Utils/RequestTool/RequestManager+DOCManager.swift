@@ -13,15 +13,31 @@
 import Foundation
 
 extension RequestManager {
-    func postDoc(fieldKey: String, fieldValue: String, docType: Int, photo: UIImage) {
+    func getDocs(completion: (([AnyObject]?, NSError?) -> ())) {
+        get(URL.DOCManagement.Documents, parameters: nil) { (json, error) -> () in
+            if error != nil {
+                completion(nil, error)
+            }
+            
+            completion(json?.arrayObject, nil)
+        }
+    }
+    
+    func postDoc(HTTPMethod: String, fieldKey: String, fieldValue: String, docType: Int, photo: UIImage, completion: ((AnyObject?, NSError?) -> ())) {
         let data = UIImagePNGRepresentation(photo)
         let params = [
             fieldKey: fieldValue,
             Params.DOCManagement.docType: String(docType + 1)
         ]
         
-        uploadPhoto(params, data: data!, baseUrl: URL.DOCManagement.Documents, HTTPMethod: "POST", name: "file") { (response, error) -> () in
-            
+        uploadPhoto(params, data: data!, baseUrl: URL.DOCManagement.Documents, HTTPMethod: HTTPMethod, name: "file") { (response, error) -> () in
+            if error != nil {
+                completion(nil, error)
+                return
+            }
+            LoaderViewManager.showDoneLoader(1, completion: {
+                completion(response, nil)
+            })
         }
     }
 }

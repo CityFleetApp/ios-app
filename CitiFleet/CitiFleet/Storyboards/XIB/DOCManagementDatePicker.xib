@@ -34,7 +34,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </imageView>
-                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jRs-mv-k1E">
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jRs-mv-k1E">
                             <rect key="frame" x="0.0" y="45" width="600" height="255"/>
                             <date key="date" timeIntervalSinceReferenceDate="480351101.65613598">
                                 <!--2016-03-22 14:51:41 +0000-->

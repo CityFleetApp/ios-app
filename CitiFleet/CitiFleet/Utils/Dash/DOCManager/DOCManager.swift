@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Haneke
 
 struct Document {
     enum CellType: Int {
@@ -21,16 +22,47 @@ struct Document {
     }
     
     var type: CellType
+    var uploaded: Bool
     var expiryDate: NSDate?
     var plateNumber: String?
-    var photo: UIImage
+    var photo: UIImage?
+    var photoURL: NSURL? {
+        didSet {
+            
+        }
+    }
 }
 
 class DOCManager: NSObject {
-    var documents: [Document] = []
+    var documents: [Document.CellType: Document] = Dictionary ()
     
-    func loadDocuments(completion:(([Document]?, NSError?) -> ())) {
-        
+    deinit {
+        print("Destroyed DOC Manager")
+    }
+    
+    func loadDocuments(completion:(([Document.CellType: Document]?, NSError?) -> ())?) {
+        RequestManager.sharedInstance().getDocs { (docs, error) -> () in
+            if error != nil {
+                completion!(nil, error)
+                return
+            }
+            
+            for doc in docs! {
+                let typeIndex = doc[Params.DOCManagement.docType] as! Int
+                let photoUrl = doc[Params.DOCManagement.photo] as? String
+                let expDateString = doc[Params.DOCManagement.expiryDate] as? String
+                let number = doc[Params.DOCManagement.plateNumber] as? String
+                var expDate: NSDate?
+                if let exp = expDateString {
+                    expDate = NSDateFormatter.standordFormater().dateFromString(exp)
+                }
+                
+                let doc = Document(type: Document.CellType(rawValue: typeIndex - 1)!, uploaded: true, expiryDate: expDate, plateNumber: number, photo: nil, photoURL: NSURL(string: photoUrl!))
+                self.documents[doc.type] = doc
+            }
+            
+            completion!(self.documents, nil)
+        }
     }
     
     func addDocument(document: Document, completion: (() -> ())) {
@@ -43,6 +75,10 @@ class DOCManager: NSObject {
             value = document.plateNumber!
         }
         
-        RequestManager.sharedInstance().postDoc(key, fieldValue: value, docType: document.type.rawValue, photo: document.photo)
+        let HTTPMethod = document.uploaded ? "PATCH" : "POST"
+        
+        RequestManager.sharedInstance().postDoc(HTTPMethod, fieldKey: key, fieldValue: value, docType: document.type.rawValue, photo: document.photo!, completion: { (response, error) in
+            
+        })
     }
 }
