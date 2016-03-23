@@ -17,7 +17,7 @@ class ImageUploader: NSObject {
     ///
     /// - returns:            The NSURLRequest that was created
     
-    func createRequest (data: NSData, baseUrl: String, HTTPMethod: String, name: String) -> NSURLRequest {
+    func createRequest (data: NSData, baseUrl: String, HTTPMethod: String, name: String, params: [String: AnyObject]?) -> NSURLRequest {
         let boundary = generateBoundaryString()
         
         let url = NSURL(string: RequestManager.sharedInstance().url(baseUrl))!
@@ -26,7 +26,7 @@ class ImageUploader: NSObject {
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         request.setValue(Params.Header.token + (User.currentUser()?.token)!, forHTTPHeaderField: Params.Header.authentication)
         
-        request.HTTPBody = createBodyWithParameters(data, boundary: boundary, name: name)
+        request.HTTPBody = createBodyWithParameters(data, boundary: boundary, name: name, params: params)
         
         return request
     }
@@ -40,8 +40,12 @@ class ImageUploader: NSObject {
     ///
     /// - returns:                The NSData of the body of the request
     
-    func createBodyWithParameters(data: NSData, boundary: String, name: String) -> NSData {
+    func createBodyWithParameters(data: NSData, boundary: String, name: String, params: [String: AnyObject]?) -> NSData {
         let body = NSMutableData()
+        
+        if let data = paramsFromDict(params) {
+            body.appendData(data)
+        }
         
         body.appendData("--\(boundary)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
         body.appendData("Content-Disposition: form-data; name=\"\(name)\"; filename=\"avatar.png\"\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
@@ -51,6 +55,18 @@ class ImageUploader: NSObject {
         
         body.appendData("--\(boundary)--\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
         return body
+    }
+    
+    func paramsFromDict(params: [String: AnyObject]?) -> NSData? {
+        if params == nil {
+            return nil
+        }
+        
+        do {
+            return try NSJSONSerialization.dataWithJSONObject(params!, options: [])
+        } catch {
+            return nil
+        }
     }
     
     /// Create boundary string for multipart/form-data request

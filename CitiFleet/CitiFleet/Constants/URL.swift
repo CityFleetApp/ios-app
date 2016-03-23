@@ -44,6 +44,9 @@ struct URL {
         static let notifications = "notifications/"
         static let markSeen = "/mark-seen/"
     }
+    struct DOCManagement {
+        static let Documents = "documents/"
+    }
     static let Reports = "reports/"
     static let BenefitsList = "benefits/"
 }
@@ -86,6 +89,11 @@ struct Params {
     }
     struct LegalAid {
         static let location = "location"
+    }
+    struct DOCManagement {
+        static let docType = "document_type"
+        static let expiryDate = "expiry_date"
+        static let plateNumber = "plate_number"
     }
 }
 
