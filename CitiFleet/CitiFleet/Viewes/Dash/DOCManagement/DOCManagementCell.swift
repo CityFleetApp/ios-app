@@ -13,11 +13,15 @@ class DOCManagementCell: DashMenuCell {
     @IBOutlet var saveBtn: UIButton!
     @IBOutlet var dateLabel: HighlitableLabel?
     
+    var saveDocument: ((Document) -> ())!
+    var docType: Document.CellType!
+    var photo: UIImage?
+    var expDate: NSDate?
+    
     private let expDateColor = UIColor(hex: 0x4C5A76, alpha: 1)
     private let placeHolderColor = UIColor.lightGrayColor()
     private let ExpDateTag = 100
     private let getereSelector = "photoClicked:"
-    private var experationDate: NSDate?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -32,6 +36,16 @@ class DOCManagementCell: DashMenuCell {
         titleColor = selectedColor
         saveBtn.setDefaultShadow()
         setupPhotoGesture()
+    }
+    
+    deinit {
+        print("Destroyed cell")
+    }
+    
+    var availableForSave: Bool {
+        get {
+            return expDate != nil && photo != nil
+        }
     }
     
     private func setupPhotoGesture() {
@@ -50,7 +64,7 @@ class DOCManagementCell: DashMenuCell {
             return
         }
         if let date = date as? NSDate {
-            experationDate = date
+            expDate = date
             let dateFormater = NSDateFormatter()
             dateFormater.dateFormat = "yyyy-MM-dd"
             dateLabel?.highlitedText = dateFormater.stringFromDate(date)
@@ -79,13 +93,18 @@ extension DOCManagementCell {
         alert.addAction(fabric.cancelAction())
         AppDelegate.sharedDelegate().rootViewController().presentViewController(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func saveDocument(sender: UIButton) {
+        let doc = Document(type: docType, expiryDate: expDate, plateNumber: nil, photo: photo!)
+        saveDocument(doc)
+    }
 }
 
 extension DOCManagementCell: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         let scaledImage = image.normalizedImage()
         picker.dismissViewControllerAnimated(true) {
-//            let data = UIImagePNGRepresentation(scaledImage)
+            self.photo = scaledImage
             self.docPhoto.image = scaledImage
         }
     }

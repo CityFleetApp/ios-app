@@ -43,8 +43,12 @@ class ImageUploader: NSObject {
     func createBodyWithParameters(data: NSData, boundary: String, name: String, params: [String: AnyObject]?) -> NSData {
         let body = NSMutableData()
         
-        if let data = paramsFromDict(params) {
-            body.appendData(data)
+        if params != nil {
+            for param in (params?.enumerate())! {
+                body.appendData(String(format: "--%@\r\n", boundary).dataUsingEncoding(NSUTF8StringEncoding)!)
+                body.appendData(String(format: "Content-Disposition: form-data; name=\"%@\"\r\n\r\n", param.element.0 ).dataUsingEncoding(NSUTF8StringEncoding)!)
+                body.appendData(String(format: "%@\r\n", param.element.1 as! String).dataUsingEncoding(NSUTF8StringEncoding)!)
+            }
         }
         
         body.appendData("--\(boundary)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)

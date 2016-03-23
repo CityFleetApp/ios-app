@@ -17,8 +17,9 @@ extension RequestManager {
         let data = UIImagePNGRepresentation(photo)
         let params = [
             fieldKey: fieldValue,
-            Params.DOCManagement.docType: String(docType)
+            Params.DOCManagement.docType: String(docType + 1)
         ]
+        
         uploadPhoto(params, data: data!, baseUrl: URL.DOCManagement.Documents, HTTPMethod: "POST", name: "file") { (response, error) -> () in
             
         }

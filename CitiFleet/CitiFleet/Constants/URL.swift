@@ -94,6 +94,7 @@ struct Params {
         static let docType = "document_type"
         static let expiryDate = "expiry_date"
         static let plateNumber = "plate_number"
+        static let photo = "file"
     }
 }
 

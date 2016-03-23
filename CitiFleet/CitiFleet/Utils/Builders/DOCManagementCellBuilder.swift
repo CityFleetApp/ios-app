@@ -36,8 +36,12 @@ class DOCManagementCellBuilder: NSObject {
             cell = DOCManagementCell(style: .Default, reuseIdentifier: DOCManagementCellID)
         }
         cell?.title.text = DOCManagementCellBuilder.titles[indexPath.row]
+        cell?.docType = Document.CellType(rawValue: indexPath.row)
+        cell?.saveDocument = { (document) in
+            DOCManager().addDocument(document, completion: { () -> () in
+                
+            })
+        }
         return cell!
     }
-    
-    
 }
