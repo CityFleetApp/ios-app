@@ -18,6 +18,11 @@ struct URL {
     static let Sandbox = "http://citifleet.steelkiwi.com/api/"
     static let Production = ""
     static let BaseUrl = Sandbox
+    struct User {
+        struct APNS {
+            static let Register = "users/devicesdevice/apns/"
+        }
+    }
     struct Login {
         static let Login = "users/login/"
         static let SignUp = "users/signup/"
@@ -47,11 +52,23 @@ struct URL {
     struct DOCManagement {
         static let Documents = "documents/"
     }
+    struct MarketPlate {
+        static let makes = "marketplace/cars/make/"
+        static let models = "marketplace/cars/model/"
+    }
     static let Reports = "reports/"
     static let BenefitsList = "benefits/"
 }
 
 struct Params {
+    struct User {
+        struct APNS {
+            static let registrationId = "registration_id" // APNS Token
+            static let deviceId = "device_id" // UDID / UIDevice.identifierForVendor()
+            static let active = "active" // Inactive devices will not be sent notifications
+        }
+    }
+    
     struct Response {
         static let serverError = "Server Error"
     }

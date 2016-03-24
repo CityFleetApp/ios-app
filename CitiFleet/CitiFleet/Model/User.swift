@@ -128,6 +128,8 @@ class User: NSObject, NSCoding {
             currUser = user
             currUser?.saveUser()
             completion(user, nil)
+            
+            APNSManager.sharedManager.registerForRemoteNotifications()
         }
     }
     

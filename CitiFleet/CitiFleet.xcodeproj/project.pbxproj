@@ -58,6 +58,7 @@
 		4334D81D1C7F749A00557AE4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4334D81C1C7F749A00557AE4 /* QuartzCore.framework */; };
 		4334D81F1C7F783F00557AE4 /* UIImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4334D81E1C7F783F00557AE4 /* UIImageUtil.swift */; };
 		434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434EDAE71C7C4EF800934029 /* UITableView+Ext.swift */; };
+		43527F6F1CA3D494003D87FF /* APNSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43527F6E1CA3D494003D87FF /* APNSManager.swift */; };
 		435611971C87532C0050EDE7 /* AddressBookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435611961C87532C0050EDE7 /* AddressBookManager.swift */; };
 		435611991C8763AA0050EDE7 /* RequestManager+SocialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435611981C8763AA0050EDE7 /* RequestManager+SocialManager.swift */; };
 		436D6B181C92C2C200A0240E /* Benefit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D6B171C92C2C200A0240E /* Benefit.swift */; };
@@ -192,6 +193,7 @@
 		4334D81C1C7F749A00557AE4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4334D81E1C7F783F00557AE4 /* UIImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageUtil.swift; path = Extensions/UIImageUtil.swift; sourceTree = "<group>"; };
 		434EDAE71C7C4EF800934029 /* UITableView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+Ext.swift"; path = "Extensions/UITableView+Ext.swift"; sourceTree = "<group>"; };
+		43527F6E1CA3D494003D87FF /* APNSManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APNSManager.swift; path = Utils/APNS/APNSManager.swift; sourceTree = "<group>"; };
 		435611961C87532C0050EDE7 /* AddressBookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressBookManager.swift; path = Utils/AddressBookManager/AddressBookManager.swift; sourceTree = "<group>"; };
 		435611981C8763AA0050EDE7 /* RequestManager+SocialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RequestManager+SocialManager.swift"; path = "Utils/RequestTool/RequestManager+SocialManager.swift"; sourceTree = "<group>"; };
 		436D6B171C92C2C200A0240E /* Benefit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Benefit.swift; path = Model/Benefit.swift; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 		4316BBB21C7B7399007A9ECB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				43527F6D1CA3D47B003D87FF /* APNS */,
 				433037171C9D5E9B001EAE94 /* Builders */,
 				430A59DC1CA29FFF00FCD13D /* Dash */,
 				43DC05CD1C85D7DE00AB670A /* Social Manager */,
@@ -539,6 +542,14 @@
 				43DC05861C8098FD00AB670A /* DashMenuCell.swift */,
 			);
 			name = Dash;
+			sourceTree = "<group>";
+		};
+		43527F6D1CA3D47B003D87FF /* APNS */ = {
+			isa = PBXGroup;
+			children = (
+				43527F6E1CA3D494003D87FF /* APNSManager.swift */,
+			);
+			name = APNS;
 			sourceTree = "<group>";
 		};
 		435611951C8752F10050EDE7 /* Address Book Manager */ = {
@@ -1053,6 +1064,7 @@
 				43F8340F1C97274400DE7E50 /* LegalAidCell.swift in Sources */,
 				43F5E2361C9AEE8C000BBB91 /* Notification.swift in Sources */,
 				43A4266E1C91ABAD0044B6A6 /* BenefitsVC.swift in Sources */,
+				43527F6F1CA3D494003D87FF /* APNSManager.swift in Sources */,
 				43DC058B1C80BD6A00AB670A /* Storyboard.swift in Sources */,
 				435611991C8763AA0050EDE7 /* RequestManager+SocialManager.swift in Sources */,
 				4316BBA21C7B5EEC007A9ECB /* UITextField+Ext.swift in Sources */,

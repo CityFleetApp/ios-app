@@ -64,6 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor(hex: Color.NavigationBar.tintColor, alpha: 1)
         UINavigationBar.appearance().barTintColor = UIColor(hex: Color.NavigationBar.barTint, alpha: 1)
         UINavigationBar.appearance().titleTextAttributes = [ NSFontAttributeName: Fonts.Login.NavigationTitle,  NSForegroundColorAttributeName: UIColor.whiteColor()]
+        APNSManager.sharedManager.registerForRemoteNotifications()
     }
     
     func showLoginViewController() {
@@ -77,6 +78,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.rootViewController().presentViewController(loginNavController, animated: true, completion: nil)
             })
         }
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+//        APNSManager.sharedManager  .registerAPNSToken(deviceToken)
     }
 }
 

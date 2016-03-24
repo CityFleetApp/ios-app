@@ -35,9 +35,7 @@ extension RequestManager {
                 completion(nil, error)
                 return
             }
-            LoaderViewManager.showDoneLoader(1, completion: {
-                completion(response, nil)
-            })
+            completion(response, nil)
         }
     }
 }
