@@ -23,7 +23,8 @@ class OptionPostingBuild: NSObject {
         let index = type.rawValue
         viewController.title = PostingTitles[index]
         viewController.cellHeight = CellHeights[index]
-        viewController.numborOfRows = 5
+        viewController.descriptionCellHeight = viewController.cellHeight
+        viewController.numborOfRows = 9
         
         return viewController
     }

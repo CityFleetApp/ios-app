@@ -13,6 +13,9 @@ class PostingCellBuilder: NSObject {
     var dataManager: MarketPlaceManager
     var postingCreater: RentSazeCreator!
     
+    var reloadData: (() -> ())!
+    var reloadCell: (( CGFloat ) -> ())!
+    
     private var CellID = "Cell"
     init(tableView: UITableView, marketPlaceManager: MarketPlaceManager) {
         dataManager = marketPlaceManager
@@ -32,16 +35,52 @@ class MyRentSaleCellBuilder: PostingCellBuilder {
     private let PostingCellID = "PostingCell"
     
     override func build(indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(PostingCellID) as? PostingCell
-        if cell == nil {
-            cell = PostingCell(style: .Default, reuseIdentifier: PostingCellID)
+        switch indexPath.row {
+        case 7:
+            return createTextFieldCell()
+        case 8:
+            return createDescriptionCell()
+        default:
+            var cell = tableView.dequeueReusableCellWithIdentifier(PostingCellID) as? PostingCell
+            if cell == nil {
+                cell = PostingCell(style: .Default, reuseIdentifier: PostingCellID)
+            }
+            let index = indexPath.row
+            cell?.title.text = CellResources.RentSale.Titles[index]
+            cell?.placeHolder?.placeholderText = CellResources.RentSale.PlaceHolders[index]
+            cell?.icon.image = UIImage(named: CellResources.RentSale.iconNames[index])?.imageWithRenderingMode(.AlwaysTemplate)
+            cell?.setEditable(indexPath.row != 1)
+            setupCellAction(cell!, indexPath: indexPath)
+            return cell!
         }
-        let index = indexPath.row
-        cell?.title.text = CellResources.RentSale.Titles[index]
-        cell?.placeHolder?.placeholderText = CellResources.RentSale.PlaceHolders[index]
-        cell?.icon.image = UIImage(named: CellResources.RentSale.iconNames[index])?.imageWithRenderingMode(.AlwaysTemplate)
-        cell?.setEditable(indexPath.row != 1)
-        setupCellAction(cell!, indexPath: indexPath)
+    }
+    
+    func createTextFieldCell() -> UITableViewCell {
+        let cellID = MyRentSalePriceCell.CellID
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellID) as? MyRentSalePriceCell
+        if cell == nil {
+            cell = MyRentSalePriceCell(style: .Default, reuseIdentifier: cellID)
+        }
+        cell?.didSelect = {
+            
+        }
+        cell?.setEditable(true)
+        return cell!
+    }
+    
+    func createDescriptionCell() -> UITableViewCell {
+        let cellID = MyRentSaleDescriptionCell.CellID
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellID) as? MyRentSaleDescriptionCell
+        if cell == nil {
+            cell = MyRentSaleDescriptionCell(style: .Default, reuseIdentifier: cellID)
+        }
+        cell?.didSelect = {
+            
+        }
+        cell?.changedHeight = { [unowned self] (newHeight) in
+            self.reloadCell(newHeight)
+        }
+        cell?.setEditable(true)
         return cell!
     }
     

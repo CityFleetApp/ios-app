@@ -9,22 +9,43 @@
 import UIKit
 
 class OptionsPostingVC: UITableViewController {
+    @IBOutlet var photoCollectionView: UICollectionView!
     var cellHeight: CGFloat!
+    var descriptionCellHeight: CGFloat!
     var numborOfRows: Int!
     var cellBuilder: MyRentSaleCellBuilder!
     var dataManager = MarketPlaceManager()
     var uploader = RentSazeCreator()
     
+    private var vehicleCollectionViewDelegate: VehicleCollectionViewDelegate!
+    
     override func viewDidLoad() {
         cellBuilder = MyRentSaleCellBuilder(tableView: tableView, marketPlaceManager: dataManager)
         cellBuilder.postingCreater = uploader
         dataManager.loadData()
+        
+        vehicleCollectionViewDelegate = VehicleCollectionViewDelegate(reloadData: { [unowned self] in
+            self.photoCollectionView.reloadData()
+        })
+        
+        photoCollectionView.dataSource = vehicleCollectionViewDelegate
+        photoCollectionView.delegate = vehicleCollectionViewDelegate
+        
+        cellBuilder.reloadData = { [unowned self] in
+            self.tableView.reloadData()
+        }
+        
+        cellBuilder.reloadCell = { [unowned self] (newHeight) in
+            self.descriptionCellHeight = newHeight
+            self.tableView.beginUpdates()
+            self.tableView.endUpdates()
+        }
     }
 }
 
 extension OptionsPostingVC {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return cellHeight
+        return indexPath.row == 8 ? descriptionCellHeight : cellHeight
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

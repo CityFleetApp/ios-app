@@ -15,6 +15,7 @@ struct Color {
     }
     struct Global {
         static let LightGreen = UIColor(hex: 0x2ec4b6, alpha: 1)
+        static let BlueTextColor = UIColor(hex: 0x4c5a76, alpha: 1)
     }
     struct Dash {
         static let SelectedCell = Global.LightGreen

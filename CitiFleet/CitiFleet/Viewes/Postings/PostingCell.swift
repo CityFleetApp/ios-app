@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KMPlaceholderTextView
 
 class PostingCell: LegalAidCell {
     var didSelect: (() -> ())!
@@ -28,6 +29,69 @@ class PostingCell: LegalAidCell {
     }
 }
 
-class MyRentSaleDescriptionCell: PostingCell {
+class MyRentSalePriceCell: PostingCell {
+    static let CellID = "MyRentSalePriceCell"
+    @IBOutlet var priceTF: UITextField!
     
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+}
+
+extension MyRentSalePriceCell: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+class MyRentSaleDescriptionCell: PostingCell {
+    static let CellID = "MyRentSaleDescriptionCell"
+    @IBOutlet var descriptionTV: KMPlaceholderTextView!
+    var changedHeight: ((CGFloat) -> ())!
+    var cellHeight: CGFloat?
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+}
+
+extension MyRentSaleDescriptionCell: UITextViewDelegate {
+    func textViewShouldEndEditing(textView: UITextView) -> Bool {
+        textView.resignFirstResponder()
+        return true
+    }
+    
+    func textViewDidChange(textView: UITextView) {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 7
+        let attributes = [
+            NSForegroundColorAttributeName: Color.Global.BlueTextColor,
+            NSParagraphStyleAttributeName: paragraphStyle
+        ]
+        textView.attributedText = NSAttributedString(string: textView.text, attributes: attributes)
+        
+        let newHeight = calculateHeightForBio()
+        if cellHeight != newHeight {
+            cellHeight = newHeight
+            changedHeight(newHeight)
+            descriptionTV.becomeFirstResponder()
+        }
+    }
+    
+    private func calculateHeightForBio() -> CGFloat {
+        let topSize: CGFloat = 44 + 28
+        let textViewWidth = CGRectGetWidth(UIScreen.mainScreen().bounds) - 28
+        let height = descriptionTV.attributedText.heightWithConstrainedWidth(textViewWidth) + topSize
+        return height
+    }
 }

@@ -8,8 +8,11 @@
     <customFonts key="customFonts">
         <mutableArray key="Montserrat-Light.otf">
             <string>Montserrat-Light</string>
+            <string>Montserrat-Light</string>
         </mutableArray>
         <mutableArray key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
@@ -436,44 +439,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="85L-gQ-bOY">
-                            <rect key="frame" x="0.0" y="280" width="600" height="95"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="vop-Zs-AVK">
+                            <rect key="frame" x="0.0" y="358" width="600" height="170"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G7P-1s-gW7">
-                                <size key="itemSize" width="75" height="75"/>
-                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                            </collectionViewFlowLayout>
-                            <cells>
-                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VehiclePhotoCell" id="WEM-gS-cBn" customClass="VehiclePhotoCell" customModule="CitiFleet" customModuleProvider="target">
-                                    <rect key="frame" x="10" y="10" width="75" height="75"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image_tumb" translatesAutoresizingMaskIntoConstraints="NO" id="58R-mZ-bnm">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
-                                                <gestureRecognizers/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <gestureRecognizers/>
+                            <subviews>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vmi-Z5-PQZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="95"/>
                                     <constraints>
-                                        <constraint firstItem="58R-mZ-bnm" firstAttribute="leading" secondItem="WEM-gS-cBn" secondAttribute="leading" id="5Uh-1m-SZy"/>
-                                        <constraint firstAttribute="trailing" secondItem="58R-mZ-bnm" secondAttribute="trailing" id="DFC-Mm-eiH"/>
-                                        <constraint firstAttribute="bottom" secondItem="58R-mZ-bnm" secondAttribute="bottom" id="wfb-OY-Gts"/>
-                                        <constraint firstItem="58R-mZ-bnm" firstAttribute="top" secondItem="WEM-gS-cBn" secondAttribute="top" id="xDA-OW-AJ7"/>
+                                        <constraint firstAttribute="height" constant="95" id="GXx-M3-7FY"/>
                                     </constraints>
-                                    <connections>
-                                        <outlet property="photo" destination="58R-mZ-bnm" id="7MI-oh-gLR"/>
-                                    </connections>
-                                </collectionViewCell>
-                            </cells>
-                        </collectionView>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fH6-BU-Cpa">
+                                        <size key="itemSize" width="75" height="75"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="10" minY="10" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                    <cells>
+                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VehiclePhotoCell" id="upQ-E8-1dC" customClass="VehiclePhotoCell" customModule="CitiFleet" customModuleProvider="target">
+                                            <rect key="frame" x="10" y="10" width="75" height="75"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_image_tumb" translatesAutoresizingMaskIntoConstraints="NO" id="z4m-h7-cIS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                        <gestureRecognizers/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <gestureRecognizers/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="z4m-h7-cIS" secondAttribute="trailing" id="Aeh-GU-HSj"/>
+                                                <constraint firstItem="z4m-h7-cIS" firstAttribute="leading" secondItem="upQ-E8-1dC" secondAttribute="leading" id="GhR-Ed-Xy2"/>
+                                                <constraint firstAttribute="bottom" secondItem="z4m-h7-cIS" secondAttribute="bottom" id="VSB-QU-79l"/>
+                                                <constraint firstItem="z4m-h7-cIS" firstAttribute="top" secondItem="upQ-E8-1dC" secondAttribute="top" id="duZ-uk-ZIk"/>
+                                            </constraints>
+                                            <connections>
+                                                <outlet property="photo" destination="z4m-h7-cIS" id="gtG-aN-k2z"/>
+                                            </connections>
+                                        </collectionViewCell>
+                                    </cells>
+                                </collectionView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOW-9v-ISN">
+                                    <rect key="frame" x="16" y="103" width="568" height="49"/>
+                                    <color key="backgroundColor" red="0.90588235289999997" green="0.1137254902" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="49" id="xYb-EF-Y7N"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                    <state key="normal" title="POST">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="wOW-9v-ISN" firstAttribute="top" secondItem="vmi-Z5-PQZ" secondAttribute="bottom" constant="8" id="8bg-wi-MSK"/>
+                                <constraint firstItem="vmi-Z5-PQZ" firstAttribute="top" secondItem="vop-Zs-AVK" secondAttribute="top" id="949-CL-3r9"/>
+                                <constraint firstAttribute="bottom" secondItem="wOW-9v-ISN" secondAttribute="bottom" constant="18" id="Axd-6H-m9Y"/>
+                                <constraint firstItem="wOW-9v-ISN" firstAttribute="leading" secondItem="vop-Zs-AVK" secondAttribute="leading" constant="16" id="QoC-Lx-OyQ"/>
+                                <constraint firstItem="vmi-Z5-PQZ" firstAttribute="leading" secondItem="vop-Zs-AVK" secondAttribute="leading" id="ROO-fd-v5S"/>
+                                <constraint firstItem="wOW-9v-ISN" firstAttribute="centerX" secondItem="vop-Zs-AVK" secondAttribute="centerX" id="VWz-db-5eC"/>
+                                <constraint firstAttribute="trailing" secondItem="vmi-Z5-PQZ" secondAttribute="trailing" id="mEG-TW-VTw"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostingCell" rowHeight="78" id="fXA-rQ-ZwI" customClass="PostingCell" customModule="CitiFleet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="78"/>
@@ -533,8 +570,67 @@
                                     <outlet property="title" destination="wpb-tz-gzt" id="McY-2v-Mmh"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LADLocationCell" rowHeight="174" id="NU0-qM-NHC" customClass="LegalAidCell" customModule="CitiFleet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="106" width="600" height="174"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyRentSalePriceCell" rowHeight="78" id="u4g-Tf-4A8" customClass="MyRentSalePriceCell" customModule="CitiFleet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="106" width="600" height="78"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u4g-Tf-4A8" id="j2m-Yc-xBS">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lawyer-location" translatesAutoresizingMaskIntoConstraints="NO" id="jTS-Od-xHa">
+                                            <rect key="frame" x="17" y="16" width="18" height="17"/>
+                                            <color key="tintColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzY-1d-S6h">
+                                            <rect key="frame" x="43" y="15" width="71" height="20"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
+                                            <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arr-odwn" translatesAutoresizingMaskIntoConstraints="NO" id="rk0-Q0-qBt">
+                                            <rect key="frame" x="575" y="36" width="9" height="5"/>
+                                        </imageView>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="brR-pZ-FBS">
+                                            <rect key="frame" x="17" y="43" width="550" height="17"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="u4g-Tf-4A8" id="ats-c8-Dff"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rk0-Q0-qBt" firstAttribute="centerY" secondItem="j2m-Yc-xBS" secondAttribute="centerY" id="7fO-ue-8bG"/>
+                                        <constraint firstItem="brR-pZ-FBS" firstAttribute="top" secondItem="nzY-1d-S6h" secondAttribute="bottom" constant="8" id="9ZU-1F-LDQ"/>
+                                        <constraint firstItem="jTS-Od-xHa" firstAttribute="top" secondItem="j2m-Yc-xBS" secondAttribute="topMargin" constant="16" id="Flc-WY-lAy"/>
+                                        <constraint firstItem="nzY-1d-S6h" firstAttribute="centerY" secondItem="jTS-Od-xHa" secondAttribute="centerY" id="JpW-yd-vSi"/>
+                                        <constraint firstItem="jTS-Od-xHa" firstAttribute="top" secondItem="j2m-Yc-xBS" secondAttribute="top" constant="16" id="MQv-cL-HHN"/>
+                                        <constraint firstItem="jTS-Od-xHa" firstAttribute="leading" secondItem="j2m-Yc-xBS" secondAttribute="leading" constant="17" id="Mco-Ex-kCA"/>
+                                        <constraint firstAttribute="trailing" secondItem="rk0-Q0-qBt" secondAttribute="trailing" constant="16" id="TGN-7o-AEY"/>
+                                        <constraint firstItem="brR-pZ-FBS" firstAttribute="leading" secondItem="jTS-Od-xHa" secondAttribute="leading" id="USK-ne-F1G"/>
+                                        <constraint firstAttribute="trailing" secondItem="brR-pZ-FBS" secondAttribute="trailing" constant="33" id="aMh-k0-6CS"/>
+                                        <constraint firstItem="jTS-Od-xHa" firstAttribute="leading" secondItem="j2m-Yc-xBS" secondAttribute="leadingMargin" constant="17" id="cV4-TV-5ze"/>
+                                        <constraint firstItem="rk0-Q0-qBt" firstAttribute="centerX" secondItem="j2m-Yc-xBS" secondAttribute="centerX" id="t2H-zM-7lD"/>
+                                        <constraint firstItem="nzY-1d-S6h" firstAttribute="leading" secondItem="jTS-Od-xHa" secondAttribute="trailing" constant="8" id="zUf-bX-4Mw"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="Flc-WY-lAy"/>
+                                            <exclude reference="cV4-TV-5ze"/>
+                                            <exclude reference="t2H-zM-7lD"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="icon" destination="jTS-Od-xHa" id="XDV-gH-IMD"/>
+                                    <outlet property="nextScreenArrow" destination="rk0-Q0-qBt" id="MLV-ji-ihe"/>
+                                    <outlet property="priceTF" destination="brR-pZ-FBS" id="SdX-Ct-MTA"/>
+                                    <outlet property="title" destination="nzY-1d-S6h" id="RaC-W3-pxf"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyRentSaleDescriptionCell" rowHeight="174" id="NU0-qM-NHC" customClass="MyRentSaleDescriptionCell" customModule="CitiFleet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="184" width="600" height="174"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NU0-qM-NHC" id="fUS-6e-KPb">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="173"/>
@@ -550,17 +646,20 @@
                                             <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arr-odwn" translatesAutoresizingMaskIntoConstraints="NO" id="uIV-JP-4aN">
-                                            <rect key="frame" x="575" y="36" width="9" height="5"/>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arr-odwn" translatesAutoresizingMaskIntoConstraints="NO" id="uIV-JP-4aN">
+                                            <rect key="frame" x="575" y="84" width="9" height="5"/>
                                         </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyQ-QL-62r" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyQ-QL-62r" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
                                             <rect key="frame" x="14" y="35" width="572" height="138"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="14.430000305175781"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Provide Description"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <outlet property="delegate" destination="NU0-qM-NHC" id="rAX-U6-GPn"/>
+                                            </connections>
                                         </textView>
                                     </subviews>
                                     <constraints>
@@ -587,6 +686,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="descriptionTV" destination="kyQ-QL-62r" id="gTb-H2-gEd"/>
                                     <outlet property="icon" destination="oJf-8B-tar" id="3d7-Ou-y5n"/>
                                     <outlet property="nextScreenArrow" destination="uIV-JP-4aN" id="WNb-4l-F8l"/>
                                     <outlet property="title" destination="1Ec-rO-x8C" id="Ihi-Os-IZz"/>
@@ -606,6 +706,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="photoCollectionView" destination="vmi-Z5-PQZ" id="M0g-LA-kvT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YvR-h2-Zeo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
