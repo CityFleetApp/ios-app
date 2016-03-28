@@ -41,7 +41,7 @@ class DOCManager: NSObject {
     }
     
     func loadDocuments(completion:(([Document.CellType: Document]?, NSError?) -> ())?) {
-        RequestManager.sharedInstance().getDocs { (docs, error) -> () in
+        RequestManager.sharedInstance().getDocs { [unowned self] (docs, error) -> () in
             if error != nil {
                 completion!(nil, error)
                 return

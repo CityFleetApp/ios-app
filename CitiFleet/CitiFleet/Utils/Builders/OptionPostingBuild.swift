@@ -22,11 +22,8 @@ class OptionPostingBuild: NSObject {
         let viewController = storyboard.instantiateViewControllerWithIdentifier(ViewControllerID) as! OptionsPostingVC
         let index = type.rawValue
         viewController.title = PostingTitles[index]
-        viewController.iconNames = PostingIcons[index]
-        viewController.titles = CellTitles[index]
-        viewController.placeholders = CellPlaceholders[index]
-        viewController.numborOfRows = viewController.iconNames.count
         viewController.cellHeight = CellHeights[index]
+        viewController.numborOfRows = 5
         
         return viewController
     }

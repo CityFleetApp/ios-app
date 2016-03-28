@@ -9,6 +9,8 @@
 import UIKit
 
 class PostingCell: LegalAidCell {
+    var didSelect: (() -> ())!
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -19,6 +21,10 @@ class PostingCell: LegalAidCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    func select() {
+        didSelect()
     }
 }
 

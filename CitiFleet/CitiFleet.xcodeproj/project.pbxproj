@@ -59,6 +59,8 @@
 		4334D81F1C7F783F00557AE4 /* UIImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4334D81E1C7F783F00557AE4 /* UIImageUtil.swift */; };
 		434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434EDAE71C7C4EF800934029 /* UITableView+Ext.swift */; };
 		43527F6F1CA3D494003D87FF /* APNSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43527F6E1CA3D494003D87FF /* APNSManager.swift */; };
+		43527F721CA43A53003D87FF /* CellTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43527F711CA43A53003D87FF /* CellTitles.swift */; };
+		43527F781CA6EE98003D87FF /* MarketPlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43527F771CA6EE98003D87FF /* MarketPlaceManager.swift */; };
 		435611971C87532C0050EDE7 /* AddressBookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435611961C87532C0050EDE7 /* AddressBookManager.swift */; };
 		435611991C8763AA0050EDE7 /* RequestManager+SocialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435611981C8763AA0050EDE7 /* RequestManager+SocialManager.swift */; };
 		436D6B181C92C2C200A0240E /* Benefit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D6B171C92C2C200A0240E /* Benefit.swift */; };
@@ -93,6 +95,7 @@
 		43D2D0B21C7C97D600A41D4F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B11C7C97D600A41D4F /* LoginVC.swift */; };
 		43D2D0B61C7C9ABE00A41D4F /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B51C7C9ABE00A41D4F /* LoginTextField.swift */; };
 		43D2D0B81C7C9B2D00A41D4F /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */; };
+		43D6C6481CA9175900DD4C99 /* RentSazeCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6C6471CA9175900DD4C99 /* RentSazeCreator.swift */; };
 		43D900EE1C944F92004A315C /* LegalAidSetuper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D900ED1C944F92004A315C /* LegalAidSetuper.swift */; };
 		43D900F11C945857004A315C /* HighlitableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D900F01C945857004A315C /* HighlitableLabel.swift */; };
 		43D900F31C94657C004A315C /* LegalAidDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D900F21C94657C004A315C /* LegalAidDetailVC.swift */; };
@@ -194,6 +197,8 @@
 		4334D81E1C7F783F00557AE4 /* UIImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageUtil.swift; path = Extensions/UIImageUtil.swift; sourceTree = "<group>"; };
 		434EDAE71C7C4EF800934029 /* UITableView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+Ext.swift"; path = "Extensions/UITableView+Ext.swift"; sourceTree = "<group>"; };
 		43527F6E1CA3D494003D87FF /* APNSManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APNSManager.swift; path = Utils/APNS/APNSManager.swift; sourceTree = "<group>"; };
+		43527F711CA43A53003D87FF /* CellTitles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellTitles.swift; path = Constants/CellTitles.swift; sourceTree = "<group>"; };
+		43527F771CA6EE98003D87FF /* MarketPlaceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarketPlaceManager.swift; path = Utils/Marketplace/MarketPlaceManager.swift; sourceTree = "<group>"; };
 		435611961C87532C0050EDE7 /* AddressBookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressBookManager.swift; path = Utils/AddressBookManager/AddressBookManager.swift; sourceTree = "<group>"; };
 		435611981C8763AA0050EDE7 /* RequestManager+SocialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RequestManager+SocialManager.swift"; path = "Utils/RequestTool/RequestManager+SocialManager.swift"; sourceTree = "<group>"; };
 		436D6B171C92C2C200A0240E /* Benefit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Benefit.swift; path = Model/Benefit.swift; sourceTree = "<group>"; };
@@ -229,6 +234,7 @@
 		43D2D0B11C7C97D600A41D4F /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginVC.swift; path = Login/LoginVC.swift; sourceTree = "<group>"; };
 		43D2D0B51C7C9ABE00A41D4F /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTextField.swift; path = Viewes/Login/LoginTextField.swift; sourceTree = "<group>"; };
 		43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Ext.swift"; path = "Extensions/UIView+Ext.swift"; sourceTree = "<group>"; };
+		43D6C6471CA9175900DD4C99 /* RentSazeCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RentSazeCreator.swift; path = Utils/Marketplace/RentSazeCreator.swift; sourceTree = "<group>"; };
 		43D900ED1C944F92004A315C /* LegalAidSetuper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidSetuper.swift; path = "Utils/Legal Aid/LegalAidSetuper.swift"; sourceTree = "<group>"; };
 		43D900F01C945857004A315C /* HighlitableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HighlitableLabel.swift; path = Viewes/HighlitableLabel/HighlitableLabel.swift; sourceTree = "<group>"; };
 		43D900F21C94657C004A315C /* LegalAidDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidDetailVC.swift; path = ViewController/Dash/LegalAid/LegalAidDetailVC.swift; sourceTree = "<group>"; };
@@ -367,6 +373,7 @@
 		4316BB7C1C7B046A007A9ECB /* CitiFleet */ = {
 			isa = PBXGroup;
 			children = (
+				43527F701CA43595003D87FF /* Postings */,
 				4316BBA51C7B61D7007A9ECB /* Constants */,
 				4316BBA01C7B5EBE007A9ECB /* Extensions */,
 				4316BBB21C7B7399007A9ECB /* Utils */,
@@ -494,8 +501,6 @@
 		433037171C9D5E9B001EAE94 /* Builders */ = {
 			isa = PBXGroup;
 			children = (
-				4330371A1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift */,
-				431D2DC21C9ECA8C00CBC4BA /* OptionPostingBuild.swift */,
 				431D2DD61CA1521800CBC4BA /* DOCManagementCellBuilder.swift */,
 			);
 			name = Builders;
@@ -504,7 +509,6 @@
 		4330371C1C9D6248001EAE94 /* Postings */ = {
 			isa = PBXGroup;
 			children = (
-				4330371D1C9D629D001EAE94 /* PostingCell.swift */,
 			);
 			name = Postings;
 			sourceTree = "<group>";
@@ -550,6 +554,38 @@
 				43527F6E1CA3D494003D87FF /* APNSManager.swift */,
 			);
 			name = APNS;
+			sourceTree = "<group>";
+		};
+		43527F701CA43595003D87FF /* Postings */ = {
+			isa = PBXGroup;
+			children = (
+				43527F751CA43C21003D87FF /* Cells */,
+				431D2DC01C9EC70D00CBC4BA /* OptionsPostingVC.swift */,
+				4330371A1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift */,
+				43D6C6471CA9175900DD4C99 /* RentSazeCreator.swift */,
+				43527F771CA6EE98003D87FF /* MarketPlaceManager.swift */,
+				43527F761CA43C88003D87FF /* Menu */,
+			);
+			name = Postings;
+			sourceTree = "<group>";
+		};
+		43527F751CA43C21003D87FF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				43527F711CA43A53003D87FF /* CellTitles.swift */,
+				4330371D1C9D629D001EAE94 /* PostingCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		43527F761CA43C88003D87FF /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				431D2DC21C9ECA8C00CBC4BA /* OptionPostingBuild.swift */,
+				431D2DC61C9ED80900CBC4BA /* PostingsVC.swift */,
+				431D2DC81C9ED84400CBC4BA /* PostingsRentSaleVC.swift */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		435611951C8752F10050EDE7 /* Address Book Manager */ = {
@@ -827,9 +863,6 @@
 		43F5E2391C9C5369000BBB91 /* Postings */ = {
 			isa = PBXGroup;
 			children = (
-				431D2DC01C9EC70D00CBC4BA /* OptionsPostingVC.swift */,
-				431D2DC61C9ED80900CBC4BA /* PostingsVC.swift */,
-				431D2DC81C9ED84400CBC4BA /* PostingsRentSaleVC.swift */,
 			);
 			name = Postings;
 			sourceTree = "<group>";
@@ -1049,6 +1082,7 @@
 				430A59D91CA1928900FCD13D /* DOCManagementDatePicker.swift in Sources */,
 				43A426631C9040150044B6A6 /* Settings.swift in Sources */,
 				430A59DF1CA2A02B00FCD13D /* DOCManager.swift in Sources */,
+				43527F781CA6EE98003D87FF /* MarketPlaceManager.swift in Sources */,
 				4316BBA91C7B61F5007A9ECB /* Fonts.swift in Sources */,
 				4334D8151C7F496F00557AE4 /* DashVC.swift in Sources */,
 				43CFA7631C93915F00DC89C9 /* ProfileVC.swift in Sources */,
@@ -1116,6 +1150,7 @@
 				431D2DC11C9EC70D00CBC4BA /* OptionsPostingVC.swift in Sources */,
 				43DC05891C80AEBB00AB670A /* Strings.swift in Sources */,
 				43D2D0B61C7C9ABE00A41D4F /* LoginTextField.swift in Sources */,
+				43527F721CA43A53003D87FF /* CellTitles.swift in Sources */,
 				43D900F31C94657C004A315C /* LegalAidDetailVC.swift in Sources */,
 				431D2DC31C9ECA8C00CBC4BA /* OptionPostingBuild.swift in Sources */,
 				43AD51661C9641C2002261DB /* AvatarRatingView.swift in Sources */,
@@ -1130,6 +1165,7 @@
 				43F834091C97116B00DE7E50 /* LegalAidActor.swift in Sources */,
 				43A426711C91B71A0044B6A6 /* BenefitsLayout.swift in Sources */,
 				43DC05BE1C847C7200AB670A /* RequestManager+Reports.swift in Sources */,
+				43D6C6481CA9175900DD4C99 /* RentSazeCreator.swift in Sources */,
 				43B6D8591C7F055C000D6844 /* Global.swift in Sources */,
 				43F834051C96CAB400DE7E50 /* PickerDialog.swift in Sources */,
 				43F8340D1C9719CF00DE7E50 /* RequestManager+LegalAid.swift in Sources */,

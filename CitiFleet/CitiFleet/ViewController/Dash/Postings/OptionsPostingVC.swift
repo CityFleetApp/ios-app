@@ -9,12 +9,17 @@
 import UIKit
 
 class OptionsPostingVC: UITableViewController {
-    private let CellID = "PostingCell"
     var cellHeight: CGFloat!
     var numborOfRows: Int!
-    var iconNames: [String]!
-    var titles: [String]!
-    var placeholders: [String]!
+    var cellBuilder: MyRentSaleCellBuilder!
+    var dataManager = MarketPlaceManager()
+    var uploader = RentSazeCreator()
+    
+    override func viewDidLoad() {
+        cellBuilder = MyRentSaleCellBuilder(tableView: tableView, marketPlaceManager: dataManager)
+        cellBuilder.postingCreater = uploader
+        dataManager.loadData()
+    }
 }
 
 extension OptionsPostingVC {
@@ -31,17 +36,11 @@ extension OptionsPostingVC {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(CellID) as? PostingCell
-        if cell == nil {
-            cell = PostingCell(style: .Default, reuseIdentifier: CellID)
-        }
-        
-        let index = indexPath.row
-        cell?.icon.image = UIImage(named: iconNames[index])?.imageWithRenderingMode(.AlwaysTemplate)
-        cell?.title.text = titles[index]
-        cell?.placeHolder?.placeholderText = placeholders[index]
-        cell?.setEditable(true)
-        
-        return cell!
+        return cellBuilder.build(indexPath)
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! PostingCell
+        cell.select()
     }
 }

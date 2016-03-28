@@ -24,12 +24,10 @@ class DOCManagementCellBuilder: NSObject {
     let DOCManagementCellID: String = "DOCManagementCellID"
     let TemplateImage = UIImage(named: "Doc-management-template")
     var tableView: UITableView
-    var indexPath: NSIndexPath
-    var docManager: DOCManager
+    weak var docManager: DOCManager?
     
-    init(tableView: UITableView, indexPath: NSIndexPath, docManager: DOCManager) {
+    init(tableView: UITableView, docManager: DOCManager) {
         self.tableView = tableView
-        self.indexPath = indexPath
         self.docManager = docManager
         super.init()
     }
@@ -38,13 +36,13 @@ class DOCManagementCellBuilder: NSObject {
         print("Destroyed builder")
     }
     
-    func build() -> DOCManagementCell {
+    func build(indexPath: NSIndexPath) -> DOCManagementCell {
         var cell = tableView.dequeueReusableCellWithIdentifier(DOCManagementCellID) as? DOCManagementCell
         if cell == nil {
             cell = DOCManagementCell(style: .Default, reuseIdentifier: DOCManagementCellID)
         }
         
-        if let doc = docManager.documents[Document.CellType(rawValue: indexPath.row)!] {
+        if let doc = docManager!.documents[Document.CellType(rawValue: indexPath.row)!] {
             setupCellWithExistingDoc(cell!, doc: doc)
         } else {
             setupNewCell(cell!)
@@ -59,30 +57,29 @@ class DOCManagementCellBuilder: NSObject {
     }
     
     private func setActionsForCell(cell: DOCManagementCell?, type: Document.CellType?) {
-        let weakRef = self
-        cell?.saveDocument = { (document) in
-            weakRef.docManager.addDocument(document, completion: { () -> () in
+        cell?.saveDocument = { [unowned self] (document) in
+            self.docManager!.addDocument(document, completion: { () -> () in
                 
             })
         }
         
-        cell?.selectedPhoto = { (image) in
-            var doc = weakRef.documentWithType(type!)
+        cell?.selectedPhoto = { [unowned self] (image) in
+            var doc = self.documentWithType(type!)
             doc.photo = image
         }
         
-        cell?.selectedDate = { (date) in
-            var doc = weakRef.documentWithType(type!)
+        cell?.selectedDate = { [unowned self] (date) in
+            var doc = self.documentWithType(type!)
             doc.expiryDate = date
         }
     }
     
-    private func documentWithType(documentType: Document.CellType) -> Document {
-        if let doc = docManager.documents[documentType] {
+    func documentWithType(documentType: Document.CellType) -> Document {
+        if let doc = docManager!.documents[documentType] {
             return doc
         }
         let doc = Document(type: documentType, uploaded: false, expiryDate: nil, plateNumber: nil, photo: nil, photoURL: nil)
-        docManager.documents[documentType] = doc
+        docManager!.documents[documentType] = doc
         return doc
     }
     
