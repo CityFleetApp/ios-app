@@ -20,6 +20,11 @@ class OptionsPostingVC: UITableViewController {
     private var vehicleCollectionViewDelegate: PostingPhotosCollectionDelegate!
     
     override func viewDidLoad() {
+        let menuItemDelete = UIMenuItem(title: "Delete", action: Selector("deletePhoto:"))
+        //        let menuItemEdit = UIMenuItem(title: "Edit", action: Selector("editPhoto:"))
+        UIMenuController.sharedMenuController().menuItems = [menuItemDelete]
+        UIMenuController.sharedMenuController().menuVisible = true
+        
         cellBuilder = MyRentSaleCellBuilder(tableView: tableView, marketPlaceManager: dataManager)
         cellBuilder.postingCreater = uploader
         dataManager.loadData()
