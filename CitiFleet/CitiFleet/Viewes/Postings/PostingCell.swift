@@ -47,6 +47,22 @@ extension MyRentSalePriceCell: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if textField.text?.containsString(".") == true && string.containsString(".") {
+            return false
+        }
+        return !containLetters(string)
+    }
+    
+    private func containLetters(string: String) -> Bool {
+        for ch in string.characters {
+            if ch < "1" && ch > "0" && ch != "." {
+                return true
+            }
+        }
+        return false
+    }
 }
 
 class MyRentSaleDescriptionCell: PostingCell {
@@ -75,6 +91,7 @@ extension MyRentSaleDescriptionCell: UITextViewDelegate {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 7
         let attributes = [
+            NSFontAttributeName: UIFont(name: FontNames.Montserrat.Regular, size: 14.4)!,
             NSForegroundColorAttributeName: Color.Global.BlueTextColor,
             NSParagraphStyleAttributeName: paragraphStyle
         ]
