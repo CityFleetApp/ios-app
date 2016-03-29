@@ -96,6 +96,7 @@
 		43D2D0B61C7C9ABE00A41D4F /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B51C7C9ABE00A41D4F /* LoginTextField.swift */; };
 		43D2D0B81C7C9B2D00A41D4F /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */; };
 		43D6C6481CA9175900DD4C99 /* RentSazeCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6C6471CA9175900DD4C99 /* RentSazeCreator.swift */; };
+		43D6C64A1CA98D9600DD4C99 /* PostingPhotosCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6C6491CA98D9600DD4C99 /* PostingPhotosCollectionDelegate.swift */; };
 		43D900EE1C944F92004A315C /* LegalAidSetuper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D900ED1C944F92004A315C /* LegalAidSetuper.swift */; };
 		43D900F11C945857004A315C /* HighlitableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D900F01C945857004A315C /* HighlitableLabel.swift */; };
 		43D900F31C94657C004A315C /* LegalAidDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D900F21C94657C004A315C /* LegalAidDetailVC.swift */; };
@@ -235,6 +236,7 @@
 		43D2D0B51C7C9ABE00A41D4F /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTextField.swift; path = Viewes/Login/LoginTextField.swift; sourceTree = "<group>"; };
 		43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Ext.swift"; path = "Extensions/UIView+Ext.swift"; sourceTree = "<group>"; };
 		43D6C6471CA9175900DD4C99 /* RentSazeCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RentSazeCreator.swift; path = Utils/Marketplace/RentSazeCreator.swift; sourceTree = "<group>"; };
+		43D6C6491CA98D9600DD4C99 /* PostingPhotosCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostingPhotosCollectionDelegate.swift; path = Utils/Marketplace/PostingPhotosCollectionDelegate.swift; sourceTree = "<group>"; };
 		43D900ED1C944F92004A315C /* LegalAidSetuper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidSetuper.swift; path = "Utils/Legal Aid/LegalAidSetuper.swift"; sourceTree = "<group>"; };
 		43D900F01C945857004A315C /* HighlitableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HighlitableLabel.swift; path = Viewes/HighlitableLabel/HighlitableLabel.swift; sourceTree = "<group>"; };
 		43D900F21C94657C004A315C /* LegalAidDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidDetailVC.swift; path = ViewController/Dash/LegalAid/LegalAidDetailVC.swift; sourceTree = "<group>"; };
@@ -564,6 +566,7 @@
 				4330371A1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift */,
 				43D6C6471CA9175900DD4C99 /* RentSazeCreator.swift */,
 				43527F771CA6EE98003D87FF /* MarketPlaceManager.swift */,
+				43D6C6491CA98D9600DD4C99 /* PostingPhotosCollectionDelegate.swift */,
 				43527F761CA43C88003D87FF /* Menu */,
 			);
 			name = Postings;
@@ -1157,6 +1160,7 @@
 				436D6B181C92C2C200A0240E /* Benefit.swift in Sources */,
 				436D6B1F1C92E37600A0240E /* UIViewController+Ext.swift in Sources */,
 				4316BB7E1C7B046A007A9ECB /* AppDelegate.swift in Sources */,
+				43D6C64A1CA98D9600DD4C99 /* PostingPhotosCollectionDelegate.swift in Sources */,
 				436D6B1A1C92C6FB00A0240E /* RequestManager+Benefit.swift in Sources */,
 				430B4F481C7DEAF000EE884A /* LoaderViewManager.swift in Sources */,
 				43F5E21A1C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift in Sources */,

@@ -19,7 +19,7 @@ class MarketPlaceManager: NSObject {
     var seats: [MarketPlaceItem] = []
     var fuel: [MarketPlaceItem] = []
     var type: [MarketPlaceItem] = []
-    var model: [MarketPlaceItem]?
+    var model: [MarketPlaceItem] = []
     
     private class DataDownloader: NSOperation {
         enum State: String {
@@ -108,6 +108,7 @@ class MarketPlaceManager: NSObject {
         
         typealias MPURL = URL.Marketplace
         let operationQueue = NSOperationQueue()
+        operationQueue.maxConcurrentOperationCount = 1
         
         operationQueue.addOperation(DataDownloader(manager: self, URLstr: MPURL.make, completion: { [unowned self] (arr) in
             self.make = arr
@@ -126,6 +127,22 @@ class MarketPlaceManager: NSObject {
             }))
         
         operationQueue.addObserver(self, forKeyPath: operationsKeyPath, options: NSKeyValueObservingOptions(), context: UnsafeMutablePointer())
+    }
+    
+    func loadModels(makeID: Int, completion: (() -> ())) {
+        model.removeAll()
+        let url = "\(URL.Marketplace.model)?make=\(makeID)"
+        RequestManager.sharedInstance().get(url, parameters: nil) { [unowned self] (json, error) -> () in
+            let Params = ("id", "name")
+            if let results = json?.arrayObject {
+                for modelsJSON in results {
+                    let id = modelsJSON[Params.0] as! Int
+                    let name = modelsJSON[Params.1] as! String
+                    self.model.append((id, name))
+                }
+            }
+            completion()
+        }
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {

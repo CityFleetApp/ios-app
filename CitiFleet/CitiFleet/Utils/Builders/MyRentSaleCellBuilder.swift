@@ -49,7 +49,11 @@ class MyRentSaleCellBuilder: PostingCellBuilder {
             cell?.title.text = CellResources.RentSale.Titles[index]
             cell?.placeHolder?.placeholderText = CellResources.RentSale.PlaceHolders[index]
             cell?.icon.image = UIImage(named: CellResources.RentSale.iconNames[index])?.imageWithRenderingMode(.AlwaysTemplate)
-            cell?.setEditable(indexPath.row != 1)
+            if indexPath.row == 1 {
+                cell?.setEditable(postingCreater.model != nil)
+            }
+            cell?.setEditable(true)
+            
             setupCellAction(cell!, indexPath: indexPath)
             return cell!
         }
@@ -85,7 +89,7 @@ class MyRentSaleCellBuilder: PostingCellBuilder {
     }
     
     private func setupCellAction(cell: PostingCell, indexPath: NSIndexPath) {
-        let arrays = [dataManager.make, dataManager.make, dataManager.type, dataManager.colors, createYearArr(), dataManager.seats]
+        let arrays = [dataManager.make, dataManager.model, dataManager.type, dataManager.colors, createYearArr(), dataManager.fuel, dataManager.seats]
         cell.didSelect = {
             let dialog = PickerDialog.viewFromNib()
             dialog.components = arrays[indexPath.row].map({ return $0.1 })
@@ -120,7 +124,7 @@ class MyRentSaleCellBuilder: PostingCellBuilder {
             cellText = make.1
             break
         case 1:
-            let model = dataManager.model![index]
+            let model = dataManager.model[index]
             postingCreater.model = model
             cellText = model.1
             break
@@ -158,6 +162,11 @@ class MyRentSaleCellBuilder: PostingCellBuilder {
     }
     
     private func resetModel() {
+        if let make = postingCreater.make {
+            dataManager.loadModels(make.0) { [unowned self] in
+                self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: .Automatic)
+            }
+        }
         postingCreater.model = nil
         let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0)) as? PostingCell
         cell?.placeHolder?.placeholderText = CellResources.RentSale.PlaceHolders[1]

@@ -25,11 +25,11 @@ class GalleryPhoto: NSObject, NYTPhoto {
     let attributedCaptionSummary: NSAttributedString? = NSAttributedString(string: "", attributes: [NSForegroundColorAttributeName: UIColor.grayColor()])
     let attributedCaptionCredit: NSAttributedString? = NSAttributedString(string: "", attributes: [NSForegroundColorAttributeName: UIColor.darkGrayColor()])
     
-    var largePhotoURL: NSURL
-    var thumbURL: NSURL
-    var id: Int
+    var largePhotoURL: NSURL?
+    var thumbURL: NSURL?
+    var id: Int?
     
-    init(image: UIImage? = nil, imageData: NSData? = nil, attributedCaptionTitle: NSAttributedString, largePhotoURL: NSURL, thumbURL: NSURL, id: Int) {
+    init(image: UIImage? = nil, imageData: NSData? = nil, attributedCaptionTitle: NSAttributedString, largePhotoURL: NSURL?, thumbURL: NSURL?, id: Int?) {
         self.image = image
         self.imageData = imageData
         self.attributedCaptionTitle = attributedCaptionTitle
@@ -38,16 +38,17 @@ class GalleryPhoto: NSObject, NYTPhoto {
         self.id = id 
         super.init()
         
-        let downloadManager = KingfisherManager.sharedManager
-        downloadManager.retrieveImageWithURL(largePhotoURL, optionsInfo: nil, progressBlock: nil) { (image, error, cacheType, imageURL) in
-            self.image = image
-            NSNotificationCenter.defaultCenter().postNotificationName(NYTPhotoViewControllerPhotoImageUpdatedNotification, object: self)
-        }
-        
-        if thumbImage == nil {
-            downloadManager.retrieveImageWithURL(thumbURL, optionsInfo: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
-                self.thumbImage = image
-            })
+        if largePhotoURL != nil && thumbURL != nil {
+            let downloadManager = KingfisherManager.sharedManager
+            downloadManager.retrieveImageWithURL(largePhotoURL!, optionsInfo: nil, progressBlock: nil) { (image, error, cacheType, imageURL) in
+                self.image = image
+                NSNotificationCenter.defaultCenter().postNotificationName(NYTPhotoViewControllerPhotoImageUpdatedNotification, object: self)
+            }
+            if thumbImage == nil {
+                downloadManager.retrieveImageWithURL(thumbURL!, optionsInfo: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
+                    self.thumbImage = image
+                })
+            }
         }
     }
 }

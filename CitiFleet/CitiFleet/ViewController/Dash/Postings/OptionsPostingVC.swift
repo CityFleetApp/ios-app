@@ -17,14 +17,14 @@ class OptionsPostingVC: UITableViewController {
     var dataManager = MarketPlaceManager()
     var uploader = RentSazeCreator()
     
-    private var vehicleCollectionViewDelegate: VehicleCollectionViewDelegate!
+    private var vehicleCollectionViewDelegate: PostingPhotosCollectionDelegate!
     
     override func viewDidLoad() {
         cellBuilder = MyRentSaleCellBuilder(tableView: tableView, marketPlaceManager: dataManager)
         cellBuilder.postingCreater = uploader
         dataManager.loadData()
         
-        vehicleCollectionViewDelegate = VehicleCollectionViewDelegate(reloadData: { [unowned self] in
+        vehicleCollectionViewDelegate = PostingPhotosCollectionDelegate(reloadData: { [unowned self] in
             self.photoCollectionView.reloadData()
         })
         
