@@ -30,7 +30,7 @@ extension RequestManager {
             Params.DOCManagement.docType: String(docType + 1)
         ]
         
-        uploadPhoto(params, data: data!, baseUrl: URL.DOCManagement.Documents, HTTPMethod: HTTPMethod, name: "file") { (response, error) -> () in
+        uploadPhoto(params, data: [data!], baseUrl: URL.DOCManagement.Documents, HTTPMethod: HTTPMethod, name: "file") { (response, error) -> () in
             if error != nil {
                 completion(nil, error)
                 return

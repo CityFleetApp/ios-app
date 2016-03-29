@@ -11,7 +11,7 @@ import UIKit
 class PostingCellBuilder: NSObject {
     var tableView: UITableView
     var dataManager: MarketPlaceManager
-    var postingCreater: RentSazeCreator!
+    var postingCreater: RentSaleCreator!
     
     var reloadData: (() -> ())!
     var reloadCell: (( CGFloat ) -> ())!
@@ -66,8 +66,13 @@ class MyRentSaleCellBuilder: PostingCellBuilder {
             cell = MyRentSalePriceCell(style: .Default, reuseIdentifier: cellID)
         }
         cell?.didSelect = {
-            
+            cell?.priceTF.becomeFirstResponder()
         }
+        
+        cell?.changedText = { [unowned self] (text) in
+            self.postingCreater.price = text
+        }
+        
         cell?.setEditable(true)
         return cell!
     }
@@ -79,17 +84,29 @@ class MyRentSaleCellBuilder: PostingCellBuilder {
             cell = MyRentSaleDescriptionCell(style: .Default, reuseIdentifier: cellID)
         }
         cell?.didSelect = {
-            
+            cell?.descriptionTV.becomeFirstResponder()
         }
         cell?.changedHeight = { [unowned self] (newHeight) in
             self.reloadCell(newHeight)
         }
+        cell?.changedText = { [unowned self] (text) in
+            self.postingCreater.rentSaleDescription = text
+        }
+        
         cell?.setEditable(true)
         return cell!
     }
     
     private func setupCellAction(cell: PostingCell, indexPath: NSIndexPath) {
-        let arrays = [dataManager.make, dataManager.model, dataManager.type, dataManager.colors, createYearArr(), dataManager.fuel, dataManager.seats]
+        let arrays = [
+            dataManager.make,
+            dataManager.model,
+            dataManager.type,
+            dataManager.colors,
+            createYearArr(),
+            dataManager.fuel,
+            dataManager.seats
+        ]
         cell.didSelect = {
             let dialog = PickerDialog.viewFromNib()
             dialog.components = arrays[indexPath.row].map({ return $0.1 })
@@ -130,7 +147,7 @@ class MyRentSaleCellBuilder: PostingCellBuilder {
             break
         case 2:
             let type = dataManager.type[index]
-            postingCreater.model = type
+            postingCreater.type = type
             cellText = type.1
             break
         case 3:
@@ -169,6 +186,7 @@ class MyRentSaleCellBuilder: PostingCellBuilder {
         }
         postingCreater.model = nil
         let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0)) as? PostingCell
+        cell?.placeHolder?.highlitedText = nil
         cell?.placeHolder?.placeholderText = CellResources.RentSale.PlaceHolders[1]
         cell?.setEditable(true)
     }

@@ -500,6 +500,9 @@
                                             <real key="value" value="5"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="postRentSale" destination="wes-qS-Po1" eventType="touchUpInside" id="m2a-xH-VPb"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -599,6 +602,7 @@
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14.399999618530273"/>
                                             <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             <connections>
+                                                <action selector="textChanged:" destination="u4g-Tf-4A8" eventType="editingChanged" id="uZd-ug-Qnp"/>
                                                 <outlet property="delegate" destination="u4g-Tf-4A8" id="ats-c8-Dff"/>
                                             </connections>
                                         </textField>

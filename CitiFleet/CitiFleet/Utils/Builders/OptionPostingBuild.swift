@@ -26,6 +26,15 @@ class OptionPostingBuild: NSObject {
         viewController.descriptionCellHeight = viewController.cellHeight
         viewController.numborOfRows = 9
         
+        switch type {
+        case .Rent:
+            viewController.uploader.postingType = .Rent
+            break
+        case .Sale:
+            viewController.uploader.postingType = .Sale
+            break
+        }
+        
         return viewController
     }
 }

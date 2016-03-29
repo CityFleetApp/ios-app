@@ -97,6 +97,7 @@
 		43D2D0B81C7C9B2D00A41D4F /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */; };
 		43D6C6481CA9175900DD4C99 /* RentSazeCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6C6471CA9175900DD4C99 /* RentSazeCreator.swift */; };
 		43D6C64A1CA98D9600DD4C99 /* PostingPhotosCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6C6491CA98D9600DD4C99 /* PostingPhotosCollectionDelegate.swift */; };
+		43D6C64C1CAA7E3B00DD4C99 /* RequestManager+Posting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D6C64B1CAA7E3B00DD4C99 /* RequestManager+Posting.swift */; };
 		43D900EE1C944F92004A315C /* LegalAidSetuper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D900ED1C944F92004A315C /* LegalAidSetuper.swift */; };
 		43D900F11C945857004A315C /* HighlitableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D900F01C945857004A315C /* HighlitableLabel.swift */; };
 		43D900F31C94657C004A315C /* LegalAidDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D900F21C94657C004A315C /* LegalAidDetailVC.swift */; };
@@ -237,6 +238,7 @@
 		43D2D0B71C7C9B2D00A41D4F /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Ext.swift"; path = "Extensions/UIView+Ext.swift"; sourceTree = "<group>"; };
 		43D6C6471CA9175900DD4C99 /* RentSazeCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RentSazeCreator.swift; path = Utils/Marketplace/RentSazeCreator.swift; sourceTree = "<group>"; };
 		43D6C6491CA98D9600DD4C99 /* PostingPhotosCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostingPhotosCollectionDelegate.swift; path = Utils/Marketplace/PostingPhotosCollectionDelegate.swift; sourceTree = "<group>"; };
+		43D6C64B1CAA7E3B00DD4C99 /* RequestManager+Posting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RequestManager+Posting.swift"; path = "Utils/RequestTool/RequestManager+Posting.swift"; sourceTree = "<group>"; };
 		43D900ED1C944F92004A315C /* LegalAidSetuper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidSetuper.swift; path = "Utils/Legal Aid/LegalAidSetuper.swift"; sourceTree = "<group>"; };
 		43D900F01C945857004A315C /* HighlitableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HighlitableLabel.swift; path = Viewes/HighlitableLabel/HighlitableLabel.swift; sourceTree = "<group>"; };
 		43D900F21C94657C004A315C /* LegalAidDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidDetailVC.swift; path = ViewController/Dash/LegalAid/LegalAidDetailVC.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				435611981C8763AA0050EDE7 /* RequestManager+SocialManager.swift */,
 				436D6B191C92C6FB00A0240E /* RequestManager+Benefit.swift */,
 				430A59E01CA2A86900FCD13D /* RequestManager+DOCManager.swift */,
+				43D6C64B1CAA7E3B00DD4C99 /* RequestManager+Posting.swift */,
 			);
 			name = "Request Util";
 			sourceTree = "<group>";
@@ -1084,6 +1087,7 @@
 				431D2DD71CA1521800CBC4BA /* DOCManagementCellBuilder.swift in Sources */,
 				430A59D91CA1928900FCD13D /* DOCManagementDatePicker.swift in Sources */,
 				43A426631C9040150044B6A6 /* Settings.swift in Sources */,
+				43D6C64C1CAA7E3B00DD4C99 /* RequestManager+Posting.swift in Sources */,
 				430A59DF1CA2A02B00FCD13D /* DOCManager.swift in Sources */,
 				43527F781CA6EE98003D87FF /* MarketPlaceManager.swift in Sources */,
 				4316BBA91C7B61F5007A9ECB /* Fonts.swift in Sources */,

@@ -11,6 +11,7 @@ import Foundation
 struct Titles {
     static let cancel = "Cancel"
     static let error = "Error"
+    static let Done = "Done"
     static let ConnectionFailed = "Unable to connect to the internet"
     static let Unknown = "Unknown"
     struct Dash {
@@ -28,5 +29,15 @@ struct Titles {
     struct MainScreen {
         static let noMarkersTitle = "Find something"
         static let noMarkersMsg = "Use search to open direction"
+    }
+    struct MarketPlace {
+        static let noPhotos = "Select Photo"
+        static let noPhotosMsg = "Select at least one photo"
+        
+        static let noPrice = "Set the price"
+        static let noPriceMsg = "Please, set the prise of the vehicle"
+        
+        static let noDescription = "Provide the description"
+        static let noDescriptionMsg = "Please, provide description of your vehicle"
     }
 }

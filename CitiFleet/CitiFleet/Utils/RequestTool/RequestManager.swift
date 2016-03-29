@@ -130,7 +130,7 @@ extension RequestManager {
 
 //MARK: - Upload Photo
 extension RequestManager {
-    func uploadPhoto(params: [String: AnyObject]?, data: NSData, baseUrl: String, HTTPMethod: String, name: String, completion: ((AnyObject?, NSError?) -> ())) {
+    func uploadPhoto(params: [String: AnyObject]?, data: [NSData], baseUrl: String, HTTPMethod: String, name: String, completion: ((AnyObject?, NSError?) -> ())) {
         let view = AppDelegate.sharedDelegate().rootViewController().view
         let request = ImageUploader().createRequest(data, baseUrl: baseUrl, HTTPMethod: HTTPMethod, name: name, params: params)
         

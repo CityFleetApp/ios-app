@@ -17,7 +17,7 @@ class ImageUploader: NSObject {
     ///
     /// - returns:            The NSURLRequest that was created
     
-    func createRequest (data: NSData, baseUrl: String, HTTPMethod: String, name: String, params: [String: AnyObject]?) -> NSURLRequest {
+    func createRequest (data: [NSData], baseUrl: String, HTTPMethod: String, name: String, params: [String: AnyObject]?) -> NSURLRequest {
         let boundary = generateBoundaryString()
         
         let url = NSURL(string: RequestManager.sharedInstance().url(baseUrl))!
@@ -40,7 +40,7 @@ class ImageUploader: NSObject {
     ///
     /// - returns:                The NSData of the body of the request
     
-    func createBodyWithParameters(data: NSData, boundary: String, name: String, params: [String: AnyObject]?) -> NSData {
+    func createBodyWithParameters(data: [NSData], boundary: String, name: String, params: [String: AnyObject]?) -> NSData {
         let body = NSMutableData()
         
         if params != nil {
@@ -51,11 +51,17 @@ class ImageUploader: NSObject {
             }
         }
         
-        body.appendData("--\(boundary)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        body.appendData("Content-Disposition: form-data; name=\"\(name)\"; filename=\"avatar.png\"\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        body.appendData("Content-Type: \(MIME.Image.png)\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        body.appendData(data)
-        body.appendData("\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+        for d in data {
+            body.appendData("--\(boundary)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+            var n = name
+            if data.count > 1 {
+                n = "\(name)\(data.indexOf(d)! + 1)"
+            }
+            body.appendData("Content-Disposition: form-data; name=\"\(n)\"; filename=\"avatar.png\"\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData("Content-Type: \(MIME.Image.png)\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData(d)
+            body.appendData("\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+        }
         
         body.appendData("--\(boundary)--\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
         return body

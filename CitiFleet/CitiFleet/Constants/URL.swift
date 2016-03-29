@@ -63,6 +63,9 @@ struct URL {
         static let seats = "marketplace/seats/"
         static let make = "marketplace/cars/make/"
         static let model = "marketplace/cars/model/"
+        
+        static let rent = "marketplace/cars/posting/rent/"
+        static let sale = "marketplace/cars/posting/sale/"
     }
     static let Reports = "reports/"
     static let BenefitsList = "benefits/"
@@ -120,6 +123,18 @@ struct Params {
         static let expiryDate = "expiry_date"
         static let plateNumber = "plate_number"
         static let photo = "file"
+    }
+    struct Posting {
+        static let make = "make"
+        static let model = "model"
+        static let type = "type"
+        static let color = "color"
+        static let year = "year"
+        static let fuel = "fuel"
+        static let seats = "seats"
+        static let price = "price"
+        static let description = "description"
+        static let photos = "photos"
     }
 }
 
