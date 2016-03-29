@@ -39,5 +39,8 @@ struct Titles {
         
         static let noDescription = "Provide the description"
         static let noDescriptionMsg = "Please, provide description of your vehicle"
+        
+        static let noInstructions = "Provide the instructions"
+        static let noInstructionsMsg = "Please, provide the instructions of job"
     }
 }

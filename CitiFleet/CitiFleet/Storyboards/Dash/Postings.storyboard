@@ -15,7 +15,6 @@
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
-            <string>Montserrat-Light</string>
         </mutableArray>
         <mutableArray key="Montserrat-Regular.otf">
             <string>Montserrat-Regular</string>
@@ -463,6 +462,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="AfF-Ub-om9">
+                            <rect key="frame" x="0.0" y="844" width="600" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD5-9d-jmy">
+                                    <rect key="frame" x="16" y="26" width="569" height="49"/>
+                                    <color key="backgroundColor" red="0.90588235289999997" green="0.1137254902" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="49" id="qMw-6z-MvH"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                    <state key="normal" title="POST JOB">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="post:" destination="aAH-Ux-MhO" eventType="touchUpInside" id="JC3-Ws-p0l"/>
+                                        <action selector="postRentSale" destination="wes-qS-Po1" eventType="touchUpInside" id="22n-Fz-FG0"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="hD5-9d-jmy" firstAttribute="leading" secondItem="AfF-Ub-om9" secondAttribute="leading" constant="16" id="R4W-yr-8sH"/>
+                                <constraint firstItem="hD5-9d-jmy" firstAttribute="centerY" secondItem="AfF-Ub-om9" secondAttribute="centerY" id="Rcx-cZ-Cv0"/>
+                                <constraint firstItem="hD5-9d-jmy" firstAttribute="centerX" secondItem="AfF-Ub-om9" secondAttribute="centerX" id="zr0-jv-ZiX"/>
+                            </constraints>
+                        </view>
                         <sections>
                             <tableViewSection id="aS2-I0-pec">
                                 <cells>
@@ -607,10 +639,9 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14.399999618530273"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="textChanged:" destination="HVC-bO-FPv" eventType="editingChanged" id="MRt-m5-e6c"/>
-                                                        <outlet property="delegate" destination="HVC-bO-FPv" id="sT0-wb-Gat"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -668,10 +699,9 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <color key="textColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14.399999618530273"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="textChanged:" destination="Rp6-zr-WPv" eventType="editingChanged" id="jqy-RU-6hY"/>
-                                                        <outlet property="delegate" destination="Rp6-zr-WPv" id="5oi-6U-Txp"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -942,66 +972,8 @@
                                             <outlet property="title" destination="CKX-CB-Lxg" id="wej-kv-6Nf"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="OA4-Wj-4cV" customClass="PostingCell" customModule="CitiFleet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="688" width="600" height="78"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OA4-Wj-4cV" id="z6i-ta-AhX">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jo_company" translatesAutoresizingMaskIntoConstraints="NO" id="GSj-nt-5ne">
-                                                    <rect key="frame" x="17" y="16" width="18" height="14"/>
-                                                    <color key="tintColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company/Personal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2U-Hs-4X6">
-                                                    <rect key="frame" x="43" y="13" width="156" height="20"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
-                                                    <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kt2-7i-cO0" customClass="HighlitableLabel" customModule="CitiFleet" customModuleProvider="target">
-                                                    <rect key="frame" x="17" y="41" width="38" height="18"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="14.350000381469727"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Select Company/Personal"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arr-odwn" translatesAutoresizingMaskIntoConstraints="NO" id="Lgg-Mv-Ajy">
-                                                    <rect key="frame" x="575" y="36" width="9" height="5"/>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Kt2-7i-cO0" firstAttribute="leading" secondItem="GSj-nt-5ne" secondAttribute="leading" id="9jU-Kh-olI"/>
-                                                <constraint firstItem="Lgg-Mv-Ajy" firstAttribute="centerX" secondItem="z6i-ta-AhX" secondAttribute="centerX" id="KHa-qw-P7s"/>
-                                                <constraint firstItem="GSj-nt-5ne" firstAttribute="top" secondItem="z6i-ta-AhX" secondAttribute="topMargin" constant="16" id="TE1-kS-RJa"/>
-                                                <constraint firstItem="O2U-Hs-4X6" firstAttribute="leading" secondItem="GSj-nt-5ne" secondAttribute="trailing" constant="8" id="Ttg-uC-FYH"/>
-                                                <constraint firstItem="GSj-nt-5ne" firstAttribute="leading" secondItem="z6i-ta-AhX" secondAttribute="leadingMargin" constant="17" id="aAb-Fr-QXt"/>
-                                                <constraint firstItem="Lgg-Mv-Ajy" firstAttribute="centerY" secondItem="z6i-ta-AhX" secondAttribute="centerY" id="fem-7E-b2t"/>
-                                                <constraint firstAttribute="trailing" secondItem="Lgg-Mv-Ajy" secondAttribute="trailing" constant="16" id="oVt-8T-tAL"/>
-                                                <constraint firstItem="O2U-Hs-4X6" firstAttribute="centerY" secondItem="GSj-nt-5ne" secondAttribute="centerY" id="qeI-JG-BNK"/>
-                                                <constraint firstItem="GSj-nt-5ne" firstAttribute="top" secondItem="z6i-ta-AhX" secondAttribute="top" constant="16" id="uAV-h3-mVe"/>
-                                                <constraint firstItem="Kt2-7i-cO0" firstAttribute="top" secondItem="O2U-Hs-4X6" secondAttribute="bottom" constant="8" id="vtJ-aY-P1P"/>
-                                                <constraint firstItem="GSj-nt-5ne" firstAttribute="leading" secondItem="z6i-ta-AhX" secondAttribute="leading" constant="17" id="zf7-op-8Dj"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="aAb-Fr-QXt"/>
-                                                    <exclude reference="TE1-kS-RJa"/>
-                                                    <exclude reference="KHa-qw-P7s"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="icon" destination="GSj-nt-5ne" id="oMC-ql-XEj"/>
-                                            <outlet property="nextScreenArrow" destination="Lgg-Mv-Ajy" id="KZh-a4-p8G"/>
-                                            <outlet property="placeHolder" destination="Kt2-7i-cO0" id="Fpg-g2-8SC"/>
-                                            <outlet property="title" destination="O2U-Hs-4X6" id="TY4-WR-MY8"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="rtx-oD-8IR" customClass="PostingCell" customModule="CitiFleet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="766" width="600" height="78"/>
+                                        <rect key="frame" x="0.0" y="688" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rtx-oD-8IR" id="aqo-Bm-UnB">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
@@ -1059,7 +1031,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyRentSaleDescriptionCell" rowHeight="78" id="zbc-as-7K4" customClass="MyRentSaleDescriptionCell" customModule="CitiFleet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="844" width="600" height="78"/>
+                                        <rect key="frame" x="0.0" y="766" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zbc-as-7K4" id="osD-ep-cxB">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
@@ -1069,7 +1041,7 @@
                                                     <rect key="frame" x="17" y="16" width="18" height="16"/>
                                                     <color key="tintColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5V-OY-ysy">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5V-OY-ysy">
                                                     <rect key="frame" x="43" y="14" width="98" height="20"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -1139,6 +1111,18 @@
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1200"/>
+                    <connections>
+                        <outlet property="dateLbl" destination="Oep-yp-3lT" id="j5x-rd-kS7"/>
+                        <outlet property="destinationTF" destination="fnN-91-c7s" id="Rtm-DL-o3I"/>
+                        <outlet property="fareTF" destination="vdp-jB-iX6" id="zKg-Zu-8W1"/>
+                        <outlet property="gratuityTF" destination="eey-cr-eJt" id="n0Z-tU-NrW"/>
+                        <outlet property="instructionsTV" destination="MKX-d7-WE8" id="Pba-2B-rwT"/>
+                        <outlet property="jobTypeLbl" destination="SEc-cc-584" id="5kE-Oj-pIu"/>
+                        <outlet property="pickupAddress" destination="cqV-p1-wil" id="K4f-GR-Zj2"/>
+                        <outlet property="suiteLbl" destination="vJq-Nv-dqp" id="UmL-Bo-34Q"/>
+                        <outlet property="timeLbl" destination="rjk-wd-wPT" id="Zg3-B0-OuY"/>
+                        <outlet property="vehicleTypeTF" destination="NgH-sH-Iu3" id="LwA-ui-P6F"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NyR-Sr-SaC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1359,7 +1343,7 @@
                                             <rect key="frame" x="17" y="16" width="18" height="16"/>
                                             <color key="tintColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ec-rO-x8C">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ec-rO-x8C">
                                             <rect key="frame" x="43" y="14" width="95" height="20"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
                                             <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -1439,7 +1423,6 @@
         <image name="back-ic" width="8" height="13"/>
         <image name="default_image_tumb" width="75" height="75"/>
         <image name="jo_address" width="18" height="17"/>
-        <image name="jo_company" width="18" height="14"/>
         <image name="jo_date" width="18" height="18"/>
         <image name="jo_direction" width="18" height="18"/>
         <image name="jo_fare" width="13" height="18"/>

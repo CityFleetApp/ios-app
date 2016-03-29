@@ -20,16 +20,17 @@ class PostingCell: LegalAidCell {
         super.init(coder: aDecoder)
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setEditable(true)
+    }
+    
     func createAccessoryView(textView: UIView) -> UIView {
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 44))
         let barButton = UIBarButtonItem(title: "Done", style: .Done, target: textView, action: "resignFirstResponder")
         toolBar.items = [barButton]
         barButton.tintColor = Color.Global.BlueTextColor
         return toolBar
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
     }
     
     func select() {
@@ -40,7 +41,7 @@ class PostingCell: LegalAidCell {
 class MyRentSalePriceCell: PostingCell {
     static let CellID = "MyRentSalePriceCell"
     @IBOutlet var priceTF: UITextField!
-    var changedText: ((String) -> ())!
+    var changedText: ((String) -> ())?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -56,7 +57,8 @@ class MyRentSalePriceCell: PostingCell {
     }
     
     @IBAction func textChanged(sender: UITextField) {
-        changedText(sender.text!)
+        sender.setStandardSignUpPlaceHolder(sender.placeholder!)
+        changedText?(sender.text!)
     }
 }
 
@@ -118,7 +120,7 @@ class MyRentSaleDescriptionCell: PostingCell {
     static let CellID = "MyRentSaleDescriptionCell"
     @IBOutlet var descriptionTV: KMPlaceholderTextView!
     var changedHeight: ((CGFloat) -> ())!
-    var changedText: ((String) -> ())!
+    var changedText: ((String) -> ())!?
     var cellHeight: CGFloat?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -142,7 +144,7 @@ extension MyRentSaleDescriptionCell: UITextViewDelegate {
     }
     
     func textViewDidChange(textView: UITextView) {
-        changedText(textView.text)
+        changedText?(textView.text)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 7
         let attributes = [

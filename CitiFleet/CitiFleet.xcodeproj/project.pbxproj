@@ -140,6 +140,7 @@
 		43F8340F1C97274400DE7E50 /* LegalAidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F8340E1C97274400DE7E50 /* LegalAidCell.swift */; };
 		43F834111C97A1C700DE7E50 /* LegalAidContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834101C97A1C700DE7E50 /* LegalAidContactsVC.swift */; };
 		43FC7AAF1CAB11E4009EB4F4 /* JobOfferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FC7AAE1CAB11E4009EB4F4 /* JobOfferVC.swift */; };
+		43FC7AB11CAB2C75009EB4F4 /* JobOfferPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FC7AB01CAB2C75009EB4F4 /* JobOfferPost.swift */; };
 		8F7B09119E0D4A8BE702AA9A /* Pods_CitiFleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */; };
 /* End PBXBuildFile section */
 
@@ -283,6 +284,7 @@
 		43F8340E1C97274400DE7E50 /* LegalAidCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidCell.swift; path = Viewes/LegalAid/LegalAidCell.swift; sourceTree = "<group>"; };
 		43F834101C97A1C700DE7E50 /* LegalAidContactsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidContactsVC.swift; path = ViewController/Dash/LegalAid/LegalAidContactsVC.swift; sourceTree = "<group>"; };
 		43FC7AAE1CAB11E4009EB4F4 /* JobOfferVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobOfferVC.swift; path = ViewController/Dash/Postings/JobOffers/JobOfferVC.swift; sourceTree = "<group>"; };
+		43FC7AB01CAB2C75009EB4F4 /* JobOfferPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobOfferPost.swift; path = Utils/Marketplace/JobOfferPost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -901,6 +903,7 @@
 			isa = PBXGroup;
 			children = (
 				43FC7AAE1CAB11E4009EB4F4 /* JobOfferVC.swift */,
+				43FC7AB01CAB2C75009EB4F4 /* JobOfferPost.swift */,
 			);
 			name = "Job Offers";
 			sourceTree = "<group>";
@@ -1094,6 +1097,7 @@
 				43F5E2341C9AEE0D000BBB91 /* NotificationManager.swift in Sources */,
 				43AD515A1C95D257002261DB /* AvatarHeaderView.swift in Sources */,
 				43F5E2281C99C557000BBB91 /* UIImage+Ext.swift in Sources */,
+				43FC7AB11CAB2C75009EB4F4 /* JobOfferPost.swift in Sources */,
 				43D2D0B21C7C97D600A41D4F /* LoginVC.swift in Sources */,
 				431D2DD71CA1521800CBC4BA /* DOCManagementCellBuilder.swift in Sources */,
 				430A59D91CA1928900FCD13D /* DOCManagementDatePicker.swift in Sources */,

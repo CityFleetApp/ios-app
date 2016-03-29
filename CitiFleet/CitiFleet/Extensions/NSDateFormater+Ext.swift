@@ -14,4 +14,10 @@ extension NSDateFormatter {
         formater.dateFormat = "yyyy-MM-dd"
         return formater
     }
+    
+    class func standordTimeFormater() -> NSDateFormatter {
+        let formater = NSDateFormatter()
+        formater.dateFormat = "HH:mm"
+        return formater
+    }
 }
