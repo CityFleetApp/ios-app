@@ -139,6 +139,7 @@
 		43F8340D1C9719CF00DE7E50 /* RequestManager+LegalAid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F8340C1C9719CF00DE7E50 /* RequestManager+LegalAid.swift */; };
 		43F8340F1C97274400DE7E50 /* LegalAidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F8340E1C97274400DE7E50 /* LegalAidCell.swift */; };
 		43F834111C97A1C700DE7E50 /* LegalAidContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F834101C97A1C700DE7E50 /* LegalAidContactsVC.swift */; };
+		43FC7AAF1CAB11E4009EB4F4 /* JobOfferVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FC7AAE1CAB11E4009EB4F4 /* JobOfferVC.swift */; };
 		8F7B09119E0D4A8BE702AA9A /* Pods_CitiFleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */; };
 /* End PBXBuildFile section */
 
@@ -281,6 +282,7 @@
 		43F8340C1C9719CF00DE7E50 /* RequestManager+LegalAid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RequestManager+LegalAid.swift"; path = "Utils/RequestTool/RequestManager+LegalAid.swift"; sourceTree = "<group>"; };
 		43F8340E1C97274400DE7E50 /* LegalAidCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidCell.swift; path = Viewes/LegalAid/LegalAidCell.swift; sourceTree = "<group>"; };
 		43F834101C97A1C700DE7E50 /* LegalAidContactsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegalAidContactsVC.swift; path = ViewController/Dash/LegalAid/LegalAidContactsVC.swift; sourceTree = "<group>"; };
+		43FC7AAE1CAB11E4009EB4F4 /* JobOfferVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobOfferVC.swift; path = ViewController/Dash/Postings/JobOffers/JobOfferVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,7 +380,7 @@
 		4316BB7C1C7B046A007A9ECB /* CitiFleet */ = {
 			isa = PBXGroup;
 			children = (
-				43527F701CA43595003D87FF /* Postings */,
+				43FC7AAD1CAB11AF009EB4F4 /* Job Offers */,
 				4316BBA51C7B61D7007A9ECB /* Constants */,
 				4316BBA01C7B5EBE007A9ECB /* Extensions */,
 				4316BBB21C7B7399007A9ECB /* Utils */,
@@ -869,6 +871,7 @@
 		43F5E2391C9C5369000BBB91 /* Postings */ = {
 			isa = PBXGroup;
 			children = (
+				43527F701CA43595003D87FF /* Postings */,
 			);
 			name = Postings;
 			sourceTree = "<group>";
@@ -892,6 +895,14 @@
 				43F8340E1C97274400DE7E50 /* LegalAidCell.swift */,
 			);
 			name = "Legal Aid";
+			sourceTree = "<group>";
+		};
+		43FC7AAD1CAB11AF009EB4F4 /* Job Offers */ = {
+			isa = PBXGroup;
+			children = (
+				43FC7AAE1CAB11E4009EB4F4 /* JobOfferVC.swift */,
+			);
+			name = "Job Offers";
 			sourceTree = "<group>";
 		};
 		A1BF0D86F407C96A1C73890B /* Pods */ = {
@@ -1093,6 +1104,7 @@
 				4316BBA91C7B61F5007A9ECB /* Fonts.swift in Sources */,
 				4334D8151C7F496F00557AE4 /* DashVC.swift in Sources */,
 				43CFA7631C93915F00DC89C9 /* ProfileVC.swift in Sources */,
+				43FC7AAF1CAB11E4009EB4F4 /* JobOfferVC.swift in Sources */,
 				43CFA76A1C93B61C00DC89C9 /* LegalAidVC.swift in Sources */,
 				4316BBB41C7B73C6007A9ECB /* ConfirmPasswordRule.swift in Sources */,
 				43CFA7651C939E7C00DC89C9 /* NSAttributedString+Ext.swift in Sources */,
