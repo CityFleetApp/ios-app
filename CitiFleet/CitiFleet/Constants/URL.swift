@@ -66,6 +66,8 @@ struct URL {
         
         static let rent = "marketplace/cars/posting/rent/"
         static let sale = "marketplace/cars/posting/sale/"
+        
+        static let JOPost = "marketplace/offers/posting/"
     }
     static let Reports = "reports/"
     static let BenefitsList = "benefits/"
@@ -135,6 +137,18 @@ struct Params {
         static let price = "price"
         static let description = "description"
         static let photos = "photos"
+        
+        struct JOPosting {
+            static let pickupDatetime = "pickup_datetime"
+            static let pickupAddress = "pickup_address"
+            static let destination = "destination"
+            static let fare = "fare"
+            static let gratuity = "gratuity"
+            static let vehicleType = "vehicle_type"
+            static let suite = "suite"
+            static let jobType = "job_type"
+            static let instructions = "instructions"
+        }
     }
 }
 

@@ -43,4 +43,23 @@ extension RequestManager {
             completion(error)
         }
     }
+    
+    func postJobOffer(dateTime: String, pickup: String, destination: String, fare: String, gratuity: String, vehicleType: Int, isSuite: Bool, jobType: Int, instructions: String, completion: ((NSError?) -> ())) {
+        typealias Param = Params.Posting.JOPosting
+        let params = [
+            Param.pickupDatetime: dateTime,
+            Param.pickupAddress: pickup,
+            Param.destination: destination,
+            Param.fare: fare,
+            Param.gratuity: gratuity,
+            Param.vehicleType: String(vehicleType),
+            Param.suite: isSuite ? "true" : "false",
+            Param.jobType: String(jobType),
+            Param.instructions: instructions
+        ]
+        
+        post(URL.Marketplace.JOPost, parameters: params) { (json, error) -> () in
+            completion(error)
+        }
+    }
 }

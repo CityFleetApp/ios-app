@@ -118,7 +118,18 @@ class JobOfferVC: UITableViewController {
 extension JobOfferVC {
     @IBAction func post(sender: AnyObject) {
         if !checkPostAvailability() {
+            uploader.dateTime = dateLbl.highlitedText! + " " + timeLbl.highlitedText!
+            uploader.pickupAddress = pickupAddress.text
+            uploader.destinationAddress = destinationTF.text
+            uploader.fare = fareTF.text
+            uploader.gratuity = gratuityTF.text
+            uploader.instructions = instructionsTV.text
             
+            uploader.upload() { [unowned self] (error) in
+                if error == nil {
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
+            }
         }
     }
 }

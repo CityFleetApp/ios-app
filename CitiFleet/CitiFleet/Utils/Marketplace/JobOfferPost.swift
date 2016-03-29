@@ -19,5 +19,8 @@ class JobOfferPost: NSObject {
     var jobType: Int?
     var instructions: String?
     
+    func upload(completion: ((NSError?) -> ()) ) {
+        RequestManager.sharedInstance().postJobOffer(dateTime!, pickup: pickupAddress!, destination: destinationAddress!, fare: fare!, gratuity: gratuity!, vehicleType: vehicleType!, isSuite: suite!, jobType: jobType!, instructions: instructions!, completion: completion)
+    }
     
 }
