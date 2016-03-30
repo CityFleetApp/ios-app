@@ -12,8 +12,9 @@ class DOCManagementCell: DashMenuCell {
     @IBOutlet var docPhoto: UIImageView!
     @IBOutlet var saveBtn: UIButton!
     @IBOutlet var dateLabel: HighlitableLabel?
+    @IBOutlet var licenseNumberTF: UITextField?
     
-    var saveDocument: ((Document) -> ())!
+    var saveDocument: (() -> ())!
     var selectedPhoto: ((UIImage) -> ())!
     var selectedDate: ((NSDate) -> ())!
     var newDoc: Bool!
@@ -26,17 +27,9 @@ class DOCManagementCell: DashMenuCell {
         }
     }
     
-    var photo: UIImage? {
-        didSet {
-//            saveBtn.enabled = availableForSave
-        }
-    }
-    
-    var expDate: NSDate? {
-        didSet {
-//            saveBtn.enabled = availableForSave
-        }
-    }
+    var photo: UIImage?
+    var expDate: NSDate?
+    var licenseNumber: String?
     
     private let expDateColor = UIColor(hex: 0x4C5A76, alpha: 1)
     private let placeHolderColor = UIColor.lightGrayColor()
@@ -57,10 +50,7 @@ class DOCManagementCell: DashMenuCell {
         titleColor = selectedColor
         saveBtn.setDefaultShadow()
         setupPhotoGesture()
-    }
-    
-    deinit {
-        print("Destroyed cell")
+        licenseNumberTF?.setStandardSignUpPlaceHolder((licenseNumberTF?.placeholder)!)
     }
     
     private func setupPhotoGesture() {
@@ -71,7 +61,12 @@ class DOCManagementCell: DashMenuCell {
     }
     
     func didSelect() {
+        if let license = licenseNumberTF {
+            license.becomeFirstResponder()
+            return
+        }
         let picker = DOCManagementDatePicker.viewFromNib()
+        picker.datePicker.minimumDate = NSDate()
         picker.completion = completionDatePicking
         picker.show()
     }
@@ -117,11 +112,7 @@ extension DOCManagementCell {
     }
     
     @IBAction func saveDocument(sender: UIButton) {
-//        if !availableForSave {
-//            return
-//        }
-        let doc = Document(type: docType, uploaded: !newDoc, expiryDate: expDate, plateNumber: nil, photo: photo!, photoURL: nil)
-        saveDocument(doc)
+        saveDocument()
     }
 }
 
@@ -133,5 +124,13 @@ extension DOCManagementCell: UIImagePickerControllerDelegate, UINavigationContro
             self.docPhoto.image = scaledImage
             self.selectedPhoto(scaledImage)
         }
+    }
+}
+
+extension DOCManagementCell: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        licenseNumber = textField.text
+        return true
     }
 }

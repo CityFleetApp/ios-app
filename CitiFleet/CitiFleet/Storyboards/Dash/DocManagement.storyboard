@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -13,10 +13,13 @@
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--ManagementVC-->
+        <!--DOC Management-->
         <scene sceneID="DwD-eG-YeB">
             <objects>
                 <tableViewController restorationIdentifier="DOCManagementVC" storyboardIdentifier="DOCManagementVC" id="HLd-HW-dgJ" customClass="DOCManagementVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,7 +29,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DOCManagementCellID" rowHeight="121" id="Ab4-Mw-p2S" customClass="DOCManagementCell" customModule="CitiFleet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="121"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="121"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ab4-Mw-p2S" id="OPg-FN-6z3">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
@@ -62,7 +65,7 @@
                                                     <color key="textColor" red="0.29803921568627451" green="0.3529411764705882" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Select Location"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Exp Date"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxh-zy-b93">
@@ -116,19 +119,137 @@
                                     <outlet property="title" destination="CZJ-uc-xnX" id="nf9-Ax-Rg2"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DOCManagementCellWithTF" rowHeight="121" id="dt6-mQ-IcI" customClass="DOCManagementCell" customModule="CitiFleet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="213" width="600" height="121"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dt6-mQ-IcI" id="hKC-G2-zGw">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Doc-management-template" translatesAutoresizingMaskIntoConstraints="NO" id="YLo-TK-4Mc">
+                                            <rect key="frame" x="22" y="22" width="76" height="76"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="YLo-TK-4Mc" secondAttribute="height" multiplier="1:1" id="7aR-VB-Kcx"/>
+                                            </constraints>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GL8-Cq-Gae">
+                                            <rect key="frame" x="122" y="19" width="462" height="82"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drives" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2o-dS-v7o">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
+                                                    <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exp Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6q-d6-FdJ">
+                                                    <rect key="frame" x="0.0" y="28" width="65" height="18"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14.350000381469727"/>
+                                                    <color key="textColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Select Location"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dak-b0-T5s">
+                                                    <rect key="frame" x="390" y="54" width="72" height="28"/>
+                                                    <color key="backgroundColor" red="0.90588235289999997" green="0.1137254902" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="72" id="p1c-Yz-AM8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.25"/>
+                                                    <state key="normal" title="Save">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="saveDocument:" destination="dt6-mQ-IcI" eventType="touchUpInside" id="E6U-Ax-kIZ"/>
+                                                    </connections>
+                                                </button>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tic Plate Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bMx-Pz-uqa">
+                                                    <rect key="frame" x="0.0" y="60" width="374" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="dt6-mQ-IcI" id="S9a-Ju-hm3"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="dak-b0-T5s" firstAttribute="leading" secondItem="bMx-Pz-uqa" secondAttribute="trailing" constant="16" id="0Wt-fi-91z"/>
+                                                <constraint firstAttribute="trailing" secondItem="dak-b0-T5s" secondAttribute="trailing" id="AAM-5i-JzJ"/>
+                                                <constraint firstItem="N6q-d6-FdJ" firstAttribute="top" secondItem="S2o-dS-v7o" secondAttribute="bottom" constant="8" id="Sh9-kY-GwR"/>
+                                                <constraint firstItem="S2o-dS-v7o" firstAttribute="leading" secondItem="GL8-Cq-Gae" secondAttribute="leading" id="Z8U-52-snR"/>
+                                                <constraint firstItem="S2o-dS-v7o" firstAttribute="top" secondItem="GL8-Cq-Gae" secondAttribute="top" id="aIv-LU-xyl"/>
+                                                <constraint firstItem="dak-b0-T5s" firstAttribute="top" secondItem="N6q-d6-FdJ" secondAttribute="bottom" constant="8" id="cFp-yD-wsl"/>
+                                                <constraint firstItem="N6q-d6-FdJ" firstAttribute="leading" secondItem="S2o-dS-v7o" secondAttribute="leading" id="eM6-nQ-HFe"/>
+                                                <constraint firstItem="dak-b0-T5s" firstAttribute="centerY" secondItem="bMx-Pz-uqa" secondAttribute="centerY" id="qrr-6Z-4bJ"/>
+                                                <constraint firstItem="bMx-Pz-uqa" firstAttribute="leading" secondItem="N6q-d6-FdJ" secondAttribute="leading" id="xBe-K0-As0"/>
+                                                <constraint firstAttribute="bottom" secondItem="dak-b0-T5s" secondAttribute="bottom" id="ztj-Za-UXa"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="YLo-TK-4Mc" firstAttribute="top" secondItem="hKC-G2-zGw" secondAttribute="top" constant="22" id="MEw-4r-FNv"/>
+                                        <constraint firstItem="YLo-TK-4Mc" firstAttribute="leading" secondItem="hKC-G2-zGw" secondAttribute="leading" constant="22" id="Qte-oA-jm6"/>
+                                        <constraint firstItem="GL8-Cq-Gae" firstAttribute="centerY" secondItem="hKC-G2-zGw" secondAttribute="centerY" id="XAR-AS-tmB"/>
+                                        <constraint firstAttribute="trailing" secondItem="GL8-Cq-Gae" secondAttribute="trailing" constant="16" id="dMD-N3-MM3"/>
+                                        <constraint firstItem="YLo-TK-4Mc" firstAttribute="centerY" secondItem="hKC-G2-zGw" secondAttribute="centerY" id="jNO-nD-VM1"/>
+                                        <constraint firstItem="YLo-TK-4Mc" firstAttribute="centerY" secondItem="hKC-G2-zGw" secondAttribute="centerY" id="uP1-Gj-xBQ"/>
+                                        <constraint firstItem="GL8-Cq-Gae" firstAttribute="leading" secondItem="YLo-TK-4Mc" secondAttribute="trailing" constant="24" id="vqk-ba-ucm"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="docPhoto" destination="YLo-TK-4Mc" id="y2i-iW-BiM"/>
+                                    <outlet property="licenseNumberTF" destination="bMx-Pz-uqa" id="UFV-CS-C55"/>
+                                    <outlet property="saveBtn" destination="dak-b0-T5s" id="DZE-mh-LkD"/>
+                                    <outlet property="title" destination="S2o-dS-v7o" id="dCG-hD-Cwo"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="HLd-HW-dgJ" id="Jem-bw-6qg"/>
                             <outlet property="delegate" destination="HLd-HW-dgJ" id="RZB-5L-I9h"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="DOC Management" id="3qK-gN-G4K">
+                        <barButtonItem key="leftBarButtonItem" image="back-ic" id="3Xq-zu-1e0">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="HLd-HW-dgJ" id="qWa-7v-llU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="35s-MR-9Pp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2000" y="412"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZS9-vM-nUj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WYC-Fp-ZQo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Prx-hu-5Ux">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HLd-HW-dgJ" kind="relationship" relationship="rootViewController" id="crH-AB-xc9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="86q-8f-pVE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1188" y="412"/>
         </scene>
     </scenes>
     <resources>
         <image name="Doc-management-template" width="78" height="78"/>
+        <image name="back-ic" width="8" height="13"/>
     </resources>
 </document>

@@ -21,6 +21,7 @@ struct Document {
         case DrugTest = 7
     }
     
+    var id: Int?
     var type: CellType
     var uploaded: Bool
     var expiryDate: NSDate?
@@ -48,6 +49,7 @@ class DOCManager: NSObject {
             }
             
             for doc in docs! {
+                let id = doc[Params.DOCManagement.id] as! Int
                 let typeIndex = doc[Params.DOCManagement.docType] as! Int
                 let photoUrl = doc[Params.DOCManagement.photo] as? String
                 let expDateString = doc[Params.DOCManagement.expiryDate] as? String
@@ -57,7 +59,7 @@ class DOCManager: NSObject {
                     expDate = NSDateFormatter.standordFormater().dateFromString(exp)
                 }
                 
-                let doc = Document(type: Document.CellType(rawValue: typeIndex - 1)!, uploaded: true, expiryDate: expDate, plateNumber: number, photo: nil, photoURL: NSURL(string: photoUrl!))
+                let doc = Document(id: id, type: Document.CellType(rawValue: typeIndex - 1)!, uploaded: true, expiryDate: expDate, plateNumber: number, photo: nil, photoURL: NSURL(string: photoUrl!))
                 self.documents[doc.type] = doc
             }
             
@@ -75,9 +77,9 @@ class DOCManager: NSObject {
             value = document.plateNumber!
         }
         
-        let HTTPMethod = document.uploaded ? "PATCH" : "POST"
+        let HTTPMethod = document.id != nil ? "PATCH" : "POST"
         
-        RequestManager.sharedInstance().postDoc(HTTPMethod, fieldKey: key, fieldValue: value, docType: document.type.rawValue, photo: document.photo!, completion: { (response, error) in
+        RequestManager.sharedInstance().postDoc(HTTPMethod, docID: document.id, fieldKey: key, fieldValue: value, docType: document.type.rawValue, photo: document.photo!, completion: { (response, error) in
             
         })
     }

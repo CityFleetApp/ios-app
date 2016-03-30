@@ -122,6 +122,7 @@ struct Params {
         static let location = "location"
     }
     struct DOCManagement {
+        static let id = "id"
         static let docType = "document_type"
         static let expiryDate = "expiry_date"
         static let plateNumber = "plate_number"

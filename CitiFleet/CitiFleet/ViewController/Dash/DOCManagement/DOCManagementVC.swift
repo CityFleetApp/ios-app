@@ -16,7 +16,7 @@ class DOCManagementVC: UITableViewController {
     
     override func viewDidLoad() {
         cellBuilder = DOCManagementCellBuilder(tableView: tableView, docManager: docManager)
-        docManager.loadDocuments { (docs, error) -> () in
+        docManager.loadDocuments { [unowned self] (docs, error) -> () in
             if error == nil {
                 self.tableView.reloadData()
             }
@@ -39,6 +39,14 @@ extension DOCManagementVC {
 }
 
 extension DOCManagementVC {
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let type = Document.CellType(rawValue: indexPath.row)
+        let cell = cell as! DOCManagementCell
+        cell.title.text = DOCManagementCellBuilder.titles[indexPath.row]
+        cell.docType = type
+        cellBuilder?.setActionsForCell(cell, type: type)
+    }
+    
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return CellHeight
     }

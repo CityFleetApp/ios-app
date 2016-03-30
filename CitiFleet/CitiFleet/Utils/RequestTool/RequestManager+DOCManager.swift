@@ -23,14 +23,21 @@ extension RequestManager {
         }
     }
     
-    func postDoc(HTTPMethod: String, fieldKey: String, fieldValue: String, docType: Int, photo: UIImage, completion: ((AnyObject?, NSError?) -> ())) {
+    func postDoc(HTTPMethod: String, docID: Int?, fieldKey: String, fieldValue: String, docType: Int, photo: UIImage, completion: ((AnyObject?, NSError?) -> ())) {
         let data = UIImagePNGRepresentation(photo)
         let params = [
             fieldKey: fieldValue,
             Params.DOCManagement.docType: String(docType + 1)
         ]
         
-        uploadPhoto(params, data: [data!], baseUrl: URL.DOCManagement.Documents, HTTPMethod: HTTPMethod, name: "file") { (response, error) -> () in
+        var url: String = ""
+        if let id = docID {
+            url = "\(URL.DOCManagement.Documents)\(id)/"
+        } else {
+            url = URL.DOCManagement.Documents
+        }
+        
+        uploadPhoto(params, data: [data!], baseUrl: url, HTTPMethod: HTTPMethod, name: "file") { (response, error) -> () in
             if error != nil {
                 completion(nil, error)
                 return
