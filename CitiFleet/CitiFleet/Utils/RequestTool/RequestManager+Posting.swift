@@ -9,6 +9,26 @@
 import Foundation
 
 extension RequestManager {
+    func postGeneralGood(item: String, price: String, condition: Int, goodDescription: String, images: [UIImage], completion: ((NSError?) -> ())) {
+        typealias Param = Params.Posting.GeneralGoods
+        let params = [
+            Param.item: item,
+            Param.price: price,
+            Param.condition: String(condition),
+            Param.description: goodDescription
+        ]
+        
+        var imageData: [NSData] = []
+        for image in images {
+            imageData.append(UIImagePNGRepresentation(image)!)
+        }
+        
+        uploadPhoto(params, data: imageData, baseUrl: URL.Marketplace.GeneralGoods, HTTPMethod: "POST", name: Param.photos) { (response, error) -> () in
+            completion(error)
+        }
+        
+    }
+    
     func postRentSale(type: RentSaleCreator.PostType, make: Int, model: Int, carType: Int, color: Int, year: String, fuel: Int, seats: Int, price: String, description: String, photos: [UIImage], completion: ((NSError?) -> ())) {
         typealias Param = Params.Posting
         

@@ -50,6 +50,7 @@ class MyRentSalePriceCell: PostingCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         priceTF.inputAccessoryView = createAccessoryView(priceTF)
+        priceTF.setStandardSignUpPlaceHolder(priceTF.placeholder!)
     }
     
     required init?(coder aDecoder: NSCoder) {
