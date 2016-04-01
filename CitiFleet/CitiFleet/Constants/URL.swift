@@ -57,6 +57,10 @@ struct URL {
         static let models = "marketplace/cars/model/"
     }
     struct Marketplace {
+        static let carsForRent = "marketplace/cars/sale/"
+        static let carsForSale = "marketplace/cars/rent/"
+        static let goodsForSale = "marketplace/goods/"
+        
         static let fuel = "marketplace/fuel/"
         static let type = "marketplace/types/"
         static let color = "marketplace/colors/"
@@ -204,5 +208,21 @@ struct Response {
         static let message = "message"
         static let date = "created"
         static let unseen = "unseen"
+    }
+    struct Marketplace {
+        static let id = "id"
+        static let itemName = "item"
+        static let price = "price"
+        static let condition = "condition"
+        static let itemDescription = "description"
+        static let photos = "photos"
+        static let make = "make"
+        static let model = "model"
+        static let carType = "type"
+        static let color = "color"
+        static let year = "year"
+        static let fuel = "fuel"
+        static let seats = "seats"
+        static let photoSize = "dimensions"
     }
 }

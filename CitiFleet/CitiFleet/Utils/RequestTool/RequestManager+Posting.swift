@@ -9,6 +9,26 @@
 import Foundation
 
 extension RequestManager {
+    func getCarsForRent(completion: ((ArrayResponse?, NSError?) -> ())) {
+        get(URL.Marketplace.carsForRent, parameters: nil) { (json, error) -> () in
+            completion(json?.arrayObject, error)
+        }
+    }
+    
+    func getCarsForSale(completion: ((ArrayResponse?, NSError?) -> ())) {
+        get(URL.Marketplace.carsForSale, parameters: nil) { (json, error) -> () in
+            completion(json?.arrayObject, error)
+        }
+    }
+    
+    func getGoodsForSale(completion: ((ArrayResponse?, NSError?) -> ())) {
+        get(URL.Marketplace.goodsForSale, parameters: nil) { (json, error) -> () in
+            completion(json?.arrayObject, error)
+        }
+    }
+}
+
+extension RequestManager {
     func postGeneralGood(item: String, price: String, condition: Int, goodDescription: String, images: [UIImage], completion: ((NSError?) -> ())) {
         typealias Param = Params.Posting.GeneralGoods
         let params = [

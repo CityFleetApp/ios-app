@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430449D41CAD1FC300365353 /* MarketplaceTemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430449D31CAD1FC300365353 /* MarketplaceTemplateCell.swift */; };
+		430449DA1CAD3AB800365353 /* MarketplaceCollectiovViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430449D91CAD3AB800365353 /* MarketplaceCollectiovViewLayout.swift */; };
+		430449DC1CAD594700365353 /* MarketplaceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430449DB1CAD594700365353 /* MarketplaceItem.swift */; };
+		430449DF1CADBB3300365353 /* GoodsForSaleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430449DE1CADBB3300365353 /* GoodsForSaleVC.swift */; };
 		430A59D91CA1928900FCD13D /* DOCManagementDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430A59D81CA1928900FCD13D /* DOCManagementDatePicker.swift */; };
 		430A59DB1CA192E000FCD13D /* DOCManagementDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 430A59DA1CA192E000FCD13D /* DOCManagementDatePicker.xib */; };
 		430A59DF1CA2A02B00FCD13D /* DOCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430A59DE1CA2A02B00FCD13D /* DOCManager.swift */; };
@@ -68,6 +72,7 @@
 		436D6B1F1C92E37600A0240E /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D6B1E1C92E37600A0240E /* UIViewController+Ext.swift */; };
 		436D6B231C93181C00A0240E /* BarcodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D6B221C93181C00A0240E /* BarcodeView.swift */; };
 		436D6B251C93184B00A0240E /* BarcodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436D6B241C93184B00A0240E /* BarcodeView.xib */; };
+		439AB7911CAE71B50015A874 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7901CAE71B50015A874 /* String+Ext.swift */; };
 		43A4265F1C9035660044B6A6 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A4265E1C9035660044B6A6 /* SettingsVC.swift */; };
 		43A426611C90359E0044B6A6 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A426601C90359E0044B6A6 /* Settings.storyboard */; };
 		43A426631C9040150044B6A6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A426621C9040150044B6A6 /* Settings.swift */; };
@@ -143,12 +148,18 @@
 		43FC7AB11CAB2C75009EB4F4 /* JobOfferPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FC7AB01CAB2C75009EB4F4 /* JobOfferPost.swift */; };
 		43FC7AB41CAB4CFA009EB4F4 /* GeneralGoodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FC7AB31CAB4CFA009EB4F4 /* GeneralGoodsVC.swift */; };
 		43FC7AB61CAB5982009EB4F4 /* GeneralGoodsUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FC7AB51CAB5982009EB4F4 /* GeneralGoodsUploader.swift */; };
+		43FC7AB91CABD7FE009EB4F4 /* MarketPlaceMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43FC7AB81CABD7FE009EB4F4 /* MarketPlaceMain.storyboard */; };
+		43FC7ABC1CAC0F33009EB4F4 /* MarketplaceMainScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FC7ABB1CAC0F33009EB4F4 /* MarketplaceMainScreenVC.swift */; };
 		8F7B09119E0D4A8BE702AA9A /* Pods_CitiFleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0BF2396D09E48EEAC22514F5 /* Pods-CitiFleet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitiFleet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CitiFleet/Pods-CitiFleet.debug.xcconfig"; sourceTree = "<group>"; };
 		2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CitiFleet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		430449D31CAD1FC300365353 /* MarketplaceTemplateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarketplaceTemplateCell.swift; path = Viewes/Marketplace/Cells/MarketplaceTemplateCell.swift; sourceTree = "<group>"; };
+		430449D91CAD3AB800365353 /* MarketplaceCollectiovViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarketplaceCollectiovViewLayout.swift; path = Utils/Marketplace/MarketplaceCollectiovViewLayout.swift; sourceTree = "<group>"; };
+		430449DB1CAD594700365353 /* MarketplaceItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarketplaceItem.swift; path = Model/MarketplaceItem.swift; sourceTree = "<group>"; };
+		430449DE1CADBB3300365353 /* GoodsForSaleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoodsForSaleVC.swift; path = ViewController/MainScreen/MarketplaceMainScreenVC/GoodsForSaleVC.swift; sourceTree = "<group>"; };
 		430A59D81CA1928900FCD13D /* DOCManagementDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DOCManagementDatePicker.swift; path = Viewes/Dash/DOCManagement/DOCManagementDatePicker.swift; sourceTree = "<group>"; };
 		430A59DA1CA192E000FCD13D /* DOCManagementDatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DOCManagementDatePicker.xib; path = Storyboards/XIB/DOCManagementDatePicker.xib; sourceTree = "<group>"; };
 		430A59DE1CA2A02B00FCD13D /* DOCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DOCManager.swift; path = Utils/Dash/DOCManager/DOCManager.swift; sourceTree = "<group>"; };
@@ -212,6 +223,7 @@
 		436D6B1E1C92E37600A0240E /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Ext.swift"; path = "Extensions/UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		436D6B221C93181C00A0240E /* BarcodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarcodeView.swift; path = Viewes/BarcodeView/BarcodeView.swift; sourceTree = "<group>"; };
 		436D6B241C93184B00A0240E /* BarcodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BarcodeView.xib; path = Storyboards/XIB/BarcodeView.xib; sourceTree = "<group>"; };
+		439AB7901CAE71B50015A874 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Ext.swift"; path = "Extensions/String+Ext.swift"; sourceTree = "<group>"; };
 		43A4265E1C9035660044B6A6 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsVC.swift; path = ViewController/Dash/Settings/SettingsVC.swift; sourceTree = "<group>"; };
 		43A426601C90359E0044B6A6 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = Storyboards/Settings.storyboard; sourceTree = "<group>"; };
 		43A426621C9040150044B6A6 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = Model/Settings.swift; sourceTree = "<group>"; };
@@ -289,6 +301,8 @@
 		43FC7AB01CAB2C75009EB4F4 /* JobOfferPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobOfferPost.swift; path = Utils/Marketplace/JobOfferPost.swift; sourceTree = "<group>"; };
 		43FC7AB31CAB4CFA009EB4F4 /* GeneralGoodsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneralGoodsVC.swift; path = ViewController/Dash/Postings/GeneralGoods/GeneralGoodsVC.swift; sourceTree = "<group>"; };
 		43FC7AB51CAB5982009EB4F4 /* GeneralGoodsUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneralGoodsUploader.swift; path = Utils/Marketplace/GeneralGoodsUploader.swift; sourceTree = "<group>"; };
+		43FC7AB81CABD7FE009EB4F4 /* MarketPlaceMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MarketPlaceMain.storyboard; path = Storyboards/MarketPlaceMain.storyboard; sourceTree = "<group>"; };
+		43FC7ABB1CAC0F33009EB4F4 /* MarketplaceMainScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarketplaceMainScreenVC.swift; path = ViewController/MainScreen/MarketplaceMainScreenVC/MarketplaceMainScreenVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +320,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		430449DD1CADBAF000365353 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				43FC7ABB1CAC0F33009EB4F4 /* MarketplaceMainScreenVC.swift */,
+				430449DE1CADBB3300365353 /* GoodsForSaleVC.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		430A59DC1CA29FFF00FCD13D /* Dash */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +409,7 @@
 		4316BB7C1C7B046A007A9ECB /* CitiFleet */ = {
 			isa = PBXGroup;
 			children = (
+				43FC7ABA1CAC0E8E009EB4F4 /* MarketPlace */,
 				4316BBA51C7B61D7007A9ECB /* Constants */,
 				4316BBA01C7B5EBE007A9ECB /* Extensions */,
 				4316BBB21C7B7399007A9ECB /* Utils */,
@@ -402,6 +426,7 @@
 		4316BB8F1C7B086C007A9ECB /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				43FC7AB71CABD7E0009EB4F4 /* MarketPlace */,
 				43DC05BA1C842BE600AB670A /* XIB */,
 				4316BB901C7B0885007A9ECB /* Login.storyboard */,
 				43B6D8541C7EFC74000D6844 /* MainScreen.storyboard */,
@@ -450,6 +475,7 @@
 				436D6B1E1C92E37600A0240E /* UIViewController+Ext.swift */,
 				43CFA7641C939E7C00DC89C9 /* NSAttributedString+Ext.swift */,
 				430A59E21CA2B66100FCD13D /* NSDateFormater+Ext.swift */,
+				439AB7901CAE71B50015A874 /* String+Ext.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -922,6 +948,25 @@
 			name = "General Goods";
 			sourceTree = "<group>";
 		};
+		43FC7AB71CABD7E0009EB4F4 /* MarketPlace */ = {
+			isa = PBXGroup;
+			children = (
+				43FC7AB81CABD7FE009EB4F4 /* MarketPlaceMain.storyboard */,
+			);
+			name = MarketPlace;
+			sourceTree = "<group>";
+		};
+		43FC7ABA1CAC0E8E009EB4F4 /* MarketPlace */ = {
+			isa = PBXGroup;
+			children = (
+				430449D31CAD1FC300365353 /* MarketplaceTemplateCell.swift */,
+				430449D91CAD3AB800365353 /* MarketplaceCollectiovViewLayout.swift */,
+				430449DB1CAD594700365353 /* MarketplaceItem.swift */,
+				430449DD1CADBAF000365353 /* ViewControllers */,
+			);
+			name = MarketPlace;
+			sourceTree = "<group>";
+		};
 		A1BF0D86F407C96A1C73890B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1012,6 +1057,7 @@
 				4316BBAB1C7B6A27007A9ECB /* Montserrat-Black.otf in Resources */,
 				4316BBAC1C7B6A27007A9ECB /* Montserrat-Bold.otf in Resources */,
 				43DC05BC1C8439CF00AB670A /* ReportsView.xib in Resources */,
+				43FC7AB91CABD7FE009EB4F4 /* MarketPlaceMain.storyboard in Resources */,
 				433037231C9D7DF1001EAE94 /* DialogView.xib in Resources */,
 				4316BBAD1C7B6A27007A9ECB /* Montserrat-ExtraBold.otf in Resources */,
 				4316BBAE1C7B6A27007A9ECB /* Montserrat-Light.otf in Resources */,
@@ -1128,6 +1174,8 @@
 				43CFA7651C939E7C00DC89C9 /* NSAttributedString+Ext.swift in Sources */,
 				43DC05C01C847DAE00AB670A /* RequestManager+Login.swift in Sources */,
 				431D2DC51C9ECE0B00CBC4BA /* Postings.swift in Sources */,
+				430449DF1CADBB3300365353 /* GoodsForSaleVC.swift in Sources */,
+				430449D41CAD1FC300365353 /* MarketplaceTemplateCell.swift in Sources */,
 				43DC05C51C849C7E00AB670A /* LocationManager.swift in Sources */,
 				43F5E2261C99ADE7000BBB91 /* RequestManager+Profile.swift in Sources */,
 				43D900F11C945857004A315C /* HighlitableLabel.swift in Sources */,
@@ -1179,6 +1227,7 @@
 				43DC05B01C83BB7700AB670A /* Keys.swift in Sources */,
 				431D2DDA1CA152BD00CBC4BA /* DOCManagementCell.swift in Sources */,
 				43DC05C91C85AEAF00AB670A /* AddFriendsVC.swift in Sources */,
+				439AB7911CAE71B50015A874 /* String+Ext.swift in Sources */,
 				434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */,
 				43A426691C916D480044B6A6 /* Resources.swift in Sources */,
 				43DC05B91C842BDD00AB670A /* ReportsView.swift in Sources */,
@@ -1200,6 +1249,9 @@
 				436D6B1A1C92C6FB00A0240E /* RequestManager+Benefit.swift in Sources */,
 				430B4F481C7DEAF000EE884A /* LoaderViewManager.swift in Sources */,
 				43F5E21A1C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift in Sources */,
+				430449DC1CAD594700365353 /* MarketplaceItem.swift in Sources */,
+				430449DA1CAD3AB800365353 /* MarketplaceCollectiovViewLayout.swift in Sources */,
+				43FC7ABC1CAC0F33009EB4F4 /* MarketplaceMainScreenVC.swift in Sources */,
 				43D900EE1C944F92004A315C /* LegalAidSetuper.swift in Sources */,
 				43DC05901C83336C00AB670A /* PhoneTextField.swift in Sources */,
 				43F834091C97116B00DE7E50 /* LegalAidActor.swift in Sources */,
