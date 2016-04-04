@@ -35,6 +35,10 @@ class MarketplaceMainScreenVC: UIViewController {
     }
     
     @IBAction func openJobOffers(sender: AnyObject) {
+        let vc = storyboard?.instantiateViewControllerWithIdentifier(JobOffersVC.StoryBoardID)
         
+        if let viewController = vc as? JobOffersVC {
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 }

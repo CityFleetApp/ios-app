@@ -991,7 +991,7 @@
         <!--Jobs Offers-->
         <scene sceneID="WDC-jc-RTO">
             <objects>
-                <viewController id="ry9-9a-HjN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JobOffersVC" id="ry9-9a-HjN" customClass="JobOffersVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uhg-oq-2N8"/>
                         <viewControllerLayoutGuide type="bottom" id="7fQ-HX-hIX"/>
@@ -1001,17 +1001,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="162" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="suF-HN-wrn">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NotificationCell" rowHeight="81" id="hzj-vt-XYB" customClass="NotificationCell" customModule="CitiFleet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="81"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="JobOfferTableViewCell" rowHeight="81" id="hzj-vt-XYB" customClass="JobOfferTableViewCell" customModule="CitiFleet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="81"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hzj-vt-XYB" id="0aS-bV-9fT">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alert_notif-ic" translatesAutoresizingMaskIntoConstraints="NO" id="Y56-bL-4Pf">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="job_offer_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Y56-bL-4Pf">
                                                     <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Y56-bL-4Pf" secondAttribute="height" multiplier="1:1" id="D2U-va-nwb"/>
@@ -1097,12 +1097,17 @@
                                             <outlet property="calendarIcon" destination="VNe-sb-xWg" id="Lza-23-PMr"/>
                                             <outlet property="dateLabel" destination="BIO-GA-k6v" id="vRA-pS-qYj"/>
                                             <outlet property="icon" destination="Y56-bL-4Pf" id="Zb3-Tv-seY"/>
+                                            <outlet property="jobStateLabel" destination="ocy-MQ-Whc" id="xGW-is-JHO"/>
                                             <outlet property="nextScreenArrow" destination="XaI-HZ-47S" id="y5w-XJ-dEM"/>
                                             <outlet property="notificationTitle" destination="UdT-RU-OX1" id="djv-0c-CMu"/>
                                             <outlet property="title" destination="NxH-zT-16U" id="Jbp-Ip-wb6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ry9-9a-HjN" id="Wwo-et-1gb"/>
+                                    <outlet property="delegate" destination="ry9-9a-HjN" id="RQs-zQ-8mA"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gt-Xt-ytg">
                                 <rect key="frame" x="0.0" y="551" width="600" height="49"/>
@@ -1152,34 +1157,19 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="jobOfferTableView" destination="suF-HN-wrn" id="FsT-rK-eFI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zZi-G7-HKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3225" y="1228"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="sTO-zM-G23">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sJw-iI-55Y" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rw0-eR-TT1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ry9-9a-HjN" kind="relationship" relationship="rootViewController" id="Cvv-T1-gc7"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7vk-a8-b3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2413" y="1228"/>
+            <point key="canvasLocation" x="2413" y="1216"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Alert_notif-ic" width="18" height="18"/>
         <image name="all-ic" width="22" height="13"/>
         <image name="back-ic" width="8" height="13"/>
+        <image name="job_offer_icon" width="28" height="28"/>
         <image name="logo" width="279" height="207"/>
         <image name="mp-background" width="414" height="665"/>
         <image name="mp_arrow_down" width="14" height="14"/>

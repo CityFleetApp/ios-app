@@ -73,6 +73,8 @@ struct URL {
         
         static let JOPost = "marketplace/offers/posting/"
         static let GeneralGoods = "marketplace/goods/posting/"
+        
+        static let JobOffers = "marketplace/offers/"
     }
     static let Reports = "reports/"
     static let BenefitsList = "benefits/"
@@ -231,7 +233,7 @@ struct Response {
             static let destination = "destination"
             static let fare = "fare"
             static let gratuity = "gratuity"
-            static let vehicle_type = "vehicle_type"
+            static let vehicleType = "vehicle_type"
             static let suite = "suite"
             static let jobType = "job_type"
             static let instructions = "instructions"

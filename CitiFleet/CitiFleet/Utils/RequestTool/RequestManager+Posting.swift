@@ -8,26 +8,34 @@
 
 import Foundation
 
+//MARK: - MarketPlace
 extension RequestManager {
-    func getCarsForRent(completion: ((ArrayResponse?, NSError?) -> ())) {
+    func getCarsForRent(completion: ((ArrayResponse, NSError?) -> ())) {
         get(URL.Marketplace.carsForRent, parameters: nil) { (json, error) -> () in
             completion(json?.arrayObject, error)
         }
     }
     
-    func getCarsForSale(completion: ((ArrayResponse?, NSError?) -> ())) {
+    func getCarsForSale(completion: ((ArrayResponse, NSError?) -> ())) {
         get(URL.Marketplace.carsForSale, parameters: nil) { (json, error) -> () in
             completion(json?.arrayObject, error)
         }
     }
     
-    func getGoodsForSale(completion: ((ArrayResponse?, NSError?) -> ())) {
+    func getGoodsForSale(completion: ((ArrayResponse, NSError?) -> ())) {
         get(URL.Marketplace.goodsForSale, parameters: nil) { (json, error) -> () in
+            completion(json?.arrayObject, error)
+        }
+    }
+    
+    func getJobOffers(completion: ((ArrayResponse, NSError?) -> ())) {
+        get(URL.Marketplace.JobOffers, parameters: nil) { (json, error) in
             completion(json?.arrayObject, error)
         }
     }
 }
 
+//MARK: - Posting
 extension RequestManager {
     func postGeneralGood(item: String, price: String, condition: Int, goodDescription: String, images: [UIImage], completion: ((NSError?) -> ())) {
         typealias Param = Params.Posting.GeneralGoods

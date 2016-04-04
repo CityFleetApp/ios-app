@@ -76,6 +76,8 @@
 		439AB7931CAEB4AE0015A874 /* CarsForRentSale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7921CAEB4AE0015A874 /* CarsForRentSale.swift */; };
 		439AB7961CB018BB0015A874 /* DetailsMarketplaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7951CB018BB0015A874 /* DetailsMarketplaceVC.swift */; };
 		439AB79A1CB25FFE0015A874 /* JobOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7991CB25FFE0015A874 /* JobOffers.swift */; };
+		439AB79C1CB2609F0015A874 /* JobOffersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB79B1CB2609F0015A874 /* JobOffersDataSource.swift */; };
+		439AB79E1CB26EF80015A874 /* JobOfferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB79D1CB26EF80015A874 /* JobOfferTableViewCell.swift */; };
 		43A4265F1C9035660044B6A6 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A4265E1C9035660044B6A6 /* SettingsVC.swift */; };
 		43A426611C90359E0044B6A6 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A426601C90359E0044B6A6 /* Settings.storyboard */; };
 		43A426631C9040150044B6A6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A426621C9040150044B6A6 /* Settings.swift */; };
@@ -230,6 +232,8 @@
 		439AB7921CAEB4AE0015A874 /* CarsForRentSale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarsForRentSale.swift; path = ViewController/MainScreen/MarketplaceMainScreenVC/CarsForRentSale.swift; sourceTree = "<group>"; };
 		439AB7951CB018BB0015A874 /* DetailsMarketplaceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailsMarketplaceVC.swift; path = ViewController/MainScreen/MarketplaceMainScreenVC/DetailsMarketplaceVC.swift; sourceTree = "<group>"; };
 		439AB7991CB25FFE0015A874 /* JobOffers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobOffers.swift; path = ViewController/MainScreen/MarketplaceMainScreenVC/JobOffers.swift; sourceTree = "<group>"; };
+		439AB79B1CB2609F0015A874 /* JobOffersDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobOffersDataSource.swift; path = Utils/Marketplace/JobOffersDataSource.swift; sourceTree = "<group>"; };
+		439AB79D1CB26EF80015A874 /* JobOfferTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobOfferTableViewCell.swift; path = Viewes/Marketplace/Cells/JobOfferTableViewCell.swift; sourceTree = "<group>"; };
 		43A4265E1C9035660044B6A6 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsVC.swift; path = ViewController/Dash/Settings/SettingsVC.swift; sourceTree = "<group>"; };
 		43A426601C90359E0044B6A6 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = Storyboards/Settings.storyboard; sourceTree = "<group>"; };
 		43A426621C9040150044B6A6 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = Model/Settings.swift; sourceTree = "<group>"; };
@@ -686,6 +690,8 @@
 			isa = PBXGroup;
 			children = (
 				439AB7991CB25FFE0015A874 /* JobOffers.swift */,
+				439AB79B1CB2609F0015A874 /* JobOffersDataSource.swift */,
+				439AB79D1CB26EF80015A874 /* JobOfferTableViewCell.swift */,
 			);
 			name = "Job Offers";
 			sourceTree = "<group>";
@@ -1242,6 +1248,7 @@
 				43A4265F1C9035660044B6A6 /* SettingsVC.swift in Sources */,
 				43F5E2381C9B1716000BBB91 /* NotificationDetailVC.swift in Sources */,
 				439AB79A1CB25FFE0015A874 /* JobOffers.swift in Sources */,
+				439AB79E1CB26EF80015A874 /* JobOfferTableViewCell.swift in Sources */,
 				43F5E22E1C9AE6C7000BBB91 /* NotificationCell.swift in Sources */,
 				430B4F431C7DC73D00EE884A /* URL.swift in Sources */,
 				436D6B231C93181C00A0240E /* BarcodeView.swift in Sources */,
@@ -1289,6 +1296,7 @@
 				430449DA1CAD3AB800365353 /* MarketplaceCollectiovViewLayout.swift in Sources */,
 				43FC7ABC1CAC0F33009EB4F4 /* MarketplaceMainScreenVC.swift in Sources */,
 				43D900EE1C944F92004A315C /* LegalAidSetuper.swift in Sources */,
+				439AB79C1CB2609F0015A874 /* JobOffersDataSource.swift in Sources */,
 				43DC05901C83336C00AB670A /* PhoneTextField.swift in Sources */,
 				43F834091C97116B00DE7E50 /* LegalAidActor.swift in Sources */,
 				43A426711C91B71A0044B6A6 /* BenefitsLayout.swift in Sources */,

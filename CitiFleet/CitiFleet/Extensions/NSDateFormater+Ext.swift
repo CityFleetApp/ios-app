@@ -20,4 +20,16 @@ extension NSDateFormatter {
         formater.dateFormat = "HH:mm"
         return formater
     }
+    
+    class var serverResponseFormat: NSDateFormatter {
+        get {let formater = NSDateFormatter()
+            formater.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            return formater
+        }
+    }
+    
+    convenience init(dateFormat: String) {
+        self.init()
+        self.dateFormat = dateFormat
+    }
 }
