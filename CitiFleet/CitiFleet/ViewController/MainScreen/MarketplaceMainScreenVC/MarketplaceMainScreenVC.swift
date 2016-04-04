@@ -10,12 +10,19 @@ import UIKit
 
 class MarketplaceMainScreenVC: UIViewController {
     let ItemsViewControllerID = "GoodsForSaleVC"
+    let CarsViewControllerID = "CarsForRentSale"
     override func viewDidLoad() {
         navigationController?.navigationBar.hidden = false
     }
     
     @IBAction func openCarsForSale(sender: AnyObject) {
-       
+//       CarsForRentSale
+        let vc = storyboard?.instantiateViewControllerWithIdentifier(CarsViewControllerID)
+        
+        if let viewController = vc as? CarsForRentSale {
+            viewController.reuseIdentifier = "CarsForSaleCell"
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
     @IBAction func openGeneralGoods(sender: AnyObject) {

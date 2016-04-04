@@ -224,5 +224,19 @@ struct Response {
         static let fuel = "fuel"
         static let seats = "seats"
         static let photoSize = "dimensions"
+        struct JobOffers {
+            static let id = "id"
+            static let pickupDatetime = "pickup_datetime"
+            static let pickupAddress = "pickup_address"
+            static let destination = "destination"
+            static let fare = "fare"
+            static let gratuity = "gratuity"
+            static let vehicle_type = "vehicle_type"
+            static let suite = "suite"
+            static let jobType = "job_type"
+            static let instructions = "instructions"
+            static let status = "status"
+            static let created = "created"
+        }
     }
 }

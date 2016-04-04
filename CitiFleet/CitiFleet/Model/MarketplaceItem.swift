@@ -75,7 +75,7 @@ class MarketPlaceShopManager: NSObject {
             item.make = obj[Param.make] as? String
             item.model = obj[Param.model] as? String
             item.fuel = obj[Param.fuel] as? String
-            item.year = obj[Param.year] as? String
+            item.year = String(obj[Param.year] as! Int)
             items.append(item)
         }
         self.items = items

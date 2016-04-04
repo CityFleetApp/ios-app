@@ -70,6 +70,7 @@ class MarketplaceCollectiovViewLayout: UICollectionViewLayout {
     }
     
     override func prepareLayout() {
+        contentHeight = 0
         let columnWidth = width / CGFloat(numberOfColumns)
         
         var xOffsets = [CGFloat]()
@@ -83,7 +84,7 @@ class MarketplaceCollectiovViewLayout: UICollectionViewLayout {
         for item in 0..<collectionView!.numberOfItemsInSection(0) {
             let indexPath = NSIndexPath(forItem: item, inSection: 0)
             
-            let width = self.columnWidth //columnWidth - (cellPadding * 2)
+            let width = self.columnWidth
             let photoHeight = delegate.collectionView(collectionView!, heightForPhotoAtIndexPath: indexPath, withWidth: width)
             let infoHeight = delegate.collectionView(collectionView!, heightForInfoAtIndexPath: indexPath, withWidth: width)
             let descriptionHeght = delegate.collectionView(collectionView!, heightForDescriptionAtIndexPath: indexPath, withWidth: width)
@@ -111,8 +112,7 @@ class MarketplaceCollectiovViewLayout: UICollectionViewLayout {
             cache.append(attributes)
             contentHeight = max(contentHeight, CGRectGetMaxY(frame))
             yOffsets[column] = yOffsets[column] + height
-            column = column >= (numberOfColumns - 1) ? 0 : ++column
-            
+            column = column >= (numberOfColumns - 1) ? 0 : (column + 1)
         }
     }
     

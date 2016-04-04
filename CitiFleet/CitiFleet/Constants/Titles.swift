@@ -44,5 +44,7 @@ struct Titles {
         static let noInstructionsMsg = "Please, provide the instructions of job"
         
         static let noGoodDescriptionMsg = "Please, provide description of the good"
+        
+        static let topLabelTitle = "General Goods"
     }
 }

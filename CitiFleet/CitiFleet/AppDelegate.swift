@@ -17,7 +17,8 @@ import GoogleMaps
 
 @UIApplicationMain
 
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate
+{
 
     var window: UIWindow?
     

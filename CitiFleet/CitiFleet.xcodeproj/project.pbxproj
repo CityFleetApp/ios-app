@@ -73,6 +73,9 @@
 		436D6B231C93181C00A0240E /* BarcodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D6B221C93181C00A0240E /* BarcodeView.swift */; };
 		436D6B251C93184B00A0240E /* BarcodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436D6B241C93184B00A0240E /* BarcodeView.xib */; };
 		439AB7911CAE71B50015A874 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7901CAE71B50015A874 /* String+Ext.swift */; };
+		439AB7931CAEB4AE0015A874 /* CarsForRentSale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7921CAEB4AE0015A874 /* CarsForRentSale.swift */; };
+		439AB7961CB018BB0015A874 /* DetailsMarketplaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7951CB018BB0015A874 /* DetailsMarketplaceVC.swift */; };
+		439AB79A1CB25FFE0015A874 /* JobOffers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7991CB25FFE0015A874 /* JobOffers.swift */; };
 		43A4265F1C9035660044B6A6 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A4265E1C9035660044B6A6 /* SettingsVC.swift */; };
 		43A426611C90359E0044B6A6 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A426601C90359E0044B6A6 /* Settings.storyboard */; };
 		43A426631C9040150044B6A6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A426621C9040150044B6A6 /* Settings.swift */; };
@@ -224,6 +227,9 @@
 		436D6B221C93181C00A0240E /* BarcodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarcodeView.swift; path = Viewes/BarcodeView/BarcodeView.swift; sourceTree = "<group>"; };
 		436D6B241C93184B00A0240E /* BarcodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BarcodeView.xib; path = Storyboards/XIB/BarcodeView.xib; sourceTree = "<group>"; };
 		439AB7901CAE71B50015A874 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Ext.swift"; path = "Extensions/String+Ext.swift"; sourceTree = "<group>"; };
+		439AB7921CAEB4AE0015A874 /* CarsForRentSale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarsForRentSale.swift; path = ViewController/MainScreen/MarketplaceMainScreenVC/CarsForRentSale.swift; sourceTree = "<group>"; };
+		439AB7951CB018BB0015A874 /* DetailsMarketplaceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailsMarketplaceVC.swift; path = ViewController/MainScreen/MarketplaceMainScreenVC/DetailsMarketplaceVC.swift; sourceTree = "<group>"; };
+		439AB7991CB25FFE0015A874 /* JobOffers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobOffers.swift; path = ViewController/MainScreen/MarketplaceMainScreenVC/JobOffers.swift; sourceTree = "<group>"; };
 		43A4265E1C9035660044B6A6 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsVC.swift; path = ViewController/Dash/Settings/SettingsVC.swift; sourceTree = "<group>"; };
 		43A426601C90359E0044B6A6 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = Storyboards/Settings.storyboard; sourceTree = "<group>"; };
 		43A426621C9040150044B6A6 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = Model/Settings.swift; sourceTree = "<group>"; };
@@ -325,6 +331,8 @@
 			children = (
 				43FC7ABB1CAC0F33009EB4F4 /* MarketplaceMainScreenVC.swift */,
 				430449DE1CADBB3300365353 /* GoodsForSaleVC.swift */,
+				439AB7921CAEB4AE0015A874 /* CarsForRentSale.swift */,
+				439AB7941CB0188F0015A874 /* Details */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -655,6 +663,33 @@
 			name = "Barcode View";
 			sourceTree = "<group>";
 		};
+		439AB7941CB0188F0015A874 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				439AB7951CB018BB0015A874 /* DetailsMarketplaceVC.swift */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
+		439AB7971CB2549B0015A874 /* Good & Cars */ = {
+			isa = PBXGroup;
+			children = (
+				430449D31CAD1FC300365353 /* MarketplaceTemplateCell.swift */,
+				430449D91CAD3AB800365353 /* MarketplaceCollectiovViewLayout.swift */,
+				430449DB1CAD594700365353 /* MarketplaceItem.swift */,
+				430449DD1CADBAF000365353 /* ViewControllers */,
+			);
+			name = "Good & Cars";
+			sourceTree = "<group>";
+		};
+		439AB7981CB254AC0015A874 /* Job Offers */ = {
+			isa = PBXGroup;
+			children = (
+				439AB7991CB25FFE0015A874 /* JobOffers.swift */,
+			);
+			name = "Job Offers";
+			sourceTree = "<group>";
+		};
 		43A4265D1C90353E0044B6A6 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -959,10 +994,8 @@
 		43FC7ABA1CAC0E8E009EB4F4 /* MarketPlace */ = {
 			isa = PBXGroup;
 			children = (
-				430449D31CAD1FC300365353 /* MarketplaceTemplateCell.swift */,
-				430449D91CAD3AB800365353 /* MarketplaceCollectiovViewLayout.swift */,
-				430449DB1CAD594700365353 /* MarketplaceItem.swift */,
-				430449DD1CADBAF000365353 /* ViewControllers */,
+				439AB7981CB254AC0015A874 /* Job Offers */,
+				439AB7971CB2549B0015A874 /* Good & Cars */,
 			);
 			name = MarketPlace;
 			sourceTree = "<group>";
@@ -1185,6 +1218,7 @@
 				43A4266E1C91ABAD0044B6A6 /* BenefitsVC.swift in Sources */,
 				43527F6F1CA3D494003D87FF /* APNSManager.swift in Sources */,
 				43DC058B1C80BD6A00AB670A /* Storyboard.swift in Sources */,
+				439AB7931CAEB4AE0015A874 /* CarsForRentSale.swift in Sources */,
 				435611991C8763AA0050EDE7 /* RequestManager+SocialManager.swift in Sources */,
 				4316BBA21C7B5EEC007A9ECB /* UITextField+Ext.swift in Sources */,
 				43DC05CC1C85B04F00AB670A /* AddFriendsCell.swift in Sources */,
@@ -1207,6 +1241,7 @@
 				43F5E2221C9894AF000BBB91 /* GalleryPhoto.swift in Sources */,
 				43A4265F1C9035660044B6A6 /* SettingsVC.swift in Sources */,
 				43F5E2381C9B1716000BBB91 /* NotificationDetailVC.swift in Sources */,
+				439AB79A1CB25FFE0015A874 /* JobOffers.swift in Sources */,
 				43F5E22E1C9AE6C7000BBB91 /* NotificationCell.swift in Sources */,
 				430B4F431C7DC73D00EE884A /* URL.swift in Sources */,
 				436D6B231C93181C00A0240E /* BarcodeView.swift in Sources */,
@@ -1237,6 +1272,7 @@
 				431D2DC11C9EC70D00CBC4BA /* OptionsPostingVC.swift in Sources */,
 				43DC05891C80AEBB00AB670A /* Strings.swift in Sources */,
 				43D2D0B61C7C9ABE00A41D4F /* LoginTextField.swift in Sources */,
+				439AB7961CB018BB0015A874 /* DetailsMarketplaceVC.swift in Sources */,
 				43527F721CA43A53003D87FF /* CellTitles.swift in Sources */,
 				43D900F31C94657C004A315C /* LegalAidDetailVC.swift in Sources */,
 				431D2DC31C9ECA8C00CBC4BA /* OptionPostingBuild.swift in Sources */,

@@ -13,15 +13,27 @@ import Haneke
 class GoodsForSaleVC: UICollectionViewController, MarketplaceLayoutDelegate {
     var reuseIdentifier: String!
     var dataLoader = MarketPlaceShopManager()
+    var topView: UIView!
     
     override func viewDidLoad() {
-        collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
+        collectionView!.contentInset = UIEdgeInsets(top: 23 + 66, left: 5, bottom: 10, right: 5)
         
         let layout = collectionViewLayout as! MarketplaceCollectiovViewLayout
         layout.cellPadding = 5
         layout.delegate = self
         layout.numberOfColumns = 2
         
+        loadData()
+        
+        topView = addTopView()
+        addSubviewToTopView()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        topView.removeFromSuperview()
+    }
+    
+    func loadData ()  {
         dataLoader.loadGoodsForSale { [weak self] (error) -> () in
             if error == nil {
                 self?.collectionView?.reloadData()
@@ -29,15 +41,31 @@ class GoodsForSaleVC: UICollectionViewController, MarketplaceLayoutDelegate {
         }
     }
     
-    func addTopView () {
-        
+    func addTopView () -> UIView {
+        let navController = self.navigationController
+        var navBarFrame = navigationController?.navigationBar.frame
+        let imageView = UIImageView(image: UIImage(named: Resources.Marketplace.TopImage))
+        navBarFrame?.origin.y = CGRectGetMaxY(navBarFrame!)
+        navBarFrame?.size.height = 66
+        imageView.frame = navBarFrame!
+        navController?.view.addSubview(imageView)
+        imageView.userInteractionEnabled = true 
+        return imageView
+    }
+    
+    func addSubviewToTopView() {
+        let label = UILabel(frame: topView.bounds)
+        label.font = UIFont(name: FontNames.Montserrat.Regular, size: 16.59)
+        label.textColor = UIColor.whiteColor()
+        label.textAlignment = .Center
+        label.text = Titles.MarketPlace.topLabelTitle
+        topView.addSubview(label)
     }
     
     func setupAdditionalData(cell: MarketplaceTemplateCell, indexPath: NSIndexPath) {
         let goodsCell = cell as! GoodsForSaleCell
         let item = dataLoader.items[indexPath.row] as! GoodForSale
         goodsCell.itemStateLabel.text = item.condition
-        goodsCell.itemPhoto.hnk_setImageFromURL(item.photosURLs[0])
         goodsCell.itemName.text = item.goodName
     }
     
@@ -78,14 +106,35 @@ extension GoodsForSaleVC {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! MarketplaceTemplateCell
         let item = dataLoader.items[indexPath.row]
-        cell.priceLabel.text = item.price
+        cell.priceLabel.text = "$ \(item.price!)"
         cell.itemDescription.text = item.itemDescription
         cell.setDefaultShadow()
+        
         cell.changedShownDetails = { (shaw) in
             item.isShownDetails = !item.isShownDetails
             collectionView.reloadItemsAtIndexPaths([indexPath])
         }
+        
         setupAdditionalData(cell, indexPath: indexPath)
         return cell
+    }
+    
+    override func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        let item = dataLoader.items[indexPath.row]
+        let cell = cell as! MarketplaceTemplateCell
+        cell.itemPhoto.image = nil
+        cell.itemPhoto.hnk_setImageFromURL(item.photosURLs[0])
+        
+        let gradient = CAGradientLayer()
+        var frame = cell.itemNameBgView.bounds
+        frame.size.width = (collectionViewLayout as! MarketplaceCollectiovViewLayout).columnWidth
+        gradient.frame = frame
+        gradient.colors = [UIColor.clearColor().CGColor, UIColor(white: 0, alpha: 0.7).CGColor]
+        for gr in cell.itemNameBgView.layer.sublayers! {
+            if gr.isKindOfClass(CAGradientLayer) {
+                gr.removeFromSuperlayer()
+            }
+        }
+        cell.itemNameBgView.layer.insertSublayer(gradient, atIndex: 0)
     }
 }

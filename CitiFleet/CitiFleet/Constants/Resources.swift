@@ -23,4 +23,7 @@ struct Resources {
     struct DOCManagement {
         static let TemplatePhoto = "Doc-management-template"
     }
+    struct Marketplace {
+        static let TopImage = "header-bg"
+    }
 }
