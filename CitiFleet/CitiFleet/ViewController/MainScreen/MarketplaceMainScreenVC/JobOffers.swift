@@ -13,19 +13,46 @@ class JobOffersVC: UIViewController {
     
     let dataSource = JobOffersDataSource()
     @IBOutlet var jobOfferTableView: UITableView!
+    @IBOutlet var availableJobBtn: UIButton!
+    var isFiltered = false
     
     override func viewDidLoad() {
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        reloadData()
+    }
+    
+    func reloadData () {
         dataSource.loadData { [weak self] (error) in
             if error == nil {
                 self?.jobOfferTableView.reloadData()
+                self?.availableJobBtn.setTitle("\((self?.dataSource.availableItems.count)!) Jobs available", forState: .Normal)
             }
+        }
+    }
+}
+
+extension JobOffersVC {
+    @IBAction func showAllJobOffers(sender: AnyObject) {
+        if isFiltered {
+            isFiltered = false
+            jobOfferTableView.reloadData()
+        }
+    }
+    
+    @IBAction func showAvailableJobOffers(sender: AnyObject) {
+        if !isFiltered {
+            isFiltered = true
+            jobOfferTableView.reloadData()
         }
     }
 }
 
 extension JobOffersVC: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.items.count
+        return isFiltered ? dataSource.availableItems.count : dataSource.items.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -35,12 +62,13 @@ extension JobOffersVC: UITableViewDataSource {
             cell = JobOfferTableViewCell(style: .Default, reuseIdentifier: CellID)
         }
         
-        let item = dataSource.items[indexPath.row]
+        let items = isFiltered ? dataSource.availableItems : dataSource.items
+        let item = items[indexPath.row]
         cell?.title.text = "\(NSDateFormatter(dateFormat: "hh:mm a").stringFromDate(item.pickupDatetime!)) | $\(item.gratuity!))"
         cell?.dateLabel?.text = NSDateFormatter(dateFormat: "dd/MM/yyyy").stringFromDate(item.pickupDatetime!)
-        cell?.placeHolder?.placeholderText = item.instructions
         cell?.jobStateLabel.text = item.status
         cell?.setEditable(true)
+        cell?.notificationTitle?.text = item.instructions
         
         return cell!
     }
@@ -48,7 +76,13 @@ extension JobOffersVC: UITableViewDataSource {
 
 extension JobOffersVC: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let item = dataSource.items[indexPath.row]
+        let vc = storyboard?.instantiateViewControllerWithIdentifier(JobOfferInfoVC.StoryboardID)
         
+        if let viewController = vc as? JobOfferInfoVC {
+            viewController.job = item
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {

@@ -25,6 +25,11 @@ struct JobOffer {
 class JobOffersDataSource: NSObject {
     typealias Param = Response.Marketplace.JobOffers
     var items: [JobOffer] = []
+    var availableItems: [JobOffer] {
+        get {
+            return items.filter({ return $0.status == "Available"})
+        }
+    }
     
     func loadData(completion: ((NSError?) -> ())) {
         RequestManager.sharedInstance().getJobOffers { [weak self] (response, error) in
