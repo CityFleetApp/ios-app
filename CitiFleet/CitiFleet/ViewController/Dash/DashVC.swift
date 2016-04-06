@@ -101,7 +101,7 @@ extension DashVC: UIImagePickerControllerDelegate, UINavigationControllerDelegat
         let imageSide = Sizes.Image.avatarSize
         let scaledImage = RBSquareImageTo(image, size: CGSize(width: imageSide, height: imageSide))
         picker.dismissViewControllerAnimated(true) {
-            User.currentUser()?.uploadPhoto(scaledImage, complation: self.handleUploadingProcess)
+            User.currentUser()?.uploadPhoto(scaledImage, completion: self.handleUploadingProcess)
         }
     }
     

@@ -22,6 +22,7 @@ class MarketPlaceManager: NSObject {
     var model: [MarketPlaceItem] = []
     
     private class DataDownloader: NSOperation {
+        
         enum State: String {
             case Ready, Executing, Finished
             
@@ -31,7 +32,6 @@ class MarketPlaceManager: NSObject {
         }
         
         private let Params = ("id", "name")
-        var manager: MarketPlaceManager
         var URLstr: String
         var completed: (([MarketPlaceItem]) -> ())
         
@@ -62,8 +62,7 @@ class MarketPlaceManager: NSObject {
             return true
         }
         
-        init(manager: MarketPlaceManager, URLstr: String, completion: (([MarketPlaceItem]) -> ())) {
-            self.manager = manager
+        init(URLstr: String, completion: (([MarketPlaceItem]) -> ())) {
             self.URLstr = URLstr
             completed = completion
             super.init()
@@ -84,9 +83,9 @@ class MarketPlaceManager: NSObject {
         }
         
         private override func main() {
-            RequestManager.sharedInstance().makeSilentRequest(.GET, baseURL: URLstr, parameters: nil) { [unowned self] (json, error) -> () in
+            RequestManager.sharedInstance().makeSilentRequest(.GET, baseURL: URLstr, parameters: nil) { [weak self] (json, error) -> () in
                 if let results = json?.arrayObject {
-                    self.fillArray(results)
+                    self?.fillArray(results)
                 }
             }
         }
@@ -110,23 +109,23 @@ class MarketPlaceManager: NSObject {
         let operationQueue = NSOperationQueue()
         operationQueue.maxConcurrentOperationCount = 1
         
-        operationQueue.addOperation(DataDownloader(manager: self, URLstr: MPURL.make, completion: { [unowned self] (arr) in
+        operationQueue.addOperation(DataDownloader(URLstr: MPURL.make, completion: { [unowned self] (arr) in
             self.make = arr
             }))
-        operationQueue.addOperation(DataDownloader(manager: self, URLstr: MPURL.color, completion: { [unowned self] (arr) in
+        operationQueue.addOperation(DataDownloader(URLstr: MPURL.color, completion: { [unowned self] (arr) in
             self.colors = arr
             }))
-        operationQueue.addOperation(DataDownloader(manager: self, URLstr: MPURL.seats, completion: { [unowned self] (arr) in
+        operationQueue.addOperation(DataDownloader(URLstr: MPURL.seats, completion: { [unowned self] (arr) in
             self.seats = arr
             }))
-        operationQueue.addOperation(DataDownloader(manager: self, URLstr: MPURL.fuel, completion: { [unowned self] (arr) in
+        operationQueue.addOperation(DataDownloader(URLstr: MPURL.fuel, completion: { [unowned self] (arr) in
             self.fuel = arr
             }))
-        operationQueue.addOperation(DataDownloader(manager: self, URLstr: MPURL.type, completion: { [unowned self] (arr) in
+        operationQueue.addOperation(DataDownloader(URLstr: MPURL.type, completion: { [unowned self] (arr) in
             self.type = arr
             }))
         
-        operationQueue.addObserver(self, forKeyPath: operationsKeyPath, options: NSKeyValueObservingOptions(), context: UnsafeMutablePointer())
+        operationQueue.addObserver(self, forKeyPath: operationsKeyPath, options: NSKeyValueObservingOptions(), context: nil)
     }
     
     func loadModels(makeID: Int, completion: (() -> ())) {

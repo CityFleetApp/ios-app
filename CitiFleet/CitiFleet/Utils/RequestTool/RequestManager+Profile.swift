@@ -10,10 +10,11 @@ import Foundation
 
 extension RequestManager {
     func uploadAvatar(data: NSData, completion: ((NSURL?, NSError?) -> ())) {
-        uploadPhoto(nil, data: [data], baseUrl: URL.Profile.UploadAvatar, HTTPMethod: "PUT", name: "avatar", completion: { (data, error) in
+        uploadPhoto(nil, data: [data], baseUrl: URL.Profile.UploadAvatar, HTTPMethod: "PUT", name: "avatar", completion: { [weak self] (data, error) in
             if let avatarURL = data?.valueForKey(Response.UploadAvatar.avatar) as? String {
-                self.saveAvatar(avatarURL)
+                self?.saveAvatar(avatarURL)
                 completion(NSURL(string: avatarURL), nil)
+                return
             }
             completion(nil, error)
         })

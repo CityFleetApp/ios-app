@@ -107,12 +107,12 @@ class MyRentSaleCellBuilder: PostingCellBuilder {
             dataManager.fuel,
             dataManager.seats
         ]
-        cell.didSelect = {
+        cell.didSelect = { [weak self] in
             let dialog = PickerDialog.viewFromNib()
             dialog.components = arrays[indexPath.row].map({ return $0.1 })
-            dialog.completion = { [unowned self] (selectedItem, canceled) in
+            dialog.completion = { (selectedItem, canceled) in
                 if !canceled {
-                    self.selectedItem(selectedItem!, indexPath: indexPath)
+                    self?.selectedItem(selectedItem!, indexPath: indexPath)
                 }
             }
             dialog.show()

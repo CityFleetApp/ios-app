@@ -179,7 +179,6 @@ extension JobOfferVC {
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-//        (cell as! LegalAidCell).setEditable(true)
         tableView.setZeroSeparator(cell)
         if indexPath.row == InstructionCellIndex {
             if let cell = cell as? MyRentSaleDescriptionCell {

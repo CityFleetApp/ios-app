@@ -138,9 +138,9 @@ class User: NSObject, NSCoding {
         currUser = nil
     }
     
-    func uploadPhoto(image: UIImage, complation: ((NSURL?, NSError?) -> ())) {
+    func uploadPhoto(image: UIImage, completion: ((NSURL?, NSError?) -> ())) {
         if let data = UIImagePNGRepresentation(image) {
-            RequestManager.sharedInstance().uploadAvatar(data, completion: complation)
+            RequestManager.sharedInstance().uploadAvatar(data, completion: completion)
         }
     }
 }
