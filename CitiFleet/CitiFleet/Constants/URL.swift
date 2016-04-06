@@ -77,6 +77,8 @@ struct URL {
         static let JobOffers = "marketplace/offers/"
         static let AcceptJob = "/accept_job/"
         static let RequestJob = "/request_job/"
+        
+        static let ManagePosts = "marketplace/manage-posts/"
     }
     static let Reports = "reports/"
     static let BenefitsList = "benefits/"
@@ -241,6 +243,9 @@ struct Response {
             static let instructions = "instructions"
             static let status = "status"
             static let created = "created"
+        }
+        struct ManagePost {
+            static let postType = "posting_type"
         }
     }
 }

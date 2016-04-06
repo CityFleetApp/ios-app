@@ -106,7 +106,7 @@ extension GoodsForSaleVC {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! MarketplaceTemplateCell
         let item = dataLoader.items[indexPath.row]
-        cell.priceLabel.text = "$ \(item.price!)"
+        cell.priceLabel.text = "$\(item.price!)"
         cell.itemDescription.text = item.itemDescription
         cell.setDefaultShadow()
         
@@ -123,7 +123,11 @@ extension GoodsForSaleVC {
         let item = dataLoader.items[indexPath.row]
         let cell = cell as! MarketplaceTemplateCell
         cell.itemPhoto.image = nil
-        cell.itemPhoto.hnk_setImageFromURL(item.photosURLs[0])
+        if item.photosURLs.count > 0 {
+            cell.itemPhoto.hnk_setImageFromURL(item.photosURLs[0])
+        } else {
+            cell.itemPhoto.image = UIImage(named: "default_image_tumb")
+        }
         
         let gradient = CAGradientLayer()
         var frame = cell.itemNameBgView.bounds

@@ -9,6 +9,8 @@
 import UIKit
 
 class MarketplaceItem: NSObject {
+    internal typealias Param = Response.Marketplace
+    
     var itemName: String?
     var itemDescription: String?
     var id: Int?
@@ -16,6 +18,30 @@ class MarketplaceItem: NSObject {
     var photosURLs: [NSURL] = []
     var photoSize: [CGSize] = []
     var isShownDetails = false
+    
+    override init() {
+        
+    }
+    
+    init(json: AnyObject) {
+        super.init()
+        id = json[Param.id] as? Int
+        itemDescription = json[Param.itemDescription] as? String
+        price = json[Param.price] as? String
+        if let urls = json[Param.photos] as? [AnyObject] {
+            for url in urls {
+                photosURLs.append(NSURL(string: url["url"] as! String)!)
+            }
+        }
+        
+        if let photoSize = json[Param.photoSize] as? [CGFloat]? {
+            let width = photoSize![0]
+            let height = photoSize![1]
+            self.photoSize.append(CGSize(width: width, height: height))
+        } else {
+            self.photoSize.append(CGSize(width: 100, height: 100))
+        }
+    }
 }
 
 class CarForRentSale: MarketplaceItem {
@@ -26,11 +52,37 @@ class CarForRentSale: MarketplaceItem {
     var model: String?
     var fuel: String?
     var year: String?
+    var isRent: Bool?
+    
+    override init() {
+        super.init()
+    }
+    
+    override init(json: AnyObject) {
+        super.init(json: json)
+        seats = json[Param.seats] as? Int
+        color = json[Param.color] as? String
+        type = json[Param.carType] as? String
+        make = json[Param.make] as? String
+        model = json[Param.model] as? String
+        fuel = json[Param.fuel] as? String
+        year = String(json[Param.year] as! Int)
+    }
 }
 
 class GoodForSale: MarketplaceItem {
     var condition: String?
     var goodName: String?
+    
+    override init() {
+        super.init()
+    }
+    
+    override init(json: AnyObject) {
+        super.init(json: json)
+        condition = json[Param.condition] as? String
+        goodName = json[Param.itemName] as? String
+    }
 }
 
 class MarketPlaceShopManager: NSObject {
@@ -67,15 +119,15 @@ class MarketPlaceShopManager: NSObject {
     private func parseCarsRespons(respObject: RequestManager.ArrayResponse) {
         var items: [MarketplaceItem] = []
         for obj in respObject! {
-            let item = CarForRentSale()
-            parseItemResponse(item, obj: obj)
-            item.seats = obj[Param.seats] as? Int
-            item.color = obj[Param.color] as? String
-            item.type = obj[Param.carType] as? String
-            item.make = obj[Param.make] as? String
-            item.model = obj[Param.model] as? String
-            item.fuel = obj[Param.fuel] as? String
-            item.year = String(obj[Param.year] as! Int)
+            let item = CarForRentSale(json: obj)
+//            parseItemResponse(item, obj: obj)
+//            item.seats = obj[Param.seats] as? Int
+//            item.color = obj[Param.color] as? String
+//            item.type = obj[Param.carType] as? String
+//            item.make = obj[Param.make] as? String
+//            item.model = obj[Param.model] as? String
+//            item.fuel = obj[Param.fuel] as? String
+//            item.year = String(obj[Param.year] as! Int)
             items.append(item)
         }
         self.items = items
@@ -84,10 +136,10 @@ class MarketPlaceShopManager: NSObject {
     private func parseGoodsForSale(respObject: RequestManager.ArrayResponse) {
         var items: [MarketplaceItem] = []
         for obj in respObject! {
-            let item = GoodForSale()
-            parseItemResponse(item, obj: obj)
-            item.condition = obj[Param.condition] as? String
-            item.goodName = obj[Param.itemName] as? String
+            let item = GoodForSale(json: obj)
+//            parseItemResponse(item, obj: obj)
+//            item.condition = obj[Param.condition] as? String
+//            item.goodName = obj[Param.itemName] as? String
             items.append(item)
         }
         self.items = items

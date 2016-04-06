@@ -81,6 +81,8 @@
 		439AB7A01CB2B3100015A874 /* JobOfferInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB79F1CB2B3100015A874 /* JobOfferInfoVC.swift */; };
 		439AB7A21CB3A2A70015A874 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7A11CB3A2A70015A874 /* EditProfileVC.swift */; };
 		439AB7A41CB3DFF90015A874 /* EditVehicleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7A31CB3DFF90015A874 /* EditVehicleVC.swift */; };
+		439AB7C51CB4E86D0015A874 /* ManagePostsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7C41CB4E86D0015A874 /* ManagePostsListVC.swift */; };
+		439AB7C71CB4EAAB0015A874 /* ManagePostsListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7C61CB4EAAB0015A874 /* ManagePostsListDataSource.swift */; };
 		43A4265F1C9035660044B6A6 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A4265E1C9035660044B6A6 /* SettingsVC.swift */; };
 		43A426611C90359E0044B6A6 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A426601C90359E0044B6A6 /* Settings.storyboard */; };
 		43A426631C9040150044B6A6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A426621C9040150044B6A6 /* Settings.swift */; };
@@ -240,6 +242,8 @@
 		439AB79F1CB2B3100015A874 /* JobOfferInfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobOfferInfoVC.swift; path = ViewController/MainScreen/MarketplaceMainScreenVC/JobOfferInfoVC.swift; sourceTree = "<group>"; };
 		439AB7A11CB3A2A70015A874 /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditProfileVC.swift; path = ViewController/Dash/Settings/EditProfileVC.swift; sourceTree = "<group>"; };
 		439AB7A31CB3DFF90015A874 /* EditVehicleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditVehicleVC.swift; path = ViewController/Dash/Settings/EditVehicleVC.swift; sourceTree = "<group>"; };
+		439AB7C41CB4E86D0015A874 /* ManagePostsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagePostsListVC.swift; path = ViewController/Dash/Postings/ManagePosts/ManagePostsListVC.swift; sourceTree = "<group>"; };
+		439AB7C61CB4EAAB0015A874 /* ManagePostsListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagePostsListDataSource.swift; path = Utils/Dash/ManagePosts/ManagePostsListDataSource.swift; sourceTree = "<group>"; };
 		43A4265E1C9035660044B6A6 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsVC.swift; path = ViewController/Dash/Settings/SettingsVC.swift; sourceTree = "<group>"; };
 		43A426601C90359E0044B6A6 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = Storyboards/Settings.storyboard; sourceTree = "<group>"; };
 		43A426621C9040150044B6A6 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = Model/Settings.swift; sourceTree = "<group>"; };
@@ -427,6 +431,7 @@
 		4316BB7C1C7B046A007A9ECB /* CitiFleet */ = {
 			isa = PBXGroup;
 			children = (
+				439AB7C01CB4E8070015A874 /* Manage Posts */,
 				4316BBA51C7B61D7007A9ECB /* Constants */,
 				4316BBA01C7B5EBE007A9ECB /* Extensions */,
 				4316BBB21C7B7399007A9ECB /* Utils */,
@@ -700,6 +705,15 @@
 				439AB79F1CB2B3100015A874 /* JobOfferInfoVC.swift */,
 			);
 			name = "Job Offers";
+			sourceTree = "<group>";
+		};
+		439AB7C01CB4E8070015A874 /* Manage Posts */ = {
+			isa = PBXGroup;
+			children = (
+				439AB7C41CB4E86D0015A874 /* ManagePostsListVC.swift */,
+				439AB7C61CB4EAAB0015A874 /* ManagePostsListDataSource.swift */,
+			);
+			name = "Manage Posts";
 			sourceTree = "<group>";
 		};
 		43A4265D1C90353E0044B6A6 /* Settings */ = {
@@ -1282,6 +1296,7 @@
 				431D2DDA1CA152BD00CBC4BA /* DOCManagementCell.swift in Sources */,
 				43DC05C91C85AEAF00AB670A /* AddFriendsVC.swift in Sources */,
 				439AB7911CAE71B50015A874 /* String+Ext.swift in Sources */,
+				439AB7C71CB4EAAB0015A874 /* ManagePostsListDataSource.swift in Sources */,
 				434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */,
 				43A426691C916D480044B6A6 /* Resources.swift in Sources */,
 				43DC05B91C842BDD00AB670A /* ReportsView.swift in Sources */,
@@ -1317,6 +1332,7 @@
 				43B6D8591C7F055C000D6844 /* Global.swift in Sources */,
 				43F834051C96CAB400DE7E50 /* PickerDialog.swift in Sources */,
 				43F8340D1C9719CF00DE7E50 /* RequestManager+LegalAid.swift in Sources */,
+				439AB7C51CB4E86D0015A874 /* ManagePostsListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
