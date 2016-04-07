@@ -471,7 +471,7 @@
         <!--Job Offer-->
         <scene sceneID="phK-OH-Kkd">
             <objects>
-                <tableViewController id="aAH-Ux-MhO" customClass="JobOfferVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="JobOfferVC" id="aAH-Ux-MhO" customClass="JobOfferVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MPp-GE-e8B">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1538,7 +1538,7 @@
         <!--General Goods-->
         <scene sceneID="bPp-Z1-ok2">
             <objects>
-                <tableViewController id="p1A-Mc-xDF" customClass="GeneralGoodsVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="GeneralGoodsVC" id="p1A-Mc-xDF" customClass="GeneralGoodsVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yjE-zU-nB5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -29,6 +29,11 @@ struct XIB {
 struct ViewControllerID {
     static let Login = "LoginNC"
     static let Dash = "DashContainerVC"
+    struct Posting {
+        static let JobOffer = "JobOfferVC"
+        static let GoodForSale = "GeneralGoodsVC"
+        static let CarForRentSale = "OptionsPostingVC"
+    }
 }
 
 struct CellID {

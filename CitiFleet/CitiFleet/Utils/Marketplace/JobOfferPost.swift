@@ -9,6 +9,7 @@
 import Foundation
 
 class JobOfferPost: NSObject {
+    var id: Int?
     var dateTime: String?
     var pickupAddress: String?
     var destinationAddress: String?
@@ -21,6 +22,10 @@ class JobOfferPost: NSObject {
     
     func upload(completion: ((NSError?) -> ()) ) {
         RequestManager.sharedInstance().postJobOffer(dateTime!, pickup: pickupAddress!, destination: destinationAddress!, fare: fare!, gratuity: gratuity!, vehicleType: vehicleType!, isSuite: suite!, jobType: jobType!, instructions: instructions!, completion: completion)
+    }
+    
+    func patch (completion: ((NSError?) -> ()) ) {
+        RequestManager.sharedInstance().patchJobOffer(id!, dateTime: dateTime!, pickup: pickupAddress!, destination: destinationAddress!, fare: fare!, gratuity: gratuity!, vehicleType: vehicleType!, isSuite: suite!, jobType: jobType!, instructions: instructions!, completion: completion)
     }
     
 }

@@ -40,7 +40,23 @@ extension ManagePostsListVC {
         cell?.title?.text = item.title
         cell?.notificationTitle?.text = item.postDescription
         cell?.dateLabel?.text = item.dateString
-        cell?.icon.image = UIImage(named: item.imageName!)
+        cell?.icon.image = UIImage(named: item.imageName!)?.imageWithRenderingMode(.AlwaysTemplate)
         return cell!
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let item = dataSource.previousPosts[indexPath.row]
+        switch item.postType! {
+        case ManagePostsListDataSource.PostType.Car:
+            break
+        case ManagePostsListDataSource.PostType.Good:
+            break
+        case ManagePostsListDataSource.PostType.JobOffer:
+            if let jobofferVC = storyboard?.instantiateViewControllerWithIdentifier(ViewControllerID.Posting.JobOffer) as? JobOfferVC {
+                jobofferVC.jobOffer = item as! JobOffer
+                navigationController?.pushViewController(jobofferVC, animated: true)
+            }
+            break
+        }
     }
 }

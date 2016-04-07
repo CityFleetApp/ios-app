@@ -94,6 +94,25 @@ extension RequestManager {
     
     func postJobOffer(dateTime: String, pickup: String, destination: String, fare: String, gratuity: String, vehicleType: Int, isSuite: Bool, jobType: Int, instructions: String, completion: ((NSError?) -> ())) {
         typealias Param = Params.Posting.JOPosting
+        let params = createParams(dateTime, pickup: pickup, destination: destination, fare: fare, gratuity: gratuity, vehicleType: vehicleType, isSuite: isSuite, jobType: jobType, instructions: instructions)
+        
+        post(URL.Marketplace.JOPost, parameters: params) { (json, error) -> () in
+            completion(error)
+        }
+    }
+    
+    func patchJobOffer(id: Int, dateTime: String, pickup: String, destination: String, fare: String, gratuity: String, vehicleType: Int, isSuite: Bool, jobType: Int, instructions: String, completion: ((NSError?) -> ())) {
+        let params = createParams(dateTime, pickup: pickup, destination: destination, fare: fare, gratuity: gratuity, vehicleType: vehicleType, isSuite: isSuite, jobType: jobType, instructions: instructions)
+        
+        let urlString = URL.Marketplace.JOPost + "\(id)/"
+        
+        patch(urlString, parameters: params) { (json, error) -> () in
+            completion(error)
+        }
+    }
+    
+    private func createParams(dateTime: String, pickup: String, destination: String, fare: String, gratuity: String, vehicleType: Int, isSuite: Bool, jobType: Int, instructions: String) -> [String: String] {
+        typealias Param = Params.Posting.JOPosting
         let params = [
             Param.pickupDatetime: dateTime,
             Param.pickupAddress: pickup,
@@ -105,9 +124,6 @@ extension RequestManager {
             Param.jobType: String(jobType),
             Param.instructions: instructions
         ]
-        
-        post(URL.Marketplace.JOPost, parameters: params) { (json, error) -> () in
-            completion(error)
-        }
+        return params
     }
 }

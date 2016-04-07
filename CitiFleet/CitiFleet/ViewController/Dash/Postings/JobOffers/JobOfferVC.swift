@@ -27,6 +27,20 @@ class JobOfferVC: UITableViewController {
     
     var uploader = JobOfferPost()
     var instructionsCellHeight: CGFloat = 78
+    var jobOffer: JobOffer?
+    
+    private let CatTypes = [
+        "Regular",
+        "Black",
+        "SUV",
+        "SUV"
+    ]
+    
+    private let JobTypes = [
+        "Drop off",
+        "Wait & Return",
+        "Hourly"
+    ]
     
     override func viewDidLoad() {
         pickupAddress.delegate = self
@@ -44,6 +58,28 @@ class JobOfferVC: UITableViewController {
         for tf in textFields {
             tf.setStandardSignUpPlaceHolder(tf.placeholder!)
         }
+        
+        if let offer = jobOffer {
+            setupJobOffer(offer)
+        }
+    }
+    
+    private func setupJobOffer(offer: JobOffer) {
+        dateLbl.highlitedText = NSDateFormatter(dateFormat: "yyyy-MM-dd").stringFromDate(offer.pickupDatetime!)
+        timeLbl.highlitedText = NSDateFormatter(dateFormat: "HH:mm").stringFromDate(offer.pickupDatetime!)
+        pickupAddress.text = offer.pickupAddress
+        destinationTF.text = offer.destination
+        fareTF.text = offer.fare
+        gratuityTF.text = offer.gratuity
+        instructionsTV.text = offer.instructions
+        vehicleTypeTF.highlitedText = jobOffer?.vehicleType
+        jobTypeLbl.highlitedText = jobOffer?.jobType
+        suiteLbl.highlitedText = jobOffer?.suite == true ? "Yes" : "No"
+        
+        uploader.jobType = JobTypes.indexOf((jobOffer?.jobType)!)! + 1
+        uploader.vehicleType = CatTypes.indexOf((jobOffer?.vehicleType)!)! + 1
+        uploader.suite = jobOffer?.suite
+        uploader.id = jobOffer?.id
     }
     
     private func resignAllTextViewes() {
@@ -125,10 +161,29 @@ extension JobOfferVC {
             uploader.gratuity = gratuityTF.text
             uploader.instructions = instructionsTV.text
             
-            uploader.upload() { [unowned self] (error) in
-                if error == nil {
-                    self.navigationController?.popViewControllerAnimated(true)
-                }
+            if let _ = jobOffer {
+                patchJob()
+            } else {
+                postJob()
+            }
+        }
+    }
+}
+
+//MARK: - Private Methods 
+extension JobOfferVC {
+    private func postJob() {
+        uploader.upload() { [unowned self] (error) in
+            if error == nil {
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+        }
+    }
+    
+    private func patchJob() {
+        uploader.patch() { [unowned self] (error) in
+            if error == nil {
+                self.navigationController?.popViewControllerAnimated(true)
             }
         }
     }
@@ -232,20 +287,15 @@ extension JobOfferVC {
     
     func vehicleTypeSelected() {
         resignAllTextViewes()
-        let components = [
-            "Regular",
-            "Black",
-            "SUV",
-            "SUV"
-        ]
+        
         
         let dialog = PickerDialog.viewFromNib()
-        dialog.components = components
-        dialog.completion = { [unowned self] (selectedItem, canceled) in
+        dialog.components = CatTypes
+        dialog.completion = { [weak self] (selectedItem, canceled) in
             if !canceled {
                 let index = selectedItem as! Int
-                self.uploader.vehicleType = index + 1
-                self.vehicleTypeTF.highlitedText = components[index]
+                self?.uploader.vehicleType = index + 1
+                self?.vehicleTypeTF.highlitedText = self?.CatTypes[index]
             }
         }
         dialog.show()
@@ -272,19 +322,14 @@ extension JobOfferVC {
     
     func jobTypeCellSelected() {
         resignAllTextViewes()
-        let components = [
-            "Drop off",
-            "Wait & Return",
-            "Hourly"
-        ]
         
         let dialog = PickerDialog.viewFromNib()
-        dialog.components = components
+        dialog.components = JobTypes
         dialog.completion = { [unowned self] (selectedItem, canceled) in
             if !canceled {
                 let index = selectedItem as! Int
                 self.uploader.jobType = index + 1
-                self.jobTypeLbl.highlitedText = components[index]
+                self.jobTypeLbl.highlitedText = self.JobTypes[index]
             }
         }
         dialog.show()
