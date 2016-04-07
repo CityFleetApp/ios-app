@@ -71,7 +71,7 @@ class GoodsForSaleVC: UICollectionViewController, MarketplaceLayoutDelegate {
     
     //MARK: Marketplace Layout Delegate
     func collectionView(collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
-        let photoSize = dataLoader.items[indexPath.row].photoSize[0]
+        let photoSize = dataLoader.items[indexPath.row].photoSize
         let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
         let rect = AVMakeRectWithAspectRatioInsideRect(photoSize, boundingRect)
         return rect.height
@@ -124,7 +124,7 @@ extension GoodsForSaleVC {
         let cell = cell as! MarketplaceTemplateCell
         cell.itemPhoto.image = nil
         if item.photosURLs.count > 0 {
-            cell.itemPhoto.hnk_setImageFromURL(item.photosURLs[0])
+            cell.itemPhoto.hnk_setImageFromURL(item.photosURLs[0].URL)
         } else {
             cell.itemPhoto.image = UIImage(named: "default_image_tumb")
         }

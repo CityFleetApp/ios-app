@@ -50,6 +50,10 @@ extension ManagePostsListVC {
         case ManagePostsListDataSource.PostType.Car:
             break
         case ManagePostsListDataSource.PostType.Good:
+            if let goodsVC = storyboard?.instantiateViewControllerWithIdentifier(ViewControllerID.Posting.GoodForSale) as? GeneralGoodsVC {
+                goodsVC.generalGood = item as! GoodForSale
+                navigationController?.pushViewController(goodsVC, animated: true)
+            }
             break
         case ManagePostsListDataSource.PostType.JobOffer:
             if let jobofferVC = storyboard?.instantiateViewControllerWithIdentifier(ViewControllerID.Posting.JobOffer) as? JobOfferVC {

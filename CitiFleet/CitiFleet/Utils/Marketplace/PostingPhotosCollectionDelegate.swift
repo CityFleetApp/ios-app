@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Haneke
 
 class PostingPhotosCollectionDelegate: VehicleCollectionViewDelegate {
     override func downloadPhotos() {
@@ -22,7 +23,11 @@ class PostingPhotosCollectionDelegate: VehicleCollectionViewDelegate {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CellID.Profile.VehiclePhotoCell, forIndexPath: indexPath) as! VehiclePhotoCell
         let image = images.count > indexPath.item ? images[indexPath.item].image : UIImage(named: Resources.Profile.VehicleDefault)
-        cell.photo.image = image
+        if image == nil && images[indexPath.item].largePhotoURL != nil  {
+            cell.photo.hnk_setImageFromURL(images[indexPath.item].largePhotoURL!)
+        } else {
+            cell.photo.image = image
+        }
         cell.deleteItem = { [unowned self] (deleted, error) in
             if deleted {
                 self.images.removeAtIndex(indexPath.item)

@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct MarketplaceItemPhoto {
+    var URL: NSURL
+    var id: Int
+}
+
 class MarketplaceItem: NSObject {
     internal typealias Param = Response.Marketplace
     
@@ -15,8 +20,8 @@ class MarketplaceItem: NSObject {
     var itemDescription: String?
     var id: Int?
     var price: String?
-    var photosURLs: [NSURL] = []
-    var photoSize: [CGSize] = []
+    var photosURLs: [MarketplaceItemPhoto] = []
+    var photoSize: CGSize!
     var isShownDetails = false
     var created: NSDate?
     
@@ -31,17 +36,19 @@ class MarketplaceItem: NSObject {
         price = json[Param.price] as? String
         created = NSDateFormatter.serverResponseFormat.dateFromString(json[Param.created] as! String)
         if let urls = json[Param.photos] as? [AnyObject] {
-            for url in urls {
-                photosURLs.append(NSURL(string: url["url"] as! String)!)
+            for photo in urls {
+                let url = NSURL(string: photo["url"] as! String)!
+                let photoID = photo["id"] as! Int
+                photosURLs.append(MarketplaceItemPhoto(URL: url, id: photoID))
             }
         }
         
         if let photoSize = json[Param.photoSize] as? [CGFloat]? {
             let width = photoSize![0]
             let height = photoSize![1]
-            self.photoSize.append(CGSize(width: width, height: height))
+            self.photoSize = CGSize(width: width, height: height)
         } else {
-            self.photoSize.append(CGSize(width: 100, height: 100))
+            self.photoSize = CGSize(width: 100, height: 100)
         }
     }
 }
@@ -122,14 +129,6 @@ class MarketPlaceShopManager: NSObject {
         var items: [MarketplaceItem] = []
         for obj in respObject! {
             let item = CarForRentSale(json: obj)
-//            parseItemResponse(item, obj: obj)
-//            item.seats = obj[Param.seats] as? Int
-//            item.color = obj[Param.color] as? String
-//            item.type = obj[Param.carType] as? String
-//            item.make = obj[Param.make] as? String
-//            item.model = obj[Param.model] as? String
-//            item.fuel = obj[Param.fuel] as? String
-//            item.year = String(obj[Param.year] as! Int)
             items.append(item)
         }
         self.items = items
@@ -139,27 +138,8 @@ class MarketPlaceShopManager: NSObject {
         var items: [MarketplaceItem] = []
         for obj in respObject! {
             let item = GoodForSale(json: obj)
-//            parseItemResponse(item, obj: obj)
-//            item.condition = obj[Param.condition] as? String
-//            item.goodName = obj[Param.itemName] as? String
             items.append(item)
         }
         self.items = items
-    }
-    
-    private func parseItemResponse(item: MarketplaceItem, obj: AnyObject) {
-        item.id = obj[Param.id] as? Int
-        item.itemDescription = obj[Param.itemDescription] as? String
-        item.price = obj[Param.price] as? String
-        let urls = obj[Param.photos] as? [String]
-        for url in urls! {
-            item.photosURLs.append(NSURL(string: url)!)
-        }
-        
-        let photoSize = obj[Param.photoSize] as! [CGFloat]?
-        let width = photoSize![0]
-        let height = photoSize![1]
-        
-        item.photoSize.append(CGSize(width: width, height: height))
     }
 }

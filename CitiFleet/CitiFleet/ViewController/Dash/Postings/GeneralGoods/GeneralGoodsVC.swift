@@ -13,6 +13,13 @@ class GeneralGoodsVC: UITableViewController {
     let StandordCellHeight: CGFloat = 78
     let DescriptionCellIndex: Int = 3
     
+    private let GoodConditions = [
+        "Brand New (Never Used)",
+        "New (Slightly Used)",
+        "Used (Good Condition)",
+        "Used"
+    ]
+    
     @IBOutlet var itemTF: UITextField!
     @IBOutlet var priceTF: UITextField!
     @IBOutlet var conditionsTF: HighlitableLabel!
@@ -23,6 +30,8 @@ class GeneralGoodsVC: UITableViewController {
     var instructionsCellHeight: CGFloat = 78
     var uploader = GeneralGoodsUploader()
     
+    var generalGood: GoodForSale?
+    
     override func viewDidLoad() {
         itemTF.delegate = self
         itemTF.inputAccessoryView = nil
@@ -31,11 +40,36 @@ class GeneralGoodsVC: UITableViewController {
         //        let menuItemEdit = UIMenuItem(title: "Edit", action: Selector("editPhoto:"))
         UIMenuController.sharedMenuController().menuItems = [menuItemDelete]
         UIMenuController.sharedMenuController().menuVisible = true
-        photoDelegate = PostingPhotosCollectionDelegate(reloadData: { [unowned self] in
-            self.goodsPhotoCV.reloadData()
+        photoDelegate = PostingPhotosCollectionDelegate(reloadData: { [weak self] in
+            self?.goodsPhotoCV.reloadData()
         })
         goodsPhotoCV.dataSource = photoDelegate
         goodsPhotoCV.delegate = photoDelegate
+        
+        if let _ = generalGood {
+            setupGeneralGood()
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 3, inSection: 0)) as? MyRentSaleDescriptionCell
+        cell?.textViewDidChange(descriptionTF)
+    }
+}
+
+//MARK: - Private Methods 
+extension GeneralGoodsVC {
+    private func setupGeneralGood() {
+        for photo in (generalGood?.photosURLs)! {
+            photoDelegate.images.append(GalleryPhoto(image: nil, imageData: nil, attributedCaptionTitle: NSAttributedString(), largePhotoURL: photo.URL, thumbURL: photo.URL, id: photo.id))
+        }
+        goodsPhotoCV.reloadData()
+        
+        itemTF.text = generalGood?.goodName
+        priceTF.text = generalGood?.price
+        descriptionTF.text = generalGood?.itemDescription
+        conditionsTF.highlitedText = generalGood?.condition
+        uploader.condition = GoodConditions.indexOf((generalGood?.condition)!)! + 1
     }
     
     private func checkData() -> Bool {
@@ -148,20 +182,13 @@ extension GeneralGoodsVC {
     func selectedConditions() {
         resignAllTextView()
         
-        let components = [
-            "Brand New (Never Used)",
-            "New (Slightly Used)",
-            "Used (Good Condition)",
-            "Used"
-        ]
-        
         let dialog = PickerDialog.viewFromNib()
-        dialog.components = components
-        dialog.completion = { [unowned self] (selectedItem, canceled) in
+        dialog.components = GoodConditions
+        dialog.completion = { [weak self] (selectedItem, canceled) in
             if !canceled {
                 let index = selectedItem as! Int
-                self.conditionsTF.highlitedText = components[index]
-                self.uploader.condition = index + 1
+                self?.conditionsTF.highlitedText = self?.GoodConditions[index]
+                self?.uploader.condition = index + 1
             }
         }
         dialog.show()

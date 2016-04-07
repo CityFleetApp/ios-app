@@ -159,7 +159,7 @@ extension MyRentSaleDescriptionCell: UITextViewDelegate {
         if cellHeight != newHeight {
             cellHeight = newHeight
             changedHeight(newHeight)
-            descriptionTV.becomeFirstResponder()
+//            descriptionTV.becomeFirstResponder()
         }
     }
     
