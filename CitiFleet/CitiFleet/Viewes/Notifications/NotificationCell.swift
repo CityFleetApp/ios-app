@@ -9,6 +9,7 @@
 import UIKit
 
 class NotificationCell: LegalAidCell {
+    @IBOutlet var notificationTypeLbl: UILabel?
     @IBOutlet var notificationTitle: UILabel?
     @IBOutlet var calendarIcon: UIImageView?
     @IBOutlet var dateLabel: UILabel?

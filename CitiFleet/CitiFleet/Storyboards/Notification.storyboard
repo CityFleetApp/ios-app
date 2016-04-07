@@ -109,6 +109,7 @@
                                             <outlet property="icon" destination="n4g-Ad-t2E" id="Z37-in-UCX"/>
                                             <outlet property="nextScreenArrow" destination="M4Y-cX-SqR" id="y57-oP-Gui"/>
                                             <outlet property="notificationTitle" destination="IF6-VX-bVV" id="ahi-7s-URl"/>
+                                            <outlet property="notificationTypeLbl" destination="EEw-gl-3uz" id="PSB-sZ-E5r"/>
                                             <outlet property="title" destination="EEw-gl-3uz" id="ykS-aY-tqr"/>
                                             <segue destination="Lfw-nR-NC7" kind="push" id="kl6-L4-MTM"/>
                                         </connections>

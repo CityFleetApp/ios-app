@@ -18,6 +18,7 @@ class MarketplaceItem: NSObject {
     var photosURLs: [NSURL] = []
     var photoSize: [CGSize] = []
     var isShownDetails = false
+    var created: NSDate?
     
     override init() {
         
@@ -28,6 +29,7 @@ class MarketplaceItem: NSObject {
         id = json[Param.id] as? Int
         itemDescription = json[Param.itemDescription] as? String
         price = json[Param.price] as? String
+        created = NSDateFormatter.serverResponseFormat.dateFromString(json[Param.created] as! String)
         if let urls = json[Param.photos] as? [AnyObject] {
             for url in urls {
                 photosURLs.append(NSURL(string: url["url"] as! String)!)

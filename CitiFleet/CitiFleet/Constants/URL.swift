@@ -230,6 +230,7 @@ struct Response {
         static let fuel = "fuel"
         static let seats = "seats"
         static let photoSize = "dimensions"
+        static let created = "created"
         struct JobOffers {
             static let id = "id"
             static let pickupDatetime = "pickup_datetime"

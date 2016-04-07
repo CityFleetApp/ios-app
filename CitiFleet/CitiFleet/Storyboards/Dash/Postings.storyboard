@@ -17,8 +17,11 @@
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
+            <string>Montserrat-Light</string>
+            <string>Montserrat-Light</string>
         </mutableArray>
         <mutableArray key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
@@ -231,11 +234,11 @@
                                             <segue destination="p1A-Mc-xDF" kind="push" id="sBV-70-Ely"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="NRR-xq-Di3" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="71" id="NRR-xq-Di3" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="277" width="600" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NRR-xq-Di3" id="xV1-Of-edO">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="post_prev_ic" translatesAutoresizingMaskIntoConstraints="NO" id="7kS-CZ-wqK">
@@ -257,13 +260,13 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage Previous Posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psY-hN-r6G">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Manage Previous Posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psY-hN-r6G">
                                                     <rect key="frame" x="65" y="24" width="485" height="23"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18.799999237060547"/>
                                                     <color key="textColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next-screen-set-ic" translatesAutoresizingMaskIntoConstraints="NO" id="gbA-o3-dIN">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="next-screen-set-ic" translatesAutoresizingMaskIntoConstraints="NO" id="gbA-o3-dIN">
                                                     <rect key="frame" x="566" y="27" width="18" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="18" id="0eU-Fd-Hf2"/>
@@ -283,6 +286,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="title" destination="psY-hN-r6G" id="KWL-JC-ah4"/>
+                                            <segue destination="3l6-pJ-MGZ" kind="push" id="aRh-Tb-3WA"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1138,7 +1142,7 @@
             </objects>
             <point key="canvasLocation" x="2457" y="1597"/>
         </scene>
-        <!--Manage Posts ListVC-->
+        <!--Manage Post-->
         <scene sceneID="znh-Lg-eWj">
             <objects>
                 <tableViewController id="3l6-pJ-MGZ" customClass="ManagePostsListVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
@@ -1147,13 +1151,81 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="u7W-aA-jUT">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PreviousPostCellID" rowHeight="81" id="VXu-Vk-ivn" customClass="NotificationCell" customModule="CitiFleet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="81"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u7W-aA-jUT" id="3fC-Er-yGi">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VXu-Vk-ivn" id="u7n-0Y-s9z">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alert_notif-ic" translatesAutoresizingMaskIntoConstraints="NO" id="uUI-eF-UUv">
+                                            <rect key="frame" x="16" y="22" width="18" height="18"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TLC Alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvR-KG-1I1">
+                                            <rect key="frame" x="47" y="21" width="72" height="20"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                            <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notif_date_ic" translatesAutoresizingMaskIntoConstraints="NO" id="ZkJ-B5-CEp">
+                                            <rect key="frame" x="486" y="25" width="11" height="12"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/17/2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cd6-T5-W0N">
+                                            <rect key="frame" x="502" y="24" width="54" height="14"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="11.039999961853027"/>
+                                            <color key="textColor" red="0.4549019608" green="0.4549019608" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Driver must submit email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQx-Ko-aqO">
+                                            <rect key="frame" x="16" y="49" width="254" height="17"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="14"/>
+                                            <color key="textColor" red="0.4549019608" green="0.4549019608" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arr" translatesAutoresizingMaskIntoConstraints="NO" id="dnf-pC-Dn3">
+                                            <rect key="frame" x="572" y="22" width="4" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="4" id="BNO-Us-vU1"/>
+                                                <constraint firstAttribute="height" constant="44" id="iSq-S4-W0b"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="iSq-S4-W0b"/>
+                                                    <exclude reference="BNO-Us-vU1"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="dnf-pC-Dn3" secondAttribute="trailing" constant="16" id="60y-mF-xwX"/>
+                                        <constraint firstItem="dnf-pC-Dn3" firstAttribute="leading" secondItem="cd6-T5-W0N" secondAttribute="trailing" constant="16" id="FZd-L2-M9k"/>
+                                        <constraint firstItem="dnf-pC-Dn3" firstAttribute="top" secondItem="uUI-eF-UUv" secondAttribute="top" id="Jww-8w-O0c"/>
+                                        <constraint firstItem="GvR-KG-1I1" firstAttribute="centerY" secondItem="uUI-eF-UUv" secondAttribute="centerY" id="Lzk-Pr-YuY"/>
+                                        <constraint firstItem="XQx-Ko-aqO" firstAttribute="top" secondItem="GvR-KG-1I1" secondAttribute="bottom" constant="8" id="NlF-30-mhT"/>
+                                        <constraint firstItem="dnf-pC-Dn3" firstAttribute="trailing" secondItem="uUI-eF-UUv" secondAttribute="trailing" id="YP5-ux-rfR"/>
+                                        <constraint firstItem="cd6-T5-W0N" firstAttribute="leading" secondItem="ZkJ-B5-CEp" secondAttribute="trailing" constant="5" id="aNM-LS-JYK"/>
+                                        <constraint firstItem="uUI-eF-UUv" firstAttribute="leading" secondItem="u7n-0Y-s9z" secondAttribute="leading" constant="16" id="bMo-7K-som"/>
+                                        <constraint firstItem="dnf-pC-Dn3" firstAttribute="bottom" secondItem="XQx-Ko-aqO" secondAttribute="bottom" id="fva-wE-BTj"/>
+                                        <constraint firstItem="ZkJ-B5-CEp" firstAttribute="centerY" secondItem="GvR-KG-1I1" secondAttribute="centerY" id="j1R-pq-sUj"/>
+                                        <constraint firstItem="cd6-T5-W0N" firstAttribute="centerY" secondItem="ZkJ-B5-CEp" secondAttribute="centerY" id="jAk-Tf-9Et"/>
+                                        <constraint firstItem="GvR-KG-1I1" firstAttribute="leading" secondItem="uUI-eF-UUv" secondAttribute="trailing" constant="13" id="jJH-h4-e5E"/>
+                                        <constraint firstItem="uUI-eF-UUv" firstAttribute="top" secondItem="u7n-0Y-s9z" secondAttribute="top" constant="22" id="lFE-ks-zmb"/>
+                                        <constraint firstItem="XQx-Ko-aqO" firstAttribute="leading" secondItem="uUI-eF-UUv" secondAttribute="leading" id="tDl-IH-G8G"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="YP5-ux-rfR"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="calendarIcon" destination="ZkJ-B5-CEp" id="22G-sG-CNe"/>
+                                    <outlet property="dateLabel" destination="cd6-T5-W0N" id="bhj-95-8Ut"/>
+                                    <outlet property="icon" destination="uUI-eF-UUv" id="o6d-7p-fJP"/>
+                                    <outlet property="nextScreenArrow" destination="dnf-pC-Dn3" id="W2V-pT-FUu"/>
+                                    <outlet property="notificationTitle" destination="XQx-Ko-aqO" id="eT8-6z-fo2"/>
+                                    <outlet property="title" destination="GvR-KG-1I1" id="u5J-ac-27m"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1161,6 +1233,14 @@
                             <outlet property="delegate" destination="3l6-pJ-MGZ" id="oFX-ey-UZx"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Manage Post" id="i7V-6I-IJc">
+                        <barButtonItem key="leftBarButtonItem" image="back-ic" id="7aA-9R-aXN">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="3l6-pJ-MGZ" id="CRT-do-pcQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJT-MH-eqO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1817,6 +1897,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Alert_notif-ic" width="18" height="18"/>
         <image name="arr-odwn" width="9" height="5"/>
         <image name="back-ic" width="8" height="13"/>
         <image name="default_image_tumb" width="75" height="75"/>
@@ -1836,10 +1917,12 @@
         <image name="jo_vehicl_type" width="18" height="14"/>
         <image name="lawyer-location" width="18" height="17"/>
         <image name="next-screen-set-ic" width="18" height="18"/>
+        <image name="notif_date_ic" width="11" height="12"/>
         <image name="post_generalS_goods_ic" width="22" height="19"/>
         <image name="post_job_offer_ic" width="22" height="22"/>
         <image name="post_prev_ic" width="20" height="22"/>
         <image name="post_rent_ic" width="24" height="20"/>
+        <image name="right_arr" width="4" height="9"/>
         <image name="rs-description-ic" width="18" height="16"/>
         <image name="rs-price-ic" width="18" height="18"/>
     </resources>
