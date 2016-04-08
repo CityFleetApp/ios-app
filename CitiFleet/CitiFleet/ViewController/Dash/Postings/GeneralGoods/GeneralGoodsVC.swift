@@ -47,6 +47,7 @@ class GeneralGoodsVC: UITableViewController {
         goodsPhotoCV.delegate = photoDelegate
         
         if let _ = generalGood {
+            uploader = GeneralGoodsPatcher()
             setupGeneralGood()
         }
     }
@@ -70,6 +71,7 @@ extension GeneralGoodsVC {
         descriptionTF.text = generalGood?.itemDescription
         conditionsTF.highlitedText = generalGood?.condition
         uploader.condition = GoodConditions.indexOf((generalGood?.condition)!)! + 1
+        uploader.id = generalGood?.id
     }
     
     private func checkData() -> Bool {
@@ -92,9 +94,11 @@ extension GeneralGoodsVC {
         
         if descriptionTF.text == nil || descriptionTF.text.characters.count == 0 {
             showAlert(Titles.MarketPlace.noDescription, message: Titles.MarketPlace.noGoodDescriptionMsg)
-        } else if photoDelegate.images.count == 0 {
-            showAlert(Titles.MarketPlace.noPhotos, message: Titles.MarketPlace.noPhotosMsg)
+            isError = true
         }
+//        if photoDelegate.images.count == 0 {
+//            showAlert(Titles.MarketPlace.noPhotos, message: Titles.MarketPlace.noPhotosMsg)
+//        }
         
         return !isError
     }
@@ -111,12 +115,15 @@ extension GeneralGoodsVC {
 extension GeneralGoodsVC {
     @IBAction func upload() {
         if checkData() {
-            uploader.photos = photoDelegate.images.map({ (photo) -> UIImage in
+            uploader.photos = photoDelegate.images
+                .filter({ $0.id == nil })
+                .map({ (photo) -> UIImage in
                 return photo.image!
             })
             uploader.itemName = itemTF.text
             uploader.ascingPrice = priceTF.text
             uploader.itemDescription = descriptionTF.text
+            uploader.deletedPhotos = photoDelegate.deletedImagesIDs
             uploader.upload({ [unowned self] (error) in
                 self.navigationController?.popViewControllerAnimated(true)
             })

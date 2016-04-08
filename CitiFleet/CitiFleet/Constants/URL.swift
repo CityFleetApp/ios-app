@@ -79,6 +79,11 @@ struct URL {
         static let RequestJob = "/request_job/"
         
         static let ManagePosts = "marketplace/manage-posts/"
+        
+        struct Photos {
+            static let goodPhotos = "marketplace/goodsphotos/"
+            static let carPhotos = ""
+        }
     }
     static let Reports = "reports/"
     static let BenefitsList = "benefits/"

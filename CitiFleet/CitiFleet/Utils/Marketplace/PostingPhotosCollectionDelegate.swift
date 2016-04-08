@@ -8,10 +8,22 @@
 
 import UIKit
 import Haneke
+import NYTPhotoViewer
 
 class PostingPhotosCollectionDelegate: VehicleCollectionViewDelegate {
     override func downloadPhotos() {
         
+    }
+    
+    override func deletePhoto(photo: NYTPhoto) {
+        let galleryPhoto = photo as! GalleryPhoto
+        if let imageIndex = images.indexOf(galleryPhoto) {
+            let cell = cellAtIndexPath(indexPath: NSIndexPath(forItem: imageIndex, inSection: 0)) as? VehiclePhotoCell
+            cell?.photo.image = UIImage(named: Resources.Profile.VehicleDefault)
+            if let index = galleryPhoto.id {
+                deletedImagesIDs.append(index)
+            }
+        }
     }
     
     override func selectedImage(selectedImage: UIImage) {
@@ -30,6 +42,9 @@ class PostingPhotosCollectionDelegate: VehicleCollectionViewDelegate {
         }
         cell.deleteItem = { [unowned self] (deleted, error) in
             if deleted {
+                if let photoID = self.images[indexPath.item].id {
+                    self.deletedImagesIDs.append(photoID)
+                }
                 self.images.removeAtIndex(indexPath.item)
                 self.reloadData()
             }

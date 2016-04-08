@@ -22,12 +22,12 @@ struct FontNames {
 
 struct Fonts {
     struct Login {
-        static let NavigationTitle = UIFont(name: FontNames.Montserrat.Regular, size: 19)!
-        static let SignUpPlaceHolder = UIFont(name: FontNames.Montserrat.Light, size: 14)!
-        static let LoginPlaceholder = UIFont(name: FontNames.Montserrat.Light, size: 16.7)!
-        static let SignUpTextField = UIFont(name: FontNames.Montserrat.Regular, size: 16.56)!
+        static let NavigationTitle = UIFont.init(name: FontNames.Montserrat.Regular, size: 19)!
+        static let SignUpPlaceHolder = UIFont.init(name: FontNames.Montserrat.Light, size: 14)!
+        static let LoginPlaceholder = UIFont.init(name: FontNames.Montserrat.Light, size: 16.7)!
+        static let SignUpTextField = UIFont.init(name: FontNames.Montserrat.Regular, size: 16.56)!
     }
     struct PickerDialog {
-        static let PicerRowFort = UIFont(name: FontNames.Montserrat.Regular, size: 19)!
+        static let PicerRowFort = UIFont.init(name: FontNames.Montserrat.Regular, size: 19)!
     }
 }

@@ -28,6 +28,7 @@ class LoaderViewManager: NSObject {
     }
     
     class func showDoneLoader(seconds: Int, completion:(()->())?) {
+        completion?()
         let view = AppDelegate.sharedDelegate().rootViewController().view
         let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
         hud.customView = UIImageView(image: UIImage(named: Resources.Checkmark))
