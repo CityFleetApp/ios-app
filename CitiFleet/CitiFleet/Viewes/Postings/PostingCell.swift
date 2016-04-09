@@ -9,8 +9,20 @@
 import UIKit
 import KMPlaceholderTextView
 
-class PostingCell: LegalAidCell {
+protocol CarBuilderCellText {
+    var cellText: String? {get set}
+}
+
+class PostingCell: LegalAidCell, CarBuilderCellText {
     var didSelect: (() -> ())!
+    
+    var cellText: String? {
+        get {
+            return placeHolder?.highlitedText
+        } set {
+            placeHolder?.highlitedText = newValue
+        }
+    }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -42,6 +54,14 @@ class MyRentSalePriceCell: PostingCell {
     static let CellID = "MyRentSalePriceCell"
     @IBOutlet var priceTF: UITextField!
     var changedText: ((String) -> ())?
+    
+    override var cellText: String? {
+        get {
+            return priceTF.text
+        } set {
+            priceTF.text = newValue
+        }
+    }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -123,6 +143,14 @@ class MyRentSaleDescriptionCell: PostingCell {
     var changedHeight: ((CGFloat) -> ())!
     var changedText: ((String) -> ())!?
     var cellHeight: CGFloat?
+    
+    override var cellText: String? {
+        get {
+            return descriptionTV.text
+        } set {
+            descriptionTV.text = newValue
+        }
+    }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

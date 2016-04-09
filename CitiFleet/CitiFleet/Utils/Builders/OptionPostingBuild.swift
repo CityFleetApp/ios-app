@@ -38,3 +38,11 @@ class OptionPostingBuild: NSObject {
         return viewController
     }
 }
+
+class UpdateCarVCBuilder: OptionPostingBuild {
+    func createViewController(car: CarForRentSale) -> OptionsPostingVC {
+        let viewController = createViewController(car.isRent == true ? .Rent : .Sale)
+        viewController.existingCar = car 
+        return viewController
+    }
+}

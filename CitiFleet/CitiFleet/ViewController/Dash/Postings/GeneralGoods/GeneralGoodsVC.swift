@@ -37,9 +37,9 @@ class GeneralGoodsVC: UITableViewController {
         itemTF.inputAccessoryView = nil
         
         let menuItemDelete = UIMenuItem(title: "Delete", action: Selector("deletePhoto:"))
-        //        let menuItemEdit = UIMenuItem(title: "Edit", action: Selector("editPhoto:"))
         UIMenuController.sharedMenuController().menuItems = [menuItemDelete]
         UIMenuController.sharedMenuController().menuVisible = true
+        
         photoDelegate = PostingPhotosCollectionDelegate(reloadData: { [weak self] in
             self?.goodsPhotoCV.reloadData()
         })
@@ -96,9 +96,6 @@ extension GeneralGoodsVC {
             showAlert(Titles.MarketPlace.noDescription, message: Titles.MarketPlace.noGoodDescriptionMsg)
             isError = true
         }
-//        if photoDelegate.images.count == 0 {
-//            showAlert(Titles.MarketPlace.noPhotos, message: Titles.MarketPlace.noPhotosMsg)
-//        }
         
         return !isError
     }

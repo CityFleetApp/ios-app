@@ -10,6 +10,7 @@ import UIKit
 
 class MarketPlaceManager: NSObject {
     typealias MarketPlaceItem = (Int, String)
+    static let CompletedDataLoadingNotification = "CompletedDataLoadingNotification"
     
     let operationsKeyPath = "operations"
     var reloadData: (() -> ())?
@@ -155,5 +156,31 @@ class MarketPlaceManager: NSObject {
                 reloadData?()
             }
         }
+    }
+}
+
+extension MarketPlaceManager {
+    func seatsID(sets: Int) -> Int? {
+        return seats.filter({ $0.1 == String(seats) }).first?.0
+    }
+    
+    func makeID(make: String) -> Int? {
+        return self.make.filter({ $0.1 == make }).first?.0
+    }
+    
+    func modelID (model: String) -> Int? {
+        return self.model.filter({ $0.1 == model }).first?.0
+    }
+    
+    func colorID (color: String) -> Int? {
+        return colors.filter({ $0.1 == color }).first?.0
+    }
+    
+    func fuelID (fuel: String) -> Int? {
+        return self.fuel.filter({ $0.1 == fuel }).first?.0
+    }
+    
+    func typeID (type: String) -> Int? {
+        return self.type.filter({ $0.1 == type }).first?.0
     }
 }

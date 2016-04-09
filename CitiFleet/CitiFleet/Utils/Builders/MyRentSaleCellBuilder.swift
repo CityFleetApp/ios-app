@@ -21,8 +21,8 @@ class PostingCellBuilder: NSObject {
         dataManager = marketPlaceManager
         self.tableView = tableView
         super.init()
-        dataManager.reloadData = { [unowned self] in
-            self.tableView.reloadData()
+        dataManager.reloadData = { [weak self] in
+            self?.tableView.reloadData()
         }
     }
     
@@ -48,6 +48,7 @@ class MyRentSaleCellBuilder: PostingCellBuilder {
             let index = indexPath.row
             cell?.title.text = CellResources.RentSale.Titles[index]
             cell?.placeHolder?.placeholderText = CellResources.RentSale.PlaceHolders[index]
+            
             cell?.icon.image = UIImage(named: CellResources.RentSale.iconNames[index])?.imageWithRenderingMode(.AlwaysTemplate)
             if indexPath.row == 1 {
                 cell?.setEditable(postingCreater.model != nil)
@@ -97,28 +98,21 @@ class MyRentSaleCellBuilder: PostingCellBuilder {
         return cell!
     }
     
-    private func setupCellAction(cell: PostingCell, indexPath: NSIndexPath) {
-        let arrays = [
-            dataManager.make,
-            dataManager.model,
-            dataManager.type,
-            dataManager.colors,
-            createYearArr(),
-            dataManager.fuel,
-            dataManager.seats
-        ]
-        cell.didSelect = { [weak self] in
-            let dialog = PickerDialog.viewFromNib()
-            dialog.components = arrays[indexPath.row].map({ return $0.1 })
-            dialog.completion = { (selectedItem, canceled) in
-                if !canceled {
-                    self?.selectedItem(selectedItem!, indexPath: indexPath)
-                }
+    func resetModel() {
+        if let make = postingCreater.make {
+            dataManager.loadModels(make.0) { [weak self] in
+                self?.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: .Automatic)
             }
-            dialog.show()
         }
+        postingCreater.model = nil
+        let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0)) as? PostingCell
+        cell?.placeHolder?.highlitedText = nil
+        cell?.placeHolder?.placeholderText = CellResources.RentSale.PlaceHolders[1]
+        cell?.setEditable(true)
     }
-    
+}
+
+extension MyRentSaleCellBuilder {
     private func createYearArr() -> [MarketPlaceManager.MarketPlaceItem] {
         var yearsArr: [MarketPlaceManager.MarketPlaceItem] = []
         let df = NSDateFormatter()
@@ -178,16 +172,72 @@ class MyRentSaleCellBuilder: PostingCellBuilder {
         cell?.placeHolder?.highlitedText = cellText
     }
     
-    private func resetModel() {
-        if let make = postingCreater.make {
-            dataManager.loadModels(make.0) { [unowned self] in
-                self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: .Automatic)
+    private func setupCellAction(cell: PostingCell, indexPath: NSIndexPath) {
+        let arrays = [
+            dataManager.make,
+            dataManager.model,
+            dataManager.type,
+            dataManager.colors,
+            createYearArr(),
+            dataManager.fuel,
+            dataManager.seats
+        ]
+        cell.didSelect = { [weak self] in
+            let dialog = PickerDialog.viewFromNib()
+            dialog.components = arrays[indexPath.row].map({ return $0.1 })
+            dialog.completion = { (selectedItem, canceled) in
+                if !canceled {
+                    self?.selectedItem(selectedItem!, indexPath: indexPath)
+                }
+            }
+            dialog.show()
+        }
+    }
+}
+
+class UpdateRentSaleCellBuilder: MyRentSaleCellBuilder {
+    var existingCar: CarForRentSale?
+    
+    override init(tableView: UITableView, marketPlaceManager: MarketPlaceManager) {
+        super.init(tableView: tableView, marketPlaceManager: marketPlaceManager)
+        dataManager.reloadData = { [weak self] in
+            self?.tableView.reloadData()
+            if let id = self?.dataManager.makeID((self?.existingCar?.make)!) {
+                self?.dataManager.loadModels(id, completion: { 
+                    self?.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: .Automatic)
+                })
             }
         }
-        postingCreater.model = nil
-        let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0)) as? PostingCell
-        cell?.placeHolder?.highlitedText = nil
-        cell?.placeHolder?.placeholderText = CellResources.RentSale.PlaceHolders[1]
-        cell?.setEditable(true)
+    }
+    
+    override func build(indexPath: NSIndexPath) -> UITableViewCell {
+        let cellText = cellTextForIndexPath(indexPath)
+        let cell = super.build(indexPath)
+        if var cell = cell as? CarBuilderCellText {
+            cell.cellText = cellText
+        }
+        return cell
+    }
+    
+    override func resetModel() {
+        existingCar?.model = nil
+        super.resetModel()
+    }
+}
+
+extension UpdateRentSaleCellBuilder {
+    private func cellTextForIndexPath(indexPath: NSIndexPath) -> String? {
+        switch indexPath.row {
+        case 0: return postingCreater.make != nil ? postingCreater.make?.1 : existingCar?.make
+        case 1: return postingCreater.model != nil ? postingCreater.model?.1 : existingCar?.model
+        case 2: return postingCreater.type != nil ? postingCreater.type?.1 : existingCar?.type
+        case 3: return postingCreater.color != nil ? postingCreater.color?.1 : existingCar?.color
+        case 4: return postingCreater.year != nil ? postingCreater.year : existingCar?.year
+        case 5: return postingCreater.fuel != nil ? postingCreater.fuel?.1 : existingCar?.fuel
+        case 6: return postingCreater.seats != nil ? postingCreater.seats?.1 : existingCar?.seats != nil ? "\(existingCar!.seats!)" : nil
+        case 7: return postingCreater.price != nil ? postingCreater.price : existingCar?.price
+        case 8: return postingCreater.rentSaleDescription != nil ? postingCreater.rentSaleDescription : existingCar?.itemDescription
+        default: return nil
+        }
     }
 }

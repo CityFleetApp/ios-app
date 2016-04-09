@@ -52,9 +52,20 @@ class RentSaleCreator: NSObject {
             return RentSaleCreator.NoPriceErrorCode
         } else if rentSaleDescription == nil || rentSaleDescription?.characters.count == 0 {
             return RentSaleCreator.NoDescriptionErrorCode
-        } else if photos.count == 0 {
-            return RentSaleCreator.NoPhotosErrorCode
         }
         return -1
+    }
+}
+
+class RentSaleUpdater: RentSaleCreator {
+    override func checkCorrectParams() -> Int {
+        if make != nil && model == nil {
+            return 1
+        }
+        return -1
+    }
+    
+    override func postNewRentSale(completion: ((NSError?) -> ())) {
+        
     }
 }

@@ -48,6 +48,8 @@ extension ManagePostsListVC {
         let item = dataSource.previousPosts[indexPath.row]
         switch item.postType! {
         case ManagePostsListDataSource.PostType.Car:
+            let carVC = UpdateCarVCBuilder().createViewController(item as! CarForRentSale)
+            navigationController?.pushViewController(carVC, animated: true)
             break
         case ManagePostsListDataSource.PostType.Good:
             if let goodsVC = storyboard?.instantiateViewControllerWithIdentifier(ViewControllerID.Posting.GoodForSale) as? GeneralGoodsVC {

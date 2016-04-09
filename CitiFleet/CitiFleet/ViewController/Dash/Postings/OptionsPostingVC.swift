@@ -16,16 +16,21 @@ class OptionsPostingVC: UITableViewController {
     var cellBuilder: MyRentSaleCellBuilder!
     var dataManager = MarketPlaceManager()
     var uploader = RentSaleCreator()
+    var existingCar: CarForRentSale?
     
     private var vehicleCollectionViewDelegate: PostingPhotosCollectionDelegate!
     
     override func viewDidLoad() {
         let menuItemDelete = UIMenuItem(title: "Delete", action: Selector("deletePhoto:"))
-        //        let menuItemEdit = UIMenuItem(title: "Edit", action: Selector("editPhoto:"))
         UIMenuController.sharedMenuController().menuItems = [menuItemDelete]
         UIMenuController.sharedMenuController().menuVisible = true
         
-        cellBuilder = MyRentSaleCellBuilder(tableView: tableView, marketPlaceManager: dataManager)
+        if let car = existingCar {
+            cellBuilder = UpdateRentSaleCellBuilder(tableView: tableView, marketPlaceManager: dataManager)
+            (cellBuilder as! UpdateRentSaleCellBuilder).existingCar = car 
+        } else {
+            cellBuilder = MyRentSaleCellBuilder(tableView: tableView, marketPlaceManager: dataManager)
+        }
         cellBuilder.postingCreater = uploader
         dataManager.loadData()
         
@@ -108,7 +113,6 @@ extension OptionsPostingVC {
         if !handleErrorCode(uploader.checkCorrectParams()) {
             return
         }
-        
         uploader.postNewRentSale() { [unowned self] (error) in
             if error == nil {
                 self.navigationController?.popViewControllerAnimated(true)
@@ -117,6 +121,7 @@ extension OptionsPostingVC {
     }
 }
 
+//MARK: - TableView Delegate
 extension OptionsPostingVC {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return indexPath.row == 8 ? descriptionCellHeight : cellHeight
