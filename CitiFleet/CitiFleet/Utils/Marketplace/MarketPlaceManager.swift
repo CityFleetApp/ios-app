@@ -121,7 +121,7 @@ class MarketPlaceManager: NSObject {
         operationQueue.addOperation(DataDownloader(URLstr: MPURL.fuel, completion: { [unowned self] (arr) in
             self.fuel = arr
             }))
-        operationQueue.addOperation(DataDownloader(URLstr: MPURL.type, completion: { [unowned self] (arr) in
+        operationQueue.addOperation(DataDownloader(URLstr: MPURL.types, completion: { [unowned self] (arr) in
             self.type = arr
             }))
         

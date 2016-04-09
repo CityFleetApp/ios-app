@@ -130,6 +130,10 @@ extension RequestManager {
     func patch(baseURL: String, parameters: [String:AnyObject]?, completion:((SwiftyJSON.JSON?, NSError?) -> ())) {
         makeRequest(.PATCH, baseURL: baseURL, parameters: parameters, completion: completion)
     }
+    
+    func put(baseURL: String, parameters: [String:AnyObject]?, completion:((SwiftyJSON.JSON?, NSError?) -> ())) {
+        makeRequest(.PATCH, baseURL: baseURL, parameters: parameters, completion: completion)
+    }
 }
 
 //MARK: - Upload Photo

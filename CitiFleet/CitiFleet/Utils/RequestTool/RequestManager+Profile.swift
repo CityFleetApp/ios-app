@@ -43,3 +43,11 @@ extension RequestManager {
         }
     }
 }
+
+extension RequestManager {
+    func getProfile(completion:((DictionaryResponse, NSError?) -> ())) {
+        get(URL.User.Profile.Profile, parameters: nil) { (json, error) in
+            completion(json?.dictionaryObject, error)
+        }
+    }
+}

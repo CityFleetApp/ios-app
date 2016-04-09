@@ -14,6 +14,7 @@ class EditProfileVC: UITableViewController {
     @IBOutlet var bioTextView: KMPlaceholderTextView!
     @IBOutlet var phoneNumberTF: UITextField!
     @IBOutlet var usernameTF: UITextField!
+    @IBOutlet var carLbl: HighlitableLabel!
     @IBOutlet var avatarView: AvatarCameraView!
     
     private var headerViewSetuper: UITableViewHeaderSetuper?
@@ -21,17 +22,63 @@ class EditProfileVC: UITableViewController {
     
     override func viewDidLoad() {
         createAccessoryView(bioTextView)
-        usernameTF.inputAccessoryView = nil
         headerViewSetuper = UITableViewHeaderSetuper(tableView: tableView, headerHeight: tableHeaderHeight)
+        User.currentUser()?.loadProfile({ [weak self] (error) in
+            self?.setupData()
+        })
     }
     
     override func viewWillAppear(animated: Bool) {
         preloadData()
+        setupData()
+    }
+}
+
+extension EditProfileVC {
+    @IBAction func save(sender: AnyObject) {
+        typealias Param = Params.User.Profile
+        let profile = User.currentUser()?.profile
+        var params: [String: String] = [:]
+        if let un = profile?.username {
+            params[Param.username] = un
+        }
+        
+        if let bio = profile?.bio {
+            params[Param.bio] = bio
+        }
+        
+        if let phone = profile?.phone {
+            params[Param.phone] = phone
+        }
+        
+        if profile?.carMake != nil && profile?.carModel != nil && profile?.carType != nil && profile?.carYear != nil && profile?.carType != nil {
+            params[Param.carMake] = "\((profile?.carMake)!)"
+            params[Param.carModel] = "\((profile?.carModel)!)"
+            params[Param.carType] = "\((profile?.carType)!)"
+            params[Param.carYear] = "\((profile?.carYear)!)"
+            params[Param.carType] = "\((profile?.carType)!)"
+        }
+        
+        RequestManager.sharedInstance().patch(URL.User.Profile.Profile, parameters: params) { [weak self] (json, error) in
+            if error == nil {
+                self?.navigationController?.popViewControllerAnimated(true)
+            }
+        }
     }
 }
 
 //MARK: Private Methods
 extension EditProfileVC {
+    private func setupData() {
+        let profile = User.currentUser()?.profile
+        phoneNumberTF.text = profile?.phone
+        bioTextView.text = profile?.bio
+        usernameTF.text = profile?.username
+        if profile?.carModelDisplay != nil && profile?.carMakeDisplay != nil && profile?.carYear != nil {
+            carLbl.highlitedText = "\(profile!.carYear!) \(profile!.carMakeDisplay!) \(profile!.carModelDisplay!)"
+        }
+    }
+    
     private func createAccessoryView(textView: UIView) -> UIView {
         let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 44))
         let barButton = UIBarButtonItem(title: "Done", style: .Done, target: textView, action: #selector(UIResponder.resignFirstResponder))
@@ -78,11 +125,11 @@ extension EditProfileVC {
 //MARK: Table View Delegate
 extension EditProfileVC {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.section != 0 && indexPath.row != 0 {
-            return StandardCellHeight
+        if indexPath.section == 0 && indexPath.row == 0 {
+            return bioTextView.text.characters.count == 0 ? StandardCellHeight : calculateHeightForBio()
         }
         
-        return bioTextView.text.characters.count == 0 ? StandardCellHeight : calculateHeightForBio()
+        return StandardCellHeight
     }
 }
 
@@ -95,6 +142,7 @@ extension EditProfileVC {
 
 extension EditProfileVC: UITextViewDelegate {
     func textViewDidChange(textView: UITextView) {
+        User.currentUser()?.profile.bio = textView.text
         tableView.beginUpdates()
         tableView.endUpdates()
     }
@@ -102,6 +150,11 @@ extension EditProfileVC: UITextViewDelegate {
 
 extension EditProfileVC: UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == usernameTF {
+            User.currentUser()?.profile.username = textField.text
+        } else if textField == phoneNumberTF {
+            User.currentUser()?.profile.phone = textField.text
+        }
         textField.resignFirstResponder()
         return true
     }

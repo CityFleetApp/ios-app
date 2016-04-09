@@ -111,11 +111,11 @@ class VehicleDataLoader: NSObject {
         operationQueue.addOperation(LoadDataOperation(URLstr: MPURL.make, completion: { [weak self] (arr) in
             self?.make = arr
             }))
+        operationQueue.addOperation(LoadDataOperation(URLstr: MPURL.types, completion: { [weak self] (arr) in
+            self?.type = arr
+            }))
         operationQueue.addOperation(LoadDataOperation(URLstr: MPURL.color, completion: { [weak self] (arr) in
             self?.colors = arr
-            }))
-        operationQueue.addOperation(LoadDataOperation(URLstr: MPURL.type, completion: { [weak self] (arr) in
-            self?.type = arr
             }))
         
         operationQueue.addObserver(self, forKeyPath: VehicleDataLoader.OperationsKeyPath, options: NSKeyValueObservingOptions(), context: nil)
@@ -166,12 +166,66 @@ class EditVehicleVC: UITableViewController {
     var myVehicle = MyVehicle()
     
     override func viewDidLoad() {
-        dataLoader.preloadData(nil)
+        dataLoader.preloadData { [weak self] in
+            self?.setupData()
+        }
+    }
+}
+
+//MARK: - Actions -
+extension EditVehicleVC {
+    @IBAction func saveVehicle() {
+        let user = User.currentUser()
+        user?.profile.carColor = myVehicle.color?.0
+        user?.profile.carColorDisplay = myVehicle.color?.1
+        user?.profile.carModel = myVehicle.model?.0
+        user?.profile.carModelDisplay = myVehicle.model?.1
+        user?.profile.carMake = myVehicle.make?.0
+        user?.profile.carMakeDisplay = myVehicle.make?.1
+        user?.profile.carType = myVehicle.type?.0
+        user?.profile.carTypeDisplay = myVehicle.type?.1
+        user?.profile.carYear = myVehicle.year?.0
+        navigationController?.popViewControllerAnimated(true)
     }
 }
 
 //MARK: - Private Methods -
 extension EditVehicleVC {
+    private func setupData() {
+        let profile = User.currentUser()?.profile
+        if let make = profile?.carMake {
+            setCellText(NSIndexPath(forRow: 0, inSection: 0), cellText: dataLoader.make[make - 1].1)
+            dataLoader.loadModels(make) { }
+            myVehicle.make = (make, (profile?.carMakeDisplay)!)
+        }
+        
+        if let model = profile?.carModelDisplay {
+            setCellText(NSIndexPath(forRow: 1, inSection: 0), cellText: model)
+            myVehicle.model = ((profile?.carModel)!, model)
+        }
+        
+        if let type = profile?.carTypeDisplay {
+            setCellText(NSIndexPath(forRow: 2, inSection: 0), cellText: type)
+            myVehicle.type = ((profile?.carType)!, type)
+        }
+        
+        if let color = profile?.carColorDisplay {
+            setCellText(NSIndexPath(forRow: 3, inSection: 0), cellText: color)
+            myVehicle.color = ((profile?.carColor)!, color)
+        }
+        
+        if let year = profile?.carYear {
+            setCellText(NSIndexPath(forRow: 4, inSection: 0), cellText: "\(year)")
+            myVehicle.year = ((profile?.carYear)!, "\((profile?.carYear)!)")
+        }
+    }
+    
+    private func setCellText(indexPath: NSIndexPath, cellText: String) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as? PostingCell
+        cell?.placeHolder?.highlitedText = cellText
+        cell?.setEditable(true)
+    }
+    
     private func createYearArr() -> [MarketPlaceManager.MarketPlaceItem] {
         var yearsArr: [MarketPlaceManager.MarketPlaceItem] = []
         let df = NSDateFormatter()

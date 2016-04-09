@@ -431,7 +431,6 @@
 		4316BB7C1C7B046A007A9ECB /* CitiFleet */ = {
 			isa = PBXGroup;
 			children = (
-				439AB7C01CB4E8070015A874 /* Manage Posts */,
 				4316BBA51C7B61D7007A9ECB /* Constants */,
 				4316BBA01C7B5EBE007A9ECB /* Extensions */,
 				4316BBB21C7B7399007A9ECB /* Utils */,
@@ -966,6 +965,7 @@
 		43F5E2391C9C5369000BBB91 /* Postings */ = {
 			isa = PBXGroup;
 			children = (
+				439AB7C01CB4E8070015A874 /* Manage Posts */,
 				43FC7AB21CAB4CA1009EB4F4 /* General Goods */,
 				43FC7AAD1CAB11AF009EB4F4 /* Job Offers */,
 				43527F701CA43595003D87FF /* Postings */,

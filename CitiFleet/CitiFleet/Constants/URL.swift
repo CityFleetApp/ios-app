@@ -22,6 +22,9 @@ struct URL {
         struct APNS {
             static let Register = "users/devicesdevice/apns/"
         }
+        struct Profile {
+            static let Profile = "users/profile/"
+        }
     }
     struct Login {
         static let Login = "users/login/"
@@ -62,7 +65,7 @@ struct URL {
         static let goodsForSale = "marketplace/goods/"
         
         static let fuel = "marketplace/fuel/"
-        static let type = "marketplace/types/"
+        static let types = "marketplace/types/"
         static let color = "marketplace/colors/"
         static let seats = "marketplace/seats/"
         static let make = "marketplace/cars/make/"
@@ -95,6 +98,16 @@ struct Params {
             static let registrationId = "registration_id" // APNS Token
             static let deviceId = "device_id" // UDID / UIDevice.identifierForVendor()
             static let active = "active" // Inactive devices will not be sent notifications
+        }
+        struct Profile {
+            static let carMake = "car_make"
+            static let carModel = "car_model"
+            static let bio = "bio"
+            static let username = "username"
+            static let carYear = "car_year"
+            static let carType = "car_type"
+            static let phone = "phone"
+            static let carColor = "car_color"
         }
     }
     
@@ -188,6 +201,20 @@ struct Response {
         static let HackLicense = "hack_license"
         static let Token = "token"
         static let AvatarUrl = "avatar_url"
+        struct Profile {
+            static let carMake = "car_make"
+            static let carModel = "car_model"
+            static let bio = "bio"
+            static let username = "username"
+            static let carYear = "car_year"
+            static let carType = "car_type"
+            static let phone = "phone"
+            static let carColor = "car_color"
+            static let carMakeDisplay = "car_make_display"
+            static let carModelDisplay = "car_model_display"
+            static let carColorDisplay = "car_color_display"
+            static let carTypeDisplay = "car_type_display"
+        }
     }
     struct UploadAvatar {
         static let avatar = "avatar"

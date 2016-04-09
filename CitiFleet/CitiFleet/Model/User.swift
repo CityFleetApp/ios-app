@@ -9,6 +9,21 @@
 import Foundation
 import AFNetworking
 
+struct Profile {
+    var carMake: Int?
+    var carModel: Int?
+    var bio: String?
+    var username: String?
+    var carYear: Int?
+    var carType: Int?
+    var phone: String?
+    var carColor: Int?
+    var carMakeDisplay: String?
+    var carModelDisplay: String?
+    var carColorDisplay: String?
+    var carTypeDisplay: String?
+}
+
 class User: NSObject, NSCoding {
     private struct UserKeys {
         static let User = "User"
@@ -30,6 +45,8 @@ class User: NSObject, NSCoding {
     var avatarURL: NSURL?
     var bio: String?
     var drives: String?
+    
+    var profile = Profile()
     
     private static var currUser: User?
     
@@ -70,6 +87,29 @@ class User: NSObject, NSCoding {
         if self == User.currUser {
             let data = NSKeyedArchiver.archivedDataWithRootObject(self)
             NSUserDefaults.standardUserDefaults().setObject(data, forKey: UserKeys.User)
+        }
+    }
+    
+    func loadProfile(completion: ((NSError?) -> ())) {
+        typealias Param = Response.UserInfo.Profile
+        RequestManager.sharedInstance().getProfile { [weak self] (response, error) in
+            if error != nil || response == nil {
+                completion(error)
+                return
+            }
+            self?.profile.bio = response![Param.bio] as? String
+            self?.profile.carColor = response![Param.carColor] as? Int
+            self?.profile.carColorDisplay = response![Param.carColorDisplay] as? String
+            self?.profile.carMake = response![Param.carMake] as? Int
+            self?.profile.carMakeDisplay = response![Param.carMakeDisplay] as? String
+            self?.profile.carModel = response![Param.carModel] as? Int
+            self?.profile.carModelDisplay = response![Param.carModelDisplay] as? String
+            self?.profile.carType = response![Param.carType] as? Int
+            self?.profile.carTypeDisplay = response![Param.carTypeDisplay] as? String
+            self?.profile.carYear = response![Param.carYear] as? Int
+            self?.profile.phone = response![Param.phone] as? String
+            self?.profile.username = response![Param.username] as? String
+            completion(nil)
         }
     }
     
