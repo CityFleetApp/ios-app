@@ -83,6 +83,7 @@
 		439AB7A41CB3DFF90015A874 /* EditVehicleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7A31CB3DFF90015A874 /* EditVehicleVC.swift */; };
 		439AB7C51CB4E86D0015A874 /* ManagePostsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7C41CB4E86D0015A874 /* ManagePostsListVC.swift */; };
 		439AB7C71CB4EAAB0015A874 /* ManagePostsListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7C61CB4EAAB0015A874 /* ManagePostsListDataSource.swift */; };
+		439AB7CF1CBB8BCC0015A874 /* RequestManager+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7CE1CBB8BCC0015A874 /* RequestManager+Map.swift */; };
 		43A4265F1C9035660044B6A6 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A4265E1C9035660044B6A6 /* SettingsVC.swift */; };
 		43A426611C90359E0044B6A6 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A426601C90359E0044B6A6 /* Settings.storyboard */; };
 		43A426631C9040150044B6A6 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A426621C9040150044B6A6 /* Settings.swift */; };
@@ -133,6 +134,8 @@
 		43DC05C91C85AEAF00AB670A /* AddFriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05C81C85AEAF00AB670A /* AddFriendsVC.swift */; };
 		43DC05CC1C85B04F00AB670A /* AddFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05CB1C85B04F00AB670A /* AddFriendsCell.swift */; };
 		43DC05CF1C85DBC500AB670A /* SocialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DC05CE1C85DBC500AB670A /* SocialManager.swift */; };
+		43E2C0E41CBBB59300D26076 /* ReportInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E2C0E31CBBB59300D26076 /* ReportInfoView.swift */; };
+		43E2C0E61CBBB5C400D26076 /* ReportInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E2C0E51CBBB5C400D26076 /* ReportInfoView.xib */; };
 		43F5E2171C981EB5000BBB91 /* VehiclePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2161C981EB5000BBB91 /* VehiclePhotoCell.swift */; };
 		43F5E21A1C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2191C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift */; };
 		43F5E2221C9894AF000BBB91 /* GalleryPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F5E2211C9894AF000BBB91 /* GalleryPhoto.swift */; };
@@ -244,6 +247,7 @@
 		439AB7A31CB3DFF90015A874 /* EditVehicleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditVehicleVC.swift; path = ViewController/Dash/Settings/EditVehicleVC.swift; sourceTree = "<group>"; };
 		439AB7C41CB4E86D0015A874 /* ManagePostsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagePostsListVC.swift; path = ViewController/Dash/Postings/ManagePosts/ManagePostsListVC.swift; sourceTree = "<group>"; };
 		439AB7C61CB4EAAB0015A874 /* ManagePostsListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagePostsListDataSource.swift; path = Utils/Dash/ManagePosts/ManagePostsListDataSource.swift; sourceTree = "<group>"; };
+		439AB7CE1CBB8BCC0015A874 /* RequestManager+Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RequestManager+Map.swift"; path = "Utils/RequestTool/RequestManager+Map.swift"; sourceTree = "<group>"; };
 		43A4265E1C9035660044B6A6 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsVC.swift; path = ViewController/Dash/Settings/SettingsVC.swift; sourceTree = "<group>"; };
 		43A426601C90359E0044B6A6 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = Storyboards/Settings.storyboard; sourceTree = "<group>"; };
 		43A426621C9040150044B6A6 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = Model/Settings.swift; sourceTree = "<group>"; };
@@ -296,6 +300,8 @@
 		43DC05C81C85AEAF00AB670A /* AddFriendsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddFriendsVC.swift; path = ViewController/MainScreen/AddFriendsVC.swift; sourceTree = "<group>"; };
 		43DC05CB1C85B04F00AB670A /* AddFriendsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddFriendsCell.swift; path = Viewes/MainScreen/AddFriendsCell.swift; sourceTree = "<group>"; };
 		43DC05CE1C85DBC500AB670A /* SocialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocialManager.swift; path = Utils/SocialManager/SocialManager.swift; sourceTree = "<group>"; };
+		43E2C0E31CBBB59300D26076 /* ReportInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportInfoView.swift; path = Viewes/MainScreen/Map/ReportInfoView.swift; sourceTree = "<group>"; };
+		43E2C0E51CBBB5C400D26076 /* ReportInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ReportInfoView.xib; path = Storyboards/XIB/ReportInfoView.xib; sourceTree = "<group>"; };
 		43F5E2161C981EB5000BBB91 /* VehiclePhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VehiclePhotoCell.swift; path = Viewes/Dash/Profile/VehiclePhotoCell.swift; sourceTree = "<group>"; };
 		43F5E2191C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VehicleCollectionViewDelegate.swift; path = Utils/Profile/VehicleCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		43F5E2211C9894AF000BBB91 /* GalleryPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryPhoto.swift; path = Model/GalleryPhoto.swift; sourceTree = "<group>"; };
@@ -383,6 +389,7 @@
 				436D6B191C92C6FB00A0240E /* RequestManager+Benefit.swift */,
 				430A59E01CA2A86900FCD13D /* RequestManager+DOCManager.swift */,
 				43D6C64B1CAA7E3B00DD4C99 /* RequestManager+Posting.swift */,
+				439AB7CE1CBB8BCC0015A874 /* RequestManager+Map.swift */,
 			);
 			name = "Request Util";
 			sourceTree = "<group>";
@@ -887,6 +894,7 @@
 				43AD515B1C95D261002261DB /* Avatar Header View */,
 				43DC05BB1C8439CF00AB670A /* ReportsView.xib */,
 				436D6B241C93184B00A0240E /* BarcodeView.xib */,
+				43E2C0E51CBBB5C400D26076 /* ReportInfoView.xib */,
 			);
 			name = XIB;
 			sourceTree = "<group>";
@@ -902,6 +910,7 @@
 		43DC05CA1C85AFE800AB670A /* Main Screen */ = {
 			isa = PBXGroup;
 			children = (
+				43E2C0E21CBBB57300D26076 /* Map */,
 				43DC05CB1C85B04F00AB670A /* AddFriendsCell.swift */,
 			);
 			name = "Main Screen";
@@ -914,6 +923,14 @@
 				43DC05CE1C85DBC500AB670A /* SocialManager.swift */,
 			);
 			name = "Social Manager";
+			sourceTree = "<group>";
+		};
+		43E2C0E21CBBB57300D26076 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				43E2C0E31CBBB59300D26076 /* ReportInfoView.swift */,
+			);
+			name = Map;
 			sourceTree = "<group>";
 		};
 		43F5E2141C981D84000BBB91 /* Dash */ = {
@@ -1126,6 +1143,7 @@
 				4316BBAF1C7B6A27007A9ECB /* Montserrat-Regular.otf in Resources */,
 				43AD51611C95E0C4002261DB /* AvatarCameraView.xib in Resources */,
 				43CFA76C1C93B81100DC89C9 /* LegalAid.xib in Resources */,
+				43E2C0E61CBBB5C400D26076 /* ReportInfoView.xib in Resources */,
 				430A59DB1CA192E000FCD13D /* DOCManagementDatePicker.xib in Resources */,
 				4316BBB01C7B6A27007A9ECB /* Montserrat-SemiBold.otf in Resources */,
 				4316BBB11C7B6A27007A9ECB /* Montserrat-UltraLight.otf in Resources */,
@@ -1247,6 +1265,7 @@
 				43F5E2361C9AEE8C000BBB91 /* Notification.swift in Sources */,
 				43A4266E1C91ABAD0044B6A6 /* BenefitsVC.swift in Sources */,
 				43527F6F1CA3D494003D87FF /* APNSManager.swift in Sources */,
+				439AB7CF1CBB8BCC0015A874 /* RequestManager+Map.swift in Sources */,
 				43DC058B1C80BD6A00AB670A /* Storyboard.swift in Sources */,
 				439AB7931CAEB4AE0015A874 /* CarsForRentSale.swift in Sources */,
 				435611991C8763AA0050EDE7 /* RequestManager+SocialManager.swift in Sources */,
@@ -1264,6 +1283,7 @@
 				4334D81F1C7F783F00557AE4 /* UIImageUtil.swift in Sources */,
 				433037211C9D7DC3001EAE94 /* DialogView.swift in Sources */,
 				433037251C9D80E4001EAE94 /* UIImageEffects.swift in Sources */,
+				43E2C0E41CBBB59300D26076 /* ReportInfoView.swift in Sources */,
 				43F5E2321C9AEBD1000BBB91 /* RequestManager+Notifications.swift in Sources */,
 				43F5E2171C981EB5000BBB91 /* VehiclePhotoCell.swift in Sources */,
 				4316BB9F1C7B446F007A9ECB /* SignUpVC.swift in Sources */,

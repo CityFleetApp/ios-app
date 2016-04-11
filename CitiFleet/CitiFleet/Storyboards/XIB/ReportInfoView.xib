@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Montserrat-Bold.otf">
+            <string>Montserrat-Bold</string>
+        </mutableArray>
+        <mutableArray key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ReportInfoView" customModule="CitiFleet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6OV-nL-ekh">
+                    <rect key="frame" x="0.0" y="22" width="600" height="289"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qX-Uo-Rlk">
+                            <rect key="frame" x="206" y="123" width="188" height="44"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road-closure-ic" translatesAutoresizingMaskIntoConstraints="NO" id="RqJ-jS-xLD">
+                                    <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In 0.2 miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4E7-De-rr0">
+                                    <rect key="frame" x="60" y="9" width="128" height="27"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="RqJ-jS-xLD" firstAttribute="top" secondItem="0qX-Uo-Rlk" secondAttribute="top" id="8xf-ar-riq"/>
+                                <constraint firstItem="RqJ-jS-xLD" firstAttribute="leading" secondItem="0qX-Uo-Rlk" secondAttribute="leading" id="DPd-P6-At6"/>
+                                <constraint firstItem="4E7-De-rr0" firstAttribute="leading" secondItem="RqJ-jS-xLD" secondAttribute="trailing" constant="16" id="RPe-RP-UrJ"/>
+                                <constraint firstAttribute="trailing" secondItem="4E7-De-rr0" secondAttribute="trailing" id="csn-wl-bty"/>
+                                <constraint firstItem="RqJ-jS-xLD" firstAttribute="centerY" secondItem="0qX-Uo-Rlk" secondAttribute="centerY" id="g5n-E7-nRT"/>
+                                <constraint firstItem="4E7-De-rr0" firstAttribute="centerY" secondItem="RqJ-jS-xLD" secondAttribute="centerY" id="sRo-3m-ZHk"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="0qX-Uo-Rlk" firstAttribute="centerY" secondItem="6OV-nL-ekh" secondAttribute="centerY" id="BsQ-mW-6el"/>
+                        <constraint firstItem="0qX-Uo-Rlk" firstAttribute="centerX" secondItem="6OV-nL-ekh" secondAttribute="centerX" id="Fyj-nF-90u"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Snj-LJ-fSX">
+                    <rect key="frame" x="0.0" y="311" width="600" height="289"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cr8-cE-fTD">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="289"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                            <state key="normal" title="STILL HERE">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qox-u1-5lj">
+                            <rect key="frame" x="300" y="0.0" width="300" height="289"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                            <state key="normal" title="NOT HERE">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Cr8-cE-fTD" secondAttribute="bottom" id="3GA-fv-GMu"/>
+                        <constraint firstItem="Qox-u1-5lj" firstAttribute="leading" secondItem="Cr8-cE-fTD" secondAttribute="trailing" id="7wS-jc-Yup"/>
+                        <constraint firstItem="Qox-u1-5lj" firstAttribute="width" secondItem="Cr8-cE-fTD" secondAttribute="width" id="EA5-2d-tro"/>
+                        <constraint firstItem="Qox-u1-5lj" firstAttribute="leading" secondItem="Cr8-cE-fTD" secondAttribute="trailing" id="TIq-wM-zKU"/>
+                        <constraint firstItem="Cr8-cE-fTD" firstAttribute="top" secondItem="Snj-LJ-fSX" secondAttribute="top" id="Zm9-S6-cCR"/>
+                        <constraint firstItem="Qox-u1-5lj" firstAttribute="top" secondItem="Snj-LJ-fSX" secondAttribute="top" id="ZqT-0e-0qK"/>
+                        <constraint firstItem="Cr8-cE-fTD" firstAttribute="leading" secondItem="Snj-LJ-fSX" secondAttribute="leading" id="chI-Mh-FXv"/>
+                        <constraint firstAttribute="trailing" secondItem="Qox-u1-5lj" secondAttribute="trailing" id="jZl-ty-zth"/>
+                        <constraint firstAttribute="bottom" secondItem="Qox-u1-5lj" secondAttribute="bottom" id="wCw-a0-g4u"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="6OV-nL-ekh" secondAttribute="trailing" id="0xe-vW-2hu"/>
+                <constraint firstItem="Snj-LJ-fSX" firstAttribute="top" secondItem="6OV-nL-ekh" secondAttribute="bottom" id="876-uu-BTt"/>
+                <constraint firstItem="Snj-LJ-fSX" firstAttribute="height" secondItem="6OV-nL-ekh" secondAttribute="height" id="Azk-p6-qeD"/>
+                <constraint firstAttribute="bottom" secondItem="Snj-LJ-fSX" secondAttribute="bottom" id="BX5-J9-Tm5"/>
+                <constraint firstItem="6OV-nL-ekh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="22" id="FuE-eW-mAL"/>
+                <constraint firstItem="6OV-nL-ekh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="LhO-XF-x8t"/>
+                <constraint firstAttribute="trailing" secondItem="Snj-LJ-fSX" secondAttribute="trailing" id="jOI-nU-Qte"/>
+                <constraint firstItem="Snj-LJ-fSX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="q5P-su-f4y"/>
+            </constraints>
+            <connections>
+                <outlet property="distanceLbl" destination="4E7-De-rr0" id="Dga-Ea-cMn"/>
+                <outlet property="icon" destination="RqJ-jS-xLD" id="URC-Ee-pV5"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="road-closure-ic" width="44" height="44"/>
+    </resources>
+</document>

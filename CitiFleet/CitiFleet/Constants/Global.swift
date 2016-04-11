@@ -19,6 +19,7 @@ struct Sizes {
 }
 
 struct Constant {
+    static let MilesCoefficient = 0.000621371
     struct Image {
         static let imageBlurRadius: CGFloat = 7
     }

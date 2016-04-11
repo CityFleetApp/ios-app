@@ -88,7 +88,11 @@ struct URL {
             static let carPhotos = ""
         }
     }
-    static let Reports = "reports/"
+    struct Reports {
+        static let Reports = "reports/"
+        static let Nearby = "reports/nearby/"
+    }
+//    static let Reports = Reports.Reports
     static let BenefitsList = "benefits/"
 }
 
