@@ -34,6 +34,7 @@ class Report: NSObject {
         return UIImage(named: iconName)
     }
     
+    var id: Int?
     var latitude: CLLocationDegrees = 0.0
     var longitude: CLLocationDegrees = 0.0
     var type: ReportType = .Police

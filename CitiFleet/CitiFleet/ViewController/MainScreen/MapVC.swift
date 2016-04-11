@@ -95,8 +95,11 @@ extension MapVC {
                 for obj in response {
                     let lat = obj[Params.Report.latitude] as! CLLocationDegrees
                     let lon = obj[Params.Report.longitude] as! CLLocationDegrees
+                    let id = obj[Params.id] as! Int
+
                     let type = ReportType(rawValue: obj[Params.Report.reportType] as! Int)
                     let report = Report(lat: lat, lon: lon, type: type!)
+                    report.id = id
                     newReports.insert(report)
                 }
                 let shouldBeRemover = self?.reports.subtract(newReports)
@@ -230,7 +233,7 @@ extension MapVC: GMSAutocompleteViewControllerDelegate {
     func mapView(mapView: GMSMapView, didTapMarker marker: GMSMarker) -> Bool {
         if let marker = marker as? ReportMarker {
             reportInfoView.report = marker.report
-            showReportInfo()
+            reportInfoView.showView()
         }
         return true
     }

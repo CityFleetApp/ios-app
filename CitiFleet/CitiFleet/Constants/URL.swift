@@ -91,12 +91,16 @@ struct URL {
     struct Reports {
         static let Reports = "reports/"
         static let Nearby = "reports/nearby/"
+        static let Map = "reports/map/"
+        static let Confirm = "/confirm_report/"
+        static let Deny = "/deny_report/"
     }
 //    static let Reports = Reports.Reports
     static let BenefitsList = "benefits/"
 }
 
 struct Params {
+    static let id = "id"
     struct User {
         struct APNS {
             static let registrationId = "registration_id" // APNS Token

@@ -62,6 +62,9 @@
                             <state key="normal" title="STILL HERE">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="confirmReport:" destination="iN0-l3-epB" eventType="touchUpInside" id="rDn-Np-yr2"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qox-u1-5lj">
                             <rect key="frame" x="300" y="0.0" width="300" height="289"/>
@@ -69,6 +72,9 @@
                             <state key="normal" title="NOT HERE">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="denyReport:" destination="iN0-l3-epB" eventType="touchUpInside" id="w2v-OB-4Qx"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
