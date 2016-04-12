@@ -14,7 +14,8 @@ class MapVC: UIViewController {
     
     private var shouldCenterCurrentLocation = true
     private var _marker: GMSMarker?
-    private var reports: Set<Report> = Set()
+    private var reports: Set<Report> = []
+    private var friends: Set<Friend> = []
     private var _reportInfoView: ReportInfoView?
     private var reportInfoView: ReportInfoView {
         if let infoView = _reportInfoView {
@@ -66,6 +67,7 @@ class MapVC: UIViewController {
     
     func updatedLocation(locationNotif: NSNotification) {
         loadReports()
+        loadFriends()
         if !shouldCenterCurrentLocation {
             return
         }
@@ -114,10 +116,38 @@ extension MapVC {
         }
     }
     
+    private func loadFriends() {
+        RequestManager.sharedInstance().getNearbyFriends { [weak self] (response, error) in
+            if let response = response {
+                var newFriends: Set<Friend> = []
+                for obj in response {
+                    let user = Friend(json: obj)
+                    newFriends.insert(user)
+                }
+                let shouldBeRemove = self?.friends.subtract(newFriends)
+                dispatch_async(dispatch_get_main_queue(), { [weak self] in
+                    self?.removeFriends(shouldBeRemove)
+                })
+                self?.friends = (self?.friends.intersect(newFriends))!.union(newFriends)
+                dispatch_async(dispatch_get_main_queue(), { [weak self] in
+                    self?.updateFrinds()
+                })
+            }
+        }
+    }
+    
     private func updateReports() {
         for report in reports {
             if report.marker.map == nil {
                 report.marker.map = mapView
+            }
+        }
+    }
+    
+    private func updateFrinds() {
+        for friend in friends {
+            if friend.marker.map == nil {
+                friend.marker.map = mapView
             }
         }
     }
@@ -128,6 +158,15 @@ extension MapVC {
         }
         for report in reportsToDelete! {
             report.marker.map = nil
+        }
+    }
+    
+    private func removeFriends(friendsToDelete: Set<Friend>?) {
+        if friendsToDelete == nil {
+            return
+        }
+        for friend in friendsToDelete! {
+            friend.marker.map = nil
         }
     }
     
@@ -228,6 +267,10 @@ extension MapVC: GMSAutocompleteViewControllerDelegate {
     
     func didUpdateAutocompletePredictions(viewController: GMSAutocompleteViewController) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
+    
+    func mapView(mapView: GMSMapView, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
+        reportInfoView.hideView()
     }
     
     func mapView(mapView: GMSMapView, didTapMarker marker: GMSMarker) -> Bool {

@@ -94,6 +94,8 @@ struct URL {
         static let Map = "reports/map/"
         static let Confirm = "/confirm_report/"
         static let Deny = "/deny_report/"
+        
+        static let Friends = "reports/friends/"
     }
 //    static let Reports = Reports.Reports
     static let BenefitsList = "benefits/"
@@ -200,6 +202,8 @@ struct Params {
 
 struct Response {
     struct UserInfo {
+        static let Latitude = "lat"
+        static let Longitude = "lng"
         static let Bio = "bio"
         static let Drives = "drives"
         static let Username = "username"

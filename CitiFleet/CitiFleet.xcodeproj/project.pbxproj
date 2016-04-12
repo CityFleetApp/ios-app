@@ -67,6 +67,8 @@
 		43527F781CA6EE98003D87FF /* MarketPlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43527F771CA6EE98003D87FF /* MarketPlaceManager.swift */; };
 		435611971C87532C0050EDE7 /* AddressBookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435611961C87532C0050EDE7 /* AddressBookManager.swift */; };
 		435611991C8763AA0050EDE7 /* RequestManager+SocialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435611981C8763AA0050EDE7 /* RequestManager+SocialManager.swift */; };
+		436A20771CBCE4E90052ECDE /* FriendsMarker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436A20761CBCE4E90052ECDE /* FriendsMarker.xib */; };
+		436A20791CBCE77A0052ECDE /* FriendsMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A20781CBCE77A0052ECDE /* FriendsMarker.swift */; };
 		436D6B181C92C2C200A0240E /* Benefit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D6B171C92C2C200A0240E /* Benefit.swift */; };
 		436D6B1A1C92C6FB00A0240E /* RequestManager+Benefit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D6B191C92C6FB00A0240E /* RequestManager+Benefit.swift */; };
 		436D6B1F1C92E37600A0240E /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D6B1E1C92E37600A0240E /* UIViewController+Ext.swift */; };
@@ -231,6 +233,8 @@
 		43527F771CA6EE98003D87FF /* MarketPlaceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarketPlaceManager.swift; path = Utils/Marketplace/MarketPlaceManager.swift; sourceTree = "<group>"; };
 		435611961C87532C0050EDE7 /* AddressBookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressBookManager.swift; path = Utils/AddressBookManager/AddressBookManager.swift; sourceTree = "<group>"; };
 		435611981C8763AA0050EDE7 /* RequestManager+SocialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RequestManager+SocialManager.swift"; path = "Utils/RequestTool/RequestManager+SocialManager.swift"; sourceTree = "<group>"; };
+		436A20761CBCE4E90052ECDE /* FriendsMarker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FriendsMarker.xib; path = Storyboards/XIB/FriendsMarker.xib; sourceTree = "<group>"; };
+		436A20781CBCE77A0052ECDE /* FriendsMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsMarker.swift; path = Viewes/MainScreen/Map/FriendsMarker.swift; sourceTree = "<group>"; };
 		436D6B171C92C2C200A0240E /* Benefit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Benefit.swift; path = Model/Benefit.swift; sourceTree = "<group>"; };
 		436D6B191C92C6FB00A0240E /* RequestManager+Benefit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RequestManager+Benefit.swift"; path = "Utils/RequestTool/RequestManager+Benefit.swift"; sourceTree = "<group>"; };
 		436D6B1E1C92E37600A0240E /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Ext.swift"; path = "Extensions/UIViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -895,6 +899,7 @@
 				43DC05BB1C8439CF00AB670A /* ReportsView.xib */,
 				436D6B241C93184B00A0240E /* BarcodeView.xib */,
 				43E2C0E51CBBB5C400D26076 /* ReportInfoView.xib */,
+				436A20761CBCE4E90052ECDE /* FriendsMarker.xib */,
 			);
 			name = XIB;
 			sourceTree = "<group>";
@@ -929,6 +934,7 @@
 			isa = PBXGroup;
 			children = (
 				43E2C0E31CBBB59300D26076 /* ReportInfoView.swift */,
+				436A20781CBCE77A0052ECDE /* FriendsMarker.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -1146,6 +1152,7 @@
 				43E2C0E61CBBB5C400D26076 /* ReportInfoView.xib in Resources */,
 				430A59DB1CA192E000FCD13D /* DOCManagementDatePicker.xib in Resources */,
 				4316BBB01C7B6A27007A9ECB /* Montserrat-SemiBold.otf in Resources */,
+				436A20771CBCE4E90052ECDE /* FriendsMarker.xib in Resources */,
 				4316BBB11C7B6A27007A9ECB /* Montserrat-UltraLight.otf in Resources */,
 				43AD515D1C95D2A1002261DB /* AvatarHeaderView.xib in Resources */,
 				4316BB911C7B0885007A9ECB /* Login.storyboard in Resources */,
@@ -1311,6 +1318,7 @@
 				43DC058E1C80C26200AB670A /* RequestErrorHandler.swift in Sources */,
 				430B4F451C7DE33700EE884A /* NSData+Ext.swift in Sources */,
 				43AD51641C963D39002261DB /* UITableViewHeaderSetuper.swift in Sources */,
+				436A20791CBCE77A0052ECDE /* FriendsMarker.swift in Sources */,
 				4330371E1C9D629D001EAE94 /* PostingCell.swift in Sources */,
 				43DC05B01C83BB7700AB670A /* Keys.swift in Sources */,
 				431D2DDA1CA152BD00CBC4BA /* DOCManagementCell.swift in Sources */,

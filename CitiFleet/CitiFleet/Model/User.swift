@@ -184,3 +184,46 @@ class User: NSObject, NSCoding {
         }
     }
 }
+
+class Friend: User {
+    private static let IconName = "Friend_ic"
+    private var _marker: FriendMarker?
+    
+    var location: CLLocationCoordinate2D!
+    var id: Int?
+    
+    var marker: FriendMarker {
+        if let marker = _marker {
+            return marker
+        }
+        _marker = FriendMarker(position: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
+        let view = FriendsMarkerView.viewFromNib()
+        view.name = fullName
+        _marker?.icon = view.imageFromView()
+        _marker?.title = userName
+        
+        _marker?.friend = self
+        return _marker!
+    }
+    
+    init(json: AnyObject) {
+        super.init()
+        id = json[Params.id] as? Int
+        avatarURL = NSURL(string: (json[Response.UserInfo.AvatarUrl] as! String))
+        fullName = json[Response.UserInfo.FullName] as? String
+        email = json[Response.UserInfo.Email] as? String
+        userName = json[Response.UserInfo.Username] as? String
+        phone = json[Response.UserInfo.Phone] as? String
+        let lat = json[Response.UserInfo.Latitude] as? Double
+        let lng = json[Response.UserInfo.Longitude] as? Double
+        
+        if lat != nil && lng != nil {
+            location = CLLocationCoordinate2D(latitude: lat!, longitude: lng!)
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+    }
+}

@@ -1070,8 +1070,8 @@
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="TnD-a5-fkS"/>
                                                             <exclude reference="3DM-DM-wlb"/>
+                                                            <exclude reference="TnD-a5-fkS"/>
                                                         </mask>
                                                     </variation>
                                                 </imageView>

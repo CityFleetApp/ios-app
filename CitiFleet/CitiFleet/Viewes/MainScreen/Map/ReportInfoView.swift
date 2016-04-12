@@ -32,7 +32,7 @@ class ReportInfoView: UIView {
     }
     
     func showView() {
-        UIView.animateWithDuration(0.5) { [weak self] in
+        UIView.animateWithDuration(0.25) { [weak self] in
             if self == nil {
                 return
             }
@@ -41,7 +41,7 @@ class ReportInfoView: UIView {
     }
     
     func hideView() {
-        UIView.animateWithDuration(0.5) { [weak self] in
+        UIView.animateWithDuration(0.25) { [weak self] in
             if self == nil {
                 return
             }

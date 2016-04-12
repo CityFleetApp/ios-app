@@ -86,3 +86,7 @@ func ==(left: Report, right: Report) -> Bool {
 class ReportMarker: GMSMarker {
     weak var report: Report?
 }
+
+class FriendMarker: GMSMarker {
+    weak var friend: Friend?
+}

@@ -19,4 +19,15 @@ extension RequestManager {
             completion(json?.arrayObject, error)
         }
     }
+    
+    func getNearbyFriends(completion:((ArrayResponse, NSError?) -> ())) {
+        let latitude = LocationManager.sharedInstance().currentCoordinates.latitude
+        let longitude = LocationManager.sharedInstance().currentCoordinates.longitude
+        
+        let urlString = URL.Reports.Friends + "?\(Params.Report.latitude)=\(latitude)&\(Params.Report.longitude)=\(longitude)"
+        
+        makeSilentRequest(.GET, baseURL: urlString, parameters: nil) { (json, error) in
+            completion(json?.arrayObject, error)
+        }
+    }
 }
