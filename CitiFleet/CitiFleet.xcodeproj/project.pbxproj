@@ -65,6 +65,8 @@
 		43527F6F1CA3D494003D87FF /* APNSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43527F6E1CA3D494003D87FF /* APNSManager.swift */; };
 		43527F721CA43A53003D87FF /* CellTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43527F711CA43A53003D87FF /* CellTitles.swift */; };
 		43527F781CA6EE98003D87FF /* MarketPlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43527F771CA6EE98003D87FF /* MarketPlaceManager.swift */; };
+		435530F51CBD08A8006B6DC8 /* FriendInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 435530F41CBD08A8006B6DC8 /* FriendInfoView.xib */; };
+		435530F71CBD0B04006B6DC8 /* FriendInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435530F61CBD0B04006B6DC8 /* FriendInfoView.swift */; };
 		435611971C87532C0050EDE7 /* AddressBookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435611961C87532C0050EDE7 /* AddressBookManager.swift */; };
 		435611991C8763AA0050EDE7 /* RequestManager+SocialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435611981C8763AA0050EDE7 /* RequestManager+SocialManager.swift */; };
 		436A20771CBCE4E90052ECDE /* FriendsMarker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436A20761CBCE4E90052ECDE /* FriendsMarker.xib */; };
@@ -231,6 +233,8 @@
 		43527F6E1CA3D494003D87FF /* APNSManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APNSManager.swift; path = Utils/APNS/APNSManager.swift; sourceTree = "<group>"; };
 		43527F711CA43A53003D87FF /* CellTitles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellTitles.swift; path = Constants/CellTitles.swift; sourceTree = "<group>"; };
 		43527F771CA6EE98003D87FF /* MarketPlaceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarketPlaceManager.swift; path = Utils/Marketplace/MarketPlaceManager.swift; sourceTree = "<group>"; };
+		435530F41CBD08A8006B6DC8 /* FriendInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FriendInfoView.xib; path = Storyboards/XIB/FriendInfoView.xib; sourceTree = "<group>"; };
+		435530F61CBD0B04006B6DC8 /* FriendInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendInfoView.swift; path = Viewes/MainScreen/Map/FriendInfoView.swift; sourceTree = "<group>"; };
 		435611961C87532C0050EDE7 /* AddressBookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressBookManager.swift; path = Utils/AddressBookManager/AddressBookManager.swift; sourceTree = "<group>"; };
 		435611981C8763AA0050EDE7 /* RequestManager+SocialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RequestManager+SocialManager.swift"; path = "Utils/RequestTool/RequestManager+SocialManager.swift"; sourceTree = "<group>"; };
 		436A20761CBCE4E90052ECDE /* FriendsMarker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FriendsMarker.xib; path = Storyboards/XIB/FriendsMarker.xib; sourceTree = "<group>"; };
@@ -899,6 +903,7 @@
 				43DC05BB1C8439CF00AB670A /* ReportsView.xib */,
 				436D6B241C93184B00A0240E /* BarcodeView.xib */,
 				43E2C0E51CBBB5C400D26076 /* ReportInfoView.xib */,
+				435530F41CBD08A8006B6DC8 /* FriendInfoView.xib */,
 				436A20761CBCE4E90052ECDE /* FriendsMarker.xib */,
 			);
 			name = XIB;
@@ -935,6 +940,7 @@
 			children = (
 				43E2C0E31CBBB59300D26076 /* ReportInfoView.swift */,
 				436A20781CBCE77A0052ECDE /* FriendsMarker.swift */,
+				435530F61CBD0B04006B6DC8 /* FriendInfoView.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -1136,6 +1142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				431D2DD21CA13EC200CBC4BA /* DocManagement.storyboard in Resources */,
+				435530F51CBD08A8006B6DC8 /* FriendInfoView.xib in Resources */,
 				4334D8121C7F215200557AE4 /* Dash.storyboard in Resources */,
 				43F5E23C1C9C53AC000BBB91 /* Postings.storyboard in Resources */,
 				4316BBAA1C7B6A27007A9ECB /* materialdesignicons-webfont.ttf in Resources */,
@@ -1256,6 +1263,7 @@
 				4316BBA91C7B61F5007A9ECB /* Fonts.swift in Sources */,
 				4334D8151C7F496F00557AE4 /* DashVC.swift in Sources */,
 				43CFA7631C93915F00DC89C9 /* ProfileVC.swift in Sources */,
+				435530F71CBD0B04006B6DC8 /* FriendInfoView.swift in Sources */,
 				43FC7AAF1CAB11E4009EB4F4 /* JobOfferVC.swift in Sources */,
 				43CFA76A1C93B61C00DC89C9 /* LegalAidVC.swift in Sources */,
 				4316BBB41C7B73C6007A9ECB /* ConfirmPasswordRule.swift in Sources */,

@@ -17,9 +17,7 @@ import GoogleMaps
 
 @UIApplicationMain
 
-class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate
-{
-
+class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
     var window: UIWindow?
     
     class func sharedDelegate() -> AppDelegate {
@@ -85,4 +83,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate
 //        APNSManager.sharedManager  .registerAPNSToken(deviceToken)
     }
 }
-
