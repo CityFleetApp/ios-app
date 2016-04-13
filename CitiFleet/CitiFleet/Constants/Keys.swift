@@ -8,6 +8,12 @@
 
 import Foundation
 
+struct DictionaryKeys {
+    struct Chat {
+        static let ScreenNumber = "ScreenNumber"
+    }
+}
+
 struct Keys {
     static let GoogleMaps = "AIzaSyDz48RYxfjSqKwEUmjCiLDi2Bn7vU5pLvg"
     struct Instagram {

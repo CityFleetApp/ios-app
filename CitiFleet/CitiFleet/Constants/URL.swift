@@ -97,8 +97,10 @@ struct URL {
         
         static let Friends = "reports/friends/"
     }
-//    static let Reports = Reports.Reports
     static let BenefitsList = "benefits/"
+    struct Chat {
+        static let Friends = "chat/friends/"
+    }
 }
 
 struct Params {

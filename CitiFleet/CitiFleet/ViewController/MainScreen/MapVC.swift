@@ -76,6 +76,11 @@ class MapVC: UIViewController {
         }
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        friendInfoView.hideView()
+        reportInfoView.hideView()
+    }
+    
     func updatedLocation(locationNotif: NSNotification) {
         loadReports()
         loadFriends()
@@ -245,7 +250,7 @@ extension MapVC {
     }
 }
 
-//MARK: - Map Delegate
+//MARK: - Map Autocompletion Delegate
 extension MapVC: GMSAutocompleteViewControllerDelegate {
     
     // Handle the user's selection.
@@ -299,6 +304,7 @@ extension MapVC: GMSAutocompleteViewControllerDelegate {
     }
 }
 
+//MARK: - Map View Delegate
 extension MapVC: GMSMapViewDelegate {
     func mapView(mapView: GMSMapView, willMove gesture: Bool) {
         shouldCenterCurrentLocation = false

@@ -19,10 +19,9 @@ class FriendInfoView: UIView {
     var friend: Friend! {
         didSet {
             userNameLbl.text = friend.fullName
+            userAvatar.image = UIImage(named: Resources.NoAvatarIc)
             if let url = friend.avatarURL {
                 userAvatar.hnk_setImageFromURL(url)
-            } else {
-                userAvatar.image = nil
             }
         }
     }

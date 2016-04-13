@@ -96,6 +96,8 @@
 		43A4266B1C916DC20044B6A6 /* ResetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A4266A1C916DC20044B6A6 /* ResetPasswordVC.swift */; };
 		43A4266E1C91ABAD0044B6A6 /* BenefitsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A4266D1C91ABAD0044B6A6 /* BenefitsVC.swift */; };
 		43A426711C91B71A0044B6A6 /* BenefitsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A426701C91B71A0044B6A6 /* BenefitsLayout.swift */; };
+		43A76D971CBE7A3900209320 /* FriendsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A76D961CBE7A3900209320 /* FriendsListVC.swift */; };
+		43A76D991CBE7B4B00209320 /* FriendsListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A76D981CBE7B4B00209320 /* FriendsListDataSource.swift */; };
 		43AD515A1C95D257002261DB /* AvatarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AD51591C95D257002261DB /* AvatarHeaderView.swift */; };
 		43AD515D1C95D2A1002261DB /* AvatarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43AD515C1C95D2A1002261DB /* AvatarHeaderView.xib */; };
 		43AD515F1C95DFFF002261DB /* AvatarCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AD515E1C95DFFF002261DB /* AvatarCameraView.swift */; };
@@ -107,6 +109,10 @@
 		43B6D8551C7EFC74000D6844 /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43B6D8541C7EFC74000D6844 /* MainScreen.storyboard */; };
 		43B6D8571C7F0379000D6844 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B6D8561C7F0379000D6844 /* UIButton+Ext.swift */; };
 		43B6D8591C7F055C000D6844 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B6D8581C7F055C000D6844 /* Global.swift */; };
+		43CA40371CBE33D2006ED92C /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CA40361CBE33D2006ED92C /* Chat.storyboard */; };
+		43CA403A1CBE4CE4006ED92C /* ChatMainScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CA40391CBE4CE4006ED92C /* ChatMainScreenVC.swift */; };
+		43CA403C1CBE6D05006ED92C /* ChatTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CA403B1CBE6D05006ED92C /* ChatTabBar.swift */; };
+		43CA403F1CBE73E7006ED92C /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CA403E1CBE73E7006ED92C /* FriendCell.swift */; };
 		43CFA7631C93915F00DC89C9 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CFA7621C93915F00DC89C9 /* ProfileVC.swift */; };
 		43CFA7651C939E7C00DC89C9 /* NSAttributedString+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CFA7641C939E7C00DC89C9 /* NSAttributedString+Ext.swift */; };
 		43CFA7671C93AF5C00DC89C9 /* LegalAid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CFA7661C93AF5C00DC89C9 /* LegalAid.storyboard */; };
@@ -264,6 +270,8 @@
 		43A4266A1C916DC20044B6A6 /* ResetPasswordVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResetPasswordVC.swift; path = ViewController/Dash/Settings/ResetPasswordVC.swift; sourceTree = "<group>"; };
 		43A4266D1C91ABAD0044B6A6 /* BenefitsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BenefitsVC.swift; path = ViewController/Dash/Benefits/BenefitsVC.swift; sourceTree = "<group>"; };
 		43A426701C91B71A0044B6A6 /* BenefitsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BenefitsLayout.swift; path = Viewes/Layouts/BenefitsLayout.swift; sourceTree = "<group>"; };
+		43A76D961CBE7A3900209320 /* FriendsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsListVC.swift; path = ViewController/Dash/Chat/FriendsListVC.swift; sourceTree = "<group>"; };
+		43A76D981CBE7B4B00209320 /* FriendsListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsListDataSource.swift; path = Utils/Dash/Chat/FriendsListDataSource.swift; sourceTree = "<group>"; };
 		43AD51591C95D257002261DB /* AvatarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvatarHeaderView.swift; path = Viewes/AvatarHeaderView/AvatarHeaderView.swift; sourceTree = "<group>"; };
 		43AD515C1C95D2A1002261DB /* AvatarHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AvatarHeaderView.xib; path = Storyboards/XIB/AvatarHeaderView/AvatarHeaderView.xib; sourceTree = "<group>"; };
 		43AD515E1C95DFFF002261DB /* AvatarCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvatarCameraView.swift; path = Viewes/AvatarHeaderView/AvatarCameraView.swift; sourceTree = "<group>"; };
@@ -276,6 +284,10 @@
 		43B6D8541C7EFC74000D6844 /* MainScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainScreen.storyboard; path = Storyboards/MainScreen.storyboard; sourceTree = "<group>"; };
 		43B6D8561C7F0379000D6844 /* UIButton+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Ext.swift"; path = "Extensions/UIButton+Ext.swift"; sourceTree = "<group>"; };
 		43B6D8581C7F055C000D6844 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Constants/Global.swift; sourceTree = "<group>"; };
+		43CA40361CBE33D2006ED92C /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Chat.storyboard; path = Storyboards/Chat/Chat.storyboard; sourceTree = "<group>"; };
+		43CA40391CBE4CE4006ED92C /* ChatMainScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatMainScreenVC.swift; path = ViewController/Dash/Chat/ChatMainScreenVC.swift; sourceTree = "<group>"; };
+		43CA403B1CBE6D05006ED92C /* ChatTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatTabBar.swift; path = ViewController/Dash/Chat/ChatTabBar.swift; sourceTree = "<group>"; };
+		43CA403E1CBE73E7006ED92C /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendCell.swift; path = Viewes/Dash/Chat/FriendCell.swift; sourceTree = "<group>"; };
 		43CFA7621C93915F00DC89C9 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileVC.swift; path = ViewController/Dash/Profile/ProfileVC.swift; sourceTree = "<group>"; };
 		43CFA7641C939E7C00DC89C9 /* NSAttributedString+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Ext.swift"; path = "Extensions/NSAttributedString+Ext.swift"; sourceTree = "<group>"; };
 		43CFA7661C93AF5C00DC89C9 /* LegalAid.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LegalAid.storyboard; path = Storyboards/LegalAid.storyboard; sourceTree = "<group>"; };
@@ -464,10 +476,11 @@
 			children = (
 				43FC7AB71CABD7E0009EB4F4 /* MarketPlace */,
 				43DC05BA1C842BE600AB670A /* XIB */,
+				43F5E23A1C9C5382000BBB91 /* Dash */,
 				4316BB901C7B0885007A9ECB /* Login.storyboard */,
 				43B6D8541C7EFC74000D6844 /* MainScreen.storyboard */,
-				43F5E23A1C9C5382000BBB91 /* Dash */,
 				43F5E22A1C9AAEB8000BBB91 /* Notification.storyboard */,
+				43CA40361CBE33D2006ED92C /* Chat.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -609,6 +622,7 @@
 		4334D8131C7F494E00557AE4 /* Dash */ = {
 			isa = PBXGroup;
 			children = (
+				43CA40381CBE4CBF006ED92C /* Chat */,
 				431D2DD31CA14D6100CBC4BA /* DOC Management */,
 				431D2DCC1CA05D0100CBC4BA /* HelpVC */,
 				43F5E2391C9C5369000BBB91 /* Postings */,
@@ -811,6 +825,25 @@
 			name = "Main Screen";
 			sourceTree = "<group>";
 		};
+		43CA40381CBE4CBF006ED92C /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				43CA40391CBE4CE4006ED92C /* ChatMainScreenVC.swift */,
+				43CA403B1CBE6D05006ED92C /* ChatTabBar.swift */,
+				43A76D961CBE7A3900209320 /* FriendsListVC.swift */,
+				43A76D981CBE7B4B00209320 /* FriendsListDataSource.swift */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		43CA403D1CBE73C0006ED92C /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				43CA403E1CBE73E7006ED92C /* FriendCell.swift */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
 		43CFA7611C938F8400DC89C9 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -841,6 +874,7 @@
 		43D2D0B31C7C9A3500A41D4F /* Viewes */ = {
 			isa = PBXGroup;
 			children = (
+				43CA403D1CBE73C0006ED92C /* Chat */,
 				4330371F1C9D7D89001EAE94 /* Dialog View */,
 				43F5E22C1C9AE64C000BBB91 /* Notifications */,
 				43AD51581C95D20B002261DB /* Avatar Header View */,
@@ -1147,6 +1181,7 @@
 				43F5E23C1C9C53AC000BBB91 /* Postings.storyboard in Resources */,
 				4316BBAA1C7B6A27007A9ECB /* materialdesignicons-webfont.ttf in Resources */,
 				4316BBAB1C7B6A27007A9ECB /* Montserrat-Black.otf in Resources */,
+				43CA40371CBE33D2006ED92C /* Chat.storyboard in Resources */,
 				4316BBAC1C7B6A27007A9ECB /* Montserrat-Bold.otf in Resources */,
 				43DC05BC1C8439CF00AB670A /* ReportsView.xib in Resources */,
 				43FC7AB91CABD7FE009EB4F4 /* MarketPlaceMain.storyboard in Resources */,
@@ -1266,6 +1301,7 @@
 				435530F71CBD0B04006B6DC8 /* FriendInfoView.swift in Sources */,
 				43FC7AAF1CAB11E4009EB4F4 /* JobOfferVC.swift in Sources */,
 				43CFA76A1C93B61C00DC89C9 /* LegalAidVC.swift in Sources */,
+				43CA403C1CBE6D05006ED92C /* ChatTabBar.swift in Sources */,
 				4316BBB41C7B73C6007A9ECB /* ConfirmPasswordRule.swift in Sources */,
 				43CFA7651C939E7C00DC89C9 /* NSAttributedString+Ext.swift in Sources */,
 				43DC05C01C847DAE00AB670A /* RequestManager+Login.swift in Sources */,
@@ -1274,8 +1310,10 @@
 				430449D41CAD1FC300365353 /* MarketplaceTemplateCell.swift in Sources */,
 				43DC05C51C849C7E00AB670A /* LocationManager.swift in Sources */,
 				43F5E2261C99ADE7000BBB91 /* RequestManager+Profile.swift in Sources */,
+				43A76D971CBE7A3900209320 /* FriendsListVC.swift in Sources */,
 				43D900F11C945857004A315C /* HighlitableLabel.swift in Sources */,
 				4330371B1C9D60AB001EAE94 /* MyRentSaleCellBuilder.swift in Sources */,
+				43CA403F1CBE73E7006ED92C /* FriendCell.swift in Sources */,
 				43F8340F1C97274400DE7E50 /* LegalAidCell.swift in Sources */,
 				43F5E2361C9AEE8C000BBB91 /* Notification.swift in Sources */,
 				43A4266E1C91ABAD0044B6A6 /* BenefitsVC.swift in Sources */,
@@ -1283,6 +1321,7 @@
 				439AB7CF1CBB8BCC0015A874 /* RequestManager+Map.swift in Sources */,
 				43DC058B1C80BD6A00AB670A /* Storyboard.swift in Sources */,
 				439AB7931CAEB4AE0015A874 /* CarsForRentSale.swift in Sources */,
+				43CA403A1CBE4CE4006ED92C /* ChatMainScreenVC.swift in Sources */,
 				435611991C8763AA0050EDE7 /* RequestManager+SocialManager.swift in Sources */,
 				4316BBA21C7B5EEC007A9ECB /* UITextField+Ext.swift in Sources */,
 				439AB7A21CB3A2A70015A874 /* EditProfileVC.swift in Sources */,
@@ -1291,6 +1330,7 @@
 				43DC05CF1C85DBC500AB670A /* SocialManager.swift in Sources */,
 				43DC05B61C83C4C100AB670A /* MapVC.swift in Sources */,
 				439AB7A01CB2B3100015A874 /* JobOfferInfoVC.swift in Sources */,
+				43A76D991CBE7B4B00209320 /* FriendsListDataSource.swift in Sources */,
 				43F834111C97A1C700DE7E50 /* LegalAidContactsVC.swift in Sources */,
 				4316BBA41C7B6154007A9ECB /* UIColor+HEX.swift in Sources */,
 				43F5E2241C99A3DC000BBB91 /* GalleryVC.swift in Sources */,

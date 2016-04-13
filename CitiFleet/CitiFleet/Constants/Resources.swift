@@ -11,6 +11,7 @@ import Foundation
 struct Resources {
     static let Checkmark = "Checkmark"
     static let BackIc = "back-ic"
+    static let NoAvatarIc = "no_avatar"
     struct LegalAid {
         static let PhoneIcon = "phone-ic"
         static let MailIcon = "email-ic"

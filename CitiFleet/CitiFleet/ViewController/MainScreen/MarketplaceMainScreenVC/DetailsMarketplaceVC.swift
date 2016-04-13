@@ -24,7 +24,11 @@ class DetailsMarketplaceVC: UITableViewController {
     
     @IBOutlet var itemDescription: UILabel!
 
-    var item: MarketplaceItem!
+    var item: MarketplaceItem! {
+        didSet {
+            
+        }
+    }
     var itemInfoHeight: CGFloat {
         get {
             return 43
