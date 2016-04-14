@@ -1,5 +1,5 @@
 //
-//  FriendsListVC.swift
+//  ChatRoomsListVC.swift
 //  CitiFleet
 //
 //  Created by Nick Kibish on 4/13/16.
@@ -7,21 +7,20 @@
 //
 
 import UIKit
-import Haneke
 
-class FriendsListVC: UITableViewController {
-    var datasource = FriendsListDataSource()
+class ChatRoomsListVC: UITableViewController {
+    var dataSource = ChatRoomsListDataSource()
     
     override func viewDidLoad() {
-        datasource.loadDataCompleted = { [weak self] in
+        dataSource.reloadData = { [weak self] in
             self?.tableView.reloadData()
         }
-        datasource.loadFriends()
+        dataSource.loadRooms()
     }
 }
 
 //MARK: - Private Methods
-extension FriendsListVC {
+extension ChatRoomsListVC {
     private func searchCell(tableView: UITableView, indexPath: NSIndexPath) -> UITableViewCell {
         let CellID = SearchCell.CellID
         var cell = tableView.dequeueReusableCellWithIdentifier(CellID) as? SearchCell
@@ -31,31 +30,32 @@ extension FriendsListVC {
         return cell!
     }
     
-    private func friendCell(tableView: UITableView, indexPath: NSIndexPath) -> UITableViewCell {
-        let CellID = FriendCell.CellID
-        let friend = datasource.friends[indexPath.row]
-        var cell = tableView.dequeueReusableCellWithIdentifier(CellID) as? FriendCell
+    private func roomCell(tableView: UITableView, indexPath: NSIndexPath) -> UITableViewCell {
+        let room = dataSource.rooms[indexPath.row]
+        let CellID = room.participants.count > 1 ? ChatRoomCell.ChatRoomCellTwoPhotoID : ChatRoomCell.ChatRoomCellOnePhotoID
+        var cell = tableView.dequeueReusableCellWithIdentifier(CellID) as? ChatRoomCell
         if cell == nil {
-            cell = FriendCell(style: .Default, reuseIdentifier: CellID)
+            cell = ChatRoomCell(style: .Default, reuseIdentifier: CellID)
         }
         
-        cell?.avatarImg.image = UIImage(named: Resources.NoAvatarIc)
-        if let url = friend.avatarURL {
-            cell?.avatarImg.hnk_setImageFromURL(url)
+        cell?.roomNameLbl.text = room.participants.map({ $0.fullName! }).joinWithSeparator(", ")
+        cell?.avatar.image = UIImage(named: Resources.NoAvatarIc)
+        cell?.secondAvatar?.image = UIImage(named: Resources.NoAvatarIc)
+        
+        if let url = room.participants[0].avatarURL {
+            cell?.avatar.hnk_setImageFromURL(url)
         }
-        cell?.fullNameLbl.text = friend.fullName
-        cell?.phoneLbl.text = friend.phone
+        
+        if room.participants.count > 1 && room.participants[1].avatarURL != nil {
+            cell?.secondAvatar?.hnk_setImageFromURL(room.participants[1].avatarURL!)
+        }
         
         return cell!
     }
 }
 
 //MARK: - Table View Delegate
-extension FriendsListVC {
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
-    
+extension ChatRoomsListVC {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
@@ -65,7 +65,7 @@ extension FriendsListVC {
         case 0:
             return 1
         case 1:
-            return datasource.friends.count
+            return dataSource.rooms.count
         default:
             return 0
         }
@@ -76,7 +76,7 @@ extension FriendsListVC {
         case 0:
             return searchCell(tableView, indexPath: indexPath)
         case 1:
-            return friendCell(tableView, indexPath: indexPath)
+            return roomCell(tableView, indexPath: indexPath)
         default:
             return UITableViewCell()
         }
@@ -93,4 +93,7 @@ extension FriendsListVC {
         }
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 }

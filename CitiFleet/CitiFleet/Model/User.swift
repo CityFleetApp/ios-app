@@ -9,6 +9,15 @@
 import Foundation
 import AFNetworking
 
+//MARK: Override Operatiors
+func ==(left: User?, right: User?) -> Bool {
+    return left?.userName == right?.userName
+}
+
+func !=(left: User?, right: User?) -> Bool {
+    return left?.userName != right?.userName
+}
+
 struct Profile {
     var carMake: Int?
     var carModel: Int?

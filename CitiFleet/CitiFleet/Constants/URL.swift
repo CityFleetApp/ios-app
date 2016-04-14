@@ -100,6 +100,7 @@ struct URL {
     static let BenefitsList = "benefits/"
     struct Chat {
         static let Friends = "chat/friends/"
+        static let Rooms = "chat/rooms/"
     }
 }
 
@@ -294,5 +295,10 @@ struct Response {
         struct ManagePost {
             static let postType = "posting_type"
         }
+    }
+    struct Chat {
+        static let Name = "name"
+        static let Label = "label"
+        static let participantsInfo = "participants_info"
     }
 }

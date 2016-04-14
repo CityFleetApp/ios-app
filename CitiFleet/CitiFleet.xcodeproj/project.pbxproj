@@ -98,6 +98,10 @@
 		43A426711C91B71A0044B6A6 /* BenefitsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A426701C91B71A0044B6A6 /* BenefitsLayout.swift */; };
 		43A76D971CBE7A3900209320 /* FriendsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A76D961CBE7A3900209320 /* FriendsListVC.swift */; };
 		43A76D991CBE7B4B00209320 /* FriendsListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A76D981CBE7B4B00209320 /* FriendsListDataSource.swift */; };
+		43A76D9B1CBE940400209320 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A76D9A1CBE940400209320 /* ChatRoom.swift */; };
+		43A76D9D1CBEA87C00209320 /* ChatRoomsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A76D9C1CBEA87C00209320 /* ChatRoomsListVC.swift */; };
+		43A76D9F1CBEA8B700209320 /* ChatRoomsListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A76D9E1CBEA8B700209320 /* ChatRoomsListDataSource.swift */; };
+		43A76DA11CBF7DAB00209320 /* ChatRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A76DA01CBF7DAB00209320 /* ChatRoomCell.swift */; };
 		43AD515A1C95D257002261DB /* AvatarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AD51591C95D257002261DB /* AvatarHeaderView.swift */; };
 		43AD515D1C95D2A1002261DB /* AvatarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43AD515C1C95D2A1002261DB /* AvatarHeaderView.xib */; };
 		43AD515F1C95DFFF002261DB /* AvatarCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AD515E1C95DFFF002261DB /* AvatarCameraView.swift */; };
@@ -272,6 +276,10 @@
 		43A426701C91B71A0044B6A6 /* BenefitsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BenefitsLayout.swift; path = Viewes/Layouts/BenefitsLayout.swift; sourceTree = "<group>"; };
 		43A76D961CBE7A3900209320 /* FriendsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsListVC.swift; path = ViewController/Dash/Chat/FriendsListVC.swift; sourceTree = "<group>"; };
 		43A76D981CBE7B4B00209320 /* FriendsListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsListDataSource.swift; path = Utils/Dash/Chat/FriendsListDataSource.swift; sourceTree = "<group>"; };
+		43A76D9A1CBE940400209320 /* ChatRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoom.swift; path = Model/ChatRoom.swift; sourceTree = "<group>"; };
+		43A76D9C1CBEA87C00209320 /* ChatRoomsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomsListVC.swift; path = ViewController/Dash/Chat/ChatRoomsListVC.swift; sourceTree = "<group>"; };
+		43A76D9E1CBEA8B700209320 /* ChatRoomsListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomsListDataSource.swift; path = Utils/Dash/Chat/ChatRoomsListDataSource.swift; sourceTree = "<group>"; };
+		43A76DA01CBF7DAB00209320 /* ChatRoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomCell.swift; path = Viewes/Dash/Chat/ChatRoomCell.swift; sourceTree = "<group>"; };
 		43AD51591C95D257002261DB /* AvatarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvatarHeaderView.swift; path = Viewes/AvatarHeaderView/AvatarHeaderView.swift; sourceTree = "<group>"; };
 		43AD515C1C95D2A1002261DB /* AvatarHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AvatarHeaderView.xib; path = Storyboards/XIB/AvatarHeaderView/AvatarHeaderView.xib; sourceTree = "<group>"; };
 		43AD515E1C95DFFF002261DB /* AvatarCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvatarCameraView.swift; path = Viewes/AvatarHeaderView/AvatarCameraView.swift; sourceTree = "<group>"; };
@@ -425,6 +433,7 @@
 				43F5E2211C9894AF000BBB91 /* GalleryPhoto.swift */,
 				43F5E2331C9AEE0D000BBB91 /* NotificationManager.swift */,
 				43F5E2351C9AEE8C000BBB91 /* Notification.swift */,
+				43A76D9A1CBE940400209320 /* ChatRoom.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -832,6 +841,8 @@
 				43CA403B1CBE6D05006ED92C /* ChatTabBar.swift */,
 				43A76D961CBE7A3900209320 /* FriendsListVC.swift */,
 				43A76D981CBE7B4B00209320 /* FriendsListDataSource.swift */,
+				43A76D9C1CBEA87C00209320 /* ChatRoomsListVC.swift */,
+				43A76D9E1CBEA8B700209320 /* ChatRoomsListDataSource.swift */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -840,6 +851,7 @@
 			isa = PBXGroup;
 			children = (
 				43CA403E1CBE73E7006ED92C /* FriendCell.swift */,
+				43A76DA01CBF7DAB00209320 /* ChatRoomCell.swift */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -1324,6 +1336,7 @@
 				43CA403A1CBE4CE4006ED92C /* ChatMainScreenVC.swift in Sources */,
 				435611991C8763AA0050EDE7 /* RequestManager+SocialManager.swift in Sources */,
 				4316BBA21C7B5EEC007A9ECB /* UITextField+Ext.swift in Sources */,
+				43A76DA11CBF7DAB00209320 /* ChatRoomCell.swift in Sources */,
 				439AB7A21CB3A2A70015A874 /* EditProfileVC.swift in Sources */,
 				43DC05CC1C85B04F00AB670A /* AddFriendsCell.swift in Sources */,
 				430A59E11CA2A86900FCD13D /* RequestManager+DOCManager.swift in Sources */,
@@ -1332,6 +1345,7 @@
 				439AB7A01CB2B3100015A874 /* JobOfferInfoVC.swift in Sources */,
 				43A76D991CBE7B4B00209320 /* FriendsListDataSource.swift in Sources */,
 				43F834111C97A1C700DE7E50 /* LegalAidContactsVC.swift in Sources */,
+				43A76D9B1CBE940400209320 /* ChatRoom.swift in Sources */,
 				4316BBA41C7B6154007A9ECB /* UIColor+HEX.swift in Sources */,
 				43F5E2241C99A3DC000BBB91 /* GalleryVC.swift in Sources */,
 				431D2DD51CA14D8800CBC4BA /* DOCManagementVC.swift in Sources */,
@@ -1354,6 +1368,7 @@
 				430B4F431C7DC73D00EE884A /* URL.swift in Sources */,
 				436D6B231C93181C00A0240E /* BarcodeView.swift in Sources */,
 				430B4F3B1C7DBAB800EE884A /* User.swift in Sources */,
+				43A76D9F1CBEA8B700209320 /* ChatRoomsListDataSource.swift in Sources */,
 				43F8340B1C97133500DE7E50 /* LegalAidManager.swift in Sources */,
 				43DC05C21C849B7C00AB670A /* Report.swift in Sources */,
 				43DC05851C8053FB00AB670A /* Titles.swift in Sources */,
@@ -1392,6 +1407,7 @@
 				436D6B1F1C92E37600A0240E /* UIViewController+Ext.swift in Sources */,
 				4316BB7E1C7B046A007A9ECB /* AppDelegate.swift in Sources */,
 				43D6C64A1CA98D9600DD4C99 /* PostingPhotosCollectionDelegate.swift in Sources */,
+				43A76D9D1CBEA87C00209320 /* ChatRoomsListVC.swift in Sources */,
 				436D6B1A1C92C6FB00A0240E /* RequestManager+Benefit.swift in Sources */,
 				430B4F481C7DEAF000EE884A /* LoaderViewManager.swift in Sources */,
 				43F5E21A1C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift in Sources */,
