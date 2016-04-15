@@ -15,8 +15,12 @@
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
+            <string>Montserrat-Light</string>
+            <string>Montserrat-Light</string>
         </mutableArray>
         <mutableArray key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
         </mutableArray>
@@ -350,6 +354,7 @@
                                     <outlet property="avatar" destination="vbn-aU-NQc" id="hQZ-Yz-S30"/>
                                     <outlet property="lastMessageLbl" destination="M5z-3I-epd" id="yZx-HN-z1V"/>
                                     <outlet property="roomNameLbl" destination="mhp-NR-XqE" id="c0J-lZ-3Li"/>
+                                    <segue destination="Pqs-4v-oCX" kind="push" id="bA6-fx-bux"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRoomCellTwoPhotoID" rowHeight="66" id="tOk-ao-ZAh" customClass="ChatRoomCell" customModule="CitiFleet" customModuleProvider="target">
@@ -441,6 +446,7 @@
                                     <outlet property="lastMessageLbl" destination="9sV-Yz-QPr" id="uyB-RQ-2o3"/>
                                     <outlet property="roomNameLbl" destination="eQ8-ie-NGd" id="yT2-SO-gPK"/>
                                     <outlet property="secondAvatar" destination="t7B-At-jh5" id="Qv4-8o-AFU"/>
+                                    <segue destination="Pqs-4v-oCX" kind="push" id="hal-Ow-Eaw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -455,11 +461,220 @@
             </objects>
             <point key="canvasLocation" x="2469" y="603.5"/>
         </scene>
+        <!--ChatVC-->
+        <scene sceneID="YUM-09-3KY">
+            <objects>
+                <viewController id="Pqs-4v-oCX" customClass="ChatVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QEf-ND-H2W"/>
+                        <viewControllerLayoutGuide type="bottom" id="D9Q-h6-Czc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xvm-zn-BcW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="525"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QaP-Oo-Qt0">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="427"/>
+                                <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewLayout key="collectionViewLayout" id="qoO-cK-Mmh" customClass="MarketplaceCollectiovViewLayout" customModule="CitiFleet" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OtherMessageCellID" id="oyA-MK-KEu" customClass="ChatCollectionViewCell" customModule="CitiFleet" customModuleProvider="target">
+                                        <rect key="frame" x="49" y="0.0" width="502" height="183"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="502" height="183"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="3qF-qu-9t8">
+                                                    <rect key="frame" x="16" y="16" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="3qF-qu-9t8" secondAttribute="height" multiplier="1:1" id="SJ9-5k-KPs"/>
+                                                        <constraint firstAttribute="width" constant="70" id="V69-0s-d10"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="35"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Wm-ik-ZnV">
+                                                    <rect key="frame" x="111" y="16" width="375" height="128"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is such a cool event I wish I can do it every week" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jU8-wh-x2h">
+                                                            <rect key="frame" x="16" y="16" width="343" height="96"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14.300000190734863"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="1" green="0.62352941176470589" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="jU8-wh-x2h" secondAttribute="trailing" constant="16" id="ASf-tA-Kys"/>
+                                                        <constraint firstAttribute="height" constant="128" id="J7d-kx-s6x"/>
+                                                        <constraint firstItem="jU8-wh-x2h" firstAttribute="top" secondItem="3Wm-ik-ZnV" secondAttribute="top" constant="16" id="LR2-an-2Gr"/>
+                                                        <constraint firstAttribute="bottom" secondItem="jU8-wh-x2h" secondAttribute="bottom" constant="16" id="jQH-Lr-izT"/>
+                                                        <constraint firstItem="jU8-wh-x2h" firstAttribute="leading" secondItem="3Wm-ik-ZnV" secondAttribute="leading" constant="16" id="uAR-Te-toe"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="r2l-chat-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="s9M-I7-1f9">
+                                                    <rect key="frame" x="102" y="44" width="9" height="15"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nancy wrote 4 min. ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYt-Aa-q3t">
+                                                    <rect key="frame" x="365" y="152" width="105" height="11"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="9"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="3qF-qu-9t8" firstAttribute="leading" secondItem="oyA-MK-KEu" secondAttribute="leading" constant="16" id="CNX-1i-t81"/>
+                                            <constraint firstItem="wYt-Aa-q3t" firstAttribute="top" secondItem="3Wm-ik-ZnV" secondAttribute="bottom" constant="8" id="KAg-8a-rXa"/>
+                                            <constraint firstItem="s9M-I7-1f9" firstAttribute="centerY" secondItem="3qF-qu-9t8" secondAttribute="centerY" id="LKV-8x-D1p"/>
+                                            <constraint firstItem="3Wm-ik-ZnV" firstAttribute="leading" secondItem="s9M-I7-1f9" secondAttribute="trailing" id="Xcm-Xj-eEC"/>
+                                            <constraint firstItem="3Wm-ik-ZnV" firstAttribute="leading" secondItem="3qF-qu-9t8" secondAttribute="trailing" constant="25" id="ZHe-HJ-MPv"/>
+                                            <constraint firstItem="3qF-qu-9t8" firstAttribute="top" secondItem="oyA-MK-KEu" secondAttribute="top" constant="16" id="aSI-6b-KD8"/>
+                                            <constraint firstItem="wYt-Aa-q3t" firstAttribute="trailing" secondItem="3Wm-ik-ZnV" secondAttribute="trailing" constant="-16" id="fLf-8p-ERh"/>
+                                            <constraint firstItem="3Wm-ik-ZnV" firstAttribute="top" secondItem="3qF-qu-9t8" secondAttribute="top" id="of4-5P-Woj"/>
+                                            <constraint firstAttribute="trailing" secondItem="3Wm-ik-ZnV" secondAttribute="trailing" constant="16" id="zxq-Nw-96v"/>
+                                        </constraints>
+                                        <size key="customSize" width="502" height="183"/>
+                                        <connections>
+                                            <outlet property="avatarImageView" destination="3qF-qu-9t8" id="KZe-ML-2QE"/>
+                                            <outlet property="messageDateLbl" destination="wYt-Aa-q3t" id="82w-cg-DcN"/>
+                                            <outlet property="messageHeight" destination="J7d-kx-s6x" id="aPe-kv-12e"/>
+                                            <outlet property="messageLbl" destination="jU8-wh-x2h" id="S1F-AE-I45"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyMessageCellID" id="BdH-WJ-pYy" customClass="ChatCollectionViewCell" customModule="CitiFleet" customModuleProvider="target">
+                                        <rect key="frame" x="53" y="193" width="494" height="183"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="494" height="183"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="b6M-bj-tfo">
+                                                    <rect key="frame" x="408" y="16" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="b6M-bj-tfo" secondAttribute="height" multiplier="1:1" id="K9v-uA-Mru"/>
+                                                        <constraint firstAttribute="width" constant="70" id="Qra-5Q-XEe"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="35"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="l2r-chat-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="RGy-3e-A32">
+                                                    <rect key="frame" x="383" y="44" width="10" height="15"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nancy wrote 4 min. ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDf-uw-cNK">
+                                                    <rect key="frame" x="32" y="152" width="105" height="11"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="9"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XNZ-if-obq">
+                                                    <rect key="frame" x="16" y="16" width="367" height="128"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is such a cool event I wish I can do it every week" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrK-zk-qNx">
+                                                            <rect key="frame" x="16" y="16" width="335" height="96"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14.300000190734863"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.1803921568627451" green="0.76862745098039209" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="jrK-zk-qNx" firstAttribute="leading" secondItem="XNZ-if-obq" secondAttribute="leading" constant="16" id="94f-cf-8mp"/>
+                                                        <constraint firstAttribute="bottom" secondItem="jrK-zk-qNx" secondAttribute="bottom" constant="16" id="FUT-IN-NKV"/>
+                                                        <constraint firstAttribute="trailing" secondItem="jrK-zk-qNx" secondAttribute="trailing" constant="16" id="KJY-Tg-QWI"/>
+                                                        <constraint firstItem="jrK-zk-qNx" firstAttribute="top" secondItem="XNZ-if-obq" secondAttribute="top" constant="16" id="R9x-ZP-lIc"/>
+                                                        <constraint firstAttribute="height" constant="128" id="VJj-Ys-iUL"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="XNZ-if-obq" firstAttribute="leading" secondItem="b6M-bj-tfo" secondAttribute="trailing" constant="25" id="1nR-vA-Y7y"/>
+                                            <constraint firstItem="b6M-bj-tfo" firstAttribute="top" secondItem="BdH-WJ-pYy" secondAttribute="top" constant="16" id="24m-Ib-Opd"/>
+                                            <constraint firstItem="tDf-uw-cNK" firstAttribute="leading" secondItem="XNZ-if-obq" secondAttribute="leading" constant="16" id="DVw-nr-TLL"/>
+                                            <constraint firstItem="tDf-uw-cNK" firstAttribute="top" secondItem="XNZ-if-obq" secondAttribute="bottom" constant="8" id="Sps-4u-I0G"/>
+                                            <constraint firstItem="b6M-bj-tfo" firstAttribute="leading" secondItem="XNZ-if-obq" secondAttribute="trailing" constant="25" id="THx-xn-5hP"/>
+                                            <constraint firstItem="RGy-3e-A32" firstAttribute="centerY" secondItem="b6M-bj-tfo" secondAttribute="centerY" id="Zps-qO-xlm"/>
+                                            <constraint firstItem="XNZ-if-obq" firstAttribute="top" secondItem="b6M-bj-tfo" secondAttribute="top" id="awG-6l-x6W"/>
+                                            <constraint firstItem="RGy-3e-A32" firstAttribute="leading" secondItem="XNZ-if-obq" secondAttribute="trailing" id="d2d-wx-Cmj"/>
+                                            <constraint firstAttribute="trailing" secondItem="b6M-bj-tfo" secondAttribute="trailing" constant="16" id="lz8-x4-Y1d"/>
+                                            <constraint firstItem="XNZ-if-obq" firstAttribute="leading" secondItem="BdH-WJ-pYy" secondAttribute="leading" constant="16" id="pPx-cP-Yfn"/>
+                                        </constraints>
+                                        <size key="customSize" width="494" height="183"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="1nR-vA-Y7y"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="avatarImageView" destination="b6M-bj-tfo" id="d5x-Xr-alq"/>
+                                            <outlet property="messageDateLbl" destination="tDf-uw-cNK" id="0lg-5h-ys7"/>
+                                            <outlet property="messageHeight" destination="VJj-Ys-iUL" id="8w2-k5-WIE"/>
+                                            <outlet property="messageLbl" destination="jrK-zk-qNx" id="eN2-0c-bD2"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Pqs-4v-oCX" id="4JD-bl-uCO"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVX-yf-TCP">
+                                <rect key="frame" x="0.0" y="427" width="600" height="49"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="9zC-D9-CwU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aVX-yf-TCP" firstAttribute="leading" secondItem="Xvm-zn-BcW" secondAttribute="leading" id="0WY-VB-6pu"/>
+                            <constraint firstAttribute="trailing" secondItem="QaP-Oo-Qt0" secondAttribute="trailing" id="299-ek-Z50"/>
+                            <constraint firstItem="D9Q-h6-Czc" firstAttribute="top" secondItem="aVX-yf-TCP" secondAttribute="bottom" id="3SY-L4-PX4"/>
+                            <constraint firstItem="QaP-Oo-Qt0" firstAttribute="leading" secondItem="Xvm-zn-BcW" secondAttribute="leading" id="7bs-gI-XFc"/>
+                            <constraint firstItem="aVX-yf-TCP" firstAttribute="top" secondItem="QaP-Oo-Qt0" secondAttribute="bottom" id="I9P-hh-OTz"/>
+                            <constraint firstItem="QaP-Oo-Qt0" firstAttribute="top" secondItem="Xvm-zn-BcW" secondAttribute="top" id="TBN-fV-j8u"/>
+                            <constraint firstAttribute="trailing" secondItem="aVX-yf-TCP" secondAttribute="trailing" id="cHh-ML-nQF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="N6L-Ca-Ogz"/>
+                    <connections>
+                        <outlet property="collectionView" destination="QaP-Oo-Qt0" id="e19-v0-Q54"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Wb-2V-jey" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3316" y="394.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="back-ic" width="8" height="13"/>
         <image name="chat-contacts-ic" width="38" height="38"/>
         <image name="chat-recent-ic" width="37" height="37"/>
+        <image name="l2r-chat-arrow" width="10" height="15"/>
         <image name="no_avatar" width="200" height="200"/>
+        <image name="r2l-chat-arrow" width="9" height="15"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hal-Ow-Eaw"/>
+    </inferredMetricsTieBreakers>
 </document>

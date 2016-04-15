@@ -94,9 +94,7 @@ class MarketplaceCollectiovViewLayout: UICollectionViewLayout {
             let insetFrame = CGRectInset(frame, cellPadding, cellPadding)
             
             var attributes: MarketplaceLayoutAttributes!
-            let firstElement = cache.filter() { (element) -> Bool in
-                return element.indexPath.row == item
-            }.first
+            let firstElement = cache.filter() { $0.indexPath.row == item }.first
             
             if let attr = firstElement {
                 attributes = attr
