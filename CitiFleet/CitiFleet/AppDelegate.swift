@@ -44,7 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
         GMSServices.provideAPIKey(Keys.GoogleMaps)
         Fabric.with([Crashlytics.self, Twitter.self])
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
         return true
     }
     

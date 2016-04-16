@@ -11,6 +11,7 @@ import UIKit
 class Message: NSObject {
     var id: Int?
     var message: String?
+    var roodHash: String?
     var date: NSDate?
     var author: User?
     

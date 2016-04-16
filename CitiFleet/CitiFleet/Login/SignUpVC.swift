@@ -88,10 +88,10 @@ class SignUpVC: UITableViewController {
     func signUpRequest() {
         let tmpUser = User()
         tmpUser.email = email.text
-        tmpUser.userName = userName.text
+        tmpUser.profile.username = userName.text
         tmpUser.fullName = fullName.text
         tmpUser.hackLicense = hackLicense.text
-        tmpUser.phone = "+1" + phone.text!
+        tmpUser.profile.phone = "+1" + phone.text!
         
         User.signUp(tmpUser, password: password.text!, confirmPassword: confirmPassword.text!) { (user, error) -> () in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in

@@ -27,7 +27,7 @@ class ChatDataSource: NSObject {
         let user = User()
         user.avatarURL = NSURL(string: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Nobel_Peace_Prize_Concert_2010_Sivert_Høyem_IMG_6247.jpg")
         user.fullName = "Sivert Høyem"
-        user.userName = "Sivert Høyem"
+        user.profile.username = "Sivert_Høyem"
         message2.author = user
         
         messages = [message, message2]

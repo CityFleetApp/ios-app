@@ -15,7 +15,8 @@ struct MIME {
 }
 
 struct URL {
-    static let Sandbox = "http://citifleet.steelkiwi.com/api/"
+    static let Socket = "ws://104.236.223.160/"
+    static let Sandbox = "http://104.236.223.160/api/" //"http://citifleet.steelkiwi.com/api/"
     static let Production = ""
     static let BaseUrl = Sandbox
     struct User {
@@ -106,6 +107,18 @@ struct URL {
 
 struct Params {
     static let id = "id"
+    struct Chat {
+        static let text = "text"
+        static let room = "room"
+        static let created = "created"
+        static let author = "author_info"
+        static let method = "method"
+        static let name = "name"
+        static let label = "label"
+        static let participants = "participants_info"
+        static let lastMessage = "last_message"
+        static let lastMessageDate = "last_message_timestamp"
+    }
     struct User {
         struct APNS {
             static let registrationId = "registration_id" // APNS Token

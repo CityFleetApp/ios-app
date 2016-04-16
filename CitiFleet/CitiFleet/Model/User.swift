@@ -11,11 +11,11 @@ import AFNetworking
 
 //MARK: Override Operatiors
 func ==(left: User?, right: User?) -> Bool {
-    return left?.userName == right?.userName
+    return left?.id == right?.id
 }
 
 func !=(left: User?, right: User?) -> Bool {
-    return left?.userName != right?.userName
+    return left?.id != right?.id
 }
 
 struct Profile {
@@ -35,6 +35,7 @@ struct Profile {
 
 class User: NSObject, NSCoding {
     private struct UserKeys {
+        static let id = "id"
         static let User = "User"
         static let UserName = "UserName"
         static let FullName = "FullName"
@@ -45,15 +46,28 @@ class User: NSObject, NSCoding {
         static let AvatarURL = "AvatarURL"
     }
     
-    var userName: String?
+    var id: Int?
     var fullName: String?
     var hackLicense: String?
-    var phone: String?
     var email: String?
     var token: String?
     var avatarURL: NSURL?
-    var bio: String?
-    var drives: String?
+    
+    var userName: String? {
+        return profile.username
+    }
+    var phone: String? {
+        return profile.phone
+    }
+    var bio: String? {
+        return profile.bio
+    }
+    var drives: String? {
+        let carYear = profile.carYear != nil ? "\(profile.carYear!)" : ""
+        let catModel = profile.carModelDisplay ?? ""
+        let carMake = profile.carMakeDisplay ?? ""
+        return "\(carYear) \(carMake) \(catModel)"
+    }
     
     var profile = Profile()
     
@@ -65,10 +79,11 @@ class User: NSObject, NSCoding {
     
     required init?(coder aDecoder: NSCoder) {
         super.init()
-        userName = aDecoder.decodeObjectForKey(UserKeys.UserName) as? String
+        id = aDecoder.decodeObjectForKey(UserKeys.id) as? Int
+        profile.username = aDecoder.decodeObjectForKey(UserKeys.UserName) as? String
         fullName = aDecoder.decodeObjectForKey(UserKeys.FullName) as? String
         hackLicense = aDecoder.decodeObjectForKey(UserKeys.HackLicense) as? String
-        phone = aDecoder.decodeObjectForKey(UserKeys.Phone) as? String
+        profile.phone = aDecoder.decodeObjectForKey(UserKeys.Phone) as? String
         email = aDecoder.decodeObjectForKey(UserKeys.Email) as? String
         token = aDecoder.decodeObjectForKey (UserKeys.Token) as? String
         if let urlString = aDecoder.decodeObjectForKey(UserKeys.AvatarURL) as? String {
@@ -77,7 +92,8 @@ class User: NSObject, NSCoding {
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
-        let objects = [
+        let objects: [String: AnyObject?] = [
+            UserKeys.id: id, //!= nil ? String(id!) : "",
             UserKeys.UserName: userName,
             UserKeys.FullName: fullName,
             UserKeys.HackLicense: hackLicense,
@@ -106,6 +122,7 @@ class User: NSObject, NSCoding {
                 completion(error)
                 return
             }
+            
             self?.profile.bio = response![Param.bio] as? String
             self?.profile.carColor = response![Param.carColor] as? Int
             self?.profile.carColorDisplay = response![Param.carColorDisplay] as? String
@@ -142,10 +159,10 @@ class User: NSObject, NSCoding {
             } else {
                 let user = User()
                 user.token = response![Params.Login.token] as? String
-                user.userName = username
+                user.profile.username = username
                 user.fullName = fullName
                 user.hackLicense = hackLicense
-                user.phone = phone
+                user.profile.phone = phone
                 user.email = email
                 currUser = user
                 currUser?.saveUser()
@@ -161,14 +178,15 @@ class User: NSObject, NSCoding {
                 return
             }
             let user = User()
+            user.id = userData![Params.id] as? Int
             user.token = userData![Response.UserInfo.Token] as? String
             user.email = userData![Response.UserInfo.Email] as? String
-            user.userName = userData![Response.UserInfo.Username] as? String
+            user.profile.username = userData![Response.UserInfo.Username] as? String
             user.fullName = userData![Response.UserInfo.FullName] as? String
             user.hackLicense = userData![Response.UserInfo.HackLicense] as? String
-            user.phone = userData![Response.UserInfo.Phone] as? String
-            user.bio = userData![Response.UserInfo.Bio] as? String
-            user.drives = userData![Response.UserInfo.Drives] as? String
+            user.profile.phone = userData![Response.UserInfo.Phone] as? String
+            user.profile.bio = userData![Response.UserInfo.Bio] as? String
+//            user.profile.drives = userData![Response.UserInfo.Drives] as? String
             
             if let urlString = userData![Response.UserInfo.AvatarUrl] as? String {
                 user.avatarURL = NSURL(string: urlString)
@@ -199,7 +217,6 @@ class Friend: User {
     private var _marker: FriendMarker?
     
     var location: CLLocationCoordinate2D!
-    var id: Int?
     
     var marker: FriendMarker {
         if let marker = _marker {
@@ -221,8 +238,8 @@ class Friend: User {
         avatarURL = NSURL(string: (json[Response.UserInfo.AvatarUrl] as! String))
         fullName = json[Response.UserInfo.FullName] as? String
         email = json[Response.UserInfo.Email] as? String
-        userName = json[Response.UserInfo.Username] as? String
-        phone = json[Response.UserInfo.Phone] as? String
+        profile.username = json[Response.UserInfo.Username] as? String
+        profile.phone = json[Response.UserInfo.Phone] as? String
         let lat = json[Response.UserInfo.Latitude] as? Double
         let lng = json[Response.UserInfo.Longitude] as? Double
         
