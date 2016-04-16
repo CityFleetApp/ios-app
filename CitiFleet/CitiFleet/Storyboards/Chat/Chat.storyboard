@@ -23,6 +23,7 @@
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -354,7 +355,7 @@
                                     <outlet property="avatar" destination="vbn-aU-NQc" id="hQZ-Yz-S30"/>
                                     <outlet property="lastMessageLbl" destination="M5z-3I-epd" id="yZx-HN-z1V"/>
                                     <outlet property="roomNameLbl" destination="mhp-NR-XqE" id="c0J-lZ-3Li"/>
-                                    <segue destination="Pqs-4v-oCX" kind="push" id="bA6-fx-bux"/>
+                                    <segue destination="Pqs-4v-oCX" kind="push" identifier="" id="bA6-fx-bux"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRoomCellTwoPhotoID" rowHeight="66" id="tOk-ao-ZAh" customClass="ChatRoomCell" customModule="CitiFleet" customModuleProvider="target">
@@ -446,7 +447,7 @@
                                     <outlet property="lastMessageLbl" destination="9sV-Yz-QPr" id="uyB-RQ-2o3"/>
                                     <outlet property="roomNameLbl" destination="eQ8-ie-NGd" id="yT2-SO-gPK"/>
                                     <outlet property="secondAvatar" destination="t7B-At-jh5" id="Qv4-8o-AFU"/>
-                                    <segue destination="Pqs-4v-oCX" kind="push" id="hal-Ow-Eaw"/>
+                                    <segue destination="Pqs-4v-oCX" kind="push" identifier="" id="hal-Ow-Eaw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -474,7 +475,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QaP-Oo-Qt0">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="427"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="418"/>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="qoO-cK-Mmh" customClass="MarketplaceCollectiovViewLayout" customModule="CitiFleet" customModuleProvider="target"/>
                                 <cells>
@@ -638,10 +639,46 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVX-yf-TCP">
-                                <rect key="frame" x="0.0" y="427" width="600" height="49"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="418" width="600" height="58"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAn-gA-90b">
+                                        <rect key="frame" x="0.0" y="0.0" width="58" height="58"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="NAn-gA-90b" secondAttribute="height" multiplier="1:1" id="Hgp-sn-xa3"/>
+                                        </constraints>
+                                        <state key="normal" image="chat-camera"/>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your message.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EoK-Ax-V3n">
+                                        <rect key="frame" x="58" y="0.0" width="484" height="58"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14.300000190734863"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePE-qj-dgl">
+                                        <rect key="frame" x="542" y="0.0" width="58" height="58"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ePE-qj-dgl" secondAttribute="height" multiplier="1:1" id="JLo-C9-OgY"/>
+                                        </constraints>
+                                        <state key="normal" image="chat-send"/>
+                                        <connections>
+                                            <action selector="send:" destination="Pqs-4v-oCX" eventType="touchUpInside" id="nPQ-FG-6bA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="49" id="9zC-D9-CwU"/>
+                                    <constraint firstAttribute="bottom" secondItem="ePE-qj-dgl" secondAttribute="bottom" id="26k-b2-1LN"/>
+                                    <constraint firstAttribute="bottom" secondItem="NAn-gA-90b" secondAttribute="bottom" id="307-65-0G0"/>
+                                    <constraint firstAttribute="height" constant="58" id="9zC-D9-CwU"/>
+                                    <constraint firstItem="ePE-qj-dgl" firstAttribute="leading" secondItem="EoK-Ax-V3n" secondAttribute="trailing" id="Vxd-6j-slW"/>
+                                    <constraint firstAttribute="bottom" secondItem="EoK-Ax-V3n" secondAttribute="bottom" id="a2u-D6-uG2"/>
+                                    <constraint firstAttribute="trailing" secondItem="ePE-qj-dgl" secondAttribute="trailing" id="dA7-eB-RdT"/>
+                                    <constraint firstItem="ePE-qj-dgl" firstAttribute="top" secondItem="aVX-yf-TCP" secondAttribute="top" id="fKt-lT-5v3"/>
+                                    <constraint firstItem="EoK-Ax-V3n" firstAttribute="top" secondItem="aVX-yf-TCP" secondAttribute="top" id="fsV-Br-U6C"/>
+                                    <constraint firstItem="EoK-Ax-V3n" firstAttribute="leading" secondItem="NAn-gA-90b" secondAttribute="trailing" id="kdf-5b-ok1"/>
+                                    <constraint firstItem="NAn-gA-90b" firstAttribute="leading" secondItem="aVX-yf-TCP" secondAttribute="leading" id="lSo-yW-d28"/>
+                                    <constraint firstItem="NAn-gA-90b" firstAttribute="top" secondItem="aVX-yf-TCP" secondAttribute="top" id="v4e-da-mur"/>
+                                    <constraint firstItem="ePE-qj-dgl" firstAttribute="width" secondItem="ePE-qj-dgl" secondAttribute="height" multiplier="1:1" id="wJe-jK-qLW"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -658,7 +695,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="N6L-Ca-Ogz"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="3SY-L4-PX4" id="AyH-pW-Gh6"/>
+                        <outlet property="cameraButton" destination="NAn-gA-90b" id="IjP-Qp-IDW"/>
                         <outlet property="collectionView" destination="QaP-Oo-Qt0" id="e19-v0-Q54"/>
+                        <outlet property="messageTF" destination="EoK-Ax-V3n" id="XNC-q2-icI"/>
+                        <outlet property="messageView" destination="aVX-yf-TCP" id="3lq-Cx-J9S"/>
+                        <outlet property="sendButton" destination="ePE-qj-dgl" id="adj-Oo-5cn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Wb-2V-jey" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -668,13 +710,15 @@
     </scenes>
     <resources>
         <image name="back-ic" width="8" height="13"/>
+        <image name="chat-camera" width="26" height="18"/>
         <image name="chat-contacts-ic" width="38" height="38"/>
         <image name="chat-recent-ic" width="37" height="37"/>
+        <image name="chat-send" width="30" height="30"/>
         <image name="l2r-chat-arrow" width="10" height="15"/>
         <image name="no_avatar" width="200" height="200"/>
         <image name="r2l-chat-arrow" width="9" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hal-Ow-Eaw"/>
+        <segue reference="bA6-fx-bux"/>
     </inferredMetricsTieBreakers>
 </document>

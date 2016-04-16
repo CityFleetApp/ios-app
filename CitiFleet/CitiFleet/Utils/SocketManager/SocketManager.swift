@@ -8,8 +8,15 @@
 
 import UIKit
 import SocketRocket
+import SwiftyJSON
 
 class SocketManager: NSObject {
+    enum State {
+        case Opened
+        case Opening
+        case Closed
+        case Closing
+    }
     enum Method: String {
         case PostMessage = "post_message"
         case ReceiveMessage  = "receive_message"
@@ -19,8 +26,10 @@ class SocketManager: NSObject {
     lazy var socket: SRWebSocket = {
         let request = NSMutableURLRequest(URL: NSURL(string: URL.Socket)!)
         request.setValue("\(Params.Header.token) \(User.currentUser()?.token!)", forHTTPHeaderField: Params.Header.authentication)
-        return SRWebSocket(URLRequest: request)
+        return SRWebSocket(URL: NSURL(string: URL.Socket)!)
     }()
+    
+    var state: SocketManager.State = .Closed
     
     override init() {
         super.init()
@@ -28,11 +37,17 @@ class SocketManager: NSObject {
     }
     
     func open() {
-        socket.open()
+        if state == .Closed {
+            state = .Opening
+            socket.open()
+        }
     }
     
     func close() {
-        socket.close()
+        if state == .Opened {
+            state = .Closing
+            socket.close()
+        }
     }
     
     func sendMessage(message: Message) {
@@ -42,16 +57,30 @@ class SocketManager: NSObject {
             Params.Chat.room: message.roodHash!
         ]
         let data = NSKeyedArchiver.archivedDataWithRootObject(params)
-        socket.send(data)
+        let str = "{\"method\" : \"post_message\", \"text\" : \"the only thing \", \"room\" :  \"vxzrocCFriHYZLoOFLrW7xnsLPH7NUXC\"}"
+        socket.send(str)
+        
     }
 }
 
 extension SocketManager: SRWebSocketDelegate {
     func webSocketDidOpen(webSocket: SRWebSocket!) {
+        state = .Opened
+    }
+    
+    func webSocket(webSocket: SRWebSocket!, didCloseWithCode code: Int, reason: String!, wasClean: Bool) {
+        state = .Closed
+    }
+    
+    func webSocket(webSocket: SRWebSocket!, didFailWithError error: NSError!) {
         
     }
     
     func webSocket(webSocket: SRWebSocket!, didReceiveMessage message: AnyObject!) {
+        
+    }
+    
+    func webSocket(webSocket: SRWebSocket!, didReceivePong pongPayload: NSData!) {
         
     }
 }

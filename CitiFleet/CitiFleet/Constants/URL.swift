@@ -15,7 +15,10 @@ struct MIME {
 }
 
 struct URL {
-    static let Socket = "ws://104.236.223.160/"
+    static let username = "test-friend2@steelkiwi.com".stringByAddingPercentEncodingWithAllowedCharacters(.URLUserAllowedCharacterSet())!
+    static let password = "QwerQwer".stringByAddingPercentEncodingWithAllowedCharacters(.URLPasswordAllowedCharacterSet())!
+
+    static let Socket = "ws://\(URL.username):\(URL.password)@104.236.223.160/"
     static let Sandbox = "http://104.236.223.160/api/" //"http://citifleet.steelkiwi.com/api/"
     static let Production = ""
     static let BaseUrl = Sandbox

@@ -19,17 +19,43 @@ class ChatVC: UIViewController {
     static let StandardPadding: CGFloat = 16
     
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var messageView: UIView!
+    @IBOutlet var cameraButton: UIButton!
+    @IBOutlet var sendButton: UIButton!
+    @IBOutlet var messageTF: UITextField!
+    @IBOutlet var bottomConstraint: NSLayoutConstraint!
     
     var datasource = ChatDataSource()
+    var room: ChatRoom!
     
     override func viewDidLoad() {
         setupCollectionViewLayouts()
         setupDatasource()
+        setupNotifications()
+    }
+}
+
+//MARK: - Actions
+extension ChatVC {
+    @IBAction func send(sender: AnyObject) {
+        let message = Message()
+        message.author = User.currentUser()
+        message.message = messageTF.text
+        message.roodHash = room.label
+        
+        SocketManager.sharedManager.sendMessage(message)
+        messageTF.resignFirstResponder()
     }
 }
 
 //MARK: - Private Methods
 extension ChatVC {
+    private func setupNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
     private func setupCollectionViewLayouts() {
         let layout = collectionView.collectionViewLayout as! MarketplaceCollectiovViewLayout
         layout.cellPadding = ChatVC.CellPadding
@@ -95,5 +121,23 @@ extension ChatVC: MarketplaceLayoutDelegate {
     
     func collectionView(collectionView: UICollectionView, heightForDescriptionAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
         return 0
+    }
+}
+
+//MARK: - Keyboard Events 
+extension ChatVC {
+    func keyboardWillShow(notification: NSNotification) {
+        let keyboardHeight = notification.userInfo![UIKeyboardFrameEndUserInfoKey]?.CGRectValue().height
+        bottomConstraint.constant = keyboardHeight!
+        UIView.animateWithDuration(0.25) { [weak self] in
+            self?.view.layoutIfNeeded()
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        bottomConstraint.constant = 0
+        UIView.animateWithDuration(0.25) { [weak self] in
+            self?.view.layoutIfNeeded()
+        }
     }
 }

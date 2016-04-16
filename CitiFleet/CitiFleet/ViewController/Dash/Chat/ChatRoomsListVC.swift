@@ -9,6 +9,8 @@
 import UIKit
 
 class ChatRoomsListVC: UITableViewController {
+    private static let SingleCellAvatarSegueID = "SingleCellAvatarSegueID"
+    private static let DoulbeCellAvatarSegueID = "DoulbeCellAvatarSegueID"
     var dataSource = ChatRoomsListDataSource()
     
     override func viewDidLoad() {
@@ -16,6 +18,21 @@ class ChatRoomsListVC: UITableViewController {
             self?.tableView.reloadData()
         }
         dataSource.loadRooms()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        SocketManager.sharedManager.open()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? ChatVC {
+            let room = dataSource.rooms[(tableView.indexPathForSelectedRow?.row)!]
+            vc.room = room
+        }
+    }
+    
+    deinit {
+        SocketManager.sharedManager.close()
     }
 }
 
@@ -42,6 +59,10 @@ extension ChatRoomsListVC {
         cell?.avatar.image = UIImage(named: Resources.NoAvatarIc)
         cell?.secondAvatar?.image = UIImage(named: Resources.NoAvatarIc)
         
+        if room.participants.count == 0 {
+            return cell!
+        }
+        
         if let url = room.participants[0].avatarURL {
             cell?.avatar.hnk_setImageFromURL(url)
         }
@@ -52,6 +73,8 @@ extension ChatRoomsListVC {
         
         return cell!
     }
+    
+    
 }
 
 //MARK: - Table View Delegate
