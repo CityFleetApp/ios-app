@@ -11,6 +11,7 @@ import UIKit
 class ChatRoom: NSObject {
     var name: String?
     var label: String?
+    var id: Int? 
     var participants: [Friend] = []
     
     init(json: AnyObject) {

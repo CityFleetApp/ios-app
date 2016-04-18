@@ -24,9 +24,8 @@ class SocketManager: NSObject {
     }
     static let sharedManager = SocketManager()
     lazy var socket: SRWebSocket = {
-        let request = NSMutableURLRequest(URL: NSURL(string: URL.Socket)!)
-        request.setValue("\(Params.Header.token) \(User.currentUser()?.token!)", forHTTPHeaderField: Params.Header.authentication)
-        return SRWebSocket(URL: NSURL(string: URL.Socket)!)
+        let url = "\(URL.Socket)?token=\((User.currentUser()?.token)!)"
+        return SRWebSocket(URL: NSURL(string: url)!)
     }()
     
     var state: SocketManager.State = .Closed
@@ -58,7 +57,7 @@ class SocketManager: NSObject {
         ]
         let data = NSKeyedArchiver.archivedDataWithRootObject(params)
         let str = "{\"method\" : \"post_message\", \"text\" : \"the only thing \", \"room\" :  \"vxzrocCFriHYZLoOFLrW7xnsLPH7NUXC\"}"
-        socket.send(str)
+        socket.send(data)
         
     }
 }

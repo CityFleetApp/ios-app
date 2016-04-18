@@ -9,28 +9,25 @@
 import UIKit
 
 class ChatDataSource: NSObject {
+    var room: ChatRoom!
     var messages: [Message] = []
     var reloadData: (() -> ())!
     
+    init(room: ChatRoom) {
+        self.room = room
+        super.init()
+    }
+    
     func loadData() {
-        let message = Message()
-        message.date = NSDate()
-        message.id = 0
-        message.author = User.currentUser()
-        message.message = "Loren Ipsum"
         
-        let message2 = Message()
-        message2.date = NSDate(timeIntervalSince1970: NSDate().timeIntervalSince1970 - 1000)
-        message2.id = 1
-        message2.message = "Sivert Høyem (born 22 January 1976) is a Norwegian singer, best known as the vocalist of the rock band Madrugada. After the band broke up following the death of Robert Burås in 2007, he has enjoyed success as a solo artist and is also a member of The Volunteers with whom he released the album Exiles in 2006."
-        
-        let user = User()
-        user.avatarURL = NSURL(string: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Nobel_Peace_Prize_Concert_2010_Sivert_Høyem_IMG_6247.jpg")
-        user.fullName = "Sivert Høyem"
-        user.profile.username = "Sivert_Høyem"
-        message2.author = user
-        
-        messages = [message, message2]
-        reloadData()
+        let url = "\(URL.Chat.Rooms)\(room.id!)\(URL.Chat.Messages)"
+        RequestManager.sharedInstance().get(url, parameters: nil) { [weak self] (json, error) in
+            let messageObjects = json?.arrayObject
+            for obj in messageObjects! {
+                let message = Message(json: obj)
+                self?.messages.append(message)
+            }
+            self?.reloadData
+        }
     }
 }

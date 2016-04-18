@@ -14,6 +14,9 @@ struct Titles {
     static let Done = "Done"
     static let ConnectionFailed = "Unable to connect to the internet"
     static let Unknown = "Unknown"
+    struct Chat {
+        static let TextViewPlaceHolder = "Enter your message.."
+    }
     struct Dash {
         static let openCamera = "Take a photo"
         static let openLibrary = "Photo Library"

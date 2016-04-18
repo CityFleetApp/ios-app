@@ -24,18 +24,16 @@ class DetailsMarketplaceVC: UITableViewController {
     
     @IBOutlet var itemDescription: UILabel!
 
-    var item: MarketplaceItem! {
-        didSet {
-            
-        }
-    }
+    var item: MarketplaceItem!
     var itemInfoHeight: CGFloat {
         get {
             return 43
         }
     }
     
-    
+    override func viewDidLoad() {
+        
+    }
 }
 
 extension DetailsMarketplaceVC {

@@ -15,10 +15,7 @@ struct MIME {
 }
 
 struct URL {
-    static let username = "test-friend2@steelkiwi.com".stringByAddingPercentEncodingWithAllowedCharacters(.URLUserAllowedCharacterSet())!
-    static let password = "QwerQwer".stringByAddingPercentEncodingWithAllowedCharacters(.URLPasswordAllowedCharacterSet())!
-
-    static let Socket = "ws://\(URL.username):\(URL.password)@104.236.223.160/"
+    static let Socket = "ws://104.236.223.160/"
     static let Sandbox = "http://104.236.223.160/api/" //"http://citifleet.steelkiwi.com/api/"
     static let Production = ""
     static let BaseUrl = Sandbox
@@ -105,6 +102,7 @@ struct URL {
     struct Chat {
         static let Friends = "chat/friends/"
         static let Rooms = "chat/rooms/"
+        static let Messages = "/messages/"
     }
 }
 
@@ -316,5 +314,10 @@ struct Response {
         static let Name = "name"
         static let Label = "label"
         static let participantsInfo = "participants_info"
+        
+        static let text = "text"
+        static let room = "room"
+        static let author = "author_info"
+        static let created = "created"
     }
 }

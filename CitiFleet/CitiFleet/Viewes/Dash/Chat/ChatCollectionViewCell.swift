@@ -20,6 +20,7 @@ class ChatCollectionViewCell: UICollectionViewCell {
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         let attributes = layoutAttributes as! MarketplaceLayoutAttributes
         messageHeight.constant = attributes.infoHeight
+//        self.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
     }
     
 }

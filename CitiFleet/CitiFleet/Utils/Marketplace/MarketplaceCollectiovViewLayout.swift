@@ -61,6 +61,10 @@ class MarketplaceCollectiovViewLayout: UICollectionViewLayout {
         }
     }
     
+//    override func initialLayoutAttributesForAppearingItemAtIndexPath(itemIndexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+//        <#code#>
+//    }
+    
     override class func layoutAttributesClass() -> AnyClass {
         return MarketplaceLayoutAttributes.self
     }
@@ -101,6 +105,7 @@ class MarketplaceCollectiovViewLayout: UICollectionViewLayout {
             } else {
                 attributes = MarketplaceLayoutAttributes(forCellWithIndexPath: indexPath)
             }
+            attributes.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
             
             attributes.frame = insetFrame
             attributes.photoHeight = photoHeight

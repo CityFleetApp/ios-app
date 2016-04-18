@@ -52,6 +52,7 @@ PODS:
     - Fabric
   - TwitterKit (1.15.3):
     - TwitterCore (= 1.15.3)
+  - UITextView+Placeholder (1.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -75,6 +76,7 @@ DEPENDENCIES:
   - SwiftyJSON (~> 2.3)
   - TwitterCore (~> 1.15)
   - TwitterKit (~> 1.15)
+  - UITextView+Placeholder (~> 1.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -100,5 +102,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
   TwitterCore: cce24b3c798993ccde72787ea79ea9a478b284e4
   TwitterKit: 43600f2d2848c227739efea5b2939585e69339c3
+  UITextView+Placeholder: 77680995fcdd07c3f52ec92fe1150874a2ac89ff
 
 COCOAPODS: 0.39.0
