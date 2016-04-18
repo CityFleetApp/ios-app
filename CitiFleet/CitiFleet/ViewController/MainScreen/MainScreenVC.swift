@@ -9,6 +9,8 @@
 import UIKit
 
 class MainScreenVC: UIViewController {
+    private let ReportInfoViewHeght: CGFloat = 150
+    
     @IBOutlet var dashboardBtn: UIButton!
     @IBOutlet var marketPlaceBtn: UIButton!
     @IBOutlet var notificationsBtn: UIButton!
@@ -16,6 +18,29 @@ class MainScreenVC: UIViewController {
     
     @IBOutlet var burgerBtn: UIButton!
     @IBOutlet var addFriendsBtn: UIButton!
+    
+    private var _reportInfoView: ReportInfoView?
+    private var _friendInfoView: FriendInfoView?
+    
+    private var reportInfoView: ReportInfoView {
+        if let infoView = _reportInfoView {
+            return infoView
+        }
+        _reportInfoView = ReportInfoView.viewFromNib()
+        _reportInfoView!.frame = CGRect(x: 0, y: -ReportInfoViewHeght, width: UIScreen.mainScreen().bounds.width, height: ReportInfoViewHeght)
+        view.addSubview(_reportInfoView!)
+        return _reportInfoView!
+    }
+    
+    private var friendInfoView: FriendInfoView {
+        if let friendInfoView = _friendInfoView {
+            return friendInfoView
+        }
+        _friendInfoView = FriendInfoView.viewFromNib()
+        _friendInfoView?.frame = CGRect(x: 0, y: -ReportInfoViewHeght, width: UIScreen.mainScreen().bounds.width, height: ReportInfoViewHeght)
+        view.addSubview(_friendInfoView!)
+        return _friendInfoView!
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +56,15 @@ class MainScreenVC: UIViewController {
         navigationController?.navigationBar.hidden = true
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let mapVC = segue.destinationViewController as? MapVC {
+            mapVC.infoDelegate = self
+        }
+    }
+}
+
+//MARK: - Private Methods
+extension MainScreenVC {
     private func setCenterImage() {
         let buttons = [dashboardBtn, marketPlaceBtn, notificationsBtn, reportBtn]
         for button in buttons {
@@ -39,6 +73,27 @@ class MainScreenVC: UIViewController {
         }
     }
     
+    private func showReportInfo() {
+        UIView.animateWithDuration(0.5) { [weak self] in
+            if self == nil {
+                return
+            }
+            self?.reportInfoView.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: (self?.ReportInfoViewHeght)!)
+        }
+    }
+    
+    private func hideReportInfo() {
+        UIView.animateWithDuration(0.5) { [weak self] in
+            if self == nil {
+                return
+            }
+            self?.reportInfoView.frame = CGRect(x: 0, y: -self!.ReportInfoViewHeght, width: UIScreen.mainScreen().bounds.width, height: (self?.ReportInfoViewHeght)!)
+        }
+    }
+}
+
+//MARK: - Actions
+extension MainScreenVC {
     @IBAction func updateButtonsColor(selectedButton: UIButton) {
         let buttons = [dashboardBtn, marketPlaceBtn, notificationsBtn, reportBtn]
         for button in buttons {
@@ -47,10 +102,7 @@ class MainScreenVC: UIViewController {
             button.tintColor = color
         }
     }
-}
-
-//MARK: - Actions
-extension MainScreenVC {
+    
     @IBAction func openDash(sender: AnyObject) {
         let storyboard = UIStoryboard(name: Storyboard.DashStoryboard, bundle: NSBundle.mainBundle())
         let viewController = storyboard.instantiateViewControllerWithIdentifier(ViewControllerID.Dash)
@@ -59,5 +111,25 @@ extension MainScreenVC {
     
     @IBAction func showReportsMenu(sender: AnyObject) {
         ReportsView.reportFromNib().show(onViewController: self)
+    }
+}
+
+//MARK: - Info Delegate
+extension MainScreenVC: InfoViewDelegate {
+    func showFrinedInfo(friend: Friend?) {
+        friendInfoView.friend = friend
+        friendInfoView.showView()
+        reportInfoView.hideView()
+    }
+    
+    func showReportInfo(report: Report?) {
+        reportInfoView.report = report
+        reportInfoView.showView()
+        friendInfoView.hideView()
+    }
+    
+    func hideViewes() {
+        reportInfoView.hideView()
+        friendInfoView.hideView()
     }
 }

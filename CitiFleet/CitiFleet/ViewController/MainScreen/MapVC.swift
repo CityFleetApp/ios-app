@@ -9,34 +9,17 @@
 import UIKit
 import GoogleMaps
 
+protocol InfoViewDelegate {
+    func showFrinedInfo(friend: Friend?)
+    func showReportInfo(report: Report?)
+    func hideViewes()
+}
+
 class MapVC: UIViewController {
-    private let ReportInfoViewHeght: CGFloat = 150
-    
     private var shouldCenterCurrentLocation = true
     private var _marker: GMSMarker?
     private var reports: Set<Report> = []
     private var friends: Set<Friend> = []
-    private var _reportInfoView: ReportInfoView?
-    private var _friendInfoView: FriendInfoView?
-    private var reportInfoView: ReportInfoView {
-        if let infoView = _reportInfoView {
-            return infoView
-        }
-        _reportInfoView = ReportInfoView.viewFromNib()
-        _reportInfoView!.frame = CGRect(x: 0, y: -ReportInfoViewHeght, width: UIScreen.mainScreen().bounds.width, height: ReportInfoViewHeght)
-        AppDelegate.sharedDelegate().rootViewController().view.addSubview(_reportInfoView!)
-        return _reportInfoView!
-    }
-    
-    private var friendInfoView: FriendInfoView {
-        if let friendInfoView = _friendInfoView {
-            return friendInfoView
-        }
-        _friendInfoView = FriendInfoView.viewFromNib()
-        _friendInfoView?.frame = CGRect(x: 0, y: -ReportInfoViewHeght, width: UIScreen.mainScreen().bounds.width, height: ReportInfoViewHeght)
-        AppDelegate.sharedDelegate().rootViewController().view.addSubview(_friendInfoView!)
-        return _friendInfoView!
-    }
     
     let updatedLocationSel = "updatedLocation:"
     
@@ -44,6 +27,8 @@ class MapVC: UIViewController {
     @IBOutlet var centerMeBtn: UIButton!
     @IBOutlet var directionBtn: UIButton!
     @IBOutlet var mapView: GMSMapView!
+    
+    var infoDelegate: InfoViewDelegate?
     
     var marker: GMSMarker? {
         get {
@@ -74,11 +59,6 @@ class MapVC: UIViewController {
         if let _ = User.currentUser() {
             LocationManager.sharedInstance().startUpdatingLocation()
         }
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        friendInfoView.hideView()
-        reportInfoView.hideView()
     }
     
     func updatedLocation(locationNotif: NSNotification) {
@@ -185,24 +165,6 @@ extension MapVC {
             friend.marker.map = nil
         }
     }
-    
-    private func showReportInfo() {
-        UIView.animateWithDuration(0.5) { [weak self] in
-            if self == nil {
-                return
-            }
-            self?.reportInfoView.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: (self?.ReportInfoViewHeght)!)
-        }
-    }
-    
-    private func hideReportInfo() {
-        UIView.animateWithDuration(0.5) { [weak self] in
-            if self == nil {
-                return
-            }
-            self?.reportInfoView.frame = CGRect(x: 0, y: -self!.ReportInfoViewHeght, width: UIScreen.mainScreen().bounds.width, height: (self?.ReportInfoViewHeght)!)
-        }
-    }
 }
 
 //MARK: - Actions
@@ -286,19 +248,14 @@ extension MapVC: GMSAutocompleteViewControllerDelegate {
     }
     
     func mapView(mapView: GMSMapView, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
-        reportInfoView.hideView()
-        friendInfoView.hideView()
+        infoDelegate?.hideViewes()
     }
     
     func mapView(mapView: GMSMapView, didTapMarker marker: GMSMarker) -> Bool {
         if let marker = marker as? ReportMarker {
-            reportInfoView.report = marker.report
-            reportInfoView.showView()
-            friendInfoView.hideView()
+            infoDelegate?.showReportInfo(marker.report)
         } else if let marker = marker as? FriendMarker {
-            friendInfoView.friend = marker.friend
-            friendInfoView.showView()
-            reportInfoView.hideView()
+            infoDelegate?.showFrinedInfo(marker.friend)
         }
         return true
     }
