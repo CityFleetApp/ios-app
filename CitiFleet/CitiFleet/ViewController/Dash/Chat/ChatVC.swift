@@ -78,7 +78,7 @@ extension ChatVC {
     }
     
     private func setupCollectionViewLayouts() {
-        let layout = collectionView.collectionViewLayout as! MarketplaceCollectiovViewLayout
+        let layout = collectionView.collectionViewLayout as! ChatCollectiovViewLayout
         layout.cellPadding = ChatVC.CellPadding
         layout.delegate = self
         layout.numberOfColumns = 1

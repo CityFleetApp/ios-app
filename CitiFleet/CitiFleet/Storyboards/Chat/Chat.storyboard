@@ -477,7 +477,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QaP-Oo-Qt0">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="418"/>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewLayout key="collectionViewLayout" id="qoO-cK-Mmh" customClass="MarketplaceCollectiovViewLayout" customModule="CitiFleet" customModuleProvider="target"/>
+                                <collectionViewLayout key="collectionViewLayout" id="qoO-cK-Mmh" customClass="ChatCollectiovViewLayout" customModule="CitiFleet" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OtherMessageCellID" id="oyA-MK-KEu" customClass="ChatCollectionViewCell" customModule="CitiFleet" customModuleProvider="target">
                                         <rect key="frame" x="49" y="0.0" width="502" height="183"/>
