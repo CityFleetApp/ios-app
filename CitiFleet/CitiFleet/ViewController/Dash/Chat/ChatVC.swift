@@ -131,7 +131,6 @@ extension ChatVC: UICollectionViewDataSource {
         cell.messageLbl.text = message.message
         cell.messageDateLbl.text = "\((message.author?.fullName)!) wrote at \(NSDateFormatter.standordFormater().stringFromDate(message.date!))"
         
-//        cell.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
         return cell
     }
 }

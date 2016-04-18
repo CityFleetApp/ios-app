@@ -10,6 +10,36 @@ import UIKit
 import SocketRocket
 import SwiftyJSON
 
+class SocketWrapper: NSObject {
+    var socket: OwnSocket
+    weak var delegate: SRWebSocketDelegate? {
+        didSet {
+            socket.delegate = delegate
+        }
+    }
+    
+    init(URL: NSURL) {
+        socket = OwnSocket(URL: URL)
+        super.init()
+    }
+    
+    var readyState: SRReadyState {
+        return socket.readyState
+    }
+    
+    func open() {
+        socket.open()
+    }
+    
+    func close() {
+        socket.close()
+    }
+    
+    func send(message:AnyObject?) {
+        socket.send(message)
+    }
+}
+
 class SocketManager: NSObject {
     // MARK: Notifications
     static let NewMessage = "ReceivedNewMessage"
@@ -27,39 +57,44 @@ class SocketManager: NSObject {
         case RoomInvitation = "room_invitation"
     }
     static let sharedManager = SocketManager()
-    var _socket: SRWebSocket?
-    
-    var socket: SRWebSocket? {
-        get {
-            if _socket == nil {
-                let url = "\(URL.Socket)?token=\((User.currentUser()?.token)!)"
-                _socket = SRWebSocket(URL: NSURL(string: url)!)
-            }
-            return _socket!
-        } set {
-            _socket = newValue
-        }
-    }
+    var socket: SocketWrapper?
     
     var state: SocketManager.State = .Closed
     
+    func reloadSocket() {
+//        socket = nil
+        let url = "\(URL.Socket)?token=\((User.currentUser()?.token)!)"
+        socket = SocketWrapper(URL: NSURL(string: url)!)
+        socket?.delegate = self
+//        state == .Closed
+    }
+    
     override init() {
         super.init()
-        socket?.delegate = self
     }
     
     func open() {
-        if state == .Closed {
-            state = .Opening
+        if socket == nil {
+            let url = "\(URL.Socket)?token=\((User.currentUser()?.token)!)"
+            socket = SocketWrapper(URL: NSURL(string: url)!)
+            socket?.delegate = self
             socket?.open()
         }
+//        reloadSocket()
+//        if socket?.readyState != .OPEN {
+//        if state == .Closed {
+//            state = .Opening
+//            socket?.delegate = self
+//            socket?.open()
+//        }
     }
     
     func close() {
-        if state == .Opened {
-            state = .Closing
+//        if state == .Opened {
+//            state = .Closing
             socket?.close()
-        }
+        socket = nil 
+//        }
     }
     
     func sendMessage(message: Message) {
@@ -98,8 +133,8 @@ extension SocketManager: SRWebSocketDelegate {
     }
     
     func webSocket(webSocket: SRWebSocket!, didCloseWithCode code: Int, reason: String!, wasClean: Bool) {
+        webSocket.delegate = nil
         socket = nil
-        state = .Closed
     }
     
     func webSocket(webSocket: SRWebSocket!, didFailWithError error: NSError!) {
@@ -114,7 +149,7 @@ extension SocketManager: SRWebSocketDelegate {
                 if messageDict[Response.Chat.messageType] as! String == SocketManager.Method.ReceiveMessage.rawValue {
                     sendNewMessage(messageDict)
                 }
-            } catch let error as NSError {
+            } catch let error as NSError {4
                 print(error)
             }
         }
