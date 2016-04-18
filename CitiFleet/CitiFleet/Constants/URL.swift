@@ -319,5 +319,6 @@ struct Response {
         static let room = "room"
         static let author = "author_info"
         static let created = "created"
+        static let lastMessage = "last_message"
     }
 }

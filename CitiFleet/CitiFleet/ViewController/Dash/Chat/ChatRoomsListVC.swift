@@ -18,6 +18,7 @@ class ChatRoomsListVC: UITableViewController {
             self?.tableView.reloadData()
         }
         dataSource.loadRooms()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(newMessageReceived(_:)), name: SocketManager.NewMessage, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -58,6 +59,8 @@ extension ChatRoomsListVC {
         cell?.roomNameLbl.text = room.participants.map({ $0.fullName! }).joinWithSeparator(", ")
         cell?.avatar.image = UIImage(named: Resources.NoAvatarIc)
         cell?.secondAvatar?.image = UIImage(named: Resources.NoAvatarIc)
+        
+        cell?.lastMessageLbl.text = room.lastMessage
         
         if room.participants.count == 0 {
             return cell!
@@ -118,5 +121,26 @@ extension ChatRoomsListVC {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+}
+
+//MARK: - Chat Notifications
+extension ChatRoomsListVC {
+    func newMessageReceived(notification: NSNotification) {
+        if let message = notification.object as? Message {
+            let rooms = dataSource.rooms.filter( {$0.id == message.roomId} )
+            if rooms.count > 0 {
+                let existingRoom = rooms[0]
+                existingRoom.lastMessage = message.message
+                let index = dataSource.rooms.indexOf(existingRoom)
+                dataSource.rooms.removeAtIndex(index!)
+                dataSource.rooms.insert(existingRoom, atIndex: 0)
+                
+                tableView.moveRowAtIndexPath(NSIndexPath(forRow: index!, inSection: 1), toIndexPath: NSIndexPath(forRow: 0, inSection: 1))
+                tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 1)], withRowAnimation: .None)
+            }
+        } else {
+            
+        }
     }
 }
