@@ -314,7 +314,7 @@ struct Response {
         static let Name = "name"
         static let Label = "label"
         static let participantsInfo = "participants_info"
-        
+        static let messageType = "type"
         static let text = "text"
         static let room = "room"
         static let author = "author_info"

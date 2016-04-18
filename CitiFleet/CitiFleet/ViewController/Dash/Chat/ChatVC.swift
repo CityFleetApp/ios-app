@@ -34,12 +34,12 @@ class ChatVC: UIViewController {
     var room: ChatRoom! {
         didSet {
             datasource = ChatDataSource(room: room)
+            setupDatasource()
         }
     }
     
     override func viewDidLoad() {
         setupCollectionViewLayouts()
-        setupDatasource()
         setupNotifications()
     }
     
@@ -54,23 +54,11 @@ class ChatVC: UIViewController {
 extension ChatVC {
     @IBAction func send(sender: AnyObject) {
         if messageTF.text != nil && messageTF.text != "" {
-            let params = [
-                Params.Chat.created: NSDateFormatter.serverResponseFormat.stringFromDate(NSDate()),
-                Params.Chat.room: room.id,
-                Params.Chat.text: messageTF.text
-            ]
-            
-            let message = Message(json: params)
+            let message = Message()
             message.author = User.currentUser()
             message.message = messageTF.text
-            message.roodHash = room.label
+            message.roomId = room.id
             message.date = NSDate()
-            datasource.messages.insert(message, atIndex: 0)
-            
-            let indexPath = NSIndexPath(forItem: 0, inSection: 0)
-            let pathes:[NSIndexPath] = [indexPath]
-            
-            collectionView.insertItemsAtIndexPaths(pathes)
             
             SocketManager.sharedManager.sendMessage(message)
             messageTF.resignFirstResponder()
@@ -86,6 +74,7 @@ extension ChatVC {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(receivedNewMessage(_:)), name: SocketManager.NewMessage, object: nil)
     }
     
     private func setupCollectionViewLayouts() {
@@ -167,12 +156,12 @@ extension ChatVC: MarketplaceLayoutDelegate {
 //MARK: - TextView Delegate
 extension ChatVC: UITextViewDelegate {
     func textViewDidChange(textView: UITextView) {
-        messageViewHeight.constant = calculateHeightForMessage()
+        messageViewHeight.constant = max(textView.contentSize.height + 32, MessageButtonSide)
         view.layoutIfNeeded()
     }
 }
 
-//MARK: - Keyboard Events 
+//MARK: - Notification Events
 extension ChatVC {
     func keyboardWillShow(notification: NSNotification) {
         let keyboardHeight = notification.userInfo![UIKeyboardFrameEndUserInfoKey]?.CGRectValue().height
@@ -186,6 +175,18 @@ extension ChatVC {
         bottomConstraint.constant = 0
         UIView.animateWithDuration(0.25) { [weak self] in
             self?.view.layoutIfNeeded()
+        }
+    }
+    
+    func receivedNewMessage(notification: NSNotification) {
+        if let message = notification.object as? Message {
+            if message.roomId == room.id {
+                datasource.messages.insert(message, atIndex: 0)
+                let indexPath = NSIndexPath(forItem: 0, inSection: 0)
+                let pathes:[NSIndexPath] = [indexPath]
+                
+                collectionView.insertItemsAtIndexPaths(pathes)
+            }
         }
     }
 }

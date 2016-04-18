@@ -19,7 +19,6 @@ class ChatDataSource: NSObject {
     }
     
     func loadData() {
-        
         let url = "\(URL.Chat.Rooms)\(room.id!)\(URL.Chat.Messages)"
         RequestManager.sharedInstance().get(url, parameters: nil) { [weak self] (json, error) in
             let messageObjects = json?.arrayObject
@@ -27,7 +26,7 @@ class ChatDataSource: NSObject {
                 let message = Message(json: obj)
                 self?.messages.append(message)
             }
-            self?.reloadData
+            self?.reloadData()
         }
     }
 }

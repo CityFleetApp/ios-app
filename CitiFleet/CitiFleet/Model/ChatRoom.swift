@@ -18,6 +18,7 @@ class ChatRoom: NSObject {
         super.init()
         name = json[Response.Chat.Name] as? String
         label = json[Response.Chat.Label] as? String
+        id = json[Params.id] as? Int
         
         if let participants = json[Response.Chat.participantsInfo] as? [AnyObject] {
             for participant in participants {

@@ -11,6 +11,10 @@ import SocketRocket
 import SwiftyJSON
 
 class SocketManager: NSObject {
+    // MARK: Notifications
+    static let NewMessage = "ReceivedNewMessage"
+    static let NewRoom = "JoinedNewRoom"
+    
     enum State {
         case Opened
         case Opening
@@ -23,29 +27,38 @@ class SocketManager: NSObject {
         case RoomInvitation = "room_invitation"
     }
     static let sharedManager = SocketManager()
-    lazy var socket: SRWebSocket = {
-        let url = "\(URL.Socket)?token=\((User.currentUser()?.token)!)"
-        return SRWebSocket(URL: NSURL(string: url)!)
-    }()
+    var _socket: SRWebSocket?
+    
+    var socket: SRWebSocket? {
+        get {
+            if _socket == nil {
+                let url = "\(URL.Socket)?token=\((User.currentUser()?.token)!)"
+                _socket = SRWebSocket(URL: NSURL(string: url)!)
+            }
+            return _socket!
+        } set {
+            _socket = newValue
+        }
+    }
     
     var state: SocketManager.State = .Closed
     
     override init() {
         super.init()
-        socket.delegate = self
+        socket?.delegate = self
     }
     
     func open() {
         if state == .Closed {
             state = .Opening
-            socket.open()
+            socket?.open()
         }
     }
     
     func close() {
         if state == .Opened {
             state = .Closing
-            socket.close()
+            socket?.close()
         }
     }
     
@@ -53,21 +66,39 @@ class SocketManager: NSObject {
         let params = [
             Params.Chat.method: Method.PostMessage.rawValue,
             Params.Chat.text: message.message!,
-            Params.Chat.room: message.roodHash!
+            Params.Chat.room: message.roomId!
         ]
-        let data = NSKeyedArchiver.archivedDataWithRootObject(params)
-        let str = "{\"method\" : \"post_message\", \"text\" : \"the only thing \", \"room\" :  \"vxzrocCFriHYZLoOFLrW7xnsLPH7NUXC\"}"
-        socket.send(data)
+        do {
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            let str = String(data: jsonData, encoding: NSUTF8StringEncoding)
+            socket?.send(str)
+        } catch let error as NSError {
+            print(error)
+        }
+    }
+}
+
+//MARK: - Private Method
+extension SocketManager {
+    private func sendNewMessage(messageDict: [String: AnyObject]) {
+        let message = Message(json: messageDict)
+        let notification = NSNotification(name: SocketManager.NewMessage, object: message)
+        NSNotificationCenter.defaultCenter().postNotification(notification)
+    }
+    
+    private func sendNewInvitation() {
         
     }
 }
 
+//MARK: - Socket Delegate
 extension SocketManager: SRWebSocketDelegate {
     func webSocketDidOpen(webSocket: SRWebSocket!) {
         state = .Opened
     }
     
     func webSocket(webSocket: SRWebSocket!, didCloseWithCode code: Int, reason: String!, wasClean: Bool) {
+        socket = nil
         state = .Closed
     }
     
@@ -76,7 +107,17 @@ extension SocketManager: SRWebSocketDelegate {
     }
     
     func webSocket(webSocket: SRWebSocket!, didReceiveMessage message: AnyObject!) {
-        
+        print("\nMessage: \(message)\nClass:\(message.classForCoder)")
+        if let data = (message as! String).dataUsingEncoding(NSUTF8StringEncoding) {
+            do {
+                let messageDict: [String: AnyObject] = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! [String:AnyObject]
+                if messageDict[Response.Chat.messageType] as! String == SocketManager.Method.ReceiveMessage.rawValue {
+                    sendNewMessage(messageDict)
+                }
+            } catch let error as NSError {
+                print(error)
+            }
+        }
     }
     
     func webSocket(webSocket: SRWebSocket!, didReceivePong pongPayload: NSData!) {
