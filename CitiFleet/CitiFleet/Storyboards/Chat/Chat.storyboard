@@ -462,7 +462,7 @@
             </objects>
             <point key="canvasLocation" x="2469" y="603.5"/>
         </scene>
-        <!--ChatVC-->
+        <!--Chat-->
         <scene sceneID="YUM-09-3KY">
             <objects>
                 <viewController id="Pqs-4v-oCX" customClass="ChatVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
@@ -705,7 +705,14 @@
                             <constraint firstAttribute="trailing" secondItem="aVX-yf-TCP" secondAttribute="trailing" id="cHh-ML-nQF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="N6L-Ca-Ogz"/>
+                    <navigationItem key="navigationItem" title="Chat" id="N6L-Ca-Ogz">
+                        <barButtonItem key="leftBarButtonItem" image="back-ic" id="4vN-0n-3ql">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="Pqs-4v-oCX" id="5xQ-VQ-AGh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bottomConstraint" destination="3SY-L4-PX4" id="AyH-pW-Gh6"/>
                         <outlet property="cameraButton" destination="NAn-gA-90b" id="IjP-Qp-IDW"/>

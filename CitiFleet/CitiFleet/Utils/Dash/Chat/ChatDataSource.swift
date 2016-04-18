@@ -26,6 +26,9 @@ class ChatDataSource: NSObject {
                 let message = Message(json: obj)
                 self?.messages.append(message)
             }
+            if let elements = self?.messages {
+                self?.messages = elements.reverse()
+            }
             self?.reloadData()
         }
     }
