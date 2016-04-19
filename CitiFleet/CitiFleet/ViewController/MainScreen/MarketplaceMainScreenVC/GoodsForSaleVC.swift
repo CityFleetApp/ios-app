@@ -33,6 +33,13 @@ class GoodsForSaleVC: UICollectionViewController, MarketplaceLayoutDelegate {
         topView.removeFromSuperview()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let viewController = segue.destinationViewController as? DetailsMarketplaceVC {
+            let item = dataLoader.items[(collectionView?.indexPathsForSelectedItems()![0].item)!]
+            viewController.item = item
+        }
+    }
+    
     func loadData ()  {
         dataLoader.loadGoodsForSale { [weak self] (error) -> () in
             if error == nil {

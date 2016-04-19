@@ -16,7 +16,6 @@ struct MarketplaceItemPhoto {
 class MarketplaceItem: NSObject {
     internal typealias Param = Response.Marketplace
     
-    var itemName: String?
     var itemDescription: String?
     var id: Int?
     var price: String?
@@ -24,6 +23,10 @@ class MarketplaceItem: NSObject {
     var photoSize: CGSize!
     var isShownDetails = false
     var created: NSDate?
+    
+    var itemName: String? {
+        return ""
+    }
     
     override init() {
         
@@ -63,6 +66,10 @@ class CarForRentSale: MarketplaceItem {
     var year: String?
     var isRent: Bool?
     
+    override var itemName: String? {
+        return "\(year ?? "") \(make ?? "") \(model ?? "")"
+    }
+    
     override init() {
         super.init()
     }
@@ -82,6 +89,10 @@ class CarForRentSale: MarketplaceItem {
 class GoodForSale: MarketplaceItem {
     var condition: String?
     var goodName: String?
+    
+    override var itemName: String? {
+        return goodName
+    }
     
     override init() {
         super.init()

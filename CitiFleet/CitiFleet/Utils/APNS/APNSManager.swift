@@ -9,6 +9,7 @@
 import Foundation
 
 class APNSManager: NSObject {
+    let AlreadyRegisteredKey = "AlreadyRegisteredKey"
     var deviceToken: String?
     private static let _sharedManager = APNSManager()
     static var sharedManager: APNSManager {
@@ -25,6 +26,9 @@ class APNSManager: NSObject {
     }
     
     func registerAPNSToken(deviceToken: NSData?) {
+        if (NSUserDefaults.standardUserDefaults().valueForKey(AlreadyRegisteredKey) as? Bool) == true {
+            return
+        }
         typealias APNSParams = Params.User.APNS
         
         let characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
@@ -37,8 +41,12 @@ class APNSManager: NSObject {
             APNSParams.deviceId: (UIDevice.currentDevice().identifierForVendor?.UUIDString)!,
             APNSParams.registrationId: deviceTokenString
         ]
-        RequestManager.sharedInstance().makeSilentRequest(.POST, baseURL: URL.User.APNS.Register, parameters: params) { (json, error) -> () in
-            
+        RequestManager.sharedInstance().makeSilentRequest(.POST, baseURL: URL.User.APNS.Register, parameters: params) { [weak self] (json, error) -> () in
+            if error == nil {
+                if let key = self?.AlreadyRegisteredKey {
+                    NSUserDefaults.standardUserDefaults().setValue(true, forKey: key)
+                }
+            }
         }
     }
 }

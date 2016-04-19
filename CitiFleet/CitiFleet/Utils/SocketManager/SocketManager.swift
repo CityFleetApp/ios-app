@@ -121,7 +121,7 @@ extension SocketManager {
         NSNotificationCenter.defaultCenter().postNotification(notification)
     }
     
-    private func sendNewInvitation() {
+    private func sendNewInvitation(roomDict: [String: AnyObject]) {
         
     }
 }
@@ -148,6 +148,8 @@ extension SocketManager: SRWebSocketDelegate {
                 let messageDict: [String: AnyObject] = try NSJSONSerialization.JSONObjectWithData(data, options: []) as! [String:AnyObject]
                 if messageDict[Response.Chat.messageType] as! String == SocketManager.Method.ReceiveMessage.rawValue {
                     sendNewMessage(messageDict)
+                } else if messageDict[Response.Chat.messageType] as! String == SocketManager.Method.RoomInvitation.rawValue {
+                    sendNewInvitation(messageDict)
                 }
             } catch let error as NSError {4
                 print(error)

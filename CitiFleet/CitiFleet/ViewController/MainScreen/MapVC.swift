@@ -62,6 +62,9 @@ class MapVC: UIViewController {
     }
     
     func updatedLocation(locationNotif: NSNotification) {
+        if User.currentUser()?.token == nil {
+            return
+        }
         loadReports()
         loadFriends()
         if !shouldCenterCurrentLocation {

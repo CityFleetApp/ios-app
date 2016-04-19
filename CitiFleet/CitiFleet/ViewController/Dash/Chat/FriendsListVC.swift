@@ -10,6 +10,10 @@ import UIKit
 import Haneke
 
 class FriendsListVC: UITableViewController {
+    internal class var StoryboardID: String {
+        return "FriendsListVC"
+    }
+    
     var datasource = FriendsListDataSource()
     
     override func viewDidLoad() {
@@ -92,5 +96,32 @@ extension FriendsListVC {
             return 0
         }
     }
+}
+
+//MARK: - Presented Friend List
+class ContactListVC: FriendsListVC {
+    override class var StoryboardID: String {
+        return "ContactListVC"
+    }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupNavigationBar()
+    }
+    
+    func setupNavigationBar() {
+        let closeButton = UIBarButtonItem(title: Titles.cancel, style: .Plain, target: self, action: #selector(clone(_:)))
+        navigationItem.leftBarButtonItem = closeButton
+        
+        let doneBtn = UIBarButtonItem(title: Titles.done, style: .Done, target: self, action: #selector(done(_:)))
+        navigationItem.rightBarButtonItem = doneBtn
+    }
+    
+    func clone(sender: AnyObject?) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func done(sender: AnyObject?) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }

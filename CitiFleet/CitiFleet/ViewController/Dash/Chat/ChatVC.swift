@@ -66,6 +66,8 @@ extension ChatVC {
             textViewDidChange(messageTF)
         }
     }
+    
+    
 }
 
 //MARK: - Private Methods

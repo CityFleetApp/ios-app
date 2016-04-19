@@ -17,8 +17,12 @@
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
+            <string>Montserrat-Light</string>
+            <string>Montserrat-Light</string>
+            <string>Montserrat-Light</string>
         </mutableArray>
         <mutableArray key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
@@ -113,6 +117,12 @@
                                 <action selector="back:" destination="Ygl-DB-Mg9" id="p00-fa-C87"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1em-A0-bgA">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="addRoom:" destination="Ygl-DB-Mg9" id="gLj-Lc-D9H"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="underlinePosition" destination="dGf-we-BAx" id="pWd-Ca-QDn"/>
@@ -121,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQz-ya-bUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="957" y="422"/>
+            <point key="canvasLocation" x="1769" y="422"/>
         </scene>
         <!--Chat Tab Bar-->
         <scene sceneID="ZLO-tI-WWU">
@@ -139,12 +149,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SsH-pC-P0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1649" y="422"/>
+            <point key="canvasLocation" x="2461" y="421.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="iK9-TA-zHw">
             <objects>
-                <tableViewController id="S51-UG-3G4" customClass="FriendsListVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FriendsListVC" id="S51-UG-3G4" customClass="FriendsListVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="171" sectionHeaderHeight="28" sectionFooterHeight="28" id="yJo-U1-gHf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="525"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -258,7 +268,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfV-2Q-4tP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2469" y="11"/>
+            <point key="canvasLocation" x="3281" y="10.5"/>
         </scene>
         <!--Item-->
         <scene sceneID="GYm-5P-szR">
@@ -460,7 +470,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DsI-4J-0Yy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2469" y="603.5"/>
+            <point key="canvasLocation" x="3281" y="603.5"/>
         </scene>
         <!--Chat-->
         <scene sceneID="YUM-09-3KY">
@@ -725,7 +735,144 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Wb-2V-jey" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3316" y="394.5"/>
+            <point key="canvasLocation" x="4128" y="394.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Wtm-xf-3vd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1q0-Ln-HE5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="euL-gR-5FB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ygl-DB-Mg9" kind="relationship" relationship="rootViewController" id="f2h-qF-tWp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8mc-eN-l0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="957" y="422"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="vBn-Ak-B7C">
+            <objects>
+                <tableViewController storyboardIdentifier="ContactListVC" id="ybF-vc-jKv" customClass="ContactListVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="171" sectionHeaderHeight="28" sectionFooterHeight="28" id="ENZ-ft-vB0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="66" id="cfe-Vu-8Dh" customClass="FriendCell" customModule="CitiFleet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="66"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cfe-Vu-8Dh" id="8BK-Gi-twq">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ezi-pb-2D6">
+                                            <rect key="frame" x="24" y="7" width="52" height="52"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="52" id="Hlz-XC-9y9"/>
+                                                <constraint firstAttribute="width" secondItem="ezi-pb-2D6" secondAttribute="height" multiplier="1:1" id="xy6-BX-uzg"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="26"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muW-Br-UnB">
+                                            <rect key="frame" x="92" y="4" width="492" height="58"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JOHN CENA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUi-Sc-sfv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="492" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKt-AV-54G">
+                                                    <rect key="frame" x="0.0" y="35" width="492" height="15"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60d-Ka-MOL">
+                                                    <rect key="frame" x="0.0" y="20" width="492" height="15"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="bKt-AV-54G" firstAttribute="leading" secondItem="muW-Br-UnB" secondAttribute="leading" id="Ci2-Qz-qaM"/>
+                                                <constraint firstItem="60d-Ka-MOL" firstAttribute="top" secondItem="CUi-Sc-sfv" secondAttribute="bottom" id="Fie-Wa-cW8"/>
+                                                <constraint firstItem="CUi-Sc-sfv" firstAttribute="leading" secondItem="muW-Br-UnB" secondAttribute="leading" id="HIr-fa-915"/>
+                                                <constraint firstAttribute="trailing" secondItem="bKt-AV-54G" secondAttribute="trailing" id="cPr-Sz-BQa"/>
+                                                <constraint firstAttribute="bottom" secondItem="bKt-AV-54G" secondAttribute="bottom" constant="8" id="itt-2q-rGc"/>
+                                                <constraint firstItem="60d-Ka-MOL" firstAttribute="leading" secondItem="muW-Br-UnB" secondAttribute="leading" id="lNG-8F-0Zr"/>
+                                                <constraint firstAttribute="trailing" secondItem="60d-Ka-MOL" secondAttribute="trailing" id="m0S-lg-v7j"/>
+                                                <constraint firstAttribute="trailing" secondItem="CUi-Sc-sfv" secondAttribute="trailing" id="uOG-H7-49A"/>
+                                                <constraint firstItem="bKt-AV-54G" firstAttribute="top" secondItem="60d-Ka-MOL" secondAttribute="bottom" id="uSr-pD-lqu"/>
+                                                <constraint firstItem="CUi-Sc-sfv" firstAttribute="top" secondItem="muW-Br-UnB" secondAttribute="top" id="x0o-8z-Puw"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.97254901959999995" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="ezi-pb-2D6" firstAttribute="centerY" secondItem="8BK-Gi-twq" secondAttribute="centerY" id="3uu-HA-Ifd"/>
+                                        <constraint firstItem="ezi-pb-2D6" firstAttribute="leading" secondItem="8BK-Gi-twq" secondAttribute="leadingMargin" constant="16" id="7eR-ES-7u8"/>
+                                        <constraint firstItem="muW-Br-UnB" firstAttribute="centerY" secondItem="8BK-Gi-twq" secondAttribute="centerY" id="8Jd-Tw-Nfo"/>
+                                        <constraint firstItem="muW-Br-UnB" firstAttribute="leading" secondItem="ezi-pb-2D6" secondAttribute="trailing" constant="16" id="fyv-Da-KKK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="muW-Br-UnB" secondAttribute="trailing" constant="8" id="xeW-Bv-2vQ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="avatarImg" destination="ezi-pb-2D6" id="JLg-Yf-rSe"/>
+                                    <outlet property="fullNameLbl" destination="CUi-Sc-sfv" id="RsY-cv-a00"/>
+                                    <outlet property="locationLbl" destination="bKt-AV-54G" id="S6P-tU-yjN"/>
+                                    <outlet property="phoneLbl" destination="60d-Ka-MOL" id="WYv-my-D3N"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="37" id="Dc3-Fc-3el" customClass="SearchCell" customModule="CitiFleet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="94" width="600" height="37"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dc3-Fc-3el" id="Hnb-wu-W0s">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="36"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type a name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KbM-fF-LqY">
+                                            <rect key="frame" x="16" y="0.0" width="568" height="36"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.97254901959999995" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="KbM-fF-LqY" secondAttribute="trailing" constant="16" id="1qG-dj-Eqr"/>
+                                        <constraint firstItem="KbM-fF-LqY" firstAttribute="leading" secondItem="Hnb-wu-W0s" secondAttribute="leading" constant="16" id="9bm-38-odk"/>
+                                        <constraint firstAttribute="bottom" secondItem="KbM-fF-LqY" secondAttribute="bottom" id="o6L-tb-fiO"/>
+                                        <constraint firstItem="KbM-fF-LqY" firstAttribute="top" secondItem="Hnb-wu-W0s" secondAttribute="top" id="y8g-rS-SIr"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="searchTF" destination="KbM-fF-LqY" id="8eh-4b-3ZF"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ybF-vc-jKv" id="h0t-ok-YeJ"/>
+                            <outlet property="delegate" destination="ybF-vc-jKv" id="GB5-CH-2cI"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="Zzr-KO-0j4"/>
+                    <navigationItem key="navigationItem" id="Ejz-O7-YTT"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lv3-BT-1AX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2461" y="1142"/>
         </scene>
     </scenes>
     <resources>

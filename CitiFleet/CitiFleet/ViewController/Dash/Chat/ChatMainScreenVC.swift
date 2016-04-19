@@ -46,6 +46,14 @@ extension ChatMainScreenVC {
 
 //MARK: - Actions
 extension ChatMainScreenVC {
+    @IBAction func addRoom(sender: AnyObject) {
+        if let vc = storyboard?.instantiateViewControllerWithIdentifier(ContactListVC.StoryboardID) as? ContactListVC {
+            let navigationController = UINavigationController()
+            navigationController.viewControllers = [vc]
+            presentViewController(navigationController, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func contactsClicked(sender: AnyObject) {
         selectedScreen = .Contacts
         setupUnderlinePosition()

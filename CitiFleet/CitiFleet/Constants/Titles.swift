@@ -10,6 +10,7 @@ import Foundation
 
 struct Titles {
     static let cancel = "Cancel"
+    static let done = "Done"
     static let error = "Error"
     static let Done = "Done"
     static let ConnectionFailed = "Unable to connect to the internet"

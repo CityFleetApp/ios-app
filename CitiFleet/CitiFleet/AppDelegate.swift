@@ -78,7 +78,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
         }
     }
     
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        
+    }
+    
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-//        APNSManager.sharedManager  .registerAPNSToken(deviceToken)
+        APNSManager.sharedManager.registerAPNSToken(deviceToken)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        
     }
 }
