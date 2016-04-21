@@ -11,6 +11,7 @@ import Haneke
 import KMPlaceholderTextView 
 
 class ChatVC: UIViewController {
+    private static let StoryBoardID = "ChatVC"
     private let MessageButtonSide: CGFloat = 58
     
     static let MessagePadding: CGFloat = 16
@@ -38,15 +39,26 @@ class ChatVC: UIViewController {
         }
     }
     
+    class func viewControllerFromStoryboard() -> ChatVC {
+        let storyboard = UIStoryboard(name: Storyboard.Chat, bundle: nil)
+        if let viewController = storyboard.instantiateViewControllerWithIdentifier(ChatVC.StoryBoardID) as? ChatVC {
+            return viewController
+        } else {
+            return ChatVC()
+        }
+    }
+    
     override func viewDidLoad() {
         setupCollectionViewLayouts()
         setupNotifications()
+        SocketManager.sharedManager.open()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         messageTF.placeholder = Titles.Chat.TextViewPlaceHolder
         messageTF.placeholderColor = UIColor.whiteColor()
+        navigationController?.navigationBar.hidden = false 
     }
 }
 

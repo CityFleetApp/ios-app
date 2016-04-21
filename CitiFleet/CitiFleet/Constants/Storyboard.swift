@@ -11,6 +11,7 @@ import Foundation
 struct Storyboard {
     static let LoginStoryboard = "Login"
     static let DashStoryboard = "Dash"
+    static let Chat = "Chat"
 }
 
 struct XIB {

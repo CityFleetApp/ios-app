@@ -27,4 +27,7 @@ struct Resources {
     struct Marketplace {
         static let TopImage = "header-bg"
     }
+    struct Chat {
+        static let AccessoryImage = "checkmark"
+    }
 }

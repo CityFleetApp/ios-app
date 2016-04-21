@@ -58,6 +58,16 @@ extension FriendsListVC {
 extension FriendsListVC {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let friend = datasource.friends[indexPath.row]
+        RequestManager.sharedInstance().postRoom([friend], completion: { (room, error) in
+            if error == nil {
+                dispatch_async(dispatch_get_main_queue(), { [weak self] in
+                    let vc = ChatVC.viewControllerFromStoryboard()
+                    vc.room = room
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                    })
+            }
+        })
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -98,8 +108,10 @@ extension FriendsListVC {
     }
 }
 
-//MARK: - Presented Friend List
+//MARK: - Presented Friend List -
 class ContactListVC: FriendsListVC {
+    var selectedUsers = Set<Friend>()
+    
     override class var StoryboardID: String {
         return "ContactListVC"
     }
@@ -123,5 +135,68 @@ class ContactListVC: FriendsListVC {
     
     func done(sender: AnyObject?) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+//MARK: - UITableView Delegate 
+extension ContactListVC {
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 {
+            return
+        }
+        
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! FriendCell
+        
+        let friend = datasource.friends[indexPath.row]
+        let accessoryView = cell.accessoryView as? UIImageView
+        
+        accessoryView?.image = nil
+        selectedUsers.remove(friend)
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 {
+            return
+        }
+        
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! FriendCell
+        
+        let friend = datasource.friends[indexPath.row]
+        let accessoryView = cell.accessoryView as? UIImageView
+        
+        accessoryView?.image = UIImage(named: Resources.Chat.AccessoryImage)
+        selectedUsers.insert(friend)
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath)
+        if indexPath.section == 0 {
+            return cell
+        }
+        
+        let accesseryImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 33, height: 33))
+        accesseryImage.clipsToBounds = true
+        accesseryImage.layer.cornerRadius = 16.5
+        accesseryImage.contentMode = .Center
+        accesseryImage.layer.borderColor = Color.Global.BlueTextColor.CGColor
+        accesseryImage.layer.borderWidth = 1
+        accesseryImage.backgroundColor = UIColor(hex: Color.Chat.CellBackeground, alpha: 0.8)
+        
+        cell.accessoryView = accesseryImage
+        
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if let accessoryImage = cell.accessoryView as? UIImageView {
+            var checkMarkImage: UIImage?
+            let friend = datasource.friends[indexPath.row]
+            if selectedUsers.contains(friend) {
+                checkMarkImage = UIImage(named: Resources.Chat.AccessoryImage)
+            } else {
+                checkMarkImage = nil
+            }
+            accessoryImage.image = checkMarkImage
+        }
     }
 }

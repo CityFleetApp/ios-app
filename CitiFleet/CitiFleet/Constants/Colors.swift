@@ -31,4 +31,7 @@ struct Color {
     struct Notifcations {
         static let LabelGrayColor = 0x747474
     }
+    struct Chat {
+        static let CellBackeground = 0xF2F4F8
+    }
 }

@@ -78,9 +78,11 @@ extension ReportsView {
     
     @IBAction func postReport(sender: AnyObject) {
         let currentPosition = LocationManager.sharedInstance().currentCoordinates
-        let report = Report(lat: 40.715421, lon: -73.825984, type: ReportType(rawValue: 1)!)
+        let tag = sender.tag
+        
+        let report = Report(lat: currentPosition.latitude, lon: currentPosition.longitude, type: ReportType(rawValue: tag!)!)
         report.post { (error) -> () in
-            if let error = error {
+            if let _ = error {
                 return
             }
             dispatch_async(dispatch_get_main_queue(), {

@@ -116,6 +116,7 @@ struct Params {
         static let method = "method"
         static let name = "name"
         static let label = "label"
+        static let members = "participants"
         static let participants = "participants_info"
         static let lastMessage = "last_message"
         static let lastMessageDate = "last_message_timestamp"

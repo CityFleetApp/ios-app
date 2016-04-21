@@ -32,7 +32,7 @@ extension RequestManager {
             Params.Report.latitude: String(lat),
             Params.Report.longitude: String(long)
         ]
-        post(URL.Reports.Reports, parameters: params) { (json, error) in
+        post(URL.Reports.Nearby, parameters: params) { (json, error) in
             completion(json?.dictionaryObject, error)
         }
     }

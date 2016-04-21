@@ -475,7 +475,7 @@
         <!--Chat-->
         <scene sceneID="YUM-09-3KY">
             <objects>
-                <viewController id="Pqs-4v-oCX" customClass="ChatVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatVC" id="Pqs-4v-oCX" customClass="ChatVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QEf-ND-H2W"/>
                         <viewControllerLayoutGuide type="bottom" id="D9Q-h6-Czc"/>
@@ -759,12 +759,12 @@
         <scene sceneID="vBn-Ak-B7C">
             <objects>
                 <tableViewController storyboardIdentifier="ContactListVC" id="ybF-vc-jKv" customClass="ContactListVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="171" sectionHeaderHeight="28" sectionFooterHeight="28" id="ENZ-ft-vB0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="171" sectionHeaderHeight="28" sectionFooterHeight="28" id="ENZ-ft-vB0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="66" id="cfe-Vu-8Dh" customClass="FriendCell" customModule="CitiFleet" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="66" id="cfe-Vu-8Dh" customClass="FriendCell" customModule="CitiFleet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cfe-Vu-8Dh" id="8BK-Gi-twq">
@@ -820,7 +820,7 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.97254901959999995" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="ezi-pb-2D6" firstAttribute="centerY" secondItem="8BK-Gi-twq" secondAttribute="centerY" id="3uu-HA-Ifd"/>
                                         <constraint firstItem="ezi-pb-2D6" firstAttribute="leading" secondItem="8BK-Gi-twq" secondAttribute="leadingMargin" constant="16" id="7eR-ES-7u8"/>
@@ -829,6 +829,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="muW-Br-UnB" secondAttribute="trailing" constant="8" id="xeW-Bv-2vQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.97254901959999995" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="avatarImg" destination="ezi-pb-2D6" id="JLg-Yf-rSe"/>
                                     <outlet property="fullNameLbl" destination="CUi-Sc-sfv" id="RsY-cv-a00"/>

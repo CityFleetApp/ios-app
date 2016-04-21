@@ -39,6 +39,20 @@ class MainScreenVC: UIViewController {
         _friendInfoView = FriendInfoView.viewFromNib()
         _friendInfoView?.frame = CGRect(x: 0, y: -ReportInfoViewHeght, width: UIScreen.mainScreen().bounds.width, height: ReportInfoViewHeght)
         view.addSubview(_friendInfoView!)
+        
+        _friendInfoView?.messageFriend = { [weak self] (friend) in
+            let friend = self?._friendInfoView?.friend
+            RequestManager.sharedInstance().postRoom([friend!], completion: { (room, error) in
+                if error == nil {
+                    dispatch_async(dispatch_get_main_queue(), { [weak self] in
+                        let vc = ChatVC.viewControllerFromStoryboard()
+                        vc.room = room
+                        self?.navigationController?.pushViewController(vc, animated: true)
+                    })
+                }
+            })
+        }
+        
         return _friendInfoView!
     }
     

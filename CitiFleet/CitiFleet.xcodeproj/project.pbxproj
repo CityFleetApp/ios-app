@@ -108,6 +108,7 @@
 		43A76D9D1CBEA87C00209320 /* ChatRoomsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A76D9C1CBEA87C00209320 /* ChatRoomsListVC.swift */; };
 		43A76D9F1CBEA8B700209320 /* ChatRoomsListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A76D9E1CBEA8B700209320 /* ChatRoomsListDataSource.swift */; };
 		43A76DA11CBF7DAB00209320 /* ChatRoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A76DA01CBF7DAB00209320 /* ChatRoomCell.swift */; };
+		43ACD1011CC688530010DC6D /* RequestManager+Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43ACD1001CC688530010DC6D /* RequestManager+Chat.swift */; };
 		43AD515A1C95D257002261DB /* AvatarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AD51591C95D257002261DB /* AvatarHeaderView.swift */; };
 		43AD515D1C95D2A1002261DB /* AvatarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43AD515C1C95D2A1002261DB /* AvatarHeaderView.xib */; };
 		43AD515F1C95DFFF002261DB /* AvatarCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AD515E1C95DFFF002261DB /* AvatarCameraView.swift */; };
@@ -292,6 +293,7 @@
 		43A76D9C1CBEA87C00209320 /* ChatRoomsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomsListVC.swift; path = ViewController/Dash/Chat/ChatRoomsListVC.swift; sourceTree = "<group>"; };
 		43A76D9E1CBEA8B700209320 /* ChatRoomsListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomsListDataSource.swift; path = Utils/Dash/Chat/ChatRoomsListDataSource.swift; sourceTree = "<group>"; };
 		43A76DA01CBF7DAB00209320 /* ChatRoomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatRoomCell.swift; path = Viewes/Dash/Chat/ChatRoomCell.swift; sourceTree = "<group>"; };
+		43ACD1001CC688530010DC6D /* RequestManager+Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RequestManager+Chat.swift"; path = "Utils/RequestTool/RequestManager+Chat.swift"; sourceTree = "<group>"; };
 		43AD51591C95D257002261DB /* AvatarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvatarHeaderView.swift; path = Viewes/AvatarHeaderView/AvatarHeaderView.swift; sourceTree = "<group>"; };
 		43AD515C1C95D2A1002261DB /* AvatarHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AvatarHeaderView.xib; path = Storyboards/XIB/AvatarHeaderView/AvatarHeaderView.xib; sourceTree = "<group>"; };
 		43AD515E1C95DFFF002261DB /* AvatarCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvatarCameraView.swift; path = Viewes/AvatarHeaderView/AvatarCameraView.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 				430A59E01CA2A86900FCD13D /* RequestManager+DOCManager.swift */,
 				43D6C64B1CAA7E3B00DD4C99 /* RequestManager+Posting.swift */,
 				439AB7CE1CBB8BCC0015A874 /* RequestManager+Map.swift */,
+				43ACD1001CC688530010DC6D /* RequestManager+Chat.swift */,
 			);
 			name = "Request Util";
 			sourceTree = "<group>";
@@ -1419,6 +1422,7 @@
 				439AB7C71CB4EAAB0015A874 /* ManagePostsListDataSource.swift in Sources */,
 				434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */,
 				43A426691C916D480044B6A6 /* Resources.swift in Sources */,
+				43ACD1011CC688530010DC6D /* RequestManager+Chat.swift in Sources */,
 				43DC05B91C842BDD00AB670A /* ReportsView.swift in Sources */,
 				43FC7AB41CAB4CFA009EB4F4 /* GeneralGoodsVC.swift in Sources */,
 				439346611CBFACA900753D63 /* ChatCollectionViewCell.swift in Sources */,
