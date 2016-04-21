@@ -219,6 +219,11 @@ struct Params {
 }
 
 struct Response {
+    static let count = "count"
+    static let next = "next"
+    static let previous = "previous"
+    static let results = "results"
+    
     struct UserInfo {
         static let Latitude = "lat"
         static let Longitude = "lng"

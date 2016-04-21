@@ -41,6 +41,9 @@ class APNSManager: NSObject {
             APNSParams.deviceId: (UIDevice.currentDevice().identifierForVendor?.UUIDString)!,
             APNSParams.registrationId: deviceTokenString
         ]
+        if User.currentUser()?.token == nil {
+            return 
+        }
         RequestManager.sharedInstance().makeSilentRequest(.POST, baseURL: URL.User.APNS.Register, parameters: params) { [weak self] (json, error) -> () in
             if error == nil {
                 if let key = self?.AlreadyRegisteredKey {

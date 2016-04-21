@@ -6,6 +6,9 @@
 //  Copyright © 2016 Nick Kibish. All rights reserved.
 //
 
+// Connectin: ws://104.236.223.160/?token=<TOKEN>
+// Send Message: {"method":"post_message","text":"message text","room":romm_id}
+
 import UIKit
 import SocketRocket
 import SwiftyJSON
@@ -62,11 +65,9 @@ class SocketManager: NSObject {
     var state: SocketManager.State = .Closed
     
     func reloadSocket() {
-//        socket = nil
         let url = "\(URL.Socket)?token=\((User.currentUser()?.token)!)"
         socket = SocketWrapper(URL: NSURL(string: url)!)
         socket?.delegate = self
-//        state == .Closed
     }
     
     override init() {
@@ -80,21 +81,11 @@ class SocketManager: NSObject {
             socket?.delegate = self
             socket?.open()
         }
-//        reloadSocket()
-//        if socket?.readyState != .OPEN {
-//        if state == .Closed {
-//            state = .Opening
-//            socket?.delegate = self
-//            socket?.open()
-//        }
     }
     
     func close() {
-//        if state == .Opened {
-//            state = .Closing
-            socket?.close()
-        socket = nil 
-//        }
+        socket?.close()
+        socket = nil
     }
     
     func sendMessage(message: Message) {
@@ -122,7 +113,9 @@ extension SocketManager {
     }
     
     private func sendNewInvitation(roomDict: [String: AnyObject]) {
-        
+        let room = ChatRoom(json: roomDict)
+        let notification = NSNotification(name: SocketManager.NewRoom, object: room)
+        NSNotificationCenter.defaultCenter().postNotification(notification)
     }
 }
 

@@ -85,7 +85,11 @@ class RequestManager: NSObject {
 //MARK: - Simple Request
 extension RequestManager {
     func makeSilentRequest(method: Alamofire.Method, baseURL: String, parameters: [String:AnyObject]?, completion:((SwiftyJSON.JSON?, NSError?) -> ())) {
-        Alamofire.request(method, url(baseURL), headers: header(), parameters: parameters, encoding: .JSON)
+        makeRequestWithFullURL(method, baseURL: url(baseURL), parameters: parameters, completion: completion)
+    }
+    
+    func makeRequestWithFullURL(method: Alamofire.Method, baseURL: String, parameters: [String:AnyObject]?, completion:((SwiftyJSON.JSON?, NSError?) -> ())) {
+        Alamofire.request(method, baseURL, headers: header(), parameters: parameters, encoding: .JSON)
             .validate(statusCode: 200..<300)
             .responseData{ response in
                 let dataString = String(data: response.data!, encoding: NSUTF8StringEncoding)

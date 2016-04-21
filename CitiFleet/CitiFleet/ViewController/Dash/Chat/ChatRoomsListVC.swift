@@ -19,6 +19,7 @@ class ChatRoomsListVC: UITableViewController {
         }
         dataSource.loadRooms()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(newMessageReceived(_:)), name: SocketManager.NewMessage, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(joinedRoom(_:)), name: SocketManager.NewRoom, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -77,7 +78,14 @@ extension ChatRoomsListVC {
         return cell!
     }
     
-    
+    private func moveRoomToTop(room: ChatRoom) {
+        let index = dataSource.rooms.indexOf(room)
+        dataSource.rooms.removeAtIndex(index!)
+        dataSource.rooms.insert(room, atIndex: 0)
+        
+        tableView.moveRowAtIndexPath(NSIndexPath(forRow: index!, inSection: 1), toIndexPath: NSIndexPath(forRow: 0, inSection: 1))
+        tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 1)], withRowAnimation: .None)
+    }
 }
 
 //MARK: - Table View Delegate
@@ -122,6 +130,25 @@ extension ChatRoomsListVC {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 {
+            return
+        }
+        
+        if indexPath.row == dataSource.rooms.count - 1 && dataSource.shouldLoadNext {
+            dataSource.loadNext({ [weak self] (rooms, error) in
+                if rooms == nil {
+                    return
+                }
+                var indexPathes: [NSIndexPath] = []
+                for index in (indexPath.row + 1)...(indexPath.row + rooms!.count) {
+                    indexPathes.append(NSIndexPath(forRow: index, inSection: 1))
+                }
+                self?.tableView.insertRowsAtIndexPaths(indexPathes, withRowAnimation: .Automatic)
+            })
+        }
+    }
 }
 
 //MARK: - Chat Notifications
@@ -132,15 +159,20 @@ extension ChatRoomsListVC {
             if rooms.count > 0 {
                 let existingRoom = rooms[0]
                 existingRoom.lastMessage = message.message
-                let index = dataSource.rooms.indexOf(existingRoom)
-                dataSource.rooms.removeAtIndex(index!)
-                dataSource.rooms.insert(existingRoom, atIndex: 0)
-                
-                tableView.moveRowAtIndexPath(NSIndexPath(forRow: index!, inSection: 1), toIndexPath: NSIndexPath(forRow: 0, inSection: 1))
-                tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 1)], withRowAnimation: .None)
+                moveRoomToTop(existingRoom)
             }
-        } else {
-            
+        }
+    }
+    
+    func joinedRoom(notification: NSNotification) {
+        if let room = notification.object as? ChatRoom {
+            let rooms = dataSource.rooms.filter( {$0.id == room.id} )
+            if rooms.count > 0 {
+                moveRoomToTop(room)
+            } else {
+                dataSource.rooms.insert(room, atIndex: 0)
+                tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 1)], withRowAnimation: .Automatic)
+            }
         }
     }
 }
