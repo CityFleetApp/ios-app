@@ -51,6 +51,19 @@ extension ChatMainScreenVC {
             let navigationController = UINavigationController()
             navigationController.viewControllers = [vc]
             presentViewController(navigationController, animated: true, completion: nil)
+            vc.selectionCompleted = { [weak self] (users) in
+                if let users = users {
+                    RequestManager.sharedInstance().postRoom(Array(users), completion: { (room, error) in
+                        if error == nil {
+                            dispatch_async(dispatch_get_main_queue(), { [weak self] in
+                                let vc = ChatVC.viewControllerFromStoryboard()
+                                vc.room = room
+                                self?.navigationController?.pushViewController(vc, animated: true)
+                                })
+                        }
+                    })
+                }
+            }
         }
     }
     

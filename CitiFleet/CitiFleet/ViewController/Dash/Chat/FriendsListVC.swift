@@ -111,6 +111,7 @@ extension FriendsListVC {
 //MARK: - Presented Friend List -
 class ContactListVC: FriendsListVC {
     var selectedUsers = Set<Friend>()
+    var selectionCompleted: ((Set<Friend>?) -> ())?
     
     override class var StoryboardID: String {
         return "ContactListVC"
@@ -134,7 +135,9 @@ class ContactListVC: FriendsListVC {
     }
     
     func done(sender: AnyObject?) {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: { [weak self] in
+            self?.selectionCompleted?(self?.selectedUsers)
+        })
     }
 }
 
