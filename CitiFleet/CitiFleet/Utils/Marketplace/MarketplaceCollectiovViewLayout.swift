@@ -84,8 +84,11 @@ class MarketplaceCollectiovViewLayout: UICollectionViewLayout {
         let width = self.columnWidth
         for item in 0..<collectionView!.numberOfItemsInSection(0) {
             let attributes = layoutAttributesForIndex(item, xOffset: xOffsets[column], yOffset: yOffsets[column], column: column, width: width)
-            
-            cache.append(attributes)
+            if !cache.contains(attributes) {
+                cache.append(attributes)
+            } else {
+                
+            }
             contentHeight = max(contentHeight, CGRectGetMaxY(attributes.frame))
             yOffsets[column] = yOffsets[column] + attributes.frame.height
             column = column >= (numberOfColumns - 1) ? 0 : (column + 1)
@@ -100,6 +103,15 @@ class MarketplaceCollectiovViewLayout: UICollectionViewLayout {
             }
         }
         return layoutAttributes
+    }
+    
+    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+        for attributes in cache {
+            if indexPath.row == attributes.indexPath.row {
+                return attributes
+            }
+        }
+        return nil
     }
     
     func layoutAttributesForIndex(index: Int, xOffset: CGFloat, yOffset: CGFloat, column: Int, width: CGFloat) -> MarketplaceLayoutAttributes {

@@ -15,13 +15,22 @@ class ChatRoomsListDataSource: NSObject {
     var reloadData: (() -> ())!
     
     var nextPageUrl: String?
+    var offset: Int = 0
+    var searchText: String?
     var shouldLoadNext: Bool {
         return nextPageUrl != nil
     }
     
     func loadRooms() {
+        nextPageUrl = nil
         self.rooms.removeAll()
-        RequestManager.sharedInstance().get(URL.Chat.Rooms, parameters: nil) { [weak self] (json, error) in
+        
+        var url = URL.Chat.Rooms
+        if let search = searchText {
+            url = "\(URL.Chat.Rooms)?search=\(search)"
+        }
+        offset = 0
+        RequestManager.sharedInstance().get(url, parameters: nil) { [weak self] (json, error) in
             if let roomResponse = json?.dictionaryObject {
                 self?.nextPageUrl = roomResponse[Response.next] as? String
                 
@@ -29,6 +38,7 @@ class ChatRoomsListDataSource: NSObject {
                     for room in rooms {
                         let room = ChatRoom(json: room)
                         self?.rooms.append(room)
+                        self?.offset += 1
                     }
                 }
             }
@@ -41,12 +51,19 @@ class ChatRoomsListDataSource: NSObject {
             return
         }
         
-        RequestManager.sharedInstance().makeRequestWithFullURL(.GET, baseURL: nextPageUrl!, parameters: nil) { [weak self] (json, error) in
+        nextPageUrl = nil
+        
+        var url = "\(URL.Chat.Rooms)?offset=\(offset)"
+        if let search = searchText {
+            url = "\(URL.Chat.Rooms)?search=\(search)&offset=\(offset)"
+        }
+        
+        RequestManager.sharedInstance().makeRequest(.GET, baseURL: url, parameters: nil) { [weak self] (json, error) in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
             if let roomResponse = json?.dictionaryObject {
-                if let error = error {
-                    completion(nil, error)
-                    return
-                }
                 self?.nextPageUrl = roomResponse[Response.next] as? String
                 
                 if let rooms = roomResponse[Response.results] as? [AnyObject] {
@@ -55,6 +72,7 @@ class ChatRoomsListDataSource: NSObject {
                         let room = ChatRoom(json: room)
                         responseRooms.append(room)
                         self?.rooms.append(room)
+                        self?.offset += 1
                     }
                     dispatch_async(dispatch_get_main_queue(), { 
                         completion(responseRooms, nil)

@@ -21,4 +21,8 @@ class SearchCell: UITableViewCell {
     static let CellID = "SearchCell"
     
     @IBOutlet var searchTF: UITextField!
+    
+    override func awakeFromNib() {
+        searchTF.returnKeyType = .Search
+    }
 }

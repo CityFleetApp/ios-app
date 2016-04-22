@@ -15,6 +15,7 @@ class Message: NSObject {
     var roomId: Int?
     var date: NSDate?
     var author: User?
+    var participants: [Friend] = []
 
     override init() {
         super.init()
@@ -25,6 +26,21 @@ class Message: NSObject {
         message = json[Response.Chat.text] as? String
         roomId = json[Response.Chat.room] as? Int
         date = NSDateFormatter.serverResponseFormat.dateFromString(json[Response.Chat.created] as! String)
-        author = Friend(json: (json[Response.Chat.author])!!)
+        if let participantsArray = json[Response.Chat.participants] as? [AnyObject] {
+            parseParticipants(participantsArray)
+            let authorID = json[Response.Chat._author] as? Int
+            let authorArr = participants.filter({ return $0.id == authorID })
+            author = authorArr.count > 0 ? authorArr[0] : nil 
+        }
+    }
+}
+
+//MARK: - Private Methods
+extension Message {
+    private func parseParticipants(usersArr: [AnyObject]) {
+        for friendObj in usersArr {
+            let friend = Friend(json: friendObj)
+            participants.append(friend)
+        }
     }
 }

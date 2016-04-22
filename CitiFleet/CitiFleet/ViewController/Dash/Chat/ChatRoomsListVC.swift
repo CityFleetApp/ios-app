@@ -46,6 +46,7 @@ extension ChatRoomsListVC {
         if cell == nil {
             cell = SearchCell(style: .Default, reuseIdentifier: CellID)
         }
+        cell?.searchTF.delegate = self
         return cell!
     }
     
@@ -137,7 +138,7 @@ extension ChatRoomsListVC {
         }
         
         if indexPath.row == dataSource.rooms.count - 1 && dataSource.shouldLoadNext {
-            dataSource.loadNext({ [weak self] (rooms, error) in
+            dataSource.loadNext( { [weak self] (rooms, error) in
                 if rooms == nil {
                     return
                 }
@@ -172,7 +173,18 @@ extension ChatRoomsListVC {
             } else {
                 dataSource.rooms.insert(room, atIndex: 0)
                 tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 1)], withRowAnimation: .Automatic)
+                dataSource.offset += 1
             }
         }
+    }
+}
+
+//MARK: - Search Text Field
+extension ChatRoomsListVC: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        dataSource.searchText = textField.text
+        dataSource.loadRooms()
+        return true
     }
 }

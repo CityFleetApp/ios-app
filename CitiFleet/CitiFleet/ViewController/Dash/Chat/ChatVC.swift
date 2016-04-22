@@ -78,8 +78,6 @@ extension ChatVC {
             textViewDidChange(messageTF)
         }
     }
-    
-    
 }
 
 //MARK: - Private Methods
@@ -115,7 +113,7 @@ extension ChatVC {
             ChatVC.PhotoLeftPadding -
             ChatVC.PhotoRightPadding -
             ChatVC.PhotoWidth - ChatVC.StandardPadding * 2
-//            ChatVC.CellPadding * 2
+
         let height = text.heightWithConstrainedWidth(width, font: font) + ChatVC.StandardPadding * 2
         return max(ChatVC.PhotoWidth, height)
     }
@@ -146,6 +144,23 @@ extension ChatVC: UICollectionViewDataSource {
         cell.messageDateLbl.text = "\((message.author?.fullName)!) wrote at \(NSDateFormatter.standordFormater().stringFromDate(message.date!))"
         
         return cell
+    }
+}
+
+extension ChatVC: UICollectionViewDelegate {
+    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == datasource.messages.count - 1 {
+            datasource.loadNew({ [weak self] (messages) in
+                if messages == nil {
+                    return
+                }
+                var indexPathes: [NSIndexPath] = []
+                for index in (indexPath.row + 1)...(indexPath.row + messages!.count) {
+                    indexPathes.append(NSIndexPath(forRow: index, inSection: 0))
+                }
+                self?.collectionView.insertItemsAtIndexPaths(indexPathes)
+            })
+        }
     }
 }
 

@@ -320,10 +320,12 @@ struct Response {
         static let Name = "name"
         static let Label = "label"
         static let participantsInfo = "participants_info"
+        static let participants = "participants"
         static let messageType = "type"
         static let text = "text"
         static let room = "room"
-        static let author = "author_info"
+        static let authorInfo = "author_info"
+        static let _author = "author"
         static let created = "created"
         static let lastMessage = "last_message"
     }

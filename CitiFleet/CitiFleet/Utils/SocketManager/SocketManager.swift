@@ -6,6 +6,7 @@
 //  Copyright © 2016 Nick Kibish. All rights reserved.
 //
 
+// Doc: http://104.236.223.160/api/chat/websocket_docs/
 // Connectin: ws://104.236.223.160/?token=<TOKEN>
 // Send Message: {"method":"post_message","text":"message text","room":romm_id}
 
@@ -144,6 +145,8 @@ extension SocketManager: SRWebSocketDelegate {
                 } else if messageDict[Response.Chat.messageType] as! String == SocketManager.Method.RoomInvitation.rawValue {
                     sendNewInvitation(messageDict)
                 }
+                
+                
             } catch let error as NSError {4
                 print(error)
             }
