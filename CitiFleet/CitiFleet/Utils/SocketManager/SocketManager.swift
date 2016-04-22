@@ -59,6 +59,7 @@ class SocketManager: NSObject {
         case PostMessage = "post_message"
         case ReceiveMessage  = "receive_message"
         case RoomInvitation = "room_invitation"
+        case MarkReadRoom = "read_room"
     }
     static let sharedManager = SocketManager()
     var socket: SocketWrapper?
@@ -94,6 +95,20 @@ class SocketManager: NSObject {
             Params.Chat.method: Method.PostMessage.rawValue,
             Params.Chat.text: message.message!,
             Params.Chat.room: message.roomId!
+        ]
+        do {
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            let str = String(data: jsonData, encoding: NSUTF8StringEncoding)
+            socket?.send(str)
+        } catch let error as NSError {
+            print(error)
+        }
+    }
+    
+    func markRoomAsRead(room: ChatRoom) {
+        let params = [
+            Params.Chat.method: Method.MarkReadRoom.rawValue,
+            Params.Chat.room: room.id!
         ]
         do {
             let jsonData = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)

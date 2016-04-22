@@ -61,6 +61,7 @@ extension ChatRoomsListVC {
         cell?.roomNameLbl.text = room.participants.map({ $0.fullName! }).joinWithSeparator(", ")
         cell?.avatar.image = UIImage(named: Resources.NoAvatarIc)
         cell?.secondAvatar?.image = UIImage(named: Resources.NoAvatarIc)
+        cell?.contentView.backgroundColor = room.hasUnreadMesages ? UIColor(hex: Color.Chat.UnreadRoomBG, alpha: 0.3) : UIColor(hex: Color.Chat.CellBackeground, alpha: 0.8)
         
         cell?.lastMessageLbl.text = room.lastMessage
         
@@ -130,6 +131,13 @@ extension ChatRoomsListVC {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if indexPath.section == 0 {
+            return
+        }
+        let room = dataSource.rooms[indexPath.row]
+        room.hasUnreadMesages = false
+        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        SocketManager.sharedManager.markRoomAsRead(room)
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -137,8 +145,11 @@ extension ChatRoomsListVC {
             return
         }
         
+        let room = dataSource.rooms[indexPath.row]
+        cell.contentView.backgroundColor = room.hasUnreadMesages ? UIColor(hex: Color.Chat.UnreadRoomBG, alpha: 0.3) : UIColor(hex: Color.Chat.CellBackeground, alpha: 0.8)
+        
         if indexPath.row == dataSource.rooms.count - 1 && dataSource.shouldLoadNext {
-            dataSource.loadNext( { [weak self] (rooms, error) in
+            dataSource.loadNext({ [weak self] (rooms, error) in
                 if rooms == nil {
                     return
                 }
@@ -160,6 +171,7 @@ extension ChatRoomsListVC {
             if rooms.count > 0 {
                 let existingRoom = rooms[0]
                 existingRoom.lastMessage = message.message
+                existingRoom.hasUnreadMesages = true
                 moveRoomToTop(existingRoom)
             }
         }

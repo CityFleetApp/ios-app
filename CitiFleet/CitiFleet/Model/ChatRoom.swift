@@ -11,9 +11,9 @@ import UIKit
 class ChatRoom: NSObject {
     var lastMessage: String?
     var name: String?
-//    var label: String?
     var id: Int?
     var participants: [Friend] = []
+    var hasUnreadMesages = false
     
     override init() {
         super.init()
@@ -22,9 +22,9 @@ class ChatRoom: NSObject {
     init(json: AnyObject) {
         super.init()
         name = json[Response.Chat.Name] as? String
-//        label = json[Response.Chat.Label] as? String
         id = json[Params.id] as? Int
         lastMessage = json[Response.Chat.lastMessage] as? String
+        hasUnreadMesages = json[Response.Chat.unreadMessages] as? Int > 0
         
         if let participants = json[Response.Chat.participantsInfo] as? [AnyObject] {
             for participant in participants {

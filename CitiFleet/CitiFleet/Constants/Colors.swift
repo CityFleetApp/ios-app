@@ -33,5 +33,6 @@ struct Color {
     }
     struct Chat {
         static let CellBackeground = 0xF2F4F8
+        static let UnreadRoomBG = 0x2bb9a7
     }
 }
