@@ -18,7 +18,8 @@ class FriendsListVC: UITableViewController {
     
     override func viewDidLoad() {
         datasource.loadDataCompleted = { [weak self] in
-            self?.tableView.reloadData()
+            self?.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: .Automatic)
+//            self?.tableView.reloadData()
         }
         datasource.loadFriends()
     }
@@ -26,12 +27,20 @@ class FriendsListVC: UITableViewController {
 
 //MARK: - Private Methods
 extension FriendsListVC {
+    func changedText(sender: AnyObject) {
+        if let textField = sender as? UITextField {
+            datasource.searchFriends(textField.text)
+        }
+    }
+    
     private func searchCell(tableView: UITableView, indexPath: NSIndexPath) -> UITableViewCell {
         let CellID = SearchCell.CellID
         var cell = tableView.dequeueReusableCellWithIdentifier(CellID) as? SearchCell
         if cell == nil {
             cell = SearchCell(style: .Default, reuseIdentifier: CellID)
         }
+        cell?.searchTF.addTarget(self, action: #selector(changedText(_:)), forControlEvents: .EditingChanged)
+        cell?.searchTF.delegate = self
         return cell!
     }
     
@@ -105,6 +114,15 @@ extension FriendsListVC {
         default:
             return 0
         }
+    }
+}
+
+
+//MARK: - Text Field Delegate
+extension FriendsListVC: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 

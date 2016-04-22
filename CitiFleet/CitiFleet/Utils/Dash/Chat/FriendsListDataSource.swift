@@ -9,19 +9,38 @@
 import UIKit
 
 class FriendsListDataSource: NSObject {
-    var friends: [Friend] = []
+    private var _friends: [Friend] = []
+    private var filteredFriends: [Friend] = []
+    private var searchText: String?
+    
     var loadDataCompleted: (() -> ())!
     
+    var friends: [Friend] {
+        if searchText == nil || searchText == "" {
+            return _friends
+        } else {
+            return filteredFriends
+        }
+    }
+    
     func loadFriends() {
-        friends.removeAll()
+        _friends.removeAll()
         RequestManager.sharedInstance().get(URL.Chat.Friends, parameters: nil) { [weak self] (json, error) in
             if let friends = json?.arrayObject {
                 for obj in friends {
                     let friend = Friend(json: obj)
-                    self?.friends.append(friend)
+                    self?._friends.append(friend)
                 }
             }
             self?.loadDataCompleted()
         }
+    }
+    
+    func searchFriends(searchText: String?) {
+        self.searchText = searchText
+        if let text = searchText {
+            filteredFriends = _friends.filter({ return $0.fullName?.lowercaseString.rangeOfString(text.lowercaseString) != nil })
+        }
+        loadDataCompleted()
     }
 }
