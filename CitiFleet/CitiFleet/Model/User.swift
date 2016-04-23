@@ -52,6 +52,9 @@ class User: NSObject, NSCoding {
     var email: String?
     var token: String?
     var avatarURL: NSURL?
+    var rating: Float?
+    var documentsUpToDate: Bool? = false
+    var jobsCompleted: Int? = 0
     
     var userName: String? {
         return profile.username
@@ -62,12 +65,7 @@ class User: NSObject, NSCoding {
     var bio: String? {
         return profile.bio
     }
-    var drives: String? {
-        let carYear = profile.carYear != nil ? "\(profile.carYear!)" : ""
-        let catModel = profile.carModelDisplay ?? ""
-        let carMake = profile.carMakeDisplay ?? ""
-        return "\(carYear) \(carMake) \(catModel)"
-    }
+    var drives: String?
     
     var profile = Profile()
     
@@ -112,6 +110,29 @@ class User: NSObject, NSCoding {
         if self == User.currUser {
             let data = NSKeyedArchiver.archivedDataWithRootObject(self)
             NSUserDefaults.standardUserDefaults().setObject(data, forKey: UserKeys.User)
+        }
+    }
+    
+    func loadInfo(completion: ((NSError?) -> ())) {
+        typealias Param = Response.UserInfo.Info
+        RequestManager.sharedInstance().get(URL.User.Info, parameters: nil) { [weak self] (json, error) in
+            if error != nil {
+                completion(error)
+                return
+            }
+            
+            if let responseDictionory = json?.dictionaryObject {
+                if let newAvatar = responseDictionory[Param.avatarURL] as? String {
+                    self?.avatarURL = NSURL(string: newAvatar)
+                }
+                
+                self?.drives = responseDictionory[Param.drives] as? String
+                self?.profile.bio = responseDictionory[Param.bio] as? String
+                self?.rating = responseDictionory[Param.rating] as? Float
+                self?.documentsUpToDate = responseDictionory[Param.documentsUpToDate] as? Bool
+                self?.jobsCompleted = responseDictionory[Param.jobsCompleted] as? Int 
+            }
+            completion(nil)
         }
     }
     

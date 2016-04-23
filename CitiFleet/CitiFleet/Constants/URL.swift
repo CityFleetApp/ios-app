@@ -20,6 +20,7 @@ struct URL {
     static let Production = ""
     static let BaseUrl = Sandbox
     struct User {
+        static let Info = "users/info/"
         struct APNS {
             static let Register = "users/devicesdevice/apns/"
         }
@@ -236,6 +237,14 @@ struct Response {
         static let HackLicense = "hack_license"
         static let Token = "token"
         static let AvatarUrl = "avatar_url"
+        struct Info {
+            static let jobsCompleted = "jobs_completed"
+            static let rating = "rating"
+            static let drives = "drives"
+            static let bio = "bio"
+            static let documentsUpToDate = "documents_up_to_date"
+            static let avatarURL = "avatar_url"
+        }
         struct Profile {
             static let carMake = "car_make"
             static let carModel = "car_model"
