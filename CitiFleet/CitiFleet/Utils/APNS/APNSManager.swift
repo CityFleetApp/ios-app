@@ -9,6 +9,12 @@
 import Foundation
 
 class APNSManager: NSObject {
+    enum Notification: String {
+        case NewMessage = "APNS.NewMessage"
+        case NewJobOffer = "APNS.NewJobOfer"
+        case NewNotification = "APNS.NewNotification"
+    }
+    
     let AlreadyRegisteredKey = "AlreadyRegisteredKey"
     var deviceToken: String?
     private static let _sharedManager = APNSManager()
@@ -16,6 +22,10 @@ class APNSManager: NSObject {
         get {
             return _sharedManager
         }
+    }
+    
+    func didReceiveRemoteNotification(userInfo: [NSObject : AnyObject]) {
+        
     }
     
     func registerForRemoteNotifications() {

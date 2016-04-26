@@ -25,21 +25,26 @@ class OptionsPostingVC: UITableViewController {
         UIMenuController.sharedMenuController().menuItems = [menuItemDelete]
         UIMenuController.sharedMenuController().menuVisible = true
         
+        vehicleCollectionViewDelegate = PostingPhotosCollectionDelegate(reloadData: { [unowned self] in
+            self.photoCollectionView.reloadData()
+            })
+        photoCollectionView.dataSource = vehicleCollectionViewDelegate
+        photoCollectionView.delegate = vehicleCollectionViewDelegate
+        
         if let car = existingCar {
             cellBuilder = UpdateRentSaleCellBuilder(tableView: tableView, marketPlaceManager: dataManager)
-            (cellBuilder as! UpdateRentSaleCellBuilder).existingCar = car 
+            (cellBuilder as! UpdateRentSaleCellBuilder).existingCar = car
+            let photos = car.photosURLs.map({ (photo) -> GalleryPhoto in
+                return GalleryPhoto(attributedCaptionTitle: NSAttributedString(), largePhotoURL: photo.URL, thumbURL: photo.URL, id: photo.id)
+            })
+            vehicleCollectionViewDelegate.images = photos
+            photoCollectionView.reloadData()
         } else {
             cellBuilder = MyRentSaleCellBuilder(tableView: tableView, marketPlaceManager: dataManager)
         }
         cellBuilder.postingCreater = uploader
         dataManager.loadData()
         
-        vehicleCollectionViewDelegate = PostingPhotosCollectionDelegate(reloadData: { [unowned self] in
-            self.photoCollectionView.reloadData()
-        })
-        
-        photoCollectionView.dataSource = vehicleCollectionViewDelegate
-        photoCollectionView.delegate = vehicleCollectionViewDelegate
         
         cellBuilder.reloadData = { [unowned self] in
             self.tableView.reloadData()
@@ -84,10 +89,10 @@ class OptionsPostingVC: UITableViewController {
         }
         
         UIView.animateWithDuration(0.25,
-            animations: { [unowned self] in
-                self.tableView.contentOffset = CGPoint(x: 0, y: position)
-            }, completion: { [unowned self] (completed) in
-                let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? PostingCell
+            animations: { [weak self] in
+                self?.tableView.contentOffset = CGPoint(x: 0, y: position)
+            }, completion: { [weak self] (completed) in
+                let cell = self?.tableView.cellForRowAtIndexPath(indexPath) as? PostingCell
                 if let cell = cell {
                     cell.placeHolder?.textColor = UIColor.redColor()
                 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class CarsForRentSale: GoodsForSaleVC {
     private let ChangedRentSaleValue = "changedRentSale:"

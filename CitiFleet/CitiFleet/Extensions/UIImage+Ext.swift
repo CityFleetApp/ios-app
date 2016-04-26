@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 extension UIImage {
     static func imageWithView(view: UIView) -> UIImage {
@@ -29,5 +30,18 @@ extension UIImage {
         let normalizedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext();
         return normalizedImage;
+    }
+    
+    func scaleToMaxSide(side: CGFloat) -> UIImage {
+        let cof = min(1, CGFloat(1024) / max(size.width, size.height))
+        let boundingRect = CGSizeApplyAffineTransform(size, CGAffineTransformMakeScale(cof, cof))
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, cof)
+        drawInRect(CGRect(origin: CGPointZero, size: size))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return scaledImage
     }
 }

@@ -79,7 +79,7 @@ class DOCManager: NSObject {
         
         let HTTPMethod = document.id != nil ? "PATCH" : "POST"
         
-        RequestManager.sharedInstance().postDoc(HTTPMethod, docID: document.id, fieldKey: key, fieldValue: value, docType: document.type.rawValue, photo: document.photo!, completion: { (response, error) in
+        RequestManager.sharedInstance().postDoc(HTTPMethod, docID: document.id, fieldKey: key, fieldValue: value, docType: document.type.rawValue, photo: document.photo!.scaleToMaxSide(Sizes.Image.upladeSide), completion: { (response, error) in
             
         })
     }

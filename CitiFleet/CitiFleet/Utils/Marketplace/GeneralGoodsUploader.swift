@@ -37,10 +37,10 @@ class GeneralGoodsPatcher: GeneralGoodsUploader {
         for deletedID in deletedPhotos {
             operationQueue.addOperation(DeleteGoodPhotoOperation(id: deletedID))
         }
-        
         for image in photos {
             operationQueue.addOperation(AddPhotoOperation(photo: image, id: id!))
         }
+        
         operationQueue.addObserver(self, forKeyPath: operationsKeyPath, options: NSKeyValueObservingOptions(), context: nil)
     }
     

@@ -74,7 +74,7 @@ extension RequestManager {
         
         var imageData: [NSData] = []
         for image in photos {
-            imageData.append(UIImagePNGRepresentation(image)!)
+            imageData.append(UIImagePNGRepresentation(image.scaleToMaxSide(Sizes.Image.upladeSide))!)
         }
         
         var URLStr = ""

@@ -29,6 +29,7 @@ class MapVC: UIViewController {
     @IBOutlet var mapView: GMSMapView!
     
     var infoDelegate: InfoViewDelegate?
+    var shouldSendLocationRequest = false
     
     var marker: GMSMarker? {
         get {
@@ -56,13 +57,18 @@ class MapVC: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        shouldSendLocationRequest = true
         if let _ = User.currentUser() {
             LocationManager.sharedInstance().startUpdatingLocation()
         }
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        shouldSendLocationRequest = false
+    }
+    
     func updatedLocation(locationNotif: NSNotification) {
-        if User.currentUser()?.token == nil {
+        if User.currentUser()?.token == nil || shouldSendLocationRequest == false {
             return
         }
         loadReports()

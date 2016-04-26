@@ -72,8 +72,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
         if User.currentUser() == nil {
             let storyboard = UIStoryboard(name: Storyboard.LoginStoryboard, bundle: NSBundle.mainBundle())
             let loginNavController = storyboard.instantiateViewControllerWithIdentifier(ViewControllerID.Login)
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.rootViewController().presentViewController(loginNavController, animated: true, completion: nil)
+            dispatch_async(dispatch_get_main_queue(), { [weak self] () -> Void in
+                self?.rootViewController().presentViewController(loginNavController, animated: true, completion: nil)
             })
         }
     }
@@ -87,6 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        
+        print("notification userInfo: \(userInfo)")
+        APNSManager.sharedManager.didReceiveRemoteNotification(userInfo)
     }
 }

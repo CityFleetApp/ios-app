@@ -109,8 +109,6 @@ public extension UIImage {
         return applyBlurWithRadius(30, tintColor: UIColor(white: 1.0, alpha: 0.3), saturationDeltaFactor: 1.8)
     }
     
-    
-    
     public func applyExtraLightEffect() -> UIImage? {
         return applyBlurWithRadius(20, tintColor: UIColor(white: 0.97, alpha: 0.82), saturationDeltaFactor: 1.8)
     }
