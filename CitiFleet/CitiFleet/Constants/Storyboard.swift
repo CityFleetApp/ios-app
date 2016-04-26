@@ -15,6 +15,7 @@ struct Storyboard {
 }
 
 struct XIB {
+    static let APNSView = "NotificationView"
     static let ReportXIB = "ReportsView"
     static let BarcodeXIB = "BarcodeView"
     static let LegalAidXIB = "LegalAid"

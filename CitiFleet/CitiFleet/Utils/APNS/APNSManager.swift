@@ -1,3 +1,4 @@
+
 //
 //  APNSManager.swift
 //  CitiFleet
@@ -10,7 +11,7 @@ import Foundation
 
 class APNSManager: NSObject {
     enum Notification: String {
-        case NewMessage = "APNS.NewMessage"
+        case NewMessage = "receive_message"
         case NewJobOffer = "APNS.NewJobOfer"
         case NewNotification = "APNS.NewNotification"
     }
@@ -25,7 +26,18 @@ class APNSManager: NSObject {
     }
     
     func didReceiveRemoteNotification(userInfo: [NSObject : AnyObject]) {
-        
+        if let messageObj = userInfo[Notification.NewMessage.rawValue] {
+            let message = Message()
+            message.message = userInfo[DictionaryKeys.APNS.main]![DictionaryKeys.APNS.alert] as? String
+            message.roomId = messageObj[Response.Chat.roomID] as? Int
+            let avatarStr = (messageObj[Response.UploadAvatar.avatar] as? String)
+            if avatarStr != "" && avatarStr != nil {
+                message.author = User()
+                message.author?.avatarURL = NSURL(string: avatarStr!)
+            }
+            let notification = NSNotification(name: Notification.NewMessage.rawValue, object: message)
+            NSNotificationCenter.defaultCenter().postNotification(notification)
+        }
     }
     
     func registerForRemoteNotifications() {

@@ -17,6 +17,9 @@ struct Sizes {
     struct Button {
         static let ImageTitleSpacing: CGFloat = 6.0
     }
+    struct Viewes {
+        static let APNSHeight: CGFloat = 80
+    }
 }
 
 struct Constant {

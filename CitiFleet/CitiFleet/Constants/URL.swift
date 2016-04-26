@@ -333,6 +333,7 @@ struct Response {
         static let messageType = "type"
         static let text = "text"
         static let room = "room"
+        static let roomID = "room_id"
         static let authorInfo = "author_info"
         static let _author = "author"
         static let unreadMessages = "unseen"

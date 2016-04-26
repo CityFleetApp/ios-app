@@ -9,6 +9,10 @@
 import Foundation
 
 struct DictionaryKeys {
+    struct APNS {
+        static let main = "aps"
+        static let alert = "alert"
+    }
     struct Chat {
         static let ScreenNumber = "ScreenNumber"
     }

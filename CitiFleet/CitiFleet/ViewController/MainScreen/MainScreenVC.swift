@@ -147,3 +147,7 @@ extension MainScreenVC: InfoViewDelegate {
         friendInfoView.hideView()
     }
 }
+
+class MapVCContainer: UIViewController {
+    
+}

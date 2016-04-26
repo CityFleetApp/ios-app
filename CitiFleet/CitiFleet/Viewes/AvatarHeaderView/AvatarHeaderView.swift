@@ -39,9 +39,9 @@ class AvatarHeaderView: UIView, AvatarXIBName {
     var avatarUrl: NSURL! {
         didSet {
             let cache = Shared.imageCache
-            cache.fetch(URL: avatarUrl).onSuccess { image in
+            cache.fetch(URL: avatarUrl).onSuccess { [weak self] (image) in
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.avatarImage = image
+                    self?.avatarImage = image
                 }
             }
         }

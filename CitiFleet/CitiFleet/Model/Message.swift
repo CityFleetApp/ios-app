@@ -25,7 +25,9 @@ class Message: NSObject {
         super.init()
         message = json[Response.Chat.text] as? String
         roomId = json[Response.Chat.room] as? Int
-        date = NSDateFormatter.serverResponseFormat.dateFromString(json[Response.Chat.created] as! String)
+        if let dateStr = json[Response.Chat.created] as? String {
+            date = NSDateFormatter.serverResponseFormat.dateFromString(dateStr)
+        }
         if let participantsArray = json[Response.Chat.participants] as? [AnyObject] {
             parseParticipants(participantsArray)
             let authorID = json[Response.Chat._author] as? Int
