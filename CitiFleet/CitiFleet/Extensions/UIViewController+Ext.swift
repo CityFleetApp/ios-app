@@ -9,6 +9,7 @@
 import UIKit
 import Haneke
 
+
 extension UIViewController {
     public override class func initialize() {
         struct Static {
@@ -53,12 +54,20 @@ extension UIViewController {
     }
     
     func subscribeNotifications() {
+        if self.isKindOfClass(NSClassFromString("UIInputWindowController")!) {
+            return
+        }
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(openMessage(_:)), name: APNSManager.Notification.NewMessage.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(openJobOffer(_:)), name: APNSManager.Notification.NewJobOffer.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(openNotification(_:)), name: APNSManager.Notification.NewNotification.rawValue, object: nil)
     }
     
     func unsubscribe() {
+        if self.isKindOfClass(NSClassFromString("UIInputWindowController")!) {
+            return
+        }
+        print(self)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: APNSManager.Notification.NewMessage.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: APNSManager.Notification.NewJobOffer.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: APNSManager.Notification.NewNotification.rawValue, object: nil)
@@ -69,8 +78,29 @@ extension UIViewController {
         apnsView.pushIcon.layer.cornerRadius = apnsView.pushIcon.frame.width / 2
         
         if let message = notification.object as? Message {
-            view.addSubview(apnsView)
+            if let root = AppDelegate.sharedDelegate().rootViewController() as? RootVC {
+                root.view.addSubview(apnsView)
+            } else if let _ = AppDelegate.sharedDelegate().rootViewController().presentingViewController as? RootVC {
+                AppDelegate.sharedDelegate().rootViewController().view.addSubview(apnsView)
+            }
             apnsView.pushText.text = message.message
+            
+            apnsView.natificationTapped = {
+                let room = ChatRoom()
+                room.id = message.roomId
+                let chatVC = ChatVC.viewControllerFromStoryboard()
+                chatVC.room = room
+                
+                var navController: UINavigationController?
+                for vc in AppDelegate.sharedDelegate().rootViewController().childViewControllers {
+                    if vc.isKindOfClass(UINavigationController) {
+                        navController = vc as? UINavigationController
+                    }
+                }
+                navController?.pushViewController(chatVC, animated: true)
+                apnsView.hide()
+            }
+            
             if let url = message.author?.avatarURL {
                 apnsView.pushIcon.hnk_setImageFromURL(url)
                 let cache = Shared.imageCache
@@ -97,7 +127,11 @@ extension UIViewController {
 }
 
 extension UINavigationController {
-    override func openMessage(notification: NSNotification) {
+    override func subscribeNotifications() {
+        
+    }
+    
+    override func unsubscribe() {
         
     }
 }

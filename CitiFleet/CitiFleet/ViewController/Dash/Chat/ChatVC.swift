@@ -48,6 +48,14 @@ class ChatVC: UIViewController {
         }
     }
     
+    override func openMessage(notification: NSNotification) {
+        if let message = notification.object as? Message {
+            if message.roomId != room.id {
+                super.openMessage(notification)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         setupCollectionViewLayouts()
         setupNotifications()

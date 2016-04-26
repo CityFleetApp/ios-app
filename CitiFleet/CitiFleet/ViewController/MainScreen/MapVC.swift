@@ -61,9 +61,6 @@ class MapVC: UIViewController {
         if let _ = User.currentUser() {
             LocationManager.sharedInstance().startUpdatingLocation()
         }
-        if let parentVC = parentViewController {
-            NSNotificationCenter.defaultCenter().removeObserver(parentVC)
-        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -71,6 +68,10 @@ class MapVC: UIViewController {
     }
     
     override func subscribeNotifications() {
+        
+    }
+    
+    override func unsubscribe() {
         
     }
     

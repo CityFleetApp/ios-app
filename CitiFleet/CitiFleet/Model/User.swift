@@ -188,6 +188,8 @@ class User: NSObject, NSCoding {
                 currUser = user
                 currUser?.saveUser()
                 completion(user, nil)
+                
+                APNSManager.sharedManager.registerForRemoteNotifications()
             }
         }
     }
@@ -216,13 +218,14 @@ class User: NSObject, NSCoding {
             currUser = user
             currUser?.saveUser()
             completion(user, nil)
-            
             APNSManager.sharedManager.registerForRemoteNotifications()
         }
     }
     
     class func logout() {
+        APNSManager.sharedManager.unregisterForRemoteNotifications()
         NSUserDefaults.standardUserDefaults().removeObjectForKey(UserKeys.User)
+        NSUserDefaults.standardUserDefaults().removeObjectForKey(APNSManager.sharedManager.AlreadyRegisteredKey)
         currUser = nil
     }
     

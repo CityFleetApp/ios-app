@@ -34,10 +34,10 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Root DashVC-->
         <scene sceneID="Cpa-Kz-9cE">
             <objects>
-                <viewController storyboardIdentifier="DashContainerVC" id="a8U-Av-i3Y" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashContainerVC" id="a8U-Av-i3Y" customClass="RootDashVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C9O-wx-isf"/>
                         <viewControllerLayoutGuide type="bottom" id="rgk-iw-YUi"/>

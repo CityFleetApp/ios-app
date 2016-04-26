@@ -92,8 +92,8 @@ extension RequestManager {
         Alamofire.request(method, baseURL, headers: header(), parameters: parameters, encoding: .JSON)
             .validate(statusCode: 200..<300)
             .responseData{ response in
-                let dataString = String(data: response.data!, encoding: NSUTF8StringEncoding)
-                print("Response data: \(dataString)")
+//                let dataString = String(data: response.data!, encoding: NSUTF8StringEncoding)
+//                print("Response data: \(dataString)")
                 
                 self.endRequest(nil, responseData: nil)
                 switch response.result {

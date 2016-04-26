@@ -8,6 +8,16 @@
 
 import UIKit
 
+class RootVC: UIViewController {
+    override func subscribeNotifications() {
+        
+    }
+    
+    override func unsubscribe() {
+        
+    }
+}
+
 class MainScreenVC: UIViewController {
     private let ReportInfoViewHeght: CGFloat = 150
     

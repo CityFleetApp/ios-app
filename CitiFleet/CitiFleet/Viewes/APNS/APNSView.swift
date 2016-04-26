@@ -17,6 +17,7 @@ class APNSView: UIView {
     class func viewFromNib() -> APNSView {
         let apnsView = NSBundle.mainBundle().loadNibNamed(XIB.APNSView, owner: self, options: nil).first as! APNSView
         apnsView.tapGesture = UITapGestureRecognizer(target: apnsView, action: #selector(tapped(_:)))
+        apnsView.addGestureRecognizer(apnsView.tapGesture)
         
         apnsView.frame = CGRect(x: 0, y: -Sizes.Viewes.APNSHeight , width: UIScreen.mainScreen().bounds.width, height: Sizes.Viewes.APNSHeight)
         return apnsView
@@ -52,6 +53,5 @@ class APNSView: UIView {
 extension APNSView {
     func tapped(sender: UITapGestureRecognizer) {
         natificationTapped?()
-        hide()
     }
 }

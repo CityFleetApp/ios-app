@@ -10,6 +10,16 @@ import UIKit
 import CoreImage
 import Haneke
 
+class RootDashVC: UIViewController {
+    override func subscribeNotifications() {
+        
+    }
+    
+    override func unsubscribe() {
+        
+    }
+}
+
 class DashVC: UITableViewController {
     @IBOutlet var headerView: AvatarCameraView!
     private var tableHeaderHeight: CGFloat = 235

@@ -47,6 +47,11 @@ class APNSManager: NSObject {
         application.registerForRemoteNotifications()
     }
     
+    func unregisterForRemoteNotifications() {
+        let application = UIApplication.sharedApplication()
+        application.unregisterForRemoteNotifications()
+    }
+    
     func registerAPNSToken(deviceToken: NSData?) {
         if (NSUserDefaults.standardUserDefaults().valueForKey(AlreadyRegisteredKey) as? Bool) == true {
             return
