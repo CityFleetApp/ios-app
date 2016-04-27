@@ -12,7 +12,18 @@ import NYTPhotoViewer
 
 class PostingPhotosCollectionDelegate: VehicleCollectionViewDelegate {
     override func downloadPhotos() {
+        let urls = images
+            .filter({ return $0.largePhotoURL != nil })
+            .map({ return ($0.largePhotoURL)! })
         
+        for url in urls {
+            let index = urls.indexOf(url)
+            Shared.imageCache.fetch(URL: url).onSuccess { [weak self] (image) in
+                dispatch_async(dispatch_get_main_queue()) {
+                    self?.reloadItem?(NSIndexPath(forItem: index!, inSection: 0))
+                }
+            }
+        }
     }
     
     override func deletePhoto(photo: NYTPhoto) {
@@ -35,20 +46,33 @@ class PostingPhotosCollectionDelegate: VehicleCollectionViewDelegate {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CellID.Profile.VehiclePhotoCell, forIndexPath: indexPath) as! VehiclePhotoCell
         let image = images.count > indexPath.item ? images[indexPath.item].image : UIImage(named: Resources.Profile.VehicleDefault)
+        cell.photo.image = nil
+        for subviewe in cell.photo.subviews {
+            subviewe.removeFromSuperview()
+        }
+        
+        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
         if image == nil && images[indexPath.item].largePhotoURL != nil  {
-            cell.photo.hnk_setImageFromURL(images[indexPath.item].largePhotoURL!)
+            cell.photo.addSubview(indicator)
+            indicator.startAnimating()
+            indicator.center = cell.photo.center
         } else {
             cell.photo.image = image
         }
-        cell.deleteItem = { [unowned self] (deleted, error) in
+        cell.deleteItem = { [weak self] (deleted, error) in
             if deleted {
-                if let photoID = self.images[indexPath.item].id {
-                    self.deletedImagesIDs.append(photoID)
+                if let photoID = self?.images[indexPath.item].id {
+                    self?.deletedImagesIDs.append(photoID)
                 }
-                self.images.removeAtIndex(indexPath.item)
-                self.reloadData()
+                self?.images.removeAtIndex(indexPath.item)
+                self?.reloadData()
             }
         }
         return cell
+    }
+    
+    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
+        let photo = images[indexPath.item]
+        deletePhoto(photo)
     }
 }

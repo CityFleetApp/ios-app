@@ -73,6 +73,7 @@
 		435611991C8763AA0050EDE7 /* RequestManager+SocialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435611981C8763AA0050EDE7 /* RequestManager+SocialManager.swift */; };
 		4362E5CD1CCF4A49009BA46D /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4362E5CC1CCF4A49009BA46D /* NotificationView.xib */; };
 		4362E5CF1CCF4CDA009BA46D /* APNSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362E5CE1CCF4CDA009BA46D /* APNSView.swift */; };
+		4362E5D11CD0B803009BA46D /* Dictionary+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4362E5D01CD0B802009BA46D /* Dictionary+Ext.swift */; };
 		436A20771CBCE4E90052ECDE /* FriendsMarker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436A20761CBCE4E90052ECDE /* FriendsMarker.xib */; };
 		436A20791CBCE77A0052ECDE /* FriendsMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436A20781CBCE77A0052ECDE /* FriendsMarker.swift */; };
 		436D6B181C92C2C200A0240E /* Benefit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D6B171C92C2C200A0240E /* Benefit.swift */; };
@@ -206,7 +207,7 @@
 		430B4F421C7DC73D00EE884A /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URL.swift; path = Constants/URL.swift; sourceTree = "<group>"; };
 		430B4F441C7DE33700EE884A /* NSData+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSData+Ext.swift"; path = "Extensions/NSData+Ext.swift"; sourceTree = "<group>"; };
 		430B4F471C7DEAF000EE884A /* LoaderViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderViewManager.swift; sourceTree = "<group>"; };
-		4316BB7A1C7B046A007A9ECB /* CitiFleet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CitiFleet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4316BB7A1C7B046A007A9ECB /* CityFleet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityFleet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4316BB7D1C7B046A007A9ECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4316BB841C7B046A007A9ECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4316BB871C7B046A007A9ECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -260,6 +261,7 @@
 		435611981C8763AA0050EDE7 /* RequestManager+SocialManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RequestManager+SocialManager.swift"; path = "Utils/RequestTool/RequestManager+SocialManager.swift"; sourceTree = "<group>"; };
 		4362E5CC1CCF4A49009BA46D /* NotificationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationView.xib; path = Viewes/Notification/NotificationView.xib; sourceTree = "<group>"; };
 		4362E5CE1CCF4CDA009BA46D /* APNSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APNSView.swift; path = Viewes/APNS/APNSView.swift; sourceTree = "<group>"; };
+		4362E5D01CD0B802009BA46D /* Dictionary+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+Ext.swift"; path = "Extensions/Dictionary+Ext.swift"; sourceTree = "<group>"; };
 		436A20761CBCE4E90052ECDE /* FriendsMarker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FriendsMarker.xib; path = Storyboards/XIB/FriendsMarker.xib; sourceTree = "<group>"; };
 		436A20781CBCE77A0052ECDE /* FriendsMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FriendsMarker.swift; path = Viewes/MainScreen/Map/FriendsMarker.swift; sourceTree = "<group>"; };
 		436D6B171C92C2C200A0240E /* Benefit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Benefit.swift; path = Model/Benefit.swift; sourceTree = "<group>"; };
@@ -479,7 +481,7 @@
 		4316BB7B1C7B046A007A9ECB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4316BB7A1C7B046A007A9ECB /* CitiFleet.app */,
+				4316BB7A1C7B046A007A9ECB /* CityFleet.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -554,6 +556,7 @@
 				43CFA7641C939E7C00DC89C9 /* NSAttributedString+Ext.swift */,
 				430A59E21CA2B66100FCD13D /* NSDateFormater+Ext.swift */,
 				439AB7901CAE71B50015A874 /* String+Ext.swift */,
+				4362E5D01CD0B802009BA46D /* Dictionary+Ext.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -1170,9 +1173,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4316BB791C7B046A007A9ECB /* CitiFleet */ = {
+		4316BB791C7B046A007A9ECB /* CityFleet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4316BB8C1C7B046A007A9ECB /* Build configuration list for PBXNativeTarget "CitiFleet" */;
+			buildConfigurationList = 4316BB8C1C7B046A007A9ECB /* Build configuration list for PBXNativeTarget "CityFleet" */;
 			buildPhases = (
 				8529157B759B4DF2FDC94D6E /* Check Pods Manifest.lock */,
 				4316BB761C7B046A007A9ECB /* Sources */,
@@ -1186,9 +1189,9 @@
 			);
 			dependencies = (
 			);
-			name = CitiFleet;
+			name = CityFleet;
 			productName = CitiFleet;
-			productReference = 4316BB7A1C7B046A007A9ECB /* CitiFleet.app */;
+			productReference = 4316BB7A1C7B046A007A9ECB /* CityFleet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1220,7 +1223,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4316BB791C7B046A007A9ECB /* CitiFleet */,
+				4316BB791C7B046A007A9ECB /* CityFleet */,
 			);
 		};
 /* End PBXProject section */
@@ -1383,6 +1386,7 @@
 				435611991C8763AA0050EDE7 /* RequestManager+SocialManager.swift in Sources */,
 				4316BBA21C7B5EEC007A9ECB /* UITextField+Ext.swift in Sources */,
 				43A76DA11CBF7DAB00209320 /* ChatRoomCell.swift in Sources */,
+				4362E5D11CD0B803009BA46D /* Dictionary+Ext.swift in Sources */,
 				439AB7A21CB3A2A70015A874 /* EditProfileVC.swift in Sources */,
 				43DC05CC1C85B04F00AB670A /* AddFriendsCell.swift in Sources */,
 				430A59E11CA2A86900FCD13D /* RequestManager+DOCManager.swift in Sources */,
@@ -1624,7 +1628,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4316BB8C1C7B046A007A9ECB /* Build configuration list for PBXNativeTarget "CitiFleet" */ = {
+		4316BB8C1C7B046A007A9ECB /* Build configuration list for PBXNativeTarget "CityFleet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4316BB8D1C7B046A007A9ECB /* Debug */,

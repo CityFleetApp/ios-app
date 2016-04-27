@@ -21,10 +21,6 @@ class OptionsPostingVC: UITableViewController {
     private var vehicleCollectionViewDelegate: PostingPhotosCollectionDelegate!
     
     override func viewDidLoad() {
-        let menuItemDelete = UIMenuItem(title: "Delete", action: Selector("deletePhoto:"))
-        UIMenuController.sharedMenuController().menuItems = [menuItemDelete]
-        UIMenuController.sharedMenuController().menuVisible = true
-        
         vehicleCollectionViewDelegate = PostingPhotosCollectionDelegate(reloadData: { [unowned self] in
             self.photoCollectionView.reloadData()
             })
@@ -32,29 +28,45 @@ class OptionsPostingVC: UITableViewController {
         photoCollectionView.delegate = vehicleCollectionViewDelegate
         
         if let car = existingCar {
-            cellBuilder = UpdateRentSaleCellBuilder(tableView: tableView, marketPlaceManager: dataManager)
-            (cellBuilder as! UpdateRentSaleCellBuilder).existingCar = car
-            let photos = car.photosURLs.map({ (photo) -> GalleryPhoto in
-                return GalleryPhoto(attributedCaptionTitle: NSAttributedString(), largePhotoURL: photo.URL, thumbURL: photo.URL, id: photo.id)
-            })
-            vehicleCollectionViewDelegate.images = photos
-            photoCollectionView.reloadData()
+            setupExistingCarData(car)
         } else {
             cellBuilder = MyRentSaleCellBuilder(tableView: tableView, marketPlaceManager: dataManager)
         }
         cellBuilder.postingCreater = uploader
         dataManager.loadData()
         
+        let menuItemDelete = UIMenuItem(title: "Delete", action: Selector("deletePhoto:"))
+        UIMenuController.sharedMenuController().menuItems = [menuItemDelete]
+        UIMenuController.sharedMenuController().menuVisible = true
         
-        cellBuilder.reloadData = { [unowned self] in
-            self.tableView.reloadData()
+        cellBuilder.reloadData = { [weak self] in
+            self?.tableView.reloadData()
         }
         
-        cellBuilder.reloadCell = { [unowned self] (newHeight) in
-            self.descriptionCellHeight = newHeight
-            self.tableView.beginUpdates()
-            self.tableView.endUpdates()
+        cellBuilder.reloadCell = { [weak self] (newHeight) in
+            self?.descriptionCellHeight = newHeight
+            self?.tableView.beginUpdates()
+            self?.tableView.endUpdates()
         }
+    }
+}
+
+//MARK: - Private Methodl
+extension OptionsPostingVC {
+    private func setupExistingCarData(car: CarForRentSale) {
+        cellBuilder = UpdateRentSaleCellBuilder(tableView: tableView, marketPlaceManager: dataManager)
+        (cellBuilder as! UpdateRentSaleCellBuilder).existingCar = car
+        let photos = car.photosURLs.map({ (photo) -> GalleryPhoto in
+            return GalleryPhoto(attributedCaptionTitle: NSAttributedString(), largePhotoURL: photo.URL, thumbURL: photo.URL, id: photo.id)
+        })
+        vehicleCollectionViewDelegate.reloadItem = { [weak self] (indexPath) in
+            self?.photoCollectionView.reloadItemsAtIndexPaths([indexPath])
+        }
+        vehicleCollectionViewDelegate.images = photos
+        vehicleCollectionViewDelegate.downloadPhotos()
+        photoCollectionView.reloadData()
+        uploader = RentSaleUpdater()
+        uploader.id = car.id
     }
     
     private func handleErrorCode(code: Int) -> Bool {
@@ -89,14 +101,14 @@ class OptionsPostingVC: UITableViewController {
         }
         
         UIView.animateWithDuration(0.25,
-            animations: { [weak self] in
-                self?.tableView.contentOffset = CGPoint(x: 0, y: position)
+                                   animations: { [weak self] in
+                                    self?.tableView.contentOffset = CGPoint(x: 0, y: position)
             }, completion: { [weak self] (completed) in
                 let cell = self?.tableView.cellForRowAtIndexPath(indexPath) as? PostingCell
                 if let cell = cell {
                     cell.placeHolder?.textColor = UIColor.redColor()
                 }
-        })
+            })
         
         return false
     }
@@ -112,9 +124,13 @@ class OptionsPostingVC: UITableViewController {
 //MARK: - Actions
 extension OptionsPostingVC {
     @IBAction func postRentSale() {
-        uploader.photos = vehicleCollectionViewDelegate.images.map({ (photo) -> UIImage in
-            return photo.image!
-        })
+        uploader.deletedPhotos = vehicleCollectionViewDelegate.deletedImagesIDs
+        uploader.photos = vehicleCollectionViewDelegate.images
+            .filter({ $0.id == nil })
+            .map({ (photo) -> UIImage in
+                return photo.image!
+            })
+        
         if !handleErrorCode(uploader.checkCorrectParams()) {
             return
         }

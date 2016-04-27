@@ -7,6 +7,18 @@
 //  Copyright © 2016 Nick Kibish. All rights reserved.
 //
 
+/*
+ [aps: {
+ alert =     {
+ action = added;
+ id = 147;
+ lat = "49.2389396";
+ lng = "28.4803312";
+ "report_type" = 4;
+ };
+ }]
+ */
+
 import Foundation
 
 class APNSManager: NSObject {
@@ -26,6 +38,8 @@ class APNSManager: NSObject {
     }
     
     func didReceiveRemoteNotification(userInfo: [NSObject : AnyObject]) {
+        print(userInfo)
+        
         if let messageObj = userInfo[Notification.NewMessage.rawValue] {
             let message = Message()
             message.message = userInfo[DictionaryKeys.APNS.main]![DictionaryKeys.APNS.alert] as? String
