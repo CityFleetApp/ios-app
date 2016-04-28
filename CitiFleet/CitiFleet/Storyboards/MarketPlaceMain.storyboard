@@ -75,7 +75,7 @@
         <!--Marketplace-->
         <scene sceneID="3jt-iE-5Xv">
             <objects>
-                <viewController restorationIdentifier="MarketplaceMainScreenVC" storyboardIdentifier="MarketplaceMainScreenVC" id="w3F-Ye-FFW" customClass="MarketplaceMainScreenVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MarketplaceMainScreenVC" storyboardIdentifier="MarketplaceMainScreenVC" id="w3F-Ye-FFW" customClass="MarketplaceMainScreenVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mnP-mc-yxd"/>
                         <viewControllerLayoutGuide type="bottom" id="eMZ-lA-jff"/>
@@ -305,14 +305,14 @@
         <!--Marketplace-->
         <scene sceneID="l8N-a6-YUQ">
             <objects>
-                <collectionViewController storyboardIdentifier="GoodsForSaleVC" id="QME-gA-Hd2" customClass="GoodsForSaleVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="GoodsForSaleVC" id="QME-gA-Hd2" customClass="GoodsForSaleVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Qti-qt-Sc7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.95686274509803915" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewLayout key="collectionViewLayout" id="Hwi-yI-RAZ" customClass="MarketplaceCollectiovViewLayout" customModule="CitiFleet" customModuleProvider="target"/>
+                        <collectionViewLayout key="collectionViewLayout" id="Hwi-yI-RAZ" customClass="MarketplaceCollectiovViewLayout" customModule="CityFleet" customModuleProvider="target"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GoodsForSaleCell" id="m9V-oz-a2u" customClass="GoodsForSaleCell" customModule="CitiFleet" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GoodsForSaleCell" id="m9V-oz-a2u" customClass="GoodsForSaleCell" customModule="CityFleet" customModuleProvider="target">
                                 <rect key="frame" x="147" y="0.0" width="307" height="318"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -517,7 +517,7 @@
         <!--Title-->
         <scene sceneID="4y1-ww-gca">
             <objects>
-                <tableViewController id="Ox5-Vv-2Ca" customClass="DetailsMarketplaceVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Ox5-Vv-2Ca" customClass="DetailsMarketplaceVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MVg-Lk-5Vg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -710,7 +710,7 @@
                         <barButtonItem key="leftBarButtonItem" image="back-ic" id="rln-a3-d1F">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="back:" destination="1Kc-bH-DJb" id="Gkq-F5-vRC"/>
+                                <action selector="back:" destination="Ox5-Vv-2Ca" id="H52-ua-a98"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -746,14 +746,14 @@
         <!--Marketplace-->
         <scene sceneID="uvF-WD-49B">
             <objects>
-                <collectionViewController storyboardIdentifier="CarsForRentSale" id="UIa-SD-I7O" customClass="CarsForRentSale" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="CarsForRentSale" id="UIa-SD-I7O" customClass="CarsForRentSale" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6uG-qJ-x3f">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewLayout key="collectionViewLayout" id="STr-wW-RuL" customClass="MarketplaceCollectiovViewLayout" customModule="CitiFleet" customModuleProvider="target"/>
+                        <collectionViewLayout key="collectionViewLayout" id="STr-wW-RuL" customClass="MarketplaceCollectiovViewLayout" customModule="CityFleet" customModuleProvider="target"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CarsForSaleCell" id="eJn-Xi-z5M" customClass="CarsForSaleCell" customModule="CitiFleet" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CarsForSaleCell" id="eJn-Xi-z5M" customClass="CarsForSaleCell" customModule="CityFleet" customModuleProvider="target">
                                 <rect key="frame" x="117" y="0.0" width="366" height="345"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1035,7 +1035,7 @@
         <!--Jobs Offers-->
         <scene sceneID="WDC-jc-RTO">
             <objects>
-                <viewController storyboardIdentifier="JobOffersVC" id="ry9-9a-HjN" customClass="JobOffersVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JobOffersVC" id="ry9-9a-HjN" customClass="JobOffersVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uhg-oq-2N8"/>
                         <viewControllerLayoutGuide type="bottom" id="7fQ-HX-hIX"/>
@@ -1048,7 +1048,7 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="531"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="JobOfferTableViewCell" rowHeight="81" id="hzj-vt-XYB" customClass="JobOfferTableViewCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="JobOfferTableViewCell" rowHeight="81" id="hzj-vt-XYB" customClass="JobOfferTableViewCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="81"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hzj-vt-XYB" id="0aS-bV-9fT">
@@ -1219,7 +1219,7 @@
         <!--Job Info-->
         <scene sceneID="ifj-9f-OkA">
             <objects>
-                <tableViewController storyboardIdentifier="JobOfferInfoVC" id="McB-mR-juA" customClass="JobOfferInfoVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="JobOfferInfoVC" id="McB-mR-juA" customClass="JobOfferInfoVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9TS-TS-l1L">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1784,7 +1784,7 @@
         <!--Title-->
         <scene sceneID="Xtp-me-gVG">
             <objects>
-                <tableViewController id="1Kc-bH-DJb" customClass="DetailCarForRentSaleVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="1Kc-bH-DJb" customClass="DetailCarForRentSaleVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mbi-Hy-6vx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2063,7 +2063,7 @@
                         <barButtonItem key="leftBarButtonItem" image="back-ic" id="eeR-Ct-PUm">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="back:" destination="1Kc-bH-DJb" id="Uiy-vL-rbk"/>
+                                <action selector="back:" destination="1Kc-bH-DJb" id="2al-10-zj5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

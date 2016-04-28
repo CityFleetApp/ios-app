@@ -62,8 +62,8 @@ struct URL {
         static let models = "marketplace/cars/model/"
     }
     struct Marketplace {
-        static let carsForRent = "marketplace/cars/sale/"
-        static let carsForSale = "marketplace/cars/rent/"
+        static let carsForRent = "marketplace/cars/rent/"
+        static let carsForSale = "marketplace/cars/sale/"
         static let goodsForSale = "marketplace/goods/"
         
         static let fuel = "marketplace/fuel/"

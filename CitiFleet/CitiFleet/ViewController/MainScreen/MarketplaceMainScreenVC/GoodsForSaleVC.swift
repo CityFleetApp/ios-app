@@ -41,10 +41,22 @@ class GoodsForSaleVC: UICollectionViewController, MarketplaceLayoutDelegate {
     }
     
     func loadData ()  {
+        let startCount = dataLoader.items.count
         dataLoader.loadGoodsForSale { [weak self] (error) -> () in
-            if error == nil {
-                self?.collectionView?.reloadData()
+            if error != nil || self == nil{
+                return
             }
+            let endCount = self?.dataLoader.items.count
+            if endCount! - startCount <= 0 {
+                return
+            }
+            
+            var indexPathes: [NSIndexPath] = []
+            for index in startCount...endCount!-1 {
+                indexPathes.append(NSIndexPath(forItem: index, inSection: 0))
+            }
+            
+            self?.collectionView?.insertItemsAtIndexPaths(indexPathes)
         }
     }
     
@@ -147,5 +159,9 @@ extension GoodsForSaleVC {
             }
         }
         cell.itemNameBgView.layer.insertSublayer(gradient, atIndex: 0)
+        
+        if indexPath.item == dataLoader.items.count - 1 && dataLoader.shouldLoad {
+            self.loadData()
+        }
     }
 }

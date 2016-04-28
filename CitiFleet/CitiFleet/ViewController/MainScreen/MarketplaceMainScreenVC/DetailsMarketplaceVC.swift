@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Haneke
+import MBProgressHUD
 
 class DetailsMarketplaceVC: UITableViewController {
     private let PhotoHeight: CGFloat = 293
@@ -77,7 +79,7 @@ extension DetailsMarketplaceVC {
     
     private func setupSingleImage() {
         let imageView = UIImageView(frame: imageContainerView.bounds)
-        imageView.contentMode = .ScaleAspectFit
+        imageView.contentMode = .ScaleAspectFill
         imageContainerView.addSubview(imageView)
         
         if item.photosURLs.count == 0 {
@@ -90,10 +92,13 @@ extension DetailsMarketplaceVC {
     private func setupImages() {
         let pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
         pageViewController.dataSource = pageVCDataSource
-        pageViewController.view.frame = imageContainerView.bounds
+        pageViewController.delegate = pageVCDataSource
         pageViewController.setViewControllers([pageVCDataSource.viewControllerWithIndex(0)], direction: .Forward, animated: false, completion: nil)
+        
+        addChildViewController(pageViewController)
+        pageViewController.view.frame = imageContainerView.bounds
         imageContainerView.addSubview(pageViewController.view)
-//        pageViewController.didMoveToParentViewController(self)
+        pageViewController.didMoveToParentViewController(self)
     }
 }
 
@@ -116,12 +121,20 @@ extension DetailsMarketplaceVC {
     }
 }
 
-class PageViewControllerDataSource: NSObject, UIPageViewControllerDataSource {
+class PageViewControllerDataSource: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     var item: MarketplaceItem
     var imageContainerView: UIView!
     
     init(item: MarketplaceItem) {
         self.item = item
+    }
+    
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return 5
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return 1
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
@@ -144,7 +157,14 @@ class PageViewControllerDataSource: NSObject, UIPageViewControllerDataSource {
         let imageView = UIImageView(frame: imageContainerView.bounds)
         imageView.contentMode = .ScaleAspectFill
         
-        imageView.hnk_setImageFromURL(item.photosURLs[index].URL)
+        MBProgressHUD.showHUDAddedTo(imageView, animated: true)
+        Shared.imageCache.fetch(URL: item.photosURLs[index].URL).onSuccess { (image) in
+            dispatch_async(dispatch_get_main_queue()) {
+                imageView.image = image
+                MBProgressHUD.hideHUDForView(imageView, animated: true)
+            }
+        }
+        
         vc.view.frame = imageContainerView.bounds
         vc.view.addSubview(imageView)
         return vc

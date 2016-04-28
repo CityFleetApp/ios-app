@@ -8,6 +8,12 @@
 
 import UIKit
 
+infix operator ^^ { associativity left precedence 120 }
+
+func ^^<T : BooleanType, U : BooleanType>(lhs: T, rhs: U) -> Bool {
+    return lhs.boolValue != rhs.boolValue
+}
+
 struct MarketplaceItemPhoto {
     var URL: NSURL
     var id: Int
@@ -108,49 +114,79 @@ class GoodForSale: MarketplaceItem {
 class MarketPlaceShopManager: NSObject {
     internal typealias Param = Response.Marketplace
     var items: [MarketplaceItem] = []
+    var count: Int?
+    var nextPage: String?
+    var shouldLoad: Bool {
+        return (count == nil) ^^ (nextPage != nil)
+    }
+    
+    func reload(reloaded: (() -> ())?) {
+        items.removeAll()
+        nextPage = nil
+        count = nil
+        reloaded?()
+    }
     
     func loadCarsForRent(completion: ((NSError?) -> ())) {
-        RequestManager.sharedInstance().getCarsForRent { [unowned self] (response, error) -> () in
-            if let resp = response {
-                self.parseCarsRespons(resp)
-            }
-            completion(error)
-        }
+        loadItems(URL.Marketplace.carsForRent,
+                  parseParams: { [weak self] (json) in
+                    self?.parseCarsRespons(json)
+            }, completion: completion)
     }
     
     func loadCarsForSale(completion: ((NSError?) -> ())) {
-        RequestManager.sharedInstance().getCarsForSale { [unowned self] (response, error) -> () in
-            if let resp = response {
-                self.parseCarsRespons(resp)
-            }
-            completion(error)
-        }
+        loadItems(URL.Marketplace.carsForSale,
+                  parseParams: { [weak self] (json) in
+                    self?.parseCarsRespons(json)
+            }, completion: completion)
     }
     
     func loadGoodsForSale(completion: ((NSError?) -> ())) {
-        RequestManager.sharedInstance().getGoodsForSale { [unowned self] (response, error) -> () in
-            if let resp = response {
-                self.parseGoodsForSale(resp)
+        loadItems(URL.Marketplace.goodsForSale,
+                  parseParams: { [weak self] (json) in
+                    self?.parseGoodsForSale(json)
+            }, completion: completion)
+    }
+    
+    func loadItems(baseURL: String, parseParams: (([String : AnyObject]) -> ()), completion: ((NSError?) -> ())) {
+        let requestManager = RequestManager.sharedInstance()
+        if !requestManager.shouldStartRequest() {
+            completion(NSError(domain: "", code: 0, userInfo: nil))
+            return
+        }
+        let url = nextPage != nil ? nextPage : requestManager.url(baseURL)
+        requestManager.makeRequestWithFullURL(.GET, baseURL: url!, parameters: nil) { (json, error) in
+            if let resp = json?.dictionaryObject {
+                parseParams(resp)
             }
             completion(error)
         }
     }
-    
-    private func parseCarsRespons(respObject: RequestManager.ArrayResponse) {
-        var items: [MarketplaceItem] = []
-        for obj in respObject! {
-            let item = CarForRentSale(json: obj)
-            items.append(item)
+}
+
+//MARK: - Private methods
+extension MarketPlaceShopManager {
+    private func parseCarsRespons(respObject: [String: AnyObject]) {
+        count = respObject[Response.count] as? Int
+        nextPage = respObject[Response.next] as? String
+        
+        if let result = respObject[Response.results] as? [AnyObject] {
+            for item in result {
+                let car = CarForRentSale(json: item)
+                self.items.append(car)
+            }
         }
-        self.items = items
     }
     
-    private func parseGoodsForSale(respObject: RequestManager.ArrayResponse) {
-        var items: [MarketplaceItem] = []
-        for obj in respObject! {
-            let item = GoodForSale(json: obj)
-            items.append(item)
+    private func parseGoodsForSale(respObject: [String: AnyObject]) {
+        count = respObject[Response.count] as? Int
+        nextPage = respObject[Response.next] as? String
+        
+        if let result = respObject[Response.results] as? [AnyObject] {
+            for item in result {
+                let good = GoodForSale(json: item)
+                self.items.append(good)
+            }
         }
-        self.items = items
     }
 }
