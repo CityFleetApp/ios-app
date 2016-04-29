@@ -37,7 +37,7 @@
         <!--Root DashVC-->
         <scene sceneID="Cpa-Kz-9cE">
             <objects>
-                <viewController storyboardIdentifier="DashContainerVC" id="a8U-Av-i3Y" customClass="RootDashVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashContainerVC" id="a8U-Av-i3Y" customClass="RootDashVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C9O-wx-isf"/>
                         <viewControllerLayoutGuide type="bottom" id="rgk-iw-YUi"/>
@@ -85,13 +85,13 @@
         <!--DashVC-->
         <scene sceneID="FZK-IZ-OxH">
             <objects>
-                <tableViewController id="krU-Xn-cdw" customClass="DashVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="krU-Xn-cdw" customClass="DashVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="GWR-Ij-DEn">
                         <rect key="frame" x="0.0" y="44" width="600" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="22" maxX="0.0" maxY="0.0"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="rJO-Ng-Cw2" customClass="AvatarCameraView" customModule="CitiFleet" customModuleProvider="target">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="rJO-Ng-Cw2" customClass="AvatarCameraView" customModule="CityFleet" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="235"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -99,7 +99,7 @@
                         <sections>
                             <tableViewSection id="FdQ-3H-lEq">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="Ygl-vq-bCv" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="Ygl-vq-bCv" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="235" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ygl-vq-bCv" id="YJO-9d-hX4">
@@ -138,7 +138,7 @@
                                             <outlet property="title" destination="dNL-gp-3nY" id="4iB-0O-ZOE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="46o-Rg-PSA" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="46o-Rg-PSA" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="301" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="46o-Rg-PSA" id="H54-3e-sy7">
@@ -178,7 +178,7 @@
                                             <segue destination="4gK-hr-vVc" kind="push" identifier="Dash2Profile" id="J8T-Zn-BlH"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="IZt-IN-e29" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="IZt-IN-e29" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="367" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IZt-IN-e29" id="vCG-Dg-xsG">
@@ -218,7 +218,7 @@
                                             <segue destination="hGn-nd-k2c" kind="push" id="OTS-ju-Cl5"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="HbU-JE-EGw" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="HbU-JE-EGw" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="433" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HbU-JE-EGw" id="Pn8-10-ZX7">
@@ -258,7 +258,7 @@
                                             <segue destination="J3A-jd-WbX" kind="push" id="TTj-UN-Yg3"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="Fk2-SE-aQw" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="Fk2-SE-aQw" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="499" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fk2-SE-aQw" id="mpY-Ua-AuP">
@@ -298,7 +298,7 @@
                                             <segue destination="gRj-OI-1UZ" kind="push" id="Upy-HU-WPy"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="66" id="D5x-0e-gHV" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="66" id="D5x-0e-gHV" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="565" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D5x-0e-gHV" id="wT4-Ol-wUk">
@@ -338,7 +338,7 @@
                                             <segue destination="LYP-RQ-fiQ" kind="push" id="Zsz-lG-ja0"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="zvw-EQ-s0o" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="zvw-EQ-s0o" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="631" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zvw-EQ-s0o" id="Fa9-3a-FXg">
@@ -378,7 +378,7 @@
                                             <segue destination="jud-Dt-Wg1" kind="push" id="UME-qJ-SgD"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="b6l-2j-y4f" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="b6l-2j-y4f" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="697" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b6l-2j-y4f" id="bXD-Sj-4ba">
@@ -418,7 +418,7 @@
                                             <segue destination="77N-Yy-sWs" kind="push" id="zV8-0f-2C0"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="ZoD-XX-rXG" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="ZoD-XX-rXG" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="763" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZoD-XX-rXG" id="5Yk-hJ-ySw">
@@ -457,7 +457,7 @@
                                             <outlet property="title" destination="58D-zy-cxA" id="U4d-Up-3DL"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="ZER-II-NiA" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="ZER-II-NiA" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="829" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZER-II-NiA" id="iLf-ve-7jn">
@@ -497,7 +497,7 @@
                                             <segue destination="ezN-1f-lDo" kind="push" id="0qj-AM-7G9"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="m8d-Ee-bi1" customClass="DashLogOutCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="m8d-Ee-bi1" customClass="DashLogOutCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="895" width="600" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m8d-Ee-bi1" id="yc3-FM-IzZ">
@@ -588,7 +588,7 @@
         <!--Benefits-->
         <scene sceneID="5tx-uy-7Xi">
             <objects>
-                <viewController id="jud-Dt-Wg1" customClass="BenefitsVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jud-Dt-Wg1" customClass="BenefitsVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZSQ-r8-1N7"/>
                         <viewControllerLayoutGuide type="bottom" id="Bqd-5y-faM"/>
@@ -600,9 +600,9 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pFq-ye-9Ps">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="956"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.95686274509803915" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewLayout key="collectionViewLayout" id="F4U-Wk-O81" customClass="BenefitsLayout" customModule="CitiFleet" customModuleProvider="target"/>
+                                <collectionViewLayout key="collectionViewLayout" id="F4U-Wk-O81" customClass="BenefitsLayout" customModule="CityFleet" customModuleProvider="target"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BenefitsCollectionViewCell" id="f7s-cb-acv" customClass="BenefitsCollectionViewCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BenefitsCollectionViewCell" id="f7s-cb-acv" customClass="BenefitsCollectionViewCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="109" y="0.0" width="382" height="280"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -755,13 +755,13 @@
         <!--Profile-->
         <scene sceneID="IWi-BO-2ER">
             <objects>
-                <tableViewController id="4gK-hr-vVc" customClass="ProfileVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="4gK-hr-vVc" customClass="ProfileVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3vu-9b-f7n">
                         <rect key="frame" x="0.0" y="44" width="600" height="956"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="scrollIndicatorInsets" minX="0.0" minY="22" maxX="0.0" maxY="0.0"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="cOZ-kM-wog" customClass="AvatarRatingView" customModule="CitiFleet" customModuleProvider="target">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="cOZ-kM-wog" customClass="AvatarRatingView" customModule="CityFleet" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="261"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -777,7 +777,7 @@
                                 <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                             </collectionViewFlowLayout>
                             <cells>
-                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VehiclePhotoCell" id="0J6-Tq-a3g" customClass="VehiclePhotoCell" customModule="CitiFleet" customModuleProvider="target">
+                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VehiclePhotoCell" id="0J6-Tq-a3g" customClass="VehiclePhotoCell" customModule="CityFleet" customModuleProvider="target">
                                     <rect key="frame" x="10" y="10" width="75" height="75"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">

@@ -52,6 +52,7 @@ class MapVC: UIViewController {
         centerMeBtn.setDefaultShadow()
         directionBtn.setDefaultShadow()
         mapView.delegate = self
+        mapView.myLocationEnabled = true
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.updatedLocation(_:)), name: LocationManager.UpdateLocationNotification, object: nil)
     }

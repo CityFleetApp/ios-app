@@ -53,4 +53,8 @@ struct Titles {
         
         static let topLabelTitle = "General Goods"
     }
+    struct JobOffers {
+        static let NoRatingTitle = "Rate hirer"
+        static let NoRatingMsg = "Please, rate the hirer"
+    }
 }

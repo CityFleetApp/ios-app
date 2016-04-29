@@ -9,7 +9,9 @@
 import UIKit
 
 class JobOfferInfoVC: UITableViewController {
-    static let StoryboardID = "JobOfferInfoVC"
+    class var StoryboardID: String {
+        return "JobOfferInfoVC"
+    }
     @IBOutlet var dateLbl: UILabel!
     @IBOutlet var timeLbl: UILabel!
     @IBOutlet var addressLbl: UILabel!
@@ -44,6 +46,26 @@ class JobOfferInfoVC: UITableViewController {
             if error == nil {
                 self?.navigationController?.popViewControllerAnimated(true)
             }
+        }
+    }
+}
+
+class JobOfferAwardedVC: JobOfferInfoVC {
+    @IBOutlet var completeBtn: UIButton!
+    
+    override class var StoryboardID: String {
+        return "JobOfferAwardedVC"
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        completeBtn.enabled = job.awarded == true
+    }
+    
+    override func jobInfo(sender: AnyObject) {
+        if let vc = storyboard?.instantiateViewControllerWithIdentifier(JobOfferCompletedVC.StoryboardID) as? JobOfferCompletedVC {
+            vc.jobOffer = job
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

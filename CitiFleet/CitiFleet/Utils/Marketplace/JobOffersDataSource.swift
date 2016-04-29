@@ -9,6 +9,12 @@
 import Foundation
 
 class JobOffer: NSObject {
+    enum JobOfferStatus: String {
+        case Available = "Available"
+        case Covered = "Covered"
+        case Completed = "Completed"
+    }
+    
     var id: Int?
     var pickupDatetime: NSDate?
     var pickupAddress: String?
@@ -19,8 +25,10 @@ class JobOffer: NSObject {
     var suite: Bool?
     var jobType: String?
     var instructions: String?
-    var status: String?
+    var status: JobOfferStatus?
     var created: NSDate?
+    var jobTitle: String?
+    var awarded: Bool?
     
     init(json: AnyObject) {
         typealias Param = Response.Marketplace.JobOffers
@@ -34,7 +42,13 @@ class JobOffer: NSObject {
         suite = json[Param.suite] as? Bool
         jobType = json[Param.jobType] as? String
         instructions = json[Param.instructions] as? String
-        status = json[Param.status] as? String
+        if let statusStr = json[Param.status] as? String {
+            status = JobOfferStatus(rawValue: statusStr)
+        }
+        
+        jobTitle = json[Param.title] as? String
+        awarded = json[Param.awarded] as? Bool
+        
         created = NSDateFormatter.serverResponseFormat.dateFromString(json[Param.created] as! String)
     }
 }
@@ -42,37 +56,58 @@ class JobOffer: NSObject {
 class JobOffersDataSource: NSObject {
     typealias Param = Response.Marketplace.JobOffers
     var items: [JobOffer] = []
-    var availableItems: [JobOffer] {
-        get {
-            return items.filter({ return $0.status == "Available"})
+    
+    var count: Int?
+    var nextPage: String?
+    var availableCount: Int?
+    
+    var shouldLoadNext: Bool {
+        return nextPage != nil
+    }
+    
+    func loadAll(completion: ((NSError?) -> ())) {
+        let url = URL.Marketplace.JobOffers
+        loadData(url, completion: completion)
+    }
+    
+    func loadAvailable(completion: ((NSError?) -> ())) {
+        let url = "\(URL.Marketplace.JobOffers)?status=1"
+        loadData(url, completion: completion)
+    }
+    
+    func loadData(url: String, completion: ((NSError?) -> ())) {
+        RequestManager.sharedInstance().get(URL.Marketplace.JobOffers, parameters: nil) { [weak self] (json, error) in
+            self?.items.removeAll()
+            let response = json?.dictionaryObject
+            self?.parseResponse(response, error: error, completion: completion)
         }
     }
     
-    func loadData(completion: ((NSError?) -> ())) {
-        RequestManager.sharedInstance().getJobOffers { [weak self] (response, error) in
-            self?.items.removeAll()
-            if error != nil || response == nil {
-                completion(error)
-                return
-            }
-            for obj in response! {
-//                let id = obj[Param.id] as? Int
-//                let pickupDatetime = NSDateFormatter.serverResponseFormat.dateFromString(obj[Param.pickupDatetime] as! String)
-//                let pickupAddress = obj[Param.pickupAddress] as? String
-//                let destination = obj[Param.destination] as? String
-//                let fare = obj[Param.fare] as? String
-//                let gratuity = obj[Param.gratuity] as? String
-//                let vehicleType = obj[Param.vehicleType] as? String
-//                let suite = obj[Param.suite] as? Bool
-//                let jobType = obj[Param.jobType] as? String
-//                let instructions = obj[Param.instructions] as? String
-//                let status = obj[Param.status] as? String
-//                
-//                let item = JobOffer(id: id, pickupDatetime: pickupDatetime, pickupAddress: pickupAddress, destination: destination, fare: fare, gratuity: gratuity, vehicleType: vehicleType, suite: suite, jobType: jobType, instructions: instructions, status: status)
-                let item = JobOffer(json: obj)
-                self?.items.append(item)
-            }
-            completion(nil)
+    func loadNext(completion: ((NSError?) -> ())) {
+        if let next = nextPage {
+            RequestManager.sharedInstance().makeRequestWithFullURL(.GET, baseURL: next, parameters: nil, completion: { [weak self] (json, error) in
+                let response = json?.dictionaryObject
+                self?.parseResponse(response, error: error, completion: completion)
+            })
         }
+    }
+}
+
+//MARK: - Private Methods
+extension JobOffersDataSource {
+    func parseResponse(response: [String: AnyObject]?, error: NSError?, completion: ((NSError?) -> ())) {
+        if error != nil || response == nil {
+            completion(error)
+            return
+        }
+        availableCount = response![Response.Marketplace.available] as? Int 
+        nextPage = response![Response.next] as? String
+        count = response![Response.count] as? Int
+        let offers = response![Response.results] as! [AnyObject]
+        for obj in offers {
+            let item = JobOffer(json: obj)
+            items.append(item)
+        }
+        completion(nil)
     }
 }

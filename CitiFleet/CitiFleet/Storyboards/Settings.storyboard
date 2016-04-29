@@ -51,7 +51,7 @@
         <!--Settings-->
         <scene sceneID="Ijm-hY-Rdi">
             <objects>
-                <tableViewController restorationIdentifier="SettingsVC" storyboardIdentifier="SettingsVC" id="yFE-TI-6Zu" customClass="SettingsVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="SettingsVC" storyboardIdentifier="SettingsVC" id="yFE-TI-6Zu" customClass="SettingsVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="r8w-vO-MYh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,7 +103,7 @@
                         <sections>
                             <tableViewSection id="CTf-V9-Zj4">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="b4C-S0-NAO" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="b4C-S0-NAO" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="133" width="600" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b4C-S0-NAO" id="YuQ-y7-Cjf">
@@ -158,7 +158,7 @@
                                             <segue destination="N3r-Gg-RMP" kind="push" id="Joo-2Q-OVn"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="aXJ-67-MRN" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="aXJ-67-MRN" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="205" width="600" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aXJ-67-MRN" id="cgs-qz-xNK">
@@ -315,7 +315,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="Rpq-9u-nDa" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="Rpq-9u-nDa" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="421" width="600" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rpq-9u-nDa" id="bZn-9Z-vfa">
@@ -426,7 +426,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="Oex-mA-JON" customClass="DashMenuCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="Oex-mA-JON" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="565" width="600" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oex-mA-JON" id="jev-TA-jDf">
@@ -511,7 +511,7 @@
         <!--Change Password-->
         <scene sceneID="dRj-Y0-dq8">
             <objects>
-                <tableViewController id="2QL-I7-fgx" customClass="ResetPasswordVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="2QL-I7-fgx" customClass="ResetPasswordVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="fxs-Az-5Lu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -755,12 +755,12 @@
         <!--Edit Account-->
         <scene sceneID="csi-YA-kWW">
             <objects>
-                <tableViewController id="N3r-Gg-RMP" customClass="EditProfileVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="N3r-Gg-RMP" customClass="EditProfileVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="PNo-qz-9xa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="Q1D-0e-a0j" customClass="AvatarCameraView" customModule="CitiFleet" customModuleProvider="target">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Q1D-0e-a0j" customClass="AvatarCameraView" customModule="CityFleet" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="64" width="600" height="235"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -768,7 +768,7 @@
                         <sections>
                             <tableViewSection headerTitle="EDIT PROFILE" id="ehn-bA-sDD">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyRentSaleDescriptionCell" rowHeight="78" id="CEL-1y-YzJ" customClass="MyRentSaleDescriptionCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyRentSaleDescriptionCell" rowHeight="78" id="CEL-1y-YzJ" customClass="MyRentSaleDescriptionCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="349" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CEL-1y-YzJ" id="55M-5O-ZAM">
@@ -818,8 +818,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="pUf-ww-zXm"/>
                                                     <exclude reference="CyC-cH-P5i"/>
+                                                    <exclude reference="pUf-ww-zXm"/>
                                                     <exclude reference="P2c-hI-oy9"/>
                                                 </mask>
                                             </variation>
@@ -831,7 +831,7 @@
                                             <outlet property="title" destination="zqJ-B8-zdW" id="xmB-vS-nfy"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyRentSalePriceCell" rowHeight="78" id="43J-jg-PoA" customClass="PostingCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyRentSalePriceCell" rowHeight="78" id="43J-jg-PoA" customClass="PostingCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="427" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="43J-jg-PoA" id="pwG-Np-MKE">
@@ -848,7 +848,7 @@
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ou" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHN-fP-F4g" customClass="HighlitableLabel" customModule="CitiFleet" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ou" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHN-fP-F4g" customClass="HighlitableLabel" customModule="CityFleet" customModuleProvider="target">
                                                     <rect key="frame" x="17" y="43" width="19" height="18"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="14.350000381469727"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -886,7 +886,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="EDIT ACCOUNT" id="iNW-Ic-KFD">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyRentSalePriceCell" rowHeight="78" id="kKP-Wj-jnE" customClass="MyRentSalePriceCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyRentSalePriceCell" rowHeight="78" id="kKP-Wj-jnE" customClass="MyRentSalePriceCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="556" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kKP-Wj-jnE" id="tRO-LK-O0b">
@@ -939,7 +939,7 @@
                                             <outlet property="title" destination="kTu-Lm-Sgw" id="mCq-gi-aX8"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyRentSalePriceCell" rowHeight="78" id="Yca-0C-hDJ" customClass="MyRentSalePriceCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyRentSalePriceCell" rowHeight="78" id="Yca-0C-hDJ" customClass="MyRentSalePriceCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="634" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yca-0C-hDJ" id="kpX-tG-wJt">
@@ -981,8 +981,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="3ys-zJ-SVd"/>
                                                     <exclude reference="3ss-hR-jDW"/>
+                                                    <exclude reference="3ys-zJ-SVd"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1060,7 +1060,7 @@
         <!--Drives-->
         <scene sceneID="OLG-Qb-inS">
             <objects>
-                <tableViewController id="M6S-8D-POL" customClass="EditVehicleVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="M6S-8D-POL" customClass="EditVehicleVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2VG-sV-9oK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1100,7 +1100,7 @@
                         <sections>
                             <tableViewSection id="27h-Z3-qKY">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="Hwm-ef-72Q" customClass="PostingCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="Hwm-ef-72Q" customClass="PostingCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="64" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hwm-ef-72Q" id="QcB-Od-74Z">
@@ -1117,7 +1117,7 @@
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3G-F3-2G4" customClass="HighlitableLabel" customModule="CitiFleet" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3G-F3-2G4" customClass="HighlitableLabel" customModule="CityFleet" customModuleProvider="target">
                                                     <rect key="frame" x="17" y="43" width="38" height="18"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="14.350000381469727"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1145,8 +1145,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="vkg-LN-Cff"/>
                                                     <exclude reference="eB1-rj-5CX"/>
+                                                    <exclude reference="vkg-LN-Cff"/>
                                                     <exclude reference="qiv-ba-2Z5"/>
                                                 </mask>
                                             </variation>
@@ -1158,7 +1158,7 @@
                                             <outlet property="title" destination="unI-qd-AI3" id="Miu-yf-rIH"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="h6J-Ou-WJf" customClass="PostingCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="h6J-Ou-WJf" customClass="PostingCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="142" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h6J-Ou-WJf" id="gLM-gh-GDr">
@@ -1175,7 +1175,7 @@
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15T-Yb-TwO" customClass="HighlitableLabel" customModule="CitiFleet" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15T-Yb-TwO" customClass="HighlitableLabel" customModule="CityFleet" customModuleProvider="target">
                                                     <rect key="frame" x="17" y="42" width="38" height="18"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="14.350000381469727"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1216,7 +1216,7 @@
                                             <outlet property="title" destination="3zp-Vs-4T4" id="2EE-nu-Jlf"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="6HD-JW-qeH" customClass="PostingCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="6HD-JW-qeH" customClass="PostingCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="220" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6HD-JW-qeH" id="9Wa-9p-Tnl">
@@ -1233,7 +1233,7 @@
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yp-kH-Pr5" customClass="HighlitableLabel" customModule="CitiFleet" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yp-kH-Pr5" customClass="HighlitableLabel" customModule="CityFleet" customModuleProvider="target">
                                                     <rect key="frame" x="17" y="43" width="38" height="18"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="14.350000381469727"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1274,7 +1274,7 @@
                                             <outlet property="title" destination="gHN-rQ-Syn" id="nsG-V3-622"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="zOo-Sg-Q7H" customClass="PostingCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="zOo-Sg-Q7H" customClass="PostingCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="298" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zOo-Sg-Q7H" id="LD5-P3-3oP">
@@ -1291,7 +1291,7 @@
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pz9-dt-ZHT" customClass="HighlitableLabel" customModule="CitiFleet" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pz9-dt-ZHT" customClass="HighlitableLabel" customModule="CityFleet" customModuleProvider="target">
                                                     <rect key="frame" x="17" y="43" width="38" height="18"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="14.350000381469727"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1319,8 +1319,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="xOd-iJ-vLz"/>
                                                     <exclude reference="pO8-Pe-0Xn"/>
+                                                    <exclude reference="xOd-iJ-vLz"/>
                                                     <exclude reference="dxS-LZ-3Fg"/>
                                                 </mask>
                                             </variation>
@@ -1332,7 +1332,7 @@
                                             <outlet property="title" destination="GXJ-Ip-q5W" id="ve6-m4-M7X"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="4e9-IA-lh3" customClass="PostingCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="4e9-IA-lh3" customClass="PostingCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="376" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4e9-IA-lh3" id="t61-QZ-DsH">
@@ -1349,7 +1349,7 @@
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvv-cF-mTb" customClass="HighlitableLabel" customModule="CitiFleet" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvv-cF-mTb" customClass="HighlitableLabel" customModule="CityFleet" customModuleProvider="target">
                                                     <rect key="frame" x="17" y="43" width="38" height="18"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="14.350000381469727"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1377,8 +1377,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="l5R-mw-1iX"/>
                                                     <exclude reference="hNg-Qk-FsK"/>
+                                                    <exclude reference="l5R-mw-1iX"/>
                                                     <exclude reference="BlL-ht-fId"/>
                                                 </mask>
                                             </variation>

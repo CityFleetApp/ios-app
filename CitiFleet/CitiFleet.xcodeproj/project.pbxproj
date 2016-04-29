@@ -85,6 +85,7 @@
 		439346631CBFC13400753D63 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439346621CBFC13400753D63 /* Message.swift */; };
 		439346651CBFC56400753D63 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439346641CBFC56400753D63 /* ChatVC.swift */; };
 		439346671CBFC97200753D63 /* ChatDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439346661CBFC97200753D63 /* ChatDataSource.swift */; };
+		43947A341CD35FDB004DE8CB /* JobOfferCompletedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43947A331CD35FDB004DE8CB /* JobOfferCompletedVC.swift */; };
 		439AB7911CAE71B50015A874 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7901CAE71B50015A874 /* String+Ext.swift */; };
 		439AB7931CAEB4AE0015A874 /* CarsForRentSale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7921CAEB4AE0015A874 /* CarsForRentSale.swift */; };
 		439AB7961CB018BB0015A874 /* DetailsMarketplaceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439AB7951CB018BB0015A874 /* DetailsMarketplaceVC.swift */; };
@@ -273,6 +274,7 @@
 		439346621CBFC13400753D63 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Model/Message.swift; sourceTree = "<group>"; };
 		439346641CBFC56400753D63 /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatVC.swift; path = ViewController/Dash/Chat/ChatVC.swift; sourceTree = "<group>"; };
 		439346661CBFC97200753D63 /* ChatDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatDataSource.swift; path = Utils/Dash/Chat/ChatDataSource.swift; sourceTree = "<group>"; };
+		43947A331CD35FDB004DE8CB /* JobOfferCompletedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobOfferCompletedVC.swift; path = ViewController/MainScreen/MarketplaceMainScreenVC/JobOfferCompletedVC.swift; sourceTree = "<group>"; };
 		439AB7901CAE71B50015A874 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Ext.swift"; path = "Extensions/String+Ext.swift"; sourceTree = "<group>"; };
 		439AB7921CAEB4AE0015A874 /* CarsForRentSale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarsForRentSale.swift; path = ViewController/MainScreen/MarketplaceMainScreenVC/CarsForRentSale.swift; sourceTree = "<group>"; };
 		439AB7951CB018BB0015A874 /* DetailsMarketplaceVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailsMarketplaceVC.swift; path = ViewController/MainScreen/MarketplaceMainScreenVC/DetailsMarketplaceVC.swift; sourceTree = "<group>"; };
@@ -782,6 +784,7 @@
 				439AB79B1CB2609F0015A874 /* JobOffersDataSource.swift */,
 				439AB79D1CB26EF80015A874 /* JobOfferTableViewCell.swift */,
 				439AB79F1CB2B3100015A874 /* JobOfferInfoVC.swift */,
+				43947A331CD35FDB004DE8CB /* JobOfferCompletedVC.swift */,
 			);
 			name = "Job Offers";
 			sourceTree = "<group>";
@@ -1405,6 +1408,7 @@
 				43E2C0E41CBBB59300D26076 /* ReportInfoView.swift in Sources */,
 				43F5E2321C9AEBD1000BBB91 /* RequestManager+Notifications.swift in Sources */,
 				43F5E2171C981EB5000BBB91 /* VehiclePhotoCell.swift in Sources */,
+				43947A341CD35FDB004DE8CB /* JobOfferCompletedVC.swift in Sources */,
 				4316BB9F1C7B446F007A9ECB /* SignUpVC.swift in Sources */,
 				431D2DC71C9ED80900CBC4BA /* PostingsVC.swift in Sources */,
 				430A59E31CA2B66100FCD13D /* NSDateFormater+Ext.swift in Sources */,

@@ -82,6 +82,7 @@ struct URL {
         static let JobOffers = "marketplace/offers/"
         static let AcceptJob = "/accept_job/"
         static let RequestJob = "/request_job/"
+        static let CompleteJob = "/complete_job/"
         
         static let ManagePosts = "marketplace/manage-posts/"
         struct Photos {
@@ -206,6 +207,8 @@ struct Params {
             static let suite = "suite"
             static let jobType = "job_type"
             static let instructions = "instructions"
+            static let paidOnTime = "paid_on_time"
+            static let rating = "rating"
         }
         
         struct GeneralGoods {
@@ -291,6 +294,7 @@ struct Response {
         static let unseen = "unseen"
     }
     struct Marketplace {
+        static let available = "available"
         static let id = "id"
         static let itemName = "item"
         static let price = "price"
@@ -319,6 +323,8 @@ struct Response {
             static let instructions = "instructions"
             static let status = "status"
             static let created = "created"
+            static let title = "title"
+            static let awarded = "awarded"
         }
         struct ManagePost {
             static let postType = "posting_type"

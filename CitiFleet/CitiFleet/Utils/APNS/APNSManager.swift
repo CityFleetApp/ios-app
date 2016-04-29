@@ -7,15 +7,24 @@
 //  Copyright © 2016 Nick Kibish. All rights reserved.
 //
 
-/*
+/* Report Push
  [aps: {
- alert =     {
- action = added;
- id = 147;
- lat = "49.2389396";
- lng = "28.4803312";
- "report_type" = 4;
- };
+    alert = {
+        action = added;
+        id = 147;
+        lat = "49.2389396";
+        lng = "28.4803312";
+        "report_type" = 4;
+    };
+ }]
+ */
+
+/* Job Offer Push
+ [aps: {
+    alert = "Job Offer Created";
+    sound = defauld;
+ }, offer_created: {
+    id = 57;
  }]
  */
 
@@ -24,7 +33,7 @@ import Foundation
 class APNSManager: NSObject {
     enum Notification: String {
         case NewMessage = "receive_message"
-        case NewJobOffer = "APNS.NewJobOfer"
+        case NewJobOffer = "offer_created"
         case NewNotification = "APNS.NewNotification"
     }
     

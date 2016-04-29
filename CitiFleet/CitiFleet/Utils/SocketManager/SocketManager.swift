@@ -70,6 +70,7 @@ class SocketManager: NSObject {
         let url = "\(URL.Socket)?token=\((User.currentUser()?.token)!)"
         socket = SocketWrapper(URL: NSURL(string: url)!)
         socket?.delegate = self
+        socket?.open()
     }
     
     override init() {
@@ -78,10 +79,7 @@ class SocketManager: NSObject {
     
     func open() {
         if socket == nil {
-            let url = "\(URL.Socket)?token=\((User.currentUser()?.token)!)"
-            socket = SocketWrapper(URL: NSURL(string: url)!)
-            socket?.delegate = self
-            socket?.open()
+            reloadSocket()
         }
     }
     
@@ -147,7 +145,8 @@ extension SocketManager: SRWebSocketDelegate {
     }
     
     func webSocket(webSocket: SRWebSocket!, didFailWithError error: NSError!) {
-        
+        close()
+        reloadSocket()
     }
     
     func webSocket(webSocket: SRWebSocket!, didReceiveMessage message: AnyObject!) {
