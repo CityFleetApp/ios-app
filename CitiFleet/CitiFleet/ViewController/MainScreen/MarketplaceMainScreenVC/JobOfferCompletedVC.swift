@@ -8,22 +8,29 @@
 
 import UIKit
 import Cosmos
+import Alamofire
 
 class JobOfferCompletedVC: UIViewController {
-    static let StoryboardID = "JobOfferCompletedVC"
+    class var StoryboardID: String {
+        return "JobOfferCompletedVC"
+    }
     @IBOutlet var jobTitle: UILabel?
     @IBOutlet var ratingView: CosmosView?
     
     var paidOnTime = true
     var jobOffer: JobOffer? {
         didSet {
-            jobTitle?.text = jobOffer?.jobTitle
+            setupJobOffer(jobOffer)
         }
     }
     
     override func viewDidLoad() {
-        jobTitle?.text = jobOffer?.jobTitle
+        setupJobOffer(jobOffer)
         ratingView?.rating = 0
+    }
+    
+    internal func setupJobOffer(job: JobOffer?) {
+        jobTitle?.text = job?.jobTitle
     }
 }
 
@@ -67,17 +74,55 @@ extension JobOfferCompletedVC {
     }
     
     @IBAction func submit(sender: AnyObject) {
-        if jobOffer == nil {
+        if jobOffer == nil && !shouldSendRequest() {
             return
         }
         
         typealias Param = Params.Posting.JOPosting
         let params = [
-            Param.rating: Int((ratingView?.rating)!),
-            Param.paidOnTime: paidOnTime
+            Param.rating: String( Int((ratingView?.rating)!)),
+            Param.paidOnTime: paidOnTime ? "true" : "false"
         ]
         
-        RequestManager.sharedInstance().post("\(URL.Marketplace.JobOffers)\((jobOffer!.id)!)\(URL.Marketplace.CompleteJob)", parameters: params as? [String : AnyObject]) { [weak self] (json, error) in
+        RequestManager.sharedInstance().post("\(URL.Marketplace.JobOffers)\((jobOffer!.id)!)\(URL.Marketplace.CompleteJob)", parameters: params) { [weak self] (json, error) in
+            if self == nil {
+                return
+            }
+            if error == nil {
+                if let vc = self?.previousViewController() {
+                    self?.navigationController?.popToViewController(vc, animated: true)
+                } else {
+                    self?.navigationController?.popToRootViewControllerAnimated(true)
+                }
+            }
+        }
+    }
+}
+
+class JobOfferCompletedByUserVC: JobOfferCompletedVC {
+    @IBOutlet var driverName: UILabel?
+    var driver: String?
+    
+    override class var StoryboardID: String {
+        return "JobOfferCompletedByUserVC"
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        driverName?.text = driver
+    }
+    
+    override func submit(sender: AnyObject) {
+        if jobOffer == nil && !shouldSendRequest() {
+            return
+        }
+        
+        typealias Param = Params.Posting.JOPosting
+        let params = [
+            Param.rating: String( Int((ratingView?.rating)!))
+        ]
+        
+        RequestManager.sharedInstance().post("\(URL.Marketplace.JobOffers)\((jobOffer!.id)!)\(URL.Marketplace.RateDriver)", parameters: params) { [weak self] (json, error) in
             if self == nil {
                 return
             }

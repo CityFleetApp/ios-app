@@ -34,6 +34,8 @@ class APNSManager: NSObject {
     enum Notification: String {
         case NewMessage = "receive_message"
         case NewJobOffer = "offer_created"
+        case JobOfferCompleted = "offer_completed"
+        case JobOfferAwarded = "offer_awarded"
         case NewNotification = "APNS.NewNotification"
     }
     
@@ -50,16 +52,11 @@ class APNSManager: NSObject {
         print(userInfo)
         
         if let messageObj = userInfo[Notification.NewMessage.rawValue] {
-            let message = Message()
-            message.message = userInfo[DictionaryKeys.APNS.main]![DictionaryKeys.APNS.alert] as? String
-            message.roomId = messageObj[Response.Chat.roomID] as? Int
-            let avatarStr = (messageObj[Response.UploadAvatar.avatar] as? String)
-            if avatarStr != "" && avatarStr != nil {
-                message.author = User()
-                message.author?.avatarURL = NSURL(string: avatarStr!)
-            }
-            let notification = NSNotification(name: Notification.NewMessage.rawValue, object: message)
-            NSNotificationCenter.defaultCenter().postNotification(notification)
+            parseMessage(messageObj, messageText: userInfo[DictionaryKeys.APNS.main]![DictionaryKeys.APNS.alert] as? String)
+        } else if let jobObj = userInfo[Notification.NewJobOffer.rawValue] {
+            parseNewJob(jobObj, jobTitle: userInfo[DictionaryKeys.APNS.main]![DictionaryKeys.APNS.alert] as? String, isAwarded: false)
+        }  else if let jobObj = userInfo[Notification.JobOfferAwarded.rawValue] {
+            parseNewJob(jobObj, jobTitle: userInfo[DictionaryKeys.APNS.main]![DictionaryKeys.APNS.alert] as? String, isAwarded: true)
         }
     }
     
@@ -101,5 +98,29 @@ class APNSManager: NSObject {
                 }
             }
         }
+    }
+}
+
+extension APNSManager {
+    private func parseMessage(messageObj: AnyObject, messageText: String?) {
+        let message = Message()
+        message.message = messageText
+        message.roomId = messageObj[Response.Chat.roomID] as? Int
+        let avatarStr = (messageObj[Response.UploadAvatar.avatar] as? String)
+        if avatarStr != "" && avatarStr != nil {
+            message.author = User()
+            message.author?.avatarURL = NSURL(string: avatarStr!)
+        }
+        let notification = NSNotification(name: Notification.NewMessage.rawValue, object: message)
+        NSNotificationCenter.defaultCenter().postNotification(notification)
+    }
+    
+    private func parseNewJob(jobObj: AnyObject, jobTitle: String?, isAwarded:Bool) {
+        let job = JobOffer()
+        job.jobTitle = jobTitle
+        job.id = jobObj[Response.id] as? Int
+        
+        let notification = NSNotification(name: isAwarded ? Notification.JobOfferAwarded.rawValue : Notification.NewJobOffer.rawValue, object: job)
+        NSNotificationCenter.defaultCenter().postNotification(notification)
     }
 }

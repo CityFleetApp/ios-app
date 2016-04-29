@@ -96,6 +96,11 @@
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -2837,6 +2842,144 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EcD-LK-3dO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3874" y="1216"/>
+        </scene>
+        <!--Complete-->
+        <scene sceneID="Muo-Zx-HGP">
+            <objects>
+                <viewController storyboardIdentifier="JobOfferCompletedByUserVC" title="Complete" id="YIh-XG-zbb" customClass="JobOfferCompletedByUserVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dQT-mf-SLL"/>
+                        <viewControllerLayoutGuide type="bottom" id="EPd-If-ESi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qlI-TA-j7s">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMPLETED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXw-b4-KAr">
+                                <rect key="frame" x="239" y="102" width="123" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="51z-sc-TlG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="19.440000534057617"/>
+                                <color key="textColor" red="0.098039215690000001" green="0.17254901959999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COz-5Z-gRP">
+                                <rect key="frame" x="16" y="260" width="568" height="49"/>
+                                <color key="backgroundColor" red="0.90588235289999997" green="0.1137254902" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="BDM-VK-hb4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                <state key="normal" title="SUBMIT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="jobInfo:" destination="McB-mR-juA" eventType="touchUpInside" id="JUr-LQ-oR5"/>
+                                    <action selector="submit:" destination="YIh-XG-zbb" eventType="touchUpInside" id="oK6-vt-bhI"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="job_completed_bg" translatesAutoresizingMaskIntoConstraints="NO" id="pZb-fG-fsj">
+                                <rect key="frame" x="16" y="343" width="568" height="233"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bec-zP-VDB" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="198" y="206" width="205" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="dHH-Fb-lto"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="37"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ua3-CX-Bd5">
+                                <rect key="frame" x="278" y="36" width="45" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5kV-ni-zPa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20.440000534057617"/>
+                                <color key="textColor" red="0.098039215690000001" green="0.17254901959999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jr1-3R-AOO">
+                                <rect key="frame" x="290" y="134" width="21" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="acy-5W-dU7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17.440000534057617"/>
+                                <color key="textColor" red="0.098039215690000001" green="0.17254901959999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKy-dr-NyI">
+                                <rect key="frame" x="243" y="166" width="115" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="YZj-YO-M8j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="19.440000534057617"/>
+                                <color key="textColor" red="0.098039215690000001" green="0.17254901959999999" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bec-zP-VDB" firstAttribute="centerX" secondItem="qlI-TA-j7s" secondAttribute="centerX" id="3jp-al-74t"/>
+                            <constraint firstItem="ua3-CX-Bd5" firstAttribute="centerX" secondItem="qlI-TA-j7s" secondAttribute="centerX" id="7fq-Av-pBF"/>
+                            <constraint firstItem="bec-zP-VDB" firstAttribute="leading" secondItem="qlI-TA-j7s" secondAttribute="leading" id="7vF-Ef-j8p"/>
+                            <constraint firstItem="COz-5Z-gRP" firstAttribute="leading" secondItem="qlI-TA-j7s" secondAttribute="leading" constant="16" id="A6B-lb-PVw"/>
+                            <constraint firstAttribute="trailing" secondItem="COz-5Z-gRP" secondAttribute="trailing" constant="16" id="Dyz-1W-iR4"/>
+                            <constraint firstItem="COz-5Z-gRP" firstAttribute="top" secondItem="bec-zP-VDB" secondAttribute="bottom" constant="16" id="F5g-lC-xui"/>
+                            <constraint firstItem="pZb-fG-fsj" firstAttribute="top" secondItem="COz-5Z-gRP" secondAttribute="bottom" constant="34" id="Ji1-oW-i8R"/>
+                            <constraint firstItem="fXw-b4-KAr" firstAttribute="centerX" secondItem="qlI-TA-j7s" secondAttribute="centerX" id="WLp-5y-iOE"/>
+                            <constraint firstItem="pZb-fG-fsj" firstAttribute="leading" secondItem="qlI-TA-j7s" secondAttribute="leading" constant="16" id="e48-ab-5Qd"/>
+                            <constraint firstAttribute="trailing" secondItem="pZb-fG-fsj" secondAttribute="trailing" constant="16" id="gMT-4P-5RB"/>
+                            <constraint firstItem="bec-zP-VDB" firstAttribute="top" secondItem="XKy-dr-NyI" secondAttribute="bottom" constant="16" id="hMc-zt-6xz"/>
+                            <constraint firstItem="fXw-b4-KAr" firstAttribute="top" secondItem="ua3-CX-Bd5" secondAttribute="bottom" constant="16" id="iJe-YX-dI6"/>
+                            <constraint firstItem="XKy-dr-NyI" firstAttribute="top" secondItem="jr1-3R-AOO" secondAttribute="bottom" constant="8" id="j9H-0b-rPa"/>
+                            <constraint firstItem="ua3-CX-Bd5" firstAttribute="top" secondItem="dQT-mf-SLL" secondAttribute="bottom" constant="16" id="jWs-IF-Pzo"/>
+                            <constraint firstAttribute="trailing" secondItem="bec-zP-VDB" secondAttribute="trailing" id="lpW-m3-9jp"/>
+                            <constraint firstItem="XKy-dr-NyI" firstAttribute="centerX" secondItem="qlI-TA-j7s" secondAttribute="centerX" id="s9s-UN-dPl"/>
+                            <constraint firstItem="EPd-If-ESi" firstAttribute="top" secondItem="pZb-fG-fsj" secondAttribute="bottom" constant="24" id="sXE-76-oGO"/>
+                            <constraint firstItem="jr1-3R-AOO" firstAttribute="top" secondItem="fXw-b4-KAr" secondAttribute="bottom" constant="8" id="xk1-ro-9wA"/>
+                            <constraint firstItem="jr1-3R-AOO" firstAttribute="centerX" secondItem="qlI-TA-j7s" secondAttribute="centerX" id="yjN-vU-BSv"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7vF-Ef-j8p"/>
+                                <exclude reference="lpW-m3-9jp"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Complete" id="xli-xf-ord">
+                        <barButtonItem key="leftBarButtonItem" image="back-ic" id="iw1-iy-VeO">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="YIh-XG-zbb" id="zL8-jF-4gv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="driverName" destination="XKy-dr-NyI" id="17E-HC-YbE"/>
+                        <outlet property="jobTitle" destination="ua3-CX-Bd5" id="06t-TY-oWY"/>
+                        <outlet property="ratingView" destination="bec-zP-VDB" id="5sH-1b-tjG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Zg-Un-YcH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3874" y="1987"/>
         </scene>
     </scenes>
     <resources>

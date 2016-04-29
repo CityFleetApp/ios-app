@@ -30,6 +30,10 @@ class JobOffer: NSObject {
     var jobTitle: String?
     var awarded: Bool?
     
+    override init() {
+        
+    }
+    
     init(json: AnyObject) {
         typealias Param = Response.Marketplace.JobOffers
         id = json[Param.id] as? Int

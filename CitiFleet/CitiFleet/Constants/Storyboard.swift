@@ -12,6 +12,7 @@ struct Storyboard {
     static let LoginStoryboard = "Login"
     static let DashStoryboard = "Dash"
     static let Chat = "Chat"
+    static let MarketPlace = "MarketPlaceMain"
 }
 
 struct XIB {

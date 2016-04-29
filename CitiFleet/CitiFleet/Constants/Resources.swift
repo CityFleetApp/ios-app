@@ -30,4 +30,7 @@ struct Resources {
     struct Chat {
         static let AccessoryImage = "checkmark"
     }
+    struct Notification {
+        static let JobOffer = "job_offer_icon"
+    }
 }

@@ -83,6 +83,7 @@ struct URL {
         static let AcceptJob = "/accept_job/"
         static let RequestJob = "/request_job/"
         static let CompleteJob = "/complete_job/"
+        static let RateDriver = "/rate_driver/"
         
         static let ManagePosts = "marketplace/manage-posts/"
         struct Photos {
@@ -226,6 +227,7 @@ struct Response {
     static let next = "next"
     static let previous = "previous"
     static let results = "results"
+    static let id = "id"
     
     struct UserInfo {
         static let Latitude = "lat"

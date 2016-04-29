@@ -60,6 +60,7 @@ extension UIViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(openMessage(_:)), name: APNSManager.Notification.NewMessage.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(openJobOffer(_:)), name: APNSManager.Notification.NewJobOffer.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(openAwarderJobOffer(_:)), name: APNSManager.Notification.JobOfferAwarded.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(openNotification(_:)), name: APNSManager.Notification.NewNotification.rawValue, object: nil)
     }
     
@@ -67,10 +68,10 @@ extension UIViewController {
         if self.isKindOfClass(NSClassFromString("UIInputWindowController")!) {
             return
         }
-        print(self)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: APNSManager.Notification.NewMessage.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: APNSManager.Notification.NewJobOffer.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: APNSManager.Notification.NewNotification.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: APNSManager.Notification.JobOfferAwarded.rawValue, object: nil)
     }
     
     func openMessage(notification: NSNotification) {
@@ -78,26 +79,16 @@ extension UIViewController {
         apnsView.pushIcon.layer.cornerRadius = apnsView.pushIcon.frame.width / 2
         
         if let message = notification.object as? Message {
-            if let root = AppDelegate.sharedDelegate().rootViewController() as? RootVC {
-                root.view.addSubview(apnsView)
-            } else if let _ = AppDelegate.sharedDelegate().rootViewController().presentingViewController as? RootVC {
-                AppDelegate.sharedDelegate().rootViewController().view.addSubview(apnsView)
-            }
+            getRootView().addSubview(apnsView)
             apnsView.pushText.text = message.message
             
-            apnsView.natificationTapped = {
+            apnsView.natificationTapped = { [weak self] in
                 let room = ChatRoom()
                 room.id = message.roomId
                 let chatVC = ChatVC.viewControllerFromStoryboard()
                 chatVC.room = room
                 
-                var navController: UINavigationController?
-                for vc in AppDelegate.sharedDelegate().rootViewController().childViewControllers {
-                    if vc.isKindOfClass(UINavigationController) {
-                        navController = vc as? UINavigationController
-                    }
-                }
-                navController?.pushViewController(chatVC, animated: true)
+                self?.getNavigationController()?.pushViewController(chatVC, animated: true)
                 apnsView.hide()
             }
             
@@ -122,7 +113,58 @@ extension UIViewController {
     }
     
     func openJobOffer(notification: NSNotification) {
+        if let job = notification.object as? JobOffer {
+            openJob(false, job: job)
+        }
+    }
+    
+    func openAwarderJobOffer(notification: NSNotification) {
+        if let job = notification.object as? JobOffer {
+            openJob(true, job: job)
+        }
+    }
+}
+
+//MARK: - Private Methods
+extension UIViewController {
+    private func openJob(isAwarder: Bool, job: JobOffer) {
+        let apnsView = APNSView.viewFromNib()
+        getRootView().addSubview(apnsView)
+        apnsView.pushText.text = job.jobTitle
+        apnsView.pushIcon.image = UIImage(named: Resources.Notification.JobOffer)
         
+        apnsView.natificationTapped = { [weak self] in
+            let urlStr = "\(URL.Marketplace.JobOffers)\(job.id!)/"
+            RequestManager.sharedInstance().get(urlStr, parameters: nil, completion: { (json, error) in
+                if let obj = json?.dictionaryObject {
+                    let job = JobOffer(json: obj)
+                    let vc = isAwarder ? JobOfferAwardedVC.viewControllerFromStoryboard() : JobOfferInfoVC.viewControllerFromStoryboard()
+                    vc.job = job
+                    self?.getNavigationController()?.pushViewController(vc, animated: true)
+                }
+            })
+        }
+        
+        apnsView.show()
+    }
+    
+    private func getRootView() -> UIView {
+        if let root = AppDelegate.sharedDelegate().rootViewController() as? RootVC {
+            return root.view
+        } else if let _ = AppDelegate.sharedDelegate().rootViewController().presentingViewController as? RootVC {
+            return AppDelegate.sharedDelegate().rootViewController().view
+        }
+        return UIView()
+    }
+    
+    private func getNavigationController() -> UINavigationController? {
+        var navController: UINavigationController?
+        for vc in AppDelegate.sharedDelegate().rootViewController().childViewControllers {
+            if vc.isKindOfClass(UINavigationController) {
+                navController = vc as? UINavigationController
+            }
+        }
+        return navController
     }
 }
 

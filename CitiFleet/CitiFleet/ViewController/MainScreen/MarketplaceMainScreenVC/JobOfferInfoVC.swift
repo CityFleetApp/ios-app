@@ -26,8 +26,18 @@ class JobOfferInfoVC: UITableViewController {
 
     var job: JobOffer!
     
+    class func viewControllerFromStoryboard() -> JobOfferInfoVC {
+        let storyboard = UIStoryboard(name: Storyboard.MarketPlace, bundle: nil)
+        if let viewController = storyboard.instantiateViewControllerWithIdentifier(JobOfferInfoVC.StoryboardID) as? JobOfferInfoVC {
+            return viewController
+        } else {
+            return JobOfferInfoVC()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.hidden = false
         dateLbl.text = NSDateFormatter(dateFormat: "dd/MM/yy").stringFromDate(job.pickupDatetime!)
         timeLbl.text = NSDateFormatter(dateFormat: "hh:mm a").stringFromDate(job.pickupDatetime!)
         addressLbl.text = job.pickupAddress
@@ -55,6 +65,15 @@ class JobOfferAwardedVC: JobOfferInfoVC {
     
     override class var StoryboardID: String {
         return "JobOfferAwardedVC"
+    }
+    
+    override class func viewControllerFromStoryboard() -> JobOfferInfoVC {
+        let storyboard = UIStoryboard(name: Storyboard.MarketPlace, bundle: nil)
+        if let viewController = storyboard.instantiateViewControllerWithIdentifier(JobOfferAwardedVC.StoryboardID) as? JobOfferAwardedVC {
+            return viewController
+        } else {
+            return JobOfferAwardedVC()
+        }
     }
     
     override func viewDidLoad() {
