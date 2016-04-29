@@ -28,13 +28,26 @@
  }]
  */
 
+/* rate driver
+ {
+    "aps": {
+        "alert": "Job Offer Created",
+        "sound": "defauld"
+    },
+        "rate_driver": {
+        "id": 56,
+        "driver_name": "Vasiliy"
+    }
+ }
+ */
+
 import Foundation
 
 class APNSManager: NSObject {
     enum Notification: String {
         case NewMessage = "receive_message"
         case NewJobOffer = "offer_created"
-        case JobOfferCompleted = "offer_completed"
+        case JobOfferCompleted = "rate_driver"
         case JobOfferAwarded = "offer_awarded"
         case NewNotification = "APNS.NewNotification"
     }
@@ -55,8 +68,11 @@ class APNSManager: NSObject {
             parseMessage(messageObj, messageText: userInfo[DictionaryKeys.APNS.main]![DictionaryKeys.APNS.alert] as? String)
         } else if let jobObj = userInfo[Notification.NewJobOffer.rawValue] {
             parseNewJob(jobObj, jobTitle: userInfo[DictionaryKeys.APNS.main]![DictionaryKeys.APNS.alert] as? String, isAwarded: false)
-        }  else if let jobObj = userInfo[Notification.JobOfferAwarded.rawValue] {
+        } else if let jobObj = userInfo[Notification.JobOfferAwarded.rawValue] {
             parseNewJob(jobObj, jobTitle: userInfo[DictionaryKeys.APNS.main]![DictionaryKeys.APNS.alert] as? String, isAwarded: true)
+        } else if let jobObj = userInfo[Notification.JobOfferCompleted.rawValue] {
+            let jobTitle = userInfo[DictionaryKeys.APNS.main]![DictionaryKeys.APNS.alert] as? String
+            parseCompletedJob(jobObj, jobTitle: jobTitle)
         }
     }
     
@@ -101,6 +117,7 @@ class APNSManager: NSObject {
     }
 }
 
+//MARK: - Private Methods
 extension APNSManager {
     private func parseMessage(messageObj: AnyObject, messageText: String?) {
         let message = Message()
@@ -121,6 +138,16 @@ extension APNSManager {
         job.id = jobObj[Response.id] as? Int
         
         let notification = NSNotification(name: isAwarded ? Notification.JobOfferAwarded.rawValue : Notification.NewJobOffer.rawValue, object: job)
+        NSNotificationCenter.defaultCenter().postNotification(notification)
+    }
+    
+    private func parseCompletedJob(jobObj: AnyObject, jobTitle: String?) {
+        let job = JobOffer()
+        job.jobTitle = jobTitle
+        job.id = jobObj[Response.id] as? Int
+        job.driverName = jobObj[Response.Marketplace.JobOffers.driverName] as? String
+        
+        let notification = NSNotification(name: Notification.JobOfferCompleted.rawValue, object: job)
         NSNotificationCenter.defaultCenter().postNotification(notification)
     }
 }

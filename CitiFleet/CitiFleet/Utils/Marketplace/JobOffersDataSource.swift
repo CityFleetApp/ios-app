@@ -29,6 +29,7 @@ class JobOffer: NSObject {
     var created: NSDate?
     var jobTitle: String?
     var awarded: Bool?
+    var driverName: String?
     
     override init() {
         

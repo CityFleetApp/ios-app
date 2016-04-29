@@ -62,6 +62,7 @@ extension UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(openJobOffer(_:)), name: APNSManager.Notification.NewJobOffer.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(openAwarderJobOffer(_:)), name: APNSManager.Notification.JobOfferAwarded.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(openNotification(_:)), name: APNSManager.Notification.NewNotification.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(openRateDriver(_:)), name: APNSManager.Notification.JobOfferCompleted.rawValue, object: nil)
     }
     
     func unsubscribe() {
@@ -72,6 +73,7 @@ extension UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: APNSManager.Notification.NewJobOffer.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: APNSManager.Notification.NewNotification.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: APNSManager.Notification.JobOfferAwarded.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: APNSManager.Notification.JobOfferCompleted.rawValue, object: nil)
     }
     
     func openMessage(notification: NSNotification) {
@@ -121,6 +123,30 @@ extension UIViewController {
     func openAwarderJobOffer(notification: NSNotification) {
         if let job = notification.object as? JobOffer {
             openJob(true, job: job)
+        }
+    }
+    
+    func openRateDriver(notification: NSNotification) {
+        if let job = notification.object as? JobOffer {
+            let apnsView = APNSView.viewFromNib()
+            getRootView().addSubview(apnsView)
+            apnsView.pushText.text = job.jobTitle
+            apnsView.pushIcon.image = UIImage(named: Resources.Notification.JobOffer)
+            
+            apnsView.natificationTapped = { [weak self] in
+                let urlStr = "\(URL.Marketplace.JobOffers)\(job.id!)/"
+                RequestManager.sharedInstance().get(urlStr, parameters: nil, completion: { (json, error) in
+                    if let obj = json?.dictionaryObject {
+                        let jobOffer = JobOffer(json: obj)
+                        jobOffer.driverName = job.driverName
+                        let vc = JobOfferCompletedByUserVC.viewControllerFromStoryboard()
+                        vc.jobOffer = jobOffer
+                        self?.getNavigationController()?.pushViewController(vc, animated: true)
+                    }
+                })
+            }
+            
+            apnsView.show()
         }
     }
 }

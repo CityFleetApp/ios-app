@@ -327,6 +327,7 @@ struct Response {
             static let created = "created"
             static let title = "title"
             static let awarded = "awarded"
+            static let driverName = "driver_name"
         }
         struct ManagePost {
             static let postType = "posting_type"

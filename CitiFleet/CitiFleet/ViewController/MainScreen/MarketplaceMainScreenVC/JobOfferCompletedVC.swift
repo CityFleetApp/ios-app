@@ -27,6 +27,7 @@ class JobOfferCompletedVC: UIViewController {
     override func viewDidLoad() {
         setupJobOffer(jobOffer)
         ratingView?.rating = 0
+        navigationController?.navigationBar.hidden = false 
     }
     
     internal func setupJobOffer(job: JobOffer?) {
@@ -107,9 +108,18 @@ class JobOfferCompletedByUserVC: JobOfferCompletedVC {
         return "JobOfferCompletedByUserVC"
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        driverName?.text = driver
+    class func viewControllerFromStoryboard() -> JobOfferCompletedByUserVC {
+        let storyboard = UIStoryboard(name: Storyboard.MarketPlace, bundle: nil)
+        if let viewController = storyboard.instantiateViewControllerWithIdentifier(JobOfferCompletedByUserVC.StoryboardID) as? JobOfferCompletedByUserVC {
+            return viewController
+        } else {
+            return JobOfferCompletedByUserVC()
+        }
+    }
+    
+    override func setupJobOffer(job: JobOffer?) {
+        super.setupJobOffer(job)
+        driverName?.text = job?.driverName
     }
     
     override func submit(sender: AnyObject) {
@@ -127,11 +137,7 @@ class JobOfferCompletedByUserVC: JobOfferCompletedVC {
                 return
             }
             if error == nil {
-                if let vc = self?.previousViewController() {
-                    self?.navigationController?.popToViewController(vc, animated: true)
-                } else {
-                    self?.navigationController?.popToRootViewControllerAnimated(true)
-                }
+                self?.navigationController?.popToRootViewControllerAnimated(true)
             }
         }
     }
