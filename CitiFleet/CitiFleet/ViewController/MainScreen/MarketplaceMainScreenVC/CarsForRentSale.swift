@@ -65,6 +65,7 @@ class CarsForRentSale: GoodsForSaleVC {
 extension CarsForRentSale {
     func changedRentSale(sender: UISegmentedControl) {
         isSale = sender.selectedSegmentIndex == 0 ? true : false
+        dataLoader.reload(nil)
         loadData()
     }
 }

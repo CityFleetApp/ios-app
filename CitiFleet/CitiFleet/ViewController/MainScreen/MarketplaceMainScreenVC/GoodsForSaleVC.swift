@@ -16,7 +16,7 @@ class GoodsForSaleVC: UICollectionViewController, MarketplaceLayoutDelegate {
     var topView: UIView!
     
     override func viewDidLoad() {
-        collectionView!.contentInset = UIEdgeInsets(top: 23 + 66, left: 5, bottom: 10, right: 5)
+        collectionView!.contentInset = UIEdgeInsets(top: 15 + 66, left: 5, bottom: 10, right: 5)
         
         let layout = collectionViewLayout as! MarketplaceCollectiovViewLayout
         layout.cellPadding = 5
@@ -29,7 +29,15 @@ class GoodsForSaleVC: UICollectionViewController, MarketplaceLayoutDelegate {
         addSubviewToTopView()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        topView.hidden = false 
+    }
+    
     override func viewWillDisappear(animated: Bool) {
+        topView.hidden = true
+    }
+    
+    deinit {
         topView.removeFromSuperview()
     }
     

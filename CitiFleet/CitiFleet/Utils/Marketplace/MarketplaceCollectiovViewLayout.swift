@@ -86,8 +86,6 @@ class MarketplaceCollectiovViewLayout: UICollectionViewLayout {
             let attributes = layoutAttributesForIndex(item, xOffset: xOffsets[column], yOffset: yOffsets[column], column: column, width: width)
             if !cache.contains(attributes) {
                 cache.append(attributes)
-            } else {
-                
             }
             contentHeight = max(contentHeight, CGRectGetMaxY(attributes.frame))
             yOffsets[column] = yOffsets[column] + attributes.frame.height
@@ -114,7 +112,7 @@ class MarketplaceCollectiovViewLayout: UICollectionViewLayout {
         return nil
     }
     
-    func layoutAttributesForIndex(index: Int, xOffset: CGFloat, yOffset: CGFloat, column: Int, width: CGFloat) -> MarketplaceLayoutAttributes {
+    internal func layoutAttributesForIndex(index: Int, xOffset: CGFloat, yOffset: CGFloat, column: Int, width: CGFloat) -> MarketplaceLayoutAttributes {
         let indexPath = NSIndexPath(forItem: index, inSection: 0)
         
         let width = self.columnWidth
@@ -123,7 +121,7 @@ class MarketplaceCollectiovViewLayout: UICollectionViewLayout {
         let descriptionHeght = delegate.collectionView(collectionView!, heightForDescriptionAtIndexPath: indexPath, withWidth: width)
         let height = cellPadding + photoHeight + infoHeight + descriptionHeght + cellPadding
         
-        let frame = CGRect(x: xOffset, y: yOffset, width: columnWidth, height: height)
+        let frame = CGRect(x: xOffset, y: yOffset + 10, width: columnWidth, height: height)
         let insetFrame = CGRectInset(frame, cellPadding, cellPadding)
         
         var attributes: MarketplaceLayoutAttributes!

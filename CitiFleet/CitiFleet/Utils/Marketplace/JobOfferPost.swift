@@ -19,13 +19,14 @@ class JobOfferPost: NSObject {
     var suite: Bool?
     var jobType: Int?
     var instructions: String?
+    var jobTitle: String?
     
     func upload(completion: ((NSError?) -> ()) ) {
-        RequestManager.sharedInstance().postJobOffer(dateTime!, pickup: pickupAddress!, destination: destinationAddress!, fare: fare!, gratuity: gratuity!, vehicleType: vehicleType!, isSuite: suite!, jobType: jobType!, instructions: instructions!, completion: completion)
+        RequestManager.sharedInstance().postJobOffer(jobTitle!, dateTime: dateTime!, pickup: pickupAddress!, destination: destinationAddress!, fare: fare!, gratuity: gratuity!, vehicleType: vehicleType!, isSuite: suite!, jobType: jobType!, instructions: instructions!, completion: completion)
     }
     
     func patch (completion: ((NSError?) -> ()) ) {
-        RequestManager.sharedInstance().patchJobOffer(id!, dateTime: dateTime!, pickup: pickupAddress!, destination: destinationAddress!, fare: fare!, gratuity: gratuity!, vehicleType: vehicleType!, isSuite: suite!, jobType: jobType!, instructions: instructions!, completion: completion)
+        RequestManager.sharedInstance().patchJobOffer(jobTitle!, id: id!, dateTime: dateTime!, pickup: pickupAddress!, destination: destinationAddress!, fare: fare!, gratuity: gratuity!, vehicleType: vehicleType!, isSuite: suite!, jobType: jobType!, instructions: instructions!, completion: completion)
     }
     
 }

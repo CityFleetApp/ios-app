@@ -75,7 +75,7 @@ extension JobOffersVC: UITableViewDataSource {
         cell?.dateLabel?.text = NSDateFormatter(dateFormat: "dd/MM/yyyy").stringFromDate(item.pickupDatetime!)
         cell?.jobStateLabel.text = item.status?.rawValue
         cell?.setEditable(true)
-        cell?.notificationTitle?.text = item.instructions
+        cell?.notificationTitle?.text = item.jobTitle
         
         return cell!
     }

@@ -25,7 +25,7 @@ class ManagedJob: JobOffer, PreviousPost {
         return id
     }
     var title: String? {
-        return instructions
+        return jobTitle
     }
     var postDescription: String? {
         return "Job Offer"

@@ -7,7 +7,12 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Montserrat-Bold.otf">
+            <string>Montserrat-Bold</string>
+        </mutableArray>
         <mutableArray key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
@@ -36,7 +41,7 @@
         <!--Main LoginVC-->
         <scene sceneID="sJL-we-Iia">
             <objects>
-                <viewController id="mTb-tE-vlF" customClass="MainLoginVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mTb-tE-vlF" customClass="MainLoginVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0PS-ok-tqe"/>
                         <viewControllerLayoutGuide type="bottom" id="2NM-nx-RcG"/>
@@ -156,7 +161,7 @@
         <!--Register-->
         <scene sceneID="gGI-dS-QbW">
             <objects>
-                <tableViewController id="WY3-mK-tJa" customClass="SignUpVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="WY3-mK-tJa" customClass="SignUpVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="WTM-Yh-OVz">
                         <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -280,7 +285,7 @@
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P3a-HU-NJK" customClass="PhoneTextField" customModule="CitiFleet" customModuleProvider="target">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P3a-HU-NJK" customClass="PhoneTextField" customModule="CityFleet" customModuleProvider="target">
                                                     <rect key="frame" x="17" y="41" width="373" height="20"/>
                                                     <color key="textColor" red="0.090196078431372548" green="0.15686274509803921" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
@@ -571,10 +576,10 @@
             </objects>
             <point key="canvasLocation" x="2321" y="55"/>
         </scene>
-        <!--LoginVC-->
+        <!--Login-->
         <scene sceneID="L1X-zv-uaJ">
             <objects>
-                <viewController id="bu6-N9-BrG" customClass="LoginVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bu6-N9-BrG" customClass="LoginVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PIF-Rc-1fm"/>
                         <viewControllerLayoutGuide type="bottom" id="QHL-ZS-h4d"/>
@@ -611,7 +616,7 @@
                                     <constraint firstAttribute="width" secondItem="C8W-UJ-Xe3" secondAttribute="height" multiplier="31:23" id="keg-65-6go"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kio-6h-WNr" customClass="LoginTextField" customModule="CitiFleet" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kio-6h-WNr" customClass="LoginTextField" customModule="CityFleet" customModuleProvider="target">
                                 <rect key="frame" x="22" y="477" width="370" height="49"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.700000762939453"/>
@@ -627,7 +632,7 @@
                                     <outlet property="delegate" destination="bu6-N9-BrG" id="M7E-kc-xBO"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWY-R4-Nbv" customClass="LoginTextField" customModule="CitiFleet" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWY-R4-Nbv" customClass="LoginTextField" customModule="CityFleet" customModuleProvider="target">
                                 <rect key="frame" x="22" y="418" width="370" height="49"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.700000762939453"/>
@@ -646,6 +651,16 @@
                                     <outlet property="delegate" destination="bu6-N9-BrG" id="Mrz-Iy-3Gl"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQr-Ri-6dg">
+                                <rect key="frame" x="139" y="541" width="136" height="30"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="15"/>
+                                <state key="normal" title="Forgot Password?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="zMz-zB-0Cq" kind="push" id="fB3-4e-Z16"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -660,7 +675,9 @@
                             <constraint firstAttribute="trailing" secondItem="VGL-Ze-b41" secondAttribute="trailing" id="Od1-SX-DcL"/>
                             <constraint firstItem="8Dl-MM-FWO" firstAttribute="top" secondItem="kio-6h-WNr" secondAttribute="bottom" constant="53" id="QXI-m4-IPK"/>
                             <constraint firstItem="C8W-UJ-Xe3" firstAttribute="top" relation="lessThanOrEqual" secondItem="PIF-Rc-1fm" secondAttribute="bottom" constant="131" id="SbN-vg-Gwp"/>
+                            <constraint firstItem="8Dl-MM-FWO" firstAttribute="top" secondItem="QQr-Ri-6dg" secondAttribute="bottom" constant="8" id="Wmy-Tc-m5h"/>
                             <constraint firstItem="VGL-Ze-b41" firstAttribute="leading" secondItem="0G4-0M-LB5" secondAttribute="leading" id="Y77-5G-mT0"/>
+                            <constraint firstItem="QQr-Ri-6dg" firstAttribute="centerX" secondItem="0G4-0M-LB5" secondAttribute="centerX" id="ang-t0-AxM"/>
                             <constraint firstItem="VGL-Ze-b41" firstAttribute="top" secondItem="PIF-Rc-1fm" secondAttribute="bottom" constant="-20" id="cVa-AE-dXO"/>
                             <constraint firstItem="8Dl-MM-FWO" firstAttribute="leading" secondItem="BWY-R4-Nbv" secondAttribute="leading" id="dWs-Gp-VNA"/>
                             <constraint firstItem="C8W-UJ-Xe3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PIF-Rc-1fm" secondAttribute="bottom" constant="16" id="eLy-9Z-wK3"/>
@@ -671,7 +688,13 @@
                             <constraint firstItem="QHL-ZS-h4d" firstAttribute="top" secondItem="VGL-Ze-b41" secondAttribute="bottom" id="wTQ-yR-0Kg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gia-C3-7kp"/>
+                    <navigationItem key="navigationItem" title="Login" id="gia-C3-7kp">
+                        <barButtonItem key="leftBarButtonItem" image="back-ic" id="Ad4-Jw-Sp5">
+                            <connections>
+                                <action selector="back:" destination="bu6-N9-BrG" id="RhU-xh-Irs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="button2BottomLayout" destination="Ob2-n5-1Ir" id="Jjd-i0-YeM"/>
@@ -707,6 +730,105 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgG-2x-Kgt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1054" y="447"/>
+        </scene>
+        <!--Forgot password-->
+        <scene sceneID="rOR-Yq-otd">
+            <objects>
+                <viewController id="zMz-zB-0Cq" customClass="ForgotPasswordVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bck-32-gn3"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gyg-1H-cQh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wv4-p1-qzE">
+                        <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-bg" translatesAutoresizingMaskIntoConstraints="NO" id="GZJ-Wy-Y9e">
+                                <rect key="frame" x="0.0" y="-20" width="414" height="692"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uw1-ND-PFN">
+                                <rect key="frame" x="22" y="579" width="370" height="49"/>
+                                <color key="backgroundColor" red="0.90588235289999997" green="0.1137254902" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Jsp-4R-ZwN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="RESER PASSWORD"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createAccount:" destination="mTb-tE-vlF" eventType="touchUpInside" id="tGj-LA-YOe"/>
+                                    <action selector="logIn:" destination="zMz-zB-0Cq" eventType="touchUpInside" id="BMh-D5-leJ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="ymJ-Bk-Mcb">
+                                <rect key="frame" x="68" y="120" width="279" height="207"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ymJ-Bk-Mcb" secondAttribute="height" multiplier="31:23" id="zBv-dU-ZqZ"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="he0-Zh-gS3" customClass="LoginTextField" customModule="CityFleet" customModuleProvider="target">
+                                <rect key="frame" x="22" y="477" width="370" height="49"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.700000762939453"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="login_mail-ic"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                        <color key="value" red="0.90588235289999997" green="0.1137254902" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="attributedPlaceholderText" value="Enter Email"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="zMz-zB-0Cq" id="yCn-IW-tUE"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="he0-Zh-gS3" firstAttribute="top" secondItem="ymJ-Bk-Mcb" secondAttribute="bottom" constant="150" id="1Jo-rr-qqx"/>
+                            <constraint firstItem="Gyg-1H-cQh" firstAttribute="top" secondItem="GZJ-Wy-Y9e" secondAttribute="bottom" id="4Vf-2y-Wws"/>
+                            <constraint firstItem="ymJ-Bk-Mcb" firstAttribute="width" secondItem="ymJ-Bk-Mcb" secondAttribute="height" multiplier="31:23" id="5VE-Jy-AJ3"/>
+                            <constraint firstItem="ymJ-Bk-Mcb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bck-32-gn3" secondAttribute="bottom" constant="16" id="7Zh-jz-lxI"/>
+                            <constraint firstItem="ymJ-Bk-Mcb" firstAttribute="centerX" secondItem="wv4-p1-qzE" secondAttribute="centerX" id="7xj-7Z-VBc"/>
+                            <constraint firstItem="GZJ-Wy-Y9e" firstAttribute="leading" secondItem="wv4-p1-qzE" secondAttribute="leading" id="Djh-Sq-lVp"/>
+                            <constraint firstItem="Uw1-ND-PFN" firstAttribute="top" secondItem="he0-Zh-gS3" secondAttribute="bottom" constant="53" id="DlG-Jz-J3j"/>
+                            <constraint firstItem="Uw1-ND-PFN" firstAttribute="trailing" secondItem="he0-Zh-gS3" secondAttribute="trailing" id="GJ8-mG-VP3"/>
+                            <constraint firstItem="ymJ-Bk-Mcb" firstAttribute="top" relation="lessThanOrEqual" secondItem="bck-32-gn3" secondAttribute="bottom" constant="131" id="NkV-gM-rEP"/>
+                            <constraint firstItem="Gyg-1H-cQh" firstAttribute="top" secondItem="Uw1-ND-PFN" secondAttribute="bottom" constant="44" id="TES-nm-baX"/>
+                            <constraint firstItem="Uw1-ND-PFN" firstAttribute="leading" secondItem="he0-Zh-gS3" secondAttribute="leading" id="hPQ-Q8-MZG"/>
+                            <constraint firstItem="Uw1-ND-PFN" firstAttribute="leading" secondItem="wv4-p1-qzE" secondAttribute="leading" constant="22" id="oZJ-oZ-P8m"/>
+                            <constraint firstItem="Uw1-ND-PFN" firstAttribute="centerX" secondItem="wv4-p1-qzE" secondAttribute="centerX" id="pH7-yd-42V"/>
+                            <constraint firstAttribute="trailing" secondItem="GZJ-Wy-Y9e" secondAttribute="trailing" id="rFg-zH-O8D"/>
+                            <constraint firstItem="GZJ-Wy-Y9e" firstAttribute="top" secondItem="bck-32-gn3" secondAttribute="bottom" constant="-20" id="sYz-kZ-dJw"/>
+                            <constraint firstItem="Uw1-ND-PFN" firstAttribute="height" secondItem="he0-Zh-gS3" secondAttribute="height" id="zJk-ZB-M8l"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Forgot password" id="8bN-YG-cij">
+                        <barButtonItem key="leftBarButtonItem" image="back-ic" id="BA5-UH-ZbN">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="back:" destination="zMz-zB-0Cq" id="3Ae-ro-Pj8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="button2BottomLayout" destination="TES-nm-baX" id="3Ng-nV-PfR"/>
+                        <outlet property="logo2TopTextFieldLayout" destination="1Jo-rr-qqx" id="p5z-NV-6sa"/>
+                        <outlet property="mailTextField" destination="he0-Zh-gS3" id="Myu-OZ-S1U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jna-AG-CmN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2829" y="874"/>
         </scene>
     </scenes>
     <resources>

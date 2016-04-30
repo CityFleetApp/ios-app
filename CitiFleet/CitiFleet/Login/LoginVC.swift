@@ -21,7 +21,7 @@ class LoginVC: UIViewController {
     @IBOutlet var button2BottomLayout: NSLayoutConstraint!
     
     @IBOutlet var mailTextField: LoginTextField!
-    @IBOutlet var passwordTextField: LoginTextField!
+    @IBOutlet var passwordTextField: LoginTextField?
     
     private let validator = Validator()
     private let placeholderText = [
@@ -38,7 +38,9 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         registerKeyboardEvents()
         validator.registerField(mailTextField, rules: [RequiredRule()])
-        validator.registerField(passwordTextField, rules: [RequiredRule()])
+        if let tf = passwordTextField {
+            validator.registerField(tf, rules: [RequiredRule()])
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -46,6 +48,7 @@ class LoginVC: UIViewController {
         
         logo2MailStartHeight = logo2TopTextFieldLayout.constant
         button2BottomStartHeight = button2BottomLayout.constant
+        navigationController?.navigationBar.hidden = false
     }
     
     func registerKeyboardEvents() {
@@ -60,28 +63,28 @@ class LoginVC: UIViewController {
     
     @IBAction func logIn(sender: AnyObject) {
         mailTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
+        passwordTextField?.resignFirstResponder()
         
-        validator.validate { (errors) -> Void in
+        validator.validate { [weak self] (errors) -> Void in
             for error in errors {
                 error.0.text = ""
                 error.0.setErrorPlaceholder(error.1.errorMessage)
             }
             
             if errors.count == 0 {
-                self.loginRequest()
+                self?.request()
             }
         }
     }
     
-    func loginRequest() {
+    func request() {
         let mail = mailTextField.text
-        let password = passwordTextField.text!
+        let password = passwordTextField!.text!
         
-        User.login(mail!, password: password) { (user, error) -> () in
+        User.login(mail!, password: password) { [weak self] (user, error) -> () in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 if let _ = user {
-                    self.dismissViewControllerAnimated(true, completion: nil)
+                    self?.dismissViewControllerAnimated(true, completion: nil)
                 } else {
 //                    RequestErrorHandler(error: error!, title: Titles.error).handle()
                 }
@@ -94,9 +97,9 @@ class LoginVC: UIViewController {
 extension LoginVC: UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == mailTextField {
-            passwordTextField.becomeFirstResponder()
+            passwordTextField?.becomeFirstResponder()
         } else {
-            passwordTextField.resignFirstResponder()
+            passwordTextField?.resignFirstResponder()
         }
         return true
     }
@@ -119,16 +122,16 @@ extension LoginVC {
     func keyboardWillHide(userInfo:NSNotification?) {
         button2BottomLayout.constant = button2BottomStartHeight!
         logo2TopTextFieldLayout.constant = logo2MailStartHeight!
-        UIView.animateWithDuration(0.5) {
-            self.view.layoutSubviews()
+        UIView.animateWithDuration(0.5) { [weak self] in
+            self?.view.layoutSubviews()
         }
     }
     
     func updateConstraints(userInfo:NSNotification?) {
         button2BottomLayout.constant = button2BottomStartHeight! + keyboardHeight(userInfo!)
         logo2TopTextFieldLayout.constant = logo2MailStartHeight! - keyboardHeight(userInfo!)
-        UIView.animateWithDuration(0.5) {
-            self.view.layoutSubviews()
+        UIView.animateWithDuration(0.5) { [weak self] in
+            self?.view.layoutSubviews()
         }
     }
     
@@ -136,5 +139,28 @@ extension LoginVC {
         var info = notification.userInfo!
         let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
         return keyboardFrame.size.height
+    }
+}
+
+class ForgotPasswordVC: LoginVC {
+    override func request() {
+        if mailTextField.text == nil {
+            return
+        }
+        RequestManager.sharedInstance().post(URL.User.ResetPassword, parameters: [Params.email: mailTextField.text!]) { [weak self] (json, error) in
+            if error == nil {
+                self?.navigationController?.popViewControllerAnimated(true)
+            }
+        }
+    }
+    
+    override func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func back(sender: AnyObject) {
+        mailTextField.resignFirstResponder()
+        super.back(sender)
     }
 }

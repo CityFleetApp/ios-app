@@ -10,9 +10,10 @@ import UIKit
 import KMPlaceholderTextView
 
 class JobOfferVC: UITableViewController {
-    let InstructionCellIndex = 9
+    let InstructionCellIndex = 10
     let StandordCellHeight: CGFloat = 78
     
+    @IBOutlet var jobTitTF: UITextField!
     @IBOutlet var dateLbl: HighlitableLabel!
     @IBOutlet var timeLbl: HighlitableLabel!
     @IBOutlet var pickupAddress: UITextField!
@@ -65,6 +66,7 @@ class JobOfferVC: UITableViewController {
     }
     
     private func setupJobOffer(offer: JobOffer) {
+        jobTitTF.text = offer.jobTitle
         dateLbl.highlitedText = NSDateFormatter(dateFormat: "yyyy-MM-dd").stringFromDate(offer.pickupDatetime!)
         timeLbl.highlitedText = NSDateFormatter(dateFormat: "HH:mm").stringFromDate(offer.pickupDatetime!)
         pickupAddress.text = offer.pickupAddress
@@ -76,6 +78,7 @@ class JobOfferVC: UITableViewController {
         jobTypeLbl.highlitedText = jobOffer?.jobType
         suiteLbl.highlitedText = jobOffer?.suite == true ? "Yes" : "No"
         
+        uploader.jobTitle = offer.jobTitle
         uploader.jobType = JobTypes.indexOf((jobOffer?.jobType)!)! + 1
         uploader.vehicleType = CatTypes.indexOf((jobOffer?.vehicleType)!)! + 1
         uploader.suite = jobOffer?.suite
@@ -88,6 +91,7 @@ class JobOfferVC: UITableViewController {
         fareTF.resignFirstResponder()
         gratuityTF.resignFirstResponder()
         instructionsTV.resignFirstResponder()
+        jobTitTF.resignFirstResponder()
     }
     
     private func checkPostAvailability() -> Bool {
@@ -107,6 +111,7 @@ class JobOfferVC: UITableViewController {
         }
         
         let textFields = [
+            jobTitTF,
             pickupAddress,
             destinationTF,
             fareTF,
@@ -154,6 +159,7 @@ class JobOfferVC: UITableViewController {
 extension JobOfferVC {
     @IBAction func post(sender: AnyObject) {
         if !checkPostAvailability() {
+            uploader.jobTitle = jobTitTF.text
             uploader.dateTime = dateLbl.highlitedText! + " " + timeLbl.highlitedText!
             uploader.pickupAddress = pickupAddress.text
             uploader.destinationAddress = destinationTF.text
@@ -199,30 +205,33 @@ extension JobOfferVC {
         let index = indexPath.row
         switch index {
         case 0:
-            dateCellSelected()
+            jobTitTF.becomeFirstResponder()
             break
         case 1:
-            timeCellSelected()
+            dateCellSelected()
             break
         case 2:
-            pickupCellSelected()
+            timeCellSelected()
             break
         case 3:
-            destinationCellSelected()
+            pickupCellSelected()
             break
         case 4:
-            fareCellSelected()
+            destinationCellSelected()
             break
         case 5:
-            gratuityCellSelected()
+            fareCellSelected()
             break
         case 6:
-            vehicleTypeSelected()
+            gratuityCellSelected()
             break
         case 7:
-            suiteCellSelected()
+            vehicleTypeSelected()
             break
         case 8:
+            suiteCellSelected()
+            break
+        case 9:
             jobTypeCellSelected()
             break
         case InstructionCellIndex:
@@ -237,10 +246,10 @@ extension JobOfferVC {
         tableView.setZeroSeparator(cell)
         if indexPath.row == InstructionCellIndex {
             if let cell = cell as? MyRentSaleDescriptionCell {
-                cell.changedHeight = { [unowned self] (newHeight) in
-                    self.instructionsCellHeight = newHeight
-                    self.tableView.beginUpdates()
-                    self.tableView.endUpdates()
+                cell.changedHeight = { [weak self] (newHeight) in
+                    self?.instructionsCellHeight = newHeight
+                    self?.tableView.beginUpdates()
+                    self?.tableView.endUpdates()
                 }
             }
         }

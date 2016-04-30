@@ -12,7 +12,7 @@ class ManagePostsListVC: UITableViewController {
     let dataSource = ManagePostsListDataSource()
     let CellHeight: CGFloat = 81
     
-    override func viewDidLoad() {
+    override func viewWillAppear(animated: Bool) {
         dataSource.loadData { [weak self] (error) in
             if error == nil {
                 self?.tableView.reloadData()
