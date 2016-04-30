@@ -16,6 +16,7 @@ class FriendsMarkerView: UIView {
     let imageWidth: CGFloat = 35
     let standardPadding: CGFloat = 8
     @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var nameBG: UIView!
     
     var name: String! {
         didSet {

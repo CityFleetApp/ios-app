@@ -249,11 +249,19 @@ class Friend: User {
         _marker = FriendMarker(position: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
         let view = FriendsMarkerView.viewFromNib()
         view.name = fullName
+        view.nameBG.hidden = true
         _marker?.icon = view.imageFromView()
         _marker?.title = userName
         
         _marker?.friend = self
         return _marker!
+    }
+    
+    func updateMarker(isSelected: Bool) {
+        let view = FriendsMarkerView.viewFromNib()
+        view.name = fullName
+        view.nameBG.hidden = !isSelected
+        marker.icon = view.imageFromView()
     }
     
     init(json: AnyObject) {

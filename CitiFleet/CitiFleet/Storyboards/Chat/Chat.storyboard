@@ -34,7 +34,7 @@
         <!--Chat-->
         <scene sceneID="OUB-NK-KbK">
             <objects>
-                <viewController restorationIdentifier="ChatMainScreenVC" storyboardIdentifier="ChatMainScreenVC" id="Ygl-DB-Mg9" customClass="ChatMainScreenVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ChatMainScreenVC" storyboardIdentifier="ChatMainScreenVC" id="Ygl-DB-Mg9" customClass="ChatMainScreenVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gbI-Wr-v7z"/>
                         <viewControllerLayoutGuide type="bottom" id="k6u-uX-AxB"/>
@@ -136,7 +136,7 @@
         <!--Chat Tab Bar-->
         <scene sceneID="ZLO-tI-WWU">
             <objects>
-                <tabBarController id="54c-cP-g2f" customClass="ChatTabBar" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="54c-cP-g2f" customClass="ChatTabBar" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" hidden="YES" contentMode="scaleToFill" id="2i8-Q1-nwI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -154,13 +154,13 @@
         <!--Item-->
         <scene sceneID="iK9-TA-zHw">
             <objects>
-                <tableViewController storyboardIdentifier="FriendsListVC" id="S51-UG-3G4" customClass="FriendsListVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FriendsListVC" id="S51-UG-3G4" customClass="FriendsListVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="171" sectionHeaderHeight="28" sectionFooterHeight="28" id="yJo-U1-gHf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="525"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="66" id="B1n-Jc-wdc" customClass="FriendCell" customModule="CitiFleet" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="66" id="B1n-Jc-wdc" customClass="FriendCell" customModule="CityFleet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B1n-Jc-wdc" id="cOt-LF-0kM">
@@ -232,7 +232,7 @@
                                     <outlet property="phoneLbl" destination="srf-Go-5ms" id="uAx-Fh-SSV"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="37" id="bXI-kO-UEv" customClass="SearchCell" customModule="CitiFleet" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="37" id="bXI-kO-UEv" customClass="SearchCell" customModule="CityFleet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="94" width="600" height="37"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bXI-kO-UEv" id="ghq-Ay-oQq">
@@ -273,13 +273,13 @@
         <!--Item-->
         <scene sceneID="GYm-5P-szR">
             <objects>
-                <tableViewController id="gtb-TO-5Vm" customClass="ChatRoomsListVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="gtb-TO-5Vm" customClass="ChatRoomsListVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wkV-Rh-jH7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="525"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="37" id="D7f-NQ-IYd" customClass="SearchCell" customModule="CitiFleet" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="37" id="D7f-NQ-IYd" customClass="SearchCell" customModule="CityFleet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="37"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D7f-NQ-IYd" id="ZDI-Ur-4mZ">
@@ -304,7 +304,7 @@
                                     <outlet property="searchTF" destination="Duh-FO-XjU" id="Gbf-uN-nOU"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRoomCellOnePhotoID" rowHeight="66" id="1Uj-S5-Ikl" customClass="ChatRoomCell" customModule="CitiFleet" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRoomCellOnePhotoID" rowHeight="66" id="1Uj-S5-Ikl" customClass="ChatRoomCell" customModule="CityFleet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="65" width="600" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Uj-S5-Ikl" id="kku-2g-v1M">
@@ -368,7 +368,7 @@
                                     <segue destination="Pqs-4v-oCX" kind="push" identifier="" id="bA6-fx-bux"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRoomCellTwoPhotoID" rowHeight="66" id="tOk-ao-ZAh" customClass="ChatRoomCell" customModule="CitiFleet" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRoomCellTwoPhotoID" rowHeight="66" id="tOk-ao-ZAh" customClass="ChatRoomCell" customModule="CityFleet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="131" width="600" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tOk-ao-ZAh" id="UH0-5O-Yoq">
@@ -475,7 +475,7 @@
         <!--Chat-->
         <scene sceneID="YUM-09-3KY">
             <objects>
-                <viewController storyboardIdentifier="ChatVC" id="Pqs-4v-oCX" customClass="ChatVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatVC" id="Pqs-4v-oCX" customClass="ChatVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QEf-ND-H2W"/>
                         <viewControllerLayoutGuide type="bottom" id="D9Q-h6-Czc"/>
@@ -487,9 +487,9 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QaP-Oo-Qt0">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="418"/>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewLayout key="collectionViewLayout" id="qoO-cK-Mmh" customClass="ChatCollectiovViewLayout" customModule="CitiFleet" customModuleProvider="target"/>
+                                <collectionViewLayout key="collectionViewLayout" id="qoO-cK-Mmh" customClass="ChatCollectiovViewLayout" customModule="CityFleet" customModuleProvider="target"/>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OtherMessageCellID" id="oyA-MK-KEu" customClass="ChatCollectionViewCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OtherMessageCellID" id="oyA-MK-KEu" customClass="ChatCollectionViewCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="49" y="0.0" width="502" height="183"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -563,7 +563,7 @@
                                             <outlet property="messageLbl" destination="jU8-wh-x2h" id="S1F-AE-I45"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyMessageCellID" id="BdH-WJ-pYy" customClass="ChatCollectionViewCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyMessageCellID" id="BdH-WJ-pYy" customClass="ChatCollectionViewCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="53" y="193" width="494" height="183"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -758,13 +758,13 @@
         <!--Item-->
         <scene sceneID="vBn-Ak-B7C">
             <objects>
-                <tableViewController storyboardIdentifier="ContactListVC" id="ybF-vc-jKv" customClass="ContactListVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ContactListVC" id="ybF-vc-jKv" customClass="ContactListVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="171" sectionHeaderHeight="28" sectionFooterHeight="28" id="ENZ-ft-vB0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="66" id="cfe-Vu-8Dh" customClass="FriendCell" customModule="CitiFleet" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="66" id="cfe-Vu-8Dh" customClass="FriendCell" customModule="CityFleet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cfe-Vu-8Dh" id="8BK-Gi-twq">
@@ -837,7 +837,7 @@
                                     <outlet property="phoneLbl" destination="60d-Ka-MOL" id="WYv-my-D3N"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="37" id="Dc3-Fc-3el" customClass="SearchCell" customModule="CitiFleet" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" rowHeight="37" id="Dc3-Fc-3el" customClass="SearchCell" customModule="CityFleet" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="94" width="600" height="37"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dc3-Fc-3el" id="Hnb-wu-W0s">

@@ -20,6 +20,7 @@ class MapVC: UIViewController {
     private var _marker: GMSMarker?
     private var reports: Set<Report> = []
     private var friends: Set<Friend> = []
+    private var selectedFriend: Friend?
     
     let updatedLocationSel = "updatedLocation:"
     
@@ -162,6 +163,9 @@ extension MapVC {
         for friend in friends {
             if friend.marker.map == nil {
                 friend.marker.map = mapView
+                if friend == selectedFriend {
+                    friend.updateMarker(true)
+                } 
             }
         }
     }
@@ -267,12 +271,21 @@ extension MapVC: GMSAutocompleteViewControllerDelegate {
     
     func mapView(mapView: GMSMapView, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
         infoDelegate?.hideViewes()
+        selectedFriend?.updateMarker(false)
+        selectedFriend = nil
     }
     
     func mapView(mapView: GMSMapView, didTapMarker marker: GMSMarker) -> Bool {
         if let marker = marker as? ReportMarker {
             infoDelegate?.showReportInfo(marker.report)
         } else if let marker = marker as? FriendMarker {
+            if marker.friend == selectedFriend {
+                return true
+            }
+            selectedFriend?.updateMarker(false)
+            let friend = marker.friend
+            friend?.updateMarker(true)
+            selectedFriend = friend
             infoDelegate?.showFrinedInfo(marker.friend)
         }
         return true

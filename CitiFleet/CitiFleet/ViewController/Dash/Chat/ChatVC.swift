@@ -175,7 +175,7 @@ extension ChatVC: UICollectionViewDelegate {
 //MARK: - Layout Delegate
 extension ChatVC: MarketplaceLayoutDelegate {
     func collectionView(collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
-        return ChatVC.StandardPadding * 2
+        return ChatVC.StandardPadding * 3
     }
     
     func collectionView(collectionView: UICollectionView, heightForInfoAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
