@@ -121,7 +121,14 @@ class UIImageManager: NSObject {
         if let filter = CIFilter(name: UIImageManager.FakeColorFilter) {
             filter.setValue(inputImage, forKey: "inputImage")
             filter.setValue(CIColor(color: UIColor.blackColor()), forKey: "inputColor0")
-            filter.setValue(CIColor(color: UIColor.clearColor()), forKey: "inputColor1")
+            let os = NSProcessInfo().operatingSystemVersion
+            
+            if os.majorVersion < 9 {
+                filter.setValue(CIColor(color: UIColor.whiteColor()), forKey: "inputColor1")
+            } else {
+                filter.setValue(CIColor(color: UIColor.clearColor()), forKey: "inputColor1")
+            }
+            
             
             if let output = filter.outputImage {
                 return UIImage(CIImage: output)
