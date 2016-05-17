@@ -71,7 +71,10 @@ extension JobOffersVC: UITableViewDataSource {
         }
         
         let item = dataSource.items[indexPath.row]
-        cell?.title.text = "\(NSDateFormatter(dateFormat: "hh:mm a").stringFromDate(item.pickupDatetime!)) | $\(item.gratuity!))"
+        
+        let separator = UIScreen.mainScreen().bounds.width <= 360 ? "\n" : " | "
+        
+        cell?.title.text = "\(NSDateFormatter(dateFormat: "hh:mm a").stringFromDate(item.pickupDatetime!))\(separator)$\(item.fare!))"
         cell?.dateLabel?.text = NSDateFormatter(dateFormat: "dd/MM/yyyy").stringFromDate(item.pickupDatetime!)
         cell?.jobStateLabel.text = item.status?.rawValue
         cell?.setEditable(true)

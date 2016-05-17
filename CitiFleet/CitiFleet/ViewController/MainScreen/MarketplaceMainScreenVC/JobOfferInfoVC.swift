@@ -23,6 +23,7 @@ class JobOfferInfoVC: UITableViewController {
     @IBOutlet var suiteLbl: UILabel!
     @IBOutlet var companyLbl: UILabel!
     @IBOutlet var jobTypeLbl: UILabel!
+    @IBOutlet var titleLbl: UILabel!
 
     var job: JobOffer!
     
@@ -38,7 +39,7 @@ class JobOfferInfoVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.hidden = false
-        dateLbl.text = NSDateFormatter(dateFormat: "dd/MM/yy").stringFromDate(job.pickupDatetime!)
+        dateLbl.text = NSDateFormatter(dateFormat: "MM/dd/yyyy").stringFromDate(job.pickupDatetime!)
         timeLbl.text = NSDateFormatter(dateFormat: "hh:mm a").stringFromDate(job.pickupDatetime!)
         addressLbl.text = job.pickupAddress
         destination.text = job.destination
@@ -49,6 +50,7 @@ class JobOfferInfoVC: UITableViewController {
         suiteLbl.text = job.suite == true ? "Yes" : "No"
         companyLbl.text = "Personal"
         jobTypeLbl.text = job.jobType
+        titleLbl.text = job.jobTitle
     }
     
     @IBAction func jobInfo(sender: AnyObject) {
