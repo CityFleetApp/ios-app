@@ -42,6 +42,8 @@
  */
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 
 class APNSManager: NSObject {
     enum Notification: String {
@@ -89,9 +91,10 @@ class APNSManager: NSObject {
     }
     
     func registerAPNSToken(deviceToken: NSData?) {
-        if (NSUserDefaults.standardUserDefaults().valueForKey(AlreadyRegisteredKey) as? Bool) == true {
+        if (NSUserDefaults.standardUserDefaults().valueForKey(DictionaryKeys.UserDefaultsKeys.AlreadyRegisteredKey) as? Bool) == true {
             return
         }
+//        NSUserDefaults.standardUserDefaults().setValue(false, forKey: DictionaryKeys.UserDefaultsKeys.AlreadyRegisteredKey)
         typealias APNSParams = Params.User.APNS
         
         let characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
@@ -107,12 +110,33 @@ class APNSManager: NSObject {
         if User.currentUser()?.token == nil {
             return 
         }
-        RequestManager.sharedInstance().makeSilentRequest(.POST, baseURL: URL.User.APNS.Register, parameters: params) { [weak self] (json, error) -> () in
-            if error == nil {
-                if let key = self?.AlreadyRegisteredKey {
-                    NSUserDefaults.standardUserDefaults().setValue(true, forKey: key)
+        
+        Alamofire.request(.POST, RequestManager.sharedInstance().url(URL.User.APNS.Register), headers: RequestManager.sharedInstance().header(), parameters: params, encoding: .JSON)
+            .validate(statusCode: 200..<300)
+            .responseData{ response in
+                let dataString = String(data: response.data!, encoding: NSUTF8StringEncoding)
+                print("Response data: \(dataString)")
+                
+                switch response.result {
+                case .Success(_):
+                    NSUserDefaults.standardUserDefaults().setValue(true, forKey: DictionaryKeys.UserDefaultsKeys.AlreadyRegisteredKey)
+                    break
+                case .Failure(_):
+                    if let data = response.data {
+                        let json = JSON(data: data)
+                        let dict = json.dictionaryObject
+                        let existingTokenError = "APNSDevice with this Registration ID already exists."
+                        
+                        if let dict = dict {
+                            if let error = dict["registration_id"] as? [String] {
+                                if error.count > 0 && error[0] == existingTokenError {
+                                    NSUserDefaults.standardUserDefaults().setValue(true, forKey: DictionaryKeys.UserDefaultsKeys.AlreadyRegisteredKey)
+                                }
+                            }
+                        }
+                    }
+                    break
                 }
-            }
         }
     }
 }

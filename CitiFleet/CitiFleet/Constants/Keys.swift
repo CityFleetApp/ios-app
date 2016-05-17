@@ -9,6 +9,9 @@
 import Foundation
 
 struct DictionaryKeys {
+    struct UserDefaultsKeys {
+        static let AlreadyRegisteredKey = "AlreadyRegisteredKey"
+    }
     struct APNS {
         static let main = "aps"
         static let alert = "alert"
