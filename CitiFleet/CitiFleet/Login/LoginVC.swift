@@ -17,7 +17,7 @@ class LoginVC: UIViewController {
     private var logo2MailStartHeight: CGFloat?
     private var button2BottomStartHeight: CGFloat?
     
-    @IBOutlet var logo2TopTextFieldLayout: NSLayoutConstraint!
+    @IBOutlet var logo2TopTextFieldLayout: NSLayoutConstraint?
     @IBOutlet var button2BottomLayout: NSLayoutConstraint!
     
     @IBOutlet var mailTextField: LoginTextField!
@@ -46,7 +46,7 @@ class LoginVC: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        logo2MailStartHeight = logo2TopTextFieldLayout.constant
+        logo2MailStartHeight = logo2TopTextFieldLayout?.constant
         button2BottomStartHeight = button2BottomLayout.constant
         navigationController?.navigationBar.hidden = false
     }
@@ -121,7 +121,9 @@ extension LoginVC {
     
     func keyboardWillHide(userInfo:NSNotification?) {
         button2BottomLayout.constant = button2BottomStartHeight!
-        logo2TopTextFieldLayout.constant = logo2MailStartHeight!
+        if let contant = logo2MailStartHeight {
+            logo2TopTextFieldLayout?.constant = contant
+        }
         UIView.animateWithDuration(0.5) { [weak self] in
             self?.view.layoutSubviews()
         }
@@ -129,7 +131,9 @@ extension LoginVC {
     
     func updateConstraints(userInfo:NSNotification?) {
         button2BottomLayout.constant = button2BottomStartHeight! + keyboardHeight(userInfo!)
-        logo2TopTextFieldLayout.constant = logo2MailStartHeight! - keyboardHeight(userInfo!)
+        if let constant = logo2MailStartHeight {
+            logo2TopTextFieldLayout?.constant = constant - keyboardHeight(userInfo!)
+        }
         UIView.animateWithDuration(0.5) { [weak self] in
             self?.view.layoutSubviews()
         }
@@ -149,7 +153,9 @@ class ForgotPasswordVC: LoginVC {
         }
         RequestManager.sharedInstance().post(URL.User.ResetPassword, parameters: [Params.email: mailTextField.text!]) { [weak self] (json, error) in
             if error == nil {
-                self?.navigationController?.popViewControllerAnimated(true)
+                LoaderViewManager.showDoneLoader(1, completion: { 
+                    self?.navigationController?.popViewControllerAnimated(true)
+                })
             }
         }
     }

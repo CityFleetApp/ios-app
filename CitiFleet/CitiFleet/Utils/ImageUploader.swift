@@ -55,7 +55,7 @@ class ImageUploader: NSObject {
             body.appendData("--\(boundary)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
             var n = name
             if data.count > 1 {
-                n = "\(name)\(data.indexOf(d)! + 1)"
+                n = "\(name)[\(data.indexOf(d)!)]"
             }
             body.appendData("Content-Disposition: form-data; name=\"\(n)\"; filename=\"avatar.png\"\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
             body.appendData("Content-Type: \(MIME.Image.png)\r\n\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)

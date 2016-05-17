@@ -62,41 +62,41 @@ class DOCManagementCellBuilder: NSObject {
     }
     
     func setActionsForCell(cell: DOCManagementCell?, type: Document.CellType?) {
-        cell?.saveDocument = { [unowned self] in
+        cell?.saveDocument = { [weak self] in
             if cell?.photo == nil {
-                self.showAlert("Provide photo", message: "Please, take a phofo of the document")
+                self?.showAlert("Provide photo", message: "Please, take a phofo of the document")
                 return
             }
             
             if cell?.expDate == nil && cell?.dateLabel != nil {
-                self.showAlert("Select date", message: "Please, select expiration date of the document")
+                self?.showAlert("Select date", message: "Please, select expiration date of the document")
                 return
             }
             
             if cell?.licenseNumber == nil && cell?.licenseNumberTF != nil {
-                self.showAlert("Enter Tic Plate Number", message: "Please, enter Tic Plate Number of the document")
+                self?.showAlert("Enter Tic Plate Number", message: "Please, enter Tic Plate Number of the document")
                 return
             }
             
             var document = Document(id: nil, type: (cell?.docType)!, uploaded: false, expiryDate: cell?.expDate, plateNumber: cell?.licenseNumber, photo: cell?.photo, photoURL: nil)
-            if let doc = self.docManager!.documents[(cell?.docType)!] {
+            if let doc = self?.docManager!.documents[(cell?.docType)!] {
                 document.id = doc.id
                 document.photoURL = doc.photoURL
                 document.uploaded = true
             }
-            self.docManager!.addDocument(document, completion: { () -> () in
+            self?.docManager!.addDocument(document, completion: { () -> () in
                 
             })
         }
         
-        cell?.selectedPhoto = { [unowned self] (image) in
-            var doc = self.documentWithType(type!)
-            doc.photo = image
+        cell?.selectedPhoto = { [weak self] (image) in
+            var doc = self?.documentWithType(type!)
+            doc?.photo = image
         }
         
-        cell?.selectedDate = { [unowned self] (date) in
-            var doc = self.documentWithType(type!)
-            doc.expiryDate = date
+        cell?.selectedDate = { [weak self] (date) in
+            var doc = self?.documentWithType(type!)
+            doc?.expiryDate = date
         }
     }
     

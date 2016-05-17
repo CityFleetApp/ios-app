@@ -16,9 +16,9 @@ class DOCManagementVC: UITableViewController {
     
     override func viewDidLoad() {
         cellBuilder = DOCManagementCellBuilder(tableView: tableView, docManager: docManager)
-        docManager.loadDocuments { [unowned self] (docs, error) -> () in
+        docManager.loadDocuments { [weak self] (docs, error) -> () in
             if error == nil {
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
     }

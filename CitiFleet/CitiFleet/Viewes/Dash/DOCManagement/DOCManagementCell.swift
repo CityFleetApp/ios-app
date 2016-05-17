@@ -33,7 +33,6 @@ class DOCManagementCell: DashMenuCell {
     
     private let expDateColor = UIColor(hex: 0x4C5A76, alpha: 1)
     private let placeHolderColor = UIColor.lightGrayColor()
-    private let ExpDateTag = 100
     private let getereSelector = "photoClicked:"
     private let longPressGestureSelector = "longPhotoClicked:"
     
@@ -87,13 +86,11 @@ class DOCManagementCell: DashMenuCell {
     override func selectCell() {
         super.selectCell()
         dateLabel?.textColor = UIColor.whiteColor()
-        (contentView.viewWithTag(ExpDateTag) as! UILabel).textColor = UIColor.whiteColor()
     }
     
     override func deselectCell() {
         super.deselectCell()
         dateLabel?.highlitedText = dateLabel?.highlitedText
-        (contentView.viewWithTag(ExpDateTag) as! UILabel).textColor = expDateColor
     }
 }
 
