@@ -27,6 +27,10 @@ class OptionsPostingVC: UITableViewController {
         photoCollectionView.dataSource = vehicleCollectionViewDelegate
         photoCollectionView.delegate = vehicleCollectionViewDelegate
         
+        vehicleCollectionViewDelegate.cellAtIndexPath = { [weak self] (indexPath: NSIndexPath) -> (UICollectionViewCell?) in
+            return self?.photoCollectionView.cellForItemAtIndexPath(indexPath)
+        }
+        
         if let car = existingCar {
             setupExistingCarData(car)
         } else {

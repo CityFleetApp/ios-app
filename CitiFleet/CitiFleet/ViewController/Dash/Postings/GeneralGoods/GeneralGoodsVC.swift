@@ -43,6 +43,9 @@ class GeneralGoodsVC: UITableViewController {
         photoDelegate = PostingPhotosCollectionDelegate(reloadData: { [weak self] in
             self?.goodsPhotoCV.reloadData()
         })
+        photoDelegate.cellAtIndexPath = { [weak self] (indexPath: NSIndexPath) -> (UICollectionViewCell?) in
+            return self?.goodsPhotoCV.cellForItemAtIndexPath(indexPath)
+        }
         goodsPhotoCV.dataSource = photoDelegate
         goodsPhotoCV.delegate = photoDelegate
         

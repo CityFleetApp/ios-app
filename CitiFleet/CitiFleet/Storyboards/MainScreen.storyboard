@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uUJ-Zd-Etw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uUJ-Zd-Etw">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -26,7 +26,7 @@
         <!--Main ScreenVC-->
         <scene sceneID="oFy-Nf-fYT">
             <objects>
-                <viewController id="4tr-YF-9SX" customClass="MainScreenVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4tr-YF-9SX" customClass="MainScreenVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sf3-FL-yrX"/>
                         <viewControllerLayoutGuide type="bottom" id="9Ta-yl-vfH"/>
@@ -217,7 +217,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CV6-LD-mp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1340.5" y="781"/>
+            <point key="canvasLocation" x="1405.5" y="781"/>
         </scene>
         <!--NotificationsVC-->
         <scene sceneID="DKm-Zw-vvb">
@@ -227,12 +227,12 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywG-ZH-kh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1583.5" y="781"/>
+            <point key="canvasLocation" x="1608.5" y="781"/>
         </scene>
         <!--MapVC-->
         <scene sceneID="7ce-Pg-MtH">
             <objects>
-                <viewController id="HS0-Fm-CrT" customClass="MapVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HS0-Fm-CrT" customClass="MapVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z75-Zp-aP0"/>
                         <viewControllerLayoutGuide type="bottom" id="EGd-Jj-50u"/>
@@ -372,7 +372,7 @@
         <!--Add Friends-->
         <scene sceneID="o4K-vH-kEV">
             <objects>
-                <tableViewController restorationIdentifier="AddFriendsVC" storyboardIdentifier="AddFriendsVC" id="cyw-gj-A8a" customClass="AddFriendsVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController restorationIdentifier="AddFriendsVC" storyboardIdentifier="AddFriendsVC" id="cyw-gj-A8a" customClass="AddFriendsVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="48x-Fy-fj7">
                         <rect key="frame" x="0.0" y="44" width="414" height="692"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -443,7 +443,7 @@ to the same direction ,
                         <sections>
                             <tableViewSection id="83r-B2-IJq">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="lvZ-r8-Aba" customClass="AddFriendsCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="lvZ-r8-Aba" customClass="AddFriendsCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="226" width="414" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lvZ-r8-Aba" id="laK-yz-Fb4">
@@ -490,7 +490,7 @@ to the same direction ,
                             </tableViewSection>
                             <tableViewSection headerTitle="SOCIAL MEDIA CONNECTIONS" id="UWp-TD-g56">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="6lw-BS-Lqq" customClass="AddFriendsCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="6lw-BS-Lqq" customClass="AddFriendsCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="349" width="414" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6lw-BS-Lqq" id="QrC-bJ-WFK">
@@ -533,7 +533,7 @@ to the same direction ,
                                             <outlet property="title" destination="Wtu-z0-HbC" id="Jc5-1v-qEL"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="mWP-v2-0HX" customClass="AddFriendsCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="mWP-v2-0HX" customClass="AddFriendsCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="421" width="414" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mWP-v2-0HX" id="TCw-hT-K5e">
@@ -576,7 +576,7 @@ to the same direction ,
                                             <outlet property="title" destination="PUv-fT-ZbM" id="LuJ-HW-dLb"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="bQh-BH-CEP" customClass="AddFriendsCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="bQh-BH-CEP" customClass="AddFriendsCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="493" width="414" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bQh-BH-CEP" id="5rY-IN-Nq5">
@@ -629,6 +629,7 @@ to the same direction ,
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Friends" id="UYD-xJ-WUs">
                         <barButtonItem key="leftBarButtonItem" image="back-ic" id="XcO-e2-lQW">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="back:" destination="cyw-gj-A8a" id="DxL-9P-chI"/>
                             </connections>
@@ -636,17 +637,22 @@ to the same direction ,
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="contoctsLabel" destination="hvH-Sw-AzB" id="9PC-rl-WCQ"/>
+                        <outlet property="fbLabel" destination="Wtu-z0-HbC" id="4Yk-iq-Djo"/>
+                        <outlet property="headerLabel" destination="CYS-7Z-vHr" id="hNl-fm-5zL"/>
                         <outlet property="headerView" destination="JsG-Is-xoK" id="SRD-Fg-ZBb"/>
+                        <outlet property="instagramLabel" destination="PUv-fT-ZbM" id="Byz-gu-0TG"/>
+                        <outlet property="twitterLabel" destination="1Zb-Sb-sE2" id="Qc2-2U-Ybn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UK0-MW-x26" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2336" y="1247"/>
+            <point key="canvasLocation" x="1701" y="1238"/>
         </scene>
         <!--RootVC-->
         <scene sceneID="jjr-Lx-6Sn">
             <objects>
-                <viewController id="uUJ-Zd-Etw" customClass="RootVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uUJ-Zd-Etw" customClass="RootVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GRl-Xf-4EQ"/>
                         <viewControllerLayoutGuide type="bottom" id="JIH-KP-iWw"/>

@@ -11,11 +11,20 @@ import UIKit
 class AddFriendsVC: UITableViewController {
     @IBOutlet var headerView: UIView!
     
+    @IBOutlet var headerLabel: UILabel!
+    @IBOutlet var contoctsLabel: UILabel!
+    @IBOutlet var fbLabel: UILabel!
+    @IBOutlet var instagramLabel: UILabel!
+    @IBOutlet var twitterLabel: UILabel!
+    
     private var tableHeaderHeight: CGFloat = 226
     private var headerViewSetuper: UITableViewHeaderSetuper?
     
     override func viewDidLoad() {
         headerViewSetuper = UITableViewHeaderSetuper(tableView: tableView, headerHeight: tableHeaderHeight)
+        if UIScreen.mainScreen().bounds.width <= 360 {
+            setSmallFont()
+        }
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -26,6 +35,18 @@ class AddFriendsVC: UITableViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.hidden = false
         navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: Fonts.Login.NavigationTitle,  NSForegroundColorAttributeName: UIColor.whiteColor()]
+    }
+}
+
+//MARK: - Private Methods
+extension AddFriendsVC {
+    private func setSmallFont() {
+        let font = UIFont(name: FontNames.Montserrat.Regular, size: 15)
+        headerLabel.font = UIFont(name: FontNames.Montserrat.Regular, size: 17)
+        contoctsLabel.font = font
+        fbLabel.font = font
+        instagramLabel.font = font
+        twitterLabel.font = font
     }
 }
 
@@ -41,7 +62,6 @@ extension AddFriendsVC {
     
     func importContactsAddressBook() {
         SocialManager.sharedInstance.importContacts()
-        
     }
     
     func socialLogin(index: Int) {

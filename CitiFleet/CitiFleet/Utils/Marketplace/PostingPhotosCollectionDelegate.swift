@@ -34,6 +34,9 @@ class PostingPhotosCollectionDelegate: VehicleCollectionViewDelegate {
             if let index = galleryPhoto.id {
                 deletedImagesIDs.append(index)
             }
+            if let index = images.indexOf(photo as! GalleryPhoto) {
+                images.removeAtIndex(index)
+            }
         }
     }
     
