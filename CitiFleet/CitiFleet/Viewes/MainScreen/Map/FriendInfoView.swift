@@ -27,6 +27,7 @@ class FriendInfoView: UIView {
     }
     
     var messageFriend: ((Friend) -> ())?
+    var openFriendProfile: ((Friend) -> ())?
     
     class func viewFromNib() -> FriendInfoView {
         let view = NSBundle.mainBundle().loadNibNamed(FriendInfoView.NibName, owner: self, options: nil).first as! FriendInfoView
@@ -53,8 +54,13 @@ class FriendInfoView: UIView {
 }
 
 extension FriendInfoView {
+    @IBAction func openProfile(sender: AnyObject) {
+        openFriendProfile?(friend)
+        hideView()
+    }
+    
     @IBAction func chatWithFriend(sender: AnyObject) {
         messageFriend?(friend)
-        self.hideView()
+        hideView()
     }
 }

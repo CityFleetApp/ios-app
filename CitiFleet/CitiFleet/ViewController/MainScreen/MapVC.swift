@@ -15,6 +15,10 @@ protocol InfoViewDelegate {
     func hideViewes()
 }
 
+protocol MapViewDelegate {
+    func showReport(coordinate: CLLocationCoordinate2D?)
+}
+
 class MapVC: UIViewController {
     private var shouldCenterCurrentLocation = true
     private var _marker: GMSMarker?
@@ -31,6 +35,7 @@ class MapVC: UIViewController {
     
     var infoDelegate: InfoViewDelegate?
     var shouldSendLocationRequest = false
+    var delegate: MapViewDelegate?
     
     var marker: GMSMarker? {
         get {
@@ -229,7 +234,7 @@ extension MapVC {
             UIApplication.sharedApplication().openURL(NSURL(string:
                 url)!)
         } else {
-            print("Can't use comgooglemaps://");
+            print("Can't use comgooglemaps://")
         }
     }
 }
@@ -296,5 +301,9 @@ extension MapVC: GMSAutocompleteViewControllerDelegate {
 extension MapVC: GMSMapViewDelegate {
     func mapView(mapView: GMSMapView, willMove gesture: Bool) {
         shouldCenterCurrentLocation = false
+    }
+    
+    func mapView(mapView: GMSMapView, didLongPressAtCoordinate coordinate: CLLocationCoordinate2D) {
+        delegate?.showReport(coordinate)
     }
 }

@@ -21,6 +21,7 @@ struct URL {
     static let BaseUrl = Sandbox
     struct User {
         static let Info = "users/info/"
+        static let Person = "users/person/"
         static let ResetPassword = "users/reset-password/"
         struct APNS {
             static let Register = "users/devicesdevice/apns/"
@@ -251,6 +252,7 @@ struct Response {
             static let bio = "bio"
             static let documentsUpToDate = "documents_up_to_date"
             static let avatarURL = "avatar_url"
+            static let fullName = "full_name"
         }
         struct Profile {
             static let carMake = "car_make"

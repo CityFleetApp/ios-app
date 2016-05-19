@@ -1335,8 +1335,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="6l5-Nb-tLG"/>
                                                     <exclude reference="2Qe-pr-ban"/>
+                                                    <exclude reference="6l5-Nb-tLG"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -3098,7 +3098,7 @@
         <image name="jo_vehicl_type" width="18" height="14"/>
         <image name="job_completed_bg" width="252" height="252"/>
         <image name="job_offer_icon" width="28" height="28"/>
-        <image name="logo" width="279" height="207"/>
+        <image name="logo" width="228" height="202"/>
         <image name="mp-background" width="414" height="665"/>
         <image name="mp_arrow_down" width="14" height="14"/>
         <image name="mp_car_ic" width="54" height="35"/>

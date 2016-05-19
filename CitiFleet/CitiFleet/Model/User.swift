@@ -115,7 +115,7 @@ class User: NSObject, NSCoding {
     
     func loadInfo(completion: ((NSError?) -> ())) {
         typealias Param = Response.UserInfo.Info
-        RequestManager.sharedInstance().get(URL.User.Info, parameters: nil) { [weak self] (json, error) in
+        RequestManager.sharedInstance().get("\(URL.User.Person)\(self.id!)/", parameters: nil) { [weak self] (json, error) in
             if error != nil {
                 completion(error)
                 return
@@ -125,7 +125,7 @@ class User: NSObject, NSCoding {
                 if let newAvatar = responseDictionory[Param.avatarURL] as? String {
                     self?.avatarURL = NSURL(string: newAvatar)
                 }
-                
+                self?.fullName = responseDictionory[Param.fullName] as? Str ing
                 self?.drives = responseDictionory[Param.drives] as? String
                 self?.profile.bio = responseDictionory[Param.bio] as? String
                 self?.rating = responseDictionory[Param.rating] as? Float

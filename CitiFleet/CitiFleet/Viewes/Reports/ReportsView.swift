@@ -9,6 +9,8 @@
 import UIKit
 
 class ReportsView: UIView {
+    var coordinate: CLLocationCoordinate2D?
+    
     @IBOutlet var bgImage: UIImageView!
     @IBOutlet var bgView: UIView!
     @IBOutlet var reportMenu: UIView!
@@ -38,8 +40,8 @@ class ReportsView: UIView {
     }
     
     func hide() {
-        animationDisappearing { () -> () in
-            self.removeFromSuperview()
+        animationDisappearing { [weak self] () -> () in
+            self?.removeFromSuperview()
         }
     }
     
@@ -77,7 +79,13 @@ extension ReportsView {
     }
     
     @IBAction func postReport(sender: AnyObject) {
-        let currentPosition = LocationManager.sharedInstance().currentCoordinates
+        var currentPosition: CLLocationCoordinate2D
+        if let coord = coordinate {
+            currentPosition = coord
+        } else {
+            currentPosition = LocationManager.sharedInstance().currentCoordinates
+        }
+        
         let tag = sender.tag
         
         let report = Report(lat: currentPosition.latitude, lon: currentPosition.longitude, type: ReportType(rawValue: tag!)!)

@@ -124,6 +124,7 @@
 		43B6D8551C7EFC74000D6844 /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43B6D8541C7EFC74000D6844 /* MainScreen.storyboard */; };
 		43B6D8571C7F0379000D6844 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B6D8561C7F0379000D6844 /* UIButton+Ext.swift */; };
 		43B6D8591C7F055C000D6844 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B6D8581C7F055C000D6844 /* Global.swift */; };
+		43BD61F41CEB70EB003D27F8 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BD61F31CEB70EB003D27F8 /* Launch.storyboard */; };
 		43CA40371CBE33D2006ED92C /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CA40361CBE33D2006ED92C /* Chat.storyboard */; };
 		43CA403A1CBE4CE4006ED92C /* ChatMainScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CA40391CBE4CE4006ED92C /* ChatMainScreenVC.swift */; };
 		43CA403C1CBE6D05006ED92C /* ChatTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CA403B1CBE6D05006ED92C /* ChatTabBar.swift */; };
@@ -314,6 +315,7 @@
 		43B6D8541C7EFC74000D6844 /* MainScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainScreen.storyboard; path = Storyboards/MainScreen.storyboard; sourceTree = "<group>"; };
 		43B6D8561C7F0379000D6844 /* UIButton+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Ext.swift"; path = "Extensions/UIButton+Ext.swift"; sourceTree = "<group>"; };
 		43B6D8581C7F055C000D6844 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = Constants/Global.swift; sourceTree = "<group>"; };
+		43BD61F31CEB70EB003D27F8 /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		43CA40361CBE33D2006ED92C /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Chat.storyboard; path = Storyboards/Chat/Chat.storyboard; sourceTree = "<group>"; };
 		43CA40391CBE4CE4006ED92C /* ChatMainScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatMainScreenVC.swift; path = ViewController/Dash/Chat/ChatMainScreenVC.swift; sourceTree = "<group>"; };
 		43CA403B1CBE6D05006ED92C /* ChatTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatTabBar.swift; path = ViewController/Dash/Chat/ChatTabBar.swift; sourceTree = "<group>"; };
@@ -744,6 +746,7 @@
 				4316BB7D1C7B046A007A9ECB /* AppDelegate.swift */,
 				4316BB841C7B046A007A9ECB /* Assets.xcassets */,
 				4316BB861C7B046A007A9ECB /* LaunchScreen.storyboard */,
+				43BD61F31CEB70EB003D27F8 /* Launch.storyboard */,
 				4316BB891C7B046A007A9ECB /* Info.plist */,
 				43DC05B11C83BDA600AB670A /* CitiFleet-Bridging-Header.h */,
 			);
@@ -1267,6 +1270,7 @@
 				4316BB851C7B046A007A9ECB /* Assets.xcassets in Resources */,
 				43F5E22B1C9AAEB8000BBB91 /* Notification.storyboard in Resources */,
 				43A426611C90359E0044B6A6 /* Settings.storyboard in Resources */,
+				43BD61F41CEB70EB003D27F8 /* Launch.storyboard in Resources */,
 				43B6D8551C7EFC74000D6844 /* MainScreen.storyboard in Resources */,
 				43F834071C96CB6700DE7E50 /* PickerDialog.xib in Resources */,
 			);

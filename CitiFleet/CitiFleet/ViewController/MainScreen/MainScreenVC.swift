@@ -63,6 +63,12 @@ class MainScreenVC: UIViewController {
             })
         }
         
+        _friendInfoView?.openFriendProfile = { [weak self] (friend) in
+            let profileVC = ProfileVC.viewControllerFromStoryboard()
+            profileVC.user = friend
+            self?.navigationController?.pushViewController(profileVC, animated: true)
+        }
+        
         return _friendInfoView!
     }
     
@@ -83,6 +89,7 @@ class MainScreenVC: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let mapVC = segue.destinationViewController as? MapVC {
             mapVC.infoDelegate = self
+            mapVC.delegate = self
         }
     }
 }
@@ -155,6 +162,15 @@ extension MainScreenVC: InfoViewDelegate {
     func hideViewes() {
         reportInfoView.hideView()
         friendInfoView.hideView()
+    }
+}
+
+//MARK: - Map View Delegate
+extension MainScreenVC: MapViewDelegate {
+    func showReport(coordinate: CLLocationCoordinate2D?) {
+        let reportView = ReportsView.reportFromNib()
+        reportView.coordinate = coordinate
+        reportView.show(onViewController: self)
     }
 }
 
