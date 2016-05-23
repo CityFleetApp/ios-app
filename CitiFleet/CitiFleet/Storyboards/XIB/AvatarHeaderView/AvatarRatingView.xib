@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AvatarRatingView" customModule="CityFleet" customModuleProvider="target">
             <connections>
+                <outlet property="actionBtn" destination="G3c-x0-3pK" id="Mmy-2s-6tW"/>
                 <outlet property="avatar" destination="upv-yi-cYc" id="161-EE-JJU"/>
                 <outlet property="backgroundAvatar" destination="gA8-A9-gzw" id="k2x-qm-Vek"/>
                 <outlet property="nameLabel" destination="cll-kJ-Xb1" id="EuS-Yv-m7b"/>
@@ -28,10 +29,10 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gA8-A9-gzw">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9H-ec-4Bf">
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j9H-ec-4Bf">
                     <rect key="frame" x="0.0" y="194" width="600" height="213"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unnamed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cll-kJ-Xb1">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Unnamed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cll-kJ-Xb1">
                             <rect key="frame" x="16" y="159" width="568" height="27"/>
                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="22"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,7 +78,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ty0-1O-qUO" customClass="CosmosView" customModule="Cosmos">
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ty0-1O-qUO" customClass="CosmosView" customModule="Cosmos">
                             <rect key="frame" x="217" y="194" width="167" height="19"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -106,6 +107,23 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3c-x0-3pK">
+                            <rect key="frame" x="329" y="92" width="53" height="53"/>
+                            <color key="backgroundColor" red="0.1960784314" green="0.75294117650000003" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="53" id="S7L-pO-Br9"/>
+                                <constraint firstAttribute="width" secondItem="G3c-x0-3pK" secondAttribute="height" multiplier="1:1" id="euY-y7-18A"/>
+                            </constraints>
+                            <state key="normal" image="photo"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="26.5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="actionBtnPressed:" destination="-1" eventType="touchUpInside" id="CoX-ca-ksB"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -117,6 +135,8 @@
                         <constraint firstItem="cll-kJ-Xb1" firstAttribute="centerX" secondItem="j9H-ec-4Bf" secondAttribute="centerX" id="W0e-YZ-tDQ"/>
                         <constraint firstAttribute="bottom" secondItem="ty0-1O-qUO" secondAttribute="bottom" id="ZdB-AR-sIW"/>
                         <constraint firstItem="cll-kJ-Xb1" firstAttribute="leading" secondItem="j9H-ec-4Bf" secondAttribute="leading" constant="16" id="auV-GZ-6gX"/>
+                        <constraint firstItem="G3c-x0-3pK" firstAttribute="trailing" secondItem="khJ-zK-yC0" secondAttribute="trailing" constant="8" id="dH2-1P-12K"/>
+                        <constraint firstItem="G3c-x0-3pK" firstAttribute="bottom" secondItem="khJ-zK-yC0" secondAttribute="bottom" constant="-2" id="eub-Ec-cY8"/>
                         <constraint firstAttribute="trailing" secondItem="cll-kJ-Xb1" secondAttribute="trailing" constant="16" id="jf3-uu-qCf"/>
                     </constraints>
                 </view>
@@ -134,4 +154,7 @@
             <point key="canvasLocation" x="549" y="409"/>
         </view>
     </objects>
+    <resources>
+        <image name="photo" width="23" height="21"/>
+    </resources>
 </document>

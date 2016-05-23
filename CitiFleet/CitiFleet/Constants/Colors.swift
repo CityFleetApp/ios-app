@@ -31,6 +31,11 @@ struct Color {
     struct Notifcations {
         static let LabelGrayColor = 0x747474
     }
+    struct JobOffer {
+        static let Green = 0x2ec4b6
+        static let Orange = 0xff9f1c
+        static let Red = 0xe71d35
+    }
     struct Chat {
         static let CellBackeground = 0xF2F4F8
         static let UnreadRoomBG = 0x2bb9a7

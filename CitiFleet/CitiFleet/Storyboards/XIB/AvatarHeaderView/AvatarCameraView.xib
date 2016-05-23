@@ -13,9 +13,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AvatarCameraView" customModule="CityFleet" customModuleProvider="target">
             <connections>
+                <outlet property="actionBtn" destination="Gxf-um-toh" id="mLf-iI-FsC"/>
                 <outlet property="avatar" destination="3ru-jZ-x8R" id="sHc-G4-svg"/>
                 <outlet property="backgroundAvatar" destination="Tp5-nD-tZx" id="MSt-Wz-dWp"/>
-                <outlet property="cameraButton" destination="Gxf-um-toh" id="vPx-dJ-D9M"/>
                 <outlet property="nameLabel" destination="YYt-WT-djT" id="6EX-ep-1a0"/>
                 <outlet property="view" destination="llc-Tl-k3k" id="r4d-SA-1B8"/>
             </connections>
@@ -91,7 +91,7 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="cameraPressed:" destination="-1" eventType="touchUpInside" id="e7I-us-sDs"/>
+                                <action selector="actionBtnPressed:" destination="-1" eventType="touchUpInside" id="0wl-bR-1Rz"/>
                             </connections>
                         </button>
                     </subviews>

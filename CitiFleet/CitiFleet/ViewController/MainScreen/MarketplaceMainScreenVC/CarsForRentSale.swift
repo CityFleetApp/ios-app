@@ -31,6 +31,10 @@ class CarsForRentSale: GoodsForSaleVC {
         }
     }
     
+    override func reloadData() {
+        self.loadData()
+    }
+    
     override func addSubviewToTopView() {
         let segmentContrell = UISegmentedControl(items: ["Buy", "Rent"])
         var segmentFrame = segmentContrell.frame
@@ -65,7 +69,11 @@ class CarsForRentSale: GoodsForSaleVC {
 extension CarsForRentSale {
     func changedRentSale(sender: UISegmentedControl) {
         isSale = sender.selectedSegmentIndex == 0 ? true : false
-        dataLoader.reload(nil)
-        loadData()
+        if navigationItem.titleView?.isKindOfClass(UITextField) == true {
+            popToRoot(sender)
+        } else {
+            dataLoader.reload(nil)
+            loadData()
+        }
     }
 }

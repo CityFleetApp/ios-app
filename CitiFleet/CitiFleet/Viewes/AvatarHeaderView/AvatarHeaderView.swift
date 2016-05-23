@@ -18,6 +18,18 @@ class AvatarHeaderView: UIView, AvatarXIBName {
     @IBOutlet var avatar: UIImageView!
     @IBOutlet var backgroundAvatar: UIImageView!
     @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var actionBtn: UIButton!
+    
+    var action: ((AnyObject) -> ())?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        actionBtn.setDefaultShadow()
+    }
+    
+    @IBAction func actionBtnPressed(sender: AnyObject) {
+        action?(sender)
+    }
     
     func xibName() -> String {
         return XIB.AvatarHeaderView.Avatar

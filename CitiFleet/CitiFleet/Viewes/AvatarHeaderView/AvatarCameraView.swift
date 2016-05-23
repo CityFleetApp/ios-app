@@ -9,21 +9,7 @@
 import UIKit
 
 class AvatarCameraView: AvatarHeaderView {
-    @IBOutlet var cameraButton: UIButton!
-    var cameraAction: ((AnyObject) -> ())?
-    
-    @IBAction func cameraPressed(sender: AnyObject) {
-        if let action = cameraAction {
-            action(sender)
-        }
-    }
-    
     override func xibName() -> String {
         return XIB.AvatarHeaderView.Camera
-    }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        cameraButton.setDefaultShadow()
     }
 }

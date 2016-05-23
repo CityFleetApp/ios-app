@@ -125,7 +125,7 @@ class User: NSObject, NSCoding {
                 if let newAvatar = responseDictionory[Param.avatarURL] as? String {
                     self?.avatarURL = NSURL(string: newAvatar)
                 }
-                self?.fullName = responseDictionory[Param.fullName] as? Str ing
+                self?.fullName = responseDictionory[Param.fullName] as? String
                 self?.drives = responseDictionory[Param.drives] as? String
                 self?.profile.bio = responseDictionory[Param.bio] as? String
                 self?.rating = responseDictionory[Param.rating] as? Float

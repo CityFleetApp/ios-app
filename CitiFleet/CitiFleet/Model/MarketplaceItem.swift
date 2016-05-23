@@ -29,6 +29,7 @@ class MarketplaceItem: NSObject {
     var photoSize: CGSize!
     var isShownDetails = false
     var created: NSDate?
+    var owner: User?
     
     var itemName: String? {
         return ""
@@ -59,6 +60,10 @@ class MarketplaceItem: NSObject {
         } else {
             self.photoSize = CGSize(width: 100, height: 100)
         }
+        
+        owner = User()
+        owner?.id = json[Param.ownerID] as? Int
+        owner?.fullName = json[Param.ownerName] as? String 
     }
 }
 
@@ -116,6 +121,7 @@ class MarketPlaceShopManager: NSObject {
     var items: [MarketplaceItem] = []
     var count: Int?
     var nextPage: String?
+    var searchText: String?
     var shouldLoad: Bool {
         return (count == nil) ^^ (nextPage != nil)
     }
@@ -124,6 +130,7 @@ class MarketPlaceShopManager: NSObject {
         items.removeAll()
         nextPage = nil
         count = nil
+        searchText = nil 
         reloaded?()
     }
     
@@ -154,7 +161,7 @@ class MarketPlaceShopManager: NSObject {
             completion(NSError(domain: "", code: 0, userInfo: nil))
             return
         }
-        let url = nextPage != nil ? nextPage : requestManager.url(baseURL)
+        let url = nextPage != nil ? nextPage : (searchText != nil ? "\(requestManager.url(baseURL))?search=\(searchText!)" : requestManager.url(baseURL))
         requestManager.makeRequestWithFullURL(.GET, baseURL: url!, parameters: nil) { (json, error) in
             if let resp = json?.dictionaryObject {
                 parseParams(resp)

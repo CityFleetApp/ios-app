@@ -10,7 +10,7 @@ import UIKit
 import KMPlaceholderTextView
 
 class JobOfferVC: UITableViewController {
-    let InstructionCellIndex = 10
+    let InstructionCellIndex = 12
     let StandordCellHeight: CGFloat = 78
     
     @IBOutlet var jobTitTF: UITextField!
@@ -20,6 +20,7 @@ class JobOfferVC: UITableViewController {
     @IBOutlet var destinationTF: UITextField!
     @IBOutlet var fareTF: UITextField!
     @IBOutlet var gratuityTF: UITextField!
+    @IBOutlet var tollsTF: UITextField!
     @IBOutlet var vehicleTypeTF: HighlitableLabel!
     @IBOutlet var suiteLbl: HighlitableLabel!
     @IBOutlet var companyLbl: HighlitableLabel!
@@ -77,12 +78,16 @@ class JobOfferVC: UITableViewController {
         vehicleTypeTF.highlitedText = jobOffer?.vehicleType
         jobTypeLbl.highlitedText = jobOffer?.jobType
         suiteLbl.highlitedText = jobOffer?.suite == true ? "Yes" : "No"
+        tollsTF.text = jobOffer?.tolls
+        companyLbl.highlitedText = jobOffer?.authorType?.rawValue
         
+        uploader.isCompany = jobOffer?.isCompany
         uploader.jobTitle = offer.jobTitle
         uploader.jobType = JobTypes.indexOf((jobOffer?.jobType)!)! + 1
         uploader.vehicleType = CatTypes.indexOf((jobOffer?.vehicleType)!)! + 1
         uploader.suite = jobOffer?.suite
         uploader.id = jobOffer?.id
+        uploader.tolls = jobOffer?.tolls
     }
     
     private func resignAllTextViewes() {
@@ -92,6 +97,7 @@ class JobOfferVC: UITableViewController {
         gratuityTF.resignFirstResponder()
         instructionsTV.resignFirstResponder()
         jobTitTF.resignFirstResponder()
+        tollsTF.resignFirstResponder()
     }
     
     private func checkPostAvailability() -> Bool {
@@ -101,7 +107,8 @@ class JobOfferVC: UITableViewController {
             timeLbl,
             vehicleTypeTF,
             suiteLbl,
-            jobTypeLbl
+            jobTypeLbl,
+            companyLbl
         ]
         
         for lbl in labels {
@@ -115,7 +122,8 @@ class JobOfferVC: UITableViewController {
             pickupAddress,
             destinationTF,
             fareTF,
-            gratuityTF
+            gratuityTF,
+            tollsTF
         ]
         
         for tf in textFields {
@@ -226,12 +234,18 @@ extension JobOfferVC {
             gratuityCellSelected()
             break
         case 7:
-            vehicleTypeSelected()
+            tollsTF.becomeFirstResponder()
             break
         case 8:
-            suiteCellSelected()
+            vehicleTypeSelected()
             break
         case 9:
+            suiteCellSelected()
+            break
+        case 10:
+            corpanyCellSelected()
+            break
+        case 11:
             jobTypeCellSelected()
             break
         case InstructionCellIndex:
@@ -258,6 +272,7 @@ extension JobOfferVC {
 
 extension JobOfferVC {
     func dateCellSelected() {
+        resignAllTextViewes()
         let picker = DOCManagementDatePicker.viewFromNib()
         picker.completion = { [unowned self] (date, closed) in
             if let date = date as? NSDate {
@@ -268,6 +283,7 @@ extension JobOfferVC {
     }
     
     func timeCellSelected() {
+        resignAllTextViewes()
         let picker = DOCManagementDatePicker.viewFromNib()
         picker.datePicker.datePickerMode = .Time
         picker.completion = { [unowned self] (date, closed) in
@@ -297,7 +313,6 @@ extension JobOfferVC {
     func vehicleTypeSelected() {
         resignAllTextViewes()
         
-        
         let dialog = PickerDialog.viewFromNib()
         dialog.components = CatTypes
         dialog.completion = { [weak self] (selectedItem, canceled) in
@@ -324,6 +339,25 @@ extension JobOfferVC {
                 let index = selectedItem as! Int
                 self.uploader.suite = !Bool(index)
                 self.suiteLbl.highlitedText = components[index]
+            }
+        }
+        dialog.show()
+    }
+    
+    func corpanyCellSelected() {
+        resignAllTextViewes()
+        let components = [
+            "Company",
+            "Personal"
+        ]
+        
+        let dialog = PickerDialog.viewFromNib()
+        dialog.components = components
+        dialog.completion = { [unowned self] (selectedItem, canceled) in
+            if !canceled {
+                let index = selectedItem as! Int
+                self.uploader.isCompany = !Bool(index)
+                self.companyLbl.highlitedText = components[index]
             }
         }
         dialog.show()

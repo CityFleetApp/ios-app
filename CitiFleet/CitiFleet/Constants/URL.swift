@@ -20,6 +20,7 @@ struct URL {
     static let Production = ""
     static let BaseUrl = Sandbox
     struct User {
+        static let Photos = "/photos/"
         static let Info = "users/info/"
         static let Person = "users/person/"
         static let ResetPassword = "users/reset-password/"
@@ -317,6 +318,8 @@ struct Response {
         static let seats = "seats"
         static let photoSize = "dimensions"
         static let created = "created"
+        static let ownerName = "owner_name"
+        static let ownerID = "owner"
         struct JobOffers {
             static let id = "id"
             static let pickupDatetime = "pickup_datetime"
@@ -324,15 +327,19 @@ struct Response {
             static let destination = "destination"
             static let fare = "fare"
             static let gratuity = "gratuity"
+            static let tolls = "tolls"
             static let vehicleType = "vehicle_type"
             static let suite = "suite"
             static let jobType = "job_type"
+            static let requested = "requested"
             static let instructions = "instructions"
+            static let owner = "owner"
             static let status = "status"
             static let created = "created"
             static let title = "title"
             static let awarded = "awarded"
             static let driverName = "driver_name"
+            static let authorType = "personal"
         }
         struct ManagePost {
             static let postType = "posting_type"

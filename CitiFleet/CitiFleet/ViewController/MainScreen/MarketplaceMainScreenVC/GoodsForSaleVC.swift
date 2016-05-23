@@ -14,6 +14,13 @@ class GoodsForSaleVC: UICollectionViewController, MarketplaceLayoutDelegate {
     var reuseIdentifier: String!
     var dataLoader = MarketPlaceShopManager()
     var topView: UIView!
+    var titleView: UIView?
+    
+    lazy var searchItem: UIBarButtonItem = { [weak self] in
+        let item = UIBarButtonItem(image: UIImage(named: "search"), style: .Plain, target: self, action: #selector(searchAction(_:)))
+        item.tintColor = UIColor.whiteColor()
+        return item
+    }()
     
     override func viewDidLoad() {
         collectionView!.contentInset = UIEdgeInsets(top: 15 + 66, left: 5, bottom: 10, right: 5)
@@ -27,6 +34,10 @@ class GoodsForSaleVC: UICollectionViewController, MarketplaceLayoutDelegate {
         
         topView = addTopView()
         addSubviewToTopView()
+        
+        navigationItem.rightBarButtonItems?.append(searchItem)
+        
+        titleView = navigationItem.titleView
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -45,6 +56,34 @@ class GoodsForSaleVC: UICollectionViewController, MarketplaceLayoutDelegate {
         if let viewController = segue.destinationViewController as? DetailsMarketplaceVC {
             let item = dataLoader.items[(collectionView?.indexPathsForSelectedItems()![0].item)!]
             viewController.item = item
+        }
+    }
+    
+    override func popToRoot(sender: AnyObject) {
+        if navigationItem.titleView?.isKindOfClass(UITextField) == true {
+            navigationItem.titleView = titleView
+            
+            navigationItem.rightBarButtonItems?.append(searchItem)
+            
+            dataLoader.reload({ [weak self] in
+                self?.reloadData()
+            })
+        } else {
+            super.popToRoot(sender)
+        }
+    }
+    
+    func reloadData() {
+        dataLoader.loadGoodsForSale { [weak self] (error) in
+            if error != nil || self == nil {
+                return
+            }
+            
+            if let layout = self?.collectionView?.collectionViewLayout as? MarketplaceCollectiovViewLayout {
+                layout.cache.removeAll()
+            }
+            
+            self?.collectionView?.reloadData()
         }
     }
     
@@ -125,6 +164,24 @@ class GoodsForSaleVC: UICollectionViewController, MarketplaceLayoutDelegate {
     }
 }
 
+//MARK: - Actions
+extension GoodsForSaleVC {
+    @IBAction func searchAction(sender: AnyObject?) {
+        let searchField = UITextField(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width - 100, height: 26))
+        searchField.backgroundColor = UIColor.whiteColor()
+        searchField.cornerRadius = 5
+        searchField.returnKeyType = .Search
+        searchField.becomeFirstResponder()
+        searchField.clearButtonMode = .WhileEditing
+        searchField.delegate = self
+        
+        navigationItem.titleView = searchField
+        var items = navigationItem.rightBarButtonItems
+        items?.removeLast()
+        navigationItem.rightBarButtonItems = items
+    }
+}
+
 extension GoodsForSaleVC {
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataLoader.items.count
@@ -171,5 +228,16 @@ extension GoodsForSaleVC {
         if indexPath.item == dataLoader.items.count - 1 && dataLoader.shouldLoad {
             self.loadData()
         }
+    }
+}
+
+extension GoodsForSaleVC: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        dataLoader.reload { [weak self] in
+            self?.dataLoader.searchText = textField.text
+            self?.reloadData()
+        }
+        return true
     }
 }

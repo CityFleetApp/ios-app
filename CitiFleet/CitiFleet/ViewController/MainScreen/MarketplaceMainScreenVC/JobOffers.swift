@@ -76,7 +76,12 @@ extension JobOffersVC: UITableViewDataSource {
         
         cell?.title.text = "\(NSDateFormatter(dateFormat: "hh:mm a").stringFromDate(item.pickupDatetime!))\(separator)$\(item.fare!))"
         cell?.dateLabel?.text = NSDateFormatter(dateFormat: "dd/MM/yyyy").stringFromDate(item.pickupDatetime!)
-        cell?.jobStateLabel.text = item.status?.rawValue
+//        cell?.jobStateLabel.text = item.status?.rawValue
+        
+        let statusTuple = statusColor(item)
+        cell?.jobStateLabel.text = statusTuple.0
+        cell?.jobStateLabel.backgroundColor = statusTuple.1
+        
         cell?.setEditable(true)
         cell?.notificationTitle?.text = item.jobTitle
         
@@ -125,5 +130,22 @@ extension JobOffersVC: UITableViewDelegate {
                 self?.jobOfferTableView.reloadData()
             })
         }
+    }
+}
+
+//MARK: - Private Methods
+extension JobOffersVC {
+    private func statusColor(job: JobOffer) -> (String, UIColor) {
+        if job.status == .Covered {
+            return ((job.status?.rawValue)!, UIColor(hex: Color.JobOffer.Orange, alpha: 1))
+        } else if job.requested == true {
+            return ("Requested", UIColor(hex: Color.JobOffer.Orange, alpha: 1))
+        } else if job.awarded == true {
+            return ("Awarded", UIColor(hex: Color.JobOffer.Orange, alpha: 1))
+        } else if job.status == .Available {
+            return ("Available", UIColor(hex: Color.JobOffer.Green, alpha: 1))
+        }
+        
+        return ("", UIColor.clearColor())
     }
 }

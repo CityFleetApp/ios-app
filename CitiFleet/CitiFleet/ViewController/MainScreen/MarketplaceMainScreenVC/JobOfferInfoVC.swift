@@ -24,6 +24,7 @@ class JobOfferInfoVC: UITableViewController {
     @IBOutlet var companyLbl: UILabel!
     @IBOutlet var jobTypeLbl: UILabel!
     @IBOutlet var titleLbl: UILabel!
+    @IBOutlet var requestButton: UIButton!
 
     var job: JobOffer!
     
@@ -44,19 +45,26 @@ class JobOfferInfoVC: UITableViewController {
         addressLbl.text = job.pickupAddress
         destination.text = job.destination
         payLbl.text = job.fare
-        tollsLbl.text = "0.00"
+        tollsLbl.text = job.tolls
         gratuityLbl.text = job.gratuity
         vehicleLbl.text = job.vehicleType
         suiteLbl.text = job.suite == true ? "Yes" : "No"
         companyLbl.text = "Personal"
         jobTypeLbl.text = job.jobType
         titleLbl.text = job.jobTitle
+        
+        requestButton.enabled = (job.requested) != true
     }
     
     @IBAction func jobInfo(sender: AnyObject) {
         RequestManager.sharedInstance().post("\(URL.Marketplace.JobOffers)\(job.id!)\(URL.Marketplace.RequestJob)", parameters: nil) { [weak self] (json, error) in
             if error == nil {
-                self?.navigationController?.popViewControllerAnimated(true)
+                let alert = UIAlertController(title: "Job Request Sent", message: nil, preferredStyle: .Alert)
+                let action = UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
+                    self?.navigationController?.popViewControllerAnimated(true)
+                })
+                alert.addAction(action)
+                self?.presentViewController(alert, animated: true, completion: nil)
             }
         }
     }
@@ -80,7 +88,7 @@ class JobOfferAwardedVC: JobOfferInfoVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        completeBtn.enabled = job.awarded == true
+        completeBtn.enabled = job.awarded == true && job.ownerID != User.currentUser()?.id
     }
     
     override func jobInfo(sender: AnyObject) {

@@ -53,6 +53,10 @@ extension UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    @IBAction func popToRoot(sender: AnyObject) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
     func subscribeNotifications() {
         if self.isKindOfClass(NSClassFromString("UIInputWindowController")!) {
             return

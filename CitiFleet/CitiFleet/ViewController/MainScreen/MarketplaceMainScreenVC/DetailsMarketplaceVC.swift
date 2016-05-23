@@ -28,14 +28,15 @@ class DetailsMarketplaceVC: UITableViewController {
     @IBOutlet var colorLabel: UILabel!
     @IBOutlet var imageContainerView: UIView!
     @IBOutlet var titleContainerView: UIView!
+    @IBOutlet var ownerLabel: UILabel!
 
     var item: MarketplaceItem! {
         didSet {
             pageVCDataSource = PageViewControllerDataSource(item: item)
         }
     }
-    var pageVCDataSource: PageViewControllerDataSource!
     
+    var pageVCDataSource: PageViewControllerDataSource!
     var itemInfoHeight: CGFloat {
         get {
             return 43
@@ -44,12 +45,14 @@ class DetailsMarketplaceVC: UITableViewController {
     
     override func viewDidLoad() {
         itemName.text = item.itemName
-        priceLabel.text = item.price
+        priceLabel.text = "$\(item.price!)"
         itemDescription.text = item.itemDescription
         pageVCDataSource.imageContainerView = imageContainerView
         setupLayer()
         setupAditionalData()
         title = item.itemName
+        ownerLabel.text = item.owner?.fullName
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -111,6 +114,8 @@ extension DetailsMarketplaceVC {
             return itemInfoHeight
         case 2:
             return 100
+        case 3:
+            return 40
         default:
             return 0
         }
@@ -118,6 +123,14 @@ extension DetailsMarketplaceVC {
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         tableView.setZeroSeparator(cell)
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 3 {
+            let profileVC = ProfileVC.viewControllerFromStoryboard()
+            profileVC.user = item.owner
+            navigationController?.pushViewController(profileVC, animated: true)
+        }
     }
 }
 
