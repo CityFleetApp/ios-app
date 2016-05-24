@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class Report: NSObject {
+class Report: Equatable, Hashable {
     private let iconNames = [
         "police-ic",
         "tlc-ic",
@@ -34,7 +34,7 @@ class Report: NSObject {
         return UIImage(named: iconName)
     }
     
-    var id: Int?
+    var id: Int!
     var latitude: CLLocationDegrees = 0.0
     var longitude: CLLocationDegrees = 0.0
     var type: ReportType = .Police
@@ -53,17 +53,11 @@ class Report: NSObject {
         return _marker!
     }
     
-    override var hashValue: Int {
-        get {
-            return "\(self.latitude) \(self.longitude) \(self.type.rawValue)".hashValue
-        }
-    }
-    
     init(lat: CLLocationDegrees, lon: CLLocationDegrees, type: ReportType) {
         self.latitude = lat
         self.longitude = lon
         self.type = type
-        super.init()
+//        super.init()
     }
     
     
@@ -78,9 +72,17 @@ class Report: NSObject {
     }
 }
 
+extension Report {
+    var hashValue: Int {
+        get {
+            return (id.hashValue << 15).hashValue
+        }
+    }
+}
+
 //MARK: Override Operatiors
 func ==(left: Report, right: Report) -> Bool {
-    return left.latitude == right.latitude && left.longitude == right.longitude && left.type == right.type
+    return left.id == right.id //left.latitude == right.latitude && left.longitude == right.longitude && left.type == right.type
 }
 
 class ReportMarker: GMSMarker {

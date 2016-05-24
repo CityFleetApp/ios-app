@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import Darwin
 
 protocol InfoViewDelegate {
     func showFrinedInfo(friend: Friend?)
@@ -20,6 +21,9 @@ protocol MapViewDelegate {
 }
 
 class MapVC: UIViewController {
+    private let RANDOM_RADIUS_FOR_MARKER = 10;
+    private let METERS_IN_DEGREE: Double = 111000.0;
+    
     private var shouldCenterCurrentLocation = true
     private var _marker: GMSMarker?
     private var reports: Set<Report> = []
@@ -128,7 +132,8 @@ extension MapVC {
                 dispatch_async(dispatch_get_main_queue(), { 
                     self?.removeReports(shouldBeRemover)
                 })
-                self?.reports = (self?.reports.intersect(newReports))!.union(newReports)
+                
+                self?.reports = newReports.union((self?.reports.intersect(newReports))!)
                 dispatch_async(dispatch_get_main_queue(), { 
                     self?.updateReports()
                 })
@@ -148,7 +153,10 @@ extension MapVC {
                 dispatch_async(dispatch_get_main_queue(), { [weak self] in
                     self?.removeFriends(shouldBeRemove)
                 })
-                self?.friends = (self?.friends.intersect(newFriends))!.union(newFriends)
+//                newFriends!.union(self?.friends.intersect(newFriends))
+                
+                self?.friends = newFriends.union((self?.friends.intersect(newFriends))!)
+                
                 dispatch_async(dispatch_get_main_queue(), { [weak self] in
                     self?.updateFrinds()
                 })
@@ -157,22 +165,53 @@ extension MapVC {
     }
     
     private func updateReports() {
+        var count = 0
         for report in reports {
             if report.marker.map == nil {
+                count += 1
+                if containsSameCoordinate(report.marker.position) {
+                    report.marker.position = getRandomCoordinate(report.marker.position)
+                }
                 report.marker.map = mapView
             }
         }
+        print("Count: \(count)")
+        
     }
     
     private func updateFrinds() {
         for friend in friends {
             if friend.marker.map == nil {
+                if containsSameCoordinate(friend.marker.position) {
+                    friend.marker.position = getRandomCoordinate(friend.marker.position)
+                }
                 friend.marker.map = mapView
                 if friend == selectedFriend {
                     friend.updateMarker(true)
                 } 
             }
         }
+    }
+    
+    private func getRandomCoordinate(srcCoord: CLLocationCoordinate2D) -> CLLocationCoordinate2D {
+        let radiusInDegrees = Double(RANDOM_RADIUS_FOR_MARKER) / METERS_IN_DEGREE
+        let u = Double(arc4random()) / Double(uint.max)
+        let v = Double(arc4random()) / Double(uint.max)
+        let w = radiusInDegrees * sqrt(u)
+        let t = 2 * M_PI * v
+        let x = w * cos(t)
+        let y = w * sin(t)
+        
+        let newX = x / cos(srcCoord.latitude)
+        let foundLong = newX + srcCoord.longitude
+        let foundLat = y + srcCoord.latitude
+        
+        return CLLocationCoordinate2D(latitude: foundLat, longitude: foundLong)
+    }
+    
+    private func containsSameCoordinate(srcCoord: CLLocationCoordinate2D) -> Bool {
+        let set: Set<CLLocationCoordinate2D> = Set(friends.map({ return $0.marker.position })).union(reports.map({ return $0.marker.position }))
+        return set.contains(srcCoord)
     }
     
     private func removeReports(reportsToDelete: Set<Report>?) {
@@ -188,9 +227,13 @@ extension MapVC {
         if friendsToDelete == nil {
             return
         }
+        var count = 0
         for friend in friendsToDelete! {
+            count += 1
             friend.marker.map = nil
         }
+        print("count deleted: \(count)")
+        
     }
 }
 
@@ -306,4 +349,15 @@ extension MapVC: GMSMapViewDelegate {
     func mapView(mapView: GMSMapView, didLongPressAtCoordinate coordinate: CLLocationCoordinate2D) {
         delegate?.showReport(coordinate)
     }
+}
+
+//MARK: - CLLocation Extension
+extension CLLocationCoordinate2D: Hashable, Equatable {
+    public var hashValue: Int {
+        return "lat=\(latitude)long=\(longitude)".hash
+    }
+}
+
+public func ==(left: CLLocationCoordinate2D, right: CLLocationCoordinate2D) -> Bool {
+    return left.latitude == right.latitude && left.longitude == right.longitude
 }

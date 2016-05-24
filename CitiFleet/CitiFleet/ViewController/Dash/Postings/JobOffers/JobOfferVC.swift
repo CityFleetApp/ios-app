@@ -35,7 +35,7 @@ class JobOfferVC: UITableViewController {
         "Regular",
         "Black",
         "SUV",
-        "SUV"
+        "LUX"
     ]
     
     private let JobTypes = [
