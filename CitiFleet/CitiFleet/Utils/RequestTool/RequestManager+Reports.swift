@@ -23,6 +23,23 @@ enum ReportType: Int {
     case Trafic = 4
     case Hazard = 5
     case RoadClosure = 6
+    
+    func reportName() -> String {
+        switch self {
+        case .Police:
+            return "Police"
+        case .TLC:
+            return "TLC"
+        case .Accident:
+            return "Accident"
+        case .Trafic:
+            return "Trafic"
+        case .Hazard:
+            return "Hazard"
+        case .RoadClosure:
+            return "RoadClosure"
+        }
+    }
 }
 
 extension RequestManager {

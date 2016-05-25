@@ -64,6 +64,10 @@ class JobOfferInfoVC: UITableViewController {
         titleLbl.text = job.jobTitle
         
         requestButton?.enabled = (job.requested) != true
+        
+        if job.ownerID == User.currentUser()?.id {
+            tableView.tableFooterView?.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        }
     }
     
     @IBAction func jobInfo(sender: AnyObject) {

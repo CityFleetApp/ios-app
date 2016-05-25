@@ -36,6 +36,8 @@ class JobOfferVC: UITableViewController {
     var jobOffer: JobOffer?
     
     private var dataPreloader: JobOfferPreloader!
+    private var dateString: String?
+    private var timeString: String?
     
     private var carTypes: [String] = []
     
@@ -58,10 +60,6 @@ class JobOfferVC: UITableViewController {
             tf.setStandardSignUpPlaceHolder(tf.placeholder!)
         }
         
-        if let offer = jobOffer {
-            setupJobOffer(offer)
-        }
-        
         postBtn.setDefaultShadow()
         deleteBtn.setDefaultShadow()
         
@@ -72,13 +70,16 @@ class JobOfferVC: UITableViewController {
             if let types = self?.dataPreloader.jobTypes {
                 self?.jobTypes = types 
             }
+            if let offer = self?.jobOffer {
+                self?.setupJobOffer(offer)
+            }
         })
         dataPreloader.downloadData()
     }
     
     private func setupJobOffer(offer: JobOffer) {
         jobTitTF.text = offer.jobTitle
-        dateLbl.highlitedText = NSDateFormatter(dateFormat: "yyyy-MM-dd").stringFromDate(offer.pickupDatetime!)
+        dateLbl.highlitedText = NSDateFormatter.standordFormater().stringFromDate(offer.pickupDatetime!)
         timeLbl.highlitedText = NSDateFormatter(dateFormat: "HH:mm").stringFromDate(offer.pickupDatetime!)
         pickupAddress.text = offer.pickupAddress
         destinationTF.text = offer.destination
@@ -99,7 +100,14 @@ class JobOfferVC: UITableViewController {
         uploader.id = jobOffer?.id
         uploader.tolls = jobOffer?.tolls
         
-        tableView.tableFooterView?.frame = CGRect(x: 0, y: 0, width: 0, height: 200)
+        var frame = tableView.tableFooterView?.frame
+        frame?.size.height = 200
+        tableView.tableFooterView?.frame = frame!
+        
+        var contentSize = tableView.contentSize
+        contentSize.height += 100
+        tableView.contentSize = contentSize
+        
         postBtn.setTitle(RenewJobTitle, forState: .Normal)
     }
     
@@ -181,7 +189,7 @@ extension JobOfferVC {
     @IBAction func post(sender: AnyObject) {
         if !checkPostAvailability() {
             uploader.jobTitle = jobTitTF.text
-            uploader.dateTime = dateLbl.highlitedText! + " " + timeLbl.highlitedText!
+            uploader.dateTime = dateString! + " " + timeString!
             uploader.pickupAddress = pickupAddress.text
             uploader.destinationAddress = destinationTF.text
             uploader.fare = fareTF.text
@@ -306,6 +314,7 @@ extension JobOfferVC {
         picker.completion = { [unowned self] (date, closed) in
             if let date = date as? NSDate {
                 self.dateLbl.highlitedText = NSDateFormatter.standordFormater().stringFromDate(date)
+                self.dateString = NSDateFormatter(dateFormat: "yyyy-MM-dd").stringFromDate(date)
             }
         }
         picker.show()
@@ -322,6 +331,7 @@ extension JobOfferVC {
         picker.completion = { [unowned self] (date, closed) in
             if let date = date as? NSDate {
                 self.timeLbl.highlitedText = NSDateFormatter.standordTimeFormater().stringFromDate(date)
+                self.timeString = NSDateFormatter(dateFormat: "HH:mm").stringFromDate(date)
             }
         }
         picker.show()

@@ -1324,7 +1324,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="inO-nT-GlN">
+                        <view key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" id="inO-nT-GlN">
                             <rect key="frame" x="0.0" y="702" width="600" height="91"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -2497,7 +2497,7 @@
                                 <constraint firstItem="oqG-LQ-hxB" firstAttribute="centerX" secondItem="LU0-ax-Nhg" secondAttribute="centerX" id="hFP-uH-Ody"/>
                             </constraints>
                         </view>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="1uD-oc-8aP">
+                        <view key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" id="1uD-oc-8aP">
                             <rect key="frame" x="0.0" y="776" width="600" height="91"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
