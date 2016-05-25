@@ -81,6 +81,7 @@
 		436D6B1F1C92E37600A0240E /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D6B1E1C92E37600A0240E /* UIViewController+Ext.swift */; };
 		436D6B231C93181C00A0240E /* BarcodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D6B221C93181C00A0240E /* BarcodeView.swift */; };
 		436D6B251C93184B00A0240E /* BarcodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436D6B241C93184B00A0240E /* BarcodeView.xib */; };
+		4380DFF91CF584DC009DA8E8 /* JobOfferPreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4380DFF81CF584DC009DA8E8 /* JobOfferPreloader.swift */; };
 		439346611CBFACA900753D63 /* ChatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439346601CBFACA900753D63 /* ChatCollectionViewCell.swift */; };
 		439346631CBFC13400753D63 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439346621CBFC13400753D63 /* Message.swift */; };
 		439346651CBFC56400753D63 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439346641CBFC56400753D63 /* ChatVC.swift */; };
@@ -271,6 +272,7 @@
 		436D6B1E1C92E37600A0240E /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Ext.swift"; path = "Extensions/UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		436D6B221C93181C00A0240E /* BarcodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarcodeView.swift; path = Viewes/BarcodeView/BarcodeView.swift; sourceTree = "<group>"; };
 		436D6B241C93184B00A0240E /* BarcodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BarcodeView.xib; path = Storyboards/XIB/BarcodeView.xib; sourceTree = "<group>"; };
+		4380DFF81CF584DC009DA8E8 /* JobOfferPreloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobOfferPreloader.swift; path = ViewController/Dash/Postings/JobOffers/JobOfferPreloader.swift; sourceTree = "<group>"; };
 		439346601CBFACA900753D63 /* ChatCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatCollectionViewCell.swift; path = Viewes/Dash/Chat/ChatCollectionViewCell.swift; sourceTree = "<group>"; };
 		439346621CBFC13400753D63 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Model/Message.swift; sourceTree = "<group>"; };
 		439346641CBFC56400753D63 /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatVC.swift; path = ViewController/Dash/Chat/ChatVC.swift; sourceTree = "<group>"; };
@@ -1126,6 +1128,7 @@
 			children = (
 				43FC7AAE1CAB11E4009EB4F4 /* JobOfferVC.swift */,
 				43FC7AB01CAB2C75009EB4F4 /* JobOfferPost.swift */,
+				4380DFF81CF584DC009DA8E8 /* JobOfferPreloader.swift */,
 			);
 			name = "Job Offers";
 			sourceTree = "<group>";
@@ -1473,6 +1476,7 @@
 				43A76D9D1CBEA87C00209320 /* ChatRoomsListVC.swift in Sources */,
 				436D6B1A1C92C6FB00A0240E /* RequestManager+Benefit.swift in Sources */,
 				430B4F481C7DEAF000EE884A /* LoaderViewManager.swift in Sources */,
+				4380DFF91CF584DC009DA8E8 /* JobOfferPreloader.swift in Sources */,
 				43F5E21A1C982AEB000BBB91 /* VehicleCollectionViewDelegate.swift in Sources */,
 				430449DC1CAD594700365353 /* MarketplaceItem.swift in Sources */,
 				430449DA1CAD3AB800365353 /* MarketplaceCollectiovViewLayout.swift in Sources */,

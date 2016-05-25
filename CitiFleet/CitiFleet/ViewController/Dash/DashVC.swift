@@ -47,7 +47,7 @@ class DashVC: UITableViewController {
     }
     
     func preloadData() {
-        headerView.nameLabel.text = User.currentUser()?.fullName
+        headerView.nameLabel.text = User.currentUser()?.fullName?.uppercaseString
         headerView.action = cameraPressed
         if let URL = User.currentUser()?.avatarURL {
             headerView.avatarUrl = URL

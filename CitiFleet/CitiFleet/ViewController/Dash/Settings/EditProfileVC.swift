@@ -95,7 +95,7 @@ extension EditProfileVC {
     }
     
     private func preloadData() {
-        avatarView.nameLabel.text = User.currentUser()?.fullName
+        avatarView.nameLabel.text = User.currentUser()?.fullName?.uppercaseString
         avatarView.action = { [weak self] (sender) in
             self?.cameraPressed(sender)
         }

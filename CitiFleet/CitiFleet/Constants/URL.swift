@@ -75,6 +75,8 @@ struct URL {
         static let seats = "marketplace/seats/"
         static let make = "marketplace/cars/make/"
         static let model = "marketplace/cars/model/"
+        static let jobTypes = "marketplace/job_types/"
+        static let vehicleTypes = "marketplace/vehicles/"
         
         static let rent = "marketplace/cars/posting/rent/"
         static let sale = "marketplace/cars/posting/sale/"

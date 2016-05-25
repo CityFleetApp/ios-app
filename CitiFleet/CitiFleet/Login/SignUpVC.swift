@@ -101,11 +101,6 @@ class SignUpVC: UITableViewController {
             })
         }
     }
-    
-//    @IBAction func back(sender: AnyObject) {
-//        self.navigationController?.popViewControllerAnimated(true)
-//    }
-    
 }
 
 extension SignUpVC: UITextFieldDelegate {

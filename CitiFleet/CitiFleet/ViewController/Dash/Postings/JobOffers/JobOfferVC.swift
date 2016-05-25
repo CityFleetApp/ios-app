@@ -35,18 +35,11 @@ class JobOfferVC: UITableViewController {
     var instructionsCellHeight: CGFloat = 78
     var jobOffer: JobOffer?
     
-    private let CatTypes = [
-        "Regular",
-        "Black",
-        "SUV",
-        "LUX"
-    ]
+    private var dataPreloader: JobOfferPreloader!
     
-    private let JobTypes = [
-        "Drop off",
-        "Wait & Return",
-        "Hourly"
-    ]
+    private var carTypes: [String] = []
+    
+    private var jobTypes: [String] = []
     
     override func viewDidLoad() {
         pickupAddress.delegate = self
@@ -71,6 +64,16 @@ class JobOfferVC: UITableViewController {
         
         postBtn.setDefaultShadow()
         deleteBtn.setDefaultShadow()
+        
+        dataPreloader = JobOfferPreloader(completion: { [weak self] in
+            if let types = self?.dataPreloader.vehicleTypes {
+                self?.carTypes = types
+            }
+            if let types = self?.dataPreloader.jobTypes {
+                self?.jobTypes = types 
+            }
+        })
+        dataPreloader.downloadData()
     }
     
     private func setupJobOffer(offer: JobOffer) {
@@ -90,8 +93,8 @@ class JobOfferVC: UITableViewController {
         
         uploader.isCompany = jobOffer?.isCompany
         uploader.jobTitle = offer.jobTitle
-        uploader.jobType = JobTypes.indexOf((jobOffer?.jobType)!)! + 1
-        uploader.vehicleType = CatTypes.indexOf((jobOffer?.vehicleType)!)! + 1
+        uploader.jobType = jobTypes.indexOf((jobOffer?.jobType)!)! + 1
+        uploader.vehicleType = carTypes.indexOf((jobOffer?.vehicleType)!)! + 1
         uploader.suite = jobOffer?.suite
         uploader.id = jobOffer?.id
         uploader.tolls = jobOffer?.tolls
@@ -344,12 +347,12 @@ extension JobOfferVC {
         resignAllTextViewes()
         
         let dialog = PickerDialog.viewFromNib()
-        dialog.components = CatTypes
+        dialog.components = carTypes
         dialog.completion = { [weak self] (selectedItem, canceled) in
             if !canceled {
                 let index = selectedItem as! Int
                 self?.uploader.vehicleType = index + 1
-                self?.vehicleTypeTF.highlitedText = self?.CatTypes[index]
+                self?.vehicleTypeTF.highlitedText = self?.carTypes[index]
             }
         }
         dialog.show()
@@ -397,12 +400,12 @@ extension JobOfferVC {
         resignAllTextViewes()
         
         let dialog = PickerDialog.viewFromNib()
-        dialog.components = JobTypes
+        dialog.components = jobTypes
         dialog.completion = { [unowned self] (selectedItem, canceled) in
             if !canceled {
                 let index = selectedItem as! Int
                 self.uploader.jobType = index + 1
-                self.jobTypeLbl.highlitedText = self.JobTypes[index]
+                self.jobTypeLbl.highlitedText = self.jobTypes[index]
             }
         }
         dialog.show()
