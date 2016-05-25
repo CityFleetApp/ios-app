@@ -12,6 +12,7 @@ import KMPlaceholderTextView
 class JobOfferVC: UITableViewController {
     let InstructionCellIndex = 12
     let StandordCellHeight: CGFloat = 78
+    let RenewJobTitle = "RENEW JOB"
     
     @IBOutlet var jobTitTF: UITextField!
     @IBOutlet var dateLbl: HighlitableLabel!
@@ -26,6 +27,9 @@ class JobOfferVC: UITableViewController {
     @IBOutlet var companyLbl: HighlitableLabel!
     @IBOutlet var jobTypeLbl: HighlitableLabel!
     @IBOutlet var instructionsTV: KMPlaceholderTextView!
+    
+    @IBOutlet var postBtn: UIButton!
+    @IBOutlet var deleteBtn: UIButton!
     
     var uploader = JobOfferPost()
     var instructionsCellHeight: CGFloat = 78
@@ -64,6 +68,9 @@ class JobOfferVC: UITableViewController {
         if let offer = jobOffer {
             setupJobOffer(offer)
         }
+        
+        postBtn.setDefaultShadow()
+        deleteBtn.setDefaultShadow()
     }
     
     private func setupJobOffer(offer: JobOffer) {
@@ -88,6 +95,9 @@ class JobOfferVC: UITableViewController {
         uploader.suite = jobOffer?.suite
         uploader.id = jobOffer?.id
         uploader.tolls = jobOffer?.tolls
+        
+        tableView.tableFooterView?.frame = CGRect(x: 0, y: 0, width: 0, height: 200)
+        postBtn.setTitle(RenewJobTitle, forState: .Normal)
     }
     
     private func resignAllTextViewes() {
@@ -179,6 +189,21 @@ extension JobOfferVC {
                 patchJob()
             } else {
                 postJob()
+            }
+        }
+    }
+    
+    @IBAction func deleteJob(sender: AnyObject) {
+        let urlStr = "marketplace/offers/\((jobOffer?.id)!)/"
+        
+        RequestManager.sharedInstance().delete(urlStr, parameters: nil) { [weak self] (json, error) in
+            if error == nil {
+                let alert = UIAlertController(title: "Job Offer Deletod", message: nil, preferredStyle: .Alert)
+                let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: { (action) in
+                    self?.navigationController?.popViewControllerAnimated(true)
+                })
+                alert.addAction(okAction)
+                self?.presentViewController(alert, animated: true, completion: nil)
             }
         }
     }
@@ -274,6 +299,7 @@ extension JobOfferVC {
     func dateCellSelected() {
         resignAllTextViewes()
         let picker = DOCManagementDatePicker.viewFromNib()
+        picker.datePicker.minimumDate = NSDate()
         picker.completion = { [unowned self] (date, closed) in
             if let date = date as? NSDate {
                 self.dateLbl.highlitedText = NSDateFormatter.standordFormater().stringFromDate(date)
@@ -284,7 +310,11 @@ extension JobOfferVC {
     
     func timeCellSelected() {
         resignAllTextViewes()
+        
         let picker = DOCManagementDatePicker.viewFromNib()
+        if NSDateFormatter.standordFormater().stringFromDate(NSDate()) == self.dateLbl.highlitedText {
+            picker.datePicker.minimumDate = NSDate()
+        }
         picker.datePicker.datePickerMode = .Time
         picker.completion = { [unowned self] (date, closed) in
             if let date = date as? NSDate {

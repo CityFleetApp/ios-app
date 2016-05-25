@@ -15,6 +15,7 @@ class LegalAidDetailVC: UITableViewController {
     
     @IBOutlet var actorTitle: UILabel!
     @IBOutlet var actorImage: UIImageView!
+    @IBOutlet var contactBtn: UIButton!
     
     @IBOutlet var locationLabel: HighlitableLabel!
     @IBOutlet var actorLabel: HighlitableLabel!

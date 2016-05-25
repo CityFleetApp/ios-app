@@ -19,9 +19,15 @@ class JobOfferTableViewCell: NotificationCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         titleColor = UIColor(hex: Color.Dash.CellTitleText, alpha: 1)
+        self.title.textColor = titleColor
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    override func deselectCell() {
+        super.deselectCell()
+        title.textColor = UIColor(hex: Color.Dash.CellTitleText, alpha: 1)
     }
 }

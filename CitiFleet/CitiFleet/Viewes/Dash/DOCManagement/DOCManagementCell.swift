@@ -76,9 +76,7 @@ class DOCManagementCell: DashMenuCell {
         }
         if let date = date as? NSDate {
             expDate = date
-            let dateFormater = NSDateFormatter()
-            dateFormater.dateFormat = "yyyy-MM-dd"
-            dateLabel?.highlitedText = dateFormater.stringFromDate(date)
+            dateLabel?.highlitedText = NSDateFormatter.standordFormater().stringFromDate(date)
             selectedDate(date)
         }
     }

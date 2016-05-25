@@ -39,7 +39,8 @@ struct ErrorString {
     static let DefaultMessage = "Something went wrong"
     static let ConnectionFailed = "Please, check your internet settings"
     struct SignUp {
-        static let NotValidPhone = "Enter a valid 11 digit phone number"
+        static let NotValidPhone = "Enter a valid 10 digit phone number"
+        static let IncorrectPassword = "Must be 8 characters with 1 number"
     }
     struct Social {
         static let localContactsAccessDenied = "Unable to get contacts. Please open system settings and give access to contfacs for CitiFleet"

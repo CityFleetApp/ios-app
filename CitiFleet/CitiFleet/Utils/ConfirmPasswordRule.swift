@@ -9,7 +9,7 @@
 import SwiftValidator
 
 class ConfirmPasswordRule: RegexRule {
-    static let regex = "^(?=.*?[A-Z]).{8,}$"
+    static let regex = "^(?=.*?[a-z])(?=.*?[0-9]).{8,}$"
     private var confirmTextField: UITextField?
     
     convenience init(textField: UITextField, message: String = "Invalid password confirmation") {

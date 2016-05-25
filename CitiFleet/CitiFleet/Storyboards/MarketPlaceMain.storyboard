@@ -1124,7 +1124,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="162" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="suF-HN-wrn">
-                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="JobOfferTableViewCell" rowHeight="81" id="hzj-vt-XYB" customClass="JobOfferTableViewCell" customModule="CityFleet" customModuleProvider="target">
@@ -1135,35 +1135,35 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="job_offer_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Y56-bL-4Pf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="78" height="78"/>
+                                                    <rect key="frame" x="8" y="20" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Y56-bL-4Pf" secondAttribute="height" multiplier="1:1" id="D2U-va-nwb"/>
-                                                        <constraint firstAttribute="width" constant="78" id="kHb-GX-ZB8"/>
+                                                        <constraint firstAttribute="width" constant="40" id="kHb-GX-ZB8"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TLC Alert" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxH-zT-16U">
-                                                    <rect key="frame" x="91" y="17" width="72" height="20"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                                    <rect key="frame" x="61" y="20" width="63" height="17"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                     <color key="textColor" red="0.29803921568627451" green="0.3529411764705882" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notif_date_ic" translatesAutoresizingMaskIntoConstraints="NO" id="VNe-sb-xWg">
-                                                    <rect key="frame" x="231" y="21" width="11" height="12"/>
+                                                    <rect key="frame" x="192" y="22" width="11" height="12"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/17/2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIO-GA-k6v">
-                                                    <rect key="frame" x="247" y="20" width="54" height="14"/>
+                                                    <rect key="frame" x="208" y="21" width="54" height="14"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="11.039999961853027"/>
                                                     <color key="textColor" red="0.4549019608" green="0.4549019608" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Driver must submit email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdT-RU-OX1">
-                                                    <rect key="frame" x="91" y="45" width="254" height="17"/>
+                                                    <rect key="frame" x="61" y="45" width="254" height="17"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="14"/>
                                                     <color key="textColor" red="0.4549019608" green="0.4549019608" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arr" translatesAutoresizingMaskIntoConstraints="NO" id="XaI-HZ-47S">
-                                                    <rect key="frame" x="572" y="0.0" width="4" height="62"/>
+                                                    <rect key="frame" x="572" y="20" width="4" height="42"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="4" id="3DM-DM-wlb"/>
                                                         <constraint firstAttribute="height" constant="44" id="TnD-a5-fkS"/>
@@ -1176,7 +1176,7 @@
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Covered" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocy-MQ-Whc">
-                                                    <rect key="frame" x="171" y="19" width="52" height="17"/>
+                                                    <rect key="frame" x="132" y="20" width="52" height="17"/>
                                                     <color key="backgroundColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="fL5-OG-eC9"/>
@@ -1198,8 +1198,9 @@
                                                 <constraint firstItem="BIO-GA-k6v" firstAttribute="centerY" secondItem="VNe-sb-xWg" secondAttribute="centerY" id="Hv1-B7-s2P"/>
                                                 <constraint firstItem="UdT-RU-OX1" firstAttribute="top" secondItem="NxH-zT-16U" secondAttribute="bottom" constant="8" id="JBg-d3-h4N"/>
                                                 <constraint firstItem="ocy-MQ-Whc" firstAttribute="leading" secondItem="NxH-zT-16U" secondAttribute="trailing" constant="8" id="Lst-Jq-2zX"/>
+                                                <constraint firstItem="Y56-bL-4Pf" firstAttribute="centerY" secondItem="0aS-bV-9fT" secondAttribute="centerY" id="NQ6-HE-fIc"/>
                                                 <constraint firstItem="Y56-bL-4Pf" firstAttribute="top" secondItem="0aS-bV-9fT" secondAttribute="top" id="PPw-2L-H95"/>
-                                                <constraint firstItem="Y56-bL-4Pf" firstAttribute="leading" secondItem="0aS-bV-9fT" secondAttribute="leading" id="QpJ-Ct-p7D"/>
+                                                <constraint firstItem="Y56-bL-4Pf" firstAttribute="leading" secondItem="0aS-bV-9fT" secondAttribute="leading" constant="8" id="QpJ-Ct-p7D"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="XaI-HZ-47S" secondAttribute="trailing" constant="16" id="Rtj-co-OWg"/>
                                                 <constraint firstItem="XaI-HZ-47S" firstAttribute="trailing" secondItem="Y56-bL-4Pf" secondAttribute="trailing" id="T2Q-H3-fAw"/>
                                                 <constraint firstItem="XaI-HZ-47S" firstAttribute="top" secondItem="Y56-bL-4Pf" secondAttribute="top" id="URI-lz-fyG"/>
@@ -1212,6 +1213,7 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="PPw-2L-H95"/>
                                                     <exclude reference="T2Q-H3-fAw"/>
                                                 </mask>
                                             </variation>
@@ -1233,7 +1235,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gt-Xt-ytg">
-                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
+                                <rect key="frame" x="0.0" y="507" width="600" height="49"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGe-1n-Skp">
                                         <rect key="frame" x="473" y="9" width="111" height="32"/>
@@ -1278,6 +1280,7 @@
                             <constraint firstAttribute="trailing" secondItem="suF-HN-wrn" secondAttribute="trailing" id="mUu-KI-klX"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Jobs Offers" id="Mws-KX-V7D">
                         <barButtonItem key="leftBarButtonItem" image="back-ic" id="hHx-g7-VqR">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1285,7 +1288,14 @@
                                 <action selector="back:" destination="ry9-9a-HjN" id="HUL-uq-b9N"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="close-vc-ic" id="SYn-G9-l0J">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="popToRoot:" destination="ry9-9a-HjN" id="n52-Ce-qts"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="availableJobBtn" destination="bGe-1n-Skp" id="taD-tJ-VSt"/>
                         <outlet property="jobOfferTableView" destination="suF-HN-wrn" id="FsT-rK-eFI"/>
@@ -1784,6 +1794,9 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jo_company" translatesAutoresizingMaskIntoConstraints="NO" id="g2v-DY-BPZ">
                                                             <rect key="frame" x="17" y="16" width="18" height="14"/>
                                                             <color key="tintColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="18" id="40t-eB-bMo"/>
+                                                            </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ov-b7-XMa">
                                                             <rect key="frame" x="17" y="41" width="38" height="18"/>
@@ -1794,8 +1807,8 @@
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Select Vechicle Type"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company/Personal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0h9-uv-hQL">
-                                                            <rect key="frame" x="43" y="13" width="156" height="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company/Personal" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0h9-uv-hQL">
+                                                            <rect key="frame" x="43" y="13" width="249" height="20"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
                                                             <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1807,6 +1820,7 @@
                                                         <constraint firstItem="0h9-uv-hQL" firstAttribute="leading" secondItem="g2v-DY-BPZ" secondAttribute="trailing" constant="8" id="AVX-gS-icf"/>
                                                         <constraint firstItem="9ov-b7-XMa" firstAttribute="leading" secondItem="g2v-DY-BPZ" secondAttribute="leading" id="C8s-yj-Hoc"/>
                                                         <constraint firstItem="9ov-b7-XMa" firstAttribute="top" secondItem="0h9-uv-hQL" secondAttribute="bottom" constant="8" id="Iwb-nE-gcg"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0h9-uv-hQL" secondAttribute="trailing" constant="8" id="RXI-14-mbY"/>
                                                         <constraint firstItem="0h9-uv-hQL" firstAttribute="centerY" secondItem="g2v-DY-BPZ" secondAttribute="centerY" id="mso-uQ-bi0"/>
                                                         <constraint firstItem="g2v-DY-BPZ" firstAttribute="leading" secondItem="n96-Tq-BvZ" secondAttribute="leading" constant="17" id="o2c-CD-28V"/>
                                                     </constraints>
@@ -1878,6 +1892,7 @@
                             <outlet property="delegate" destination="McB-mR-juA" id="AQd-6F-Fcw"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Job Info" id="vEH-1U-pqf">
                         <barButtonItem key="leftBarButtonItem" image="back-ic" id="igR-Yw-Rh7">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1885,7 +1900,14 @@
                                 <action selector="back:" destination="McB-mR-juA" id="Gvn-Ft-Icf"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="close-vc-ic" id="xMg-xb-f5Y">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="popToRoot:" destination="McB-mR-juA" id="xOD-UX-5rh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressLbl" destination="m7s-JW-zg8" id="zLf-k2-pya"/>
                         <outlet property="companyLbl" destination="9ov-b7-XMa" id="Ivc-KR-Eb4"/>
@@ -1949,7 +1971,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="job_completed_bg" translatesAutoresizingMaskIntoConstraints="NO" id="sL4-Zp-ntQ">
-                                <rect key="frame" x="16" y="323" width="568" height="253"/>
+                                <rect key="frame" x="16" y="323" width="568" height="209"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8F-tj-4E9" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="198" y="139" width="205" height="38"/>
@@ -2035,6 +2057,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Complete" id="7ZG-Zg-ypD">
                         <barButtonItem key="leftBarButtonItem" image="back-ic" id="cco-qF-r0P">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2042,7 +2065,14 @@
                                 <action selector="back:" destination="7HI-b0-qwC" id="bb6-3K-DCI"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="close-vc-ic" id="foe-FH-W6W">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="popToRoot:" destination="7HI-b0-qwC" id="3AB-7j-F1X"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="jobTitle" destination="x3n-W7-6BR" id="Q9V-oY-s6R"/>
                         <outlet property="ratingView" destination="Y8F-tj-4E9" id="NAi-He-VZb"/>
@@ -2178,8 +2208,8 @@
                                                                     <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enh-OO-LID">
-                                                                    <rect key="frame" x="24" y="52" width="37" height="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enh-OO-LID">
+                                                                    <rect key="frame" x="24" y="53" width="37" height="17"/>
                                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="14"/>
                                                                     <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -2226,8 +2256,8 @@
                                                                     <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPN-U3-3Na">
-                                                                    <rect key="frame" x="30" y="52" width="37" height="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPN-U3-3Na">
+                                                                    <rect key="frame" x="30" y="53" width="37" height="17"/>
                                                                     <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="14"/>
                                                                     <color key="textColor" red="0.50980392159999999" green="0.50980392159999999" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -2903,7 +2933,7 @@
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Select Vechicle Type"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company/Personal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecf-04-3uq">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company/Personal" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecf-04-3uq">
                                                             <rect key="frame" x="43" y="13" width="257" height="20"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
                                                             <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -2988,6 +3018,7 @@
                             <outlet property="delegate" destination="aBV-iC-HE1" id="8iZ-uY-iko"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Job Info" id="1f6-LS-QAr">
                         <barButtonItem key="leftBarButtonItem" image="back-ic" id="yj8-IN-AdI">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2995,7 +3026,14 @@
                                 <action selector="back:" destination="aBV-iC-HE1" id="Dgx-mm-iyI"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="close-vc-ic" id="lw7-0x-f6r">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="popToRoot:" destination="aBV-iC-HE1" id="fuf-YE-352"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
@@ -3061,7 +3099,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="job_completed_bg" translatesAutoresizingMaskIntoConstraints="NO" id="pZb-fG-fsj">
-                                <rect key="frame" x="16" y="343" width="568" height="233"/>
+                                <rect key="frame" x="16" y="343" width="568" height="189"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bec-zP-VDB" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="198" y="206" width="205" height="38"/>
@@ -3138,6 +3176,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Complete" id="xli-xf-ord">
                         <barButtonItem key="leftBarButtonItem" image="back-ic" id="iw1-iy-VeO">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3145,7 +3184,14 @@
                                 <action selector="back:" destination="YIh-XG-zbb" id="zL8-jF-4gv"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="close-vc-ic" id="Bz7-4U-HWX">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="popToRoot:" destination="YIh-XG-zbb" id="Dei-nb-5XL"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="driverName" destination="XKy-dr-NyI" id="17E-HC-YbE"/>
                         <outlet property="jobTitle" destination="ua3-CX-Bd5" id="06t-TY-oWY"/>

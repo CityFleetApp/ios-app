@@ -31,7 +31,7 @@ class ManagedJob: JobOffer, PreviousPost {
         return "Job Offer"
     }
     var dateString: String? {
-        return NSDateFormatter(dateFormat: "dd/MM/yy").stringFromDate(created!)
+        return NSDateFormatter.standordFormater().stringFromDate(created!)
     }
     var imageName: String? {
         return "manage_job"
@@ -52,7 +52,7 @@ class ManagedCar: CarForRentSale, PreviousPost {
         return "Vehicles for Rent/Sale"
     }
     var dateString: String? {
-        return NSDateFormatter(dateFormat: "dd/MM/yy").stringFromDate(created!)
+        return NSDateFormatter.standordFormater().stringFromDate(created!)
     }
     var imageName: String? {
         return "manage_car"
@@ -73,7 +73,7 @@ class ManagedGood: GoodForSale, PreviousPost {
         return "General Goods for Sale"
     }
     var dateString: String? {
-        return NSDateFormatter(dateFormat: "dd/MM/yy").stringFromDate(created!)
+        return NSDateFormatter.standordFormater().stringFromDate(created!)
     }
     var imageName: String? {
         return "manage-good"

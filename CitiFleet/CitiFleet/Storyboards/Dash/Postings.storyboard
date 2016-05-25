@@ -61,6 +61,7 @@
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -406,7 +407,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="post_job_offer_ic" translatesAutoresizingMaskIntoConstraints="NO" id="yeI-Qg-y8Z">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="post_sale_ic" translatesAutoresizingMaskIntoConstraints="NO" id="yeI-Qg-y8Z">
                                                     <rect key="frame" x="16" y="19" width="33" height="33"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -482,7 +483,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="AfF-Ub-om9">
+                        <view key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" id="AfF-Ub-om9">
                             <rect key="frame" x="0.0" y="1078" width="600" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -507,11 +508,35 @@
                                         <action selector="postRentSale" destination="wes-qS-Po1" eventType="touchUpInside" id="22n-Fz-FG0"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BtG-Bc-ZGv">
+                                    <rect key="frame" x="16" y="101" width="569" height="49"/>
+                                    <color key="backgroundColor" red="0.90588235289999997" green="0.1137254902" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="49" id="xSv-SP-ohz"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                    <state key="normal" title="DELETE JOB">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="deleteJob:" destination="aAH-Ux-MhO" eventType="touchUpInside" id="AIw-Cb-b5R"/>
+                                        <action selector="postRentSale" destination="wes-qS-Po1" eventType="touchUpInside" id="b28-CX-LVs"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="BtG-Bc-ZGv" firstAttribute="top" secondItem="hD5-9d-jmy" secondAttribute="bottom" constant="26" id="9Xj-0I-Gsy"/>
+                                <constraint firstItem="BtG-Bc-ZGv" firstAttribute="centerX" secondItem="AfF-Ub-om9" secondAttribute="centerX" id="J59-8R-bhd"/>
                                 <constraint firstItem="hD5-9d-jmy" firstAttribute="leading" secondItem="AfF-Ub-om9" secondAttribute="leading" constant="16" id="R4W-yr-8sH"/>
-                                <constraint firstItem="hD5-9d-jmy" firstAttribute="centerY" secondItem="AfF-Ub-om9" secondAttribute="centerY" id="Rcx-cZ-Cv0"/>
+                                <constraint firstItem="BtG-Bc-ZGv" firstAttribute="leading" secondItem="hD5-9d-jmy" secondAttribute="leading" id="V6u-n1-kMM"/>
+                                <constraint firstItem="hD5-9d-jmy" firstAttribute="top" secondItem="AfF-Ub-om9" secondAttribute="top" constant="26" id="hEw-Zs-4zm"/>
                                 <constraint firstItem="hD5-9d-jmy" firstAttribute="centerX" secondItem="AfF-Ub-om9" secondAttribute="centerX" id="zr0-jv-ZiX"/>
                             </constraints>
                         </view>
@@ -984,8 +1009,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="c1a-xM-d4U"/>
                                                     <exclude reference="OH9-Pp-KP7"/>
+                                                    <exclude reference="c1a-xM-d4U"/>
                                                     <exclude reference="Yo7-3A-UMX"/>
                                                 </mask>
                                             </variation>
@@ -1158,8 +1183,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="n4b-4Y-vYh"/>
                                                     <exclude reference="Roy-li-djj"/>
+                                                    <exclude reference="n4b-4Y-vYh"/>
                                                     <exclude reference="ynk-dL-JMp"/>
                                                 </mask>
                                             </variation>
@@ -1313,6 +1338,7 @@
                     <connections>
                         <outlet property="companyLbl" destination="Uls-Ka-gKK" id="24l-MY-rHr"/>
                         <outlet property="dateLbl" destination="Oep-yp-3lT" id="j5x-rd-kS7"/>
+                        <outlet property="deleteBtn" destination="BtG-Bc-ZGv" id="8EE-dD-voO"/>
                         <outlet property="destinationTF" destination="fnN-91-c7s" id="Rtm-DL-o3I"/>
                         <outlet property="fareTF" destination="vdp-jB-iX6" id="zKg-Zu-8W1"/>
                         <outlet property="gratuityTF" destination="eey-cr-eJt" id="n0Z-tU-NrW"/>
@@ -1320,6 +1346,7 @@
                         <outlet property="jobTitTF" destination="LTY-tK-8Wk" id="cWt-6M-EeC"/>
                         <outlet property="jobTypeLbl" destination="SEc-cc-584" id="5kE-Oj-pIu"/>
                         <outlet property="pickupAddress" destination="cqV-p1-wil" id="K4f-GR-Zj2"/>
+                        <outlet property="postBtn" destination="hD5-9d-jmy" id="Zkc-5I-xQs"/>
                         <outlet property="suiteLbl" destination="vJq-Nv-dqp" id="UmL-Bo-34Q"/>
                         <outlet property="timeLbl" destination="rjk-wd-wPT" id="Zg3-B0-OuY"/>
                         <outlet property="tollsTF" destination="xb0-pU-szl" id="dp4-Nz-aXc"/>
@@ -2112,6 +2139,7 @@
         <image name="post_job_offer_ic" width="22" height="22"/>
         <image name="post_prev_ic" width="20" height="22"/>
         <image name="post_rent_ic" width="24" height="20"/>
+        <image name="post_sale_ic" width="23" height="23"/>
         <image name="right_arr" width="4" height="9"/>
         <image name="rs-description-ic" width="18" height="16"/>
         <image name="rs-price-ic" width="18" height="18"/>

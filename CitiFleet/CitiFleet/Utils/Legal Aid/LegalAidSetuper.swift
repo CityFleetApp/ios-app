@@ -23,6 +23,7 @@ class LegalAidSetuper: NSObject {
         var actorPlaceholder: String
         var actorInfoTitle: String
         var actorNamePlacehelder: String
+        var actorButtonTitle: String
     }
     
     private struct LegalAidTitles {
@@ -31,28 +32,32 @@ class LegalAidSetuper: NSObject {
             actorImage: "la-lawyer",
             actorPlaceholder: "Select Lawyer",
             actorInfoTitle: "LAWYER'S INFO",
-            actorNamePlacehelder: "Lawyer's Name"
+            actorNamePlacehelder: "Lawyer's Name",
+            actorButtonTitle: "CONTACT LAWYER"
         )
         static let TLCLawyer = ActorInfo(title: "TLC Lawyers",
             actorTitle: "Lawyer",
             actorImage: "la-lawyer",
             actorPlaceholder: "Select Lawyer",
             actorInfoTitle: "LAWYER'S INFO",
-            actorNamePlacehelder: "Lawyer's Name"
+            actorNamePlacehelder: "Lawyer's Name",
+            actorButtonTitle: "CONTACT LAWYER"
         )
         static let Accountants = ActorInfo(title: "Accountants",
             actorTitle: "Accountant",
             actorImage: "la-accountants",
             actorPlaceholder: "Select Accountant",
             actorInfoTitle: "ACCOUNTANT'S INFO",
-            actorNamePlacehelder: "Accountant's Name"
+            actorNamePlacehelder: "Accountant's Name",
+            actorButtonTitle: "CONTACT ACCOUNT"
         )
         static let InsuranceBrokers = ActorInfo(title: "Insurance Brokers",
             actorTitle: "Broker",
             actorImage: "la-insurance-frokers",
             actorPlaceholder: "Select Broker",
             actorInfoTitle: "BROKER'S INFO",
-            actorNamePlacehelder: "Broker's Name"
+            actorNamePlacehelder: "Broker's Name",
+            actorButtonTitle: "CONTACT BROKER"
         )
     }
     
@@ -90,6 +95,7 @@ class LegalAidSetuper: NSObject {
         legalAidVC.headerTitle = actorInfo.actorInfoTitle
         legalAidVC.actorLabel.placeholderText = actorInfo.actorPlaceholder
         legalAidVC.nameLabel.placeholderText = actorInfo.actorNamePlacehelder
+        legalAidVC.contactBtn.setTitle(actorInfo.actorButtonTitle, forState: .Normal)
         legalAidVC.legalAidManager = LegalAidManager(type: type)
     }
 }

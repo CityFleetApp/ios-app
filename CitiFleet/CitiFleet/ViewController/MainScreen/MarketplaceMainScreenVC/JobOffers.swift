@@ -75,7 +75,7 @@ extension JobOffersVC: UITableViewDataSource {
         let separator = UIScreen.mainScreen().bounds.width <= 360 ? "\n" : " | "
         
         cell?.title.text = "\(NSDateFormatter(dateFormat: "hh:mm a").stringFromDate(item.pickupDatetime!))\(separator)$\(item.fare!))"
-        cell?.dateLabel?.text = NSDateFormatter(dateFormat: "dd/MM/yyyy").stringFromDate(item.pickupDatetime!)
+        cell?.dateLabel?.text = NSDateFormatter.standordFormater().stringFromDate(item.pickupDatetime!)
 //        cell?.jobStateLabel.text = item.status?.rawValue
         
         let statusTuple = statusColor(item)
@@ -84,6 +84,7 @@ extension JobOffersVC: UITableViewDataSource {
         
         cell?.setEditable(true)
         cell?.notificationTitle?.text = item.jobTitle
+        cell?.title.textColor = UIColor(hex: Color.Dash.CellTitleText, alpha: 1)
         
         return cell!
     }

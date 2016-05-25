@@ -30,7 +30,7 @@ struct Titles {
         static let deletePhotoTitle = "Delete photo"
         static let deletePhotoMsg = "Are you sure you want to delete this photo?"
         static let documentsIsUpToDate = "All up to date"
-        static let documentsIsNotUpToDate = "Check your dacuments"
+        static let documentsIsNotUpToDate = "Not up to date"
     }
     struct MainScreen {
         static let noMarkersTitle = "Find something"

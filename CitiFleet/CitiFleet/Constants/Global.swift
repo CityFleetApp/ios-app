@@ -31,6 +31,6 @@ struct Constant {
 
 struct DateFormat {
     struct Notification {
-        static let dateFormat = "yyyy-MM-dd"
+        static let dateFormat = "MM / dd / yyyy"
     }
 }

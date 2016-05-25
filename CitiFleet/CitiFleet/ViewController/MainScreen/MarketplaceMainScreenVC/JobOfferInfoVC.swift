@@ -24,7 +24,7 @@ class JobOfferInfoVC: UITableViewController {
     @IBOutlet var companyLbl: UILabel!
     @IBOutlet var jobTypeLbl: UILabel!
     @IBOutlet var titleLbl: UILabel!
-    @IBOutlet var requestButton: UIButton!
+    @IBOutlet var requestButton: UIButton?
 
     var job: JobOffer!
     
@@ -40,20 +40,28 @@ class JobOfferInfoVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.hidden = false
-        dateLbl.text = NSDateFormatter(dateFormat: "MM/dd/yyyy").stringFromDate(job.pickupDatetime!)
+        dateLbl.text = NSDateFormatter.standordFormater().stringFromDate(job.pickupDatetime!)
         timeLbl.text = NSDateFormatter(dateFormat: "hh:mm a").stringFromDate(job.pickupDatetime!)
         addressLbl.text = job.pickupAddress
         destination.text = job.destination
-        payLbl.text = job.fare
-        tollsLbl.text = job.tolls
-        gratuityLbl.text = job.gratuity
+        payLbl.text = "$ \(job.fare!)"
+        if let tolls = job.tolls {
+            tollsLbl.text = "$ \(tolls)"
+        } else {
+            tollsLbl.text = "$ 0.00"
+        }
+        gratuityLbl.text = "$ \(job.gratuity!)"
         vehicleLbl.text = job.vehicleType
         suiteLbl.text = job.suite == true ? "Yes" : "No"
-        companyLbl.text = "Personal"
+        if let author = job.authorType {
+            companyLbl.text = author.rawValue
+        } else {
+            companyLbl.text = "Personal"
+        }
         jobTypeLbl.text = job.jobType
         titleLbl.text = job.jobTitle
         
-        requestButton.enabled = (job.requested) != true
+        requestButton?.enabled = (job.requested) != true
     }
     
     @IBAction func jobInfo(sender: AnyObject) {

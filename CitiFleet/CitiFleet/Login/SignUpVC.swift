@@ -58,7 +58,7 @@ class SignUpVC: UITableViewController {
         validator.registerField(phone, rules: [RequiredRule(), PhoneNumberRule(regex: "^\\d{10}$", message: ErrorMessage.NotValidPhone)])
         validator.registerField(hackLicense, rules: [RequiredRule()])
         validator.registerField(email, rules: [RequiredRule(), EmailRule()])
-        validator.registerField(password, rules: [RequiredRule(), PasswordRule()])
+        validator.registerField(password, rules: [RequiredRule(), PasswordRule(regex: ConfirmPasswordRule.regex, message: ErrorMessage.IncorrectPassword)])
         validator.registerField(confirmPassword, rules: [RequiredRule(), ConfirmPasswordRule(textField: password)])
     }
     
