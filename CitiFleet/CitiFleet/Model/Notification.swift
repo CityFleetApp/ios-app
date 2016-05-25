@@ -17,9 +17,7 @@ struct Notification {
     
     var dateString: String {
         get {
-            let dateformatter = NSDateFormatter()
-            dateformatter.dateFormat = DateFormat.Notification.dateFormat
-            return dateformatter.stringFromDate(date)
+            return NSDateFormatter.standordFormater().stringFromDate(date)
         }
     }
     

@@ -120,9 +120,9 @@ extension LegalAidContactsVC {
     
     private func titleWithType(type: LegalAiContactType) -> String {
         switch type {
-        case .Phone: return "Phone"
-        case .Email: return "Email"
-        case .Address: return "Address"
+        case .Phone: return "      Phone"
+        case .Email: return "      Email"
+        case .Address: return "      Address"
         }
     }
 }
