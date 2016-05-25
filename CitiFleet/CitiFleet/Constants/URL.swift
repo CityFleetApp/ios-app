@@ -336,6 +336,7 @@ struct Response {
             static let requested = "requested"
             static let instructions = "instructions"
             static let owner = "owner"
+            static let ownerName = "owner_name"
             static let status = "status"
             static let created = "created"
             static let title = "title"

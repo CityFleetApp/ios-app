@@ -82,6 +82,7 @@
 		436D6B231C93181C00A0240E /* BarcodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D6B221C93181C00A0240E /* BarcodeView.swift */; };
 		436D6B251C93184B00A0240E /* BarcodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436D6B241C93184B00A0240E /* BarcodeView.xib */; };
 		4380DFF91CF584DC009DA8E8 /* JobOfferPreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4380DFF81CF584DC009DA8E8 /* JobOfferPreloader.swift */; };
+		4380DFFB1CF5B0BB009DA8E8 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4380DFFA1CF5B0BB009DA8E8 /* Contacts.framework */; };
 		439346611CBFACA900753D63 /* ChatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439346601CBFACA900753D63 /* ChatCollectionViewCell.swift */; };
 		439346631CBFC13400753D63 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439346621CBFC13400753D63 /* Message.swift */; };
 		439346651CBFC56400753D63 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439346641CBFC56400753D63 /* ChatVC.swift */; };
@@ -273,6 +274,7 @@
 		436D6B221C93181C00A0240E /* BarcodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarcodeView.swift; path = Viewes/BarcodeView/BarcodeView.swift; sourceTree = "<group>"; };
 		436D6B241C93184B00A0240E /* BarcodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BarcodeView.xib; path = Storyboards/XIB/BarcodeView.xib; sourceTree = "<group>"; };
 		4380DFF81CF584DC009DA8E8 /* JobOfferPreloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobOfferPreloader.swift; path = ViewController/Dash/Postings/JobOffers/JobOfferPreloader.swift; sourceTree = "<group>"; };
+		4380DFFA1CF5B0BB009DA8E8 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		439346601CBFACA900753D63 /* ChatCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatCollectionViewCell.swift; path = Viewes/Dash/Chat/ChatCollectionViewCell.swift; sourceTree = "<group>"; };
 		439346621CBFC13400753D63 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Model/Message.swift; sourceTree = "<group>"; };
 		439346641CBFC56400753D63 /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatVC.swift; path = ViewController/Dash/Chat/ChatVC.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4380DFFB1CF5B0BB009DA8E8 /* Contacts.framework in Frameworks */,
 				431D2DCB1C9FE5FD00CBC4BA /* CoreLocation.framework in Frameworks */,
 				4334D81D1C7F749A00557AE4 /* QuartzCore.framework in Frameworks */,
 				4334D81B1C7F67B300557AE4 /* CoreImage.framework in Frameworks */,
@@ -1171,6 +1174,7 @@
 		B6CBC1A8583C872FDAA083A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4380DFFA1CF5B0BB009DA8E8 /* Contacts.framework */,
 				431D2DCA1C9FE5FD00CBC4BA /* CoreLocation.framework */,
 				4334D81C1C7F749A00557AE4 /* QuartzCore.framework */,
 				4334D81A1C7F67B300557AE4 /* CoreImage.framework */,

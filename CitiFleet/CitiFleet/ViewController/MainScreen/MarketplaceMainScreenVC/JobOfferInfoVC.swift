@@ -25,6 +25,7 @@ class JobOfferInfoVC: UITableViewController {
     @IBOutlet var jobTypeLbl: UILabel!
     @IBOutlet var titleLbl: UILabel!
     @IBOutlet var requestButton: UIButton?
+    @IBOutlet var authorLabel: UILabel!
 
     var job: JobOffer!
     
@@ -58,6 +59,7 @@ class JobOfferInfoVC: UITableViewController {
         } else {
             companyLbl.text = "Personal"
         }
+        authorLabel.text = job.ownerName
         jobTypeLbl.text = job.jobType
         titleLbl.text = job.jobTitle
         
@@ -74,6 +76,14 @@ class JobOfferInfoVC: UITableViewController {
                 alert.addAction(action)
                 self?.presentViewController(alert, animated: true, completion: nil)
             }
+        }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 8 {
+            let profileVC = ProfileVC.viewControllerFromStoryboard()
+            profileVC.user = job.user
+            navigationController?.pushViewController(profileVC, animated: true)
         }
     }
 }

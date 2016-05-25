@@ -46,33 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
         Fabric.with([Crashlytics.self, Twitter.self])
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        test()
-        
         return true
-    }
-    
-    func test() {
-        let r1 = Report(lat: 0, lon: 0, type: .Police)
-        let r2 = Report(lat: 0, lon: 0, type: .Police)
-        
-        r1.id = 1
-        r2.id = 2
-        
-        let r3 = Report(lat: 0, lon: 0, type: .Police)
-        let r4 = Report(lat: 0, lon: 0, type: .Police)
-        
-        r3.id = 1
-        r4.id = 2
-        
-        var set1: Set<Report> = Set()
-        set1.insert(r1)
-        set1.insert(r2)
-//        set1.insert(r3)
-//        set1.insert(r4)
-        let set2: Set<Report> = Set([r3, r4])
-        
-        let set3 = set2.union(set2.intersect(set1)) //set1.intersect(set2).union(set2)
-        
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
@@ -91,6 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(hex: Color.NavigationBar.barTint, alpha: 1)
         UINavigationBar.appearance().titleTextAttributes = [ NSFontAttributeName: Fonts.Login.NavigationTitle,  NSForegroundColorAttributeName: UIColor.whiteColor()]
         APNSManager.sharedManager.registerForRemoteNotifications()
+        SocialManager.sharedInstance.importContactsSilently()
     }
     
     func showLoginViewController() {

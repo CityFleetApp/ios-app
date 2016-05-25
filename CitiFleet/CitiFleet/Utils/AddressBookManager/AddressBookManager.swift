@@ -10,11 +10,19 @@ import UIKit
 import SwiftAddressBook
 
 class AddressBookManager: NSObject {
+    func tryToGetContacts(completion:(([String]?, NSError?)->())) {
+        let status = SwiftAddressBook.authorizationStatus()
+        if status == .Authorized {
+            getPhoneNumbers(completion)
+        } else {
+            completion(nil, nil)
+        }
+    }
+    
     func getAllPhones(completion:(([String]?, NSError?)->())) {
-        SwiftAddressBook.requestAccessWithCompletion({ (success, error) -> Void in
-            
+        SwiftAddressBook.requestAccessWithCompletion({ [weak self] (success, error) in
             if success {
-                self.getPhoneNumbers(completion)
+                self?.getPhoneNumbers(completion)
             } else {
                 completion(nil, (error as NSError?))
             }
@@ -25,7 +33,7 @@ class AddressBookManager: NSObject {
         var phoneNumbers: [String] = []
         if let people = swiftAddressBook?.allPeople {
             for person in people {
-                if let numbers = self.mapPhones(person.phoneNumbers) {
+                if let numbers = mapPhones(person.phoneNumbers) {
                     phoneNumbers += numbers
                 }
             }
@@ -35,7 +43,9 @@ class AddressBookManager: NSObject {
     
     private func mapPhones(phones: Array<MultivalueEntry<String>>?) -> [String]? {
         return phones?.map({ (phone) -> String in
-            return phone.value
-        })
+            let stringArray = phone.value.componentsSeparatedByCharactersInSet(
+                NSCharacterSet.decimalDigitCharacterSet().invertedSet)
+            return stringArray.joinWithSeparator("")
+        }).filter({ $0 != nil && $0.characters.count > 0 })
     }
 }

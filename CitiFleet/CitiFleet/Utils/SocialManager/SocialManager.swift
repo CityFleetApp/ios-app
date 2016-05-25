@@ -86,6 +86,23 @@ extension SocialManager {
 }
 
 extension SocialManager {
+    func importContactsSilently() {
+        if User.currentUser() == nil {
+            return
+        }
+        AddressBookManager().tryToGetContacts { (phones, error) in
+            if let phones = phones {
+                
+                let params = [
+                    Params.Social.phones: phones
+                ]
+                RequestManager.sharedInstance().makeSilentRequest(.POST, baseURL: URL.Social.Phones, parameters: params, completion: { (json, error) in
+                    
+                })
+            }
+        }
+    }
+    
     func importContacts() {
         LoaderViewManager.showLoader()
         AddressBookManager().getAllPhones { (contacts, error) -> () in
@@ -93,7 +110,6 @@ extension SocialManager {
                 LoaderViewManager.hideLoader()
                 print(error)
             } else {
-                
                 self.makeContactsRequest(contacts!)
             }
         }

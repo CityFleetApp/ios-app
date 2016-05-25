@@ -22,6 +22,7 @@ class JobOffer: NSObject {
     
     var id: Int?
     var ownerID: Int?
+    var ownerName: String?
     var pickupDatetime: NSDate?
     var pickupAddress: String?
     var destination: String?
@@ -42,6 +43,12 @@ class JobOffer: NSObject {
     var isCompany: Bool? {
         return authorType == .Company
     }
+    var user: User {
+        let user = User()
+        user.id = ownerID
+        user.fullName = ownerName
+        return user 
+    }
     
     override init() {
         
@@ -50,6 +57,7 @@ class JobOffer: NSObject {
     init(json: AnyObject) {
         typealias Param = Response.Marketplace.JobOffers
         id = json[Param.id] as? Int
+        ownerName = json[Param.ownerName] as? String
         pickupDatetime = NSDateFormatter.serverResponseFormat.dateFromString(json[Param.pickupDatetime] as! String)
         pickupAddress = json[Param.pickupAddress] as? String
         destination = json[Param.destination] as? String
