@@ -16,6 +16,7 @@ class ChatCollectionViewCell: UICollectionViewCell {
     @IBOutlet var messageLbl: UILabel!
     @IBOutlet var messageDateLbl: UILabel!
     @IBOutlet var messageHeight: NSLayoutConstraint!
+    @IBOutlet var messageImage: UIImageView!
     
     override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
         let attributes = layoutAttributes as! MarketplaceLayoutAttributes

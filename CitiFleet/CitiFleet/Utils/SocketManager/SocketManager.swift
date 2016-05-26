@@ -89,11 +89,24 @@ class SocketManager: NSObject {
     }
     
     func sendMessage(message: Message) {
-        let params = [
+        var params: [String: AnyObject] = [
             Params.Chat.method: Method.PostMessage.rawValue,
-            Params.Chat.text: message.message!,
-            Params.Chat.room: message.roomId!
+            Params.Chat.text: "",
+            Params.Chat.room: message.roomId!,
+            Params.Chat.image: ""
         ]
+        
+        
+        if let text = message.message {
+            params[Params.Chat.text] = text
+        }
+        if let image = message.image {
+            if let imageData = UIImagePNGRepresentation(image) {
+                let strBase64 = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)
+                params[Params.Chat.image] = strBase64
+            }
+        }
+        
         do {
             let jsonData = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
             let str = String(data: jsonData, encoding: NSUTF8StringEncoding)

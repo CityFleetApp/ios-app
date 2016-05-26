@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Haneke
 
 class Message: NSObject {
     var id: Int?
@@ -16,7 +17,10 @@ class Message: NSObject {
     var date: NSDate?
     var author: User?
     var participants: [Friend] = []
-
+    var imageURL: NSURL?
+    var image: UIImage?
+    var imageSize: CGSize?
+    
     override init() {
         super.init()
     }
@@ -25,6 +29,12 @@ class Message: NSObject {
         super.init()
         message = json[Response.Chat.text] as? String
         roomId = json[Response.Chat.room] as? Int
+        if let urlString = json[Response.Chat.image] as? String {
+            imageURL = NSURL(string: urlString)
+            let width = (json[Response.Chat.imageSize] as! [CGFloat])[0]
+            let height = (json[Response.Chat.imageSize] as! [CGFloat])[1]
+            imageSize = CGSize(width: width, height: height)
+        }
         if let dateStr = json[Response.Chat.created] as? String {
             date = NSDateFormatter.serverResponseFormat.dateFromString(dateStr)
         }
@@ -33,6 +43,27 @@ class Message: NSObject {
             let authorID = json[Response.Chat._author] as? Int
             let authorArr = participants.filter({ return $0.id == authorID })
             author = authorArr.count > 0 ? authorArr[0] : nil 
+        }
+    }
+    
+    func getImage(completion: ((UIImage?) -> ())) {
+        let cache = Shared.imageCache
+        if let url = imageURL {
+            cache.fetch(URL: url).onSuccess({ [weak self] (image) in
+                self?.image = image
+                dispatch_async(dispatch_get_main_queue(), { 
+                    completion(image)
+                })
+            })
+            .onFailure({ (error) in
+                dispatch_async(dispatch_get_main_queue(), {
+                    completion(nil)
+                })
+            })
+        } else {
+            dispatch_async(dispatch_get_main_queue(), {
+                completion(nil)
+            })
         }
     }
 }

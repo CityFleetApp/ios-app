@@ -8,7 +8,8 @@
 
 import UIKit
 import Haneke
-import KMPlaceholderTextView 
+import KMPlaceholderTextView
+import AVFoundation
 
 class ChatVC: UIViewController {
     private static let StoryBoardID = "ChatVC"
@@ -86,6 +87,16 @@ extension ChatVC {
             textViewDidChange(messageTF)
         }
     }
+    
+    @IBAction func sendPhoto(sender: AnyObject) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let fabric = CameraFabric(imagePicerDelegate: self)
+        alert.addAction(fabric.cameraAction())
+        alert.addAction(fabric.libraryAction())
+        alert.addAction(fabric.cancelAction())
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
 }
 
 //MARK: - Private Methods
@@ -126,6 +137,19 @@ extension ChatVC {
         return max(ChatVC.PhotoWidth, height)
     }
     
+    private func calculateImageSize(size: CGSize) -> CGFloat {
+        let layout = collectionView.collectionViewLayout as! MarketplaceCollectiovViewLayout
+        let width = layout.columnWidth -
+            ChatVC.MessagePadding -
+            ChatVC.MessageMarging -
+            ChatVC.PhotoLeftPadding -
+            ChatVC.PhotoRightPadding -
+            ChatVC.PhotoWidth - ChatVC.StandardPadding * 2
+        let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
+        let rect = AVMakeRectWithAspectRatioInsideRect(size, boundingRect)
+        return max(ChatVC.PhotoWidth, rect.height)
+    }
+    
     private func calculateHeightForMessage() -> CGFloat {
         let topSize: CGFloat = 32 + messageTF.contentInset.bottom * messageTF.contentInset.top
         let textViewWidth = CGRectGetWidth(UIScreen.mainScreen().bounds) - MessageButtonSide * 2
@@ -150,6 +174,19 @@ extension ChatVC: UICollectionViewDataSource {
         }
         cell.messageLbl.text = message.message
         cell.messageDateLbl.text = "\((message.author?.fullName)!) wrote at \(NSDateFormatter.standordFormater().stringFromDate(message.date!))"
+        
+        if message.imageURL != nil {
+            cell.messageImage.image = nil 
+            cell.messageLbl.hidden = true
+            cell.messageImage.hidden = false
+            message.getImage({ (image) in
+                cell.messageImage.image = image
+            })
+        } else {
+            cell.messageLbl.hidden = false
+            cell.messageImage.hidden = true
+            cell.messageImage.image = nil
+        }
         
         return cell
     }
@@ -180,6 +217,11 @@ extension ChatVC: MarketplaceLayoutDelegate {
     
     func collectionView(collectionView: UICollectionView, heightForInfoAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
         let message = datasource.messages[indexPath.item]
+        
+        if let size = message.imageSize {
+            return calculateImageSize(size)
+        }
+        
         let font = UIFont(name: FontNames.Montserrat.Regular, size: 14.4)
         return calculateHeight(message.message!, font: font!)
     }
@@ -223,6 +265,20 @@ extension ChatVC {
                 
                 collectionView.insertItemsAtIndexPaths(pathes)
             }
+        }
+    }
+}
+
+extension ChatVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        picker.dismissViewControllerAnimated(true) { [weak self] in
+            let message = Message()
+            message.author = User.currentUser()
+            message.roomId = self?.room.id
+            message.date = NSDate()
+            message.image = image.scaleToMaxSide(Sizes.Image.upladeSide)
+            
+            SocketManager.sharedManager.sendMessage(message)
         }
     }
 }

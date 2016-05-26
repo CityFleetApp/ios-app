@@ -119,6 +119,7 @@ struct Params {
     struct Chat {
         static let text = "text"
         static let room = "room"
+        static let image = "image"
         static let created = "created"
         static let author = "author_info"
         static let method = "method"
@@ -356,6 +357,8 @@ struct Response {
         static let messageType = "type"
         static let text = "text"
         static let room = "room"
+        static let image = Params.Chat.image
+        static let imageSize = "image_size"
         static let roomID = "room_id"
         static let authorInfo = "author_info"
         static let _author = "author"
