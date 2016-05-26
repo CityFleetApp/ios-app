@@ -97,6 +97,20 @@ extension ChatVC {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
+    @IBAction func addRoom(sender: AnyObject) {
+        if let vc = storyboard?.instantiateViewControllerWithIdentifier(ContactListVC.StoryboardID) as? ContactListVC {
+            let navigationController = UINavigationController()
+            navigationController.viewControllers = [vc]
+            presentViewController(navigationController, animated: true, completion: nil)
+            vc.selectionCompleted = { [weak self] (users) in
+                if let users = users {
+                    RequestManager.sharedInstance().patchRoom((self?.room)!, participants: users, completion: { (room, error) in
+                        
+                    })
+                }
+            }
+        }
+    }
 }
 
 //MARK: - Private Methods
@@ -173,7 +187,7 @@ extension ChatVC: UICollectionViewDataSource {
             cell.avatarImageView.hnk_setImageFromURL(url)
         }
         cell.messageLbl.text = message.message
-        cell.messageDateLbl.text = "\((message.author?.fullName)!) wrote at \(NSDateFormatter.standordFormater().stringFromDate(message.date!))"
+        cell.messageDateLbl.text = "\((message.author?.fullName)!) wrote at \(NSDateFormatter(dateFormat: "MM/dd/yyyy HH:mm").stringFromDate(message.date!))"
         
         if message.imageURL != nil {
             cell.messageImage.image = nil

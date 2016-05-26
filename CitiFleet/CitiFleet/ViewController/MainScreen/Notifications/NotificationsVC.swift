@@ -28,7 +28,7 @@ class NotificationsVC: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let viewController = segue.destinationViewController as! NotificationDetailVC
         let index = notificationTable.indexPathForSelectedRow?.row
-        var notification = notifications![index!]
+        let notification = notifications![index!]
         NotificationManager.sharedInstance.markAsRead(notification)
         notification.unseen = false
         let cell = notificationTable.cellForRowAtIndexPath(NSIndexPath(forRow: index!, inSection: 0)) as! NotificationCell

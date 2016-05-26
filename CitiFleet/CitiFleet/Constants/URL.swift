@@ -303,6 +303,8 @@ struct Response {
         static let message = "message"
         static let date = "created"
         static let unseen = "unseen"
+        static let refType = "ref_type"
+        static let refID = "ref_id"
     }
     struct Marketplace {
         static let available = "available"

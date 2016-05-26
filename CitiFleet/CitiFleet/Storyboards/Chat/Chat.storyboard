@@ -484,7 +484,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="525"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QaP-Oo-Qt0">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QaP-Oo-Qt0">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="418"/>
                                 <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="qoO-cK-Mmh" customClass="ChatCollectiovViewLayout" customModule="CityFleet" customModuleProvider="target"/>
@@ -665,7 +665,7 @@
                                     <outlet property="delegate" destination="Pqs-4v-oCX" id="led-2y-82T"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVX-yf-TCP">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aVX-yf-TCP">
                                 <rect key="frame" x="0.0" y="418" width="600" height="58"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAn-gA-90b">
@@ -734,6 +734,7 @@
                             <constraint firstAttribute="trailing" secondItem="aVX-yf-TCP" secondAttribute="trailing" id="cHh-ML-nQF"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Chat" id="N6L-Ca-Ogz">
                         <barButtonItem key="leftBarButtonItem" image="back-ic" id="4vN-0n-3ql">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -741,7 +742,14 @@
                                 <action selector="back:" destination="Pqs-4v-oCX" id="5xQ-VQ-AGh"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="add_friends" id="vol-Hg-6HR">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="addRoom:" destination="Pqs-4v-oCX" id="h3h-Oj-6YR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bottomConstraint" destination="3SY-L4-PX4" id="AyH-pW-Gh6"/>
                         <outlet property="cameraButton" destination="NAn-gA-90b" id="IjP-Qp-IDW"/>
@@ -896,6 +904,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add_friends" width="32" height="23"/>
         <image name="back-ic" width="8" height="13"/>
         <image name="chat-camera" width="26" height="18"/>
         <image name="chat-contacts-ic" width="38" height="38"/>

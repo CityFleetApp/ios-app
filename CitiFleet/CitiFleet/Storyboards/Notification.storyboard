@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Montserrat-Bold.otf">
+            <string>Montserrat-Bold</string>
+        </mutableArray>
         <mutableArray key="Montserrat-Light.otf">
             <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
@@ -23,7 +26,7 @@
         <!--Notifications-->
         <scene sceneID="o1S-Sk-NTw">
             <objects>
-                <viewController restorationIdentifier="NotificationsVC" storyboardIdentifier="NotificationsVC" id="FKD-6E-bcZ" customClass="NotificationsVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="NotificationsVC" storyboardIdentifier="NotificationsVC" id="FKD-6E-bcZ" customClass="NotificationsVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yY3-Lx-bqu"/>
                         <viewControllerLayoutGuide type="bottom" id="TJh-GM-qT5"/>
@@ -36,7 +39,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NotificationCell" rowHeight="81" id="gOl-OA-DVo" customClass="NotificationCell" customModule="CitiFleet" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NotificationCell" rowHeight="81" id="gOl-OA-DVo" customClass="NotificationCell" customModule="CityFleet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gOl-OA-DVo" id="3GU-eD-lpC">
@@ -188,7 +191,7 @@
         <!--Notification DetailVC-->
         <scene sceneID="1Uz-Qf-JjW">
             <objects>
-                <tableViewController id="Lfw-nR-NC7" customClass="NotificationDetailVC" customModule="CitiFleet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Lfw-nR-NC7" customClass="NotificationDetailVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="83" sectionHeaderHeight="28" sectionFooterHeight="28" id="5KM-AX-Wjd">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -245,6 +248,30 @@
                                                 <constraint firstAttribute="trailing" secondItem="Gaz-Pz-HAW" secondAttribute="trailing" constant="14" id="JeU-Ps-84E"/>
                                                 <constraint firstItem="Gaz-Pz-HAW" firstAttribute="top" secondItem="zL5-B7-xgE" secondAttribute="topMargin" id="jqh-Vx-rbD"/>
                                                 <constraint firstAttribute="bottom" secondItem="Gaz-Pz-HAW" secondAttribute="bottom" id="yoA-4Y-XHV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="MjJ-3N-C32">
+                                        <rect key="frame" x="0.0" y="215" width="600" height="83"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MjJ-3N-C32" id="IWK-FL-sfW">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="83"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbL-Dj-zPV">
+                                                    <rect key="frame" x="519" y="27" width="65" height="30"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="15"/>
+                                                    <state key="normal" title="SEE JOB">
+                                                        <color key="titleColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="openJobOffer" destination="Lfw-nR-NC7" eventType="touchUpInside" id="uLH-rJ-kYM"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nbL-Dj-zPV" firstAttribute="centerY" secondItem="IWK-FL-sfW" secondAttribute="centerY" id="Q26-nC-t14"/>
+                                                <constraint firstAttribute="trailing" secondItem="nbL-Dj-zPV" secondAttribute="trailing" constant="16" id="sM9-Ud-t9K"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

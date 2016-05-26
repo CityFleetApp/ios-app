@@ -25,4 +25,24 @@ extension RequestManager {
             completion(nil, error)
         }
     }
+    
+    func patchRoom(room: ChatRoom, participants:Set<Friend>, completion: ((ChatRoom?, NSError?) -> ())) {
+        let p = Set(room.participants)
+        let allparticipants = participants.union(p)
+        let ids = allparticipants.map({ return $0.id! })
+        let params = [
+            Params.Chat.members: ids
+//            Params.Chat.name: participants.map({ $0.fullName! }).joinWithSeparator(", ")
+        ]
+        
+        let url = "\(URL.Chat.Rooms)\(room.id!)/"
+        patch(url, parameters: params) { (json, error) in
+            if let roomObj = json?.dictionaryObject {
+                let room = ChatRoom(json: roomObj)
+                completion(room, nil)
+                return
+            }
+            completion(nil, error)
+        }
+    }
 }

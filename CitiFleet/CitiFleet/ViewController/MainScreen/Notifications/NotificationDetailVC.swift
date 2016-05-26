@@ -10,12 +10,30 @@ import UIKit
 
 class NotificationDetailVC: UITableViewController {
     private let titleCellHeight: CGFloat = 83
+    private let buttonHeight: CGFloat = 40
+
     @IBOutlet var notificationMessageTF: UITextView!
     @IBOutlet var notificationTitleLbl: UILabel!
     var notification: Notification!
     
     override func viewWillAppear(animated: Bool) {
         setupNotification()
+    }
+    
+    @IBAction func openJobOffer() {
+        let urlStr = "\(URL.Marketplace.JobOffers)\(notification.refID!)/"
+        RequestManager.sharedInstance().get(urlStr, parameters: nil) { [weak self] (json, error) in
+            if let jobDict = json?.dictionaryObject {
+                let jobOffer = JobOffer(json: jobDict)
+                let storyboard = UIStoryboard(name: Storyboard.MarketPlace, bundle: nil)
+                let vc: JobOfferInfoVC? = storyboard.instantiateViewControllerWithIdentifier(jobOffer.status == .Available ? JobOfferInfoVC.StoryboardID : JobOfferAwardedVC.StoryboardID) as? JobOfferInfoVC
+                
+                if let viewController = vc {
+                    viewController.job = jobOffer
+                    self?.navigationController?.pushViewController(viewController, animated: true)
+                }
+            }
+        }
     }
     
     private func setupNotification() {
@@ -33,6 +51,15 @@ class NotificationDetailVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return indexPath.row == 0 ? titleCellHeight : calculateHeightForBio()
+        switch indexPath.row {
+        case 0:
+            return titleCellHeight
+        case 1:
+            return calculateHeightForBio()
+        case 2:
+            return notification.notificationType == .JobOffer ? buttonHeight : 0
+        default:
+            return 0
+        }
     }
 }

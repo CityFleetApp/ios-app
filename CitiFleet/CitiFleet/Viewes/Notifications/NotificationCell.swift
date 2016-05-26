@@ -25,7 +25,7 @@ class NotificationCell: LegalAidCell {
     private func setNotification(notification: Notification) {
         notificationTitle?.text = notification.title
         dateLabel?.text = notification.dateString
-        if notification.unseen {
+        if notification.unseen! {
             contentView.backgroundColor = UIColor(hex: 0xf0f0f0, alpha: 1)
         } else {
             contentView.backgroundColor = UIColor.whiteColor()
