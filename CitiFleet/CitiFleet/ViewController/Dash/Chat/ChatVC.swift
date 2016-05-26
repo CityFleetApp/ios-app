@@ -176,7 +176,7 @@ extension ChatVC: UICollectionViewDataSource {
         cell.messageDateLbl.text = "\((message.author?.fullName)!) wrote at \(NSDateFormatter.standordFormater().stringFromDate(message.date!))"
         
         if message.imageURL != nil {
-            cell.messageImage.image = nil 
+            cell.messageImage.image = nil
             cell.messageLbl.hidden = true
             cell.messageImage.hidden = false
             message.getImage({ (image) in
@@ -189,6 +189,17 @@ extension ChatVC: UICollectionViewDataSource {
         }
         
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let message = datasource.messages[indexPath.item]
+        if let url = message.imageURL {
+            message.getImage({ (image) in
+                let galleryPhoto = GalleryPhoto(image: image, imageData: nil, attributedCaptionTitle: NSAttributedString(), largePhotoURL: url, thumbURL: url, id: nil)
+                let photosViewController = FriendGalleryVC(photos: [galleryPhoto], initialPhoto: galleryPhoto)
+                AppDelegate.sharedDelegate().rootViewController().presentViewController(photosViewController, animated: true, completion: nil)
+            })
+        }
     }
 }
 
