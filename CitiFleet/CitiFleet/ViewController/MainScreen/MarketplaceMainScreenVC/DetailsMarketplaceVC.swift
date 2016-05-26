@@ -52,7 +52,6 @@ class DetailsMarketplaceVC: UITableViewController {
         setupAditionalData()
         title = item.itemName
         ownerLabel.text = item.owner?.fullName
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -82,7 +81,7 @@ extension DetailsMarketplaceVC {
     
     private func setupSingleImage() {
         let imageView = UIImageView(frame: imageContainerView.bounds)
-        imageView.contentMode = .ScaleAspectFill
+        imageView.contentMode = .ScaleAspectFit
         imageContainerView.addSubview(imageView)
         
         if item.photosURLs.count == 0 {
@@ -168,7 +167,7 @@ class PageViewControllerDataSource: NSObject, UIPageViewControllerDataSource, UI
         let vc = UIViewController()
         vc.view.tag = index
         let imageView = UIImageView(frame: imageContainerView.bounds)
-        imageView.contentMode = .ScaleAspectFill
+        imageView.contentMode = .ScaleAspectFit
         
         MBProgressHUD.showHUDAddedTo(imageView, animated: true)
         Shared.imageCache.fetch(URL: item.photosURLs[index].URL).onSuccess { (image) in
