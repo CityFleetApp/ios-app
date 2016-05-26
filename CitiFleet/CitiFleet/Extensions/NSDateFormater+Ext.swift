@@ -11,7 +11,7 @@ import Foundation
 extension NSDateFormatter {
     class func standordFormater() -> NSDateFormatter {
         let formater = NSDateFormatter()
-        formater.dateFormat = "MM / dd / yyyy"
+        formater.dateFormat = "MM/dd/yyyy"
         return formater
     }
     

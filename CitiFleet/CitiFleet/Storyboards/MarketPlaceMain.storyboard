@@ -3108,8 +3108,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="r9j-gd-zvN"/>
                                                     <exclude reference="nMU-nI-03q"/>
+                                                    <exclude reference="r9j-gd-zvN"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

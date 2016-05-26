@@ -49,7 +49,7 @@ class LegalAidSetuper: NSObject {
             actorPlaceholder: "Select Accountant",
             actorInfoTitle: "ACCOUNTANT'S INFO",
             actorNamePlacehelder: "Accountant's Name",
-            actorButtonTitle: "CONTACT ACCOUNT"
+            actorButtonTitle: "CONTACT accountant".uppercaseString
         )
         static let InsuranceBrokers = ActorInfo(title: "Insurance Brokers",
             actorTitle: "Broker",
