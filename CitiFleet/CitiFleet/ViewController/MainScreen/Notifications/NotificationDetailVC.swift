@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 class NotificationDetailVC: UITableViewController {
     private let titleCellHeight: CGFloat = 83

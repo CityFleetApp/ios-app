@@ -15,11 +15,15 @@ import FBSDKLoginKit
 import TwitterKit
 import Alamofire
 import GoogleMaps
+import AVKit
+import AVFoundation
 
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
     var window: UIWindow?
+    var playerController: AVPlayerViewController?
+    var player: AVPlayer?
     
     class func sharedDelegate() -> AppDelegate {
         return UIApplication.sharedApplication().delegate as! AppDelegate
@@ -66,6 +70,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
         UINavigationBar.appearance().titleTextAttributes = [ NSFontAttributeName: Fonts.Login.NavigationTitle,  NSForegroundColorAttributeName: UIColor.whiteColor()]
         APNSManager.sharedManager.registerForRemoteNotifications()
         SocialManager.sharedInstance.importContactsSilently()
+        
+        do {
+            try playVideo()
+        } catch AppError.InvalidResource(let name, let type) {
+            debugPrint("Could not find resource \(name).\(type)")
+        } catch {
+            debugPrint("Generic error")
+        }
     }
     
     func showLoginViewController() {
@@ -94,3 +106,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
         APNSManager.sharedManager.didReceiveRemoteNotification(userInfo)
     }
 }
+
+ extension AppDelegate {
+    private func playVideo() throws {
+        guard let path = NSBundle.mainBundle().pathForResource(Resources.Splash, ofType:Resources.SplashType) else {
+            throw AppError.InvalidResource(Resources.Splash, Resources.SplashType)
+        }
+        player = AVPlayer(URL: NSURL(fileURLWithPath: path))
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(playingStoped(_:)), name: AVPlayerItemDidPlayToEndTimeNotification, object: nil)
+        playerController = AVPlayerViewController()
+        playerController!.showsPlaybackControls = false
+        playerController!
+            .view.userInteractionEnabled = false
+        playerController!.player = player
+        rootViewController().presentViewController(playerController!, animated: false) { [weak self] in
+            self?.player?.play()
+        }
+    }
+    
+    func playingStoped(notification: NSNotification) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: nil)
+        playerController?.dismissViewControllerAnimated(false, completion: { [weak self] in
+            self?.playerController = nil
+            self?.player = nil
+        })
+    }
+ }
+ 
+ enum AppError : ErrorType {
+    case InvalidResource(String, String)
+ }

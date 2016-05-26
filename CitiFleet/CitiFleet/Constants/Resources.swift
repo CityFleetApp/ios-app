@@ -9,6 +9,8 @@
 import Foundation
 
 struct Resources {
+    static let Splash = "splash"
+    static let SplashType = "mp4"
     static let Checkmark = "Checkmark"
     static let BackIc = "back-ic"
     static let NoAvatarIc = "no_avatar"

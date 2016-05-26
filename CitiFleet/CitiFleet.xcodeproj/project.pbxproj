@@ -63,6 +63,8 @@
 		4334D81B1C7F67B300557AE4 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4334D81A1C7F67B300557AE4 /* CoreImage.framework */; };
 		4334D81D1C7F749A00557AE4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4334D81C1C7F749A00557AE4 /* QuartzCore.framework */; };
 		4334D81F1C7F783F00557AE4 /* UIImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4334D81E1C7F783F00557AE4 /* UIImageUtil.swift */; };
+		4347C4301CF7AE190007712E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4347C42F1CF7AE190007712E /* AVFoundation.framework */; };
+		4347C4311CF7AFA70007712E /* splash.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 4347C42E1CF7ACA20007712E /* splash.mp4 */; };
 		434EDAE81C7C4EF800934029 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434EDAE71C7C4EF800934029 /* UITableView+Ext.swift */; };
 		43527F6F1CA3D494003D87FF /* APNSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43527F6E1CA3D494003D87FF /* APNSManager.swift */; };
 		43527F721CA43A53003D87FF /* CellTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43527F711CA43A53003D87FF /* CellTitles.swift */; };
@@ -255,6 +257,8 @@
 		4334D81A1C7F67B300557AE4 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		4334D81C1C7F749A00557AE4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4334D81E1C7F783F00557AE4 /* UIImageUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageUtil.swift; path = Extensions/UIImageUtil.swift; sourceTree = "<group>"; };
+		4347C42E1CF7ACA20007712E /* splash.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splash.mp4; sourceTree = "<group>"; };
+		4347C42F1CF7AE190007712E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		434EDAE71C7C4EF800934029 /* UITableView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+Ext.swift"; path = "Extensions/UITableView+Ext.swift"; sourceTree = "<group>"; };
 		43527F6E1CA3D494003D87FF /* APNSManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APNSManager.swift; path = Utils/APNS/APNSManager.swift; sourceTree = "<group>"; };
 		43527F711CA43A53003D87FF /* CellTitles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellTitles.swift; path = Constants/CellTitles.swift; sourceTree = "<group>"; };
@@ -392,6 +396,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4347C4301CF7AE190007712E /* AVFoundation.framework in Frameworks */,
 				4380DFFB1CF5B0BB009DA8E8 /* Contacts.framework in Frameworks */,
 				431D2DCB1C9FE5FD00CBC4BA /* CoreLocation.framework in Frameworks */,
 				4334D81D1C7F749A00557AE4 /* QuartzCore.framework in Frameworks */,
@@ -748,6 +753,7 @@
 		436D6B1B1C92E31400A0240E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				4347C42E1CF7ACA20007712E /* splash.mp4 */,
 				4316BB7D1C7B046A007A9ECB /* AppDelegate.swift */,
 				4316BB841C7B046A007A9ECB /* Assets.xcassets */,
 				4316BB861C7B046A007A9ECB /* LaunchScreen.storyboard */,
@@ -1174,6 +1180,7 @@
 		B6CBC1A8583C872FDAA083A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4347C42F1CF7AE190007712E /* AVFoundation.framework */,
 				4380DFFA1CF5B0BB009DA8E8 /* Contacts.framework */,
 				431D2DCA1C9FE5FD00CBC4BA /* CoreLocation.framework */,
 				4334D81C1C7F749A00557AE4 /* QuartzCore.framework */,
@@ -1246,6 +1253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4347C4311CF7AFA70007712E /* splash.mp4 in Resources */,
 				431D2DD21CA13EC200CBC4BA /* DocManagement.storyboard in Resources */,
 				435530F51CBD08A8006B6DC8 /* FriendInfoView.xib in Resources */,
 				4362E5CD1CCF4A49009BA46D /* NotificationView.xib in Resources */,
