@@ -40,6 +40,7 @@
 		4316BBB01C7B6A27007A9ECB /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB981C7B1A22007A9ECB /* Montserrat-SemiBold.otf */; };
 		4316BBB11C7B6A27007A9ECB /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4316BB991C7B1A22007A9ECB /* Montserrat-UltraLight.otf */; };
 		4316BBB41C7B73C6007A9ECB /* ConfirmPasswordRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4316BBB31C7B73C6007A9ECB /* ConfirmPasswordRule.swift */; };
+		431AFEC91CF875D90027F3BC /* PromoCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 431AFEC81CF875D90027F3BC /* PromoCodeView.xib */; };
 		431D2DC11C9EC70D00CBC4BA /* OptionsPostingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D2DC01C9EC70D00CBC4BA /* OptionsPostingVC.swift */; };
 		431D2DC31C9ECA8C00CBC4BA /* OptionPostingBuild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D2DC21C9ECA8C00CBC4BA /* OptionPostingBuild.swift */; };
 		431D2DC51C9ECE0B00CBC4BA /* Postings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D2DC41C9ECE0B00CBC4BA /* Postings.swift */; };
@@ -234,6 +235,7 @@
 		4316BBA61C7B61EE007A9ECB /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Constants/Colors.swift; sourceTree = "<group>"; };
 		4316BBA81C7B61F5007A9ECB /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		4316BBB31C7B73C6007A9ECB /* ConfirmPasswordRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfirmPasswordRule.swift; path = Utils/ConfirmPasswordRule.swift; sourceTree = "<group>"; };
+		431AFEC81CF875D90027F3BC /* PromoCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PromoCodeView.xib; path = Storyboards/XIB/PromoCodeView.xib; sourceTree = "<group>"; };
 		431D2DC01C9EC70D00CBC4BA /* OptionsPostingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionsPostingVC.swift; path = ViewController/Dash/Postings/OptionsPostingVC.swift; sourceTree = "<group>"; };
 		431D2DC21C9ECA8C00CBC4BA /* OptionPostingBuild.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionPostingBuild.swift; path = Utils/Builders/OptionPostingBuild.swift; sourceTree = "<group>"; };
 		431D2DC41C9ECE0B00CBC4BA /* Postings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Postings.swift; path = Constants/Postings.swift; sourceTree = "<group>"; };
@@ -1011,6 +1013,7 @@
 				43AD515B1C95D261002261DB /* Avatar Header View */,
 				43DC05BB1C8439CF00AB670A /* ReportsView.xib */,
 				436D6B241C93184B00A0240E /* BarcodeView.xib */,
+				431AFEC81CF875D90027F3BC /* PromoCodeView.xib */,
 				43E2C0E51CBBB5C400D26076 /* ReportInfoView.xib */,
 				435530F41CBD08A8006B6DC8 /* FriendInfoView.xib */,
 				436A20761CBCE4E90052ECDE /* FriendsMarker.xib */,
@@ -1286,6 +1289,7 @@
 				43F5E22B1C9AAEB8000BBB91 /* Notification.storyboard in Resources */,
 				43A426611C90359E0044B6A6 /* Settings.storyboard in Resources */,
 				43BD61F41CEB70EB003D27F8 /* Launch.storyboard in Resources */,
+				431AFEC91CF875D90027F3BC /* PromoCodeView.xib in Resources */,
 				43B6D8551C7EFC74000D6844 /* MainScreen.storyboard in Resources */,
 				43F834071C96CB6700DE7E50 /* PickerDialog.xib in Resources */,
 			);

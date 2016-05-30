@@ -280,6 +280,7 @@ struct Response {
         static let ImageURL = "image_thumbnail"
         static let Barcode = "barcode"
         static let Title = "name"
+        static let PromoCode = "promo_code"
     }
     struct LegalAid {
         static let id = "id"

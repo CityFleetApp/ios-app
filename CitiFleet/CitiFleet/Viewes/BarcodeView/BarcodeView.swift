@@ -10,12 +10,12 @@ import UIKit
 
 class BarcodeView: UIView {
     @IBOutlet var barcodeLabel: UILabel!
-    @IBOutlet var barcodeImageView: UIImageView!
+    @IBOutlet var barcodeImageView: UIImageView?
     var benefit: Benefit? {
         didSet {
-            if let benefit = benefit {
-                barcodeImageView.image = UIImageManager().generateBarcodeFromString(benefit.barcode)
-                barcodeLabel.text = benefit.barcode
+            if let barcode = benefit?.barcode {
+                barcodeImageView?.image = UIImageManager().generateBarcodeFromString(barcode)
+                barcodeLabel.text = barcode
             }
         }
     }
@@ -41,5 +41,21 @@ class BarcodeView: UIView {
             }, completion: { completed in
                 self.removeFromSuperview()
         })
+    }
+}
+
+
+class DiscountCodeView: BarcodeView {
+    override var benefit: Benefit? {
+        didSet {
+            if let barcode = benefit?.promoCode {
+                barcodeLabel.text = barcode
+            }
+        }
+    }
+    
+    class func discountFromNib() -> DiscountCodeView {
+        let discountView = NSBundle.mainBundle().loadNibNamed(XIB.DiscountXIB, owner: self, options: nil).first as! DiscountCodeView
+        return discountView
     }
 }

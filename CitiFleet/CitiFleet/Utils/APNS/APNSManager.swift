@@ -91,6 +91,11 @@ class APNSManager: NSObject {
     }
     
     func registerAPNSToken(deviceToken: NSData?) {
+        let characterSet1: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
+        let deviceTokenString1: String = deviceToken!.description
+            .stringByTrimmingCharactersInSet( characterSet1 )
+            .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
+        
         if (NSUserDefaults.standardUserDefaults().valueForKey(DictionaryKeys.UserDefaultsKeys.AlreadyRegisteredKey) as? Bool) == true {
             return
         }

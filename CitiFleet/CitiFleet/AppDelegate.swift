@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
     var window: UIWindow?
     var playerController: AVPlayerViewController?
     var player: AVPlayer?
+    var rootController: UIViewController?
     
     class func sharedDelegate() -> AppDelegate {
         return UIApplication.sharedApplication().delegate as! AppDelegate
@@ -49,7 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
         GMSServices.provideAPIKey(Keys.GoogleMaps)
         Fabric.with([Crashlytics.self, Twitter.self])
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
+        playerController = AVPlayerViewController()
+        rootController = application.keyWindow?.rootViewController
+        window?.rootViewController = playerController
         return true
     }
     
@@ -62,6 +65,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
+        if window?.rootViewController?.isKindOfClass(AVPlayerViewController) == true  {
+            do {
+                try playVideo()
+            } catch AppError.InvalidResource(let name, let type) {
+                debugPrint("Could not find resource \(name).\(type)")
+            } catch {
+                debugPrint("Generic error")
+            }
+            return
+        }
         showLoginViewController()
         Settings.sharedSettings.applySettings()
         LoaderViewManager.hideLoader()
@@ -70,20 +83,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
         UINavigationBar.appearance().titleTextAttributes = [ NSFontAttributeName: Fonts.Login.NavigationTitle,  NSForegroundColorAttributeName: UIColor.whiteColor()]
         APNSManager.sharedManager.registerForRemoteNotifications()
         SocialManager.sharedInstance.importContactsSilently()
-        
-        do {
-            try playVideo()
-        } catch AppError.InvalidResource(let name, let type) {
-            debugPrint("Could not find resource \(name).\(type)")
-        } catch {
-            debugPrint("Generic error")
-        }
     }
     
     func showLoginViewController() {
         if rootViewController().restorationIdentifier == ViewControllerID.Login {
             return
         }
+        
         if User.currentUser() == nil {
             let storyboard = UIStoryboard(name: Storyboard.LoginStoryboard, bundle: NSBundle.mainBundle())
             let loginNavController = storyboard.instantiateViewControllerWithIdentifier(ViewControllerID.Login)
@@ -113,23 +119,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
             throw AppError.InvalidResource(Resources.Splash, Resources.SplashType)
         }
         player = AVPlayer(URL: NSURL(fileURLWithPath: path))
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, withOptions: AVAudioSessionCategoryOptions.MixWithOthers)
+        } catch {
+            
+        }
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(playingStoped(_:)), name: AVPlayerItemDidPlayToEndTimeNotification, object: nil)
-        playerController = AVPlayerViewController()
+        
         playerController!.showsPlaybackControls = false
         playerController!
             .view.userInteractionEnabled = false
         playerController!.player = player
-        rootViewController().presentViewController(playerController!, animated: false) { [weak self] in
-            self?.player?.play()
-        }
+        player?.play()
+//        rootViewController().presentViewController(playerController!, animated: false) { [weak self] in
+//            self?.player?.play()
+//        }
     }
     
     func playingStoped(notification: NSNotification) {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: nil)
-        playerController?.dismissViewControllerAnimated(false, completion: { [weak self] in
-            self?.playerController = nil
-            self?.player = nil
-        })
+        let storyBoard = UIStoryboard(name: Storyboard.MainScreen, bundle: nil)
+        let vc = storyBoard.instantiateViewControllerWithIdentifier(ViewControllerID.MainVC)
+        window?.rootViewController = vc
+        applicationDidBecomeActive(UIApplication.sharedApplication())
     }
  }
  

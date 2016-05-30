@@ -54,6 +54,7 @@ class MyRentSalePriceCell: PostingCell {
     static let CellID = "MyRentSalePriceCell"
     @IBOutlet var priceTF: UITextField!
     var changedText: ((String) -> ())?
+    var maxCharacterCount: Int?
     
     override var cellText: String? {
         get {
@@ -90,6 +91,17 @@ extension MyRentSalePriceCell: UITextFieldDelegate {
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if let maxCount = maxCharacterCount {
+            if let range = textField.text?.rangeFromNSRange(range) {
+                let newStr = textField.text?.stringByReplacingCharactersInRange(range, withString: string)
+                if newStr?.characters.count > maxCount {
+                    return false 
+                }
+            }
+        }
+        if textField.keyboardType != .DecimalPad {
+            return true 
+        }
         if string.characters.count == 0 {
             return true
         }

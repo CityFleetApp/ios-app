@@ -77,6 +77,12 @@ class JobOfferVC: UITableViewController {
         dataPreloader.downloadData()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let cell = tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as? MyRentSalePriceCell
+        cell?.maxCharacterCount = 30
+    }
+    
     private func setupJobOffer(offer: JobOffer) {
         jobTitTF.text = offer.jobTitle
         dateLbl.highlitedText = NSDateFormatter.standordFormater().stringFromDate(offer.pickupDatetime!)

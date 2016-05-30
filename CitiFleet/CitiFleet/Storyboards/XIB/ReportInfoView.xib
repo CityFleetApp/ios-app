@@ -29,7 +29,7 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="road-closure-ic" translatesAutoresizingMaskIntoConstraints="NO" id="RqJ-jS-xLD">
                                     <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In 0.2 miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4E7-De-rr0">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In 0.2 miles" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4E7-De-rr0">
                                     <rect key="frame" x="60" y="9" width="128" height="27"/>
                                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,6 +51,7 @@
                     <constraints>
                         <constraint firstItem="0qX-Uo-Rlk" firstAttribute="centerY" secondItem="6OV-nL-ekh" secondAttribute="centerY" id="BsQ-mW-6el"/>
                         <constraint firstItem="0qX-Uo-Rlk" firstAttribute="centerX" secondItem="6OV-nL-ekh" secondAttribute="centerX" id="Fyj-nF-90u"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0qX-Uo-Rlk" secondAttribute="trailing" id="fwA-Hp-x6U"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Snj-LJ-fSX">

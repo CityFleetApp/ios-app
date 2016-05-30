@@ -13,12 +13,14 @@ struct Storyboard {
     static let DashStoryboard = "Dash"
     static let Chat = "Chat"
     static let MarketPlace = "MarketPlaceMain"
+    static let MainScreen = "MainScreen"
 }
 
 struct XIB {
     static let APNSView = "NotificationView"
     static let ReportXIB = "ReportsView"
     static let BarcodeXIB = "BarcodeView"
+    static let DiscountXIB = "PromoCodeView"
     static let LegalAidXIB = "LegalAid"
     static let PickerDialog = "PickerDialog"
     static let DOCManagementDatePicekr = "DOCManagementDatePicker"
@@ -32,6 +34,7 @@ struct XIB {
 struct ViewControllerID {
     static let Login = "LoginNC"
     static let Dash = "DashContainerVC"
+    static let MainVC = "RootVC"
     struct Posting {
         static let JobOffer = "JobOfferVC"
         static let GoodForSale = "GeneralGoodsVC"

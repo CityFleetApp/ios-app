@@ -10,7 +10,7 @@ import UIKit
 import Haneke
 
 class BenefitsVC: UIViewController {
-    private var benefits: [Benefit]?
+    private var benefits = BenefitList()
     
     @IBOutlet var benefitCollectionView: UICollectionView!
     
@@ -23,8 +23,7 @@ class BenefitsVC: UIViewController {
     }
     
     func loadBenefits() {
-        BenefitList().getBenefitList { (benefits) in
-            self.benefits = benefits
+        benefits.getBenefitList { (benefits) in
             self.benefitCollectionView.reloadData()
         }
     }
@@ -32,15 +31,23 @@ class BenefitsVC: UIViewController {
 
 extension BenefitsVC: UICollectionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let benefitsView = BarcodeView.barcodeFromNib()
-        benefitsView.benefit = benefits![indexPath.item]
-        benefitsView.show(view)
+        let benefit = benefits.benefitList[indexPath.row]
+        if benefit.promoCode != nil && benefit.promoCode?.characters.count > 0 {
+            let benefitsView = DiscountCodeView.discountFromNib()
+            benefitsView.benefit = benefit
+            benefitsView.show(view)
+        } else if benefit.barcode != nil && benefit.barcode?.characters.count > 0 {
+            let benefitsView = BarcodeView.barcodeFromNib()
+            benefitsView.benefit = benefit
+            benefitsView.show(view)
+        }
+        
     }
 }
 
 extension BenefitsVC: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return benefits != nil ? (benefits?.count)! : 0
+        return benefits.benefitList.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -48,7 +55,7 @@ extension BenefitsVC: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) as! BenefitsCollectionViewCell
         cell.setDefaultShadow()
         
-        let benefit = benefits![indexPath.item]
+        let benefit = benefits.benefitList[indexPath.item]
         cell.title.text = benefit.title
         cell.barcode = benefit.barcode
         cell.thumbnail.hnk_setImageFromURL(benefit.imageURL)

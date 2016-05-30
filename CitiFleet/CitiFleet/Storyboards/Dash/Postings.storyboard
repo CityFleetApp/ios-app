@@ -571,6 +571,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="textChanged:" destination="o55-zN-c56" eventType="editingChanged" id="rvY-1s-UWM"/>
+                                                        <outlet property="delegate" destination="o55-zN-c56" id="3X0-eu-KZC"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -596,6 +597,11 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="maxCharacterCount">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="icon" destination="q9D-o7-zag" id="ORF-Su-DqO"/>
                                             <outlet property="nextScreenArrow" destination="4jC-0q-afw" id="C6S-42-kKe"/>
@@ -1033,8 +1039,8 @@
                                                     <rect key="frame" x="17" y="16" width="18" height="14"/>
                                                     <color key="tintColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vechicle Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUJ-8i-uAh">
-                                                    <rect key="frame" x="43" y="13" width="113" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUJ-8i-uAh">
+                                                    <rect key="frame" x="43" y="13" width="104" height="20"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>

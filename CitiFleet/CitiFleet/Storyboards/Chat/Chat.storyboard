@@ -44,24 +44,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MdI-64-LOU">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1c-Yt-jTe">
-                                        <rect key="frame" x="150" y="67" width="300" height="8"/>
+                                        <rect key="frame" x="150" y="32" width="300" height="8"/>
                                         <color key="backgroundColor" red="0.1803921568627451" green="0.76862745098039209" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="8" id="IYV-OL-KSb"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQw-yU-Brz">
-                                        <rect key="frame" x="300" y="0.0" width="300" height="67"/>
+                                        <rect key="frame" x="300" y="0.0" width="300" height="32"/>
                                         <state key="normal" image="chat-recent-ic"/>
                                         <connections>
                                             <action selector="recentClicked:" destination="Ygl-DB-Mg9" eventType="touchUpInside" id="LuM-Y0-vOi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pj6-Lm-Oyx">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="67"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="32"/>
                                         <state key="normal" image="chat-contacts-ic"/>
                                         <connections>
                                             <action selector="contactsClicked:" destination="Ygl-DB-Mg9" eventType="touchUpInside" id="RYl-HV-YNg"/>
@@ -72,7 +72,7 @@
                                 <constraints>
                                     <constraint firstItem="pj6-Lm-Oyx" firstAttribute="top" secondItem="MdI-64-LOU" secondAttribute="top" id="CFG-Gn-scx"/>
                                     <constraint firstItem="OQw-yU-Brz" firstAttribute="leading" secondItem="pj6-Lm-Oyx" secondAttribute="trailing" id="JyW-Dj-yMc"/>
-                                    <constraint firstAttribute="height" constant="75" id="KZF-d8-3Sg"/>
+                                    <constraint firstAttribute="height" constant="40" id="KZF-d8-3Sg"/>
                                     <constraint firstAttribute="bottom" secondItem="W1c-Yt-jTe" secondAttribute="bottom" id="OzO-Y1-kU9"/>
                                     <constraint firstItem="OQw-yU-Brz" firstAttribute="top" secondItem="MdI-64-LOU" secondAttribute="top" id="PXb-t4-HPE"/>
                                     <constraint firstItem="W1c-Yt-jTe" firstAttribute="top" secondItem="pj6-Lm-Oyx" secondAttribute="bottom" id="YJu-Zh-7Ra"/>
@@ -85,7 +85,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wqj-Bh-sXh">
-                                <rect key="frame" x="0.0" y="75" width="600" height="525"/>
+                                <rect key="frame" x="0.0" y="40" width="600" height="560"/>
                                 <connections>
                                     <segue destination="54c-cP-g2f" kind="embed" id="JCq-Fs-EvA"/>
                                 </connections>
@@ -156,7 +156,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="FriendsListVC" id="S51-UG-3G4" customClass="FriendsListVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="171" sectionHeaderHeight="28" sectionFooterHeight="28" id="yJo-U1-gHf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="525"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="560"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -275,7 +275,7 @@
             <objects>
                 <tableViewController id="gtb-TO-5Vm" customClass="ChatRoomsListVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wkV-Rh-jH7">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="525"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="560"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -481,7 +481,7 @@
                         <viewControllerLayoutGuide type="bottom" id="D9Q-h6-Czc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Xvm-zn-BcW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="525"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="560"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QaP-Oo-Qt0">
@@ -907,8 +907,8 @@
         <image name="add_friends" width="32" height="23"/>
         <image name="back-ic" width="8" height="13"/>
         <image name="chat-camera" width="26" height="18"/>
-        <image name="chat-contacts-ic" width="38" height="38"/>
-        <image name="chat-recent-ic" width="37" height="37"/>
+        <image name="chat-contacts-ic" width="28" height="28"/>
+        <image name="chat-recent-ic" width="28" height="28"/>
         <image name="chat-send" width="30" height="30"/>
         <image name="l2r-chat-arrow" width="10" height="15"/>
         <image name="no_avatar" width="200" height="200"/>

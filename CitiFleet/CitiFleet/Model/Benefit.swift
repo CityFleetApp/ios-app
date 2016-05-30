@@ -9,10 +9,10 @@
 import Foundation
 
 class BenefitList {
-    private var benefitList: [Benefit] = []
+    var benefitList: [Benefit] = []
     
     func getBenefitList(completion: (([Benefit])->())) {
-        RequestManager.sharedInstance().getBenefits { (benefits, error) -> () in
+        RequestManager.sharedInstance().getBenefits { [unowned self] (benefits, error) -> () in
             self.benefitList.removeAll()
             if let benefits = benefits {
                 self.parseBenefits(benefits)
@@ -27,15 +27,19 @@ class BenefitList {
         for benefitObject in benefits {
             let imageURLString = benefitObject[Response.Benefits.ImageURL] as! String
             let title = benefitObject[Response.Benefits.Title] as! String
-            let barcode = benefitObject[Response.Benefits.Barcode] as! String
+            let barcode = benefitObject[Response.Benefits.Barcode] as? String
+            let promoCode = benefitObject[Response.Benefits.PromoCode] as? String
+
+            let benefit = Benefit(imageURL: NSURL(string: imageURLString)!, barcode: barcode, title: title, promoCode: promoCode)
             
-            self.benefitList.append(Benefit(imageURL: NSURL(string: imageURLString)!, barcode: barcode, title: title))
+            self.benefitList.append(benefit)
         }
     }
 }
 
 struct Benefit {
     var imageURL: NSURL
-    var barcode: String
+    var barcode: String?
     var title: String
+    var promoCode: String?
 }
