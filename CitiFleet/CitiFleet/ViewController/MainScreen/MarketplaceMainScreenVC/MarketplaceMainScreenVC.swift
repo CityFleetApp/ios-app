@@ -11,8 +11,34 @@ import UIKit
 class MarketplaceMainScreenVC: UIViewController {
     let ItemsViewControllerID = "GoodsForSaleVC"
     let CarsViewControllerID = "CarsForRentSale"
+    
+    @IBOutlet var carLabel: UILabel!
+    @IBOutlet var goodLabel: UILabel!
+    @IBOutlet var jobLabel: UILabel!
+    
+    @IBOutlet var carConstraint: NSLayoutConstraint!
+    @IBOutlet var goodConstraint: NSLayoutConstraint!
+    @IBOutlet var jobConstraint: NSLayoutConstraint!
+    
+    let ConstraintConstant: CGFloat = 12.0
+    let SmallFont = UIFont(name: FontNames.Montserrat.Regular, size: 12)
+    
     override func viewDidLoad() {
         navigationController?.navigationBar.hidden = false
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if UIScreen.mainScreen().bounds.width <= 360 {
+//            carConstraint.constant = ConstraintConstant
+//            goodConstraint.constant = ConstraintConstant
+//            jobConstraint.constant = ConstraintConstant
+            
+            carLabel.font = SmallFont
+            goodLabel.font = SmallFont
+            jobLabel.font = SmallFont
+        }
     }
     
     @IBAction func openCarsForSale(sender: AnyObject) {

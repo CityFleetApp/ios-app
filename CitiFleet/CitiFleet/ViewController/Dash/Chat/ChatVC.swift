@@ -186,6 +186,7 @@ extension ChatVC: UICollectionViewDataSource {
         if let url = message.author?.avatarURL {
             cell.avatarImageView.hnk_setImageFromURL(url)
         }
+        
         cell.messageLbl.text = message.message
         cell.messageDateLbl.text = "\((message.author?.fullName)!) wrote at \(NSDateFormatter(dateFormat: "MM/dd/yyyy HH:mm").stringFromDate(message.date!))"
         

@@ -141,29 +141,30 @@
                                                     <constraint firstAttribute="width" secondItem="Bdf-mu-ruR" secondAttribute="height" multiplier="1:1" id="Bk5-gs-h73"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CARS FOR RENT/SALE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAU-GO-B57">
-                                                <rect key="frame" x="89" y="29" width="155" height="17"/>
-                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mp_next_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="Dak-lt-EfB">
                                                 <rect key="frame" x="495" y="0.0" width="73" height="73"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Dak-lt-EfB" secondAttribute="height" multiplier="1:1" id="22y-mJ-ba2"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARS FOR RENT/SALE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAU-GO-B57">
+                                                <rect key="frame" x="97" y="28" width="155" height="17"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.90588235294117647" green="0.11372549019607843" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Dak-lt-EfB" secondAttribute="trailing" id="5cc-SW-TL8"/>
                                             <constraint firstItem="zAU-GO-B57" firstAttribute="centerY" secondItem="Bdf-mu-ruR" secondAttribute="centerY" id="9BS-ue-vkI"/>
+                                            <constraint firstItem="Bdf-mu-ruR" firstAttribute="centerY" secondItem="9DS-8q-aqF" secondAttribute="centerY" id="AW7-jw-NTa"/>
                                             <constraint firstAttribute="bottom" secondItem="Dak-lt-EfB" secondAttribute="bottom" id="F3u-S9-6gt"/>
                                             <constraint firstItem="Bdf-mu-ruR" firstAttribute="leading" secondItem="9DS-8q-aqF" secondAttribute="leading" constant="16" id="gAY-WY-e9L"/>
                                             <constraint firstAttribute="bottom" secondItem="Bdf-mu-ruR" secondAttribute="bottom" id="gHU-cI-SuU"/>
                                             <constraint firstItem="Bdf-mu-ruR" firstAttribute="top" secondItem="9DS-8q-aqF" secondAttribute="top" id="ti8-ws-OGv"/>
-                                            <constraint firstItem="zAU-GO-B57" firstAttribute="leading" secondItem="Bdf-mu-ruR" secondAttribute="trailing" id="wYA-76-kHh"/>
+                                            <constraint firstItem="zAU-GO-B57" firstAttribute="leading" secondItem="Bdf-mu-ruR" secondAttribute="trailing" constant="8" id="wYA-76-kHh"/>
                                             <constraint firstItem="Dak-lt-EfB" firstAttribute="top" secondItem="9DS-8q-aqF" secondAttribute="top" id="zys-70-P7z"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -171,6 +172,11 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="ti8-ws-OGv"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="epS-BS-HWb" appends="YES" id="yXO-eP-Qpb"/>
                                         </connections>
@@ -180,12 +186,9 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mp_goods_ic" translatesAutoresizingMaskIntoConstraints="NO" id="xyN-hw-dAe">
                                                 <rect key="frame" x="16" y="0.0" width="73" height="74"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="xyN-hw-dAe" secondAttribute="height" multiplier="1:1" id="YEf-wW-BhL"/>
-                                                </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GENERAL GOODS FOR SALE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hV6-0Q-5RE">
-                                                <rect key="frame" x="89" y="29" width="197" height="17"/>
+                                                <rect key="frame" x="97" y="29" width="197" height="17"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -201,9 +204,10 @@
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="Cr7-Cq-ej2" firstAttribute="width" secondItem="Cr7-Cq-ej2" secondAttribute="height" multiplier="1:1" id="1Ns-wc-K0H"/>
-                                            <constraint firstItem="hV6-0Q-5RE" firstAttribute="leading" secondItem="xyN-hw-dAe" secondAttribute="trailing" id="8du-co-cm6"/>
+                                            <constraint firstItem="hV6-0Q-5RE" firstAttribute="leading" secondItem="xyN-hw-dAe" secondAttribute="trailing" constant="8" id="8du-co-cm6"/>
                                             <constraint firstAttribute="bottom" secondItem="xyN-hw-dAe" secondAttribute="bottom" id="AYa-5o-6PL"/>
                                             <constraint firstItem="xyN-hw-dAe" firstAttribute="width" secondItem="xyN-hw-dAe" secondAttribute="height" multiplier="1:1" id="F4e-Yh-0z9"/>
+                                            <constraint firstItem="xyN-hw-dAe" firstAttribute="centerY" secondItem="EfI-zO-nk9" secondAttribute="centerY" id="Iek-If-Efg"/>
                                             <constraint firstItem="xyN-hw-dAe" firstAttribute="leading" secondItem="EfI-zO-nk9" secondAttribute="leading" constant="16" id="Nsy-uY-700"/>
                                             <constraint firstItem="hV6-0Q-5RE" firstAttribute="centerY" secondItem="xyN-hw-dAe" secondAttribute="centerY" id="XRO-or-YHj"/>
                                             <constraint firstItem="Cr7-Cq-ej2" firstAttribute="top" secondItem="EfI-zO-nk9" secondAttribute="top" id="fkZ-bU-4MD"/>
@@ -216,6 +220,11 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="heJ-mf-ZoG"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="qdq-zU-Bug" appends="YES" id="Zq4-BI-cRW"/>
                                         </connections>
@@ -225,12 +234,9 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mp_jod_offers_ic" translatesAutoresizingMaskIntoConstraints="NO" id="Zlg-vu-XdG">
                                                 <rect key="frame" x="16" y="0.0" width="73" height="73"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Zlg-vu-XdG" secondAttribute="height" multiplier="1:1" id="bZG-jS-EKv"/>
-                                                </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="JOB OFFERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NC-5I-kfz">
-                                                <rect key="frame" x="89" y="27" width="88" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JOB OFFERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NC-5I-kfz">
+                                                <rect key="frame" x="97" y="28" width="88" height="17"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -248,13 +254,15 @@
                                             <constraint firstItem="Zlg-vu-XdG" firstAttribute="top" secondItem="W88-0h-ado" secondAttribute="top" id="ABI-85-f8e"/>
                                             <constraint firstItem="2Yk-H1-PSJ" firstAttribute="top" secondItem="W88-0h-ado" secondAttribute="top" id="Els-Pj-2Ko"/>
                                             <constraint firstItem="2NC-5I-kfz" firstAttribute="centerY" secondItem="Zlg-vu-XdG" secondAttribute="centerY" id="FGW-nj-8JB"/>
-                                            <constraint firstItem="Zlg-vu-XdG" firstAttribute="width" secondItem="Zlg-vu-XdG" secondAttribute="height" multiplier="1:1" id="IQe-t2-FeM"/>
+                                            <constraint firstItem="Zlg-vu-XdG" firstAttribute="centerY" secondItem="W88-0h-ado" secondAttribute="centerY" id="FLM-K7-bi6"/>
                                             <constraint firstItem="Zlg-vu-XdG" firstAttribute="leading" secondItem="W88-0h-ado" secondAttribute="leading" constant="16" id="Ivg-EZ-5aU"/>
-                                            <constraint firstItem="2NC-5I-kfz" firstAttribute="leading" secondItem="Zlg-vu-XdG" secondAttribute="trailing" id="Kir-lo-N7K"/>
+                                            <constraint firstItem="2NC-5I-kfz" firstAttribute="leading" secondItem="Zlg-vu-XdG" secondAttribute="trailing" constant="8" id="Kir-lo-N7K"/>
                                             <constraint firstItem="2Yk-H1-PSJ" firstAttribute="width" secondItem="2Yk-H1-PSJ" secondAttribute="height" multiplier="1:1" id="Nim-nF-Qbp"/>
+                                            <constraint firstAttribute="bottom" secondItem="Zlg-vu-XdG" secondAttribute="bottom" id="VKo-AC-9nZ"/>
                                             <constraint firstAttribute="bottom" secondItem="2Yk-H1-PSJ" secondAttribute="bottom" id="ecO-ih-DOJ"/>
                                             <constraint firstItem="2Yk-H1-PSJ" firstAttribute="width" secondItem="2Yk-H1-PSJ" secondAttribute="height" multiplier="1:1" id="oOE-6T-Xfq"/>
                                             <constraint firstItem="Zlg-vu-XdG" firstAttribute="width" secondItem="Zlg-vu-XdG" secondAttribute="height" multiplier="1:1" id="rDB-dM-ul7"/>
+                                            <constraint firstItem="Zlg-vu-XdG" firstAttribute="top" secondItem="W88-0h-ado" secondAttribute="top" id="s2Q-uI-6Jg"/>
                                             <constraint firstAttribute="trailing" secondItem="2Yk-H1-PSJ" secondAttribute="trailing" id="toy-z7-ha2"/>
                                             <constraint firstAttribute="bottom" secondItem="Zlg-vu-XdG" secondAttribute="bottom" id="ttj-9g-psF"/>
                                         </constraints>
@@ -263,6 +271,13 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="ABI-85-f8e"/>
+                                                <exclude reference="s2Q-uI-6Jg"/>
+                                                <exclude reference="ttj-9g-psF"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="cky-Iy-GrM" appends="YES" id="NaW-gs-Wr0"/>
                                         </connections>
@@ -324,6 +339,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="carConstraint" destination="gHU-cI-SuU" id="ZS5-c0-cLp"/>
+                        <outlet property="carLabel" destination="zAU-GO-B57" id="fEm-Tb-nRc"/>
+                        <outlet property="goodConstraint" destination="AYa-5o-6PL" id="J1j-IL-bb8"/>
+                        <outlet property="goodLabel" destination="hV6-0Q-5RE" id="VgL-GX-cVY"/>
+                        <outlet property="jobConstraint" destination="s2Q-uI-6Jg" id="9Eu-MK-beo"/>
+                        <outlet property="jobLabel" destination="2NC-5I-kfz" id="GgK-t2-6UP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6BA-pb-dTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="epS-BS-HWb">
