@@ -140,7 +140,7 @@ extension GeneralGoodsVC {
         
         RequestManager.sharedInstance().delete(urlStr, parameters: nil) { [weak self] (json, error) in
             if error == nil {
-                let alert = UIAlertController(title: "General Good Deletod", message: nil, preferredStyle: .Alert)
+                let alert = UIAlertController(title: Titles.ManagePosts.GoodDeleted, message: nil, preferredStyle: .Alert)
                 let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: { (action) in
                     self?.navigationController?.popViewControllerAnimated(true)
                 })

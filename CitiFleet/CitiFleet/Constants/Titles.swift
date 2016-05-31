@@ -18,6 +18,11 @@ struct Titles {
     struct Chat {
         static let TextViewPlaceHolder = "Enter your message.."
     }
+    struct ManagePosts {
+        static let JobDeleted = "Job Offer Deleted"
+        static let CarDeleted = "Car Deleted"
+        static let GoodDeleted = "General Good Deleted"
+    }
     struct Dash {
         static let openCamera = "Take a photo"
         static let openLibrary = "Photo Library"
