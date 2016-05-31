@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 
 extension RequestManager {
     func getNearbyReports(completion:((ArrayResponse, NSError?) -> ())) {
@@ -15,8 +17,26 @@ extension RequestManager {
         
         let urlString = URL.Reports.Nearby + "?\(Params.Report.latitude)=\(latitude)&\(Params.Report.longitude)=\(longitude)"
         
-        makeSilentRequest(.GET, baseURL: urlString, parameters: nil) { (json, error) in
-            completion(json?.arrayObject, error)
+        Alamofire.request(.GET, url(urlString), headers: header(), parameters: nil, encoding: .JSON)
+            .validate(statusCode: 200..<300)
+            .responseData{ response in
+                let dataString = String(data: response.data!, encoding: NSUTF8StringEncoding)
+                print("Response data: \(dataString)")
+                
+                self.endRequest(nil, responseData: nil)
+                switch response.result {
+                case .Success(let data):
+                    let json = JSON(data: data)
+                    completion(json.arrayObject, nil)
+                    break
+                case .Failure(let error):
+                    let handledError = self.errorWithInfo(error, data: response.data)
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        RequestErrorHandler(error: handledError, title: Titles.error).handle()
+                    })
+                    completion(nil, handledError)
+                    break
+                }
         }
     }
     
@@ -26,8 +46,26 @@ extension RequestManager {
         
         let urlString = URL.Reports.Friends + "?\(Params.Report.latitude)=\(latitude)&\(Params.Report.longitude)=\(longitude)"
         
-        makeSilentRequest(.GET, baseURL: urlString, parameters: nil) { (json, error) in
-            completion(json?.arrayObject, error)
+        Alamofire.request(.GET, url(urlString), headers: header(), parameters: nil, encoding: .JSON)
+            .validate(statusCode: 200..<300)
+            .responseData{ response in
+                let dataString = String(data: response.data!, encoding: NSUTF8StringEncoding)
+                print("Response data: \(dataString)")
+                
+                self.endRequest(nil, responseData: nil)
+                switch response.result {
+                case .Success(let data):
+                    let json = JSON(data: data)
+                    completion(json.arrayObject, nil)
+                    break
+                case .Failure(let error):
+                    let handledError = self.errorWithInfo(error, data: response.data)
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        RequestErrorHandler(error: handledError, title: Titles.error).handle()
+                    })
+                    completion(nil, handledError)
+                    break
+                }
         }
     }
 }

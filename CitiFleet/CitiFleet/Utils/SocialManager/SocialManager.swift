@@ -13,6 +13,7 @@ import TwitterKit
 
 class SocialManager: NSObject {
     static let sharedInstance = SocialManager()
+    let addressBookManager = AddressBookManager()
 }
 
 //MARK: - Twitter
@@ -90,7 +91,7 @@ extension SocialManager {
         if User.currentUser() == nil {
             return
         }
-        AddressBookManager().tryToGetContacts { (phones, error) in
+        addressBookManager.tryToGetContacts { (phones, error) in
             if let phones = phones {
                 
                 let params = [
@@ -105,12 +106,12 @@ extension SocialManager {
     
     func importContacts() {
         LoaderViewManager.showLoader()
-        AddressBookManager().getAllPhones { (contacts, error) -> () in
+        addressBookManager.getAllPhones { [weak self] (contacts, error) -> () in
             if error != nil || contacts == nil {
                 LoaderViewManager.hideLoader()
                 print(error)
             } else {
-                self.makeContactsRequest(contacts!)
+                self?.makeContactsRequest(contacts!)
             }
         }
     }
@@ -118,7 +119,9 @@ extension SocialManager {
     private func makeContactsRequest(contacts: [String]) {
         RequestManager.sharedInstance().postPhoneNumbers(contacts) { (_, error) -> () in
             if error == nil {
-                LoaderViewManager.showDoneLoader(1, completion: nil)
+                LoaderViewManager.showDoneLoader("Friend add successfuly", seconds: 2, completion: nil)
+            } else {
+                
             }
         }
     }

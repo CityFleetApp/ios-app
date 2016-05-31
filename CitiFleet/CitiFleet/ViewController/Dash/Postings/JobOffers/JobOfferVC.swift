@@ -1,3 +1,4 @@
+
 //
 //  JobOfferVC.swift
 //  CitiFleet
@@ -37,7 +38,6 @@ class JobOfferVC: UITableViewController {
     
     private var dataPreloader: JobOfferPreloader!
     private var dateString: String?
-    private var timeString: String?
     
     private var carTypes: [String] = []
     
@@ -87,6 +87,7 @@ class JobOfferVC: UITableViewController {
         jobTitTF.text = offer.jobTitle
         dateLbl.highlitedText = NSDateFormatter.standordFormater().stringFromDate(offer.pickupDatetime!)
         timeLbl.highlitedText = NSDateFormatter(dateFormat: "HH:mm").stringFromDate(offer.pickupDatetime!)
+        dateString = NSDateFormatter(dateFormat: "yyyy-MM-dd").stringFromDate(offer.pickupDatetime!)
         pickupAddress.text = offer.pickupAddress
         destinationTF.text = offer.destination
         fareTF.text = offer.fare
@@ -195,12 +196,13 @@ extension JobOfferVC {
     @IBAction func post(sender: AnyObject) {
         if !checkPostAvailability() {
             uploader.jobTitle = jobTitTF.text
-            uploader.dateTime = dateString! + " " + timeString!
+            uploader.dateTime = dateString! + " " + timeLbl.highlitedText!
             uploader.pickupAddress = pickupAddress.text
             uploader.destinationAddress = destinationTF.text
             uploader.fare = fareTF.text
             uploader.gratuity = gratuityTF.text
             uploader.instructions = instructionsTV.text
+            uploader.tolls = tollsTF.text
             
             if let _ = jobOffer {
                 patchJob()
@@ -337,7 +339,6 @@ extension JobOfferVC {
         picker.completion = { [unowned self] (date, closed) in
             if let date = date as? NSDate {
                 self.timeLbl.highlitedText = NSDateFormatter.standordTimeFormater().stringFromDate(date)
-                self.timeString = NSDateFormatter(dateFormat: "HH:mm").stringFromDate(date)
             }
         }
         picker.show()

@@ -25,6 +25,8 @@ class GeneralGoodsVC: UITableViewController {
     @IBOutlet var conditionsTF: HighlitableLabel!
     @IBOutlet var descriptionTF: KMPlaceholderTextView!
     @IBOutlet var goodsPhotoCV: UICollectionView!
+    @IBOutlet var postButton: UIButton!
+    @IBOutlet var deleteBtn: UIButton!
     
     var photoDelegate: PostingPhotosCollectionDelegate!
     var instructionsCellHeight: CGFloat = 78
@@ -75,6 +77,9 @@ extension GeneralGoodsVC {
         conditionsTF.highlitedText = generalGood?.condition
         uploader.condition = GoodConditions.indexOf((generalGood?.condition)!)! + 1
         uploader.id = generalGood?.id
+        
+        tableView.tableFooterView?.frame = CGRect(x: 0, y: 0, width: 0, height: 247)
+        postButton.setTitle("RENEW POST", forState: .Normal)
     }
     
     private func checkData() -> Bool {
@@ -127,6 +132,21 @@ extension GeneralGoodsVC {
             uploader.upload({ [unowned self] (error) in
                 self.navigationController?.popViewControllerAnimated(true)
             })
+        }
+    }
+    
+    @IBAction func funcDeleceGood() {
+        let urlStr = "\(URL.Marketplace.goodsForSale)\((generalGood?.id)!)/"
+        
+        RequestManager.sharedInstance().delete(urlStr, parameters: nil) { [weak self] (json, error) in
+            if error == nil {
+                let alert = UIAlertController(title: "General Good Deletod", message: nil, preferredStyle: .Alert)
+                let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: { (action) in
+                    self?.navigationController?.popViewControllerAnimated(true)
+                })
+                alert.addAction(okAction)
+                self?.presentViewController(alert, animated: true, completion: nil)
+            }
         }
     }
 }

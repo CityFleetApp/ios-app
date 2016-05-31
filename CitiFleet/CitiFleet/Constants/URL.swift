@@ -218,6 +218,7 @@ struct Params {
             static let instructions = "instructions"
             static let paidOnTime = "paid_on_time"
             static let rating = "rating"
+            static let tolls = "tolls"
         }
         
         struct GeneralGoods {

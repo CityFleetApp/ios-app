@@ -62,6 +62,8 @@
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -1476,7 +1478,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="vop-Zs-AVK">
-                            <rect key="frame" x="0.0" y="358" width="600" height="180"/>
+                            <rect key="frame" x="0.0" y="358" width="600" height="241"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vmi-Z5-PQZ">
@@ -1539,15 +1541,39 @@
                                         <action selector="postRentSale" destination="wes-qS-Po1" eventType="touchUpInside" id="m2a-xH-VPb"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oS7-a5-fmY">
+                                    <rect key="frame" x="16" y="178" width="568" height="49"/>
+                                    <color key="backgroundColor" red="0.90588235289999997" green="0.1137254902" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="49" id="eLt-0K-Zf9"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                    <state key="normal" title="DELETE">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="deleteJob:" destination="wes-qS-Po1" eventType="touchUpInside" id="8IT-6r-Kfu"/>
+                                        <action selector="postRentSale" destination="wes-qS-Po1" eventType="touchUpInside" id="cw6-yO-qr8"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="oS7-a5-fmY" firstAttribute="leading" secondItem="wOW-9v-ISN" secondAttribute="leading" id="1nD-oY-78x"/>
                                 <constraint firstItem="wOW-9v-ISN" firstAttribute="top" secondItem="vmi-Z5-PQZ" secondAttribute="bottom" constant="8" id="8bg-wi-MSK"/>
                                 <constraint firstItem="vmi-Z5-PQZ" firstAttribute="top" secondItem="vop-Zs-AVK" secondAttribute="top" id="949-CL-3r9"/>
-                                <constraint firstAttribute="bottom" secondItem="wOW-9v-ISN" secondAttribute="bottom" constant="18" id="Axd-6H-m9Y"/>
+                                <constraint firstItem="oS7-a5-fmY" firstAttribute="leading" secondItem="vop-Zs-AVK" secondAttribute="leading" constant="16" id="Aca-6k-bof"/>
                                 <constraint firstItem="wOW-9v-ISN" firstAttribute="leading" secondItem="vop-Zs-AVK" secondAttribute="leading" constant="16" id="QoC-Lx-OyQ"/>
                                 <constraint firstItem="vmi-Z5-PQZ" firstAttribute="leading" secondItem="vop-Zs-AVK" secondAttribute="leading" id="ROO-fd-v5S"/>
+                                <constraint firstItem="oS7-a5-fmY" firstAttribute="centerX" secondItem="vop-Zs-AVK" secondAttribute="centerX" id="RS4-pi-wSw"/>
                                 <constraint firstItem="wOW-9v-ISN" firstAttribute="centerX" secondItem="vop-Zs-AVK" secondAttribute="centerX" id="VWz-db-5eC"/>
+                                <constraint firstItem="oS7-a5-fmY" firstAttribute="top" secondItem="wOW-9v-ISN" secondAttribute="bottom" constant="16" id="dAe-of-8bf"/>
                                 <constraint firstAttribute="trailing" secondItem="vmi-Z5-PQZ" secondAttribute="trailing" id="mEG-TW-VTw"/>
                             </constraints>
                         </view>
@@ -1749,7 +1775,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="deleteButton" destination="oS7-a5-fmY" id="skT-Lj-B1D"/>
                         <outlet property="photoCollectionView" destination="vmi-Z5-PQZ" id="M0g-LA-kvT"/>
+                        <outlet property="postButton" destination="wOW-9v-ISN" id="GhV-bE-v1m"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YvR-h2-Zeo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1764,8 +1792,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="QcY-CC-BKC">
-                            <rect key="frame" x="0.0" y="376" width="600" height="180"/>
+                        <view key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" id="QcY-CC-BKC">
+                            <rect key="frame" x="0.0" y="376" width="600" height="178"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OR5-Le-BOr">
@@ -1829,14 +1857,36 @@
                                         <action selector="upload" destination="p1A-Mc-xDF" eventType="touchUpInside" id="5rq-Pd-cfr"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iG-Wr-Hhr">
+                                    <rect key="frame" x="16" y="178" width="568" height="49"/>
+                                    <color key="backgroundColor" red="0.90588235289999997" green="0.1137254902" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="49" id="kKL-Pg-RwC"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                    <state key="normal" title="DELETE">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="funcDeleceGood" destination="p1A-Mc-xDF" eventType="touchUpInside" id="2If-57-TSV"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="z2v-5a-jcR" secondAttribute="bottom" constant="18" id="AUu-7b-JC5"/>
                                 <constraint firstItem="z2v-5a-jcR" firstAttribute="top" secondItem="OR5-Le-BOr" secondAttribute="bottom" constant="8" id="BWG-Iv-bhZ"/>
                                 <constraint firstItem="OR5-Le-BOr" firstAttribute="leading" secondItem="QcY-CC-BKC" secondAttribute="leading" id="H7c-aI-qMy"/>
+                                <constraint firstItem="6iG-Wr-Hhr" firstAttribute="top" secondItem="z2v-5a-jcR" secondAttribute="bottom" constant="16" id="HkL-CM-I50"/>
+                                <constraint firstItem="6iG-Wr-Hhr" firstAttribute="leading" secondItem="z2v-5a-jcR" secondAttribute="leading" id="IS3-YO-pfw"/>
                                 <constraint firstItem="z2v-5a-jcR" firstAttribute="leading" secondItem="QcY-CC-BKC" secondAttribute="leading" constant="16" id="cKV-b7-EHu"/>
                                 <constraint firstItem="OR5-Le-BOr" firstAttribute="top" secondItem="QcY-CC-BKC" secondAttribute="top" id="dpI-hD-PcC"/>
+                                <constraint firstItem="6iG-Wr-Hhr" firstAttribute="centerX" secondItem="QcY-CC-BKC" secondAttribute="centerX" id="fTY-M2-anf"/>
                                 <constraint firstItem="z2v-5a-jcR" firstAttribute="centerX" secondItem="QcY-CC-BKC" secondAttribute="centerX" id="kvC-dS-7vK"/>
                                 <constraint firstAttribute="trailing" secondItem="OR5-Le-BOr" secondAttribute="trailing" id="lt1-B5-dIO"/>
                             </constraints>
@@ -2106,9 +2156,11 @@
                     <size key="freeformSize" width="600" height="1200"/>
                     <connections>
                         <outlet property="conditionsTF" destination="HIC-Rf-GpQ" id="wbo-kd-aFD"/>
+                        <outlet property="deleteBtn" destination="6iG-Wr-Hhr" id="QUp-2w-vY7"/>
                         <outlet property="descriptionTF" destination="hF7-uT-Qzl" id="k9o-gN-VBc"/>
                         <outlet property="goodsPhotoCV" destination="OR5-Le-BOr" id="EJD-qk-yhE"/>
                         <outlet property="itemTF" destination="uvk-rs-tfu" id="I9g-1H-xvN"/>
+                        <outlet property="postButton" destination="z2v-5a-jcR" id="Ian-yD-UeR"/>
                         <outlet property="priceTF" destination="P3O-mP-6mW" id="ssB-dG-tVx"/>
                     </connections>
                 </tableViewController>

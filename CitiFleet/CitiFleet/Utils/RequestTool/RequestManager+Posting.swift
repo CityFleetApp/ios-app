@@ -92,17 +92,17 @@ extension RequestManager {
         }
     }
     
-    func postJobOffer(jobTitle: String, dateTime: String, pickup: String, destination: String, fare: String, gratuity: String, vehicleType: Int, isSuite: Bool, jobType: Int, instructions: String, completion: ((NSError?) -> ())) {
+    func postJobOffer(jobTitle: String, dateTime: String, pickup: String, destination: String, fare: String, gratuity: String, vehicleType: Int, isSuite: Bool, jobType: Int, instructions: String, tolls: String, completion: ((NSError?) -> ())) {
         typealias Param = Params.Posting.JOPosting
-        let params = createParams(jobTitle, dateTime: dateTime, pickup: pickup, destination: destination, fare: fare, gratuity: gratuity, vehicleType: vehicleType, isSuite: isSuite, jobType: jobType, instructions: instructions)
+        let params = createParams(jobTitle, dateTime: dateTime, pickup: pickup, destination: destination, fare: fare, gratuity: gratuity, vehicleType: vehicleType, isSuite: isSuite, jobType: jobType, instructions: instructions, tolls: tolls)
         
         post(URL.Marketplace.JOPost, parameters: params) { (json, error) -> () in
             completion(error)
         }
     }
     
-    func patchJobOffer(jobTitle: String, id: Int, dateTime: String, pickup: String, destination: String, fare: String, gratuity: String, vehicleType: Int, isSuite: Bool, jobType: Int, instructions: String, completion: ((NSError?) -> ())) {
-        let params = createParams(jobTitle, dateTime: dateTime, pickup: pickup, destination: destination, fare: fare, gratuity: gratuity, vehicleType: vehicleType, isSuite: isSuite, jobType: jobType, instructions: instructions)
+    func patchJobOffer(jobTitle: String, id: Int, dateTime: String, pickup: String, destination: String, fare: String, gratuity: String, vehicleType: Int, isSuite: Bool, jobType: Int, instructions: String, tolls: String, completion: ((NSError?) -> ())) {
+        let params = createParams(jobTitle, dateTime: dateTime, pickup: pickup, destination: destination, fare: fare, gratuity: gratuity, vehicleType: vehicleType, isSuite: isSuite, jobType: jobType, instructions: instructions, tolls: tolls)
         
         let urlString = URL.Marketplace.JOPost + "\(id)/"
         
@@ -111,7 +111,7 @@ extension RequestManager {
         }
     }
     
-    private func createParams(jobTitle: String, dateTime: String, pickup: String, destination: String, fare: String, gratuity: String, vehicleType: Int, isSuite: Bool, jobType: Int, instructions: String) -> [String: String] {
+    private func createParams(jobTitle: String, dateTime: String, pickup: String, destination: String, fare: String, gratuity: String, vehicleType: Int, isSuite: Bool, jobType: Int, instructions: String, tolls: String) -> [String: String] {
         typealias Param = Params.Posting.JOPosting
         let params = [
             Param.jobTitle: jobTitle,
@@ -123,7 +123,8 @@ extension RequestManager {
             Param.vehicleType: String(vehicleType),
             Param.suite: isSuite ? "true" : "false",
             Param.jobType: String(jobType),
-            Param.instructions: instructions
+            Param.instructions: instructions,
+            Param.tolls: tolls
         ]
         return params
     }

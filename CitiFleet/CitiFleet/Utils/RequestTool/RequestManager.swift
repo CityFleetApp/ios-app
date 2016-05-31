@@ -89,6 +89,7 @@ extension RequestManager {
     }
     
     func makeRequestWithFullURL(method: Alamofire.Method, baseURL: String, parameters: [String:AnyObject]?, completion:((SwiftyJSON.JSON?, NSError?) -> ())) {
+        
         Alamofire.request(method, baseURL, headers: header(), parameters: parameters, encoding: .JSON)
             .validate(statusCode: 200..<300)
             .responseData{ response in

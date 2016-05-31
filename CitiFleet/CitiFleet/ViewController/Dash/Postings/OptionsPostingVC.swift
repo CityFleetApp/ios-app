@@ -18,6 +18,9 @@ class OptionsPostingVC: UITableViewController {
     var uploader = RentSaleCreator()
     var existingCar: CarForRentSale?
     
+    @IBOutlet var postButton: UIButton!
+    @IBOutlet var deleteButton: UIButton!
+    
     private var vehicleCollectionViewDelegate: PostingPhotosCollectionDelegate!
     
     override func viewDidLoad() {
@@ -71,6 +74,9 @@ extension OptionsPostingVC {
         photoCollectionView.reloadData()
         uploader = RentSaleUpdater()
         uploader.id = car.id
+        
+        tableView.tableFooterView?.frame = CGRect(x: 0, y: 0, width: 0, height: 241)
+        postButton.setTitle("RENEW CAR", forState: .Normal)
     }
     
     private func handleErrorCode(code: Int) -> Bool {
@@ -141,6 +147,22 @@ extension OptionsPostingVC {
         uploader.postNewRentSale() { [unowned self] (error) in
             if error == nil {
                 self.navigationController?.popViewControllerAnimated(true)
+            }
+        }
+    }
+    
+    @IBAction func deleteJob(sender: AnyObject) {
+        let urlPath = uploader.postingType == RentSaleCreator.PostType.Rent ? URL.Marketplace.carsForRent : URL.Marketplace.carsForSale
+        let urlStr = "\(urlPath)\((existingCar?.id)!)/"
+        
+        RequestManager.sharedInstance().delete(urlStr, parameters: nil) { [weak self] (json, error) in
+            if error == nil {
+                let alert = UIAlertController(title: "Car Deletod", message: nil, preferredStyle: .Alert)
+                let okAction = UIAlertAction(title: "OK", style: .Cancel, handler: { (action) in
+                    self?.navigationController?.popViewControllerAnimated(true)
+                })
+                alert.addAction(okAction)
+                self?.presentViewController(alert, animated: true, completion: nil)
             }
         }
     }

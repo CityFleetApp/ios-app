@@ -1,6 +1,5 @@
- //
-
- //  AppDelegate.swift
+//
+//  AppDelegate.swift
 //  CitiFleet
 //
 //  Created by Nick Kibish on 2/22/16.
