@@ -327,6 +327,7 @@ struct Response {
         static let created = "created"
         static let ownerName = "owner_name"
         static let ownerID = "owner"
+        static let isRent = "rent"
         struct JobOffers {
             static let id = "id"
             static let pickupDatetime = "pickup_datetime"

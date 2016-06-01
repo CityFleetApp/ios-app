@@ -23,7 +23,7 @@ extension RequestManager {
                 let dataString = String(data: response.data!, encoding: NSUTF8StringEncoding)
                 print("Response data: \(dataString)")
                 
-                self.endRequest(nil, responseData: nil)
+//                self.endRequest(nil, responseData: nil)
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data: data)
@@ -52,7 +52,7 @@ extension RequestManager {
                 let dataString = String(data: response.data!, encoding: NSUTF8StringEncoding)
                 print("Response data: \(dataString)")
                 
-                self.endRequest(nil, responseData: nil)
+//                self.endRequest(nil, responseData: nil)
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data: data)

@@ -33,7 +33,7 @@ enum ReportType: Int {
         case .Accident:
             return "Accident"
         case .Trafic:
-            return "Trafic Jam"
+            return "Traffic Jam"
         case .Hazard:
             return "Hazard"
         case .RoadClosure:

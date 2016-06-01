@@ -72,7 +72,9 @@ extension OptionsPostingVC {
         vehicleCollectionViewDelegate.images = photos
         vehicleCollectionViewDelegate.downloadPhotos()
         photoCollectionView.reloadData()
+        let postingType = uploader.postingType
         uploader = RentSaleUpdater()
+        uploader.postingType = postingType
         uploader.id = car.id
         
         tableView.tableFooterView?.frame = CGRect(x: 0, y: 0, width: 0, height: 241)
@@ -144,9 +146,9 @@ extension OptionsPostingVC {
         if !handleErrorCode(uploader.checkCorrectParams()) {
             return
         }
-        uploader.postNewRentSale() { [unowned self] (error) in
+        uploader.postNewRentSale() { [weak self] (error) in
             if error == nil {
-                self.navigationController?.popViewControllerAnimated(true)
+                self?.navigationController?.popViewControllerAnimated(true)
             }
         }
     }

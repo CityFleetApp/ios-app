@@ -94,6 +94,7 @@ class CarForRentSale: MarketplaceItem {
         model = json[Param.model] as? String
         fuel = json[Param.fuel] as? String
         year = String(json[Param.year] as! Int)
+        isRent = json[Param.isRent] as? Bool
     }
 }
 

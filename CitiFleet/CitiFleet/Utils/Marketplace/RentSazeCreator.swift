@@ -33,6 +33,7 @@ class RentSaleCreator: NSObject {
     var id: Int?
     
     func postNewRentSale(completion: ((NSError?) -> ())) {
+        
         RequestManager.sharedInstance().postRentSale(postingType, make: make!.0, model: model!.0, carType: type!.0, color: color!.0, year: year!, fuel: fuel!.0, seats: seats!.0, price: price!, description: rentSaleDescription!, photos: photos, completion: completion)
     }
     
@@ -127,7 +128,8 @@ extension RentSaleUpdater {
             .mapPairs( {return ($0.0, String($0.1!) )} )
         
         if p.count > 0 {
-            return PatchCarOperation(params: p, id: id!, isRent: postingType == .Rent ? true : false)
+            let operation = PatchCarOperation(params: p, id: id!, isRent: postingType == .Rent ? true : false)
+            return operation
         }
         return nil
     }
@@ -145,7 +147,8 @@ class PatchCarOperation: AbstractOperation {
     }
     
     override func main() {
-        let urlString = isRent ? URL.Marketplace.rent : URL.Marketplace.sale + "\(id)/"
+        let urlString = (isRent ? URL.Marketplace.rent : URL.Marketplace.sale) + "\(id)/"
+        
         RequestManager.sharedInstance().patch(urlString, parameters: params) { [weak self] (json, error) in
             self?.state = .Finished
         }
