@@ -21,9 +21,6 @@ extension RequestManager {
             .validate(statusCode: 200..<300)
             .responseData{ response in
                 let dataString = String(data: response.data!, encoding: NSUTF8StringEncoding)
-                print("Response data: \(dataString)")
-                
-//                self.endRequest(nil, responseData: nil)
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data: data)
@@ -31,9 +28,6 @@ extension RequestManager {
                     break
                 case .Failure(let error):
                     let handledError = self.errorWithInfo(error, data: response.data)
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        RequestErrorHandler(error: handledError, title: Titles.error).handle()
-                    })
                     completion(nil, handledError)
                     break
                 }
@@ -50,9 +44,6 @@ extension RequestManager {
             .validate(statusCode: 200..<300)
             .responseData{ response in
                 let dataString = String(data: response.data!, encoding: NSUTF8StringEncoding)
-                print("Response data: \(dataString)")
-                
-//                self.endRequest(nil, responseData: nil)
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data: data)
@@ -60,9 +51,6 @@ extension RequestManager {
                     break
                 case .Failure(let error):
                     let handledError = self.errorWithInfo(error, data: response.data)
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        RequestErrorHandler(error: handledError, title: Titles.error).handle()
-                    })
                     completion(nil, handledError)
                     break
                 }

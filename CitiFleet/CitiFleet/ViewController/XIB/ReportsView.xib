@@ -55,10 +55,10 @@
                                                 <action selector="postReport:" destination="iN0-l3-epB" eventType="touchUpInside" id="gT5-5U-qR5"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mV0-8i-b5W">
-                                            <rect key="frame" x="135" y="103" width="122" height="89"/>
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mV0-8i-b5W">
+                                            <rect key="frame" x="136" y="103" width="122" height="89"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13.329999923706055"/>
-                                            <state key="normal" title="TRAFIC JAM" image="trafic---ic">
+                                            <state key="normal" title="TRAFFIC JAM" image="trafic---ic">
                                                 <color key="titleColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
