@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2z2-yC-p9B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2z2-yC-p9B">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,29 +16,7 @@
                     <view key="view" contentMode="scaleToFill" id="doW-WF-qW7">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="mUj-A4-G9h">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="4qx-FG-fWE">
-                                <rect key="frame" x="186" y="199" width="228" height="202"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="mUj-A4-G9h" secondAttribute="trailing" id="1F8-Sr-Iuk"/>
-                            <constraint firstItem="mUj-A4-G9h" firstAttribute="leading" secondItem="doW-WF-qW7" secondAttribute="leading" id="7Ck-Gy-qQz"/>
-                            <constraint firstItem="4qx-FG-fWE" firstAttribute="centerY" secondItem="doW-WF-qW7" secondAttribute="centerY" id="FfU-dS-Bb8"/>
-                            <constraint firstItem="ni3-lR-GM9" firstAttribute="top" secondItem="mUj-A4-G9h" secondAttribute="bottom" id="RNU-8c-MRI"/>
-                            <constraint firstItem="4qx-FG-fWE" firstAttribute="centerX" secondItem="doW-WF-qW7" secondAttribute="centerX" id="j5p-jN-kYy"/>
-                            <constraint firstItem="mUj-A4-G9h" firstAttribute="top" secondItem="doW-WF-qW7" secondAttribute="topMargin" id="x8A-1S-sdA"/>
-                            <constraint firstItem="mUj-A4-G9h" firstAttribute="top" secondItem="Mqt-Tb-uVU" secondAttribute="bottom" id="xMM-HB-JDX"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="xMM-HB-JDX"/>
-                            </mask>
-                        </variation>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                 </viewController>
@@ -48,8 +25,4 @@
             <point key="canvasLocation" x="444" y="456"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="background" width="414" height="736"/>
-        <image name="logo" width="228" height="202"/>
-    </resources>
 </document>

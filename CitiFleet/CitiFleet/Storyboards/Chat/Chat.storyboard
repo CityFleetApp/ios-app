@@ -31,7 +31,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Chat-->
+        <!--Contacts-->
         <scene sceneID="OUB-NK-KbK">
             <objects>
                 <viewController restorationIdentifier="ChatMainScreenVC" storyboardIdentifier="ChatMainScreenVC" id="Ygl-DB-Mg9" customClass="ChatMainScreenVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
@@ -110,7 +110,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Chat" id="EMg-vr-atF">
+                    <navigationItem key="navigationItem" title="Contacts" id="EMg-vr-atF">
                         <barButtonItem key="leftBarButtonItem" image="back-ic" id="Wkv-KH-Rzd">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>

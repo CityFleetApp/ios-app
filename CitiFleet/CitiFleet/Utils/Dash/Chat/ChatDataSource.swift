@@ -31,6 +31,7 @@ class ChatDataSource: NSObject {
             if error != nil {
                 return
             }
+            self?.messages.removeAll()
             print("\(json?.dictionaryObject![Response.count] as? Int)")
             
             self?.nextPageUrl = json?.dictionaryObject![Response.next] as? String
@@ -41,9 +42,6 @@ class ChatDataSource: NSObject {
                     self?.messages.append(message)
                     self?.offset += 1
                 }
-//                if let elements = self?.messages {
-//                    self?.messages = elements.reverse()
-//                }
             }
             self?.reloadData()
         }

@@ -82,6 +82,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
         UINavigationBar.appearance().titleTextAttributes = [ NSFontAttributeName: Fonts.Login.NavigationTitle,  NSForegroundColorAttributeName: UIColor.whiteColor()]
         APNSManager.sharedManager.registerForRemoteNotifications()
         SocialManager.sharedInstance.importContactsSilently()
+        checkSocket()
+    }
+    
+    private func checkSocket() {
+        if let rootNav = rootViewController().childViewControllers.first as? UINavigationController {
+            if let chatVC = rootNav.viewControllers.last as? ChatVC {
+                chatVC.datasource.loadData()
+            }
+        }
     }
     
     func showLoginViewController() {
@@ -130,9 +139,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
             .view.userInteractionEnabled = false
         playerController!.player = player
         player?.play()
-//        rootViewController().presentViewController(playerController!, animated: false) { [weak self] in
-//            self?.player?.play()
-//        }
     }
     
     func playingStoped(notification: NSNotification) {

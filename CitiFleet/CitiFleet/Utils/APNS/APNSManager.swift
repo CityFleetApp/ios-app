@@ -28,6 +28,7 @@
  }]
  */
 
+
 /* rate driver
  {
     "aps": {
@@ -99,7 +100,7 @@ class APNSManager: NSObject {
         if (NSUserDefaults.standardUserDefaults().valueForKey(DictionaryKeys.UserDefaultsKeys.AlreadyRegisteredKey) as? Bool) == true {
             return
         }
-//        NSUserDefaults.standardUserDefaults().setValue(false, forKey: DictionaryKeys.UserDefaultsKeys.AlreadyRegisteredKey)
+        NSUserDefaults.standardUserDefaults().setValue(false, forKey: DictionaryKeys.UserDefaultsKeys.AlreadyRegisteredKey)
         typealias APNSParams = Params.User.APNS
         
         let characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )

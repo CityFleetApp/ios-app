@@ -1273,7 +1273,7 @@
                                                     <rect key="frame" x="17" y="16" width="18" height="16"/>
                                                     <color key="tintColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5V-OY-ysy">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5V-OY-ysy">
                                                     <rect key="frame" x="43" y="14" width="98" height="20"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -1383,18 +1383,28 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alert_notif-ic" translatesAutoresizingMaskIntoConstraints="NO" id="uUI-eF-UUv">
                                             <rect key="frame" x="16" y="22" width="18" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="18" id="e7n-m2-27L"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TLC Alert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvR-KG-1I1">
-                                            <rect key="frame" x="47" y="21" width="72" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TLC Alert" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvR-KG-1I1">
+                                            <rect key="frame" x="47" y="21" width="425" height="20"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                             <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notif_date_ic" translatesAutoresizingMaskIntoConstraints="NO" id="ZkJ-B5-CEp">
-                                            <rect key="frame" x="486" y="25" width="11" height="12"/>
+                                            <rect key="frame" x="480" y="25" width="11" height="12"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="11" id="1ZI-AD-hjr"/>
+                                                <constraint firstAttribute="height" constant="12" id="8L4-CO-irh"/>
+                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/17/2016" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cd6-T5-W0N">
-                                            <rect key="frame" x="502" y="24" width="54" height="14"/>
+                                            <rect key="frame" x="496" y="24" width="60" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="GZP-po-uWj"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="11.039999961853027"/>
                                             <color key="textColor" red="0.4549019608" green="0.4549019608" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1409,6 +1419,7 @@
                                             <rect key="frame" x="572" y="22" width="4" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="4" id="BNO-Us-vU1"/>
+                                                <constraint firstAttribute="width" constant="4" id="FJB-RJ-AVB"/>
                                                 <constraint firstAttribute="height" constant="44" id="iSq-S4-W0b"/>
                                             </constraints>
                                             <variation key="default">
@@ -1425,6 +1436,7 @@
                                         <constraint firstItem="dnf-pC-Dn3" firstAttribute="top" secondItem="uUI-eF-UUv" secondAttribute="top" id="Jww-8w-O0c"/>
                                         <constraint firstItem="GvR-KG-1I1" firstAttribute="centerY" secondItem="uUI-eF-UUv" secondAttribute="centerY" id="Lzk-Pr-YuY"/>
                                         <constraint firstItem="XQx-Ko-aqO" firstAttribute="top" secondItem="GvR-KG-1I1" secondAttribute="bottom" constant="8" id="NlF-30-mhT"/>
+                                        <constraint firstItem="ZkJ-B5-CEp" firstAttribute="leading" secondItem="GvR-KG-1I1" secondAttribute="trailing" constant="8" id="QEl-Gg-2pC"/>
                                         <constraint firstItem="dnf-pC-Dn3" firstAttribute="trailing" secondItem="uUI-eF-UUv" secondAttribute="trailing" id="YP5-ux-rfR"/>
                                         <constraint firstItem="cd6-T5-W0N" firstAttribute="leading" secondItem="ZkJ-B5-CEp" secondAttribute="trailing" constant="5" id="aNM-LS-JYK"/>
                                         <constraint firstItem="uUI-eF-UUv" firstAttribute="leading" secondItem="u7n-0Y-s9z" secondAttribute="leading" constant="16" id="bMo-7K-som"/>
@@ -1708,7 +1720,7 @@
                                             <rect key="frame" x="17" y="16" width="18" height="16"/>
                                             <color key="tintColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ec-rO-x8C">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ec-rO-x8C">
                                             <rect key="frame" x="43" y="14" width="95" height="20"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
                                             <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -2084,7 +2096,7 @@
                                                     <rect key="frame" x="17" y="16" width="18" height="16"/>
                                                     <color key="tintColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkf-Mg-CoB">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkf-Mg-CoB">
                                                     <rect key="frame" x="43" y="14" width="95" height="20"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
                                                     <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
