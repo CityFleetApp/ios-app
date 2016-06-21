@@ -1229,7 +1229,12 @@
 				TargetAttributes = {
 					4316BB791C7B046A007A9ECB = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 7JDW2864XQ;
+						DevelopmentTeam = E9FG6ZSD4V;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1618,7 +1623,7 @@
 				INFOPLIST_FILE = CitiFleet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.steelkiwi.citifleet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cityfleet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CitiFleet/CitiFleet-Bridging-Header.h";
@@ -1632,14 +1637,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Viacheslav Ponomarov (7JDW2864XQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Viacheslav Ponomarov (7JDW2864XQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = CitiFleet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.steelkiwi.citifleet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cityfleet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "45cee7c1-9c9a-4491-b151-58053f0e5840";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CitiFleet/CitiFleet-Bridging-Header.h";
 			};
 			name = Release;

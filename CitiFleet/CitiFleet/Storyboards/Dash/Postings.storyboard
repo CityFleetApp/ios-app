@@ -1111,7 +1111,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Slect Suite/Tie"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Select Suite/Tie"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arr-odwn" translatesAutoresizingMaskIntoConstraints="NO" id="h45-Ql-S3Q">
@@ -1169,7 +1169,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Slect Company/Personal"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Select Company/Personal"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arr-odwn" translatesAutoresizingMaskIntoConstraints="NO" id="uqM-hM-ldx">
@@ -1227,7 +1227,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Slect Job Type"/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Select Job Type"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arr-odwn" translatesAutoresizingMaskIntoConstraints="NO" id="Mcn-rj-Chv">
@@ -1489,8 +1489,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="vop-Zs-AVK">
-                            <rect key="frame" x="0.0" y="358" width="600" height="241"/>
+                        <view key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" id="vop-Zs-AVK">
+                            <rect key="frame" x="0.0" y="358" width="600" height="178"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vmi-Z5-PQZ">

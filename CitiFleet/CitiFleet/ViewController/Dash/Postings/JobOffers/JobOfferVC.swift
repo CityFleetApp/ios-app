@@ -85,9 +85,9 @@ class JobOfferVC: UITableViewController {
     
     private func setupJobOffer(offer: JobOffer) {
         jobTitTF.text = offer.jobTitle
-        dateLbl.highlitedText = NSDateFormatter.standordFormater().stringFromDate(offer.pickupDatetime!)
-        timeLbl.highlitedText = NSDateFormatter(dateFormat: "HH:mm").stringFromDate(offer.pickupDatetime!)
-        dateString = NSDateFormatter(dateFormat: "yyyy-MM-dd").stringFromDate(offer.pickupDatetime!)
+//        dateLbl.highlitedText = NSDateFormatter.standordFormater().stringFromDate(offer.pickupDatetime!)
+//        timeLbl.highlitedText = NSDateFormatter(dateFormat: "HH:mm").stringFromDate(offer.pickupDatetime!)
+//        dateString = NSDateFormatter(dateFormat: "yyyy-MM-dd").stringFromDate(offer.pickupDatetime!)
         pickupAddress.text = offer.pickupAddress
         destinationTF.text = offer.destination
         fareTF.text = offer.fare
@@ -164,6 +164,7 @@ class JobOfferVC: UITableViewController {
             showNoInstructionsAlert()
             isError = true
         }
+        
         return isError
     }
     

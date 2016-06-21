@@ -15,12 +15,13 @@ class EditProfileVC: UITableViewController {
     @IBOutlet var phoneNumberTF: UITextField!
     @IBOutlet var usernameTF: UITextField!
     @IBOutlet var carLbl: HighlitableLabel!
-    @IBOutlet var avatarView: AvatarCameraView!
+    @IBOutlet var avatarView: AvatarCameraView?
     
     private var headerViewSetuper: UITableViewHeaderSetuper?
     private var tableHeaderHeight: CGFloat = 235
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         createAccessoryView(bioTextView)
         headerViewSetuper = UITableViewHeaderSetuper(tableView: tableView, headerHeight: tableHeaderHeight)
         User.currentUser()?.loadProfile({ [weak self] (error) in
@@ -29,6 +30,7 @@ class EditProfileVC: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         preloadData()
         setupData()
     }
@@ -95,12 +97,12 @@ extension EditProfileVC {
     }
     
     private func preloadData() {
-        avatarView.nameLabel.text = User.currentUser()?.fullName?.uppercaseString
-        avatarView.action = { [weak self] (sender) in
+        avatarView?.nameLabel.text = User.currentUser()?.fullName?.uppercaseString
+        avatarView?.action = { [weak self] (sender) in
             self?.cameraPressed(sender)
         }
         if let URL = User.currentUser()?.avatarURL {
-            avatarView.avatarUrl = URL
+            avatarView?.avatarUrl = URL
         }
     }
     
@@ -118,7 +120,7 @@ extension EditProfileVC {
             return
         }
         
-        avatarView.avatarUrl = URL
+        avatarView?.avatarUrl = URL
     }
 }
 
@@ -170,7 +172,7 @@ extension EditProfileVC: UIImagePickerControllerDelegate, UINavigationController
                     return
                 }
                 
-                self?.avatarView.avatarUrl = url
+                self?.avatarView?.avatarUrl = url
             })
         }
     }
