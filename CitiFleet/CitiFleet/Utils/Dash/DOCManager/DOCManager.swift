@@ -71,7 +71,7 @@ class DOCManager: NSObject {
         var key, value: String
         if let expDate = document.expiryDate {
             key = Params.DOCManagement.expiryDate
-            value = NSDateFormatter.standordFormater().stringFromDate(expDate)
+            value = NSDateFormatter(dateFormat: "yyyy-MM-dd").stringFromDate(expDate)
         } else {
             key = Params.DOCManagement.plateNumber
             value = document.plateNumber!

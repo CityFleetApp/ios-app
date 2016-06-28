@@ -16,11 +16,11 @@ struct MIME {
 
 struct URL {
     static let SocketSandbox = "ws://104.236.223.160/"
-    static let SocketProd = "ws://www.cityfleet.io/"
+    static let SocketProd = "wss://api.cityfleet.io/"
     static let Socket = URL.SocketProd
     static let Sandbox = "http://104.236.223.160/api/"
-    static let Production = "http://www.cityfleet.io/api/"
-    static let BaseUrl = URL.Production
+    static let Production = "https://api.cityfleet.io/api/"
+    static let BaseUrl = URL.Sandbox
     struct User {
         static let Photos = "/photos/"
         static let Info = "users/info/"

@@ -612,6 +612,9 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="600" height="292"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </view>
+                                                        <pageControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Qk4-0k-1Dl">
+                                                            <rect key="frame" x="280" y="174" width="39" height="37"/>
+                                                        </pageControl>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9uc-HR-L9x">
                                                             <rect key="frame" x="0.0" y="219" width="600" height="73"/>
                                                             <subviews>
@@ -657,8 +660,10 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="9uc-HR-L9x" secondAttribute="bottom" id="0hS-OF-oA5"/>
+                                                        <constraint firstItem="9uc-HR-L9x" firstAttribute="top" secondItem="Qk4-0k-1Dl" secondAttribute="bottom" constant="8" id="AkX-yq-Kd0"/>
                                                         <constraint firstItem="WXZ-Xx-ze8" firstAttribute="leading" secondItem="4gD-F8-vhl" secondAttribute="leading" id="Dlt-ch-D41"/>
                                                         <constraint firstItem="WXZ-Xx-ze8" firstAttribute="top" secondItem="4gD-F8-vhl" secondAttribute="top" id="Eea-Qb-a17"/>
+                                                        <constraint firstItem="Qk4-0k-1Dl" firstAttribute="centerX" secondItem="4gD-F8-vhl" secondAttribute="centerX" id="Lws-7o-Lln"/>
                                                         <constraint firstAttribute="trailing" secondItem="WXZ-Xx-ze8" secondAttribute="trailing" id="SFY-h3-UJR"/>
                                                         <constraint firstItem="gZY-5H-1D2" firstAttribute="top" secondItem="4gD-F8-vhl" secondAttribute="top" constant="12" id="bcO-nE-KXO"/>
                                                         <constraint firstAttribute="trailing" secondItem="9uc-HR-L9x" secondAttribute="trailing" id="cgh-Tu-cLK"/>
@@ -822,6 +827,7 @@
                         <outlet property="itemName" destination="6cf-GP-UG4" id="mfD-6p-IJy"/>
                         <outlet property="itemNameBgView" destination="9uc-HR-L9x" id="foP-n7-5Bw"/>
                         <outlet property="ownerLabel" destination="2CH-0i-Hd8" id="Q7y-Q3-yl2"/>
+                        <outlet property="pageIndecator" destination="Qk4-0k-1Dl" id="twX-Bv-ZOZ"/>
                         <outlet property="priceLabel" destination="pyK-54-dfv" id="dpK-me-lPd"/>
                         <outlet property="titleContainerView" destination="9uc-HR-L9x" id="yTV-vY-HPy"/>
                     </connections>
@@ -2188,6 +2194,9 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="600" height="292"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </view>
+                                                        <pageControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="z4N-Ev-Sy9">
+                                                            <rect key="frame" x="280" y="174" width="39" height="37"/>
+                                                        </pageControl>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BNV-8L-2HT">
                                                             <rect key="frame" x="0.0" y="219" width="600" height="73"/>
                                                             <subviews>
@@ -2233,6 +2242,8 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="BNV-8L-2HT" firstAttribute="leading" secondItem="GlC-SM-7jL" secondAttribute="leading" id="1bC-Mq-xMu"/>
+                                                        <constraint firstItem="z4N-Ev-Sy9" firstAttribute="centerX" secondItem="GlC-SM-7jL" secondAttribute="centerX" id="4MN-zD-kkE"/>
+                                                        <constraint firstItem="BNV-8L-2HT" firstAttribute="top" secondItem="z4N-Ev-Sy9" secondAttribute="bottom" constant="8" id="7x5-Qa-jbK"/>
                                                         <constraint firstAttribute="bottom" secondItem="BNV-8L-2HT" secondAttribute="bottom" id="FjR-km-hIb"/>
                                                         <constraint firstItem="BNV-8L-2HT" firstAttribute="height" secondItem="Vmu-kg-rs8" secondAttribute="height" multiplier="1:4" id="Fnx-I4-ObG"/>
                                                         <constraint firstAttribute="bottom" secondItem="Vmu-kg-rs8" secondAttribute="bottom" id="GVD-CS-SaA"/>
@@ -2485,6 +2496,7 @@
                         <outlet property="itemName" destination="RXW-vq-Btr" id="C5Q-4b-VqC"/>
                         <outlet property="itemNameBgView" destination="BNV-8L-2HT" id="4Yn-YH-e2G"/>
                         <outlet property="ownerLabel" destination="DiF-Bh-YQ0" id="hVr-9U-5pM"/>
+                        <outlet property="pageIndecator" destination="z4N-Ev-Sy9" id="108-0r-7fP"/>
                         <outlet property="priceLabel" destination="c0g-ah-5Ed" id="dsA-HD-NZT"/>
                         <outlet property="seatsLbl" destination="oPN-U3-3Na" id="CoH-d8-QOU"/>
                         <outlet property="titleContainerView" destination="BNV-8L-2HT" id="76j-FR-j0D"/>

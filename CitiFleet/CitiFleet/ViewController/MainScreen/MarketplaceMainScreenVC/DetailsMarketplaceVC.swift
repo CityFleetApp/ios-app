@@ -29,6 +29,7 @@ class DetailsMarketplaceVC: UITableViewController {
     @IBOutlet var imageContainerView: UIView!
     @IBOutlet var titleContainerView: UIView!
     @IBOutlet var ownerLabel: UILabel!
+    @IBOutlet var pageIndecator: UIPageControl!
 
     var item: MarketplaceItem! {
         didSet {
@@ -48,6 +49,7 @@ class DetailsMarketplaceVC: UITableViewController {
         priceLabel.text = "$\(item.price!)"
         itemDescription.text = item.itemDescription
         pageVCDataSource.imageContainerView = imageContainerView
+        pageVCDataSource.pageIndicator = pageIndecator
         setupLayer()
         setupAditionalData()
         title = item.itemName
@@ -136,30 +138,28 @@ extension DetailsMarketplaceVC {
 class PageViewControllerDataSource: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     var item: MarketplaceItem
     var imageContainerView: UIView!
+    weak var pageIndicator: UIPageControl? {
+        didSet {
+            pageIndicator?.numberOfPages = item.photosURLs.count
+            pageIndicator?.hidden = false 
+        }
+    }
     
     init(item: MarketplaceItem) {
         self.item = item
     }
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 5
-    }
-    
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return 1
-    }
-    
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         let index = viewController.view.tag
         let newIndex = index <= 0 ? item.photosURLs.count - 1 : index - 1
-        
+        pageIndicator?.currentPage = index
         return viewControllerWithIndex(newIndex)
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         let index = viewController.view.tag
         let newIndex = index >= item.photosURLs.count - 1 ? 0 : index + 1
-        
+        pageIndicator?.currentPage = index
         return viewControllerWithIndex(newIndex)
     }
     
