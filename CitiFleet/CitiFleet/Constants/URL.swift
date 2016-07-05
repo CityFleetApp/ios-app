@@ -20,7 +20,7 @@ struct URL {
     static let Socket = URL.SocketProd
     static let Sandbox = "http://104.236.223.160/api/"
     static let Production = "https://api.cityfleet.io/api/"
-    static let BaseUrl = URL.Sandbox
+    static let BaseUrl = URL.Production
     struct User {
         static let Photos = "/photos/"
         static let Info = "users/info/"

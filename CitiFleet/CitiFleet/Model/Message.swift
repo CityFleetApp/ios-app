@@ -36,7 +36,9 @@ class Message: NSObject {
             imageSize = CGSize(width: width, height: height)
         }
         if let dateStr = json[Response.Chat.created] as? String {
-            date = NSDateFormatter.serverResponseFormat.dateFromString(dateStr)
+            let dateFormatter = NSDateFormatter.serverResponseFormat
+            dateFormatter.timeZone = NSTimeZone(name: "GMT")
+            date = dateFormatter.dateFromString(dateStr)
         }
         if let participantsArray = json[Response.Chat.participants] as? [AnyObject] {
             parseParticipants(participantsArray)

@@ -133,63 +133,8 @@
                                             <segue destination="dG5-ds-Ogw" kind="push" id="Kl3-YX-ee4"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="s6S-Cu-dI1" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="135" width="600" height="71"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s6S-Cu-dI1" id="EF1-oi-P5z">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="post_job_offer_ic" translatesAutoresizingMaskIntoConstraints="NO" id="5DM-sB-isz">
-                                                    <rect key="frame" x="16" y="19" width="33" height="33"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="33" id="JAN-a1-ZcJ"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="LC6-gn-rZf"/>
-                                                        <constraint firstAttribute="width" constant="33" id="dJl-nC-EUb"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="LC6-gn-rZf"/>
-                                                        </mask>
-                                                    </variation>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Offers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uv7-vM-PRq">
-                                                    <rect key="frame" x="65" y="25" width="485" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.799999237060547"/>
-                                                    <color key="textColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="next-screen-set-ic" translatesAutoresizingMaskIntoConstraints="NO" id="MsW-mb-N1A">
-                                                    <rect key="frame" x="566" y="27" width="18" height="18"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="18" id="3BY-kE-qZZ"/>
-                                                        <constraint firstAttribute="width" constant="18" id="sL1-t2-Hsx"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="5DM-sB-isz" firstAttribute="leading" secondItem="EF1-oi-P5z" secondAttribute="leading" constant="16" id="1bB-Ke-aUb"/>
-                                                <constraint firstItem="MsW-mb-N1A" firstAttribute="leading" secondItem="uv7-vM-PRq" secondAttribute="trailing" constant="16" id="VFC-v7-QKz"/>
-                                                <constraint firstItem="uv7-vM-PRq" firstAttribute="leading" secondItem="5DM-sB-isz" secondAttribute="trailing" constant="16" id="mfA-eF-iVK"/>
-                                                <constraint firstItem="5DM-sB-isz" firstAttribute="centerY" secondItem="EF1-oi-P5z" secondAttribute="centerY" id="sIh-r0-uKe"/>
-                                                <constraint firstItem="uv7-vM-PRq" firstAttribute="centerY" secondItem="5DM-sB-isz" secondAttribute="centerY" id="xRf-y7-7zO"/>
-                                                <constraint firstItem="MsW-mb-N1A" firstAttribute="centerY" secondItem="uv7-vM-PRq" secondAttribute="centerY" id="xzR-GB-3T2"/>
-                                                <constraint firstAttribute="trailing" secondItem="MsW-mb-N1A" secondAttribute="trailing" constant="16" id="y5Y-Eb-W5b"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="title" destination="uv7-vM-PRq" id="38k-Ge-o0m"/>
-                                            <segue destination="aAH-Ux-MhO" kind="push" id="sLL-5p-iZ9"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="6vb-XE-ibS" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="206" width="600" height="71"/>
+                                        <rect key="frame" x="0.0" y="135" width="600" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6vb-XE-ibS" id="3Yb-JY-Geo">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
@@ -244,7 +189,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="71" id="NRR-xq-Di3" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="277" width="600" height="71"/>
+                                        <rect key="frame" x="0.0" y="206" width="600" height="71"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NRR-xq-Di3" id="xV1-Of-edO">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
@@ -296,6 +241,61 @@
                                         <connections>
                                             <outlet property="title" destination="psY-hN-r6G" id="KWL-JC-ah4"/>
                                             <segue destination="3l6-pJ-MGZ" kind="push" id="aRh-Tb-3WA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="0.0" id="s6S-Cu-dI1" customClass="DashMenuCell" customModule="CityFleet" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="277" width="600" height="0.0"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s6S-Cu-dI1" id="EF1-oi-P5z">
+                                            <rect key="frame" x="0.0" y="-1" width="600" height="1"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="post_job_offer_ic" translatesAutoresizingMaskIntoConstraints="NO" id="5DM-sB-isz">
+                                                    <rect key="frame" x="16" y="19" width="33" height="33"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="33" id="JAN-a1-ZcJ"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="LC6-gn-rZf"/>
+                                                        <constraint firstAttribute="width" constant="33" id="dJl-nC-EUb"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="LC6-gn-rZf"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Job Offers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uv7-vM-PRq">
+                                                    <rect key="frame" x="65" y="25" width="485" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.799999237060547"/>
+                                                    <color key="textColor" red="0.29803921570000003" green="0.35294117650000001" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="next-screen-set-ic" translatesAutoresizingMaskIntoConstraints="NO" id="MsW-mb-N1A">
+                                                    <rect key="frame" x="566" y="27" width="18" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="3BY-kE-qZZ"/>
+                                                        <constraint firstAttribute="width" constant="18" id="sL1-t2-Hsx"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5DM-sB-isz" firstAttribute="leading" secondItem="EF1-oi-P5z" secondAttribute="leading" constant="16" id="1bB-Ke-aUb"/>
+                                                <constraint firstItem="MsW-mb-N1A" firstAttribute="leading" secondItem="uv7-vM-PRq" secondAttribute="trailing" constant="16" id="VFC-v7-QKz"/>
+                                                <constraint firstItem="uv7-vM-PRq" firstAttribute="leading" secondItem="5DM-sB-isz" secondAttribute="trailing" constant="16" id="mfA-eF-iVK"/>
+                                                <constraint firstItem="5DM-sB-isz" firstAttribute="centerY" secondItem="EF1-oi-P5z" secondAttribute="centerY" id="sIh-r0-uKe"/>
+                                                <constraint firstItem="uv7-vM-PRq" firstAttribute="centerY" secondItem="5DM-sB-isz" secondAttribute="centerY" id="xRf-y7-7zO"/>
+                                                <constraint firstItem="MsW-mb-N1A" firstAttribute="centerY" secondItem="uv7-vM-PRq" secondAttribute="centerY" id="xzR-GB-3T2"/>
+                                                <constraint firstAttribute="trailing" secondItem="MsW-mb-N1A" secondAttribute="trailing" constant="16" id="y5Y-Eb-W5b"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="uv7-vM-PRq" id="38k-Ge-o0m"/>
+                                            <segue destination="aAH-Ux-MhO" kind="push" id="sLL-5p-iZ9"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>

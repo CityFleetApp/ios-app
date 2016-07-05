@@ -77,7 +77,8 @@ extension EditProfileVC {
         bioTextView.text = profile?.bio
         usernameTF.text = profile?.username
         if profile?.carModelDisplay != nil && profile?.carMakeDisplay != nil && profile?.carYear != nil {
-            carLbl.highlitedText = "\(profile!.carYear!) \(profile!.carMakeDisplay!) \(profile!.carModelDisplay!)"
+            let carYear = profile?.carYear < 1900 ? "" : "\(profile!.carYear!) "
+            carLbl.highlitedText = "\(carYear)\(profile!.carMakeDisplay!) \(profile!.carModelDisplay!)"
         }
     }
     

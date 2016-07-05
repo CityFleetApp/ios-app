@@ -195,6 +195,32 @@ class User: NSObject, NSCoding {
     }
     
     class func login(username: String, password: String, completion:((User?, NSError?) -> ())) {
+        /*
+        let url = NSURL(string: "https://api.cityfleet.io/api/users/login/")
+        let request = NSMutableURLRequest(URL: url!)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.HTTPMethod = "POST"
+        let params = [
+            "username" : "tsyrulnyk+1@steelkiwi.com",
+            "password" : "A1aaaaaa"
+        ]
+        
+        do {
+            let data = try NSJSONSerialization.dataWithJSONObject(params, options: .PrettyPrinted)
+            request.HTTPBody = data
+        } catch {
+            print("error ")
+        }
+        
+        let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        let task = session.dataTaskWithRequest(request) { (data, response, error) in
+            print("Response: \(response)")
+            
+        }
+        task.resume()
+        return;
+ */
         RequestManager.sharedInstance().login(username, password: password) { (userData, error) -> () in
             if let error = error {
                 completion(nil, error)

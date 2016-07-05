@@ -23,7 +23,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Notifications-->
+        <!--News-->
         <scene sceneID="o1S-Sk-NTw">
             <objects>
                 <viewController restorationIdentifier="NotificationsVC" storyboardIdentifier="NotificationsVC" id="FKD-6E-bcZ" customClass="NotificationsVC" customModule="CityFleet" customModuleProvider="target" sceneMemberID="viewController">
@@ -172,7 +172,7 @@
                             <constraint firstItem="hjb-Zn-NsP" firstAttribute="top" secondItem="n8b-wm-3WC" secondAttribute="topMargin" id="zs2-8M-Sai"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Notifications" id="hr9-VJ-lnC">
+                    <navigationItem key="navigationItem" title="News" id="hr9-VJ-lnC">
                         <barButtonItem key="leftBarButtonItem" image="back-ic" id="smG-Gd-YT2">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>

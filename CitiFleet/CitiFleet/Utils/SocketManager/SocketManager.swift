@@ -96,10 +96,10 @@ class SocketManager: NSObject {
             Params.Chat.image: ""
         ]
         
-        
         if let text = message.message {
             params[Params.Chat.text] = text
         }
+        
         if let image = message.image {
             if let imageData = UIImagePNGRepresentation(image) {
                 let strBase64 = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength)

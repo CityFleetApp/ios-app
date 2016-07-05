@@ -22,7 +22,9 @@ struct DictionaryKeys {
 }
 
 struct Keys {
-    static let GoogleMaps = "AIzaSyDz48RYxfjSqKwEUmjCiLDi2Bn7vU5pLvg"
+    static let GoogleMapsDev = "AIzaSyDz48RYxfjSqKwEUmjCiLDi2Bn7vU5pLvg"
+    static let GoogleMapsProd = "AIzaSyA7VH4YjIxJGePwYs-AIG6Zz0nAFhxInDw"
+    static let GoogleMaps = Keys.GoogleMapsProd
     struct Instagram {
         struct test {
             static let clientID = "2abff7abc27b44e488695c9b4ea452a9"

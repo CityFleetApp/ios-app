@@ -69,7 +69,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rss-hf-RRp">
                                         <rect key="frame" x="300" y="0.0" width="150" height="50"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="10"/>
-                                        <state key="normal" title="Notification" image="notification-ic">
+                                        <state key="normal" title="News" image="notification-ic">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
