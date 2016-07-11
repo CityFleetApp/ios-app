@@ -34,11 +34,18 @@ class SettingsVC: UITableViewController {
     }
     
     func applySettings() {
+        LoaderViewManager.showLoader()
+        
         let settings = Settings.sharedSettings
-        brightness.value = Float(settings.brightness)
-        visible.on = settings.visible
-        notifications.on = settings.notifications
-        chatPrivacy.on = settings.chatPrivacy
+        settings.loadSettings() { [unowned self] in
+            self.brightness.value = Float(settings.brightness)
+            self.visible.on = settings.visible
+            self.notifications.on = settings.notifications
+            self.chatPrivacy.on = settings.chatPrivacy
+            
+            LoaderViewManager.hideLoader()
+        }
+        
     }
 }
 
@@ -50,7 +57,22 @@ extension SettingsVC {
             dismissViewControllerAnimated(true, completion: nil)
             break
         case 6:
-            navigationController?.pushViewController(HelpVC(), animated: true)
+            let helpVC = HelpVC()
+            helpVC.urlString = "http://citifleet.steelkiwi.com/api/help/"
+            helpVC.title = "Help"
+            navigationController?.pushViewController(helpVC, animated: true)
+            break
+        case 7:
+            let helpVC = HelpVC()
+            helpVC.urlString = "http://citifleet.steelkiwi.com/api/help/"
+            helpVC.title = "Privacy Policy"
+            navigationController?.pushViewController(helpVC, animated: true)
+            break
+        case 8:
+            let helpVC = HelpVC()
+            helpVC.urlString = "http://citifleet.steelkiwi.com/api/help/"
+            helpVC.title = "Terms and Conditions"
+            navigationController?.pushViewController(helpVC, animated: true)
             break
         default:
             break
@@ -68,16 +90,31 @@ extension SettingsVC {
     @IBAction func changedVisibleStatus(sender: UISwitch) {
         Settings.sharedSettings.visible = sender.on
         Settings.sharedSettings.saveSettings()
+        
+        LoaderViewManager.showLoader()
+        Settings.sharedSettings.patchVisible(sender.on) {
+            LoaderViewManager.hideLoader()
+        }
     }
     
     @IBAction func notificatinsChanged(sender: UISwitch) {
         Settings.sharedSettings.notifications = sender.on
         Settings.sharedSettings.saveSettings()
+        
+        LoaderViewManager.showLoader()
+        Settings.sharedSettings.patchNotification(sender.on) {
+            LoaderViewManager.hideLoader()
+        }
     }
     
     @IBAction func chatPrivacy(sender: UISwitch) {
         Settings.sharedSettings.chatPrivacy = sender.on
         Settings.sharedSettings.saveSettings()
+        
+        LoaderViewManager.showLoader()
+        Settings.sharedSettings.patchChat(sender.on) {
+            LoaderViewManager.hideLoader()
+        }
     }
 }
 

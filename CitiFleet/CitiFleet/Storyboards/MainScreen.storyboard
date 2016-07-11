@@ -19,7 +19,6 @@
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
-            <string>Montserrat-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -533,51 +532,8 @@ to the same direction ,
                                             <outlet property="title" destination="Wtu-z0-HbC" id="Jc5-1v-qEL"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="mWP-v2-0HX" customClass="AddFriendsCell" customModule="CityFleet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="421" width="414" height="72"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mWP-v2-0HX" id="TCw-hT-K5e">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instagram_contacts" translatesAutoresizingMaskIntoConstraints="NO" id="AMF-98-n6I">
-                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="AMF-98-n6I" secondAttribute="height" multiplier="1:1" id="hny-an-THg"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_btn" translatesAutoresizingMaskIntoConstraints="NO" id="dl8-gc-w8x">
-                                                    <rect key="frame" x="364" y="0.0" width="50" height="72"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="dl8-gc-w8x" secondAttribute="height" multiplier="49:71" id="W2W-Ws-vAR"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagram Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUv-fT-ZbM">
-                                                    <rect key="frame" x="72" y="24" width="292" height="23"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18.770000457763672"/>
-                                                    <color key="textColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="PUv-fT-ZbM" firstAttribute="leading" secondItem="AMF-98-n6I" secondAttribute="trailing" id="H1a-5g-IQF"/>
-                                                <constraint firstItem="AMF-98-n6I" firstAttribute="top" secondItem="TCw-hT-K5e" secondAttribute="top" id="HA8-T8-YGM"/>
-                                                <constraint firstItem="PUv-fT-ZbM" firstAttribute="centerY" secondItem="TCw-hT-K5e" secondAttribute="centerY" id="LxF-b1-WT0"/>
-                                                <constraint firstItem="AMF-98-n6I" firstAttribute="leading" secondItem="TCw-hT-K5e" secondAttribute="leading" id="TNq-Js-CAZ"/>
-                                                <constraint firstAttribute="bottom" secondItem="dl8-gc-w8x" secondAttribute="bottom" id="Y7a-VX-Cki"/>
-                                                <constraint firstItem="dl8-gc-w8x" firstAttribute="top" secondItem="TCw-hT-K5e" secondAttribute="top" id="g6p-6b-UHd"/>
-                                                <constraint firstAttribute="bottom" secondItem="AMF-98-n6I" secondAttribute="bottom" id="gK6-jF-OrV"/>
-                                                <constraint firstItem="dl8-gc-w8x" firstAttribute="leading" secondItem="PUv-fT-ZbM" secondAttribute="trailing" id="jxp-zZ-VNQ"/>
-                                                <constraint firstAttribute="trailing" secondItem="dl8-gc-w8x" secondAttribute="trailing" id="nza-8m-gWO"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="icon" destination="AMF-98-n6I" id="NhV-Dd-1sz"/>
-                                            <outlet property="title" destination="PUv-fT-ZbM" id="LuJ-HW-dLb"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="bQh-BH-CEP" customClass="AddFriendsCell" customModule="CityFleet" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="493" width="414" height="72"/>
+                                        <rect key="frame" x="0.0" y="421" width="414" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bQh-BH-CEP" id="5rY-IN-Nq5">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
@@ -641,7 +597,6 @@ to the same direction ,
                         <outlet property="fbLabel" destination="Wtu-z0-HbC" id="4Yk-iq-Djo"/>
                         <outlet property="headerLabel" destination="CYS-7Z-vHr" id="hNl-fm-5zL"/>
                         <outlet property="headerView" destination="JsG-Is-xoK" id="SRD-Fg-ZBb"/>
-                        <outlet property="instagramLabel" destination="PUv-fT-ZbM" id="Byz-gu-0TG"/>
                         <outlet property="twitterLabel" destination="1Zb-Sb-sE2" id="Qc2-2U-Ybn"/>
                     </connections>
                 </tableViewController>
@@ -731,7 +686,6 @@ to the same direction ,
         <image name="dashboard-ic" width="15" height="15"/>
         <image name="direction" width="21" height="20"/>
         <image name="fb_contacts" width="35" height="35"/>
-        <image name="instagram_contacts" width="35" height="35"/>
         <image name="marketplace-ic" width="17" height="14"/>
         <image name="notification-ic" width="15" height="17"/>
         <image name="report-ic" width="19" height="16"/>

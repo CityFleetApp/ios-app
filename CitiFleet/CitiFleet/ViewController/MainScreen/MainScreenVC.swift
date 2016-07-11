@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class RootVC: UIViewController {
     override func subscribeNotifications() {
@@ -168,6 +169,19 @@ extension MainScreenVC: InfoViewDelegate {
 //MARK: - Map View Delegate
 extension MainScreenVC: MapViewDelegate {
     func showReport(coordinate: CLLocationCoordinate2D?) {
+        guard let coordinate = coordinate else { return }
+        let mapPoint1 = MKMapPointForCoordinate(coordinate)
+        let mapPoint2 = MKMapPointForCoordinate(LocationManager.sharedInstance().currentCoordinates)
+        
+        let distance = MKMetersBetweenMapPoints(mapPoint1, mapPoint2)
+        if distance > 1000 {
+            let alert = UIAlertController(title: "You should be closer than 1km to the event", message: nil, preferredStyle: .Alert)
+            let action = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+            alert.addAction(action)
+            presentViewController(alert, animated: true, completion: nil)
+            return
+        }
+        
         let reportView = ReportsView.reportFromNib()
         reportView.coordinate = coordinate
         reportView.show(onViewController: self)

@@ -9,6 +9,10 @@
 import UIKit
 
 class Settings: NSObject, NSCoding {
+    static let notificationsEnabled = "notifications_enabled"
+    static let chatPrivacy = "chat_privacy"
+    static let visible = "visible"
+    
     // MARK: - Keys
     private struct SettingsKeys {
         static let Settings = "Settings"
@@ -92,5 +96,50 @@ class Settings: NSObject, NSCoding {
     
     func applySettings() {
         UIScreen.mainScreen().brightness = self.brightness
+    }
+    
+    func loadSettings(completion: (() -> ())) {
+        RequestManager.sharedInstance().get(URL.User.Settings, parameters: nil) { [unowned self] (json, error) in
+            guard let json = json?.dictionaryObject else {
+                completion()
+                return
+            }
+            
+            if let visible = json[Settings.visible] as? Bool {
+                self.visible = visible
+            }
+            
+            if let notification = json[Settings.notificationsEnabled] as? Bool {
+                self.notifications = notification
+            }
+            
+            if let chat = json[Settings.notificationsEnabled] as? Bool {
+                self.chatPrivacy = chat
+            }
+            
+            self.saveSettings()
+            completion()
+        }
+    }
+    
+    func patch(param: String, enabled: Bool, completion: (() -> ())) {
+        let params = [
+            param: enabled
+        ]
+        RequestManager.sharedInstance().patch(URL.User.Settings, parameters: params) { (_, _) in
+            completion()
+        }
+    }
+    
+    func patchNotification(enabled: Bool, completion: (() -> ())) {
+        patch(Settings.notificationsEnabled, enabled: enabled, completion: completion)
+    }
+    
+    func patchChat(enabled: Bool, completion: (() -> ())) {
+        patch(Settings.chatPrivacy, enabled: enabled, completion: completion)
+    }
+    
+    func patchVisible(enabled: Bool, completion: (() -> ())) {
+        patch(Settings.visible, enabled: enabled, completion: completion)
     }
 }

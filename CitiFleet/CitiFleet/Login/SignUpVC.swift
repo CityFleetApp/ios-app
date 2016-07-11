@@ -21,6 +21,7 @@ class SignUpVC: UITableViewController {
     @IBOutlet var email: UITextField!
     @IBOutlet var password: UITextField!
     @IBOutlet var confirmPassword: UITextField!
+    @IBOutlet var agreeLabel: UITextView!
     
     @IBOutlet var signUpBtn: UIButton!
     
@@ -44,6 +45,10 @@ class SignUpVC: UITableViewController {
         setDefaultPlaceholders()
         
         navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: Fonts.Login.NavigationTitle,  NSForegroundColorAttributeName: UIColor.whiteColor()]
+    }
+    
+    func addLinksToAttributeLabel() {
+        
     }
     
     func setDefaultPlaceholders() {

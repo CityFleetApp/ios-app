@@ -9,9 +9,13 @@
 import UIKit
 
 class HelpVC: UIViewController {
-    var URL = NSURL(string: "http://citifleet.steelkiwi.com/api/help/")!
+    var urlString: String!
+    
+    lazy var URL: NSURL = { [unowned self] in
+        return NSURL(string: self.urlString)! // "http://citifleet.steelkiwi.com/api/help/")!
+    }()
+    
     override func viewWillAppear(animated: Bool) {
-        title = "Help"
         navigationController?.navigationBar.hidden = false
         let webView = UIWebView(frame: view.bounds)
         view.addSubview(webView)

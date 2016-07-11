@@ -22,6 +22,7 @@ struct URL {
     static let Production = "https://api.cityfleet.io/api/"
     static let BaseUrl = URL.Production
     struct User {
+        static let Settings = "users/settings/"
         static let Photos = "/photos/"
         static let Info = "users/info/"
         static let Person = "users/person/"

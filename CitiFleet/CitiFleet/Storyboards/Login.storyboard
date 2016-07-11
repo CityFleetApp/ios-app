@@ -37,6 +37,7 @@
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -507,12 +508,40 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="78" id="TCz-DA-nnJ">
+                                        <rect key="frame" x="0.0" y="546" width="414" height="78"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TCz-DA-nnJ" id="8d0-6t-DDf">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree to Privacy Policy and Terms and Conditions" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJq-d8-a6E">
+                                                    <rect key="frame" x="17" y="19" width="324" height="39"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iTl-di-vad">
+                                                    <rect key="frame" x="349" y="23" width="51" height="31"/>
+                                                    <color key="onTintColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iTl-di-vad" firstAttribute="centerY" secondItem="8d0-6t-DDf" secondAttribute="centerY" id="3KM-FX-URu"/>
+                                                <constraint firstItem="iTl-di-vad" firstAttribute="leading" secondItem="qJq-d8-a6E" secondAttribute="trailing" constant="8" id="AV0-JR-efm"/>
+                                                <constraint firstItem="qJq-d8-a6E" firstAttribute="leading" secondItem="8d0-6t-DDf" secondAttribute="leadingMargin" constant="9" id="NE5-td-Mx8"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="iTl-di-vad" secondAttribute="trailing" constant="8" id="NXI-Un-ODx"/>
+                                                <constraint firstItem="qJq-d8-a6E" firstAttribute="centerY" secondItem="8d0-6t-DDf" secondAttribute="centerY" id="vBq-T2-FKb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="YZ9-fc-233">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="91" id="n99-7U-IYd">
-                                        <rect key="frame" x="0.0" y="546" width="414" height="91"/>
+                                        <rect key="frame" x="0.0" y="624" width="414" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n99-7U-IYd" id="vAQ-hC-9n7">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>

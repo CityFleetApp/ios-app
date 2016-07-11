@@ -85,7 +85,10 @@ extension DashVC {
             home()
             break
         case 8:
-            navigationController?.pushViewController(HelpVC(), animated: true)
+            let helpVC = HelpVC()
+            helpVC.urlString = "http://citifleet.steelkiwi.com/api/help/"
+            helpVC.title = "Help"
+            navigationController?.pushViewController(helpVC, animated: true)
             break
         case 10:
             logOut()
