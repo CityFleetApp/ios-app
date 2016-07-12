@@ -56,7 +56,7 @@ class DOCManager: NSObject {
                 let number = doc[Params.DOCManagement.plateNumber] as? String
                 var expDate: NSDate?
                 if let exp = expDateString {
-                    expDate = NSDateFormatter.standordFormater().dateFromString(exp)
+                    expDate = NSDateFormatter(dateFormat: "yyyy-MM-dd").dateFromString(exp)
                 }
                 
                 let doc = Document(id: id, type: Document.CellType(rawValue: typeIndex - 1)!, uploaded: true, expiryDate: expDate, plateNumber: number, photo: nil, photoURL: NSURL(string: photoUrl!))
@@ -80,7 +80,9 @@ class DOCManager: NSObject {
         let HTTPMethod = document.id != nil ? "PATCH" : "POST"
         
         RequestManager.sharedInstance().postDoc(HTTPMethod, docID: document.id, fieldKey: key, fieldValue: value, docType: document.type.rawValue, photo: document.photo!.scaleToMaxSide(Sizes.Image.upladeSide), completion: { (response, error) in
-            
+            if let _ = error {
+                
+            }
         })
     }
 }

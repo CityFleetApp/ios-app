@@ -16,6 +16,7 @@ class LoaderViewManager: NSObject {
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
             if let existingHud = hud {
                 existingHud.hide(false)
+                hud = nil 
             }
             hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
         }

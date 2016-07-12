@@ -20,6 +20,7 @@ class RootVC: UIViewController {
 }
 
 class MainScreenVC: UIViewController {
+    private let METTERS_IN_MILE: Double = 1609.344;
     private let ReportInfoViewHeght: CGFloat = 150
     
     @IBOutlet var dashboardBtn: UIButton!
@@ -174,8 +175,8 @@ extension MainScreenVC: MapViewDelegate {
         let mapPoint2 = MKMapPointForCoordinate(LocationManager.sharedInstance().currentCoordinates)
         
         let distance = MKMetersBetweenMapPoints(mapPoint1, mapPoint2)
-        if distance > 1000 {
-            let alert = UIAlertController(title: "You should be closer than 1km to the event", message: nil, preferredStyle: .Alert)
+        if distance > METTERS_IN_MILE {
+            let alert = UIAlertController(title: "You should be closer than 1 mile to the event", message: nil, preferredStyle: .Alert)
             let action = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
             alert.addAction(action)
             presentViewController(alert, animated: true, completion: nil)

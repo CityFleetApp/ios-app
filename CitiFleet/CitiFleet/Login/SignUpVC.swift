@@ -10,6 +10,8 @@ import UIKit
 import SwiftValidator
 
 class SignUpVC: UITableViewController {
+    static let LinkTag = "LinkTag"
+    
     private typealias Placeholder = StringConstants.SignUp.Placeholder
     private typealias ErrorMessage = ErrorString.SignUp
     private typealias RequestParams = Params.Login
@@ -22,6 +24,7 @@ class SignUpVC: UITableViewController {
     @IBOutlet var password: UITextField!
     @IBOutlet var confirmPassword: UITextField!
     @IBOutlet var agreeLabel: UITextView!
+    @IBOutlet var agreeSwitcher: UISwitch!
     
     @IBOutlet var signUpBtn: UIButton!
     
@@ -48,7 +51,54 @@ class SignUpVC: UITableViewController {
     }
     
     func addLinksToAttributeLabel() {
+        let baseAttributes = [
+            NSFontAttributeName: UIFont(name: FontNames.Montserrat.Regular, size: 16)!,
+            NSForegroundColorAttributeName: UIColor.lightGrayColor()
+        ]
+        let attributedText = NSMutableAttributedString(string: agreeLabel.text, attributes: baseAttributes)
         
+        var linkAttribute = [
+            NSForegroundColorAttributeName: UIColor(hex: 0x2EC4B6, alpha: 1),
+            NSUnderlineStyleAttributeName: 1,
+            SignUpVC.LinkTag: 1
+        ]
+        
+        attributedText.addAttributes(linkAttribute, range: NSMakeRange(11, 14))
+        
+        linkAttribute[SignUpVC.LinkTag] = 2
+        attributedText.addAttributes(linkAttribute, range: NSMakeRange(31, 19))
+        
+        agreeLabel.attributedText = attributedText
+        
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(textTapped(_:)))
+        agreeLabel.addGestureRecognizer(recognizer)
+    }
+    
+    func textTapped(sender: UITapGestureRecognizer) {
+        var location = sender.locationInView(agreeLabel)
+        location.x -= agreeLabel.textContainerInset.left
+        location.y -= agreeLabel.textContainerInset.top
+        
+        let characterIndex = agreeLabel.layoutManager.characterIndexForPoint(location, inTextContainer: agreeLabel.textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
+        if characterIndex < agreeLabel.textStorage.length {
+            let rangePointer: NSRangePointer = nil
+            let attributes = agreeLabel.textStorage.attributesAtIndex(characterIndex, effectiveRange: rangePointer)
+            
+            if attributes[SignUpVC.LinkTag] as? Int == 1 {
+                let helpVC = HelpVC()
+                helpVC.urlString = "http://citifleet.steelkiwi.com/api/help/"
+                helpVC.title = "Privacy Policy"
+                navigationController?.pushViewController(helpVC, animated: true)
+            } else if attributes[SignUpVC.LinkTag] as? Int == 2 {
+                let helpVC = HelpVC()
+                helpVC.urlString = "http://citifleet.steelkiwi.com/api/help/"
+                helpVC.title = "Terms and Conditions"
+                navigationController?.pushViewController(helpVC, animated: true)
+            }
+            
+        }
+        
+        agreeLabel.textStorage
     }
     
     func setDefaultPlaceholders() {
@@ -71,6 +121,8 @@ class SignUpVC: UITableViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.hidden = false
         signUpBtn.setDefaultShadow()
+        
+        addLinksToAttributeLabel()
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -78,6 +130,14 @@ class SignUpVC: UITableViewController {
     }
     
     @IBAction func signUp(sender: AnyObject) {
+        if !agreeSwitcher.on {
+            let alert = UIAlertController(title: "You should agree to Privacy Policy and Terms and Conditions", message: nil, preferredStyle: .Alert)
+            let action = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            alert.addAction(action)
+            presentViewController(alert, animated: true, completion: nil)
+            return 
+        }
+        
         validator.validate { (errors) -> Void in
             for error in errors {
                 error.0.text = ""

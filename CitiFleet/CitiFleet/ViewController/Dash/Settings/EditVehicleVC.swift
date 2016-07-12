@@ -215,8 +215,8 @@ extension EditVehicleVC {
         }
         
         if let year = profile?.carYear {
-            setCellText(NSIndexPath(forRow: 4, inSection: 0), cellText: "\(year)")
-            myVehicle.year = ((profile?.carYear)!, "\((profile?.carYear)!)")
+            setCellText(NSIndexPath(forRow: 4, inSection: 0), cellText: "\(year + 2009)")
+            myVehicle.year = ((profile?.carYear)!, "\((profile?.carYear)! + 2009)")
         }
     }
     
@@ -230,8 +230,8 @@ extension EditVehicleVC {
         var yearsArr: [MarketPlaceManager.MarketPlaceItem] = []
         let df = NSDateFormatter()
         df.dateFormat = "yyyy"
-        let year = Int(df.stringFromDate(NSDate()))
-        for i in 2009...year! {
+        let year = Int(df.stringFromDate(NSDate()))!
+        for i in 2009...year {
             yearsArr.append((i - 2009, String(i)))
         }
         return yearsArr

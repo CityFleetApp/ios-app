@@ -515,23 +515,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree to Privacy Policy and Terms and Conditions" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJq-d8-a6E">
-                                                    <rect key="frame" x="17" y="19" width="324" height="39"/>
-                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iTl-di-vad">
                                                     <rect key="frame" x="349" y="23" width="51" height="31"/>
                                                     <color key="onTintColor" red="0.18039215689999999" green="0.76862745099999996" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 </switch>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" scrollEnabled="NO" editable="NO" text="I agree to Privacy Policy and Terms and Conditions" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zo-71-BfM">
+                                                    <rect key="frame" x="10" y="11" width="331" height="55"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" red="0.73333333329999995" green="0.73333333329999995" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="iTl-di-vad" firstAttribute="centerY" secondItem="8d0-6t-DDf" secondAttribute="centerY" id="3KM-FX-URu"/>
-                                                <constraint firstItem="iTl-di-vad" firstAttribute="leading" secondItem="qJq-d8-a6E" secondAttribute="trailing" constant="8" id="AV0-JR-efm"/>
-                                                <constraint firstItem="qJq-d8-a6E" firstAttribute="leading" secondItem="8d0-6t-DDf" secondAttribute="leadingMargin" constant="9" id="NE5-td-Mx8"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="iTl-di-vad" secondAttribute="trailing" constant="8" id="NXI-Un-ODx"/>
-                                                <constraint firstItem="qJq-d8-a6E" firstAttribute="centerY" secondItem="8d0-6t-DDf" secondAttribute="centerY" id="vBq-T2-FKb"/>
+                                                <constraint firstItem="4zo-71-BfM" firstAttribute="centerY" secondItem="8d0-6t-DDf" secondAttribute="centerY" id="Q4c-G7-z5c"/>
+                                                <constraint firstItem="4zo-71-BfM" firstAttribute="leading" secondItem="8d0-6t-DDf" secondAttribute="leadingMargin" constant="2" id="QaZ-fo-oBD"/>
+                                                <constraint firstItem="iTl-di-vad" firstAttribute="leading" secondItem="4zo-71-BfM" secondAttribute="trailing" constant="8" id="s82-IP-g6a"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
@@ -593,6 +594,8 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="agreeLabel" destination="4zo-71-BfM" id="861-Ay-cql"/>
+                        <outlet property="agreeSwitcher" destination="iTl-di-vad" id="c9Z-mP-8BZ"/>
                         <outlet property="confirmPassword" destination="KfH-wW-lGG" id="HdS-hG-ihN"/>
                         <outlet property="email" destination="gzu-sV-Pai" id="tpO-ww-RJW"/>
                         <outlet property="fullName" destination="hIi-wL-hOG" id="H88-iH-Yur"/>
@@ -647,7 +650,7 @@
                                     <constraint firstAttribute="width" secondItem="C8W-UJ-Xe3" secondAttribute="height" multiplier="114:101" id="lOM-Oz-lIc"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="A1aaaaaa" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kio-6h-WNr" customClass="LoginTextField" customModule="CityFleet" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kio-6h-WNr" customClass="LoginTextField" customModule="CityFleet" customModuleProvider="target">
                                 <rect key="frame" x="22" y="477" width="370" height="49"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.700000762939453"/>
@@ -663,7 +666,7 @@
                                     <outlet property="delegate" destination="bu6-N9-BrG" id="M7E-kc-xBO"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="tsyrulnyk+1@steelkiwi.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWY-R4-Nbv" customClass="LoginTextField" customModule="CityFleet" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWY-R4-Nbv" customClass="LoginTextField" customModule="CityFleet" customModuleProvider="target">
                                 <rect key="frame" x="22" y="418" width="370" height="49"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.700000762939453"/>

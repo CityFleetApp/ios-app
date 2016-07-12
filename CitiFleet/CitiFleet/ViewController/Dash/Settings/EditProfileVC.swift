@@ -58,7 +58,7 @@ extension EditProfileVC {
             params[Param.carModel] = "\((profile?.carModel)!)"
             params[Param.carType] = "\((profile?.carType)!)"
             params[Param.carYear] = "\((profile?.carYear)!)"
-            params[Param.carType] = "\((profile?.carType)!)"
+            params[Param.carColor] = "\((profile?.carColor)!)"
         }
         
         RequestManager.sharedInstance().patch(URL.User.Profile.Profile, parameters: params) { [weak self] (json, error) in
@@ -77,7 +77,7 @@ extension EditProfileVC {
         bioTextView.text = profile?.bio
         usernameTF.text = profile?.username
         if profile?.carModelDisplay != nil && profile?.carMakeDisplay != nil && profile?.carYear != nil {
-            let carYear = profile?.carYear < 1900 ? "" : "\(profile!.carYear!) "
+            let carYear = profile?.carYear == nil ? "" : "\(profile!.carYear! + 2009) "
             carLbl.highlitedText = "\(carYear)\(profile!.carMakeDisplay!) \(profile!.carModelDisplay!)"
         }
     }
