@@ -58,19 +58,19 @@ extension SettingsVC {
             break
         case 6:
             let helpVC = HelpVC()
-            helpVC.urlString = "http://citifleet.steelkiwi.com/api/help/"
+            helpVC.urlString = URL.Help.help
             helpVC.title = "Help"
             navigationController?.pushViewController(helpVC, animated: true)
             break
         case 7:
             let helpVC = HelpVC()
-            helpVC.urlString = "http://citifleet.steelkiwi.com/api/help/"
+            helpVC.urlString = URL.Help.privacy
             helpVC.title = "Privacy Policy"
             navigationController?.pushViewController(helpVC, animated: true)
             break
         case 8:
             let helpVC = HelpVC()
-            helpVC.urlString = "http://citifleet.steelkiwi.com/api/help/"
+            helpVC.urlString = URL.Help.terms
             helpVC.title = "Terms and Conditions"
             navigationController?.pushViewController(helpVC, animated: true)
             break

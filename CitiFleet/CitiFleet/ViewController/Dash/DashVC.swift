@@ -86,7 +86,7 @@ extension DashVC {
             break
         case 8:
             let helpVC = HelpVC()
-            helpVC.urlString = "http://citifleet.steelkiwi.com/api/help/"
+            helpVC.urlString = URL.Help.help
             helpVC.title = "Help"
             navigationController?.pushViewController(helpVC, animated: true)
             break

@@ -21,6 +21,11 @@ struct URL {
     static let Sandbox = "http://104.236.223.160/api/"
     static let Production = "https://api.cityfleet.io/api/"
     static let BaseUrl = URL.Production
+    struct Help {
+        static let help = "https://api.cityfleet.io/help/"
+        static let privacy = "https://api.cityfleet.io/policy/"
+        static let terms = "https://api.cityfleet.io/terms/"
+    }
     struct User {
         static let Settings = "users/settings/"
         static let Photos = "/photos/"

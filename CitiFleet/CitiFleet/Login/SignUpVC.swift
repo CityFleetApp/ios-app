@@ -66,7 +66,7 @@ class SignUpVC: UITableViewController {
         attributedText.addAttributes(linkAttribute, range: NSMakeRange(11, 14))
         
         linkAttribute[SignUpVC.LinkTag] = 2
-        attributedText.addAttributes(linkAttribute, range: NSMakeRange(31, 19))
+        attributedText.addAttributes(linkAttribute, range: NSMakeRange(30, 20))
         
         agreeLabel.attributedText = attributedText
         
@@ -86,12 +86,12 @@ class SignUpVC: UITableViewController {
             
             if attributes[SignUpVC.LinkTag] as? Int == 1 {
                 let helpVC = HelpVC()
-                helpVC.urlString = "http://citifleet.steelkiwi.com/api/help/"
+                helpVC.urlString = URL.Help.privacy
                 helpVC.title = "Privacy Policy"
                 navigationController?.pushViewController(helpVC, animated: true)
             } else if attributes[SignUpVC.LinkTag] as? Int == 2 {
                 let helpVC = HelpVC()
-                helpVC.urlString = "http://citifleet.steelkiwi.com/api/help/"
+                helpVC.urlString = URL.Help.terms
                 helpVC.title = "Terms and Conditions"
                 navigationController?.pushViewController(helpVC, animated: true)
             }
