@@ -340,7 +340,7 @@
                                                     <rect key="frame" x="17" y="41" width="373" height="20"/>
                                                     <color key="textColor" red="0.090196078431372548" green="0.15686274509803921" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16.559999465942383"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="WY3-mK-tJa" id="9N9-uO-Fjs"/>
                                                     </connections>

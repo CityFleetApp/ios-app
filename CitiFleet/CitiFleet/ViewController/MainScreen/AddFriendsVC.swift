@@ -14,7 +14,7 @@ class AddFriendsVC: UITableViewController {
     @IBOutlet var headerLabel: UILabel!
     @IBOutlet var contoctsLabel: UILabel!
     @IBOutlet var fbLabel: UILabel!
-    @IBOutlet var instagramLabel: UILabel!
+    @IBOutlet var instagramLabel: UILabel?
     @IBOutlet var twitterLabel: UILabel!
     
     private var tableHeaderHeight: CGFloat = 226
@@ -45,7 +45,7 @@ extension AddFriendsVC {
         headerLabel.font = UIFont(name: FontNames.Montserrat.Regular, size: 17)
         contoctsLabel.font = font
         fbLabel.font = font
-        instagramLabel.font = font
+        instagramLabel?.font = font
         twitterLabel.font = font
     }
 }
