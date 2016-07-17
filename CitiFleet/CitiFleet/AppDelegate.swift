@@ -37,6 +37,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
         return rootViewController
     }
     
+    
+    /*
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        return true
+    }
+ */
+    
     func topViewController(viewController: UIViewController) -> UIViewController {
         if let presentedVC = viewController.presentedViewController {
             return topViewController(presentedVC)

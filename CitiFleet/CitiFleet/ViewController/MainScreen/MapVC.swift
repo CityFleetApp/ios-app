@@ -277,7 +277,13 @@ extension MapVC {
             UIApplication.sharedApplication().openURL(NSURL(string:
                 url)!)
         } else {
-            print("Can't use comgooglemaps://")
+            // https://www.google.com
+            let currentLocation = LocationManager.sharedInstance().currentCoordinates
+            let url = "https://www.google.com/maps/?saddr=\(currentLocation.latitude),\(currentLocation.longitude)&daddr=\(marker!.position.latitude),\(marker!.position.longitude)"
+            
+            UIApplication.sharedApplication().openURL(NSURL(string:
+                url)!)
+//            print("Can't use comgooglemaps://")
         }
     }
 }

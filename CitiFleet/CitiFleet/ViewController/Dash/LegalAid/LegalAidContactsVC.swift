@@ -91,7 +91,7 @@ extension LegalAidContactsVC {
             call(indexPath.row)
             break
         case 1:
-            sendMail(indexPath.row)
+            openGoogleMaps(indexPath.row)
             break
         case 2:
             openGoogleMaps(indexPath.row)
@@ -138,10 +138,19 @@ extension LegalAidContactsVC {
     }
     
     func openGoogleMaps(addressIndex: Int) {
-        let contact = sections![2][addressIndex]
-        if UIApplication.sharedApplication().canOpenURL(NSURL(string: "comgooglemaps-x-callback://")!) {
-            UIApplication.sharedApplication().openURL(NSURL(string: "comgooglemaps://?saddr"+contact.value)!)
+        let contact = sections![1][addressIndex]
+        if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps://")!)) {
+            guard let urlString = ("comgooglemaps://?q="+contact.value).stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) else { return }
+            guard let url = NSURL(string: urlString) else { return }
+            
+            UIApplication.sharedApplication().openURL(url)
+        } else {
+            guard let urlString = ("https://www.google.com/maps/?q="+contact.value).stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) else { return }
+            guard let url = NSURL(string: urlString) else { return }
+            
+            UIApplication.sharedApplication().openURL(url)
         }
+        
     }
     
 }

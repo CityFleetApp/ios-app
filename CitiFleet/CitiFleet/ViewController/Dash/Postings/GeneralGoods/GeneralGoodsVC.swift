@@ -129,6 +129,11 @@ extension GeneralGoodsVC {
             uploader.ascingPrice = priceTF.text
             uploader.itemDescription = descriptionTF.text
             uploader.deletedPhotos = photoDelegate.deletedImagesIDs
+            if let conditionStr = conditionsTF.text {
+                if let indexOfCondition = GoodConditions.indexOf(conditionStr) {
+                    uploader.condition = indexOfCondition + 1
+                }
+            }
             uploader.upload({ [unowned self] (error) in
                 self.navigationController?.popViewControllerAnimated(true)
             })
@@ -160,12 +165,13 @@ extension GeneralGoodsVC {
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         tableView.setZeroSeparator(cell)
         if indexPath.row == DescriptionCellIndex {
-            if let cell = cell as? MyRentSaleDescriptionCell {
-                cell.changedHeight = { [unowned self] (newHeight) in
-                    self.instructionsCellHeight = newHeight
-                    self.tableView.beginUpdates()
-                    self.tableView.endUpdates()
-                }
+            guard let cell = cell as? MyRentSaleDescriptionCell else {
+                return
+            }
+            cell.changedHeight = { [unowned self] (newHeight) in
+                self.instructionsCellHeight = newHeight
+                self.tableView.beginUpdates()
+                self.tableView.endUpdates()
             }
         }
     }

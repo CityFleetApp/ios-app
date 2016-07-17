@@ -49,7 +49,7 @@ extension EditProfileVC {
             params[Param.bio] = bio
         }
         
-        if let phone = profile?.phone {
+        if let phone = phoneNumberTF.text {
             params[Param.phone] = phone
         }
         

@@ -40,7 +40,8 @@ class NotificationDetailVC: UITableViewController {
     private func setupNotification() {
         title = notification.typeTitle
         notificationTitleLbl.text = notification.title
-        notificationMessageTF.attributedText = NSAttributedString(string: notification.message!, attributes: notificationMessageTF.attributedText.attributesAtIndex(0, effectiveRange: NSRangePointer()))
+        let rangePointer: NSRangePointer = nil
+        notificationMessageTF.attributedText = NSAttributedString(string: notification.message!, attributes: notificationMessageTF.attributedText.attributesAtIndex(0, effectiveRange: rangePointer))
         tableView.reloadData()
     }
     

@@ -59,10 +59,10 @@ class GeneralGoodsPatcher: GeneralGoodsUploader {
     
     private func createPatchOperation() -> NSOperation {
         typealias Param = Params.Posting.GeneralGoods
-        let params = [
+        let params: [String: AnyObject] = [
             Param.item: itemName!,
             Param.price: ascingPrice!,
-            Param.condition: String(condition),
+            Param.condition: "\(condition!)",
             Param.description: itemDescription!
         ]
         
@@ -122,9 +122,9 @@ class AbstractOperation: NSOperation {
 }
 
 class PatchGoodOperation: AbstractOperation {
-    let params: [String: String]
+    let params: [String: AnyObject]
     let id: Int
-    init(params: [String: String], id: Int) {
+    init(params: [String: AnyObject], id: Int) {
         self.params = params
         self.id = id
         super.init()

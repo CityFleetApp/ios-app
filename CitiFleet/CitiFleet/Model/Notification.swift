@@ -30,7 +30,8 @@ class Notification: NSObject {
     
     var typeTitle: String {
         get {
-            switch notificationType! {
+            guard let type = notificationType else { return "TLC Alert" }
+            switch type {
             case .JobOffer:
                 return "TLC Alert"
             default:
