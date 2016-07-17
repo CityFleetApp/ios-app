@@ -43,7 +43,7 @@ class ResetPasswordVC: UITableViewController {
     
     private func addFieldsToValidate() {
         validator.registerField(currentPasswordTF, rules: [RequiredRule()])
-        validator.registerField(newPasswordTF, rules: [RequiredRule(), PasswordRule()]);
+        validator.registerField(newPasswordTF, rules: [RequiredRule(), PasswordRule(regex: ConfirmPasswordRule.regex, message: ErrorString.SignUp.IncorrectPassword)]);
         validator.registerField(confirmNewPassTF, rules: [RequiredRule(), ConfirmPasswordRule(textField: newPasswordTF)])
     }
 }
