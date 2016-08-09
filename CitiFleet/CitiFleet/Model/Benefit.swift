@@ -25,12 +25,14 @@ class BenefitList {
     
     private func parseBenefits(benefits: [AnyObject]) {
         for benefitObject in benefits {
-            let imageURLString = benefitObject[Response.Benefits.ImageURL] as! String
-            let title = benefitObject[Response.Benefits.Title] as! String
+            guard let imageURLString = benefitObject[Response.Benefits.ImageURL] as? String else { continue }
+            guard let title = benefitObject[Response.Benefits.Title] as? String else { continue }
             let barcode = benefitObject[Response.Benefits.Barcode] as? String
             let promoCode = benefitObject[Response.Benefits.PromoCode] as? String
-
-            let benefit = Benefit(imageURL: NSURL(string: imageURLString)!, barcode: barcode, title: title, promoCode: promoCode)
+            
+            guard let url = NSURL(string: imageURLString) else { continue }
+            
+            let benefit = Benefit(imageURL: url, barcode: barcode, title: title, promoCode: promoCode)
             
             self.benefitList.append(benefit)
         }

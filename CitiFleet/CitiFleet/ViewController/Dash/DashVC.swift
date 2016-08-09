@@ -37,8 +37,8 @@ class DashVC: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == SegueID.Dash2Profile {
-            let profileVC = segue.destinationViewController as! ProfileVC
-            profileVC.user = User.currentUser()
+            let profileVC = segue.destinationViewController as? ProfileVC
+            profileVC?.user = User.currentUser()
         }
     }
     

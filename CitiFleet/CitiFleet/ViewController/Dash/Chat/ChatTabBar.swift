@@ -14,6 +14,7 @@ class ChatTabBar: UITabBarController {
     }
     
     func changeScreen(notification: NSNotification) {
-        selectedIndex = notification.userInfo![DictionaryKeys.Chat.ScreenNumber] as! Int
+        guard let index = notification.userInfo![DictionaryKeys.Chat.ScreenNumber] as? Int else { return }
+        selectedIndex = index
     }
 }

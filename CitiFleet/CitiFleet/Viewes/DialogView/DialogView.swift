@@ -23,7 +23,7 @@ class DialogView: UIView {
     private var superView: UIView!
     
     class func viewFromNib() -> DialogView {
-        let view = NSBundle.mainBundle().loadNibNamed(DialogView.XIBName, owner: self, options: nil).first as! DialogView
+        guard let view = NSBundle.mainBundle().loadNibNamed(DialogView.XIBName, owner: self, options: nil).first as? DialogView else { return DialogView(frame: CGRectZero) }
         return view
     }
     

@@ -219,7 +219,7 @@ extension GeneralGoodsVC {
         dialog.components = GoodConditions
         dialog.completion = { [weak self] (selectedItem, canceled) in
             if !canceled {
-                let index = selectedItem as! Int
+                guard let index = selectedItem as? Int else { return }
                 self?.conditionsTF.highlitedText = self?.GoodConditions[index]
                 self?.uploader.condition = index + 1
             }

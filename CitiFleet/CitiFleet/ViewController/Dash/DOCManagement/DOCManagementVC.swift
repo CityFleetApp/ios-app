@@ -52,7 +52,7 @@ extension DOCManagementVC {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! DOCManagementCell
-        cell.didSelect()
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as? DOCManagementCell
+        cell?.didSelect()
     }
 }

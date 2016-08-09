@@ -19,7 +19,7 @@ class OptionPostingBuild: NSObject {
     
     func createViewController(type: PostingType) -> OptionsPostingVC {
         let storyboard = UIStoryboard(name: StoryboardName, bundle: NSBundle.mainBundle())
-        let viewController = storyboard.instantiateViewControllerWithIdentifier(ViewControllerID) as! OptionsPostingVC
+        guard let viewController = storyboard.instantiateViewControllerWithIdentifier(ViewControllerID) as? OptionsPostingVC else { return OptionsPostingVC() }
         let index = type.rawValue
         viewController.title = PostingTitles[index]
         viewController.cellHeight = CellHeights[index]

@@ -8,7 +8,7 @@
 
 import UIKit
 import Haneke
-import MBProgressHUD
+//import MBProgressHUD
 
 class DetailsMarketplaceVC: UITableViewController {
     private let PhotoHeight: CGFloat = 293
@@ -169,11 +169,13 @@ class PageViewControllerDataSource: NSObject, UIPageViewControllerDataSource, UI
         let imageView = UIImageView(frame: imageContainerView.bounds)
         imageView.contentMode = .ScaleAspectFit
         
-        MBProgressHUD.showHUDAddedTo(imageView, animated: true)
+//        MBProgressHUD.showHUDAddedTo(imageView, animated: true)
+        LoaderViewManager.showLoader()
         Shared.imageCache.fetch(URL: item.photosURLs[index].URL).onSuccess { (image) in
             dispatch_async(dispatch_get_main_queue()) {
                 imageView.image = image
-                MBProgressHUD.hideHUDForView(imageView, animated: true)
+                LoaderViewManager.hideLoader()
+//                MBProgressHUD.hideHUDForView(imageView, animated: true)
             }
         }
         

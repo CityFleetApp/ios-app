@@ -30,7 +30,7 @@ class FriendInfoView: UIView {
     var openFriendProfile: ((Friend) -> ())?
     
     class func viewFromNib() -> FriendInfoView {
-        let view = NSBundle.mainBundle().loadNibNamed(FriendInfoView.NibName, owner: self, options: nil).first as! FriendInfoView
+        guard let view = NSBundle.mainBundle().loadNibNamed(FriendInfoView.NibName, owner: self, options: nil).first as? FriendInfoView else { return FriendInfoView(frame: CGRectZero) }
         return view
     }
     

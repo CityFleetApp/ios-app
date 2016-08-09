@@ -41,7 +41,7 @@ class AvatarHeaderView: UIView, AvatarXIBName {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        NSBundle.mainBundle().loadNibNamed(xibName(), owner: self, options: nil)[0] as! UIView
+        NSBundle.mainBundle().loadNibNamed(xibName(), owner: self, options: nil)[0] //as! UIView
         var frame = bounds
         frame.size.width = CGRectGetWidth(UIScreen.mainScreen().bounds)
         view.frame = frame

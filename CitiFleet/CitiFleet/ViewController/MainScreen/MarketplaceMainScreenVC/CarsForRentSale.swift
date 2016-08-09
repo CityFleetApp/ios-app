@@ -17,14 +17,14 @@ class CarsForRentSale: GoodsForSaleVC {
         if isSale {
             dataLoader.loadCarsForSale({ [unowned self] (error) in
                 if error == nil {
-                    (self.collectionViewLayout as! MarketplaceCollectiovViewLayout).cache.removeAll()
+                    (self.collectionViewLayout as? MarketplaceCollectiovViewLayout)?.cache.removeAll()
                     self.collectionView?.reloadData()
                 }
                 })
         } else {
             dataLoader.loadCarsForRent({ [unowned self] (error) in
                 if error == nil {
-                    (self.collectionViewLayout as! MarketplaceCollectiovViewLayout).cache.removeAll()
+                    (self.collectionViewLayout as? MarketplaceCollectiovViewLayout)?.cache.removeAll()
                     self.collectionView?.reloadData()
                 }
                 })
@@ -52,8 +52,8 @@ class CarsForRentSale: GoodsForSaleVC {
     }
     
     override func setupAdditionalData(cell: MarketplaceTemplateCell, indexPath: NSIndexPath) {
-        let item = dataLoader.items[indexPath.row] as! CarForRentSale
-        let cell = cell as! CarsForSaleCell
+        guard let item = dataLoader.items[indexPath.row] as? CarForRentSale else { return }
+        guard let cell = cell as? CarsForSaleCell else { return }
         cell.itemName.text = "\(item.year!) \(item.make!) \(item.model!)"
         cell.colorLabel.text = item.color
         cell.carTypeLabel.text = item.type

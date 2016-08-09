@@ -6,7 +6,10 @@ use_frameworks!
 target 'CityFleet' do
 pod 'Alamofire', '~> 3.2'
 pod 'AFNetworking', '~> 3.0'
+
 pod 'MBProgressHUD', '~> 0.9'
+pod 'SVProgressHUD'
+
 pod 'GoogleMaps', '~> 1.12'
 pod 'SwiftValidator', '~> 3.0'
 pod 'SwiftyJSON', '~> 2.3'

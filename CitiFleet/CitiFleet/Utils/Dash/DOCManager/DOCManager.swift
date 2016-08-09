@@ -49,8 +49,8 @@ class DOCManager: NSObject {
             }
             
             for doc in docs! {
-                let id = doc[Params.DOCManagement.id] as! Int
-                let typeIndex = doc[Params.DOCManagement.docType] as! Int
+                guard let id = doc[Params.DOCManagement.id] as? Int else { continue }
+                guard let typeIndex = doc[Params.DOCManagement.docType] as? Int else { continue }
                 let photoUrl = doc[Params.DOCManagement.photo] as? String
                 let expDateString = doc[Params.DOCManagement.expiryDate] as? String
                 let number = doc[Params.DOCManagement.plateNumber] as? String

@@ -21,7 +21,7 @@ class BarcodeView: UIView {
     }
     
     class func barcodeFromNib() -> BarcodeView {
-        let reportView = NSBundle.mainBundle().loadNibNamed(XIB.BarcodeXIB, owner: self, options: nil).first as! BarcodeView
+        guard let reportView = NSBundle.mainBundle().loadNibNamed(XIB.BarcodeXIB, owner: self, options: nil).first as? BarcodeView else { return BarcodeView() }
         return reportView
     }
     
@@ -55,7 +55,7 @@ class DiscountCodeView: BarcodeView {
     }
     
     class func discountFromNib() -> DiscountCodeView {
-        let discountView = NSBundle.mainBundle().loadNibNamed(XIB.DiscountXIB, owner: self, options: nil).first as! DiscountCodeView
+        guard let discountView = NSBundle.mainBundle().loadNibNamed(XIB.DiscountXIB, owner: self, options: nil).first as? DiscountCodeView else { return DiscountCodeView() }
         return discountView
     }
 }

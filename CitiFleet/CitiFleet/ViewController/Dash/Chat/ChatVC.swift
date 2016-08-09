@@ -123,10 +123,10 @@ extension ChatVC {
     }
     
     private func setupCollectionViewLayouts() {
-        let layout = collectionView.collectionViewLayout as! ChatCollectiovViewLayout
-        layout.cellPadding = ChatVC.CellPadding
-        layout.delegate = self
-        layout.numberOfColumns = 1
+        let layout = collectionView.collectionViewLayout as? ChatCollectiovViewLayout
+        layout?.cellPadding = ChatVC.CellPadding
+        layout?.delegate = self
+        layout?.numberOfColumns = 1
         
         collectionView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
     }
@@ -139,7 +139,7 @@ extension ChatVC {
     }
     
     private func calculateHeight(text: String, font: UIFont) -> CGFloat {
-        let layout = collectionView.collectionViewLayout as! MarketplaceCollectiovViewLayout
+        guard let layout = collectionView.collectionViewLayout as? MarketplaceCollectiovViewLayout else { return 0 }
         let width = layout.columnWidth -
             ChatVC.MessagePadding -
             ChatVC.MessageMarging -
@@ -152,7 +152,7 @@ extension ChatVC {
     }
     
     private func calculateImageSize(size: CGSize) -> CGFloat {
-        let layout = collectionView.collectionViewLayout as! MarketplaceCollectiovViewLayout
+        guard let layout = collectionView.collectionViewLayout as? MarketplaceCollectiovViewLayout else { return 0 }
         let width = layout.columnWidth -
             ChatVC.MessagePadding -
             ChatVC.MessageMarging -
@@ -181,7 +181,7 @@ extension ChatVC: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let message = datasource.messages[indexPath.item]
         let CellID = message.author == User.currentUser() ? ChatCollectionViewCell.MyMessageCellID : ChatCollectionViewCell.OtherMessageCellID
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CellID, forIndexPath: indexPath) as! ChatCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CellID, forIndexPath: indexPath) as? ChatCollectionViewCell else { return UICollectionViewCell() }
         cell.avatarImageView.image = UIImage(named: Resources.NoAvatarIc)
         if let url = message.author?.avatarURL {
             cell.avatarImageView.hnk_setImageFromURL(url)

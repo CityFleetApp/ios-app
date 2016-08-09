@@ -14,7 +14,7 @@ class DOCManagementDatePicker: DialogView {
     @IBOutlet var datePicker: UIDatePicker!
     
     override class func viewFromNib() -> DOCManagementDatePicker {
-        let view = NSBundle.mainBundle().loadNibNamed(XIB.DOCManagementDatePicekr, owner: self, options: nil).first as! DOCManagementDatePicker
+        guard let view = NSBundle.mainBundle().loadNibNamed(XIB.DOCManagementDatePicekr, owner: self, options: nil).first as? DOCManagementDatePicker else { return DOCManagementDatePicker(frame: CGRectZero) }
         return view
     }
     

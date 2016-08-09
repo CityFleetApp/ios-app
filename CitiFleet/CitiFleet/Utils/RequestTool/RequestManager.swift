@@ -12,8 +12,8 @@ import Swift
 import SwiftyJSON
 import ReachabilitySwift
 import AFNetworking
-import MBProgressHUD
 import Haneke
+import SVProgressHUD
 
 class RequestManager: NSObject {
     typealias ArrayResponse = [AnyObject]?
@@ -147,15 +147,17 @@ extension RequestManager {
         let view = AppDelegate.sharedDelegate().rootViewController().view
         let request = ImageUploader().createRequest(data, baseUrl: baseUrl, HTTPMethod: HTTPMethod, name: name, params: params)
         
-        let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
-        hud.mode = .AnnularDeterminate
-        hud.labelText = "Uploading..."
+//        let hud = MBProgressHUD.showHUDAddedTo(view, animated: true)
+//        hud.mode = .AnnularDeterminate
+//        hud.labelText =
+        
         
         let manager = AFURLSessionManager(sessionConfiguration: NSURLSessionConfiguration.defaultSessionConfiguration())
         let uploadTask = manager.uploadTaskWithStreamedRequest(request,
             progress: { (progress) -> Void in
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    hud.progress = Float(progress.completedUnitCount) / Float(progress.totalUnitCount)
+                    let progress = Float(progress.completedUnitCount) / Float(progress.totalUnitCount)
+                    SVProgressHUD.showProgress(progress, status: "Uploading...")
                 })
             },
             completionHandler: { (response, responseObject, error) -> Void in
@@ -163,20 +165,23 @@ extension RequestManager {
                     print("Response: \(responseObject)")
                     let handledError = self.errorWithInfo(error, data: responseObject as? NSData)
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        hud.hide(true)
+//                        hud.hide(true)
+                        SVProgressHUD.dismiss()
                         RequestErrorHandler(error: handledError, title: Titles.error).handle()
                         completion(nil, error)
                     })
                     return
                 }
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    hud.customView = UIImageView(image: UIImage(named: Resources.Checkmark))
-                    hud.mode = .CustomView
-                    hud.labelText = "Done"
+//                    hud.customView = UIImageView(image: UIImage(named: Resources.Checkmark))
+//                    hud.mode = .CustomView
+//                    hud.labelText = "Done"
+                    SVProgressHUD.showSuccessWithStatus("Done")
                 })
                 sleep(1)
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    hud.hide(true)
+//                    hud.hide(true)
+                    SVProgressHUD.dismiss()
                 })
                 completion(responseObject, error)
         })

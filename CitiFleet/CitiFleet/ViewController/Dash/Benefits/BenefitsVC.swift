@@ -52,7 +52,7 @@ extension BenefitsVC: UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cellID = CellID.BenefitCellID
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) as! BenefitsCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellID, forIndexPath: indexPath) as? BenefitsCollectionViewCell else { return UICollectionViewCell() }
         cell.setDefaultShadow()
         
         let benefit = benefits.benefitList[indexPath.item]

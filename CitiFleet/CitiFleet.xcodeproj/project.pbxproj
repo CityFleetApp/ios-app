@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29B13B52E27E4D42A633CEA2 /* Pods_CityFleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C284CE43FA6D6D084D4B7332 /* Pods_CityFleet.framework */; };
 		430449D41CAD1FC300365353 /* MarketplaceTemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430449D31CAD1FC300365353 /* MarketplaceTemplateCell.swift */; };
 		430449DA1CAD3AB800365353 /* MarketplaceCollectiovViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430449D91CAD3AB800365353 /* MarketplaceCollectiovViewLayout.swift */; };
 		430449DC1CAD594700365353 /* MarketplaceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430449DB1CAD594700365353 /* MarketplaceItem.swift */; };
@@ -85,7 +86,6 @@
 		436D6B231C93181C00A0240E /* BarcodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D6B221C93181C00A0240E /* BarcodeView.swift */; };
 		436D6B251C93184B00A0240E /* BarcodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436D6B241C93184B00A0240E /* BarcodeView.xib */; };
 		4380DFF91CF584DC009DA8E8 /* JobOfferPreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4380DFF81CF584DC009DA8E8 /* JobOfferPreloader.swift */; };
-		4392B61B1D26895800D316B0 /* Pods_CityFleet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4392B61A1D26895800D316B0 /* Pods_CityFleet.framework */; };
 		439346611CBFACA900753D63 /* ChatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439346601CBFACA900753D63 /* ChatCollectionViewCell.swift */; };
 		439346631CBFC13400753D63 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439346621CBFC13400753D63 /* Message.swift */; };
 		439346651CBFC56400753D63 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439346641CBFC56400753D63 /* ChatVC.swift */; };
@@ -197,9 +197,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0BF2396D09E48EEAC22514F5 /* Pods-CitiFleet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitiFleet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CitiFleet/Pods-CitiFleet.debug.xcconfig"; sourceTree = "<group>"; };
-		2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CitiFleet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		367FED02C596E12E100B79DF /* Pods_CityFleet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CityFleet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02479579DCB43C933EC31575 /* Pods-CityFleet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CityFleet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CityFleet/Pods-CityFleet.debug.xcconfig"; sourceTree = "<group>"; };
+		16556A309D2CFE8A8A7F3F93 /* Pods-CityFleet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CityFleet.release.xcconfig"; path = "Pods/Target Support Files/Pods-CityFleet/Pods-CityFleet.release.xcconfig"; sourceTree = "<group>"; };
 		430449D31CAD1FC300365353 /* MarketplaceTemplateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarketplaceTemplateCell.swift; path = Viewes/Marketplace/Cells/MarketplaceTemplateCell.swift; sourceTree = "<group>"; };
 		430449D91CAD3AB800365353 /* MarketplaceCollectiovViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarketplaceCollectiovViewLayout.swift; path = Utils/Marketplace/MarketplaceCollectiovViewLayout.swift; sourceTree = "<group>"; };
 		430449DB1CAD594700365353 /* MarketplaceItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarketplaceItem.swift; path = Model/MarketplaceItem.swift; sourceTree = "<group>"; };
@@ -281,7 +280,6 @@
 		436D6B241C93184B00A0240E /* BarcodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BarcodeView.xib; path = Storyboards/XIB/BarcodeView.xib; sourceTree = "<group>"; };
 		4380DFF81CF584DC009DA8E8 /* JobOfferPreloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JobOfferPreloader.swift; path = ViewController/Dash/Postings/JobOffers/JobOfferPreloader.swift; sourceTree = "<group>"; };
 		4380DFFA1CF5B0BB009DA8E8 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
-		4392B61A1D26895800D316B0 /* Pods_CityFleet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_CityFleet.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/CitiFleet-bcbbrbelmowhxdcvdjdfbfkafwwv/Build/Products/Debug-iphonesimulator/Pods_CityFleet.framework"; sourceTree = "<group>"; };
 		439346601CBFACA900753D63 /* ChatCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatCollectionViewCell.swift; path = Viewes/Dash/Chat/ChatCollectionViewCell.swift; sourceTree = "<group>"; };
 		439346621CBFC13400753D63 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Message.swift; path = Model/Message.swift; sourceTree = "<group>"; };
 		439346641CBFC56400753D63 /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatVC.swift; path = ViewController/Dash/Chat/ChatVC.swift; sourceTree = "<group>"; };
@@ -321,7 +319,6 @@
 		43AD51631C963D39002261DB /* UITableViewHeaderSetuper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableViewHeaderSetuper.swift; path = "Utils/UI Managers/UITableViewHeaderSetuper.swift"; sourceTree = "<group>"; };
 		43AD51651C9641C2002261DB /* AvatarRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AvatarRatingView.swift; path = Viewes/AvatarHeaderView/AvatarRatingView.swift; sourceTree = "<group>"; };
 		43AD51671C96433D002261DB /* AvatarRatingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AvatarRatingView.xib; path = Storyboards/XIB/AvatarHeaderView/AvatarRatingView.xib; sourceTree = "<group>"; };
-		43B6C55349F831C910C33501 /* Pods-CitiFleet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CitiFleet.release.xcconfig"; path = "Pods/Target Support Files/Pods-CitiFleet/Pods-CitiFleet.release.xcconfig"; sourceTree = "<group>"; };
 		43B6D8521C7EFB61000D6844 /* MainScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainScreenVC.swift; path = ViewController/MainScreen/MainScreenVC.swift; sourceTree = "<group>"; };
 		43B6D8541C7EFC74000D6844 /* MainScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainScreen.storyboard; path = Storyboards/MainScreen.storyboard; sourceTree = "<group>"; };
 		43B6D8561C7F0379000D6844 /* UIButton+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIButton+Ext.swift"; path = "Extensions/UIButton+Ext.swift"; sourceTree = "<group>"; };
@@ -392,8 +389,7 @@
 		43FC7AB51CAB5982009EB4F4 /* GeneralGoodsUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneralGoodsUploader.swift; path = Utils/Marketplace/GeneralGoodsUploader.swift; sourceTree = "<group>"; };
 		43FC7AB81CABD7FE009EB4F4 /* MarketPlaceMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MarketPlaceMain.storyboard; path = Storyboards/MarketPlaceMain.storyboard; sourceTree = "<group>"; };
 		43FC7ABB1CAC0F33009EB4F4 /* MarketplaceMainScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MarketplaceMainScreenVC.swift; path = ViewController/MainScreen/MarketplaceMainScreenVC/MarketplaceMainScreenVC.swift; sourceTree = "<group>"; };
-		6DAECCD8C9137C659337BF39 /* Pods-CityFleet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CityFleet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CityFleet/Pods-CityFleet.debug.xcconfig"; sourceTree = "<group>"; };
-		A4DC7A1C31CCAC347659489E /* Pods-CityFleet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CityFleet.release.xcconfig"; path = "Pods/Target Support Files/Pods-CityFleet/Pods-CityFleet.release.xcconfig"; sourceTree = "<group>"; };
+		C284CE43FA6D6D084D4B7332 /* Pods_CityFleet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CityFleet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,11 +397,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4392B61B1D26895800D316B0 /* Pods_CityFleet.framework in Frameworks */,
 				4347C4301CF7AE190007712E /* AVFoundation.framework in Frameworks */,
 				431D2DCB1C9FE5FD00CBC4BA /* CoreLocation.framework in Frameworks */,
 				4334D81D1C7F749A00557AE4 /* QuartzCore.framework in Frameworks */,
 				4334D81B1C7F67B300557AE4 /* CoreImage.framework in Frameworks */,
+				29B13B52E27E4D42A633CEA2 /* Pods_CityFleet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,8 +487,8 @@
 			children = (
 				4316BB7C1C7B046A007A9ECB /* CitiFleet */,
 				4316BB7B1C7B046A007A9ECB /* Products */,
-				A1BF0D86F407C96A1C73890B /* Pods */,
 				B6CBC1A8583C872FDAA083A8 /* Frameworks */,
+				AFF829BF1CB1AB2648AEA46E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1173,13 +1169,11 @@
 			name = MarketPlace;
 			sourceTree = "<group>";
 		};
-		A1BF0D86F407C96A1C73890B /* Pods */ = {
+		AFF829BF1CB1AB2648AEA46E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0BF2396D09E48EEAC22514F5 /* Pods-CitiFleet.debug.xcconfig */,
-				43B6C55349F831C910C33501 /* Pods-CitiFleet.release.xcconfig */,
-				6DAECCD8C9137C659337BF39 /* Pods-CityFleet.debug.xcconfig */,
-				A4DC7A1C31CCAC347659489E /* Pods-CityFleet.release.xcconfig */,
+				02479579DCB43C933EC31575 /* Pods-CityFleet.debug.xcconfig */,
+				16556A309D2CFE8A8A7F3F93 /* Pods-CityFleet.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1187,14 +1181,12 @@
 		B6CBC1A8583C872FDAA083A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4392B61A1D26895800D316B0 /* Pods_CityFleet.framework */,
 				4347C42F1CF7AE190007712E /* AVFoundation.framework */,
 				4380DFFA1CF5B0BB009DA8E8 /* Contacts.framework */,
 				431D2DCA1C9FE5FD00CBC4BA /* CoreLocation.framework */,
 				4334D81C1C7F749A00557AE4 /* QuartzCore.framework */,
 				4334D81A1C7F67B300557AE4 /* CoreImage.framework */,
-				2B989B1F7EE7D4C72C156742 /* Pods_CitiFleet.framework */,
-				367FED02C596E12E100B79DF /* Pods_CityFleet.framework */,
+				C284CE43FA6D6D084D4B7332 /* Pods_CityFleet.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1206,13 +1198,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4316BB8C1C7B046A007A9ECB /* Build configuration list for PBXNativeTarget "CityFleet" */;
 			buildPhases = (
-				8529157B759B4DF2FDC94D6E /* Check Pods Manifest.lock */,
+				6F2066A28F8E50BDC2D96B27 /* [CP] Check Pods Manifest.lock */,
 				4316BB761C7B046A007A9ECB /* Sources */,
 				4316BB771C7B046A007A9ECB /* Frameworks */,
 				4316BB781C7B046A007A9ECB /* Resources */,
-				4D22CFB30E2F982F3A66C902 /* Embed Pods Frameworks */,
-				43A71AA485C08CF8BB9021F3 /* Copy Pods Resources */,
 				430B4F371C7DA9ED00EE884A /* ShellScript */,
+				AD46092B4EFDB0325814681F /* [CP] Embed Pods Frameworks */,
+				D7429044BA770F08A191056E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1322,29 +1314,29 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" d217b8a3de781c177191dbe6fa3d42c3275cc7c6 51b4aa132e5e8743fc7e77d512bef6eae023c86d4051e73eb44e94973c8e40a7ф";
 		};
-		43A71AA485C08CF8BB9021F3 /* Copy Pods Resources */ = {
+		6F2066A28F8E50BDC2D96B27 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CityFleet/Pods-CityFleet-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		4D22CFB30E2F982F3A66C902 /* Embed Pods Frameworks */ = {
+		AD46092B4EFDB0325814681F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1352,19 +1344,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CityFleet/Pods-CityFleet-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8529157B759B4DF2FDC94D6E /* Check Pods Manifest.lock */ = {
+		D7429044BA770F08A191056E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CityFleet/Pods-CityFleet-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1620,7 +1612,7 @@
 		};
 		4316BB8D1C7B046A007A9ECB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DAECCD8C9137C659337BF39 /* Pods-CityFleet.debug.xcconfig */;
+			baseConfigurationReference = 02479579DCB43C933EC31575 /* Pods-CityFleet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1639,7 +1631,7 @@
 		};
 		4316BB8E1C7B046A007A9ECB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4DC7A1C31CCAC347659489E /* Pods-CityFleet.release.xcconfig */;
+			baseConfigurationReference = 16556A309D2CFE8A8A7F3F93 /* Pods-CityFleet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

@@ -80,8 +80,8 @@ class LoadDataOperation: NSOperation {
     private func fillArray(results: [AnyObject]) {
         var array: [MarketPlaceItem] = []
         for result in results {
-            let id = result[Params.0] as! Int
-            let name = result[Params.1] as! String
+            guard let id = result[Params.0] as? Int else { continue }
+            guard let name = result[Params.1] as? String else { continue }
             array.append((id, name))
         }
         state = .Finished
@@ -128,8 +128,8 @@ class VehicleDataLoader: NSObject {
             let Params = ("id", "name")
             if let results = json?.arrayObject {
                 for modelsJSON in results {
-                    let id = modelsJSON[Params.0] as! Int
-                    let name = modelsJSON[Params.1] as! String
+                    guard let id = modelsJSON[Params.0] as? Int else { continue }
+                    guard let name = modelsJSON[Params.1] as? String else { continue }
                     self.model.append((id, name))
                 }
             }
@@ -238,7 +238,7 @@ extension EditVehicleVC {
     }
     
     private func selectedItem(item: AnyObject, indexPath: NSIndexPath) {
-        let index = item as! Int
+        guard let index = item as? Int else { return }
         var cellText = ""
         switch indexPath.row {
         case 0:
@@ -312,8 +312,8 @@ extension EditVehicleVC {
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 1 {
-            let cell = cell as! PostingCell
-            cell.setEditable(!(myVehicle.make == nil && myVehicle.model == nil))
+            let cell = cell as? PostingCell
+            cell?.setEditable(!(myVehicle.make == nil && myVehicle.model == nil))
         }
     }
 }

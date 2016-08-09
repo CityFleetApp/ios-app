@@ -16,6 +16,7 @@ import Alamofire
 import GoogleMaps
 import AVKit
 import AVFoundation
+import SVProgressHUD
 
 @UIApplicationMain
 
@@ -59,6 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
         playerController = AVPlayerViewController()
         rootController = application.keyWindow?.rootViewController
         window?.rootViewController = playerController
+        SVProgressHUD.setDefaultStyle(.Dark)
         return true
     }
     

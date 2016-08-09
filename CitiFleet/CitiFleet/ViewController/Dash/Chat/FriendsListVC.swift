@@ -166,10 +166,10 @@ extension ContactListVC {
             return
         }
         
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! FriendCell
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as? FriendCell
         
         let friend = datasource.friends[indexPath.row]
-        let accessoryView = cell.accessoryView as? UIImageView
+        let accessoryView = cell?.accessoryView as? UIImageView
         
         accessoryView?.image = nil
         selectedUsers.remove(friend)
@@ -180,10 +180,10 @@ extension ContactListVC {
             return
         }
         
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! FriendCell
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as? FriendCell
         
         let friend = datasource.friends[indexPath.row]
-        let accessoryView = cell.accessoryView as? UIImageView
+        let accessoryView = cell?.accessoryView as? UIImageView
         
         accessoryView?.image = UIImage(named: Resources.Chat.AccessoryImage)
         selectedUsers.insert(friend)

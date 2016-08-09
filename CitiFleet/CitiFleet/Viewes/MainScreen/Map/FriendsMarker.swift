@@ -27,7 +27,7 @@ class FriendsMarkerView: UIView {
     }
     
     class func viewFromNib() -> FriendsMarkerView {
-        let view = NSBundle.mainBundle().loadNibNamed(FriendsMarkerView.NibName, owner: self, options: nil).first as! FriendsMarkerView
+        guard let view = NSBundle.mainBundle().loadNibNamed(FriendsMarkerView.NibName, owner: self, options: nil).first as? FriendsMarkerView else { return FriendsMarkerView() }
         return view
     }
     
