@@ -96,10 +96,11 @@ class APNSManager: NSObject {
         let deviceTokenString1: String = deviceToken!.description
             .stringByTrimmingCharactersInSet( characterSet1 )
             .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
+        print(deviceTokenString1)
         
-        if (NSUserDefaults.standardUserDefaults().valueForKey(DictionaryKeys.UserDefaultsKeys.AlreadyRegisteredKey) as? Bool) == true {
-            return
-        }
+//        if (NSUserDefaults.standardUserDefaults().valueForKey(DictionaryKeys.UserDefaultsKeys.AlreadyRegisteredKey) as? Bool) == true {
+//            return
+//        }
         NSUserDefaults.standardUserDefaults().setValue(false, forKey: DictionaryKeys.UserDefaultsKeys.AlreadyRegisteredKey)
         typealias APNSParams = Params.User.APNS
         
